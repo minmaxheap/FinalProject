@@ -158,6 +158,7 @@
     <Content Include="Resources\97a64971e2a6741339b09c64c93e448e.png" />
     <None Include="Resources\pngegg.png" />
     <None Include="Resources\Search--v2.png" />
+    <None Include="Resources\KEY0.CC-회사-제품-아이콘-블루-2.ico" />
     <Content Include="Resources\twocirclingarrows1_120592.png" />
   </ItemGroup>
   <ItemGroup />

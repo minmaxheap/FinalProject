@@ -145,4 +145,7 @@
   <data name="yg_jalnan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\yg-jalnan.otf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="KEY0_CC_회사_제품_아이콘_블루_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\KEY0.CC-회사-제품-아이콘-블루-2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
