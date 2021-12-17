@@ -31,6 +31,8 @@ namespace MES_Team3.BaseForms
         {
             System.Windows.Forms.Button button4;
             System.Windows.Forms.Button button5;
+            System.Windows.Forms.Button button2;
+            System.Windows.Forms.Button button1;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -43,8 +45,6 @@ namespace MES_Team3.BaseForms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.Button button2;
-            System.Windows.Forms.Button button1;
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -126,6 +126,36 @@ namespace MES_Team3.BaseForms
             button5.TabIndex = 39;
             button5.Text = "▶";
             button5.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            button2.BackgroundImage = global::MES_Team3.Properties.Resources.pngegg;
+            button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            button2.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            button2.ForeColor = System.Drawing.SystemColors.ControlText;
+            button2.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            button2.Location = new System.Drawing.Point(298, 3);
+            button2.Name = "button2";
+            button2.Size = new System.Drawing.Size(32, 31);
+            button2.TabIndex = 33;
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            button1.BackgroundImage = global::MES_Team3.Properties.Resources._refresh_90271;
+            button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            button1.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            button1.ForeColor = System.Drawing.SystemColors.ControlText;
+            button1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            button1.Location = new System.Drawing.Point(9, 4);
+            button1.Name = "button1";
+            button1.Size = new System.Drawing.Size(32, 31);
+            button1.TabIndex = 16;
+            button1.UseVisualStyleBackColor = false;
             // 
             // splitContainer1
             // 
@@ -509,36 +539,6 @@ namespace MES_Team3.BaseForms
             this.button11.Text = "닫기";
             this.button11.UseVisualStyleBackColor = false;
             // 
-            // button2
-            // 
-            button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            button2.BackgroundImage = global::MES_Team3.Properties.Resources.pngegg;
-            button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            button2.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            button2.ForeColor = System.Drawing.SystemColors.ControlText;
-            button2.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            button2.Location = new System.Drawing.Point(298, 3);
-            button2.Name = "button2";
-            button2.Size = new System.Drawing.Size(32, 31);
-            button2.TabIndex = 33;
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            button1.BackgroundImage = global::MES_Team3.Properties.Resources._refresh_90271;
-            button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            button1.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            button1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            button1.Location = new System.Drawing.Point(9, 4);
-            button1.Name = "button1";
-            button1.Size = new System.Drawing.Size(32, 31);
-            button1.TabIndex = 16;
-            button1.UseVisualStyleBackColor = false;
-            // 
             // Base3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -570,36 +570,36 @@ namespace MES_Team3.BaseForms
 
         #endregion
 
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        protected System.Windows.Forms.SplitContainer splitContainer2;
-        protected System.Windows.Forms.Panel panel3;
-        protected System.Windows.Forms.Button button3;
-        protected System.Windows.Forms.TextBox textBox1;
-        protected System.Windows.Forms.Panel panel4;
-        private csDataGridView csDataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        protected System.Windows.Forms.Label label1;
-        protected System.Windows.Forms.Panel panel7;
-        private csDataGridView csDataGridView3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        protected System.Windows.Forms.Label label8;
-        protected System.Windows.Forms.Panel panel5;
-        private csDataGridView csDataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        protected System.Windows.Forms.Label label6;
-        protected System.Windows.Forms.Panel panel6;
-        protected System.Windows.Forms.Button button8;
-        protected System.Windows.Forms.Button button11;
-        protected System.Windows.Forms.Label label9;
+        public System.Windows.Forms.SplitContainer splitContainer1;
+        public System.Windows.Forms.SplitContainer splitContainer2;
+        public System.Windows.Forms.Panel panel3;
+        public System.Windows.Forms.Button button3;
+        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.Panel panel4;
+        public csDataGridView csDataGridView2;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Panel panel7;
+        public csDataGridView csDataGridView3;
+        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        public System.Windows.Forms.Label label8;
+        public System.Windows.Forms.Panel panel5;
+        public csDataGridView csDataGridView1;
+        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        public System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        public System.Windows.Forms.Label label6;
+        public System.Windows.Forms.Panel panel6;
+        public System.Windows.Forms.Button button8;
+        public System.Windows.Forms.Button button11;
+        public System.Windows.Forms.Label label9;
     }
 }
