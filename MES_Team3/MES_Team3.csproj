@@ -70,6 +70,12 @@
     <Compile Include="BaseForms\Base2.Designer.cs">
       <DependentUpon>Base2.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaseForms\Base5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForms\Base5.Designer.cs">
+      <DependentUpon>Base5.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\csDataGridView.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaseForms\Base1.resx">
       <DependentUpon>Base1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForms\Base5.resx">
+      <DependentUpon>Base5.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
