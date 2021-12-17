@@ -142,6 +142,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\NanumSquareB.otf" />
+    <None Include="Resources\NanumSquareEB.otf" />
+    <None Include="Resources\NanumSquareL.otf" />
+    <None Include="Resources\NanumSquareR.otf" />
+    <None Include="Resources\yg-jalnan.otf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

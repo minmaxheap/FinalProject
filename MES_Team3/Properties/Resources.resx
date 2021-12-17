@@ -130,4 +130,19 @@
   <data name="close_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close white .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="NanumSquareB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NanumSquareB.otf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NanumSquareEB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NanumSquareEB.otf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NanumSquareL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NanumSquareL.otf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NanumSquareR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NanumSquareR.otf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="yg_jalnan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yg-jalnan.otf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
