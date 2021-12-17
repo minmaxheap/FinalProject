@@ -65,6 +65,10 @@ namespace MES_Team3.BaseForms
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.textBox13 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -241,6 +245,7 @@ namespace MES_Team3.BaseForms
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(182, 156);
             this.panel1.Name = "panel1";
@@ -262,6 +267,7 @@ namespace MES_Team3.BaseForms
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label15);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Location = new System.Drawing.Point(366, 156);
             this.panel2.Name = "panel2";
@@ -283,6 +289,7 @@ namespace MES_Team3.BaseForms
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.label16);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Location = new System.Drawing.Point(550, 156);
             this.panel3.Name = "panel3";
@@ -304,6 +311,7 @@ namespace MES_Team3.BaseForms
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.label17);
             this.panel5.Controls.Add(this.label8);
             this.panel5.Location = new System.Drawing.Point(734, 156);
             this.panel5.Name = "panel5";
@@ -446,6 +454,46 @@ namespace MES_Team3.BaseForms
             this.textBox13.Size = new System.Drawing.Size(664, 57);
             this.textBox13.TabIndex = 37;
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label14.Location = new System.Drawing.Point(39, 51);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(75, 24);
+            this.label14.TabIndex = 18;
+            this.label14.Text = "Closed";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label15.Location = new System.Drawing.Point(52, 51);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(36, 24);
+            this.label15.TabIndex = 19;
+            this.label15.Text = "50";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label16.Location = new System.Drawing.Point(53, 51);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(36, 24);
+            this.label16.TabIndex = 20;
+            this.label16.Text = "50";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label17.Location = new System.Drawing.Point(54, 51);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(36, 24);
+            this.label17.TabIndex = 20;
+            this.label17.Text = "50";
+            // 
             // Base5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -463,9 +511,13 @@ namespace MES_Team3.BaseForms
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -507,5 +559,9 @@ namespace MES_Team3.BaseForms
         public System.Windows.Forms.Label label5;
         public System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
     }
 }
