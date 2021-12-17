@@ -41,11 +41,8 @@ namespace MES_Team3
             this.button8 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.label1 = new System.Windows.Forms.Label();
-            this.csTabControl1 = new MES_Team3.csTabControl();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabControl1 = new MES_Team3.csTabControl();
             this.flowLayoutPanel1.SuspendLayout();
-            this.csTabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -79,6 +76,7 @@ namespace MES_Team3
             this.button1.TabIndex = 0;
             this.button1.Text = "영업 관리";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button_Click);
             // 
             // button2
             // 
@@ -92,6 +90,7 @@ namespace MES_Team3
             this.button2.TabIndex = 1;
             this.button2.Text = "구매 관리";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button_Click);
             // 
             // button3
             // 
@@ -105,6 +104,7 @@ namespace MES_Team3
             this.button3.TabIndex = 2;
             this.button3.Text = "생산 관리";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button_Click);
             // 
             // button4
             // 
@@ -118,6 +118,7 @@ namespace MES_Team3
             this.button4.TabIndex = 3;
             this.button4.Text = "품질 관리";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button_Click);
             // 
             // button5
             // 
@@ -131,6 +132,7 @@ namespace MES_Team3
             this.button5.TabIndex = 4;
             this.button5.Text = "설비 관리";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button_Click);
             // 
             // button6
             // 
@@ -144,6 +146,7 @@ namespace MES_Team3
             this.button6.TabIndex = 5;
             this.button6.Text = "보안";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button_Click);
             // 
             // button7
             // 
@@ -157,6 +160,7 @@ namespace MES_Team3
             this.button7.TabIndex = 6;
             this.button7.Text = "리포트";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button_Click);
             // 
             // button8
             // 
@@ -170,6 +174,7 @@ namespace MES_Team3
             this.button8.TabIndex = 7;
             this.button8.Text = "공통 기능";
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button_Click);
             // 
             // menuStrip1
             // 
@@ -191,45 +196,23 @@ namespace MES_Team3
             this.label1.Text = "홍길동님";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // csTabControl1
+            // tabControl1
             // 
-            this.csTabControl1.Controls.Add(this.tabPage3);
-            this.csTabControl1.Controls.Add(this.tabPage4);
-            this.csTabControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.csTabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.csTabControl1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.csTabControl1.Location = new System.Drawing.Point(133, 24);
-            this.csTabControl1.Name = "csTabControl1";
-            this.csTabControl1.SelectedIndex = 0;
-            this.csTabControl1.Size = new System.Drawing.Size(1149, 20);
-            this.csTabControl1.TabIndex = 6;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1141, 0);
-            this.tabPage3.TabIndex = 0;
-            this.tabPage3.Text = "tabPage3";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1141, 0);
-            this.tabPage4.TabIndex = 1;
-            this.tabPage4.Text = "tabPage4";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
+            this.tabControl1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tabControl1.Location = new System.Drawing.Point(133, 24);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1149, 20);
+            this.tabControl1.TabIndex = 6;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1282, 663);
-            this.Controls.Add(this.csTabControl1);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
@@ -240,8 +223,8 @@ namespace MES_Team3
             this.Name = "frmMain";
             this.Text = "메인화면";
             this.Load += new System.EventHandler(this.frmMain_Load);
+            this.MdiChildActivate += new System.EventHandler(this.frmMain_MdiChildActivate);
             this.flowLayoutPanel1.ResumeLayout(false);
-            this.csTabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,9 +243,7 @@ namespace MES_Team3
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Label label1;
-        private csTabControl csTabControl1;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage4;
+        private csTabControl tabControl1;
     }
 }
 
