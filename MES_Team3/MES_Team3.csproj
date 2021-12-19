@@ -88,6 +88,12 @@
     <Compile Include="Controls\csTabControl.designer.cs">
       <DependentUpon>csTabControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\NumTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\NumTextBox.Designer.cs">
+      <DependentUpon>NumTextBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\DataGridViewUtil.cs" />
     <EmbeddedResource Include="BaseForms\Base2.resx">
       <DependentUpon>Base2.cs</DependentUpon>
     </EmbeddedResource>
@@ -161,6 +168,18 @@
     <None Include="Resources\KEY0.CC-회사-제품-아이콘-블루-2.ico" />
     <Content Include="Resources\twocirclingarrows1_120592.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\DAC\DAC.csproj">
+      <Project>{09983178-47d5-49a1-861f-38a5379b2baf}</Project>
+      <Name>DAC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VO\VO.csproj">
+      <Project>{7c5ea166-28d0-4a83-9c41-8c67abe2bd41}</Project>
+      <Name>VO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
