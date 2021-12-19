@@ -39,23 +39,31 @@ namespace MES_Team3
             //tsCodeMg.Tag = "frmCodeMg";
 
 
-            tabControl1.Visible = false;
-            foreach (Control control in this.Controls)
-            {
+            //tabControl1.Visible = false;
+            //foreach (Control control in this.Controls)
+            //{
 
-                MdiClient client = control as MdiClient;
-                if (!(client == null))
-                {
+            //    MdiClient client = control as MdiClient;
+            //    if (!(client == null))
+            //    {
 
-                    client.BackColor = Color.AliceBlue;
+            //        client.BackColor = Color.AliceBlue;
 
-                    return;
-                }
-            }
+            //        return;
+            //    }
+            //}
 
-            DrawMenuPanel();
+            //DrawMenuPanel();
 
-            btn.PerformClick();
+            //btn.PerformClick();
+
+            frmFunction frm = new frmFunction();
+            frm.MdiParent = this;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.ControlBox = false;
+          
+            frm.Show();
         }
 
         private void DrawMenuPanel()
@@ -197,7 +205,7 @@ namespace MES_Team3
 
         }
 
-        private void button_Click(object sender, EventArgs e)
+        private void button_Click(object sender, EventArgs e) 
         {
             Button btn = (Button)sender;
             flowLayoutPanel1.Controls.SetChildIndex(panel1, Convert.ToInt32(btn.Tag) + 1);

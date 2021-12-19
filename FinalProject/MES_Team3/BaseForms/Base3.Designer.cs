@@ -522,7 +522,7 @@ namespace MES_Team3.BaseForms
             this.button8.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button8.Location = new System.Drawing.Point(197, 14);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(70, 38);
+            this.button8.Size = new System.Drawing.Size(70, 27);
             this.button8.TabIndex = 24;
             this.button8.Text = "조회";
             this.button8.UseVisualStyleBackColor = false;
@@ -534,7 +534,7 @@ namespace MES_Team3.BaseForms
             this.button11.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button11.Location = new System.Drawing.Point(273, 14);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(70, 38);
+            this.button11.Size = new System.Drawing.Size(70, 27);
             this.button11.TabIndex = 27;
             this.button11.Text = "닫기";
             this.button11.UseVisualStyleBackColor = false;
