@@ -208,7 +208,7 @@ namespace MES_Team3
             treeView1.Nodes.Clear();
 
             DataView dv2 = new DataView(dtMenu);
-            //dv2.RowFilter = "";
+            dv2.RowFilter = "FUNCTION_LEVEL=2";
             //dv2.Sort = "";
             for (int k = 0; k < dv2.Count; k++)
             {
