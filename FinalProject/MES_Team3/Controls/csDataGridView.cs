@@ -24,8 +24,8 @@ namespace MES_Team3
 
             this.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(214, 220, 229);
             this.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
-            this.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(52, 52, 52);
-            this.ColumnHeadersDefaultCellStyle.SelectionForeColor = SystemColors.HighlightText;
+           this.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(214, 220, 229);
+            this.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.Black;
 
             this.DefaultCellStyle.BackColor = Color.White;
             this.DefaultCellStyle.ForeColor = Color.FromArgb(52, 52, 52);
@@ -34,6 +34,8 @@ namespace MES_Team3
 
             this.RowHeadersDefaultCellStyle.SelectionBackColor = SystemColors.ControlDark;
             this.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(233, 239, 247);
+            this.BorderStyle = BorderStyle.None;
+            
         }
 
         protected override void OnPaint(PaintEventArgs pe)

@@ -12,6 +12,7 @@ namespace MES_Team3.BaseForms
 {
     public partial class frmSearch : Form
     {
+        
         public frmSearch()
         {
             InitializeComponent();

@@ -14,7 +14,7 @@ namespace MES_Team3
     public partial class frmMain : Form
     {
         string userID;
-        DataTable dtMenu;
+        DataTable dtFunc;
         Panel panel1;
         TreeView treeView1;
         FunctionServ serv;
@@ -30,7 +30,7 @@ namespace MES_Team3
         {
             tabControl1.Visible = false;
             serv = new FunctionServ();
-            dtMenu = serv.GetUserFunctionList(this.userID);
+            dtFunc = serv.GetUserFunctionList(this.userID);
             DrawMenuPanel();
 
 
@@ -38,7 +38,7 @@ namespace MES_Team3
 
         private void DrawMenuPanel()
         {
-            DataView dv1 = new DataView(dtMenu);
+            DataView dv1 = new DataView(dtFunc);
             dv1.RowFilter = "FUNCTION_LEVEL = 1";
             for (int i = 0; i < dv1.Count; i++)
             {
@@ -192,7 +192,7 @@ namespace MES_Team3
 
             treeView1.Nodes.Clear();
 
-            DataView dv2 = new DataView(dtMenu);
+            DataView dv2 = new DataView(dtFunc);
             dv2.RowFilter = $"FUNCTION_LEVEL=2 and PNT_FUNCTION_CODE = '{btn.Name.Replace("p_btn", "")}'";
             for (int k = 0; k < dv2.Count; k++)
             {

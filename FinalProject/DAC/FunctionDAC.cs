@@ -26,7 +26,7 @@ namespace DAC
             string sql = @"select FUNCTION_CODE, FUNCTION_NAME, SHORT_CUT_KEY, ICON_INDEX, PNT_FUNCTION_CODE, FUNCTION_LEVEL, PROGRAM_NAME, CREATE_TIME, CREATE_USER_ID, UPDATE_TIME, UPDATE_USER_ID
 from [dbo].[FUNCTION_MST]";
             DataTable dt = new DataTable();
-            using (SqlDataAdapter da = new SqlDataAdapter())
+            using (SqlDataAdapter da = new SqlDataAdapter(sql,conn))
             {
                 da.Fill(dt);
                 return dt;
@@ -39,7 +39,7 @@ from [dbo].[FUNCTION_MST]";
             string sql = @"select USER_GROUP_CODE, USER_GROUP_NAME, USER_GROUP_TYPE, CREATE_TIME, CREATE_USER_ID, UPDATE_TIME, UPDATE_USER_ID
 from [dbo].[USER_GROUP_MST]";
             DataTable dt = new DataTable();
-            using (SqlDataAdapter da = new SqlDataAdapter())
+            using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
             {
                 da.Fill(dt);
                 return dt;
@@ -51,7 +51,7 @@ from [dbo].[USER_GROUP_MST]";
             string sql = @"select USER_GROUP_CODE, FUNCTION_CODE, CREATE_TIME, CREATE_USER_ID, UPDATE_TIME, UPDATE_USER_ID
   from [dbo].[FUNCTION_USER_GROUP_REL]";
             DataTable dt = new DataTable();
-            using (SqlDataAdapter da = new SqlDataAdapter())
+            using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
             {
                 da.Fill(dt);
                 return dt;

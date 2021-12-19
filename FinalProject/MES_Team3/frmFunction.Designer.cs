@@ -42,6 +42,10 @@ namespace MES_Team3
             this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
+            // button3
+            // 
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // label1
             // 
             this.label1.Text = "화면 기능 목록";
@@ -50,6 +54,38 @@ namespace MES_Team3
             // 
             this.panel3.Controls.SetChildIndex(this.textBox1, 0);
             this.panel3.Controls.SetChildIndex(this.button3, 0);
+            // 
+            // label11
+            // 
+            this.label11.Text = "변경 사용자";
+            // 
+            // label10
+            // 
+            this.label10.Text = "변경 시간";
+            // 
+            // label9
+            // 
+            this.label9.Text = "생성 사용자";
+            // 
+            // label8
+            // 
+            this.label8.Text = "생성 시간";
+            // 
+            // label7
+            // 
+            this.label7.Text = "아이콘 인덱스";
+            // 
+            // label3
+            // 
+            this.label3.Text = "단축키";
+            // 
+            // label2
+            // 
+            this.label2.Text = "기능명";
+            // 
+            // label4
+            // 
+            this.label4.Text = "기능 코드";
             // 
             // frmFunction
             // 
