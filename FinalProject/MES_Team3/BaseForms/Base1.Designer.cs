@@ -297,7 +297,7 @@ namespace MES_Team3
             this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 207F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 208F));
             this.tableLayoutPanel1.Controls.Add(this.label11, 0, 9);
             this.tableLayoutPanel1.Controls.Add(this.textBox7, 1, 9);
             this.tableLayoutPanel1.Controls.Add(this.label15, 0, 8);
@@ -342,7 +342,7 @@ namespace MES_Team3
             this.label11.Location = new System.Drawing.Point(1, 190);
             this.label11.Margin = new System.Windows.Forms.Padding(0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(108, 20);
+            this.label11.Size = new System.Drawing.Size(107, 20);
             this.label11.TabIndex = 40;
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -350,10 +350,10 @@ namespace MES_Team3
             // 
             this.textBox7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox7.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox7.Location = new System.Drawing.Point(110, 190);
+            this.textBox7.Location = new System.Drawing.Point(109, 190);
             this.textBox7.Margin = new System.Windows.Forms.Padding(0);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(207, 22);
+            this.textBox7.Size = new System.Drawing.Size(208, 22);
             this.textBox7.TabIndex = 41;
             // 
             // label15
@@ -363,7 +363,7 @@ namespace MES_Team3
             this.label15.Location = new System.Drawing.Point(1, 169);
             this.label15.Margin = new System.Windows.Forms.Padding(0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(108, 20);
+            this.label15.Size = new System.Drawing.Size(107, 20);
             this.label15.TabIndex = 38;
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -371,10 +371,10 @@ namespace MES_Team3
             // 
             this.textBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox4.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox4.Location = new System.Drawing.Point(110, 43);
+            this.textBox4.Location = new System.Drawing.Point(109, 43);
             this.textBox4.Margin = new System.Windows.Forms.Padding(0);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(207, 22);
+            this.textBox4.Size = new System.Drawing.Size(208, 22);
             this.textBox4.TabIndex = 35;
             // 
             // label7
@@ -384,7 +384,7 @@ namespace MES_Team3
             this.label7.Location = new System.Drawing.Point(1, 64);
             this.label7.Margin = new System.Windows.Forms.Padding(0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(108, 20);
+            this.label7.Size = new System.Drawing.Size(107, 20);
             this.label7.TabIndex = 36;
             this.label7.Text = "데이터 체크";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -396,7 +396,7 @@ namespace MES_Team3
             this.label4.Location = new System.Drawing.Point(1, 43);
             this.label4.Margin = new System.Windows.Forms.Padding(0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(108, 20);
+            this.label4.Size = new System.Drawing.Size(107, 20);
             this.label4.TabIndex = 34;
             this.label4.Text = "불량 체크";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -408,7 +408,7 @@ namespace MES_Team3
             this.label3.Location = new System.Drawing.Point(1, 22);
             this.label3.Margin = new System.Windows.Forms.Padding(0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 20);
+            this.label3.Size = new System.Drawing.Size(107, 20);
             this.label3.TabIndex = 33;
             this.label3.Text = "공정명";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -420,7 +420,7 @@ namespace MES_Team3
             this.label2.Location = new System.Drawing.Point(1, 1);
             this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 20);
+            this.label2.Size = new System.Drawing.Size(107, 20);
             this.label2.TabIndex = 32;
             this.label2.Text = "공정";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -429,30 +429,30 @@ namespace MES_Team3
             // 
             this.textBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox3.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox3.Location = new System.Drawing.Point(110, 22);
+            this.textBox3.Location = new System.Drawing.Point(109, 22);
             this.textBox3.Margin = new System.Windows.Forms.Padding(0);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(207, 22);
+            this.textBox3.Size = new System.Drawing.Size(208, 22);
             this.textBox3.TabIndex = 31;
             // 
             // textBox2
             // 
             this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox2.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox2.Location = new System.Drawing.Point(110, 1);
+            this.textBox2.Location = new System.Drawing.Point(109, 1);
             this.textBox2.Margin = new System.Windows.Forms.Padding(0);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(207, 22);
+            this.textBox2.Size = new System.Drawing.Size(208, 22);
             this.textBox2.TabIndex = 29;
             // 
             // textBox5
             // 
             this.textBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox5.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox5.Location = new System.Drawing.Point(110, 64);
+            this.textBox5.Location = new System.Drawing.Point(109, 64);
             this.textBox5.Margin = new System.Windows.Forms.Padding(0);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(207, 22);
+            this.textBox5.Size = new System.Drawing.Size(208, 22);
             this.textBox5.TabIndex = 37;
             // 
             // label10
@@ -462,7 +462,7 @@ namespace MES_Team3
             this.label10.Location = new System.Drawing.Point(1, 85);
             this.label10.Margin = new System.Windows.Forms.Padding(0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(108, 20);
+            this.label10.Size = new System.Drawing.Size(107, 20);
             this.label10.TabIndex = 38;
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -470,10 +470,10 @@ namespace MES_Team3
             // 
             this.textBox6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox6.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox6.Location = new System.Drawing.Point(110, 85);
+            this.textBox6.Location = new System.Drawing.Point(109, 85);
             this.textBox6.Margin = new System.Windows.Forms.Padding(0);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(207, 22);
+            this.textBox6.Size = new System.Drawing.Size(208, 22);
             this.textBox6.TabIndex = 39;
             // 
             // label12
@@ -483,7 +483,7 @@ namespace MES_Team3
             this.label12.Location = new System.Drawing.Point(1, 106);
             this.label12.Margin = new System.Windows.Forms.Padding(0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(108, 20);
+            this.label12.Size = new System.Drawing.Size(107, 20);
             this.label12.TabIndex = 38;
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -491,10 +491,10 @@ namespace MES_Team3
             // 
             this.textBox8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox8.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox8.Location = new System.Drawing.Point(110, 106);
+            this.textBox8.Location = new System.Drawing.Point(109, 106);
             this.textBox8.Margin = new System.Windows.Forms.Padding(0);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(207, 22);
+            this.textBox8.Size = new System.Drawing.Size(208, 22);
             this.textBox8.TabIndex = 39;
             // 
             // label13
@@ -504,7 +504,7 @@ namespace MES_Team3
             this.label13.Location = new System.Drawing.Point(1, 127);
             this.label13.Margin = new System.Windows.Forms.Padding(0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(108, 20);
+            this.label13.Size = new System.Drawing.Size(107, 20);
             this.label13.TabIndex = 38;
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -512,10 +512,10 @@ namespace MES_Team3
             // 
             this.textBox9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox9.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox9.Location = new System.Drawing.Point(110, 127);
+            this.textBox9.Location = new System.Drawing.Point(109, 127);
             this.textBox9.Margin = new System.Windows.Forms.Padding(0);
             this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(207, 22);
+            this.textBox9.Size = new System.Drawing.Size(208, 22);
             this.textBox9.TabIndex = 39;
             // 
             // label14
@@ -525,7 +525,7 @@ namespace MES_Team3
             this.label14.Location = new System.Drawing.Point(1, 148);
             this.label14.Margin = new System.Windows.Forms.Padding(0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(108, 20);
+            this.label14.Size = new System.Drawing.Size(107, 20);
             this.label14.TabIndex = 38;
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -533,20 +533,20 @@ namespace MES_Team3
             // 
             this.textBox10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox10.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox10.Location = new System.Drawing.Point(110, 148);
+            this.textBox10.Location = new System.Drawing.Point(109, 148);
             this.textBox10.Margin = new System.Windows.Forms.Padding(0);
             this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(207, 22);
+            this.textBox10.Size = new System.Drawing.Size(208, 22);
             this.textBox10.TabIndex = 39;
             // 
             // textBox11
             // 
             this.textBox11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox11.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox11.Location = new System.Drawing.Point(110, 169);
+            this.textBox11.Location = new System.Drawing.Point(109, 169);
             this.textBox11.Margin = new System.Windows.Forms.Padding(0);
             this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(207, 22);
+            this.textBox11.Size = new System.Drawing.Size(208, 22);
             this.textBox11.TabIndex = 39;
             // 
             // splitContainer1
