@@ -126,7 +126,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\FuctionServ.cs" />
+    <Compile Include="Services\FunctionServ.cs" />
     <Compile Include="Util\DataGridViewUtil.cs" />
     <EmbeddedResource Include="BaseForms\Base2.resx">
       <DependentUpon>Base2.cs</DependentUpon>

@@ -24,9 +24,15 @@ namespace MES_Team3
             //ID와 Pwd 유효성 체크
 
             //main 창 띄우기
+            
             frmMain frm = new frmMain(txtID.Text);
             frm.Show();
             this.Hide();
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            txtID.Text = "0324234";
         }
     }
 }

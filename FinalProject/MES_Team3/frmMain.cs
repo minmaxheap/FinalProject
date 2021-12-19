@@ -18,29 +18,18 @@ namespace MES_Team3
         Panel panel1;
         TreeView treeView1;
         Button btn;
-
+        FunctionServ serv;
         public frmMain(string ID)
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
             userID = ID;
-            lblID.Text = userID;
+            lblID.Text = userID + " 님";
         }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
             //tsEmpMg.Tag = "frmEmpMg";
-            //tsAdvMg.Tag = "frmAdvMg";
-            //tsCameraMg.Tag = "frmCameraMg";
-            //tsInfo.Tag = "frmEmpMyInfo";
-            //tsMemMg.Tag = "frmMemMg";
-            //tsNonMemOrderMg.Tag = "frmNonMemOrderMg";
-            //tsMemOrderMg.Tag = "frmMemOrderMg";
-            //tsLendingMg.Tag = "frmLendingMg";
-            //tsPrdMg.Tag = "frmPrdMg";
-            //tsResMg.Tag = "frmResMg";
-            //tsCodeMg.Tag = "frmCodeMg";
-
 
             //tabControl1.Visible = false;
             //foreach (Control control in this.Controls)
@@ -56,36 +45,35 @@ namespace MES_Team3
             //    }
             //}
 
-            //DrawMenuPanel();
+            serv = new FunctionServ();
+            dtMenu = serv.GetUserFunctionList(this.userID);
+            DrawMenuPanel();
 
-            //btn.PerformClick();
 
-            frmFunction frm = new frmFunction();
-            frm.MdiParent = this;
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.WindowState = FormWindowState.Maximized;
-            frm.ControlBox = false;
-
-            frm.Show();
         }
 
         private void DrawMenuPanel()
         {
             DataView dv1 = new DataView(dtMenu);
-            dv1.RowFilter = "menu_level = 1";
-            dv1.Sort = "menu_sort";
+            dv1.RowFilter = "FUNCTION_LEVEL = 1";
             for (int i = 0; i < dv1.Count; i++)
             {
                 Button p_menu = new Button();
-                p_menu.Name = $"p_btn{dv1[i]["menu_id"].ToString()}";
-                p_menu.Text = dv1[i]["menu_name"].ToString();
+                p_menu.Name = $"p_btn{dv1[i]["FUNCTION_CODE"].ToString()}";
+                p_menu.Text = dv1[i]["FUNCTION_NAME"].ToString();
+                p_menu.TextAlign = ContentAlignment.MiddleCenter;
                 p_menu.Dock = DockStyle.Top;
-                p_menu.Location = new Point(0, 0);
-                p_menu.Margin = new Padding(0);
-                p_menu.Size = new System.Drawing.Size(196, 36);
+                p_menu.Location = new Point(0);
+                p_menu.Margin = new Padding(3,4,3,4);
+                p_menu.Size = new Size(130, 41);
                 p_menu.Tag = i.ToString();
+                p_menu.Font = new Font("나눔스퀘어OTF Bold", 12F, FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+                p_menu.BackColor = Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+                p_menu.FlatStyle = FlatStyle.Flat;
+                p_menu.UseVisualStyleBackColor = false;
                 p_menu.Click += button_Click;
 
+    
                 flowLayoutPanel1.Controls.Add(p_menu);
 
                 if (i == 0)
@@ -97,17 +85,19 @@ namespace MES_Team3
             panel1 = new Panel();
             panel1.Dock = DockStyle.Bottom;
             panel1.Location = new Point(3, (dv1.Count * 40));
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(193, 300);
+            panel1.Size = new Size(130, 300);
             flowLayoutPanel1.Controls.Add(this.panel1);
 
             treeView1 = new TreeView();
             treeView1.Dock = DockStyle.Fill;
             treeView1.Location = new Point(0, 0);
             treeView1.Name = "treeView1";
-            treeView1.Size = new System.Drawing.Size(193, 300);
+            treeView1.Size = new Size(125, 300);
             treeView1.AfterSelect += TreeView1_AfterSelect;
             panel1.Controls.Add(this.treeView1);
+       
         }
 
         private void TreeView1_AfterSelect(object sender, TreeViewEventArgs e)
@@ -135,15 +125,16 @@ namespace MES_Team3
             {
                 Form frm = (Form)Activator.CreateInstance(frmType);
                 frm.MdiParent = this;
-                frm.WindowState = FormWindowState.Maximized;
+             
+                //frm.ControlBox = false;
                 frm.FormBorderStyle = FormBorderStyle.None;
-                frm.ControlBox = false;
+                frm.WindowState = FormWindowState.Maximized;
                 frm.Text = formText;
                 frm.Show();
             }
             catch
             {
-                MessageBox.Show("등록된 프로그램이 존재하지 않습니다.");
+                MessageBox.Show("선택한 기능이 존재하지 않습니다.");
 
             }
 
@@ -221,8 +212,8 @@ namespace MES_Team3
             //dv2.Sort = "";
             for (int k = 0; k < dv2.Count; k++)
             {
-                TreeNode c_node = new TreeNode(dv2[k]["menu_name"].ToString());
-                c_node.Tag = dv2[k]["program_name"].ToString();
+                TreeNode c_node = new TreeNode(dv2[k]["FUNCTION_NAME"].ToString());
+                c_node.Tag = dv2[k]["PROGRAM_NAME"].ToString();
                 treeView1.Nodes.Add(c_node);
             }
         }
@@ -241,6 +232,15 @@ namespace MES_Team3
                 e.Cancel = true;
                 return;
             }
+        }
+
+        private void menuStrip1_ItemAdded(object sender, ToolStripItemEventArgs e)
+        {
+            //if (e.Item.Text == ""
+            //    || e.Item.Text == "닫기(&C)"
+            //    || e.Item.Text == "최소화(&N)"
+            //    || e.Item.Text == "이전 크기로(&R)")
+            //    e.Item.Visible = false;
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MES_Team3
 {
-    public class FuctionServ
+    public class FunctionServ
     {
         public DataTable GetFuncList()
         {

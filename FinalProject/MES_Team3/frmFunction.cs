@@ -32,6 +32,7 @@ namespace MES_Team3
             panel7.Controls.Remove(textBox2);
             panel6.Controls.Remove(button8);
             panel4.Controls.Remove(csDataGridView1);
+            this.WindowState = FormWindowState.Maximized; //이상하다 왜 이 코드가 빠지면 맨 처음에 최대화로 안 열리지?
 
 
         }

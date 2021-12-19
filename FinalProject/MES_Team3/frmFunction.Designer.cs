@@ -51,23 +51,18 @@ namespace MES_Team3
             this.panel3.Controls.SetChildIndex(this.textBox1, 0);
             this.panel3.Controls.SetChildIndex(this.button3, 0);
             // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(100, 116);
-            // 
             // frmFunction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.ClientSize = new System.Drawing.Size(1184, 706);
             this.ControlBox = false;
+            this.Location = new System.Drawing.Point(0, 0);
             this.Name = "frmFunction";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmFunction_Load);
             this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);

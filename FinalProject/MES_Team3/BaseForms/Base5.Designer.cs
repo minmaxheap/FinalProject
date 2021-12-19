@@ -80,6 +80,7 @@ namespace MES_Team3.BaseForms
             // 
             // panel4
             // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.label13);
             this.panel4.Controls.Add(this.textBox13);
             this.panel4.Controls.Add(this.label11);
@@ -231,7 +232,7 @@ namespace MES_Team3.BaseForms
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1094, 31);
+            this.label1.Size = new System.Drawing.Size(1092, 31);
             this.label1.TabIndex = 17;
             this.label1.Text = " 생산 LOT 정보";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -284,6 +285,7 @@ namespace MES_Team3.BaseForms
             // 
             // panel8
             // 
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel8.Controls.Add(this.panel5);
             this.panel8.Controls.Add(this.panel3);
             this.panel8.Controls.Add(this.panel2);
@@ -303,6 +305,7 @@ namespace MES_Team3.BaseForms
             // 
             // panel5
             // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.label17);
             this.panel5.Controls.Add(this.label8);
             this.panel5.Location = new System.Drawing.Point(734, 156);
@@ -328,13 +331,14 @@ namespace MES_Team3.BaseForms
             this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(0, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(143, 31);
+            this.label8.Size = new System.Drawing.Size(141, 31);
             this.label8.TabIndex = 17;
             this.label8.Text = "불량 수량";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel3
             // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.label16);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Location = new System.Drawing.Point(550, 156);
@@ -360,13 +364,14 @@ namespace MES_Team3.BaseForms
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(0, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(143, 31);
+            this.label7.Size = new System.Drawing.Size(141, 31);
             this.label7.TabIndex = 17;
             this.label7.Text = "생산 수량";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
             // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label15);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Location = new System.Drawing.Point(366, 156);
@@ -392,13 +397,14 @@ namespace MES_Team3.BaseForms
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(0, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(143, 31);
+            this.label5.Size = new System.Drawing.Size(141, 31);
             this.label5.TabIndex = 17;
             this.label5.Text = "지시 수량";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(182, 156);
@@ -424,7 +430,7 @@ namespace MES_Team3.BaseForms
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(143, 31);
+            this.label4.Size = new System.Drawing.Size(141, 31);
             this.label4.TabIndex = 17;
             this.label4.Text = "지시 상태";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -489,7 +495,7 @@ namespace MES_Team3.BaseForms
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(0, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(1094, 31);
+            this.label6.Size = new System.Drawing.Size(1092, 31);
             this.label6.TabIndex = 17;
             this.label6.Text = "작업지시 정보";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -503,8 +509,10 @@ namespace MES_Team3.BaseForms
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel8);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Base5";
             this.Text = "Base5";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel6.ResumeLayout(false);
