@@ -193,7 +193,7 @@ namespace MES_Team3
             treeView1.Nodes.Clear();
 
             DataView dv2 = new DataView(dtMenu);
-            dv2.RowFilter = "FUNCTION_LEVEL=2";
+            dv2.RowFilter = $"FUNCTION_LEVEL=2 and PNT_FUNCTION_CODE = '{btn.Name.Replace("p_btn", "")}'";
             for (int k = 0; k < dv2.Count; k++)
             {
                 TreeNode c_node = new TreeNode(dv2[k]["FUNCTION_NAME"].ToString());

@@ -91,8 +91,7 @@ select distinct P.FUNCTION_CODE, P.FUNCTION_NAME, P.SHORT_CUT_KEY, P.ICON_INDEX,
 from FUNCTION_MST p inner join FUNCTION_MST c on p.FUNCTION_CODE = C.PNT_FUNCTION_CODE
 where c.FUNCTION_CODE in (select FUNCTION_CODE
 from USER_MST U inner join FUNCTION_USER_GROUP_REL A on U.USER_GROUP_CODE = a.USER_GROUP_CODE
-where U.USER_ID = @USER_ID
-)";
+where U.USER_ID = @USER_ID)";
 
 
             DataTable dt = new DataTable();
