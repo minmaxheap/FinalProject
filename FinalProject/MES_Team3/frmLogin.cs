@@ -12,11 +12,21 @@ namespace MES_Team3
 {
     public partial class frmLogin : Form
     {
-        public string ID { get; set; }
+      
     
         public frmLogin()
         {
             InitializeComponent();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            //ID와 Pwd 유효성 체크
+
+            //main 창 띄우기
+            frmMain frm = new frmMain(txtID.Text);
+            frm.Show();
+            this.Hide();
         }
     }
 }

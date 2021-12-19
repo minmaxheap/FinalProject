@@ -1,5 +1,5 @@
 ﻿
-namespace MES_Team3
+namespace MES_Team3.BaseForms
 {
     partial class frmSearch
     {
@@ -29,10 +29,9 @@ namespace MES_Team3
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.button7 = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.button8 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -43,6 +42,7 @@ namespace MES_Team3
             this.label2 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -53,90 +53,47 @@ namespace MES_Team3
             this.label14 = new System.Windows.Forms.Label();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // button7
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.tableLayoutPanel1);
-            this.panel1.Location = new System.Drawing.Point(1, 1);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(324, 255);
-            this.panel1.TabIndex = 29;
+            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button7.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button7.Location = new System.Drawing.Point(197, 3);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(47, 27);
+            this.button7.TabIndex = 27;
+            this.button7.Text = "닫기";
+            this.button7.UseVisualStyleBackColor = false;
             // 
-            // panel2
+            // panel3
             // 
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(324, 31);
-            this.panel2.TabIndex = 30;
+            this.panel3.Controls.Add(this.button8);
+            this.panel3.Controls.Add(this.button7);
+            this.panel3.Location = new System.Drawing.Point(8, 261);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(305, 38);
+            this.panel3.TabIndex = 32;
             // 
-            // label5
+            // button8
             // 
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(0, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(324, 31);
-            this.label5.TabIndex = 29;
-            this.label5.Text = "▶ 조회 조건";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 196F));
-            this.tableLayoutPanel1.Controls.Add(this.label11, 0, 9);
-            this.tableLayoutPanel1.Controls.Add(this.textBox7, 1, 9);
-            this.tableLayoutPanel1.Controls.Add(this.label15, 0, 8);
-            this.tableLayoutPanel1.Controls.Add(this.textBox4, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBox3, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBox5, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label10, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.textBox6, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.label12, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.textBox8, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.label13, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.textBox9, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.label14, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.textBox10, 1, 7);
-            this.tableLayoutPanel1.Controls.Add(this.textBox11, 1, 8);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 34);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 10;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(318, 212);
-            this.tableLayoutPanel1.TabIndex = 29;
+            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button8.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button8.Location = new System.Drawing.Point(45, 3);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(47, 27);
+            this.button8.TabIndex = 26;
+            this.button8.Text = "확인";
+            this.button8.UseVisualStyleBackColor = false;
             // 
             // label11
             // 
@@ -244,6 +201,18 @@ namespace MES_Team3
             this.textBox2.Size = new System.Drawing.Size(196, 22);
             this.textBox2.TabIndex = 29;
             // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label5.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label5.Location = new System.Drawing.Point(0, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(324, 31);
+            this.label5.TabIndex = 29;
+            this.label5.Text = "▶ 조회 조건";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // textBox5
             // 
             this.textBox5.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -348,65 +317,95 @@ namespace MES_Team3
             this.textBox11.Size = new System.Drawing.Size(196, 22);
             this.textBox11.TabIndex = 39;
             // 
-            // panel3
+            // panel2
             // 
-            this.panel3.Controls.Add(this.button8);
-            this.panel3.Controls.Add(this.button7);
-            this.panel3.Location = new System.Drawing.Point(8, 262);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(305, 38);
-            this.panel3.TabIndex = 30;
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(324, 31);
+            this.panel2.TabIndex = 30;
             // 
-            // button8
+            // tableLayoutPanel1
             // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button8.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button8.Location = new System.Drawing.Point(45, 3);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(47, 27);
-            this.button8.TabIndex = 26;
-            this.button8.Text = "확인";
-            this.button8.UseVisualStyleBackColor = false;
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 196F));
+            this.tableLayoutPanel1.Controls.Add(this.label11, 0, 9);
+            this.tableLayoutPanel1.Controls.Add(this.textBox7, 1, 9);
+            this.tableLayoutPanel1.Controls.Add(this.label15, 0, 8);
+            this.tableLayoutPanel1.Controls.Add(this.textBox4, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.textBox3, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.textBox5, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label10, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.textBox6, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.label12, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.textBox8, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.label13, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.textBox9, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.label14, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.textBox10, 1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.textBox11, 1, 8);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 34);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 10;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(318, 212);
+            this.tableLayoutPanel1.TabIndex = 29;
             // 
-            // button7
+            // panel1
             // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button7.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button7.Location = new System.Drawing.Point(197, 3);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(47, 27);
-            this.button7.TabIndex = 27;
-            this.button7.Text = "닫기";
-            this.button7.UseVisualStyleBackColor = false;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.tableLayoutPanel1);
+            this.panel1.Location = new System.Drawing.Point(1, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(324, 255);
+            this.panel1.TabIndex = 31;
             // 
-            // frmSearch
+            // frmSearch2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
-            this.ClientSize = new System.Drawing.Size(325, 305);
+            this.ClientSize = new System.Drawing.Size(328, 305);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmSearch";
-            this.Text = "frmSearch";
-            this.panel1.ResumeLayout(false);
+            this.Name = "frmSearch2";
+            this.Text = "frmSearch2";
+            this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        public System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Panel panel3;
+        public System.Windows.Forms.Button button8;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label15;
@@ -417,6 +416,7 @@ namespace MES_Team3
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox6;
@@ -427,8 +427,8 @@ namespace MES_Team3
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.Panel panel3;
-        public System.Windows.Forms.Button button8;
-        public System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

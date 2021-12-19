@@ -48,6 +48,7 @@ namespace MES_Team3
             this.button7.TabIndex = 27;
             this.button7.Text = "로그인";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // label5
             // 

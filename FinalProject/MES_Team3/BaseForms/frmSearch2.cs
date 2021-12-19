@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MES_Team3.BaseForms
+namespace MES_Team3
 {
-    public partial class frmSearch2 : Form
+    public partial class frmSearch : Form
     {
-        public frmSearch2()
+        public frmSearch()
         {
             InitializeComponent();
         }

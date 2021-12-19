@@ -40,6 +40,7 @@ namespace MES_Team3
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.lblID = new System.Windows.Forms.Label();
             this.tabControl1 = new MES_Team3.csTabControl();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -184,6 +185,18 @@ namespace MES_Team3
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // lblID
+            // 
+            this.lblID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
+            this.lblID.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblID.ForeColor = System.Drawing.Color.Black;
+            this.lblID.Location = new System.Drawing.Point(848, 0);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(93, 24);
+            this.lblID.TabIndex = 18;
+            this.lblID.Text = "ID";
+            this.lblID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // tabControl1
             // 
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -200,6 +213,7 @@ namespace MES_Team3
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1282, 663);
+            this.Controls.Add(this.lblID);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
@@ -209,6 +223,7 @@ namespace MES_Team3
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmMain";
             this.Text = "메인화면";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.MdiChildActivate += new System.EventHandler(this.frmMain_MdiChildActivate);
             this.flowLayoutPanel1.ResumeLayout(false);
@@ -230,6 +245,7 @@ namespace MES_Team3
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private csTabControl tabControl1;
+        public System.Windows.Forms.Label lblID;
     }
 }
 

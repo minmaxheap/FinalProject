@@ -18,10 +18,13 @@ namespace MES_Team3
         Panel panel1;
         TreeView treeView1;
         Button btn;
-        public frmMain()
+
+        public frmMain(string ID)
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
+            userID = ID;
+            lblID.Text = userID;
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -62,7 +65,7 @@ namespace MES_Team3
             frm.FormBorderStyle = FormBorderStyle.None;
             frm.WindowState = FormWindowState.Maximized;
             frm.ControlBox = false;
-          
+
             frm.Show();
         }
 
@@ -205,7 +208,7 @@ namespace MES_Team3
 
         }
 
-        private void button_Click(object sender, EventArgs e) 
+        private void button_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
             flowLayoutPanel1.Controls.SetChildIndex(panel1, Convert.ToInt32(btn.Tag) + 1);
@@ -221,6 +224,22 @@ namespace MES_Team3
                 TreeNode c_node = new TreeNode(dv2[k]["menu_name"].ToString());
                 c_node.Tag = dv2[k]["program_name"].ToString();
                 treeView1.Nodes.Add(c_node);
+            }
+        }
+
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("프로그램을 종료하시겠습니까?", "종료확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+
+                this.Dispose(true);
+                Application.Exit();
+
+            }
+            else
+            {
+                e.Cancel = true;
+                return;
             }
         }
     }
