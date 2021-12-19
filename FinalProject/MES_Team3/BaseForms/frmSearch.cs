@@ -8,14 +8,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MES_Team3.BaseForms
+namespace MES_Team3
 {
     public partial class frmSearch : Form
     {
-        
+
         public frmSearch()
         {
             InitializeComponent();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void frmSearch_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

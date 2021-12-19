@@ -1,5 +1,5 @@
 ﻿
-namespace MES_Team3.BaseForms
+namespace MES_Team3
 {
     partial class frmSearch
     {
@@ -29,6 +29,7 @@ namespace MES_Team3.BaseForms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSearch));
             this.button7 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
@@ -52,12 +53,14 @@ namespace MES_Team3.BaseForms
             this.lbl2 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.lbl1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // button7
@@ -71,12 +74,13 @@ namespace MES_Team3.BaseForms
             this.button7.TabIndex = 27;
             this.button7.Text = "닫기";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.button8);
             this.panel3.Controls.Add(this.button7);
-            this.panel3.Location = new System.Drawing.Point(8, 261);
+            this.panel3.Location = new System.Drawing.Point(10, 264);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(305, 38);
             this.panel3.TabIndex = 32;
@@ -98,7 +102,7 @@ namespace MES_Team3.BaseForms
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
             this.panel1.Controls.Add(this.panel7);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(1, 0);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(324, 255);
             this.panel1.TabIndex = 31;
@@ -317,6 +321,15 @@ namespace MES_Team3.BaseForms
             this.lbl1.TabIndex = 38;
             this.lbl1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(324, 31);
+            this.panel2.TabIndex = 30;
+            // 
             // label5
             // 
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
@@ -329,31 +342,35 @@ namespace MES_Team3.BaseForms
             this.label5.Text = "▶ 조회 조건";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // panel2
+            // panel4
             // 
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(324, 31);
-            this.panel2.TabIndex = 30;
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.panel3);
+            this.panel4.Controls.Add(this.panel1);
+            this.panel4.Location = new System.Drawing.Point(1, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(333, 312);
+            this.panel4.TabIndex = 33;
             // 
             // frmSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
-            this.ClientSize = new System.Drawing.Size(328, 305);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(335, 320);
+            this.Controls.Add(this.panel4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSearch";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "frmSearch2";
+            this.Load += new System.EventHandler(this.frmSearch_Load);
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -385,5 +402,6 @@ namespace MES_Team3.BaseForms
         public System.Windows.Forms.Label label5;
         public System.Windows.Forms.Panel panel3;
         public System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel4;
     }
 }

@@ -45,6 +45,10 @@ namespace MES_Team3
         {
             frmSearch frm = new frmSearch();
             
+            frm.StartPosition = FormStartPosition.CenterParent;
+            frm.lbl1.Text = "기능 코드";
+            frm.lbl2.Text = "기능명";
+           
             frm.ShowDialog();
 
         }
