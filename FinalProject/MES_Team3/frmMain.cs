@@ -17,7 +17,6 @@ namespace MES_Team3
         DataTable dtMenu;
         Panel panel1;
         TreeView treeView1;
-        Button btn;
         FunctionServ serv;
         public frmMain(string ID)
         {
@@ -29,22 +28,7 @@ namespace MES_Team3
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            //tsEmpMg.Tag = "frmEmpMg";
-
-            //tabControl1.Visible = false;
-            //foreach (Control control in this.Controls)
-            //{
-
-            //    MdiClient client = control as MdiClient;
-            //    if (!(client == null))
-            //    {
-
-            //        client.BackColor = Color.AliceBlue;
-
-            //        return;
-            //    }
-            //}
-
+            tabControl1.Visible = false;
             serv = new FunctionServ();
             dtMenu = serv.GetUserFunctionList(this.userID);
             DrawMenuPanel();
@@ -78,7 +62,7 @@ namespace MES_Team3
 
                 if (i == 0)
                 {
-                    btn = p_menu;
+                    Button btn = p_menu;
                 }
             }
 
@@ -165,6 +149,7 @@ namespace MES_Team3
                 if (!tabControl1.Visible)
                     tabControl1.Visible = true;
             }
+            
         }
 
         private void ActiveMdiChild_FormClosed(object sender, FormClosedEventArgs e)
@@ -209,7 +194,6 @@ namespace MES_Team3
 
             DataView dv2 = new DataView(dtMenu);
             dv2.RowFilter = "FUNCTION_LEVEL=2";
-            //dv2.Sort = "";
             for (int k = 0; k < dv2.Count; k++)
             {
                 TreeNode c_node = new TreeNode(dv2[k]["FUNCTION_NAME"].ToString());
@@ -234,13 +218,6 @@ namespace MES_Team3
             }
         }
 
-        private void menuStrip1_ItemAdded(object sender, ToolStripItemEventArgs e)
-        {
-            //if (e.Item.Text == ""
-            //    || e.Item.Text == "닫기(&C)"
-            //    || e.Item.Text == "최소화(&N)"
-            //    || e.Item.Text == "이전 크기로(&R)")
-            //    e.Item.Visible = false;
-        }
+     
     }
 }

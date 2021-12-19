@@ -55,7 +55,6 @@ namespace MES_Team3
             this.menuStrip1.Size = new System.Drawing.Size(1282, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemAdded += new System.Windows.Forms.ToolStripItemEventHandler(this.menuStrip1_ItemAdded);
             // 
             // lblID
             // 
@@ -80,6 +79,7 @@ namespace MES_Team3
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1141, 20);
             this.tabControl1.TabIndex = 6;
+            this.tabControl1.Visible = false;
             this.tabControl1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabControl1_MouseDown);
             // 
             // frmMain
