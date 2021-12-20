@@ -17,6 +17,7 @@ namespace MES_Team3
 
         private void frmEquipment_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
             ComboBox cbo = new ComboBox();
             cbo.FormattingEnabled = true;
             cbo.Location = textBox4.Location;
@@ -26,7 +27,7 @@ namespace MES_Team3
             panel7.Controls.Remove(textBox4);
             panel7.Controls.Add(cbo);
         
-            this.WindowState = FormWindowState.Maximized;
+            
         }
     }
 }

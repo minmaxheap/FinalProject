@@ -55,21 +55,25 @@ namespace MES_Team3
             this.panel3.Controls.SetChildIndex(this.textBox1, 0);
             this.panel3.Controls.SetChildIndex(this.button3, 0);
             // 
+            // label12
+            // 
+            this.label12.Text = "변경 시간";
+            // 
             // label11
             // 
-            this.label11.Text = "변경 사용자";
+            this.label11.Text = "생성 사용자";
             // 
             // label10
             // 
-            this.label10.Text = "변경 시간";
+            this.label10.Text = "생성 시간";
             // 
             // label9
             // 
-            this.label9.Text = "생성 사용자";
+            this.label9.Text = "기능 레벨";
             // 
             // label8
             // 
-            this.label8.Text = "생성 시간";
+            this.label8.Text = "상위 코드";
             // 
             // label7
             // 
