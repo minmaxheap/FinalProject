@@ -42,6 +42,10 @@ namespace MES_Team3
             this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(10, 15);
+            // 
             // button3
             // 
             this.button3.Click += new System.EventHandler(this.button3_Click);

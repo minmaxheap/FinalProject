@@ -43,7 +43,11 @@ namespace MES_Team3
 
             FunctionServ serv = new FunctionServ();
             DataTable dtfunc = serv.GetFuncList();
-         
+
+
+           // base.NewTextBox(txtUpdateID, new Size(216, 22), new Point(textBox10.Location.X, textBox10.Location.Y + label12.Height));
+           //이렇게 메소드 만들어놓고 하면 되겠다! 
+
 
             //FUNCTION_CODE, FUNCTION_NAME, SHORT_CUT_KEY, ICON_INDEX, PNT_FUNCTION_CODE, FUNCTION_LEVEL, PROGRAM_NAME, CREATE_TIME, CREATE_USER_ID, UPDATE_TIME, UPDATE_USER_ID
             DataGridViewUtil.SetInitGridView(csDataGridView1);
