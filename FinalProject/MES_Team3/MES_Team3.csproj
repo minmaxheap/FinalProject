@@ -88,11 +88,29 @@
     <Compile Include="Controls\csDataGridView.designer.cs">
       <DependentUpon>csDataGridView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\csLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\csLabel.Designer.cs">
+      <DependentUpon>csLabel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\csTabControl.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\csTabControl.designer.cs">
       <DependentUpon>csTabControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\csTableLayout.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\csTableLayout.Designer.cs">
+      <DependentUpon>csTableLayout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\csTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\csTextBox.Designer.cs">
+      <DependentUpon>csTextBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\NumTextBox.cs">
       <SubType>Component</SubType>
