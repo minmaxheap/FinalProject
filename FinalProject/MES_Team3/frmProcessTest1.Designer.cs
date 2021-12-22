@@ -51,7 +51,7 @@ namespace MES_Team3
             // 
             // label1
             // 
-            this.label1.Size = new System.Drawing.Size(878, 39);
+            //this.label1.Size = new System.Drawing.Size(878, 39);
             // 
             // propertyPanel
             // 
