@@ -74,6 +74,20 @@ namespace MES_Team3
             this.panel4 = new System.Windows.Forms.Panel();
             this.csDataGridView1 = new MES_Team3.csDataGridView();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
             button2 = new System.Windows.Forms.Button();
             button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -252,19 +266,31 @@ namespace MES_Team3
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.panel7);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(27, 82);
+            this.panel1.Location = new System.Drawing.Point(3, 82);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(324, 528);
+            this.panel1.Size = new System.Drawing.Size(348, 528);
             this.panel1.TabIndex = 28;
             // 
             // panel7
             // 
+            this.panel7.Controls.Add(this.textBox17);
+            this.panel7.Controls.Add(this.label18);
+            this.panel7.Controls.Add(this.textBox16);
+            this.panel7.Controls.Add(this.label17);
+            this.panel7.Controls.Add(this.textBox15);
+            this.panel7.Controls.Add(this.label16);
+            this.panel7.Controls.Add(this.textBox14);
+            this.panel7.Controls.Add(this.label15);
+            this.panel7.Controls.Add(this.textBox13);
+            this.panel7.Controls.Add(this.label14);
+            this.panel7.Controls.Add(this.textBox12);
+            this.panel7.Controls.Add(this.label13);
+            this.panel7.Controls.Add(this.textBox11);
+            this.panel7.Controls.Add(this.label6);
             this.panel7.Controls.Add(this.textBox10);
             this.panel7.Controls.Add(this.label12);
             this.panel7.Controls.Add(this.textBox9);
@@ -483,7 +509,7 @@ namespace MES_Team3
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(322, 31);
+            this.panel2.Size = new System.Drawing.Size(346, 31);
             this.panel2.TabIndex = 30;
             // 
             // label5
@@ -493,7 +519,7 @@ namespace MES_Team3
             this.label5.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label5.Location = new System.Drawing.Point(0, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(322, 31);
+            this.label5.Size = new System.Drawing.Size(346, 31);
             this.label5.TabIndex = 29;
             this.label5.Text = "▶ 속성";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -516,7 +542,7 @@ namespace MES_Team3
             this.splitContainer1.Panel2.Controls.Add(this.panel6);
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
             this.splitContainer1.Size = new System.Drawing.Size(1184, 706);
-            this.splitContainer1.SplitterDistance = 817;
+            this.splitContainer1.SplitterDistance = 814;
             this.splitContainer1.SplitterWidth = 1;
             this.splitContainer1.TabIndex = 34;
             // 
@@ -546,9 +572,6 @@ namespace MES_Team3
             // 
             // panel4
             // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.csDataGridView1);
             this.panel4.Controls.Add(this.label1);
@@ -608,6 +631,153 @@ namespace MES_Team3
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(343, 66);
             this.panel6.TabIndex = 29;
+            // 
+            // textBox11
+            // 
+            this.textBox11.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox11.Location = new System.Drawing.Point(100, 198);
+            this.textBox11.Margin = new System.Windows.Forms.Padding(0);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(216, 22);
+            this.textBox11.TabIndex = 57;
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label6.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label6.Location = new System.Drawing.Point(0, 198);
+            this.label6.Margin = new System.Windows.Forms.Padding(0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(100, 22);
+            this.label6.TabIndex = 56;
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBox12
+            // 
+            this.textBox12.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox12.Location = new System.Drawing.Point(100, 220);
+            this.textBox12.Margin = new System.Windows.Forms.Padding(0);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(216, 22);
+            this.textBox12.TabIndex = 59;
+            // 
+            // label13
+            // 
+            this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label13.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label13.Location = new System.Drawing.Point(0, 220);
+            this.label13.Margin = new System.Windows.Forms.Padding(0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(100, 22);
+            this.label13.TabIndex = 58;
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBox13
+            // 
+            this.textBox13.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox13.Location = new System.Drawing.Point(100, 242);
+            this.textBox13.Margin = new System.Windows.Forms.Padding(0);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(216, 22);
+            this.textBox13.TabIndex = 61;
+            // 
+            // label14
+            // 
+            this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label14.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label14.Location = new System.Drawing.Point(0, 242);
+            this.label14.Margin = new System.Windows.Forms.Padding(0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(100, 22);
+            this.label14.TabIndex = 60;
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBox14
+            // 
+            this.textBox14.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox14.Location = new System.Drawing.Point(100, 264);
+            this.textBox14.Margin = new System.Windows.Forms.Padding(0);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new System.Drawing.Size(216, 22);
+            this.textBox14.TabIndex = 63;
+            // 
+            // label15
+            // 
+            this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label15.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label15.Location = new System.Drawing.Point(0, 264);
+            this.label15.Margin = new System.Windows.Forms.Padding(0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(100, 22);
+            this.label15.TabIndex = 62;
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBox15
+            // 
+            this.textBox15.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox15.Location = new System.Drawing.Point(100, 286);
+            this.textBox15.Margin = new System.Windows.Forms.Padding(0);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(216, 22);
+            this.textBox15.TabIndex = 65;
+            // 
+            // label16
+            // 
+            this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.label16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label16.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label16.Location = new System.Drawing.Point(0, 286);
+            this.label16.Margin = new System.Windows.Forms.Padding(0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(100, 22);
+            this.label16.TabIndex = 64;
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBox16
+            // 
+            this.textBox16.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox16.Location = new System.Drawing.Point(100, 308);
+            this.textBox16.Margin = new System.Windows.Forms.Padding(0);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.Size = new System.Drawing.Size(216, 22);
+            this.textBox16.TabIndex = 67;
+            // 
+            // label17
+            // 
+            this.label17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.label17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label17.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label17.Location = new System.Drawing.Point(0, 308);
+            this.label17.Margin = new System.Windows.Forms.Padding(0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(100, 22);
+            this.label17.TabIndex = 66;
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBox17
+            // 
+            this.textBox17.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox17.Location = new System.Drawing.Point(100, 330);
+            this.textBox17.Margin = new System.Windows.Forms.Padding(0);
+            this.textBox17.Name = "textBox17";
+            this.textBox17.Size = new System.Drawing.Size(216, 22);
+            this.textBox17.TabIndex = 69;
+            // 
+            // label18
+            // 
+            this.label18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label18.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label18.Location = new System.Drawing.Point(0, 330);
+            this.label18.Margin = new System.Windows.Forms.Padding(0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(100, 22);
+            this.label18.TabIndex = 68;
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Base1
             // 
@@ -681,5 +851,19 @@ namespace MES_Team3
         public System.Windows.Forms.TextBox textBox3;
         public System.Windows.Forms.Label label4;
         public csDataGridView csDataGridView1;
+        public System.Windows.Forms.TextBox textBox17;
+        public System.Windows.Forms.Label label18;
+        public System.Windows.Forms.TextBox textBox16;
+        public System.Windows.Forms.Label label17;
+        public System.Windows.Forms.TextBox textBox15;
+        public System.Windows.Forms.Label label16;
+        public System.Windows.Forms.TextBox textBox14;
+        public System.Windows.Forms.Label label15;
+        public System.Windows.Forms.TextBox textBox13;
+        public System.Windows.Forms.Label label14;
+        public System.Windows.Forms.TextBox textBox12;
+        public System.Windows.Forms.Label label13;
+        public System.Windows.Forms.TextBox textBox11;
+        public System.Windows.Forms.Label label6;
     }
 }

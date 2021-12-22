@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseForms\Base1_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForms\Base1_1.Designer.cs">
+      <DependentUpon>Base1_1.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaseForms\Base3.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +165,9 @@
     <Compile Include="Services\FunctionServ.cs" />
     <Compile Include="Util\DataGridViewUtil.cs" />
     <Compile Include="Util\TableLayoutUtil.cs" />
+    <EmbeddedResource Include="BaseForms\Base1_1.resx">
+      <DependentUpon>Base1_1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BaseForms\Base2.resx">
       <DependentUpon>Base2.cs</DependentUpon>
     </EmbeddedResource>
