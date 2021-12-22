@@ -11,6 +11,8 @@ namespace MES_Team3
 {
     public partial class frmProduct : MES_Team3.BaseForms.Base1_1
     {
+        //public List<Bar> barlist;
+        
         public frmProduct()
         {
             InitializeComponent();
@@ -35,6 +37,18 @@ namespace MES_Team3
             SearchPanel = false;
 
 
+            //barlist = new List<Bar>();
+            //for (int i = 1; i < 10; i++)
+            //{
+            //    Bar bar = new Bar();
+            //    bar.barvalue = "BarObject " + i;
+            //    barlist.Add(bar);
+            //    //comboBox1.Items.Add(bar);
+            //}
+            //ProductVO vo = new ProductVO();
+            //vo.PRODUCT_TYPE = new Bar();
+            //vo.CUSTOMER_CODE = new Bar();
+            //vo.VENDOR_CODE = new Bar();
         }
 
         
@@ -109,4 +123,6 @@ namespace MES_Team3
             pgProperty.PropertySort = PropertySort.NoSort;
         }
     }
+
+
 }
