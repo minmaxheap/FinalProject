@@ -22,6 +22,8 @@ namespace MES_Team3
             ProductServ serv = new ProductServ();
             DataTable dt = serv.GetProductsList();
             csDataGridView1.DataSource = dt;
+            SearchPanel = false;
+          
             
          
         }
@@ -96,8 +98,5 @@ namespace MES_Team3
            
            
         }
-
-
-
     }
 }

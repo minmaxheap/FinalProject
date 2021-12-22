@@ -47,10 +47,11 @@ namespace MES_Team3.BaseForms
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.searchPanel = new System.Windows.Forms.Panel();
+            this.propertyPanel = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.btnPanel = new System.Windows.Forms.Button();
+            this.lblPanel = new System.Windows.Forms.Label();
             button2 = new System.Windows.Forms.Button();
             button1 = new System.Windows.Forms.Button();
             this.panel6.SuspendLayout();
@@ -61,8 +62,7 @@ namespace MES_Team3.BaseForms
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // button2
@@ -240,6 +240,7 @@ namespace MES_Team3.BaseForms
             this.button3.TabIndex = 19;
             this.button3.Text = "검색 조건";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // textBox1
             // 
@@ -260,7 +261,9 @@ namespace MES_Team3.BaseForms
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.panel1);
+            this.splitContainer1.Panel2.Controls.Add(this.searchPanel);
+            this.splitContainer1.Panel2.Controls.Add(this.propertyPanel);
+            this.splitContainer1.Panel2.Controls.Add(this.panel7);
             this.splitContainer1.Size = new System.Drawing.Size(1144, 524);
             this.splitContainer1.SplitterDistance = 771;
             this.splitContainer1.TabIndex = 41;
@@ -287,46 +290,65 @@ namespace MES_Team3.BaseForms
             this.label1.Text = "title";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel1
+            // searchPanel
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.panel7);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(369, 524);
-            this.panel1.TabIndex = 29;
+            this.searchPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
+            this.searchPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.searchPanel.Location = new System.Drawing.Point(6, 37);
+            this.searchPanel.Name = "searchPanel";
+            this.searchPanel.Size = new System.Drawing.Size(360, 484);
+            this.searchPanel.TabIndex = 31;
+            // 
+            // propertyPanel
+            // 
+            this.propertyPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.propertyPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
+            this.propertyPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.propertyPanel.Location = new System.Drawing.Point(3, 37);
+            this.propertyPanel.Name = "propertyPanel";
+            this.propertyPanel.Size = new System.Drawing.Size(360, 484);
+            this.propertyPanel.TabIndex = 29;
             // 
             // panel7
             // 
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(0, 31);
+            this.panel7.Controls.Add(this.btnPanel);
+            this.panel7.Controls.Add(this.lblPanel);
+            this.panel7.Location = new System.Drawing.Point(3, 3);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(367, 491);
-            this.panel7.TabIndex = 34;
+            this.panel7.Size = new System.Drawing.Size(363, 31);
+            this.panel7.TabIndex = 0;
             // 
-            // panel2
+            // btnPanel
             // 
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(367, 31);
-            this.panel2.TabIndex = 30;
+            this.btnPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            this.btnPanel.BackgroundImage = global::MES_Team3.Properties.Resources.그림5;
+            this.btnPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPanel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPanel.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnPanel.Location = new System.Drawing.Point(313, 2);
+            this.btnPanel.Name = "btnPanel";
+            this.btnPanel.Size = new System.Drawing.Size(47, 27);
+            this.btnPanel.TabIndex = 42;
+            this.btnPanel.UseVisualStyleBackColor = false;
+            this.btnPanel.Click += new System.EventHandler(this.btnPanel_Click);
             // 
-            // label5
+            // lblPanel
             // 
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(0, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(367, 31);
-            this.label5.TabIndex = 29;
-            this.label5.Text = "▶ 속성";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            this.lblPanel.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblPanel.Location = new System.Drawing.Point(-4, 0);
+            this.lblPanel.Name = "lblPanel";
+            this.lblPanel.Size = new System.Drawing.Size(367, 31);
+            this.lblPanel.TabIndex = 29;
+            this.lblPanel.Text = "▶ 속성";
+            this.lblPanel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Base1_1
             // 
@@ -349,8 +371,7 @@ namespace MES_Team3.BaseForms
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -370,12 +391,13 @@ namespace MES_Team3.BaseForms
         public System.Windows.Forms.Panel panel3;
         public System.Windows.Forms.Button button3;
         public System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.SplitContainer splitContainer1;
         public System.Windows.Forms.Panel panel4;
         public System.Windows.Forms.Label label1;
-        public System.Windows.Forms.Panel panel1;
-        public System.Windows.Forms.Panel panel7;
-        public System.Windows.Forms.Panel panel2;
-        public System.Windows.Forms.Label label5;
+        public System.Windows.Forms.Panel propertyPanel;
+        public System.Windows.Forms.Label lblPanel;
+        public System.Windows.Forms.Panel searchPanel;
+        public System.Windows.Forms.Button btnPanel;
+        public System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.Panel panel7;
     }
 }

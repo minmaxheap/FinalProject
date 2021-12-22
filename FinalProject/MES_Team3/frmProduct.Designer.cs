@@ -35,13 +35,17 @@ namespace MES_Team3
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
             this.csDataGridView1 = new MES_Team3.csDataGridView();
+            this.propertyGrid2 = new System.Windows.Forms.PropertyGrid();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.propertyPanel.SuspendLayout();
+            this.searchPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.csDataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,17 +61,25 @@ namespace MES_Team3
             this.panel4.Controls.SetChildIndex(this.label1, 0);
             this.panel4.Controls.SetChildIndex(this.csDataGridView1, 0);
             // 
-            // panel7
+            // propertyPanel
             // 
-            this.panel7.Controls.Add(this.propertyGrid1);
+            this.propertyPanel.Controls.Add(this.propertyGrid1);
+            // 
+            // searchPanel
+            // 
+            this.searchPanel.Controls.Add(this.propertyGrid2);
+            // 
+            // splitContainer1
+            // 
             // 
             // propertyGrid1
             // 
+            this.propertyGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.propertyGrid1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.propertyGrid1.HelpVisible = false;
-            this.propertyGrid1.Location = new System.Drawing.Point(1, 0);
+            this.propertyGrid1.Location = new System.Drawing.Point(0, 0);
             this.propertyGrid1.Name = "propertyGrid1";
-            this.propertyGrid1.Size = new System.Drawing.Size(366, 492);
+            this.propertyGrid1.Size = new System.Drawing.Size(358, 482);
             this.propertyGrid1.TabIndex = 0;
             this.propertyGrid1.ToolbarVisible = false;
             // 
@@ -112,20 +124,35 @@ namespace MES_Team3
             this.csDataGridView1.TabIndex = 18;
             this.csDataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellDoubleClick);
             // 
+            // propertyGrid2
+            // 
+            this.propertyGrid2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.propertyGrid2.HelpVisible = false;
+            this.propertyGrid2.Location = new System.Drawing.Point(0, 0);
+            this.propertyGrid2.Name = "propertyGrid2";
+            this.propertyGrid2.Size = new System.Drawing.Size(358, 482);
+            this.propertyGrid2.TabIndex = 0;
+            this.propertyGrid2.ToolbarVisible = false;
+            // 
             // frmProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.ClientSize = new System.Drawing.Size(1168, 667);
             this.Name = "frmProduct";
+            this.PropertyPanel = true;
+            this.SearchPanel = true;
             this.Load += new System.EventHandler(this.test_Load);
             this.panel6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
+            this.propertyPanel.ResumeLayout(false);
+            this.searchPanel.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.csDataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -135,5 +162,6 @@ namespace MES_Team3
 
         private System.Windows.Forms.PropertyGrid propertyGrid1;
         private csDataGridView csDataGridView1;
+        private System.Windows.Forms.PropertyGrid propertyGrid2;
     }
 }
