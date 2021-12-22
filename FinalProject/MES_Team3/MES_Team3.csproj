@@ -153,6 +153,12 @@
     </Compile>
     <Compile Include="Services\ProductServ.cs" />
     <Compile Include="Util\DataGridViewUtil.cs" />
+    <Compile Include="Sales_Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales_Order.Designer.cs">
+      <DependentUpon>Sales_Order.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BaseForms\Base1_1.resx">
       <DependentUpon>Base1_1.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,6 +205,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Sales_Order.resx">
+      <DependentUpon>Sales_Order.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
