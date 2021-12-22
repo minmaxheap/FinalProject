@@ -64,12 +64,6 @@
     <Compile Include="BaseForms\Base4.Designer.cs">
       <DependentUpon>Base4.cs</DependentUpon>
     </Compile>
-    <Compile Include="BaseForms\Base1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BaseForms\Base1.Designer.cs">
-      <DependentUpon>Base1.cs</DependentUpon>
-    </Compile>
     <Compile Include="BaseForms\Base2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,24 +118,6 @@
     <Compile Include="Controls\NumTextBox.Designer.cs">
       <DependentUpon>NumTextBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmEquipment.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmEquipment.Designer.cs">
-      <DependentUpon>frmEquipment.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmFunction.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmFunction.Designer.cs">
-      <DependentUpon>frmFunction.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmINSPECT_MST.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,18 +136,6 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTEST1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmTEST1.Designer.cs">
-      <DependentUpon>frmTEST1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmTEST23.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmTEST23.Designer.cs">
-      <DependentUpon>frmTEST23.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\FunctionServ.cs" />
@@ -183,7 +147,6 @@
     </Compile>
     <Compile Include="Services\ProductServ.cs" />
     <Compile Include="Util\DataGridViewUtil.cs" />
-    <Compile Include="Util\TableLayoutUtil.cs" />
     <EmbeddedResource Include="BaseForms\Base1_1.resx">
       <DependentUpon>Base1_1.cs</DependentUpon>
     </EmbeddedResource>
@@ -196,9 +159,6 @@
     <EmbeddedResource Include="BaseForms\Base4.resx">
       <DependentUpon>Base4.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BaseForms\Base1.resx">
-      <DependentUpon>Base1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="BaseForms\Base5.resx">
       <DependentUpon>Base5.cs</DependentUpon>
     </EmbeddedResource>
@@ -208,12 +168,6 @@
     <EmbeddedResource Include="BaseForms\frmSearch.resx">
       <DependentUpon>frmSearch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEquipment.resx">
-      <DependentUpon>frmEquipment.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmFunction.resx">
-      <DependentUpon>frmFunction.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmINSPECT_MST.resx">
       <DependentUpon>frmINSPECT_MST.cs</DependentUpon>
     </EmbeddedResource>
@@ -222,12 +176,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmTEST1.resx">
-      <DependentUpon>frmTEST1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmTEST23.resx">
-      <DependentUpon>frmTEST23.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
