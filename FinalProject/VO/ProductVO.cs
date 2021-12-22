@@ -62,18 +62,18 @@ namespace VO
             update_user_id = row.Cells["UPDATE_USER_ID"].Value.ToString();
         }
 
-        public void SetDatagridview(DataGridViewRow row)
-        {
-             row.Cells["PRODUCT_CODE"].Value = product_code;
-             row.Cells["PRODUCT_NAME"].Value  = product_name;
-             row.Cells["PRODUCT_TYPE"].Value=  product_type;
-            row.Cells["CUSTOMER_CODE"].Value= customer_code;
-            row.Cells["VENDOR_CODE"].Value= vendor_code;
-            row.Cells["CREATE_TIME"].Value=   create_time;
-             row.Cells[" CREATE_USER_ID"].Value   = create_user_id;
-            row.Cells["UPDATE_TIME"].Value  =update_time;
-              row.Cells["UPDATE_USER_ID"].Value    = update_user_id;
-        }
+        //public void SetDatagridview(DataGridViewRow row)
+        //{
+        //     row.Cells["PRODUCT_CODE"].Value = product_code;
+        //     row.Cells["PRODUCT_NAME"].Value  = product_name;
+        //     row.Cells["PRODUCT_TYPE"].Value=  product_type;
+        //    row.Cells["CUSTOMER_CODE"].Value= customer_code;
+        //    row.Cells["VENDOR_CODE"].Value= vendor_code;
+        //    row.Cells["CREATE_TIME"].Value=   create_time;
+        //     row.Cells[" CREATE_USER_ID"].Value   = create_user_id;
+        //    row.Cells["UPDATE_TIME"].Value  =update_time;
+        //      row.Cells["UPDATE_USER_ID"].Value    = update_user_id;
+        //}
 
     }
 }
