@@ -151,7 +151,6 @@
     <Compile Include="frmProduct.Designer.cs">
       <DependentUpon>frmProduct.cs</DependentUpon>
     </Compile>
-
     <Compile Include="Services\ProductServ.cs" />
     <Compile Include="Util\DataGridViewUtil.cs" />
     <EmbeddedResource Include="BaseForms\Base1_1.resx">
@@ -186,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmProcessTest1.resx">
       <DependentUpon>frmProcessTest1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProduct.resx">
+      <DependentUpon>frmProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

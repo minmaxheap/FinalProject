@@ -250,6 +250,9 @@ namespace MES_Team3.BaseForms
             // 
             // splitContainer1
             // 
+            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer1.Location = new System.Drawing.Point(12, 58);
             this.splitContainer1.Name = "splitContainer1";
             // 
@@ -313,6 +316,9 @@ namespace MES_Team3.BaseForms
             // 
             // panel7
             // 
+            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
             this.panel7.Controls.Add(this.btnPanel);
             this.panel7.Controls.Add(this.lblPanel);
             this.panel7.Location = new System.Drawing.Point(3, 3);
@@ -322,14 +328,13 @@ namespace MES_Team3.BaseForms
             // 
             // btnPanel
             // 
-            this.btnPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
             this.btnPanel.BackgroundImage = global::MES_Team3.Properties.Resources.그림5;
             this.btnPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPanel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPanel.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnPanel.Location = new System.Drawing.Point(313, 2);
+            this.btnPanel.Location = new System.Drawing.Point(313, 3);
             this.btnPanel.Name = "btnPanel";
             this.btnPanel.Size = new System.Drawing.Size(47, 31);
             this.btnPanel.TabIndex = 42;
@@ -338,12 +343,13 @@ namespace MES_Team3.BaseForms
             // 
             // lblPanel
             // 
+            this.lblPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            this.lblPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblPanel.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblPanel.Location = new System.Drawing.Point(0, 0);
             this.lblPanel.Name = "lblPanel";
-            this.lblPanel.Size = new System.Drawing.Size(363, 36);
+            this.lblPanel.Size = new System.Drawing.Size(280, 36);
             this.lblPanel.TabIndex = 29;
             this.lblPanel.Text = "▶ 속성";
             this.lblPanel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
