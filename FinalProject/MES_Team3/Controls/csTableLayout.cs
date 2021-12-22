@@ -16,44 +16,35 @@ namespace MES_Team3
         {
             InitializeComponent();
 
-            //TextBox txt2 = new System.Windows.Forms.TextBox();
+         
             Label lbl1 = new System.Windows.Forms.Label();
-            //TextBox txt1 = new System.Windows.Forms.TextBox();
+         
             Label lbl2 = new System.Windows.Forms.Label();
-           // TextBox  txt3 = new System.Windows.Forms.TextBox();
+
             Label lbl4 = new System.Windows.Forms.Label();
             Label lbl3 = new System.Windows.Forms.Label();
-            //TextBox txt4 = new System.Windows.Forms.TextBox();
+   
             Label lbl5 = new System.Windows.Forms.Label();
-           // TextBox txt5 = new System.Windows.Forms.TextBox();
+
             Label lbl6 = new System.Windows.Forms.Label();
-           // TextBox txt6 = new System.Windows.Forms.TextBox();
+
             Label lbl7 = new System.Windows.Forms.Label();
-          //  TextBox txt7 = new System.Windows.Forms.TextBox();
-          //  this.SuspendLayout();
-          //  SuspendLayout();
-            // 
-            // tableLayoutPanel1
-            // 
+
             this.ColumnCount = 2;
             this.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.68904F));
             this.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.31096F));
-          //  this.Controls.Add(txt2, 1, 1);
+
             this.Controls.Add(lbl7, 0, 6);
             this.Controls.Add(lbl6, 0, 5);
-           // this.Controls.Add(txt1, 1, 0);
+
             this.Controls.Add(lbl2, 0, 1);
             this.Controls.Add(lbl1, 0, 0);
-          //  this.Controls.Add(txt3, 1, 2);
+
             this.Controls.Add(lbl3, 0, 2);
             this.Controls.Add(lbl4, 0, 3);
-         //   this.Controls.Add(txt4, 1, 3);
-          //  this.Controls.Add(txt5, 1, 4);
+
             this.Controls.Add(lbl5, 0, 4);
-          //  this.Controls.Add(txt6, 1, 5);
-          //  this.Controls.Add(txt7, 1, 6);
-           // this.Location = new System.Drawing.Point(52, 129);
-            //this.Name = "tableLayoutPanel1";
+
             this.RowCount = 7;
             this.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));

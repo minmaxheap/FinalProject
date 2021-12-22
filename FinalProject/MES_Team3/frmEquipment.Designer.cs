@@ -51,9 +51,17 @@ namespace MES_Team3
             this.panel3.Controls.SetChildIndex(this.textBox1, 0);
             this.panel3.Controls.SetChildIndex(this.button3, 0);
             // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(100, 154);
+            // 
             // label12
             // 
             this.label12.Text = "변경 사용자";
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(100, 176);
             // 
             // label11
             // 

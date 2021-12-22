@@ -72,8 +72,8 @@ namespace MES_Team3
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.csDataGridView1 = new MES_Team3.csDataGridView();
+            this.panel6 = new System.Windows.Forms.Panel();
             button2 = new System.Windows.Forms.Button();
             button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -86,8 +86,8 @@ namespace MES_Team3
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.csDataGridView1)).BeginInit();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // button2
@@ -557,18 +557,6 @@ namespace MES_Team3
             this.panel4.Size = new System.Drawing.Size(788, 528);
             this.panel4.TabIndex = 36;
             // 
-            // panel6
-            // 
-            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel6.Controls.Add(this.button8);
-            this.panel6.Controls.Add(this.button10);
-            this.panel6.Controls.Add(this.button7);
-            this.panel6.Controls.Add(this.button11);
-            this.panel6.Location = new System.Drawing.Point(17, 628);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(343, 66);
-            this.panel6.TabIndex = 29;
-            // 
             // csDataGridView1
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
@@ -609,6 +597,18 @@ namespace MES_Team3
             this.csDataGridView1.Size = new System.Drawing.Size(786, 495);
             this.csDataGridView1.TabIndex = 18;
             // 
+            // panel6
+            // 
+            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel6.Controls.Add(this.button8);
+            this.panel6.Controls.Add(this.button10);
+            this.panel6.Controls.Add(this.button7);
+            this.panel6.Controls.Add(this.button11);
+            this.panel6.Location = new System.Drawing.Point(17, 628);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(343, 66);
+            this.panel6.TabIndex = 29;
+            // 
             // Base1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -634,8 +634,8 @@ namespace MES_Team3
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.csDataGridView1)).EndInit();
+            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
