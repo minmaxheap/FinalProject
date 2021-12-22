@@ -44,6 +44,10 @@ namespace MES_Team3
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.csDataGridView1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // button8
+            // 
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             this.panel3.Controls.SetChildIndex(this.textBox1, 0);
             this.panel3.Controls.SetChildIndex(this.button3, 0);
             // 
@@ -106,6 +110,7 @@ namespace MES_Team3
             this.csDataGridView1.RowTemplate.Height = 23;
             this.csDataGridView1.Size = new System.Drawing.Size(769, 491);
             this.csDataGridView1.TabIndex = 18;
+            this.csDataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellDoubleClick);
             // 
             // frmProduct
             // 

@@ -175,6 +175,7 @@
     <Compile Include="frmProduct.Designer.cs">
       <DependentUpon>frmProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Services\ProductServ.cs" />
     <Compile Include="Util\DataGridViewUtil.cs" />
     <Compile Include="Util\TableLayoutUtil.cs" />
     <EmbeddedResource Include="BaseForms\Base1_1.resx">
