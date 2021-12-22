@@ -124,6 +124,12 @@
     <Compile Include="Controls\NumTextBox.Designer.cs">
       <DependentUpon>NumTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ucTableLayout.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ucTableLayout.Designer.cs">
+      <DependentUpon>ucTableLayout.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEquipment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaseForms\frmSearch.resx">
       <DependentUpon>frmSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ucTableLayout.resx">
+      <DependentUpon>ucTableLayout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEquipment.resx">
       <DependentUpon>frmEquipment.cs</DependentUpon>
