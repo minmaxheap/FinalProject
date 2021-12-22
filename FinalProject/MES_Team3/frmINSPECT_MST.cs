@@ -8,11 +8,11 @@ using System.Windows.Forms;
 
 namespace MES_Team3
 {
-	public partial class frmINSPECT_MST : MES_Team3.BaseForms.Base1_1
-	{
-		public frmINSPECT_MST()
-		{
-			InitializeComponent();
-		}
-	}
+    public partial class frmINSPECT_MST : MES_Team3.BaseForms.Base1_1
+    {
+        public frmINSPECT_MST()
+        {
+            InitializeComponent();
+        }
+    }
 }

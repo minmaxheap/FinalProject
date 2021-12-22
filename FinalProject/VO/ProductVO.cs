@@ -35,10 +35,10 @@ namespace VO
         [DisplayName("업체 코드")]
         public string VENDOR_CODE { get { return vendor_code; } set { vendor_code = value; } }
         [DisplayName("생성 시간")]
-        public DateTime CREATE_TIME { get { return create_time; } set { create_time = value; } } //string으로 받을까..개인 프로젝트때처럼 오류 생길까봐ㅠ
+        public DateTime CREATE_TIME { get { return create_time; } set { create_time = value; } } 
         [DisplayName("생성 사용자")]
         public string CREATE_USER_ID { get { return create_user_id; } set { create_user_id = value; } }
-        [DisplayName("변경 시간")]
+        [DisplayName("변경 시간")]  
         public DateTime UPDATE_TIME { get { return update_time; } set { update_time = value; } }
         [DisplayName("변경 사용자")]
         public string UPDATE_USER_ID { get { return update_user_id; } set { update_user_id = value; } }
