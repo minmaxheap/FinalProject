@@ -61,7 +61,7 @@ namespace MES_Team3
             this.lblID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
             this.lblID.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblID.ForeColor = System.Drawing.Color.Black;
-            this.lblID.Location = new System.Drawing.Point(230, 0);
+            this.lblID.Location = new System.Drawing.Point(12, 0);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(93, 24);
             this.lblID.TabIndex = 18;
