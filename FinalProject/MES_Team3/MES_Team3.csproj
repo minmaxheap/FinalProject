@@ -142,6 +142,12 @@
     <Compile Include="frmFunction.Designer.cs">
       <DependentUpon>frmFunction.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmINSPECT_MST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmINSPECT_MST.Designer.cs">
+      <DependentUpon>frmINSPECT_MST.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmFunction.resx">
       <DependentUpon>frmFunction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmINSPECT_MST.resx">
+      <DependentUpon>frmINSPECT_MST.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
