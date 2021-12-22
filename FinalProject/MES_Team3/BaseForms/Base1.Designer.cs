@@ -183,7 +183,7 @@ namespace MES_Team3
             this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button9.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button9.Location = new System.Drawing.Point(714, 11);
+            this.button9.Location = new System.Drawing.Point(553, 11);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(70, 27);
             this.button9.TabIndex = 23;
