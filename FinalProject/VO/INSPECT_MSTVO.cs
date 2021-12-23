@@ -33,9 +33,19 @@ namespace VO
 		//    ,[UPDATE_TIME]
 		//    ,[UPDATE_USER_ID]
 
+		//[DisplayName("검사항목")]
+		//public string INSPECT_ITEM_CODE { get { return inspect_itemcode; } set { inspect_itemcode = value; } }
+
+		//[DisplayName("검사항목명")]
+		//public string INSPECT_ITEM_NAME { get { return inspect_itemname; } set { value = inspect_itemname; } }
+
+		//[DisplayName("값 유형")]
+		//public string VALUE_TYPE { get { return inspect_itemname; } set { value = inspect_itemname; } }
+
+
 		[DisplayName("검사항목")]
 		public string INSPECT_ITEM_CODE { get { return inspect_itemcode; } set { inspect_itemcode = value; } }
-		
+
 		[DisplayName("검사항목명")]
 		public string INSPECT_ITEM_NAME { get { return inspect_itemname; } set { inspect_itemname = value; } }
 
