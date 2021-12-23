@@ -402,8 +402,8 @@ namespace MES_Team3.BaseForms
             // panel8
             // 
             this.panel8.Controls.Add(this.textBox9);
-            this.panel8.Controls.Add(this.label11);
             this.panel8.Controls.Add(this.textBox8);
+            this.panel8.Controls.Add(this.label11);
             this.panel8.Controls.Add(this.label10);
             this.panel8.Controls.Add(this.textBox7);
             this.panel8.Controls.Add(this.label2);
@@ -446,7 +446,7 @@ namespace MES_Team3.BaseForms
             // textBox8
             // 
             this.textBox8.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox8.Location = new System.Drawing.Point(100, 132);
+            this.textBox8.Location = new System.Drawing.Point(100, 133);
             this.textBox8.Margin = new System.Windows.Forms.Padding(0);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(216, 22);
