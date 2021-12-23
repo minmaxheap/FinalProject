@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="FunctionDAC.cs" />
     <Compile Include="Helper.cs" />
+    <Compile Include="InspectDAC.cs" />
     <Compile Include="OrderDAC.cs" />
     <Compile Include="ProductDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
