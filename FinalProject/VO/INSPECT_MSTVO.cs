@@ -22,9 +22,20 @@ namespace VO
 		private DateTime updatetime;
 		private string update_userid;
 
+		//INSPECT_ITEM_CODE
+		//,[INSPECT_ITEM_NAME]
+		//    ,[VALUE_TYPE]
+		//    ,[SPEC_LSL]
+		//    ,[SPEC_TARGET]
+		//    ,[SPEC_USL]
+		//    ,[CREATE_TIME]
+		//    ,[CREATE_USER_ID]
+		//    ,[UPDATE_TIME]
+		//    ,[UPDATE_USER_ID]
+
 		[DisplayName("검사항목")]
 		public string INSPECT_ITEM_CODE { get { return inspect_itemcode; } set { inspect_itemcode = value; } }
-
+		
 		[DisplayName("검사항목명")]
 		public string INSPECT_ITEM_NAME { get { return inspect_itemname; } set { inspect_itemname = value; } }
 

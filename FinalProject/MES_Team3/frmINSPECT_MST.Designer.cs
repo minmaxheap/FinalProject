@@ -34,11 +34,12 @@ namespace MES_Team3
 			this.panel6.SuspendLayout();
 			this.panel5.SuspendLayout();
 			this.panel3.SuspendLayout();
+			this.propertyPanel.SuspendLayout();
+			this.searchPanel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
 			this.splitContainer1.Panel2.SuspendLayout();
 			this.splitContainer1.SuspendLayout();
-			this.panel4.SuspendLayout();
 			this.SuspendLayout();
 			this.panel3.Controls.SetChildIndex(this.textBox1, 0);
 			this.panel3.Controls.SetChildIndex(this.button3, 0);
@@ -49,20 +50,20 @@ namespace MES_Team3
 			// 
 			// propertyPanel
 			// 
+			this.propertyPanel.Controls.Add(this.pgGrid);
 			this.propertyPanel.Location = new System.Drawing.Point(3, 47);
+			// 
+			// searchPanel
+			// 
+			this.searchPanel.Controls.Add(this.pgSearch);
 			// 
 			// splitContainer1
 			// 
 			// 
-			// panel4
-			// 
-			this.panel4.Controls.Add(this.pgGrid);
-			this.panel4.Controls.Add(this.pgSearch);
-			// 
 			// pgGrid
 			// 
 			this.pgGrid.HelpVisible = false;
-			this.pgGrid.Location = new System.Drawing.Point(381, 6);
+			this.pgGrid.Location = new System.Drawing.Point(4, 2);
 			this.pgGrid.Name = "pgGrid";
 			this.pgGrid.Size = new System.Drawing.Size(358, 562);
 			this.pgGrid.TabIndex = 22;
@@ -71,7 +72,7 @@ namespace MES_Team3
 			// pgSearch
 			// 
 			this.pgSearch.HelpVisible = false;
-			this.pgSearch.Location = new System.Drawing.Point(-17, 10);
+			this.pgSearch.Location = new System.Drawing.Point(4, 2);
 			this.pgSearch.Name = "pgSearch";
 			this.pgSearch.Size = new System.Drawing.Size(358, 562);
 			this.pgSearch.TabIndex = 23;
@@ -90,11 +91,12 @@ namespace MES_Team3
 			this.panel5.ResumeLayout(false);
 			this.panel3.ResumeLayout(false);
 			this.panel3.PerformLayout();
+			this.propertyPanel.ResumeLayout(false);
+			this.searchPanel.ResumeLayout(false);
 			this.splitContainer1.Panel1.ResumeLayout(false);
 			this.splitContainer1.Panel2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
 			this.splitContainer1.ResumeLayout(false);
-			this.panel4.ResumeLayout(false);
 			this.ResumeLayout(false);
 
         }
