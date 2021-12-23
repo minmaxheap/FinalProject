@@ -35,7 +35,7 @@ namespace VO
         }
     }
 
-    class CustomerCode
+   public  class CustomerCode
     {
         public List<string> GetSourceList()
         {
