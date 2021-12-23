@@ -33,6 +33,11 @@ namespace MES_Team3
 
             GetInfo();
 
+            ProductVO vo = new ProductVO();
+
+            pgProperty.SelectedObject = vo;
+
+            pgProperty.PropertySort = PropertySort.NoSort;
 
             //barlist = new List<Bar>();
             //for (int i = 1; i < 10; i++)
