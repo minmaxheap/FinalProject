@@ -22,14 +22,18 @@ namespace MES_Team3.BaseForms
 
         private void button3_Click(object sender, EventArgs e)
         {
-            propertyPanel.Visible = true;
-            searchPanel.Visible = false;
+            PanelVisible();
         }
 
         private void btnPanel_Click(object sender, EventArgs e)
         {
-            if (propertyPanel.Visible) 
-            { 
+            PanelVisible();
+        }
+
+        private void PanelVisible()
+        {
+            if (propertyPanel.Visible)
+            {
                 propertyPanel.Visible = false;
                 searchPanel.Visible = true;
                 lblPanel.Text = "▶ 검색 조건";

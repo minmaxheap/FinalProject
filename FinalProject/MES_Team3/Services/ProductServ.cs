@@ -26,5 +26,13 @@ namespace MES_Team3
             dac.Dispose();
             return bResult;
         }
+
+        public bool Delete(ProductVO vo)
+        {
+            ProductDAC dac = new ProductDAC();
+            bool bResult = dac.Delete(vo);
+            dac.Dispose();
+            return bResult;
+        }
     }
 }
