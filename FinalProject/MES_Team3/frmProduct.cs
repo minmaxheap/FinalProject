@@ -51,20 +51,28 @@ namespace MES_Team3
         
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            ProductVO save = new ProductVO();
-            GridItem gi = pgProperty.SelectedGridItem;
-            while (gi.Parent != null)
-            {
-                gi = gi.Parent;
-            }
-            foreach (GridItem item in gi.GridItems)
-            {
-                ParseGridItems(item, save);
-            }
+            //ProductVO save = new ProductVO();
+            //GridItem gi = pgProperty.SelectedGridItem;
+            //while (gi.Parent != null)
+            //{
+            //    gi = gi.Parent;
+            //}
+            //foreach (GridItem item in gi.GridItems)
+            //{
+            //    ParseGridItems(item, save);
+            //}
 
+            ProductVO save = (ProductVO)pgProperty.SelectedObject;
             ProductServ serv = new ProductServ();
             bool bResult = serv.Insert(save);
-            GetInfo();
+            if (bResult)
+            {
+                GetInfo();
+            }
+            else
+            {
+                
+            }
         }
 
         private void ParseGridItems(GridItem gi, ProductVO save)
