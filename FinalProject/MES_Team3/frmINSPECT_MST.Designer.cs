@@ -29,17 +29,16 @@ namespace MES_Team3
         /// </summary>
         private void InitializeComponent()
         {
-			this.Property_Grid = new System.Windows.Forms.PropertyGrid();
-			this.Search_Grid = new System.Windows.Forms.PropertyGrid();
+			this.pgGrid = new System.Windows.Forms.PropertyGrid();
+			this.pgSearch = new System.Windows.Forms.PropertyGrid();
 			this.panel6.SuspendLayout();
 			this.panel5.SuspendLayout();
 			this.panel3.SuspendLayout();
-			this.propertyPanel.SuspendLayout();
-			this.searchPanel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
 			this.splitContainer1.Panel2.SuspendLayout();
 			this.splitContainer1.SuspendLayout();
+			this.panel4.SuspendLayout();
 			this.SuspendLayout();
 			this.panel3.Controls.SetChildIndex(this.textBox1, 0);
 			this.panel3.Controls.SetChildIndex(this.button3, 0);
@@ -50,32 +49,34 @@ namespace MES_Team3
 			// 
 			// propertyPanel
 			// 
-			this.propertyPanel.Controls.Add(this.Property_Grid);
-			// 
-			// searchPanel
-			// 
-			this.searchPanel.Controls.Add(this.Search_Grid);
+			this.propertyPanel.Location = new System.Drawing.Point(3, 47);
 			// 
 			// splitContainer1
 			// 
 			// 
-			// Property_Grid
+			// panel4
 			// 
-			this.Property_Grid.HelpVisible = false;
-			this.Property_Grid.Location = new System.Drawing.Point(0, -1);
-			this.Property_Grid.Name = "Property_Grid";
-			this.Property_Grid.Size = new System.Drawing.Size(358, 562);
-			this.Property_Grid.TabIndex = 22;
-			this.Property_Grid.ToolbarVisible = false;
+			this.panel4.Controls.Add(this.pgGrid);
+			this.panel4.Controls.Add(this.pgSearch);
 			// 
-			// Search_Grid
+			// pgGrid
 			// 
-			this.Search_Grid.HelpVisible = false;
-			this.Search_Grid.Location = new System.Drawing.Point(-1, -2);
-			this.Search_Grid.Name = "Search_Grid";
-			this.Search_Grid.Size = new System.Drawing.Size(358, 562);
-			this.Search_Grid.TabIndex = 23;
-			this.Search_Grid.ToolbarVisible = false;
+			this.pgGrid.HelpVisible = false;
+			this.pgGrid.Location = new System.Drawing.Point(381, 6);
+			this.pgGrid.Name = "pgGrid";
+			this.pgGrid.Size = new System.Drawing.Size(358, 562);
+			this.pgGrid.TabIndex = 22;
+			this.pgGrid.ToolbarVisible = false;
+			// 
+			// pgSearch
+			// 
+			this.pgSearch.HelpVisible = false;
+			this.pgSearch.Location = new System.Drawing.Point(-17, 10);
+			this.pgSearch.Name = "pgSearch";
+			this.pgSearch.Size = new System.Drawing.Size(358, 562);
+			this.pgSearch.TabIndex = 23;
+			this.pgSearch.ToolbarVisible = false;
+			this.pgSearch.Click += new System.EventHandler(this.Search_Grid_Click);
 			// 
 			// frmINSPECT_MST
 			// 
@@ -84,23 +85,23 @@ namespace MES_Team3
 			this.Name = "frmINSPECT_MST";
 			this.PropertyPanel = true;
 			this.SearchPanel = true;
+			this.Load += new System.EventHandler(this.frmINSPECT_MST_Load);
 			this.panel6.ResumeLayout(false);
 			this.panel5.ResumeLayout(false);
 			this.panel3.ResumeLayout(false);
 			this.panel3.PerformLayout();
-			this.propertyPanel.ResumeLayout(false);
-			this.searchPanel.ResumeLayout(false);
 			this.splitContainer1.Panel1.ResumeLayout(false);
 			this.splitContainer1.Panel2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
 			this.splitContainer1.ResumeLayout(false);
+			this.panel4.ResumeLayout(false);
 			this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PropertyGrid Property_Grid;
-        private System.Windows.Forms.PropertyGrid Search_Grid;
+        private System.Windows.Forms.PropertyGrid pgGrid;
+        private System.Windows.Forms.PropertyGrid pgSearch;
     }
 }

@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using VO;
 
 namespace MES_Team3
 {
@@ -15,5 +16,18 @@ namespace MES_Team3
             InitializeComponent();
         }
 
-    }
+		private void frmINSPECT_MST_Load(object sender, EventArgs e)
+		{
+            INSPECT_MSTVO vo = new INSPECT_MSTVO();
+
+            pgGrid.SelectedObject = vo;
+
+            pgGrid.PropertySort = PropertySort.NoSort;
+        }
+
+		private void Search_Grid_Click(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

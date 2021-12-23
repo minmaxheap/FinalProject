@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
+
 namespace VO
 {
 	public class INSPECT_MSTVO
@@ -66,6 +68,7 @@ namespace VO
 
 			if (row.Cells["CREATE_TIME"].Value != null && row.Cells["CREATE_TIME"].Value != DBNull.Value)
 				create_time = Convert.ToDateTime(row.Cells["CREATE_TIME"].Value);
+
 			create_userid = row.Cells["CREATE_USER_ID"].Value.ToString();
 
 			if (row.Cells["UPDATE_TIME"].Value != null && row.Cells["UPDATE_TIME"].Value != DBNull.Value)
