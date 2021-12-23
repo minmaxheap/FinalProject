@@ -18,6 +18,7 @@ namespace MES_Team3
 
 		private void frmINSPECT_MST_Load(object sender, EventArgs e)
 		{
+            SearchPanel = false;
             INSPECT_MSTVO vo = new INSPECT_MSTVO();
 
             pgGrid.SelectedObject = vo;
