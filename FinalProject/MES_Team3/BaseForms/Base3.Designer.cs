@@ -40,6 +40,9 @@ namespace MES_Team3.BaseForms
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.searchPanel = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblPanel = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
@@ -48,10 +51,6 @@ namespace MES_Team3.BaseForms
             this.panel6 = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnPanel = new System.Windows.Forms.Button();
-            this.lblPanel = new System.Windows.Forms.Label();
-            this.searchPanel = new System.Windows.Forms.Panel();
             button4 = new System.Windows.Forms.Button();
             button5 = new System.Windows.Forms.Button();
             button2 = new System.Windows.Forms.Button();
@@ -66,10 +65,10 @@ namespace MES_Team3.BaseForms
             this.splitContainer2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button4
@@ -230,6 +229,39 @@ namespace MES_Team3.BaseForms
             this.label1.Text = "공정 목록";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // searchPanel
+            // 
+            this.searchPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
+            this.searchPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.searchPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.searchPanel.Location = new System.Drawing.Point(0, 36);
+            this.searchPanel.Name = "searchPanel";
+            this.searchPanel.Size = new System.Drawing.Size(359, 273);
+            this.searchPanel.TabIndex = 33;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            this.panel1.Controls.Add(this.lblPanel);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(359, 36);
+            this.panel1.TabIndex = 1;
+            // 
+            // lblPanel
+            // 
+            this.lblPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            this.lblPanel.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblPanel.Location = new System.Drawing.Point(0, 0);
+            this.lblPanel.Name = "lblPanel";
+            this.lblPanel.Size = new System.Drawing.Size(276, 36);
+            this.lblPanel.TabIndex = 29;
+            this.lblPanel.Text = "▶ 검색 조건";
+            this.lblPanel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // label9
             // 
             this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(152)))), ((int)(((byte)(216)))));
@@ -318,54 +350,6 @@ namespace MES_Team3.BaseForms
             this.button11.Text = "닫기";
             this.button11.UseVisualStyleBackColor = false;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            this.panel1.Controls.Add(this.btnPanel);
-            this.panel1.Controls.Add(this.lblPanel);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(359, 36);
-            this.panel1.TabIndex = 1;
-            // 
-            // btnPanel
-            // 
-            this.btnPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            this.btnPanel.BackgroundImage = global::MES_Team3.Properties.Resources.그림5;
-            this.btnPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPanel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnPanel.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnPanel.Location = new System.Drawing.Point(309, 3);
-            this.btnPanel.Name = "btnPanel";
-            this.btnPanel.Size = new System.Drawing.Size(47, 31);
-            this.btnPanel.TabIndex = 42;
-            this.btnPanel.UseVisualStyleBackColor = false;
-            // 
-            // lblPanel
-            // 
-            this.lblPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            this.lblPanel.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblPanel.Location = new System.Drawing.Point(0, 0);
-            this.lblPanel.Name = "lblPanel";
-            this.lblPanel.Size = new System.Drawing.Size(276, 36);
-            this.lblPanel.TabIndex = 29;
-            this.lblPanel.Text = "▶ 검색 조건";
-            this.lblPanel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // searchPanel
-            // 
-            this.searchPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
-            this.searchPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.searchPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.searchPanel.Location = new System.Drawing.Point(0, 36);
-            this.searchPanel.Name = "searchPanel";
-            this.searchPanel.Size = new System.Drawing.Size(359, 273);
-            this.searchPanel.TabIndex = 33;
-            // 
             // Base3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -388,10 +372,10 @@ namespace MES_Team3.BaseForms
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -414,7 +398,6 @@ namespace MES_Team3.BaseForms
         public System.Windows.Forms.Button button11;
         public System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel1;
-        public System.Windows.Forms.Button btnPanel;
         public System.Windows.Forms.Label lblPanel;
         public System.Windows.Forms.Panel searchPanel;
     }
