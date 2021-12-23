@@ -81,6 +81,27 @@ from [dbo].[PRODUCT_MST]";
                 return false;
             }
         }
+
+        public bool Delete(ProductVO vo)
+        {
+            try
+            {
+                string sql = @"delete from [dbo].[PRODUCT_MST]
+where PRODUCT_CODE = @PRODUCT_CODE ";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@PRODUCT_CODE", vo.PRODUCT_CODE);
+                    int row = cmd.ExecuteNonQuery();
+                    return row > 0;
+
+                }
+            }
+            catch (Exception err)
+            {
+                Debug.WriteLine(err.Message);
+                return false;
+            }
+        }
         public void Dispose()
         {
             conn.Close();

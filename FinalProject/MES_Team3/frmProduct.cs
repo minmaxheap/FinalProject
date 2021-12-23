@@ -31,10 +31,7 @@ namespace MES_Team3
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 시간", "UPDATE_TIME");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 사용자", "UPDATE_USER_ID");
 
-            ProductServ serv = new ProductServ();
-            DataTable dt = serv.GetProductsList();
-            csDataGridView1.DataSource = dt;
-            SearchPanel = false;
+            GetInfo();
 
 
             //barlist = new List<Bar>();
@@ -67,6 +64,7 @@ namespace MES_Team3
 
             ProductServ serv = new ProductServ();
             bool bResult = serv.Insert(save);
+            GetInfo();
         }
 
         private void ParseGridItems(GridItem gi, ProductVO save)
@@ -121,6 +119,35 @@ namespace MES_Team3
             pgProperty.SelectedObject = vo;
 
             pgProperty.PropertySort = PropertySort.NoSort;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            //pk를 받아서 delete 하기 //이거 유틸로 할 수 있지 않을까? 
+            ProductVO save = new ProductVO();
+            GridItem gi = pgProperty.SelectedGridItem;
+            while (gi.Parent != null)
+            {
+                gi = gi.Parent;
+            }
+            foreach (GridItem item in gi.GridItems)
+            {
+                ParseGridItems(item, save);
+            }
+
+            ProductServ serv = new ProductServ();
+            bool bResult = serv.Delete(save);
+            GetInfo();
+
+        }
+
+        public void GetInfo()
+        {
+            ProductServ serv = new ProductServ();
+            DataTable dt = serv.GetProductsList();
+            csDataGridView1.DataSource = null;
+            csDataGridView1.DataSource = dt;
+            SearchPanel = false;
         }
     }
 
