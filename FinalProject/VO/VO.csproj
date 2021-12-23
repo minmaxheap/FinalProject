@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommonCode.cs" />
     <Compile Include="INSPECT_MSTVO.cs" />
     <Compile Include="OrderVO.cs" />
     <Compile Include="ProductVO.cs" />
