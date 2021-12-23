@@ -32,7 +32,7 @@ namespace MES_Team3.BaseForms
             { 
                 propertyPanel.Visible = false;
                 searchPanel.Visible = true;
-                lblPanel.Text = "▶ 조회 조건";
+                lblPanel.Text = "▶ 검색 조건";
 
             }
             else
