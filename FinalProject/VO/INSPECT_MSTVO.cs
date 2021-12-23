@@ -50,7 +50,7 @@ namespace VO
 		public string INSPECT_ITEM_NAME { get { return inspect_itemname; } set { inspect_itemname = value; } }
 
 		[DisplayName("값 유형")]
-
+		[TypeConverter(typeof(ValueTypeConverter))]
 		public string VALUE_TYPE { get { return value_type; } set { value_type = value; } }
 
 		[DisplayName("LSL")]

@@ -47,8 +47,7 @@ from [dbo].[PRODUCT_MST]";
            ,[VENDOR_CODE]
            ,[CREATE_TIME]
            ,[CREATE_USER_ID]
-           ,[UPDATE_TIME]
-           ,[UPDATE_USER_ID])
+        )
      VALUES
            (@PRODUCT_CODE,
             @PRODUCT_NAME,
@@ -56,9 +55,8 @@ from [dbo].[PRODUCT_MST]";
             @CUSTOMER_CODE,
             @VENDOR_CODE,
             getdate(),
-            @CREATE_USER_ID,
-            getdate(),
-           @UPDATE_USER_ID) ";
+            @CREATE_USER_ID
+    ) ";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("@PRODUCT_CODE", vo.PRODUCT_CODE);

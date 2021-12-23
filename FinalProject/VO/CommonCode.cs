@@ -91,7 +91,19 @@ namespace VO
             return new StandardValuesCollection(new VendorCode().GetSourceList());
         }
     }
+    public class ValueType
+    {
+        public List<string> GetSourceList()
+        {
+            //dac에서 list 받아오기
+            List<string> valueType = new List<string>();
+            valueType.Add("Student");
+            valueType.Add("Lecture");
+            valueType.Add("Employee");
 
+            return valueType;
+        }
+    }
     public class ValueTypeConverter : StringConverter
     {
         public override bool GetStandardValuesSupported(ITypeDescriptorContext context)
@@ -103,7 +115,7 @@ namespace VO
         public override TypeConverter.StandardValuesCollection GetStandardValues(ITypeDescriptorContext context)
         {
             // ProductVO refMyObject = context.Instance as ProductVO;
-            return new StandardValuesCollection(new VendorCode().GetSourceList());
+            return new StandardValuesCollection(new ValueType().GetSourceList());
         }
     }
 }
