@@ -94,6 +94,7 @@ namespace VO
 
 			if (row.Cells["UPDATE_TIME"].Value != null && row.Cells["UPDATE_TIME"].Value != DBNull.Value)
 				updatetime = Convert.ToDateTime(row.Cells["UPDATE_TIME"].Value);
+
 			update_userid = row.Cells["UPDATE_USER_ID"].Value.ToString();
 
 		}

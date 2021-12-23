@@ -1,41 +1,41 @@
 ﻿
 namespace MES_Team3
 {
-    partial class frmINSPECT_MST
-    {
-        /// <summary>
-        /// 필수 디자이너 변수입니다.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+	partial class frmUserGroup
+	{
+		/// <summary>
+		/// 필수 디자이너 변수입니다.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// 사용 중인 모든 리소스를 정리합니다.
-        /// </summary>
-        /// <param name="disposing">관리되는 리소스를 삭제해야 하면 true이고, 그렇지 않으면 false입니다.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+		/// <summary>
+		/// 사용 중인 모든 리소스를 정리합니다.
+		/// </summary>
+		/// <param name="disposing">관리되는 리소스를 삭제해야 하면 true이고, 그렇지 않으면 false입니다.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
 
-        #region Windows Form 디자이너에서 생성한 코드
+		#region Windows Form 디자이너에서 생성한 코드
 
-        /// <summary>
-        /// 디자이너 지원에 필요한 메서드입니다. 
-        /// 이 메서드의 내용을 코드 편집기로 수정하지 마세요.
-        /// </summary>
-        private void InitializeComponent()
-        {
+		/// <summary>
+		/// 디자이너 지원에 필요한 메서드입니다. 
+		/// 이 메서드의 내용을 코드 편집기로 수정하지 마세요.
+		/// </summary>
+		private void InitializeComponent()
+		{
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-			this.pgGrid = new System.Windows.Forms.PropertyGrid();
-			this.pgSearch = new System.Windows.Forms.PropertyGrid();
 			this.csDataGridView1 = new MES_Team3.csDataGridView();
+			this.pgSearch = new System.Windows.Forms.PropertyGrid();
+			this.pgProperty = new System.Windows.Forms.PropertyGrid();
 			this.panel6.SuspendLayout();
 			this.panel5.SuspendLayout();
 			this.panel3.SuspendLayout();
@@ -48,29 +48,16 @@ namespace MES_Team3
 			this.panel4.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.csDataGridView1)).BeginInit();
 			this.SuspendLayout();
-			// 
-			// btnInsert
-			// 
-			this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
-			// 
-			// btnDelete
-			// 
-			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
 			this.panel3.Controls.SetChildIndex(this.textBox1, 0);
 			this.panel3.Controls.SetChildIndex(this.button3, 0);
 			// 
-			// button3
-			// 
-			this.button3.Click += new System.EventHandler(this.button3_Click);
-			// 
 			// lblTitle
 			// 
-			this.lblTitle.Text = "검사항목";
+			this.lblTitle.Text = "사용자 그룹목록";
 			// 
 			// propertyPanel
 			// 
-			this.propertyPanel.Controls.Add(this.pgGrid);
-			this.propertyPanel.Location = new System.Drawing.Point(3, 47);
+			this.propertyPanel.Controls.Add(this.pgProperty);
 			// 
 			// searchPanel
 			// 
@@ -82,25 +69,6 @@ namespace MES_Team3
 			// panel4
 			// 
 			this.panel4.Controls.Add(this.csDataGridView1);
-			// 
-			// pgGrid
-			// 
-			this.pgGrid.HelpVisible = false;
-			this.pgGrid.Location = new System.Drawing.Point(4, 2);
-			this.pgGrid.Name = "pgGrid";
-			this.pgGrid.Size = new System.Drawing.Size(358, 562);
-			this.pgGrid.TabIndex = 22;
-			this.pgGrid.ToolbarVisible = false;
-			// 
-			// pgSearch
-			// 
-			this.pgSearch.HelpVisible = false;
-			this.pgSearch.Location = new System.Drawing.Point(4, 2);
-			this.pgSearch.Name = "pgSearch";
-			this.pgSearch.Size = new System.Drawing.Size(358, 562);
-			this.pgSearch.TabIndex = 23;
-			this.pgSearch.ToolbarVisible = false;
-			this.pgSearch.Click += new System.EventHandler(this.Search_Grid_Click);
 			// 
 			// csDataGridView1
 			// 
@@ -141,16 +109,33 @@ namespace MES_Team3
 			this.csDataGridView1.RowTemplate.Height = 23;
 			this.csDataGridView1.Size = new System.Drawing.Size(771, 575);
 			this.csDataGridView1.TabIndex = 0;
-			this.csDataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellDoubleClick);
 			// 
-			// frmINSPECT_MST
+			// pgSearch
+			// 
+			this.pgSearch.HelpVisible = false;
+			this.pgSearch.Location = new System.Drawing.Point(0, 1);
+			this.pgSearch.Name = "pgSearch";
+			this.pgSearch.Size = new System.Drawing.Size(342, 569);
+			this.pgSearch.TabIndex = 24;
+			this.pgSearch.ToolbarVisible = false;
+			// 
+			// pgProperty
+			// 
+			this.pgProperty.HelpVisible = false;
+			this.pgProperty.Location = new System.Drawing.Point(2, 1);
+			this.pgProperty.Name = "pgProperty";
+			this.pgProperty.Size = new System.Drawing.Size(342, 569);
+			this.pgProperty.TabIndex = 25;
+			this.pgProperty.ToolbarVisible = false;
+			// 
+			// frmUserGroup
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
 			this.ClientSize = new System.Drawing.Size(1168, 778);
-			this.Name = "frmINSPECT_MST";
+			this.Name = "frmUserGroup";
 			this.PropertyPanel = true;
 			this.SearchPanel = true;
-			this.Load += new System.EventHandler(this.frmINSPECT_MST_Load);
+			this.Load += new System.EventHandler(this.frmUserGroup_Load);
 			this.panel6.ResumeLayout(false);
 			this.panel5.ResumeLayout(false);
 			this.panel3.ResumeLayout(false);
@@ -165,12 +150,12 @@ namespace MES_Team3
 			((System.ComponentModel.ISupportInitialize)(this.csDataGridView1)).EndInit();
 			this.ResumeLayout(false);
 
-        }
+		}
 
-        #endregion
+		#endregion
 
-        private System.Windows.Forms.PropertyGrid pgGrid;
-        private System.Windows.Forms.PropertyGrid pgSearch;
 		private csDataGridView csDataGridView1;
+		private System.Windows.Forms.PropertyGrid pgProperty;
+		private System.Windows.Forms.PropertyGrid pgSearch;
 	}
 }

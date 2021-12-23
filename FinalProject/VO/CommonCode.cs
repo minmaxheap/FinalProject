@@ -97,9 +97,9 @@ namespace VO
         {
             //dac에서 list 받아오기
             List<string> valueType = new List<string>();
-            valueType.Add("Student");
-            valueType.Add("Lecture");
-            valueType.Add("Employee");
+            valueType.Add("N");
+            valueType.Add("C");
+            //valueType.Add("Employee");
 
             return valueType;
         }

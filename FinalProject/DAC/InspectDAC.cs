@@ -36,5 +36,63 @@ namespace DAC
 				return dt;
 			}
 		}
+
+		public DataTable GetTable()
+		{
+			string sql = "select INSPECT_ITEM_CODE, INSPECT_ITEM_NAME, VALUE_TYPE, SPEC_LSL, SPEC_TARGET, SPEC_USL, CREATE_TIME, CREATE_USER_ID, UPDATE_TIME, UPDATE_USER_ID from INSPECT_ITEM_MST ";
+			DataTable dt = new DataTable();
+			using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
+			{
+				da.Fill(dt);
+				return dt; 
+			}
+		}
+
+		public bool insert(INSPECT_MSTVO vo)
+		{
+			try
+			{
+				string sql = @"insert into [dbo].[INSPECT_ITEM_MST] (INSPECT_ITEM_CODE, INSPECT_ITEM_NAME, VALUE_TYPE, SPEC_LSL, SPEC_TARGET, SPEC_USL, CREATE_TIME, CREATE_USER_ID, UPDATE_TIME, UPDATE_USER_ID)
+values(@INSPECT_ITEM_CODE, @INSPECT_ITEM_NAME, @VALUE_TYPE, @SPEC_LSL, @SPEC_TARGET, @SPEC_USL, @CREATE_TIME, @CREATE_USER_ID, @UPDATE_TIME, @UPDATE_USER_ID)";
+
+				using (SqlCommand cmd = new SqlCommand(sql, conn))
+				{
+					cmd.Parameters.AddWithValue("INSPECT_ITEM_CODE", vo.INSPECT_ITEM_CODE);
+					cmd.Parameters.AddWithValue("INSPECT_ITEM_NAME", vo.INSPECT_ITEM_NAME);
+					cmd.Parameters.AddWithValue("VALUE_TYPE", vo.VALUE_TYPE);
+					cmd.Parameters.AddWithValue("SPEC_LSL", vo.SPEC_LSL);
+					cmd.Parameters.AddWithValue("SPEC_TARGET", vo.SPEC_TARGET);
+					cmd.Parameters.AddWithValue("SPEC_USL", vo.SPEC_USL);
+					cmd.Parameters.AddWithValue("CREATE_TIME", vo.CREATE_TIME);
+					cmd.Parameters.AddWithValue("CREATE_USER_ID", vo.CREATE_USER_ID);
+					cmd.Parameters.AddWithValue("UPDATE_TIME", vo.UPDATE_TIME);
+					cmd.Parameters.AddWithValue("UPDATE_USER_ID", vo.UPDATE_USER_ID);
+
+					int row = cmd.ExecuteNonQuery();
+					return row > 0;
+					
+
+				}
+				
+			}
+			catch (Exception err)
+			{
+				Debug.WriteLine(err.Message);
+				return false;
+			}
+		}
+
+		public bool Delete(INSPECT_MSTVO vo)
+		{
+			string sql = @"delete from INSPECT_ITEM_MST
+where INSPECT_ITEM_CODE = @INSPECT_ITEM_CODE";
+
+			using (SqlCommand cmd = new SqlCommand(sql, conn))
+			{
+				cmd.Parameters.AddWithValue("@INSPECT_ITEM_CODE", vo.INSPECT_ITEM_CODE);
+				int row = cmd.ExecuteNonQuery();
+				return row > 0;
+			}
+		}
 	}
 }
