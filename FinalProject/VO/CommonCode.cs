@@ -12,6 +12,7 @@ namespace VO
     {
         public List<string> GetSourceList()
         {
+            //dac에서 list 받아오기
             List<string> productType = new List<string>();
             productType.Add("Student");
             productType.Add("Lecture");
@@ -29,7 +30,7 @@ namespace VO
 
         public override TypeConverter.StandardValuesCollection GetStandardValues(ITypeDescriptorContext context)
         {
-            ProductVO refMyObject = context.Instance as ProductVO;
+            //ProductVO refMyObject = context.Instance as ProductVO;
             return new StandardValuesCollection(new ProductType().GetSourceList());
         }
     }
@@ -38,6 +39,7 @@ namespace VO
     {
         public List<string> GetSourceList()
         {
+            //dac에서 list 받아오기
             List<string> CustomerCode = new List<string>();
             CustomerCode.Add("Student");
             CustomerCode.Add("Lecture");
@@ -57,7 +59,7 @@ namespace VO
 
         public override TypeConverter.StandardValuesCollection GetStandardValues(ITypeDescriptorContext context)
         {
-            ProductVO refMyObject = context.Instance as ProductVO;
+            //ProductVO refMyObject = context.Instance as ProductVO;
             return new StandardValuesCollection(new CustomerCode().GetSourceList());
         }
     }
@@ -66,6 +68,7 @@ namespace VO
     {
         public List<string> GetSourceList()
         {
+            //dac에서 list 받아오기
             List<string> vendorCode = new List<string>();
             vendorCode.Add("Student");
             vendorCode.Add("Lecture");
@@ -83,7 +86,7 @@ namespace VO
 
         public override TypeConverter.StandardValuesCollection GetStandardValues(ITypeDescriptorContext context)
         {
-            ProductVO refMyObject = context.Instance as ProductVO;
+           // ProductVO refMyObject = context.Instance as ProductVO;
             return new StandardValuesCollection(new VendorCode().GetSourceList());
         }
     }
