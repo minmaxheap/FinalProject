@@ -175,7 +175,7 @@ namespace MES_Team3.BaseForms
             this.btnRead.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnRead.Location = new System.Drawing.Point(661, 12);
             this.btnRead.Name = "btnRead";
-            this.btnRead.Size = new System.Drawing.Size(47, 31);
+            this.btnRead.Size = new System.Drawing.Size(70, 31);
             this.btnRead.TabIndex = 23;
             this.btnRead.Text = "조회";
             this.btnRead.UseVisualStyleBackColor = false;
