@@ -33,8 +33,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=2.0.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.13\lib\net45\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -160,6 +165,7 @@
     <Compile Include="Sales_Order.Designer.cs">
       <DependentUpon>Sales_Order.cs</DependentUpon>
     </Compile>
+    <Compile Include="Util\LoggingUtility.cs" />
     <EmbeddedResource Include="BaseForms\Base1_1.resx">
       <DependentUpon>Base1_1.cs</DependentUpon>
     </EmbeddedResource>
@@ -215,6 +221,7 @@
     <EmbeddedResource Include="Sales_Order.resx">
       <DependentUpon>Sales_Order.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
