@@ -31,7 +31,7 @@ namespace MES_Team3
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 시간", "UPDATE_TIME");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 사용자", "UPDATE_USER_ID");
 
-            GetInfo();
+            LoadData();
 
             ProductVO vo = new ProductVO();
 
@@ -72,7 +72,7 @@ namespace MES_Team3
             bool bResult = serv.Insert(save);
             if (bResult)
             {
-                GetInfo();
+                LoadData();
             }
             else
             {
@@ -150,11 +150,11 @@ namespace MES_Team3
 
             ProductServ serv = new ProductServ();
             bool bResult = serv.Delete(save);
-            GetInfo();
+            LoadData();
 
         }
 
-        public void GetInfo()
+        public void LoadData()
         {
             ProductServ serv = new ProductServ();
             DataTable dt = serv.GetProductsList();
