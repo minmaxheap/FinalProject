@@ -137,17 +137,8 @@ namespace MES_Team3
         private void btnDelete_Click(object sender, EventArgs e)
         {
             //pk를 받아서 delete 하기 //이거 유틸로 할 수 있지 않을까? 
-            ProductVO save = new ProductVO();
-            GridItem gi = pgProperty.SelectedGridItem;
-            while (gi.Parent != null)
-            {
-                gi = gi.Parent;
-            }
-            foreach (GridItem item in gi.GridItems)
-            {
-                ParseGridItems(item, save);
-            }
 
+            ProductVO save = (ProductVO)pgProperty.SelectedObject;
             ProductServ serv = new ProductServ();
             bool bResult = serv.Delete(save);
             LoadData();
