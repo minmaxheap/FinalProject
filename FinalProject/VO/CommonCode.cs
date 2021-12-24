@@ -12,12 +12,10 @@ namespace VO
     {
         public List<string> GetSourceList()
         {
-            //dac에서 list 받아오기
+            //dac에서 list 받아오기 //앗 근데 DAC을 참조할 수가 없구나(순환 종속성 때문에)
+          
             List<string> productType = new List<string>();
-            productType.Add("Student");
-            productType.Add("Lecture");
-            productType.Add("Employee");
-
+          
             return productType;
         }
     }

@@ -100,6 +100,28 @@ where PRODUCT_CODE = @PRODUCT_CODE ";
                 return false;
             }
         }
+
+        public List<string> GetProductType()
+        {
+            string sql = @"SELECT [KEY_1] as 'PRODUCT_TYPE'
+FROM [dbo].[CODE_DATA_MST]
+WHERE [CODE_TABLE_NAME] ='CM_PRODUCT_TYPE'";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            List<string> productType = new List<string>();
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+
+                while (reader.Read())
+                {
+                    productType.Add(reader["PRODUCT_TYPE"].ToString());
+
+                }
+            }
+
+            return productType;
+        }
+
+
         public void Dispose()
         {
             conn.Close();
