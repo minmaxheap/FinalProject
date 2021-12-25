@@ -11,6 +11,7 @@ namespace MES_Team3
 {
     public partial class frmINSPECT_MST : MES_Team3.BaseForms.Base1_1
     {
+        InspecServ serv = null;
         public frmINSPECT_MST()
         {
             InitializeComponent();
@@ -82,7 +83,7 @@ namespace MES_Team3
 
         private void LoadData()
         {
-            InspecServ serv = new InspecServ();
+            serv = new InspecServ();
             DataTable dt = serv.GetTable();
             csDataGridView1.DataSource = null;
             csDataGridView1.DataSource = dt;
@@ -92,11 +93,30 @@ namespace MES_Team3
 		private void btnDelete_Click(object sender, EventArgs e)
         {
 
+            INSPECT_MSTVO save = (INSPECT_MSTVO)pgGrid.SelectedObject;
+
+            bool result = serv.Delete(save);
+            if (result)
+            {
+                MessageBox.Show("삭제되었습니다.");
+                LoadData();
+                return;
+            }
+            else
+            {
+                MessageBox.Show("수정되었습니다.");
+                return;
+            }
+            
         }
 
 		private void csDataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
 		{
+            INSPECT_MSTVO vo = new INSPECT_MSTVO(csDataGridView1.Rows[e.RowIndex]); //데이터그리드뷰 row를 한 개만 선택되는 경우로 상정함
 
-		}
+            pgGrid.SelectedObject = vo;
+
+            pgGrid.PropertySort = PropertySort.NoSort;
+        }
 	}
 }

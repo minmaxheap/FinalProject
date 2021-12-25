@@ -153,7 +153,12 @@ namespace MES_Team3
             csDataGridView1.DataSource = dt;
             SearchPanel = false;
         }
-    }
+
+		private void button3_Click(object sender, EventArgs e)
+		{
+
+		}
+	}
 
 
 }

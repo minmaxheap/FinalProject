@@ -14,13 +14,5 @@ namespace MES_Team3
 		{
 			InitializeComponent();
 		}
-
-		private void frmUserGroup_Load(object sender, EventArgs e)
-		{
-			searchPanel.Visible = false;
-			DataGridViewUtil.SetInitGridView(csDataGridView1);
-
-
-		}
 	}
 }

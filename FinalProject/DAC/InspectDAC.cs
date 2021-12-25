@@ -94,5 +94,10 @@ where INSPECT_ITEM_CODE = @INSPECT_ITEM_CODE";
 				return row > 0;
 			}
 		}
+
+		public bool Update(INSPECT_MSTVO vo)
+		{
+			string sql = @"Update set where "
+		}
 	}
 }
