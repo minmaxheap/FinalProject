@@ -101,6 +101,31 @@ where PRODUCT_CODE = @PRODUCT_CODE ";
             }
         }
 
+        public bool Update(ProductVO vo)
+        {
+            try
+            {
+                string sql = @"update  [dbo].[PRODUCT_MST] set PRODUCT_CODE = @PRODUCT_CODE, PRODUCT_NAME= @PRODUCT_NAME, PRODUCT_TYPE= @PRODUCT_TYPE, CUSTOMER_CODE= @CUSTOMER_CODE, VENDOR_CODE= @VENDOR_CODE,  UPDATE_TIME= getdate(), UPDATE_USER_ID== @UPDATE_USER_ID";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@PRODUCT_CODE", vo.PRODUCT_CODE);
+                    cmd.Parameters.AddWithValue("@PRODUCT_NAME", vo.PRODUCT_NAME);
+                    cmd.Parameters.AddWithValue("@PRODUCT_TYPE", vo.PRODUCT_TYPE);
+                    cmd.Parameters.AddWithValue("@CUSTOMER_CODE", vo.CUSTOMER_CODE);
+                    cmd.Parameters.AddWithValue("@VENDOR_CODE", vo.VENDOR_CODE);
+                    cmd.Parameters.AddWithValue("@UPDATE_USER_ID", vo.UPDATE_USER_ID);
+                    int row = cmd.ExecuteNonQuery();
+                    return row > 0;
+
+                }
+            }
+            catch (Exception err)
+            {
+                Debug.WriteLine(err.Message);
+                return false;
+            }
+        }
+
         public List<string> GetProductType()
         {
             string sql = @"SELECT [KEY_1] as 'PRODUCT_TYPE'

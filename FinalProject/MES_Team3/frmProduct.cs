@@ -158,7 +158,15 @@ namespace MES_Team3
 		{
 
 		}
-	}
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            ProductVO save = (ProductVO)pgProperty.SelectedObject;
+            ProductServ serv = new ProductServ();
+            bool bResult = serv.Update(save);
+            LoadData();
+        }
+    }
 
 
 }
