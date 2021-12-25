@@ -42,5 +42,22 @@ namespace MES_Team3
 			db.Dispose();
 			return result;
 		}
+
+		public bool Update(INSPECT_MSTVO vo)
+		{
+			InspectDAC db = new InspectDAC();
+			bool result = db.Update(vo);
+			db.Dispose();
+			return result;
+		}
+
+		//조회조건
+		public List<INSPECT_MSTVO> GetINSPECT_MST_Search(string code, string ValueType)
+		{
+			InspectDAC dac = new InspectDAC();
+			List<INSPECT_MSTVO> list = dac.GetINSPECT_MST_Search(code, ValueType);
+			dac.Dispose();
+			return list;
+		}
 	}
 }

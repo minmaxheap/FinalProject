@@ -56,12 +56,17 @@ namespace MES_Team3
 		private void Search_Grid_Click(object sender, EventArgs e)
 		{
 
-		}
+        }
 
+        //검색조건 
 		private void button3_Click(object sender, EventArgs e)
 		{
+            SearchVo vo = new SearchVo();
 
-		}
+            pgSearch.SelectedObject = vo;
+
+            pgSearch.PropertySort = PropertySort.NoSort;
+        }
 
 		private void btnInsert_Click(object sender, EventArgs e)
 		{
@@ -117,6 +122,19 @@ namespace MES_Team3
             pgGrid.SelectedObject = vo;
 
             pgGrid.PropertySort = PropertySort.NoSort;
+        }
+
+		private void btnRead_Click(object sender, EventArgs e)
+		{
+            SearchVo vo = new SearchVo();
+
+            pgSearch.SelectedObject = vo;
+
+            if (pgSearch.SelectedObject == null)
+            {
+                MessageBox.Show("rr");
+                return; 
+            }
         }
 	}
 }

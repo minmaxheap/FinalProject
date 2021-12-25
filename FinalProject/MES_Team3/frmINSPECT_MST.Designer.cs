@@ -53,6 +53,10 @@ namespace MES_Team3
 			// 
 			this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
 			// 
+			// btnRead
+			// 
+			this.btnRead.Click += new System.EventHandler(this.btnRead_Click);
+			// 
 			// btnDelete
 			// 
 			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);

@@ -99,4 +99,31 @@ namespace VO
 
 		}
 	}
+
+	public class SearchVo
+	{
+		private string ItemCode;
+		private string ValueType;
+
+
+		[DisplayName("검사항목")]
+		public string INSPECT_ITEM_CODE { get { return ItemCode; } set { value = ItemCode; } }
+
+		[DisplayName("값 유형")]
+		[TypeConverter(typeof(ValueTypeConverter))]
+		public string VALUE_TYPE { get { return ValueType; } set { value = ValueType; } }
+
+		public SearchVo()
+		{
+			
+		}
+
+		public SearchVo(DataGridViewRow row)
+		{
+			ItemCode = row.Cells["INSPECT_ITEM_CODE"].Value.ToString();
+			ValueType = row.Cells["VALUE_TYPE"].ToString();
+		}
+	}
+
+
 }
