@@ -34,5 +34,15 @@ namespace MES_Team3
             dac.Dispose();
             return bResult;
         }
+
+
+        public bool Update(ProductVO vo)
+        {
+
+            ProductDAC dac = new ProductDAC();
+            bool bResult = dac.Update(vo);
+            dac.Dispose();
+            return bResult;
+        }
     }
 }
