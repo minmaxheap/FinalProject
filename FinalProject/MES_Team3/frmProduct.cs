@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 using VO;
@@ -186,6 +187,16 @@ namespace MES_Team3
 		{
 
             ProductProperty search = new ProductProperty();
+            search.IsSearchPanel = true;
+            //PropertyDescriptorCollection propCollection = TypeDescriptor.GetProperties(search.GetType()); 
+            //PropertyDescriptor descriptor = propCollection["UPDATE_USER_ID"];
+            //BrowsableAttribute attrib = (BrowsableAttribute)descriptor.Attributes[typeof(BrowsableAttribute)]; 
+            //FieldInfo isBrow = attrib.GetType().GetField("browsable", BindingFlags.NonPublic | BindingFlags.Instance); 
+            ////Condition to Show or Hide set here:
+            //isBrow.SetValue(attrib, false);
+
+            //pgSearch.Refresh(); //Remember to refresh
+          
             pgSearch.SelectedObject = search;
             pgSearch.PropertySort = PropertySort.NoSort;
             // propertyPanel.Visible = false;
