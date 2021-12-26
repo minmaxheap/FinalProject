@@ -27,7 +27,7 @@ namespace DAC
         public DataTable GetProductsList()
         {
             string sql = @"select PRODUCT_CODE, PRODUCT_NAME, PRODUCT_TYPE, CUSTOMER_CODE, VENDOR_CODE, CREATE_TIME, CREATE_USER_ID, UPDATE_TIME, UPDATE_USER_ID
-from [dbo].[PRODUCT_MST]";
+from [dbo].[PRODUCT_MST]"; 
             DataTable dt = new DataTable();
             using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
             {

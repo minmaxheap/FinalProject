@@ -40,6 +40,20 @@ namespace MES_Team3
 
             pgProperty.PropertySort = PropertySort.NoSort;
 
+
+            //m_dctd = ProviderInstaller.Install(this);
+            //m_dctd.PropertySortOrder = CustomSortOrder.AscendingByName;
+            //m_dctd.CategorySortOrder = CustomSortOrder.DescendingByName;
+
+            //// now lets modify some attribute of PropA
+            //CustomPropertyDescriptor cpd = m_pdm.GetProperty("PropA");
+            //cpd.SetDisplayName("New display name of PropA");
+            //cpd.SetDescription("New description of PropA");
+            //cpd.SetCategory("New Category of PropA");
+            //cpd.SetIsReadOnly(true); // disables the property
+            //cpd.SetIsBrowsable(true);  // hides the property
+            //cpd.CategoryID = 4;
+
             //barlist = new List<Bar>();
             //for (int i = 1; i < 10; i++)
             //{
