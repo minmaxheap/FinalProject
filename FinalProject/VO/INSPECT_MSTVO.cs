@@ -120,6 +120,8 @@ namespace VO
 
 		public SearchVo(DataGridViewRow row)
 		{
+
+
 			ItemCode = row.Cells["INSPECT_ITEM_CODE"].Value.ToString();
 			ValueType = row.Cells["VALUE_TYPE"].ToString();
 		}

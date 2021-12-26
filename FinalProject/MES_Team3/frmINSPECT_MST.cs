@@ -13,6 +13,8 @@ namespace MES_Team3
     {
         InspecServ serv = null;
         string Inspect_id = string.Empty;
+
+        INSPECT_MSTVO vo;
         public frmINSPECT_MST()
         {
             InitializeComponent();
@@ -47,7 +49,7 @@ namespace MES_Team3
             LoadData();
 
             SearchPanel = false;
-            INSPECT_MSTVO vo = new INSPECT_MSTVO();
+           vo = new INSPECT_MSTVO();
 
             pgGrid.SelectedObject = vo;
 
@@ -63,8 +65,11 @@ namespace MES_Team3
         //검색조건 
 		private void button3_Click(object sender, EventArgs e)
 		{
+            DataGridViewRow row = new DataGridViewRow();
+            
+            vo.INSPECT_ITEM_CODE = row.Cells["INSPECT_ITEM_CODE"].Value.ToString();
+            vo.VALUE_TYPE = row.Cells["VALUE_TYPE"].ToString();
 
-            Search_INSPEC_MSEVO vo = new Search_INSPEC_MSEVO();
 
             pgSearch.SelectedObject = vo;
 
