@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DAC
 {
-    public class ProductVO
+    public class ProductProperty
     {
         private string product_code;
         private string product_name;
@@ -43,7 +43,7 @@ namespace DAC
         [DisplayName("변경 사용자")]
         public string UPDATE_USER_ID { get { return update_user_id; } set { update_user_id = value; } }
 
-        public ProductVO()
+        public ProductProperty()
         {
 
         }

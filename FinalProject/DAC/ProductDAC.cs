@@ -36,7 +36,7 @@ from [dbo].[PRODUCT_MST]";
             }
         }
 
-        public bool Insert(ProductVO vo)
+        public bool Insert(ProductProperty vo)
         {
             try
             {
@@ -81,7 +81,7 @@ from [dbo].[PRODUCT_MST]";
             }
         }
 
-        public bool Delete(ProductVO vo)
+        public bool Delete(ProductProperty pt)
         {
             try
             {
@@ -89,7 +89,7 @@ from [dbo].[PRODUCT_MST]";
 where PRODUCT_CODE = @PRODUCT_CODE ";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
-                    cmd.Parameters.AddWithValue("@PRODUCT_CODE", vo.PRODUCT_CODE);
+                    cmd.Parameters.AddWithValue("@PRODUCT_CODE", pt.PRODUCT_CODE);
                     int row = cmd.ExecuteNonQuery();
                     return row > 0;
 
@@ -102,19 +102,19 @@ where PRODUCT_CODE = @PRODUCT_CODE ";
             }
         }
 
-        public bool Update(ProductVO vo)
+        public bool Update(ProductProperty pt)
         {
             try
             {
                 string sql = @"update  [dbo].[PRODUCT_MST] set PRODUCT_CODE = @PRODUCT_CODE, PRODUCT_NAME= @PRODUCT_NAME, PRODUCT_TYPE= @PRODUCT_TYPE, CUSTOMER_CODE= @CUSTOMER_CODE, VENDOR_CODE= @VENDOR_CODE,  UPDATE_TIME= getdate(), UPDATE_USER_ID== @UPDATE_USER_ID";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
-                    cmd.Parameters.AddWithValue("@PRODUCT_CODE", vo.PRODUCT_CODE);
-                    cmd.Parameters.AddWithValue("@PRODUCT_NAME", vo.PRODUCT_NAME);
-                    cmd.Parameters.AddWithValue("@PRODUCT_TYPE", vo.PRODUCT_TYPE);
-                    cmd.Parameters.AddWithValue("@CUSTOMER_CODE", vo.CUSTOMER_CODE);
-                    cmd.Parameters.AddWithValue("@VENDOR_CODE", vo.VENDOR_CODE);
-                    cmd.Parameters.AddWithValue("@UPDATE_USER_ID", vo.UPDATE_USER_ID);
+                    cmd.Parameters.AddWithValue("@PRODUCT_CODE", pt.PRODUCT_CODE);
+                    cmd.Parameters.AddWithValue("@PRODUCT_NAME", pt.PRODUCT_NAME);
+                    cmd.Parameters.AddWithValue("@PRODUCT_TYPE", pt.PRODUCT_TYPE);
+                    cmd.Parameters.AddWithValue("@CUSTOMER_CODE", pt.CUSTOMER_CODE);
+                    cmd.Parameters.AddWithValue("@VENDOR_CODE", pt.VENDOR_CODE);
+                    cmd.Parameters.AddWithValue("@UPDATE_USER_ID", pt.UPDATE_USER_ID);
                     int row = cmd.ExecuteNonQuery();
                     return row > 0;
 

@@ -34,7 +34,7 @@ namespace MES_Team3
 
             LoadData();
 
-            ProductVO vo = new ProductVO();
+            ProductProperty vo = new ProductProperty();
 
             pgProperty.SelectedObject = vo;
 
@@ -68,7 +68,7 @@ namespace MES_Team3
             //    ParseGridItems(item, save);
             //}
 
-            ProductVO save = (ProductVO)pgProperty.SelectedObject;
+            ProductProperty save = (ProductProperty)pgProperty.SelectedObject;
             ProductServ serv = new ProductServ();
             bool bResult = serv.Insert(save);
             if (bResult)
@@ -129,7 +129,7 @@ namespace MES_Team3
         private void csDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow dr = csDataGridView1.Rows[e.RowIndex];
-            ProductVO vo = new ProductVO();
+            ProductProperty vo = new ProductProperty();
             vo.PRODUCT_CODE = dr.Cells["PRODUCT_CODE"].Value.ToString();
             vo.PRODUCT_NAME = dr.Cells["PRODUCT_NAME"].Value.ToString();
             vo.PRODUCT_TYPE = dr.Cells["PRODUCT_TYPE"].Value.ToString();
@@ -152,7 +152,7 @@ namespace MES_Team3
         {
             //pk를 받아서 delete 하기 //이거 유틸로 할 수 있지 않을까? 
 
-            ProductVO save = (ProductVO)pgProperty.SelectedObject;
+            ProductProperty save = (ProductProperty)pgProperty.SelectedObject;
             ProductServ serv = new ProductServ();
             bool bResult = serv.Delete(save);
             LoadData();
@@ -175,7 +175,7 @@ namespace MES_Team3
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            ProductVO save = (ProductVO)pgProperty.SelectedObject;
+            ProductProperty save = (ProductProperty)pgProperty.SelectedObject;
             ProductServ serv = new ProductServ();
             bool bResult = serv.Update(save);
             LoadData();

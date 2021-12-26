@@ -19,7 +19,7 @@ namespace MES_Team3
             return dt;
         }
 
-        public bool Insert(ProductVO vo)
+        public bool Insert(ProductProperty vo)
         {
             ProductDAC dac = new ProductDAC();
             bool bResult = dac.Insert(vo);
@@ -27,7 +27,7 @@ namespace MES_Team3
             return bResult;
         }
 
-        public bool Delete(ProductVO vo)
+        public bool Delete(ProductProperty vo)
         {
             ProductDAC dac = new ProductDAC();
             bool bResult = dac.Delete(vo);
@@ -36,7 +36,7 @@ namespace MES_Team3
         }
 
 
-        public bool Update(ProductVO vo)
+        public bool Update(ProductProperty vo)
         {
 
             ProductDAC dac = new ProductDAC();

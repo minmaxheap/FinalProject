@@ -21,7 +21,7 @@ namespace MES_Team3
         {
 
             SearchPanel = false;
-            ProductVO vo = new ProductVO();
+            ProductProperty vo = new ProductProperty();
 
             pgProperty.SelectedObject = vo;
 
