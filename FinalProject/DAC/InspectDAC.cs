@@ -133,6 +133,7 @@ where INSPECT_ITEM_CODE = @INSPECT_ITEM_CODE ");
 			{
 				sb.Append(" and VALUE_TYPE = @VALUE_TYPE");
 			}
+			
 
 			using (SqlCommand cmd = new SqlCommand(sb.ToString(), conn))
 			{
@@ -140,6 +141,30 @@ where INSPECT_ITEM_CODE = @INSPECT_ITEM_CODE ");
 				cmd.Parameters.AddWithValue("@VALUE_TYPE", ValueType);
 
 				return Helper.DataReaderMapToList<INSPECT_MSTVO>(cmd.ExecuteReader());
+			}
+
+		}
+
+		public List<Search_INSPEC_MSEVO> GetINSPECT_MST_Search2(Search_INSPEC_MSEVO vo)
+		{
+			StringBuilder sb = new StringBuilder();
+
+			sb.Append(@"select INSPECT_ITEM_CODE, INSPECT_ITEM_NAME, VALUE_TYPE, SPEC_LSL, SPEC_TARGET, SPEC_USL, CREATE_TIME, CREATE_USER_ID, UPDATE_TIME, UPDATE_USER_ID
+from [dbo].[INSPECT_ITEM_MST]
+where INSPECT_ITEM_CODE = @INSPECT_ITEM_CODE ");
+
+			if (!string.IsNullOrWhiteSpace(vo.VALUE_TYPE))
+			{
+				sb.Append(" and VALUE_TYPE = @VALUE_TYPE");
+			}
+
+
+			using (SqlCommand cmd = new SqlCommand(sb.ToString(), conn))
+			{
+				cmd.Parameters.AddWithValue("@INSPECT_ITEM_CODE",vo.INSPECT_ITEM_CODE );
+				cmd.Parameters.AddWithValue("@VALUE_TYPE", vo.VALUE_TYPE);
+
+				return Helper.DataReaderMapToList<Search_INSPEC_MSEVO>(cmd.ExecuteReader());
 			}
 
 		}

@@ -107,11 +107,11 @@ namespace VO
 
 
 		[DisplayName("검사항목")]
-		public string INSPECT_ITEM_CODE { get { return ItemCode; } set { value = ItemCode; } }
+		public string INSPECT_ITEM_CODE { get { return ItemCode; } set { ItemCode = value; } }
 
 		[DisplayName("값 유형")]
 		[TypeConverter(typeof(ValueTypeConverter))]
-		public string VALUE_TYPE { get { return ValueType; } set { value = ValueType; } }
+		public string VALUE_TYPE { get { return ValueType; } set { ValueType = value; } }
 
 		public SearchVo()
 		{
