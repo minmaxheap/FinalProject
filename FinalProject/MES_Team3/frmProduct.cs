@@ -185,7 +185,11 @@ namespace MES_Team3
 		private void button3_Click(object sender, EventArgs e)
 		{
 
-		}
+            ProductProperty search = new ProductProperty();
+            pgSearch.SelectedObject = search;
+            pgSearch.PropertySort = PropertySort.NoSort;
+            // propertyPanel.Visible = false;
+        }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
