@@ -12,6 +12,9 @@ namespace MES_Team3
     public partial class frmINSPECT_MST : MES_Team3.BaseForms.Base1_1
     {
         InspecServ serv = null;
+        string Inspect_id = string.Empty;
+
+        INSPECT_MSTVO vo;
         public frmINSPECT_MST()
         {
             InitializeComponent();
@@ -46,11 +49,12 @@ namespace MES_Team3
             LoadData();
 
             SearchPanel = false;
-            INSPECT_MSTVO vo = new INSPECT_MSTVO();
+           vo = new INSPECT_MSTVO();
 
             pgGrid.SelectedObject = vo;
 
             pgGrid.PropertySort = PropertySort.NoSort;
+
         }
 
 		private void Search_Grid_Click(object sender, EventArgs e)
@@ -61,7 +65,11 @@ namespace MES_Team3
         //검색조건 
 		private void button3_Click(object sender, EventArgs e)
 		{
-            SearchVo vo = new SearchVo();
+            DataGridViewRow row = new DataGridViewRow();
+            
+            vo.INSPECT_ITEM_CODE = row.Cells["INSPECT_ITEM_CODE"].Value.ToString();
+            vo.VALUE_TYPE = row.Cells["VALUE_TYPE"].ToString();
+
 
             pgSearch.SelectedObject = vo;
 
@@ -97,7 +105,9 @@ namespace MES_Team3
 
 		private void btnDelete_Click(object sender, EventArgs e)
         {
-
+            //수정
+            
+            // Inspect_id 
             INSPECT_MSTVO save = (INSPECT_MSTVO)pgGrid.SelectedObject;
 
             bool result = serv.Delete(save);
@@ -109,7 +119,7 @@ namespace MES_Team3
             }
             else
             {
-                MessageBox.Show("수정되었습니다.");
+                MessageBox.Show("삭제 중 실패되었습니다.");
                 return;
             }
             
@@ -117,24 +127,78 @@ namespace MES_Team3
 
 		private void csDataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
 		{
-            INSPECT_MSTVO vo = new INSPECT_MSTVO(csDataGridView1.Rows[e.RowIndex]); //데이터그리드뷰 row를 한 개만 선택되는 경우로 상정함
+
+            //이거 안됨 
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+
+            //아이디
+            Inspect_id = csDataGridView1["INSPECT_ITEM_CODE", e.RowIndex].Value.ToString();
+            MessageBox.Show($"{Inspect_id}를 선택하셨습니다.");
+
+
+            DataGridViewRow dr = csDataGridView1.Rows[e.RowIndex];
+            INSPECT_MSTVO vo = new INSPECT_MSTVO();
+            vo.INSPECT_ITEM_CODE = dr.Cells["INSPECT_ITEM_CODE"].Value.ToString();
+            vo.INSPECT_ITEM_NAME = dr.Cells["INSPECT_ITEM_NAME"].Value.ToString();
+            vo.VALUE_TYPE = dr.Cells["VALUE_TYPE"].Value.ToString();
+            vo.SPEC_LSL = dr.Cells["SPEC_LSL"].Value.ToString();
+            vo.SPEC_USL = dr.Cells["SPEC_USL"].Value.ToString();
+
+            if (dr.Cells["CREATE_TIME"].Value != null && dr.Cells["CREATE_TIME"].Value != DBNull.Value)
+                vo.CREATE_TIME = Convert.ToDateTime(dr.Cells["CREATE_TIME"].Value);
+
+            vo.CREATE_USER_ID = dr.Cells["CREATE_USER_ID"].Value.ToString();
+
+            if (dr.Cells["UPDATE_TIME"].Value != null && dr.Cells["UPDATE_TIME"].Value != DBNull.Value)
+                vo.UPDATE_TIME = Convert.ToDateTime(dr.Cells["UPDATE_TIME"].Value);
+
+            vo.UPDATE_USER_ID = dr.Cells["UPDATE_USER_ID"].Value.ToString();
 
             pgGrid.SelectedObject = vo;
 
             pgGrid.PropertySort = PropertySort.NoSort;
+
+
+            propertyPanel.Visible = true;
+            searchPanel.Visible = false;
+
+
         }
 
 		private void btnRead_Click(object sender, EventArgs e)
 		{
-            SearchVo vo = new SearchVo();
+            //SearchVo vo = new SearchVo();
+            Search_INSPEC_MSEVO save = (Search_INSPEC_MSEVO)pgGrid.SelectedObject;
 
-            pgSearch.SelectedObject = vo;
+            List<Search_INSPEC_MSEVO>  list = serv.GetINSPECT_MST_Search2(save);
+            csDataGridView1.DataSource = list;
 
-            if (pgSearch.SelectedObject == null)
+        }
+
+		private void btnUpdate_Click(object sender, EventArgs e)
+		{
+            INSPECT_MSTVO save = (INSPECT_MSTVO)pgGrid.SelectedObject;
+            InspecServ serv = new InspecServ();
+            bool bResult = serv.Update(save);
+            if (bResult)
             {
-                MessageBox.Show("rr");
-                return; 
+                MessageBox.Show("수정되었습니다.");
+                LoadData();
+                return;
+            }
+            else
+            {
+                MessageBox.Show("수정중 실패");
+                return;
             }
         }
+
+		private void panel5_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
 	}
 }

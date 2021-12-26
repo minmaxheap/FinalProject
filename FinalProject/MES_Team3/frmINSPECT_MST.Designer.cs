@@ -53,6 +53,14 @@ namespace MES_Team3
 			// 
 			this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
 			// 
+			// btnUpdate
+			// 
+			this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+			// 
+			// panel5
+			// 
+			this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
+			// 
 			// btnRead
 			// 
 			this.btnRead.Click += new System.EventHandler(this.btnRead_Click);

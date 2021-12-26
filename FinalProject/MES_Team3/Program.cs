@@ -16,7 +16,7 @@ namespace MES_Team3
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmProduct());
+            Application.Run(new frmINSPECT_MST());
         }
     }
 }
