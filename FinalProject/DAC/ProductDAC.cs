@@ -126,7 +126,7 @@ where PRODUCT_CODE = @PRODUCT_CODE ";
             }
         }
 
-        public List<string> GetProductType()
+        public List<string> GetSourceList()
         {
             string sql = @"SELECT [KEY_1] as 'PRODUCT_TYPE'
 FROM [dbo].[CODE_DATA_MST]
