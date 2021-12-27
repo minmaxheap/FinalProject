@@ -81,18 +81,6 @@
     <Compile Include="BaseForms\Base5.Designer.cs">
       <DependentUpon>Base5.cs</DependentUpon>
     </Compile>
-    <Compile Include="BaseForms\frmMessageBox.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BaseForms\frmMessageBox.Designer.cs">
-      <DependentUpon>frmMessageBox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BaseForms\frmSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BaseForms\frmSearch.Designer.cs">
-      <DependentUpon>frmSearch.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controls\csDataGridView.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -111,12 +99,6 @@
     <Compile Include="Controls\NumTextBox.Designer.cs">
       <DependentUpon>NumTextBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmProcess.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmProcess.Designer.cs">
-      <DependentUpon>frmProcess.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmINSPECT_MST.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +116,12 @@
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOperation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOperation.Designer.cs">
+      <DependentUpon>frmOperation.cs</DependentUpon>
     </Compile>
     <Compile Include="frmProductOperRelation.cs">
       <SubType>Form</SubType>
@@ -157,6 +145,7 @@
       <DependentUpon>frmProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\InspecServ.cs" />
+    <Compile Include="Services\OperationServ.cs" />
     <Compile Include="Services\ProductServ.cs" />
     <Compile Include="Services\UserGroupServ.cs" />
     <Compile Include="Util\DataGridViewUtil.cs" />
@@ -182,12 +171,6 @@
     <EmbeddedResource Include="BaseForms\Base5.resx">
       <DependentUpon>Base5.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BaseForms\frmMessageBox.resx">
-      <DependentUpon>frmMessageBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BaseForms\frmSearch.resx">
-      <DependentUpon>frmSearch.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmINSPECT_MST.resx">
       <DependentUpon>frmINSPECT_MST.cs</DependentUpon>
     </EmbeddedResource>
@@ -197,8 +180,8 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmProcess.resx">
-      <DependentUpon>frmProcess.cs</DependentUpon>
+    <EmbeddedResource Include="frmOperation.resx">
+      <DependentUpon>frmOperation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProduct.resx">
       <DependentUpon>frmProduct.cs</DependentUpon>
