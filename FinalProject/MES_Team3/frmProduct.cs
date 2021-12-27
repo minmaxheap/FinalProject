@@ -71,30 +71,34 @@ namespace MES_Team3
             {
                 return;
             }
-            //오류 생김
+       
             DataGridViewRow dr = csDataGridView1.Rows[e.RowIndex];
-            ProductProperty vo = new ProductProperty();
+            ProductProperty pr = new ProductProperty();
+
+            lblPanel.Text = "▶ 속성";
+            pr.IsSearchPanel = false;
+
             if (dr.Cells["PRODUCT_CODE"].Value != null && dr.Cells["PRODUCT_CODE"].Value != DBNull.Value)
-                vo.PRODUCT_CODE = dr.Cells["PRODUCT_CODE"].Value.ToString();
+                pr.PRODUCT_CODE = dr.Cells["PRODUCT_CODE"].Value.ToString();
             if (dr.Cells["PRODUCT_NAME"].Value != null && dr.Cells["PRODUCT_NAME"].Value != DBNull.Value)
-                vo.PRODUCT_NAME = dr.Cells["PRODUCT_NAME"].Value.ToString();
+                pr.PRODUCT_NAME = dr.Cells["PRODUCT_NAME"].Value.ToString();
             if (dr.Cells["PRODUCT_TYPE"].Value != null && dr.Cells["PRODUCT_TYPE"].Value != DBNull.Value)
-                vo.PRODUCT_TYPE = dr.Cells["PRODUCT_TYPE"].Value.ToString();
+                pr.PRODUCT_TYPE = dr.Cells["PRODUCT_TYPE"].Value.ToString();
             if (dr.Cells["CUSTOMER_CODE"].Value != null && dr.Cells["CUSTOMER_CODE"].Value != DBNull.Value)
-                vo.CUSTOMER_CODE = dr.Cells["CUSTOMER_CODE"].Value.ToString();
+                pr.CUSTOMER_CODE = dr.Cells["CUSTOMER_CODE"].Value.ToString();
             if (dr.Cells["VENDOR_CODE"].Value != null && dr.Cells["VENDOR_CODE"].Value != DBNull.Value)
-                vo.VENDOR_CODE = dr.Cells["VENDOR_CODE"].Value.ToString();
+                pr.VENDOR_CODE = dr.Cells["VENDOR_CODE"].Value.ToString();
             if (dr.Cells["CREATE_TIME"].Value != null && dr.Cells["CREATE_TIME"].Value != DBNull.Value)
-                vo.CREATE_TIME = Convert.ToDateTime(dr.Cells["CREATE_TIME"].Value);
+                pr.CREATE_TIME = Convert.ToDateTime(dr.Cells["CREATE_TIME"].Value);
             if (dr.Cells["CREATE_USER_ID"].Value != null && dr.Cells["CREATE_USER_ID"].Value != DBNull.Value)
-                vo.CREATE_USER_ID = csDataGridView1.Rows[e.RowIndex].Cells["CREATE_USER_ID"].Value.ToString();
+                pr.CREATE_USER_ID = csDataGridView1.Rows[e.RowIndex].Cells["CREATE_USER_ID"].Value.ToString();
             if (dr.Cells["UPDATE_TIME"].Value != null && dr.Cells["UPDATE_TIME"].Value != DBNull.Value)
-                vo.UPDATE_TIME = Convert.ToDateTime(dr.Cells["UPDATE_TIME"].Value);
+                pr.UPDATE_TIME = Convert.ToDateTime(dr.Cells["UPDATE_TIME"].Value);
             if (dr.Cells["UPDATE_USER_ID"].Value != null && dr.Cells["UPDATE_USER_ID"].Value != DBNull.Value)
-                vo.UPDATE_USER_ID = dr.Cells["UPDATE_USER_ID"].Value.ToString();
+                pr.UPDATE_USER_ID = dr.Cells["UPDATE_USER_ID"].Value.ToString();
             //ProductVO vo = new ProductVO(csDataGridView1.Rows[e.RowIndex]); //데이터그리드뷰 row를 한 개만 선택되는 경우로 상정함
 
-            pgProperty.SelectedObject = vo;
+            pgProperty.SelectedObject = pr;
 
             pgProperty.PropertySort = PropertySort.NoSort;
 
