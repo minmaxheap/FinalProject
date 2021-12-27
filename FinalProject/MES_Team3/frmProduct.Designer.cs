@@ -68,8 +68,6 @@ namespace MES_Team3
             // btnDelete
             // 
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            this.panel3.Controls.SetChildIndex(this.textBox1, 0);
-            this.panel3.Controls.SetChildIndex(this.button3, 0);
             // 
             // button3
             // 
@@ -95,6 +93,10 @@ namespace MES_Team3
             // panel4
             // 
             this.panel4.Controls.Add(this.csDataGridView1);
+            // 
+            // button2
+            // 
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // pgProperty
             // 

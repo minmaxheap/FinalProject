@@ -152,6 +152,14 @@ namespace MES_Team3
             pgSearch.PropertySort = PropertySort.NoSort;
             searchPanel.Visible = true;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string txt = textBox1.Text;
+            DataTable dt = new DataTable();
+            
+            
+        }
     }
 
 
