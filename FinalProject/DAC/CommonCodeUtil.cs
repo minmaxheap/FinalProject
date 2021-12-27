@@ -203,6 +203,5 @@ namespace DAC
             // ProductVO refMyObject = context.Instance as ProductVO;
             return new StandardValuesCollection(new DepartMent().GetSourceList());
         }
-
     }
 }
