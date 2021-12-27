@@ -1,7 +1,7 @@
 ﻿
 namespace MES_Team3
 {
-    partial class frmProcess
+    partial class frmOperation
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -33,12 +33,14 @@ namespace MES_Team3
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.pgSearch = new System.Windows.Forms.PropertyGrid();
             this.pgProperty = new System.Windows.Forms.PropertyGrid();
+            this.pgSearch = new System.Windows.Forms.PropertyGrid();
             this.csDataGridView1 = new MES_Team3.csDataGridView();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.propertyPanel.SuspendLayout();
+            this.searchPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -47,71 +49,72 @@ namespace MES_Team3
             ((System.ComponentModel.ISupportInitialize)(this.csDataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel6
+            // btnInsert
             // 
-            this.panel6.Location = new System.Drawing.Point(779, 854);
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
-            // panel5
+            // btnUpdate
             // 
-            this.panel5.Location = new System.Drawing.Point(12, 859);
-            this.panel3.Controls.SetChildIndex(this.textBox1, 0);
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnRead
+            // 
+            this.btnRead.Click += new System.EventHandler(this.btnRead_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.panel3.Controls.SetChildIndex(this.txtSearch, 0);
             this.panel3.Controls.SetChildIndex(this.button3, 0);
+            // 
+            // button3
+            // 
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // lblTitle
             // 
-            this.lblTitle.Size = new System.Drawing.Size(995, 36);
+            this.lblTitle.Text = "품번 목록";
             // 
             // propertyPanel
             // 
-            this.propertyPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
-            this.propertyPanel.Location = new System.Drawing.Point(88, 61);
-            this.propertyPanel.Size = new System.Drawing.Size(340, 782);
-            // 
-            // lblPanel
-            // 
-            this.lblPanel.Size = new System.Drawing.Size(390, 36);
+            this.propertyPanel.Controls.Add(this.pgProperty);
+            this.propertyPanel.Size = new System.Drawing.Size(360, 527);
             // 
             // searchPanel
             // 
-            this.searchPanel.Size = new System.Drawing.Size(76, 939);
-            // 
-            // btnPanel
-            // 
-            this.btnPanel.Location = new System.Drawing.Point(423, 3);
+            this.searchPanel.Controls.Add(this.pgSearch);
+            this.searchPanel.Size = new System.Drawing.Size(360, 524);
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Size = new System.Drawing.Size(1478, 778);
-            this.splitContainer1.SplitterDistance = 995;
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.pgSearch);
-            this.panel4.Controls.Add(this.pgProperty);
             this.panel4.Controls.Add(this.csDataGridView1);
-            this.panel4.Size = new System.Drawing.Size(995, 742);
-            // 
-            // pgSearch
-            // 
-            this.pgSearch.HelpVisible = false;
-            this.pgSearch.Location = new System.Drawing.Point(142, 275);
-            this.pgSearch.Margin = new System.Windows.Forms.Padding(4);
-            this.pgSearch.Name = "pgSearch";
-            this.pgSearch.Size = new System.Drawing.Size(231, 439);
-            this.pgSearch.TabIndex = 4;
-            this.pgSearch.ToolbarVisible = false;
-            this.pgSearch.Click += new System.EventHandler(this.pgSearch_Click);
             // 
             // pgProperty
             // 
+            this.pgProperty.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pgProperty.HelpVisible = false;
-            this.pgProperty.Location = new System.Drawing.Point(487, 295);
-            this.pgProperty.Margin = new System.Windows.Forms.Padding(4);
+            this.pgProperty.Location = new System.Drawing.Point(1, 1);
             this.pgProperty.Name = "pgProperty";
-            this.pgProperty.Size = new System.Drawing.Size(292, 407);
-            this.pgProperty.TabIndex = 5;
+            this.pgProperty.Size = new System.Drawing.Size(358, 563);
+            this.pgProperty.TabIndex = 4;
             this.pgProperty.ToolbarVisible = false;
-            this.pgProperty.Click += new System.EventHandler(this.pgProperty_Click);
+            // 
+            // pgSearch
+            // 
+            this.pgSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pgSearch.HelpVisible = false;
+            this.pgSearch.Location = new System.Drawing.Point(1, 3);
+            this.pgSearch.Name = "pgSearch";
+            this.pgSearch.Size = new System.Drawing.Size(358, 552);
+            this.pgSearch.TabIndex = 3;
+            this.pgSearch.ToolbarVisible = false;
             // 
             // csDataGridView1
             // 
@@ -139,7 +142,6 @@ namespace MES_Team3
             this.csDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.csDataGridView1.EnableHeadersVisualStyles = false;
             this.csDataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.csDataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.csDataGridView1.Name = "csDataGridView1";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
@@ -151,21 +153,25 @@ namespace MES_Team3
             this.csDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.csDataGridView1.RowHeadersWidth = 30;
             this.csDataGridView1.RowTemplate.Height = 23;
-            this.csDataGridView1.Size = new System.Drawing.Size(995, 742);
-            this.csDataGridView1.TabIndex = 1;
+            this.csDataGridView1.Size = new System.Drawing.Size(771, 575);
+            this.csDataGridView1.TabIndex = 0;
+            this.csDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellClick);
             // 
-            // frmProcess
+            // frmProduct
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
-            this.ClientSize = new System.Drawing.Size(1502, 945);
-            this.Name = "frmProcess";
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.ClientSize = new System.Drawing.Size(1168, 778);
+            this.Name = "frmProduct";
             this.PropertyPanel = true;
             this.SearchPanel = true;
-            this.Load += new System.EventHandler(this.frmProcess_Load);
+            this.Text = "품번 설정";
+            this.Load += new System.EventHandler(this.frmProduct1_Load);
             this.panel6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.propertyPanel.ResumeLayout(false);
+            this.searchPanel.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -178,8 +184,8 @@ namespace MES_Team3
 
         #endregion
 
-        private System.Windows.Forms.PropertyGrid pgSearch;
         private System.Windows.Forms.PropertyGrid pgProperty;
+        private System.Windows.Forms.PropertyGrid pgSearch;
         private csDataGridView csDataGridView1;
     }
 }
