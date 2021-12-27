@@ -68,7 +68,7 @@ from [dbo].[OPERATION_MST]";
                     //cmd.Parameters.AddWithValue("@CREATE_TIME",vo.CREATE_TIME);
                     cmd.Parameters.AddWithValue("@CREATE_USER_ID", vo.CREATE_USER_ID);
                     //cmd.Parameters.AddWithValue("@UPDATE_TIME", vo.UPDATE_TIME);
-                    cmd.Parameters.AddWithValue("@UPDATE_USER_ID", vo.UPDATE_USER_ID);
+                    //cmd.Parameters.AddWithValue("@UPDATE_USER_ID", vo.UPDATE_USER_ID);
                     int row = cmd.ExecuteNonQuery();
                     return row > 0;
 
@@ -162,7 +162,7 @@ where 1=1");
                 }
                 if (!string.IsNullOrWhiteSpace(pr.CHECK_INSPECT_FLAG))
                 {
-                    sb.Append(" and CHECK_INSPECT_FLAG=@VENCHECK_INSPECT_FLAGDOR_CODE");
+                    sb.Append(" and CHECK_INSPECT_FLAG=@CHECK_INSPECT_FLAG");
                     cmd.Parameters.AddWithValue("@CHECK_INSPECT_FLAG", pr.CHECK_INSPECT_FLAG);
                 }
                 if (!string.IsNullOrWhiteSpace(pr.CHECK_MATERIAL_FLAG))
