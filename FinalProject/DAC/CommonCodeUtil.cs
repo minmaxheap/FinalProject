@@ -89,4 +89,32 @@ namespace DAC
             return new StandardValuesCollection(new VendorCode().GetSourceList());
         }
     }
+
+    public class User_Group_Type
+    {
+        public List<string> GetSourceList()
+        {
+            //dac에서 list 받아오기
+            List<string> Type = new List<string>();
+            Type.Add("ADMIN");
+            Type.Add("OPERATOR");
+            //valueType.Add("Employee");
+
+            return Type;
+        }
+    }
+    public class UserGroupTypeConverter : StringConverter
+    {
+        public override bool GetStandardValuesSupported(ITypeDescriptorContext context)
+        {
+            return true;
+        }
+
+
+        public override TypeConverter.StandardValuesCollection GetStandardValues(ITypeDescriptorContext context)
+        {
+            // ProductVO refMyObject = context.Instance as ProductVO;
+            return new StandardValuesCollection(new User_Group_Type().GetSourceList());
+        }
+    }
 }
