@@ -143,4 +143,33 @@ namespace DAC
             return new StandardValuesCollection(new Check_Value().GetSourceList());
         }
     }
+
+
+    public class Store_Type
+    {
+        public List<string> GetSourceList()
+        {
+            //dac에서 list 받아오기
+            List<string> Type = new List<string>();
+            Type.Add("RS");
+            Type.Add("HS");
+            Type.Add("FS");
+
+            return Type;
+        }
+    }
+    public class Store_Type_Converter : StringConverter
+    {
+        public override bool GetStandardValuesSupported(ITypeDescriptorContext context)
+        {
+            return true;
+        }
+
+
+        public override TypeConverter.StandardValuesCollection GetStandardValues(ITypeDescriptorContext context)
+        {
+            // ProductVO refMyObject = context.Instance as ProductVO;
+            return new StandardValuesCollection(new Store_Type().GetSourceList());
+        }
+    }
 }
