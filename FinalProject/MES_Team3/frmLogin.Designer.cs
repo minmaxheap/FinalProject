@@ -42,9 +42,10 @@ namespace MES_Team3
             this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button7.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button7.Location = new System.Drawing.Point(95, 173);
+            this.button7.Location = new System.Drawing.Point(109, 216);
+            this.button7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(70, 27);
+            this.button7.Size = new System.Drawing.Size(80, 34);
             this.button7.TabIndex = 27;
             this.button7.Text = "로그인";
             this.button7.UseVisualStyleBackColor = false;
@@ -53,9 +54,9 @@ namespace MES_Team3
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(32, 103);
+            this.label5.Location = new System.Drawing.Point(37, 129);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 20);
+            this.label5.Size = new System.Drawing.Size(53, 25);
             this.label5.TabIndex = 32;
             this.label5.Text = "Pwd";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -63,9 +64,9 @@ namespace MES_Team3
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.Location = new System.Drawing.Point(32, 54);
+            this.label7.Location = new System.Drawing.Point(37, 68);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 23);
+            this.label7.Size = new System.Drawing.Size(65, 29);
             this.label7.TabIndex = 31;
             this.label7.Text = "ID";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -73,34 +74,38 @@ namespace MES_Team3
             // txtPwd
             // 
             this.txtPwd.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtPwd.Location = new System.Drawing.Point(95, 101);
+            this.txtPwd.Location = new System.Drawing.Point(109, 126);
+            this.txtPwd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPwd.Name = "txtPwd";
-            this.txtPwd.Size = new System.Drawing.Size(138, 25);
+            this.txtPwd.Size = new System.Drawing.Size(157, 29);
             this.txtPwd.TabIndex = 30;
             // 
             // txtID
             // 
             this.txtID.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtID.Location = new System.Drawing.Point(95, 53);
+            this.txtID.Location = new System.Drawing.Point(109, 66);
+            this.txtID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(138, 25);
+            this.txtID.Size = new System.Drawing.Size(157, 29);
             this.txtID.TabIndex = 29;
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
-            this.ClientSize = new System.Drawing.Size(267, 231);
+            this.ClientSize = new System.Drawing.Size(305, 289);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtPwd);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.button7);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmLogin";
             this.Text = "로그인";
             this.Load += new System.EventHandler(this.frmLogin_Load);
+            this.Shown += new System.EventHandler(this.frmLogin_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

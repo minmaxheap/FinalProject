@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using VO;
 using DAC;
-using DAC.Property;
+
 namespace MES_Team3
 {
 	public partial class frmUserGroup : MES_Team3.BaseForms.Base1_1
@@ -115,6 +115,16 @@ namespace MES_Team3
 				MessageBox.Show("삭제 중 실패하였습니다.");
 				return;
 			}
+		}
+
+		private void button3_Click(object sender, EventArgs e)
+		{
+			UserGroupVO vo = new UserGroupVO();
+			vo.IsSearchPanel = true;
+
+			pgSearch.SelectedObject = vo;
+			pgSearch.PropertySort = PropertySort.NoSort;
+
 		}
 	}
 }
