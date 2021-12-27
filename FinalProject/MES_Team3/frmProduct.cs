@@ -42,46 +42,11 @@ namespace MES_Team3
             pgProperty.PropertySort = PropertySort.NoSort;
 
 
-            //m_dctd = ProviderInstaller.Install(this);
-            //m_dctd.PropertySortOrder = CustomSortOrder.AscendingByName;
-            //m_dctd.CategorySortOrder = CustomSortOrder.DescendingByName;
-
-            //// now lets modify some attribute of PropA
-            //CustomPropertyDescriptor cpd = m_pdm.GetProperty("PropA");
-            //cpd.SetDisplayName("New display name of PropA");
-            //cpd.SetDescription("New description of PropA");
-            //cpd.SetCategory("New Category of PropA");
-            //cpd.SetIsReadOnly(true); // disables the property
-            //cpd.SetIsBrowsable(true);  // hides the property
-            //cpd.CategoryID = 4;
-
-            //barlist = new List<Bar>();
-            //for (int i = 1; i < 10; i++)
-            //{
-            //    Bar bar = new Bar();
-            //    bar.barvalue = "BarObject " + i;
-            //    barlist.Add(bar);
-            //    //comboBox1.Items.Add(bar);
-            //}
-            //ProductVO vo = new ProductVO();
-            //vo.PRODUCT_TYPE = new Bar();
-            //vo.CUSTOMER_CODE = new Bar();
-            //vo.VENDOR_CODE = new Bar();
         }
 
         
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            //ProductVO save = new ProductVO();
-            //GridItem gi = pgProperty.SelectedGridItem;
-            //while (gi.Parent != null)
-            //{
-            //    gi = gi.Parent;
-            //}
-            //foreach (GridItem item in gi.GridItems)
-            //{
-            //    ParseGridItems(item, save);
-            //}
 
             ProductProperty save = (ProductProperty)pgProperty.SelectedObject;
             ProductServ serv = new ProductServ();
