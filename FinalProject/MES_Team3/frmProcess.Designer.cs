@@ -54,7 +54,7 @@ namespace MES_Team3
             // panel5
             // 
             this.panel5.Location = new System.Drawing.Point(12, 859);
-            this.panel3.Controls.SetChildIndex(this.textBox1, 0);
+            //this.panel3.Controls.SetChildIndex(this.textBox1, 0);
             this.panel3.Controls.SetChildIndex(this.button3, 0);
             // 
             // lblTitle
