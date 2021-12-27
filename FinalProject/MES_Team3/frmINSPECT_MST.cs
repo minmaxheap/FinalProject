@@ -218,5 +218,11 @@ namespace MES_Team3
             pgGrid.SelectedObject = search;
             pgGrid.PropertySort = PropertySort.NoSort;
         }
+
+        // Like 부분을 써서 사용해야함 
+		private void button2_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }
