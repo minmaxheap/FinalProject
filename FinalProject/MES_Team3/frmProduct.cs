@@ -209,6 +209,15 @@ namespace MES_Team3
             bool bResult = serv.Update(save);
             LoadData();
         }
+
+        private void btnRead_Click(object sender, EventArgs e)
+        {
+            ProductProperty search = (ProductProperty)pgSearch.SelectedObject;
+            ProductServ serv = new ProductServ();
+            List<ProductProperty> list = serv.GetProductSearch(search);
+            csDataGridView1.DataSource = list;
+
+        }
     }
 
 

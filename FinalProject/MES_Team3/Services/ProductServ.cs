@@ -44,5 +44,13 @@ namespace MES_Team3
             dac.Dispose();
             return bResult;
         }
+
+        public List<ProductProperty> GetProductSearch(ProductProperty pr)
+        {
+            ProductDAC dac = new ProductDAC();
+            List < ProductProperty > list = dac.GetProductSearch(pr);
+            dac.Dispose();
+            return list;
+        }
     }
 }
