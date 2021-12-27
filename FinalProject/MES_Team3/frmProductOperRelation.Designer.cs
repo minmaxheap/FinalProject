@@ -41,7 +41,7 @@ namespace MES_Team3
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
-            this.panel3.Controls.SetChildIndex(this.txtSearch, 0);
+            this.panel3.Controls.SetChildIndex(this.textBox1, 0);
             this.panel3.Controls.SetChildIndex(this.button3, 0);
             // 
             // propertyPanel

@@ -64,6 +64,7 @@ namespace MES_Team3
 
         private void csDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            //오류 생김
             DataGridViewRow dr = csDataGridView1.Rows[e.RowIndex];
             ProductProperty vo = new ProductProperty();
             vo.PRODUCT_CODE = dr.Cells["PRODUCT_CODE"].Value.ToString();
