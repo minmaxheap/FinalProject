@@ -44,7 +44,6 @@
   <ItemGroup>
     <Compile Include="CommonCode.cs" />
     <Compile Include="INSPECT_MSTVO.cs" />
-    <Compile Include="StoreVO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Search_INSPEC_MSEVO.cs" />
     <Compile Include="TEST.cs" />
