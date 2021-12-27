@@ -158,6 +158,7 @@
     </Compile>
     <Compile Include="Services\InspecServ.cs" />
     <Compile Include="Services\ProductServ.cs" />
+    <Compile Include="Services\UserGroupServ.cs" />
     <Compile Include="Util\DataGridViewUtil.cs" />
     <Compile Include="Sales_Order.cs">
       <SubType>Form</SubType>
