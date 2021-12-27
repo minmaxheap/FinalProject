@@ -219,7 +219,7 @@ namespace DAC
             return Type;
         }
     }
-    public class Store_Type_Converter : StringConverter
+    public class StoreTypeConverter : StringConverter
     {
         public override bool GetStandardValuesSupported(ITypeDescriptorContext context)
         {
@@ -229,7 +229,31 @@ namespace DAC
 
         public override TypeConverter.StandardValuesCollection GetStandardValues(ITypeDescriptorContext context)
         {
-            // ProductVO refMyObject = context.Instance as ProductVO;
+            return new StandardValuesCollection(new Store_Type().GetSourceList());
+        }
+    }
+    public class FIFO_FLAG
+    {
+        public List<string> GetSourceList()
+        {
+            //dac에서 list 받아오기
+            List<string> Type = new List<string>();
+            Type.Add("Y");
+            Type.Add("N");
+
+            return Type;
+        }
+    }
+    public class FifoFlagConverter : StringConverter
+    {
+        public override bool GetStandardValuesSupported(ITypeDescriptorContext context)
+        {
+            return true;
+        }
+
+
+        public override TypeConverter.StandardValuesCollection GetStandardValues(ITypeDescriptorContext context)
+        {
             return new StandardValuesCollection(new Store_Type().GetSourceList());
         }
     }

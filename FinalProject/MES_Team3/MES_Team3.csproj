@@ -99,6 +99,12 @@
     <Compile Include="Controls\NumTextBox.Designer.cs">
       <DependentUpon>NumTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmStore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStore.Designer.cs">
+      <DependentUpon>frmStore.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmINSPECT_MST.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,15 +159,10 @@
     <Compile Include="Services\InspecServ.cs" />
     <Compile Include="Services\OperationServ.cs" />
     <Compile Include="Services\ProductServ.cs" />
+    <Compile Include="Services\StoreServ.cs" />
     <Compile Include="Services\UserGroupServ.cs" />
     <Compile Include="Services\User_MSTServ.cs" />
     <Compile Include="Util\DataGridViewUtil.cs" />
-    <Compile Include="Store.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Store.Designer.cs">
-      <DependentUpon>Store.cs</DependentUpon>
-    </Compile>
     <Compile Include="Util\LoggingUtility.cs" />
     <EmbeddedResource Include="BaseForms\Base1_1.resx">
       <DependentUpon>Base1_1.cs</DependentUpon>
@@ -177,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaseForms\Base5.resx">
       <DependentUpon>Base5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStore.resx">
+      <DependentUpon>frmStore.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmINSPECT_MST.resx">
       <DependentUpon>frmINSPECT_MST.cs</DependentUpon>
@@ -212,9 +216,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Store.resx">
-      <DependentUpon>Store.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

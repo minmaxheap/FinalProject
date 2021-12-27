@@ -11,30 +11,27 @@ using VO;
 
 namespace DAC
 {
-    public class OrderDAC : IDisposable
+    public class StoreDAC : IDisposable
     {
         SqlConnection conn;
 
-        public OrderDAC()
+        public StoreDAC()
         {
             //conn = new SqlConnection(ConfigurationManager.ConnectionStrings["local"].ConnectionString);
             conn = new SqlConnection(ConfigurationManager.ConnectionStrings["project"].ConnectionString);
             conn.Open();
 
         }
-        public DataTable GetOrderList()
+        public List<StoreVO> GetStoreList()
         {
             string sql = @"select STORE_CODE, STORE_NAME, STORE_TYPE, FIFO_FLAG, CREATE_TIME, CREATE_USER_ID, UPDATE_TIME, UPDATE_USER_ID
 from [dbo].[STORE_MST]";
-            DataTable dt = new DataTable();
-            using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
-            {
-                da.Fill(dt);
-                return dt;
-            }
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            return Helper.DataReaderMapToList<StoreVO>(cmd.ExecuteReader());
         }
+    
 
-        public bool Insert(ProductProperty vo)
+        public bool Insert(StoreVO vo)
         {
             try
             {
@@ -77,7 +74,7 @@ from [dbo].[STORE_MST]";
             }
             catch (Exception err)
             {
-                Debug.WriteLine(err.Message); //log에 찍게 해야하나?
+                Debug.WriteLine(err.Message);
                 return false;
             }
         }
