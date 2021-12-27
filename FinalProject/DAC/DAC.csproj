@@ -54,7 +54,9 @@
     <Compile Include="Property\OperationProperty.cs" />
     <Compile Include="Property\ProductProperty.cs" />
     <Compile Include="Property\UserGroupVO.cs" />
+    <Compile Include="Property\User_MST_Property.cs" />
     <Compile Include="UserGroupDAC.cs" />
+    <Compile Include="UserMstDAC.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VO\VO.csproj">

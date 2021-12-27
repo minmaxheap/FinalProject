@@ -117,4 +117,76 @@ namespace DAC
             return new StandardValuesCollection(new User_Group_Type().GetSourceList());
         }
     }
+
+
+    public class User_Mst
+    {
+        public List<string> GetSourceList()
+        {
+            //dac에서 list 받아오기
+            List<string> Type = new List<string>();
+            Type.Add("ADMIN_GROUP");
+            Type.Add("PRESS_GROUP");
+            Type.Add("INJECTION_GROUP");
+            Type.Add("SMT_GROUP");
+            Type.Add("ASSY_GROUP");
+         
+
+
+
+            //valueType.Add("Employee");
+
+            return Type;
+        }
+    }
+    public class UserMstTypeConverter : StringConverter
+    {
+        public override bool GetStandardValuesSupported(ITypeDescriptorContext context)
+        {
+            return true;
+        }
+
+
+        public override TypeConverter.StandardValuesCollection GetStandardValues(ITypeDescriptorContext context)
+        {
+            // ProductVO refMyObject = context.Instance as ProductVO;
+            return new StandardValuesCollection(new User_Mst().GetSourceList());
+        }
+    }
+
+    public class DepartMent
+    {
+        public List<string> GetSourceList()
+        {
+            //dac에서 list 받아오기
+            List<string> Type = new List<string>();
+            Type.Add("임원");
+            Type.Add("Press 라인");
+            Type.Add("사출 라인");
+            Type.Add("SMT 라인");
+            Type.Add("조합 라인");
+
+
+
+
+            //valueType.Add("Employee");
+
+            return Type;
+        }
+    }
+    public class DepartmentTypeConverter : StringConverter
+    {
+        public override bool GetStandardValuesSupported(ITypeDescriptorContext context)
+        {
+            return true;
+        }
+
+
+        public override TypeConverter.StandardValuesCollection GetStandardValues(ITypeDescriptorContext context)
+        {
+            // ProductVO refMyObject = context.Instance as ProductVO;
+            return new StandardValuesCollection(new DepartMent().GetSourceList());
+        }
+    }
+
 }
