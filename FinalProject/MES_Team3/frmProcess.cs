@@ -41,9 +41,9 @@ namespace MES_Team3
         public void LoadData()
         {
             ProductServ serv = new ProductServ();
-            DataTable dt = serv.GetProductsList();
+           List<ProductProperty> list = serv.GetProductsList();
             csDataGridView1.DataSource = null;
-            csDataGridView1.DataSource = dt;
+            csDataGridView1.DataSource = list;
             SearchPanel = false;
         }
     }

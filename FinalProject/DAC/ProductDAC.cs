@@ -24,16 +24,12 @@ namespace DAC
 
         }
 
-        public DataTable GetProductsList()
+        public List<ProductProperty> GetProductsList()
         {
             string sql = @"select PRODUCT_CODE, PRODUCT_NAME, PRODUCT_TYPE, CUSTOMER_CODE, VENDOR_CODE, CREATE_TIME, CREATE_USER_ID, UPDATE_TIME, UPDATE_USER_ID
-from [dbo].[PRODUCT_MST]"; 
-            DataTable dt = new DataTable();
-            using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
-            {
-                da.Fill(dt);
-                return dt;
-            }
+from [dbo].[PRODUCT_MST]";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            return Helper.DataReaderMapToList<ProductProperty>(cmd.ExecuteReader());
         }
 
         public bool Insert(ProductProperty vo)
