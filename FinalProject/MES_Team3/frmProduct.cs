@@ -67,22 +67,31 @@ namespace MES_Team3
             //오류 생김
             DataGridViewRow dr = csDataGridView1.Rows[e.RowIndex];
             ProductProperty vo = new ProductProperty();
-            vo.PRODUCT_CODE = dr.Cells["PRODUCT_CODE"].Value.ToString();
-            vo.PRODUCT_NAME = dr.Cells["PRODUCT_NAME"].Value.ToString();
-            vo.PRODUCT_TYPE = dr.Cells["PRODUCT_TYPE"].Value.ToString();
-            vo.CUSTOMER_CODE = dr.Cells["CUSTOMER_CODE"].Value.ToString();
-            vo.VENDOR_CODE = dr.Cells["VENDOR_CODE"].Value.ToString();
-            if (csDataGridView1.Rows[e.RowIndex].Cells["CREATE_TIME"].Value != null && dr.Cells["CREATE_TIME"].Value != DBNull.Value)
+            if (dr.Cells["PRODUCT_CODE"].Value != null && dr.Cells["PRODUCT_CODE"].Value != DBNull.Value)
+                vo.PRODUCT_CODE = dr.Cells["PRODUCT_CODE"].Value.ToString();
+            if (dr.Cells["PRODUCT_NAME"].Value != null && dr.Cells["PRODUCT_NAME"].Value != DBNull.Value)
+                vo.PRODUCT_NAME = dr.Cells["PRODUCT_NAME"].Value.ToString();
+            if (dr.Cells["PRODUCT_TYPE"].Value != null && dr.Cells["PRODUCT_TYPE"].Value != DBNull.Value)
+                vo.PRODUCT_TYPE = dr.Cells["PRODUCT_TYPE"].Value.ToString();
+            if (dr.Cells["CUSTOMER_CODE"].Value != null && dr.Cells["CUSTOMER_CODE"].Value != DBNull.Value)
+                vo.CUSTOMER_CODE = dr.Cells["CUSTOMER_CODE"].Value.ToString();
+            if (dr.Cells["VENDOR_CODE"].Value != null && dr.Cells["VENDOR_CODE"].Value != DBNull.Value)
+                vo.VENDOR_CODE = dr.Cells["VENDOR_CODE"].Value.ToString();
+            if (dr.Cells["CREATE_TIME"].Value != null && dr.Cells["CREATE_TIME"].Value != DBNull.Value)
                 vo.CREATE_TIME = Convert.ToDateTime(dr.Cells["CREATE_TIME"].Value);
-            vo.CREATE_USER_ID = csDataGridView1.Rows[e.RowIndex].Cells["CREATE_USER_ID"].Value.ToString();
+            if (dr.Cells["CREATE_USER_ID"].Value != null && dr.Cells["CREATE_USER_ID"].Value != DBNull.Value)
+                vo.CREATE_USER_ID = csDataGridView1.Rows[e.RowIndex].Cells["CREATE_USER_ID"].Value.ToString();
             if (dr.Cells["UPDATE_TIME"].Value != null && dr.Cells["UPDATE_TIME"].Value != DBNull.Value)
                 vo.UPDATE_TIME = Convert.ToDateTime(dr.Cells["UPDATE_TIME"].Value);
-            vo.UPDATE_USER_ID = dr.Cells["UPDATE_USER_ID"].Value.ToString();
+            if (dr.Cells["UPDATE_USER_ID"].Value != null && dr.Cells["UPDATE_USER_ID"].Value != DBNull.Value)
+                vo.UPDATE_USER_ID = dr.Cells["UPDATE_USER_ID"].Value.ToString();
             //ProductVO vo = new ProductVO(csDataGridView1.Rows[e.RowIndex]); //데이터그리드뷰 row를 한 개만 선택되는 경우로 상정함
 
             pgProperty.SelectedObject = vo;
 
             pgProperty.PropertySort = PropertySort.NoSort;
+
+            pgProperty.Visible = true;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -110,15 +119,6 @@ namespace MES_Team3
 
             ProductProperty search = new ProductProperty();
             search.IsSearchPanel = true;
-            //PropertyDescriptorCollection propCollection = TypeDescriptor.GetProperties(search.GetType()); 
-            //PropertyDescriptor descriptor = propCollection["UPDATE_USER_ID"];
-            //BrowsableAttribute attrib = (BrowsableAttribute)descriptor.Attributes[typeof(BrowsableAttribute)]; 
-            //FieldInfo isBrow = attrib.GetType().GetField("browsable", BindingFlags.NonPublic | BindingFlags.Instance); 
-            ////Condition to Show or Hide set here:
-            //isBrow.SetValue(attrib, false);
-
-            //pgSearch.Refresh(); //Remember to refresh
-          
             pgSearch.SelectedObject = search;
             pgSearch.PropertySort = PropertySort.NoSort;
             // propertyPanel.Visible = false;
@@ -139,6 +139,18 @@ namespace MES_Team3
             List<ProductProperty> list = serv.GetProductSearch(search);
             csDataGridView1.DataSource = list;
 
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            PropertyDescriptor pd = pgSearch.SelectedGridItem.PropertyDescriptor;
+            pd.ResetValue(pgSearch.SelectedObject);
+            LoadData();
+            ProductProperty search = new ProductProperty();
+            search.IsSearchPanel = true;
+            pgSearch.SelectedObject = search;
+            pgSearch.PropertySort = PropertySort.NoSort;
+            searchPanel.Visible = true;
         }
     }
 
