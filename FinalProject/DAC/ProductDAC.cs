@@ -106,8 +106,15 @@ where PRODUCT_CODE = @PRODUCT_CODE ";
         {
             try
             {
-                string sql = @"update  [dbo].[PRODUCT_MST] set PRODUCT_CODE = @PRODUCT_CODE, PRODUCT_NAME= @PRODUCT_NAME, PRODUCT_TYPE= @PRODUCT_TYPE, CUSTOMER_CODE= @CUSTOMER_CODE, VENDOR_CODE= @VENDOR_CODE,  UPDATE_TIME= getdate(), UPDATE_USER_ID== @UPDATE_USER_ID";
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                string sql = @"update  [dbo].[PRODUCT_MST] set
+PRODUCT_NAME= @PRODUCT_NAME, 
+PRODUCT_TYPE= @PRODUCT_TYPE, 
+CUSTOMER_CODE= @CUSTOMER_CODE,
+VENDOR_CODE= @VENDOR_CODE,  
+UPDATE_TIME= getdate(), 
+UPDATE_USER_ID= @UPDATE_USER_ID
+where PRODUCT_CODE = @PRODUCT_CODE";
+                using (SqlCommand cmd = new SqlCommand(sql, conn)) 
                 {
                     cmd.Parameters.AddWithValue("@PRODUCT_CODE", pt.PRODUCT_CODE);
                     cmd.Parameters.AddWithValue("@PRODUCT_NAME", pt.PRODUCT_NAME);
