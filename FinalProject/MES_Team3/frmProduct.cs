@@ -42,46 +42,11 @@ namespace MES_Team3
             pgProperty.PropertySort = PropertySort.NoSort;
 
 
-            //m_dctd = ProviderInstaller.Install(this);
-            //m_dctd.PropertySortOrder = CustomSortOrder.AscendingByName;
-            //m_dctd.CategorySortOrder = CustomSortOrder.DescendingByName;
-
-            //// now lets modify some attribute of PropA
-            //CustomPropertyDescriptor cpd = m_pdm.GetProperty("PropA");
-            //cpd.SetDisplayName("New display name of PropA");
-            //cpd.SetDescription("New description of PropA");
-            //cpd.SetCategory("New Category of PropA");
-            //cpd.SetIsReadOnly(true); // disables the property
-            //cpd.SetIsBrowsable(true);  // hides the property
-            //cpd.CategoryID = 4;
-
-            //barlist = new List<Bar>();
-            //for (int i = 1; i < 10; i++)
-            //{
-            //    Bar bar = new Bar();
-            //    bar.barvalue = "BarObject " + i;
-            //    barlist.Add(bar);
-            //    //comboBox1.Items.Add(bar);
-            //}
-            //ProductVO vo = new ProductVO();
-            //vo.PRODUCT_TYPE = new Bar();
-            //vo.CUSTOMER_CODE = new Bar();
-            //vo.VENDOR_CODE = new Bar();
         }
 
         
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            //ProductVO save = new ProductVO();
-            //GridItem gi = pgProperty.SelectedGridItem;
-            //while (gi.Parent != null)
-            //{
-            //    gi = gi.Parent;
-            //}
-            //foreach (GridItem item in gi.GridItems)
-            //{
-            //    ParseGridItems(item, save);
-            //}
 
             ProductProperty save = (ProductProperty)pgProperty.SelectedObject;
             ProductServ serv = new ProductServ();
@@ -96,50 +61,6 @@ namespace MES_Team3
             }
         }
 
-        //private void ParseGridItems(GridItem gi, ProductVO save)
-        //{
-
-        //    if (gi.GridItemType == GridItemType.Category)
-        //    {
-        //        foreach (GridItem item in gi.GridItems)
-        //        {
-        //            ParseGridItems(item, save);
-        //        }
-        //    }
-        //    switch (gi.Label)
-        //    {
-        //        case "품번": if (gi.Value != null && gi.Value != DBNull.Value) save.PRODUCT_CODE = gi.Value.ToString(); break;
-        //        case "품명": if (gi.Value != null && gi.Value != DBNull.Value) save.PRODUCT_NAME = gi.Value.ToString(); break;
-        //        case "품번 유형":
-        //            if (gi.Value != null && gi.Value != DBNull.Value)
-        //                save.PRODUCT_TYPE = gi.Value.ToString(); break;
-        //        case "고객 코드":
-        //            if (gi.Value != null && gi.Value != DBNull.Value)
-        //                save.CUSTOMER_CODE = gi.Value.ToString(); break;
-        //        case "업체 코드":
-        //            if (gi.Value != null && gi.Value != DBNull.Value)
-        //                save.VENDOR_CODE = gi.Value.ToString(); break;
-        //        case "생성 시간":
-        //            if (gi.Value != null && gi.Value != DBNull.Value)
-        //                save.CREATE_TIME = Convert.ToDateTime(gi.Value); break;
-        //        case "생성 사용자":
-        //            if (gi.Value != null && gi.Value != DBNull.Value)
-        //                save.CREATE_USER_ID = gi.Value.ToString(); break;
-        //        case "변경 시간":
-        //            if (gi.Value != null && gi.Value != DBNull.Value)
-        //                save.UPDATE_TIME = Convert.ToDateTime(gi.Value); break;
-        //        case "변경 사용자":
-        //            if (gi.Value != null && gi.Value != DBNull.Value)
-        //                save.UPDATE_USER_ID = gi.Value.ToString(); break;
-        //        default:
-        //            break;
-        //    }
-
-
-
-
-
-        //}
 
         private void csDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -208,6 +129,15 @@ namespace MES_Team3
             ProductServ serv = new ProductServ();
             bool bResult = serv.Update(save);
             LoadData();
+        }
+
+        private void btnRead_Click(object sender, EventArgs e)
+        {
+            ProductProperty search = (ProductProperty)pgSearch.SelectedObject;
+            ProductServ serv = new ProductServ();
+            List<ProductProperty> list = serv.GetProductSearch(search);
+            csDataGridView1.DataSource = list;
+
         }
     }
 

@@ -111,6 +111,12 @@
     <Compile Include="Controls\NumTextBox.Designer.cs">
       <DependentUpon>NumTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProcess.Designer.cs">
+      <DependentUpon>frmProcess.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmINSPECT_MST.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,12 +134,6 @@
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmProcessTest1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmProcessTest1.Designer.cs">
-      <DependentUpon>frmProcessTest1.cs</DependentUpon>
     </Compile>
     <Compile Include="frmProductOperRelation.cs">
       <SubType>Form</SubType>
@@ -197,8 +197,8 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmProcessTest1.resx">
-      <DependentUpon>frmProcessTest1.cs</DependentUpon>
+    <EmbeddedResource Include="frmProcess.resx">
+      <DependentUpon>frmProcess.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProduct.resx">
       <DependentUpon>frmProduct.cs</DependentUpon>

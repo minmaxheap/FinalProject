@@ -80,16 +80,18 @@ namespace DAC
                     //propCollection.Remove(propCollection["UPDATE_TIME"]);
                     //propCollection.Remove(propCollection["UPDATE_USER_ID"]);
 
+                    //모듈화하고 싶다..
+
                     PropertyDescriptor descriptor = propCollection["PRODUCT_NAME"];
                     PropertyDescriptor descriptor1 = propCollection["CREATE_TIME"];
                     PropertyDescriptor descriptor2 = propCollection["CREATE_USER_ID"];
                     PropertyDescriptor descriptor3 = propCollection["UPDATE_TIME"];
                     PropertyDescriptor descriptor4 = propCollection["UPDATE_USER_ID"];
               
-                        BrowsableAttribute attrib = (BrowsableAttribute)descriptor.Attributes[typeof(BrowsableAttribute)];
-                        FieldInfo isBrow = attrib.GetType().GetField("browsable", BindingFlags.NonPublic | BindingFlags.Instance);
+                    BrowsableAttribute attrib = (BrowsableAttribute)descriptor.Attributes[typeof(BrowsableAttribute)];
+                    FieldInfo isBrow = attrib.GetType().GetField("browsable", BindingFlags.NonPublic | BindingFlags.Instance);
 
-                        isBrow.SetValue(attrib, false);
+                    isBrow.SetValue(attrib, false);
 
                     BrowsableAttribute attrib1 = (BrowsableAttribute)descriptor1.Attributes[typeof(BrowsableAttribute)];
                     FieldInfo isBrow1 = attrib1.GetType().GetField("browsable", BindingFlags.NonPublic | BindingFlags.Instance);
@@ -118,7 +120,7 @@ namespace DAC
         public ProductProperty()
         {
 
-        }
+         }
 
     }
 }
