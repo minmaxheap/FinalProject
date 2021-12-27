@@ -138,6 +138,8 @@ namespace MES_Team3
 
             DataGridViewRow dr = csDataGridView1.Rows[e.RowIndex];
             INSPECT_MSTVO vo = new INSPECT_MSTVO();
+            lblPanel.Text = "▶ 속성";
+            vo.IsSearchPanel = false;
             vo.INSPECT_ITEM_CODE = dr.Cells["INSPECT_ITEM_CODE"].Value.ToString();
             vo.INSPECT_ITEM_NAME = dr.Cells["INSPECT_ITEM_NAME"].Value.ToString();
             vo.VALUE_TYPE = dr.Cells["VALUE_TYPE"].Value.ToString();
@@ -168,12 +170,12 @@ namespace MES_Team3
 		private void btnRead_Click(object sender, EventArgs e)
 		{
             //SearchVo vo = new SearchVo();
-            INSPECT_MSTVO save = (INSPECT_MSTVO)pgGrid.SelectedObject;
+            INSPECT_MSTVO save = (INSPECT_MSTVO)pgSearch.SelectedObject;
 
             List<INSPECT_MSTVO>  list = serv.GetINSPECT_MST_Search(save);
             save.IsSearchPanel = false;
 
-
+            csDataGridView1.DataSource = null;
             csDataGridView1.DataSource = list;
 
         }
@@ -208,7 +210,13 @@ namespace MES_Team3
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            pgGrid.SelectedObject = null;
+            PropertyDescriptor pd = pgGrid.SelectedGridItem.PropertyDescriptor;
+            pd.ResetValue(pgGrid.SelectedObject);
+
+            INSPECT_MSTVO search = new INSPECT_MSTVO();
+            search.IsSearchPanel = false;
+            pgGrid.SelectedObject = search;
+            pgGrid.PropertySort = PropertySort.NoSort;
         }
 	}
 }

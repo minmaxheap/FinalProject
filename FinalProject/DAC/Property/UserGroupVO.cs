@@ -85,34 +85,48 @@ namespace DAC
 			set
 			{
 				isSearchPanel = value;
+
+				PropertyDescriptorCollection propCollection = TypeDescriptor.GetProperties(this.GetType());
+
+				PropertyDescriptor descriptor = propCollection["USER_GROUP_NAME"];
+				PropertyDescriptor descriptor1 = propCollection["CREATE_TIME"];
+				PropertyDescriptor descriptor2 = propCollection["CREATE_USER_ID"];
+				PropertyDescriptor descriptor3 = propCollection["UPDATE_TIME"];
+				PropertyDescriptor descriptor4 = propCollection["UPDATE_USER_ID"];
+
+				BrowsableAttribute attrib = (BrowsableAttribute)descriptor.Attributes[typeof(BrowsableAttribute)];
+				FieldInfo isBrow = attrib.GetType().GetField("browsable", BindingFlags.NonPublic | BindingFlags.Instance);
+
+				BrowsableAttribute attrib1 = (BrowsableAttribute)descriptor1.Attributes[typeof(BrowsableAttribute)];
+				FieldInfo isBrow1 = attrib1.GetType().GetField("browsable", BindingFlags.NonPublic | BindingFlags.Instance);
+
+				BrowsableAttribute attrib2 = (BrowsableAttribute)descriptor2.Attributes[typeof(BrowsableAttribute)];
+				FieldInfo isBrow2 = attrib2.GetType().GetField("browsable", BindingFlags.NonPublic | BindingFlags.Instance);
+
+				BrowsableAttribute attrib3 = (BrowsableAttribute)descriptor3.Attributes[typeof(BrowsableAttribute)];
+				FieldInfo isBrow3 = attrib3.GetType().GetField("browsable", BindingFlags.NonPublic | BindingFlags.Instance);
+
+				BrowsableAttribute attrib4 = (BrowsableAttribute)descriptor4.Attributes[typeof(BrowsableAttribute)];
+				FieldInfo isBrow4 = attrib4.GetType().GetField("browsable", BindingFlags.NonPublic | BindingFlags.Instance);
+
 				if (IsSearchPanel)
 				{
-					PropertyDescriptorCollection propCollection = TypeDescriptor.GetProperties(this.GetType());
-					//propCollection.Remove(propCollection["PRODUCT_NAME"]);
-					//propCollection.Remove(propCollection["CREATE_TIME"]);
-					//propCollection.Remove(propCollection["CREATE_USER_ID"]);
-					//propCollection.Remove(propCollection["UPDATE_TIME"]);
-					//propCollection.Remove(propCollection["UPDATE_USER_ID"]);
-
-					//모듈화하고 싶다..
-
-					PropertyDescriptor descriptor = propCollection["USER_GROUP_CODE"];
-					PropertyDescriptor descriptor1 = propCollection["USER_GROUP_TYPE"];
-				
-
-					BrowsableAttribute attrib = (BrowsableAttribute)descriptor.Attributes[typeof(BrowsableAttribute)];
-					FieldInfo isBrow = attrib.GetType().GetField("browsable", BindingFlags.NonPublic | BindingFlags.Instance);
-
 					isBrow.SetValue(attrib, false);
-
-					BrowsableAttribute attrib1 = (BrowsableAttribute)descriptor1.Attributes[typeof(BrowsableAttribute)];
-					FieldInfo isBrow1 = attrib1.GetType().GetField("browsable", BindingFlags.NonPublic | BindingFlags.Instance);
-
 					isBrow1.SetValue(attrib1, false);
-
-
+					isBrow2.SetValue(attrib2, false);
+					isBrow3.SetValue(attrib3, false);
+					isBrow4.SetValue(attrib4, false);
+				}
+				else
+				{
+					isBrow.SetValue(attrib, true);
+					isBrow1.SetValue(attrib1, true);
+					isBrow2.SetValue(attrib2, true);
+					isBrow3.SetValue(attrib3, true);
+					isBrow4.SetValue(attrib4, true);
 				}
 			}
+			
 		}
 			
 

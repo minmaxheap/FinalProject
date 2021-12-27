@@ -43,5 +43,13 @@ namespace MES_Team3
 			dac.Dispose();
 			return dt;
 		}
+
+		public List<UserGroupVO> GetSearch(UserGroupVO vo)
+		{
+			UserGroupDAC dac = new UserGroupDAC();
+			List<UserGroupVO> list = dac.GetSearch(vo);
+			dac.Dispose();
+			return list;
+		}
 	}
 }

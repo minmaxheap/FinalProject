@@ -76,7 +76,12 @@ namespace MES_Team3
 
 		private void btnRead_Click(object sender, EventArgs e)
 		{
+			UserGroupVO save = (UserGroupVO)pgSearch.SelectedObject;
 
+			List<UserGroupVO> list = serv.GetSearch(save);
+			save.IsSearchPanel = false;
+
+			csDataGridView1.DataSource = list;
 		}
 
 		private void btnUpdate_Click(object sender, EventArgs e)
@@ -125,6 +130,57 @@ namespace MES_Team3
 			pgSearch.SelectedObject = vo;
 			pgSearch.PropertySort = PropertySort.NoSort;
 
+		}
+
+		private void csDataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+		{
+			//이거 안됨 
+			if (e.RowIndex < 0)
+			{
+				return;
+			}
+
+			//아이디
+			Code = csDataGridView1["USER_GROUP_CODE", e.RowIndex].Value.ToString();
+			MessageBox.Show($"{Code}를 선택하셨습니다.");
+
+
+			DataGridViewRow dr = csDataGridView1.Rows[e.RowIndex];
+			UserGroupVO vo = new UserGroupVO();
+			lblPanel.Text = "▶ 속성";
+			vo.IsSearchPanel = false;
+			vo.USER_GROUP_CODE = dr.Cells["USER_GROUP_CODE"].Value.ToString();
+			vo.USER_GROUP_NAME = dr.Cells["USER_GROUP_NAME"].Value.ToString();
+			vo.USER_GROUP_TYPE = dr.Cells["USER_GROUP_TYPE"].Value.ToString();
+			vo.CREATE_USER_ID = dr.Cells["CREATE_TIME"].Value.ToString();
+			vo.UPDATE_USER_ID = dr.Cells["UPDATE_USER_ID"].Value.ToString();
+
+			if (dr.Cells["CREATE_TIME"].Value != null && dr.Cells["CREATE_TIME"].Value != DBNull.Value)
+				vo.CREATE_TIME = Convert.ToDateTime(dr.Cells["CREATE_TIME"].Value);
+
+
+			if (dr.Cells["UPDATE_TIME"].Value != null && dr.Cells["UPDATE_TIME"].Value != DBNull.Value)
+				vo.UPDATE_TIME = Convert.ToDateTime(dr.Cells["UPDATE_TIME"].Value);
+
+
+			pgProperty.SelectedObject = vo;
+
+			pgProperty.PropertySort = PropertySort.NoSort;
+
+
+			propertyPanel.Visible = true;
+			searchPanel.Visible = false;
+		}
+
+		private void btnClear_Click(object sender, EventArgs e)
+		{
+			PropertyDescriptor pd = pgProperty.SelectedGridItem.PropertyDescriptor;
+			pd.ResetValue(pgProperty.SelectedObject);
+
+			UserGroupVO search = new UserGroupVO();
+			search.IsSearchPanel = false;
+			pgProperty.SelectedObject = search;
+			pgProperty.PropertySort = PropertySort.NoSort;
 		}
 	}
 }

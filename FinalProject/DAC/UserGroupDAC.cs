@@ -106,7 +106,39 @@ where USER_GROUP_CODE = @USER_GROUP_CODE";
 
 		//public List<UserGroupVO> GetSearch(UserGroupVO vo)
 		//{
-			
+
 		//}
+
+		public List<UserGroupVO> GetSearch(UserGroupVO vo)
+		{
+			StringBuilder sb = new StringBuilder();
+
+			sb.Append(@"select USER_GROUP_CODE, USER_GROUP_NAME, USER_GROUP_TYPE, CREATE_TIME, CREATE_USER_ID, UPDATE_TIME, UPDATE_USER_ID
+from USER_GROUP_MST 
+where 1=1");
+
+			using (SqlCommand cmd = new SqlCommand())
+			{
+				if (!string.IsNullOrWhiteSpace(vo.USER_GROUP_CODE))
+				{
+					sb.Append(" and USER_GROUP_CODE = @USER_GROUP_CODE");
+					cmd.Parameters.AddWithValue("@INSPECT_ITEM_CODE", vo.USER_GROUP_CODE);
+
+				}
+
+				if (!string.IsNullOrWhiteSpace(vo.USER_GROUP_TYPE))
+				{
+					sb.Append(" and USER_GROUP_TYPE = @USER_GROUP_TYPE");
+					cmd.Parameters.AddWithValue("@USER_GROUP_TYPE", vo.USER_GROUP_TYPE);
+
+				}
+
+
+				cmd.CommandText = sb.ToString();
+				cmd.Connection = conn;
+
+				return Helper.DataReaderMapToList<UserGroupVO>(cmd.ExecuteReader());
+			}
+		}
 	}
 }

@@ -123,7 +123,7 @@ namespace VO
 				BrowsableAttribute attrib3 = (BrowsableAttribute)descriptor3.Attributes[typeof(BrowsableAttribute)];
 				FieldInfo isBrow3 = attrib3.GetType().GetField("browsable", BindingFlags.NonPublic | BindingFlags.Instance);
 
-				BrowsableAttribute attrib4 = (BrowsableAttribute)descriptor.Attributes[typeof(BrowsableAttribute)];
+				BrowsableAttribute attrib4 = (BrowsableAttribute)descriptor4.Attributes[typeof(BrowsableAttribute)];
 				FieldInfo isBrow4 = attrib4.GetType().GetField("browsable", BindingFlags.NonPublic | BindingFlags.Instance);
 
 				BrowsableAttribute attrib5 = (BrowsableAttribute)descriptor5.Attributes[typeof(BrowsableAttribute)];
@@ -146,25 +146,25 @@ namespace VO
 					//모듈화하고 싶다..
 
 					isBrow.SetValue(attrib, false);
-					isBrow1.SetValue(attrib, false);
-					isBrow2.SetValue(attrib, false);
-					isBrow3.SetValue(attrib, false);
-					isBrow4.SetValue(attrib, false);
-					isBrow5.SetValue(attrib, false);
-					isBrow6.SetValue(attrib, false);
-					isBrow7.SetValue(attrib, false);
+					isBrow1.SetValue(attrib1, false);
+					isBrow2.SetValue(attrib2, false);
+					isBrow3.SetValue(attrib3, false);
+					isBrow4.SetValue(attrib4, false);
+					isBrow5.SetValue(attrib5, false);
+					isBrow6.SetValue(attrib6, false);
+					isBrow7.SetValue(attrib7, false);
 				}
 				else
 				{
 
 					isBrow.SetValue(attrib, true);
-					isBrow1.SetValue(attrib, true);
-					isBrow2.SetValue(attrib, true);
-					isBrow3.SetValue(attrib, true);
-					isBrow4.SetValue(attrib, true);
-					isBrow5.SetValue(attrib, true);
-					isBrow6.SetValue(attrib, true);
-					isBrow7.SetValue(attrib, true);
+					isBrow1.SetValue(attrib1, true);
+					isBrow2.SetValue(attrib2, true);
+					isBrow3.SetValue(attrib3, true);
+					isBrow4.SetValue(attrib4, true);
+					isBrow5.SetValue(attrib5, true);
+					isBrow6.SetValue(attrib6, true);
+					isBrow7.SetValue(attrib7, true);
 				}
 			}
 		}
