@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAC;
-using DAC.Property;
+
 using System.Windows.Forms;
 using System.Data;
 namespace MES_Team3
@@ -42,6 +42,14 @@ namespace MES_Team3
 			DataTable dt = dac.GetTable();
 			dac.Dispose();
 			return dt;
+		}
+
+		public List<UserGroupVO> GetSearch(UserGroupVO vo)
+		{
+			UserGroupDAC dac = new UserGroupDAC();
+			List<UserGroupVO> list = dac.GetSearch(vo);
+			dac.Dispose();
+			return list;
 		}
 	}
 }

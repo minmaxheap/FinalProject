@@ -29,8 +29,7 @@ namespace MES_Team3.BaseForms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Button button2;
-            System.Windows.Forms.Button button1;
+           
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnInsert = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
@@ -52,8 +51,8 @@ namespace MES_Team3.BaseForms
             this.panel7 = new System.Windows.Forms.Panel();
             this.btnPanel = new System.Windows.Forms.Button();
             this.lblPanel = new System.Windows.Forms.Label();
-            button2 = new System.Windows.Forms.Button();
-            button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -356,8 +355,7 @@ namespace MES_Team3.BaseForms
             // 
             // Base1_1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
             this.ClientSize = new System.Drawing.Size(1168, 778);
             this.Controls.Add(this.splitContainer1);
@@ -404,5 +402,7 @@ namespace MES_Team3.BaseForms
         public System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Panel panel7;
         public System.Windows.Forms.Panel panel4;
+        public System.Windows.Forms.Button button2;
+        public System.Windows.Forms.Button button1;
     }
 }

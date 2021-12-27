@@ -48,9 +48,10 @@
     <Compile Include="Helper.cs" />
     <Compile Include="InspectDAC.cs" />
     <Compile Include="OrderDAC.cs" />
+    <Compile Include="OperationDAC.cs" />
     <Compile Include="ProductDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Property\ProcessProperty.cs" />
+    <Compile Include="Property\OperationProperty.cs" />
     <Compile Include="Property\ProductProperty.cs" />
     <Compile Include="Property\UserGroupVO.cs" />
     <Compile Include="UserGroupDAC.cs" />
