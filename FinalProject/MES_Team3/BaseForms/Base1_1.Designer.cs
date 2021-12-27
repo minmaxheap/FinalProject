@@ -43,7 +43,7 @@ namespace MES_Team3.BaseForms
             this.btnDelete = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -219,7 +219,7 @@ namespace MES_Team3.BaseForms
             // panel3
             // 
             this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(this.txtSearch);
+            this.panel3.Controls.Add(this.textBox1);
             this.panel3.Controls.Add(button2);
             this.panel3.Controls.Add(button1);
             this.panel3.Location = new System.Drawing.Point(15, 5);
@@ -240,13 +240,13 @@ namespace MES_Team3.BaseForms
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // txtSearch
+            // textBox1
             // 
-            this.txtSearch.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtSearch.Location = new System.Drawing.Point(47, 5);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(245, 25);
-            this.txtSearch.TabIndex = 15;
+            this.textBox1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox1.Location = new System.Drawing.Point(47, 5);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(245, 25);
+            this.textBox1.TabIndex = 15;
             // 
             // splitContainer1
             // 
@@ -356,8 +356,7 @@ namespace MES_Team3.BaseForms
             // 
             // Base1_1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
             this.ClientSize = new System.Drawing.Size(1168, 778);
             this.Controls.Add(this.splitContainer1);
@@ -395,7 +394,7 @@ namespace MES_Team3.BaseForms
         public System.Windows.Forms.Button btnDelete;
         public System.Windows.Forms.Panel panel3;
         public System.Windows.Forms.Button button3;
-        public System.Windows.Forms.TextBox txtSearch;
+        public System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.Label lblTitle;
         public System.Windows.Forms.Panel propertyPanel;
         public System.Windows.Forms.Label lblPanel;

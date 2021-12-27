@@ -53,6 +53,10 @@ namespace MES_Team3
             // 
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
+            // btnClear
+            // 
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // btnUpdate
             // 
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -64,7 +68,7 @@ namespace MES_Team3
             // btnDelete
             // 
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            this.panel3.Controls.SetChildIndex(this.txtSearch, 0);
+            this.panel3.Controls.SetChildIndex(this.textBox1, 0);
             this.panel3.Controls.SetChildIndex(this.button3, 0);
             // 
             // button3
@@ -159,7 +163,6 @@ namespace MES_Team3
             // 
             // frmProduct
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.ClientSize = new System.Drawing.Size(1168, 778);
             this.Name = "frmProduct";
             this.PropertyPanel = true;

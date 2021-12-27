@@ -81,18 +81,6 @@
     <Compile Include="BaseForms\Base5.Designer.cs">
       <DependentUpon>Base5.cs</DependentUpon>
     </Compile>
-    <Compile Include="BaseForms\frmMessageBox.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BaseForms\frmMessageBox.Designer.cs">
-      <DependentUpon>frmMessageBox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BaseForms\frmSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BaseForms\frmSearch.Designer.cs">
-      <DependentUpon>frmSearch.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controls\csDataGridView.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -182,12 +170,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaseForms\Base5.resx">
       <DependentUpon>Base5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BaseForms\frmMessageBox.resx">
-      <DependentUpon>frmMessageBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BaseForms\frmSearch.resx">
-      <DependentUpon>frmSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmINSPECT_MST.resx">
       <DependentUpon>frmINSPECT_MST.cs</DependentUpon>
