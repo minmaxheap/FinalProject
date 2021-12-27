@@ -29,8 +29,7 @@ namespace MES_Team3.BaseForms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Button button2;
-            System.Windows.Forms.Button button1;
+           
             this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -58,8 +57,8 @@ namespace MES_Team3.BaseForms
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            button2 = new System.Windows.Forms.Button();
-            button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -80,36 +79,6 @@ namespace MES_Team3.BaseForms
             this.panel5.SuspendLayout();
             this.panel7.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button2
-            // 
-            button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            button2.BackgroundImage = global::MES_Team3.Properties.Resources.pngegg;
-            button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            button2.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            button2.ForeColor = System.Drawing.SystemColors.ControlText;
-            button2.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            button2.Location = new System.Drawing.Point(298, 3);
-            button2.Name = "button2";
-            button2.Size = new System.Drawing.Size(32, 25);
-            button2.TabIndex = 33;
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            button1.BackgroundImage = global::MES_Team3.Properties.Resources._refresh_90271;
-            button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            button1.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            button1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            button1.Location = new System.Drawing.Point(9, 4);
-            button1.Name = "button1";
-            button1.Size = new System.Drawing.Size(32, 25);
-            button1.TabIndex = 16;
-            button1.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -209,6 +178,36 @@ namespace MES_Team3.BaseForms
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(245, 25);
             this.textBox1.TabIndex = 15;
+            // 
+            // button2
+            // 
+            button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            button2.BackgroundImage = global::MES_Team3.Properties.Resources.pngegg;
+            button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            button2.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            button2.ForeColor = System.Drawing.SystemColors.ControlText;
+            button2.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            button2.Location = new System.Drawing.Point(298, 3);
+            button2.Name = "button2";
+            button2.Size = new System.Drawing.Size(32, 25);
+            button2.TabIndex = 33;
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            button1.BackgroundImage = global::MES_Team3.Properties.Resources._refresh_90271;
+            button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            button1.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            button1.ForeColor = System.Drawing.SystemColors.ControlText;
+            button1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            button1.Location = new System.Drawing.Point(9, 4);
+            button1.Name = "button1";
+            button1.Size = new System.Drawing.Size(32, 25);
+            button1.TabIndex = 16;
+            button1.UseVisualStyleBackColor = false;
             // 
             // panel4
             // 
@@ -503,10 +502,12 @@ namespace MES_Team3.BaseForms
         public System.Windows.Forms.Button button3;
         public System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.Panel searchPanel;
-        private System.Windows.Forms.Panel panel9;
         public System.Windows.Forms.Label lblPanel;
         public System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel7;
         public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Panel panel9;
+        public System.Windows.Forms.Panel panel7;
+        public System.Windows.Forms.Button button2;
+        public System.Windows.Forms.Button button1;
     }
 }

@@ -29,7 +29,7 @@ namespace MES_Team3
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Button button2;
+           
             this.panel6 = new System.Windows.Forms.Panel();
             this.button10 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -54,7 +54,7 @@ namespace MES_Team3
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            button2 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -382,5 +382,6 @@ namespace MES_Team3
         public System.Windows.Forms.TextBox textBox7;
         public System.Windows.Forms.TextBox textBox8;
         public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Button button2;
     }
 }

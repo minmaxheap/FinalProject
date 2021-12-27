@@ -29,10 +29,10 @@ namespace MES_Team3.BaseForms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Button button2;
-            System.Windows.Forms.Button button1;
-            System.Windows.Forms.Button btnSubtract;
-            System.Windows.Forms.Button btnAdd;
+            
+            
+            
+            
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -51,10 +51,10 @@ namespace MES_Team3.BaseForms
             this.panel6 = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
-            button2 = new System.Windows.Forms.Button();
-            button1 = new System.Windows.Forms.Button();
-            btnSubtract = new System.Windows.Forms.Button();
-            btnAdd = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnSubtract = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -400,5 +400,9 @@ namespace MES_Team3.BaseForms
         public System.Windows.Forms.Label lblPanel;
         public System.Windows.Forms.Panel searchPanel;
         public System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Button button2;
+        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button btnSubtract;
+        public System.Windows.Forms.Button btnAdd;
     }
 }
