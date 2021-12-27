@@ -11,12 +11,12 @@ namespace MES_Team3
 {
     public class ProductServ
     {
-        public DataTable GetProductsList()
+        public List<ProductProperty> GetProductsList()
         {
             ProductDAC dac = new ProductDAC();
-            DataTable dt = dac.GetProductsList();
+            List<ProductProperty> list = dac.GetProductsList();
             dac.Dispose();
-            return dt;
+            return list;
         }
 
         public bool Insert(ProductProperty vo)
