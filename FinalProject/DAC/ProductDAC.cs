@@ -160,29 +160,38 @@ WHERE [CODE_TABLE_NAME] ='CM_PRODUCT_TYPE'";
 
             sb.Append(@"select PRODUCT_CODE, PRODUCT_NAME, PRODUCT_TYPE, CUSTOMER_CODE, VENDOR_CODE, CREATE_TIME, CREATE_USER_ID, UPDATE_TIME, UPDATE_USER_ID
 from [dbo].[PRODUCT_MST]
-where PRODUCT_CODE=@PRODUCT_CODE");
+where 1=1");
 
-        
-            if (!string.IsNullOrWhiteSpace(pr.PRODUCT_TYPE))
+
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                if (!string.IsNullOrWhiteSpace(pr.PRODUCT_CODE))
+                {
+                    sb.Append(" and PRODUCT_CODE = @PRODUCT_CODE");
+
+                    cmd.Parameters.AddWithValue("@PRODUCT_CODE", pr.PRODUCT_CODE);
+                }
+                if (!string.IsNullOrWhiteSpace(pr.PRODUCT_TYPE))
             {
                 sb.Append(" and PRODUCT_TYPE=@PRODUCT_TYPE");
+                cmd.Parameters.AddWithValue("@PRODUCT_TYPE", pr.PRODUCT_TYPE);
             }
             if (!string.IsNullOrWhiteSpace(pr.CUSTOMER_CODE))
             {
                 sb.Append(" and CUSTOMER_CODE=@CUSTOMER_CODE");
+                cmd.Parameters.AddWithValue("@CUSTOMER_CODE", pr.CUSTOMER_CODE);
             }
             if (!string.IsNullOrWhiteSpace(pr.VENDOR_CODE))
             {
                 sb.Append(" and VENDOR_CODE=@VENDOR_CODE");
-            }
+                    cmd.Parameters.AddWithValue("@VENDOR_CODE", pr.VENDOR_CODE);
+                }
 
 
-            using (SqlCommand cmd = new SqlCommand(sb.ToString(), conn))
-            {
-                cmd.Parameters.AddWithValue("@PRODUCT_CODE", pr.PRODUCT_CODE);
-                cmd.Parameters.AddWithValue("@PRODUCT_TYPE", pr.PRODUCT_TYPE);
-                cmd.Parameters.AddWithValue("@CUSTOMER_CODE", pr.CUSTOMER_CODE);
-                cmd.Parameters.AddWithValue("@VENDOR_CODE", pr.VENDOR_CODE);
+
+                cmd.CommandText = sb.ToString();
+                cmd.Connection = conn;
+              
 
                 return Helper.DataReaderMapToList<ProductProperty>(cmd.ExecuteReader());
             }
