@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
@@ -13,8 +14,9 @@ namespace MES_Team3
 {
     public partial class frmProduct : MES_Team3.BaseForms.Base1_1
     {
-        //public List<Bar> barlist;
-        
+        List<ProductProperty> allList;
+
+
         public frmProduct()
         {
             InitializeComponent();
@@ -32,6 +34,7 @@ namespace MES_Team3
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성 사용자", "CREATE_USER_ID");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 시간", "UPDATE_TIME");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 사용자", "UPDATE_USER_ID");
+            List<ProductProperty> list = new List<ProductProperty>();
 
             LoadData();
 
@@ -64,6 +67,10 @@ namespace MES_Team3
 
         private void csDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if(e.RowIndex<0)
+            {
+                return;
+            }
             //오류 생김
             DataGridViewRow dr = csDataGridView1.Rows[e.RowIndex];
             ProductProperty vo = new ProductProperty();
@@ -108,9 +115,9 @@ namespace MES_Team3
         public void LoadData()
         {
             ProductServ serv = new ProductServ();
-            List<ProductProperty> list = serv.GetProductsList();
+             allList = serv.GetProductsList();
             csDataGridView1.DataSource = null;
-            csDataGridView1.DataSource = list;
+            csDataGridView1.DataSource = allList;
             SearchPanel = false;
         }
 
@@ -137,28 +144,49 @@ namespace MES_Team3
             ProductProperty search = (ProductProperty)pgSearch.SelectedObject;
             ProductServ serv = new ProductServ();
             List<ProductProperty> list = serv.GetProductSearch(search);
+            search.IsSearchPanel = false;
+
+            csDataGridView1.DataSource = null;
             csDataGridView1.DataSource = list;
 
+            //ProductProperty search = (ProductProperty)pgSearch.SelectedObject;
+            //var searchList = (from pr in allList
+            //                  where (!string.IsNullOrWhiteSpace(search.PRODUCT_CODE)) ? (pr.PRODUCT_CODE == search.PRODUCT_CODE) : 1 == 1
+            //                 && (!string.IsNullOrWhiteSpace(search.PRODUCT_TYPE)) ? (pr.PRODUCT_TYPE == search.PRODUCT_TYPE) : 1 == 1
+            //                 && (!string.IsNullOrWhiteSpace(search.CUSTOMER_CODE)) ? (pr.CUSTOMER_CODE == search.CUSTOMER_CODE) : 1 == 1
+            //                 && (!string.IsNullOrWhiteSpace(search.VENDOR_CODE)) ?) (pr.VENDOR_CODE == search.VENDOR_CODE): 1==1
+            //                  select pr
+            //                 ).ToList();
+            //csDataGridView1.DataSource = null;
+            //csDataGridView1.DataSource = searchList;
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
             PropertyDescriptor pd = pgSearch.SelectedGridItem.PropertyDescriptor;
             pd.ResetValue(pgSearch.SelectedObject);
-            LoadData();
             ProductProperty search = new ProductProperty();
             search.IsSearchPanel = true;
             pgSearch.SelectedObject = search;
             pgSearch.PropertySort = PropertySort.NoSort;
-            searchPanel.Visible = true;
+            SearchPanel = true;
+            csDataGridView1.DataSource = null;
+            csDataGridView1.DataSource = allList;
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             string txt = textBox1.Text;
-            DataTable dt = new DataTable();
+            List<ProductProperty> txtSearch = allList.FindAll((x) => x.PRODUCT_CODE.Contains(txt) || x.PRODUCT_NAME.Contains(txt)||x.PRODUCT_TYPE.Contains(txt) || x.CUSTOMER_CODE.Contains(txt)||x.VENDOR_CODE.Contains(txt) || x.CREATE_USER_ID.Contains(txt)||x.UPDATE_USER_ID.Contains(txt));
+            csDataGridView1.DataSource = txtSearch;
             
-            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            csDataGridView1.DataSource = null;
+            csDataGridView1.DataSource = allList;
         }
     }
 

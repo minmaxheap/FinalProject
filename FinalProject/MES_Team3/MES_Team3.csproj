@@ -149,11 +149,11 @@
     <Compile Include="Services\ProductServ.cs" />
     <Compile Include="Services\UserGroupServ.cs" />
     <Compile Include="Util\DataGridViewUtil.cs" />
-    <Compile Include="Sales_Order.cs">
+    <Compile Include="Store.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sales_Order.Designer.cs">
-      <DependentUpon>Sales_Order.cs</DependentUpon>
+    <Compile Include="Store.Designer.cs">
+      <DependentUpon>Store.cs</DependentUpon>
     </Compile>
     <Compile Include="Util\LoggingUtility.cs" />
     <EmbeddedResource Include="BaseForms\Base1_1.resx">
@@ -202,8 +202,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Sales_Order.resx">
-      <DependentUpon>Sales_Order.cs</DependentUpon>
+    <EmbeddedResource Include="Store.resx">
+      <DependentUpon>Store.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

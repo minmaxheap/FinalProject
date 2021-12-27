@@ -121,37 +121,50 @@ where  INSPECT_ITEM_CODE = @INSPECT_ITEM_CODE ";
 		}
 
 		//조회조건
-		public List<INSPECT_MSTVO> GetINSPECT_MST_Search(string code, string ValueType)
+		public List<INSPECT_MSTVO> GetINSPECT_MST_Search(INSPECT_MSTVO vo)
 		{
 			StringBuilder sb = new StringBuilder();
 
-			sb.Append(@"select INSPECT_ITEM_CODE, INSPECT_ITEM_NAME, VALUE_TYPE, SPEC_LSL, SPEC_TARGET, SPEC_USL, CREATE_TIME, CREATE_USER_ID, UPDATE_TIME, UPDATE_USER_ID
-from [dbo].[INSPECT_ITEM_MST]
-where INSPECT_ITEM_CODE = @INSPECT_ITEM_CODE ");
+			sb.Append(@"SELECT INSPECT_ITEM_CODE, INSPECT_ITEM_NAME, VALUE_TYPE, SPEC_LSL, SPEC_TARGET, SPEC_USL, CREATE_TIME, CREATE_USER_ID, UPDATE_TIME, UPDATE_USER_ID
+FROM INSPECT_ITEM_MST
+where 1=1");
 
-			if (!string.IsNullOrWhiteSpace(ValueType))
+			using (SqlCommand cmd = new SqlCommand())
 			{
-				sb.Append(" and VALUE_TYPE = @VALUE_TYPE");
-			}
-			
+				if (!string.IsNullOrWhiteSpace(vo.INSPECT_ITEM_CODE))
+				{
+					sb.Append(" and INSPECT_ITEM_CODE = @INSPECT_ITEM_CODE");
+					cmd.Parameters.AddWithValue("@INSPECT_ITEM_CODE", vo.INSPECT_ITEM_CODE);
 
-			using (SqlCommand cmd = new SqlCommand(sb.ToString(), conn))
-			{
-				cmd.Parameters.AddWithValue("@INSPECT_ITEM_CODE", code);
-				cmd.Parameters.AddWithValue("@VALUE_TYPE", ValueType);
+				}
+
+				if (!string.IsNullOrWhiteSpace(vo.VALUE_TYPE))
+				{
+					sb.Append(" and VALUE_TYPE = @VALUE_TYPE");
+					cmd.Parameters.AddWithValue("@VALUE_TYPE", vo.VALUE_TYPE);
+
+				}
+
+
+				cmd.CommandText = sb.ToString();
+				cmd.Connection = conn;
 
 				return Helper.DataReaderMapToList<INSPECT_MSTVO>(cmd.ExecuteReader());
 			}
 
 		}
-
-		public List<Search_INSPEC_MSEVO> GetINSPECT_MST_Search2(Search_INSPEC_MSEVO vo)
+		public DataTable GetSearchTable(INSPECT_MSTVO vo)
 		{
 			StringBuilder sb = new StringBuilder();
 
 			sb.Append(@"select INSPECT_ITEM_CODE, INSPECT_ITEM_NAME, VALUE_TYPE, SPEC_LSL, SPEC_TARGET, SPEC_USL, CREATE_TIME, CREATE_USER_ID, UPDATE_TIME, UPDATE_USER_ID
 from [dbo].[INSPECT_ITEM_MST]
-where INSPECT_ITEM_CODE = @INSPECT_ITEM_CODE ");
+where 1=1");
+
+			if (!string.IsNullOrWhiteSpace(vo.INSPECT_ITEM_CODE))
+			{
+				sb.Append(" and INSPECT_ITEM_CODE = @INSPECT_ITEM_CODE");
+			}
 
 			if (!string.IsNullOrWhiteSpace(vo.VALUE_TYPE))
 			{
@@ -164,7 +177,12 @@ where INSPECT_ITEM_CODE = @INSPECT_ITEM_CODE ");
 				cmd.Parameters.AddWithValue("@INSPECT_ITEM_CODE",vo.INSPECT_ITEM_CODE );
 				cmd.Parameters.AddWithValue("@VALUE_TYPE", vo.VALUE_TYPE);
 
-				return Helper.DataReaderMapToList<Search_INSPEC_MSEVO>(cmd.ExecuteReader());
+				SqlDataAdapter da = new SqlDataAdapter(cmd);
+				DataTable dt = new DataTable();
+				da.Fill(dt);
+
+				return dt;
+				//return Helper.DataReaderMapToList<Search_INSPEC_MSEVO>(cmd.ExecuteReader());
 			}
 
 		}

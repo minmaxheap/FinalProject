@@ -52,10 +52,10 @@ namespace MES_Team3
 		}
 
 		//조회조건
-		public List<Search_INSPEC_MSEVO> GetINSPECT_MST_Search2(Search_INSPEC_MSEVO vo)
+		public List<INSPECT_MSTVO> GetINSPECT_MST_Search(INSPECT_MSTVO vo)
 		{
 			InspectDAC dac = new InspectDAC();
-			List<Search_INSPEC_MSEVO> list = dac.GetINSPECT_MST_Search2(vo);
+			List<INSPECT_MSTVO> list = dac.GetINSPECT_MST_Search(vo);
 			dac.Dispose();
 			return list;
 		}
