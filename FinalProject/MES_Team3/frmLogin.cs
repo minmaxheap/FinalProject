@@ -33,6 +33,11 @@ namespace MES_Team3
         private void frmLogin_Load(object sender, EventArgs e)
         {
             txtID.Text = "0324234";
+
+        }
+
+        private void frmLogin_Shown(object sender, EventArgs e)
+        {
             frmMain frm = new frmMain(txtID.Text);
             frm.Show();
             this.Hide();
