@@ -53,6 +53,10 @@ namespace MES_Team3
 			// 
 			this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
 			// 
+			// btnClear
+			// 
+			this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+			// 
 			// btnUpdate
 			// 
 			this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -103,6 +107,7 @@ namespace MES_Team3
 			this.pgGrid.Size = new System.Drawing.Size(358, 562);
 			this.pgGrid.TabIndex = 22;
 			this.pgGrid.ToolbarVisible = false;
+			this.pgGrid.PropertyValueChanged += new System.Windows.Forms.PropertyValueChangedEventHandler(this.pgGrid_PropertyValueChanged);
 			// 
 			// pgSearch
 			// 
