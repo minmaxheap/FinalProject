@@ -30,16 +30,16 @@ namespace DAC
         public string OPERATION_NAME { get { return operation_name; } set { operation_name = value; } }
 
         [DisplayName("불량 입력")]
-        [TypeConverter(typeof(ProductTypeConverter))]
+        [TypeConverter(typeof(Check_Value_Converter))]
         public string CHECK_DEFECT_FLAG
         { get { return check_defect_flag; } set { check_defect_flag = value; } }
 
         [DisplayName("검사 데이터 입력")]
-        [TypeConverter(typeof(CustomerCodeConverter))]
+        [TypeConverter(typeof(Check_Value_Converter))]
         public string CHECK_INSPECT_FLAG { get { return check_inspect_flag; } set { check_inspect_flag = value; } }
 
         [DisplayName("자재 사용")]
-        [TypeConverter(typeof(VendorCodeConverter))]
+        [TypeConverter(typeof(Check_Value_Converter))]
         public string CHECK_MATERIAL_FLAG { get { return check_material_flag; } set { check_material_flag = value; } }
 
         [DisplayName("생성 시간")]

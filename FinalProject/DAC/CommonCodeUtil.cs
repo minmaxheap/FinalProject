@@ -118,27 +118,43 @@ namespace DAC
         }
     }
 
+    public class Check_Value
+    {
+        public List<string> GetSourceList()
+        {
+            //dac에서 list 받아오기
+            List<string> check_value = new List<string>();
+            check_value.Add("Y");
+            check_value.Add("");
+            return check_value;
+        }
+    }
+    public class Check_Value_Converter : StringConverter
+    {
+        public override bool GetStandardValuesSupported(ITypeDescriptorContext context)
+        {
+            return true;
+        }
 
+
+        public override TypeConverter.StandardValuesCollection GetStandardValues(ITypeDescriptorContext context)
+        {
+            // ProductVO refMyObject = context.Instance as ProductVO;
+            return new StandardValuesCollection(new Check_Value().GetSourceList());
+        }
+    }
     public class User_Mst
     {
         public List<string> GetSourceList()
         {
             //dac에서 list 받아오기
-            List<string> Type = new List<string>();
-            Type.Add("ADMIN_GROUP");
-            Type.Add("PRESS_GROUP");
-            Type.Add("INJECTION_GROUP");
-            Type.Add("SMT_GROUP");
-            Type.Add("ASSY_GROUP");
-         
-
-
-
-            //valueType.Add("Employee");
-
-            return Type;
+            List<string> check_value = new List<string>();
+            check_value.Add("Y");
+            check_value.Add("");
+            return check_value;
         }
     }
+
     public class UserMstTypeConverter : StringConverter
     {
         public override bool GetStandardValuesSupported(ITypeDescriptorContext context)
@@ -187,6 +203,6 @@ namespace DAC
             // ProductVO refMyObject = context.Instance as ProductVO;
             return new StandardValuesCollection(new DepartMent().GetSourceList());
         }
-    }
 
+    }
 }

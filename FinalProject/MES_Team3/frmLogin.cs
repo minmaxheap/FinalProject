@@ -12,8 +12,7 @@ namespace MES_Team3
 {
     public partial class frmLogin : Form
     {
-      
-    
+        public string userID { get { return txtID.Text; } }
         public frmLogin()
         {
             InitializeComponent();
