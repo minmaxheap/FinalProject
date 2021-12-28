@@ -56,12 +56,12 @@ namespace MES_Team3
             // pnlProperty
             // 
             this.pnlProperty.Controls.Add(this.pgProperty);
-            this.pnlProperty.Size = new System.Drawing.Size(358, 621);
+            this.pnlProperty.Size = new System.Drawing.Size(364, 621);
             // 
             // pnlSearch
             // 
             this.pnlSearch.Controls.Add(this.pgSearch);
-            this.pnlSearch.Size = new System.Drawing.Size(357, 621);
+            this.pnlSearch.Size = new System.Drawing.Size(364, 621);
             // 
             // btnPanel
             // 
@@ -106,13 +106,13 @@ namespace MES_Team3
             // 
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // btnReadTop
-            // 
-            this.btnReadTop.Click += new System.EventHandler(this.btnReadTop_Click);
-            // 
             // btnTxtSearch
             // 
             this.btnTxtSearch.Click += new System.EventHandler(this.btnTxtSearch_Click);
+            // 
+            // btnReadTop
+            // 
+            this.btnReadTop.Click += new System.EventHandler(this.btnReadTop_Click);
             // 
             // pgProperty
             // 
@@ -122,7 +122,7 @@ namespace MES_Team3
             this.pgProperty.HelpVisible = false;
             this.pgProperty.Location = new System.Drawing.Point(0, 0);
             this.pgProperty.Name = "pgProperty";
-            this.pgProperty.Size = new System.Drawing.Size(357, 621);
+            this.pgProperty.Size = new System.Drawing.Size(363, 621);
             this.pgProperty.TabIndex = 4;
             this.pgProperty.ToolbarVisible = false;
             // 
@@ -134,7 +134,7 @@ namespace MES_Team3
             this.pgSearch.HelpVisible = false;
             this.pgSearch.Location = new System.Drawing.Point(0, 0);
             this.pgSearch.Name = "pgSearch";
-            this.pgSearch.Size = new System.Drawing.Size(354, 621);
+            this.pgSearch.Size = new System.Drawing.Size(363, 621);
             this.pgSearch.TabIndex = 3;
             this.pgSearch.ToolbarVisible = false;
             // 
@@ -175,7 +175,7 @@ namespace MES_Team3
             this.csDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.csDataGridView1.RowHeadersWidth = 30;
             this.csDataGridView1.RowTemplate.Height = 23;
-            this.csDataGridView1.Size = new System.Drawing.Size(784, 622);
+            this.csDataGridView1.Size = new System.Drawing.Size(797, 622);
             this.csDataGridView1.TabIndex = 0;
             this.csDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellClick);
             this.csDataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.csDataGridView1_KeyDown);
