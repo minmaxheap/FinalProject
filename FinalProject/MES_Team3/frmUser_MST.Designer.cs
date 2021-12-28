@@ -36,8 +36,6 @@ namespace MES_Team3
 			this.pgSearch = new System.Windows.Forms.PropertyGrid();
 			this.pgProperty = new System.Windows.Forms.PropertyGrid();
 			this.csDataGridView1 = new MES_Team3.csDataGridView();
-			//this.panel6.SuspendLayout();
-			this.panel5.SuspendLayout();
 			this.panel3.SuspendLayout();
 			this.propertyPanel.SuspendLayout();
 			this.searchPanel.SuspendLayout();
@@ -46,36 +44,10 @@ namespace MES_Team3
 			this.splitContainer1.Panel2.SuspendLayout();
 			this.splitContainer1.SuspendLayout();
 			this.panel4.SuspendLayout();
+			this.panel5.SuspendLayout();
+			this.panel7.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.csDataGridView1)).BeginInit();
 			this.SuspendLayout();
-			// 
-			// panel6
-			// 
-			//this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
-			// 
-			// btnInsert
-			// 
-			this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
-			// 
-			// btnClear
-			// 
-			this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-			// 
-			// btnUpdate
-			// 
-			this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-			// 
-			// btnRead
-			// 
-			this.btnRead.Click += new System.EventHandler(this.btnRead_Click);
-			// 
-			// btnDelete
-			// 
-			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-			// 
-			// button3
-			// 
-			this.button3.Click += new System.EventHandler(this.button3_Click);
 			// 
 			// lblTitle
 			// 
@@ -89,12 +61,47 @@ namespace MES_Team3
 			// 
 			this.searchPanel.Controls.Add(this.pgSearch);
 			// 
+			// btnPanel
+			// 
+			this.btnPanel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
+			this.btnPanel.FlatAppearance.BorderSize = 0;
+			this.btnPanel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
+			this.btnPanel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
+			// 
 			// splitContainer1
 			// 
 			// 
 			// panel4
 			// 
 			this.panel4.Controls.Add(this.csDataGridView1);
+			// 
+			// button3
+			// 
+			this.button3.Click += new System.EventHandler(this.button3_Click);
+			// 
+			// btnInsert
+			// 
+			this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
+			// 
+			// btnDelete
+			// 
+			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+			// 
+			// btnClear
+			// 
+			this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+			// 
+			// btnRead
+			// 
+			this.btnRead.Click += new System.EventHandler(this.btnRead_Click);
+			// 
+			// btnUpdate
+			// 
+			this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+			// 
+			// button2
+			// 
+			this.button2.Click += new System.EventHandler(this.button2_Click);
 			// 
 			// pgSearch
 			// 
@@ -151,19 +158,18 @@ namespace MES_Team3
 			this.csDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
 			this.csDataGridView1.RowHeadersWidth = 30;
 			this.csDataGridView1.RowTemplate.Height = 23;
-			this.csDataGridView1.Size = new System.Drawing.Size(771, 575);
+			this.csDataGridView1.Size = new System.Drawing.Size(784, 622);
 			this.csDataGridView1.TabIndex = 0;
 			this.csDataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellDoubleClick);
 			// 
 			// frmUser_MST
 			// 
 			this.ClientSize = new System.Drawing.Size(1168, 778);
+			this.IsSearchPanel = true;
 			this.Name = "frmUser_MST";
 			this.PropertyPanel = true;
 			this.SearchPanel = true;
 			this.Load += new System.EventHandler(this.frmUser_MST_Load);
-			//this.panel6.ResumeLayout(false);
-			this.panel5.ResumeLayout(false);
 			this.panel3.ResumeLayout(false);
 			this.panel3.PerformLayout();
 			this.propertyPanel.ResumeLayout(false);
@@ -173,6 +179,8 @@ namespace MES_Team3
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
 			this.splitContainer1.ResumeLayout(false);
 			this.panel4.ResumeLayout(false);
+			this.panel5.ResumeLayout(false);
+			this.panel7.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.csDataGridView1)).EndInit();
 			this.ResumeLayout(false);
 

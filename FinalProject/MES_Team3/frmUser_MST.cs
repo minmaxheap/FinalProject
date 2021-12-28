@@ -212,5 +212,43 @@ namespace MES_Team3
 			pgProperty.SelectedObject = search;
 			pgProperty.PropertySort = PropertySort.NoSort;
 		}
+
+		//아래로 내려가듯이
+		private void button2_Click(object sender, EventArgs e)
+		{
+			String searchValue = textBox1.Text;
+			int rowIndex = -1;
+			foreach (DataGridViewRow row in csDataGridView1.Rows)
+			{
+				if (row.Cells[2].Value.ToString().Equals(textBox1.Text))
+				{
+					rowIndex = row.Index;
+					break;
+				}
+			}
+
+			csDataGridView1.Rows[rowIndex].Selected = true;
+		}
+
+		private DataGridViewCell GetCellWhereTextExistsInGridView(string searchText, DataGridView dataGridView, int columnIndex)
+		{
+			DataGridViewCell cellWhereTextIsMet = null;
+
+			// For every row in the grid (obviously)
+			foreach (DataGridViewRow row in csDataGridView1.Rows)
+			{
+				// I did not test this case, but cell.Value is an object, and objects can be null
+				// So check if the cell is null before using .ToString()
+				if (row.Cells[columnIndex].Value != null && searchText == row.Cells[columnIndex].Value.ToString())
+				{
+					// the searchText is equals to the text in this cell.
+					cellWhereTextIsMet = row.Cells[columnIndex];
+					//break;
+				}
+			}
+			
+
+			return cellWhereTextIsMet;
+		}
 	}
 }
