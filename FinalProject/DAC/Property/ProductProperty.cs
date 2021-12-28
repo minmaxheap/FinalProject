@@ -44,16 +44,20 @@ namespace DAC
         public string VENDOR_CODE { get { return vendor_code; } set { vendor_code = value; } }
         [DisplayName("생성 시간")]
         [Browsable(true)]
+        [ReadOnly(true)]
         public DateTime CREATE_TIME { get { return create_time; } set { create_time = value; } }
         [DisplayName("생성 사용자")]
         [Browsable(true)]
+        [ReadOnly(true)]
         public string CREATE_USER_ID { get { return create_user_id; } set { create_user_id = value; } }
         [DisplayName("변경 시간")]
         [Browsable(true)]
+        [ReadOnly(true)]
         public DateTime UPDATE_TIME { get { return update_time; } set { update_time = value; } }
 
         [DisplayName("변경 사용자")]
         [Browsable(true)]
+        [ReadOnly(true)]
         public string UPDATE_USER_ID 
         { 
             get { return update_user_id; } 

@@ -12,7 +12,19 @@ namespace MES_Team3.BaseForms
 {
     public partial class Base1_1 : Form
     {
-        public bool IsSearchPanel { get { return searchPanel.Visible; } set { searchPanel.Visible = value; PanelVisible(); } }
+        public bool IsSearchPanel 
+        { 
+            get { return searchPanel.Visible; } 
+            set 
+            { 
+                searchPanel.Visible = value; 
+                propertyPanel.Visible = true;
+                searchPanel.Visible = false;
+                lblPanel.Text = "▶ 속성";
+                lblPanel.BackColor = Color.FromArgb(82, 152, 216);
+                btnPanel.BackColor = lblPanel.BackColor;
+            } 
+        }
         public bool PropertyPanel { get { return propertyPanel.Visible; } set { propertyPanel.Visible = value; } }
         public bool SearchPanel { get { return searchPanel.Visible; } set { searchPanel.Visible = value; } }
         public Base1_1()
