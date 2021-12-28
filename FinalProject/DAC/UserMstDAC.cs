@@ -27,8 +27,8 @@ namespace DAC
 		{
 			try
 			{
-				string sql = @"insert into USER_MST(USER_ID, USER_NAME, USER_GROUP_CODE, USER_PASSWORD, USER_DEPARTMENT, CREATE_TIME, CREATE_USER_ID, UPDATE_TIME, UPDATE_USER_ID)
-values (@USER_ID, @USER_NAME, @USER_GROUP_CODE, @USER_PASSWORD, @USER_DEPARTMENT,@CREATE_TIME, @CREATE_USER_ID, @UPDATE_TIME, @UPDATE_USER_ID)";
+				string sql = @"insert into USER_MST(USER_ID, USER_NAME, USER_GROUP_CODE, USER_PASSWORD, USER_DEPARTMENT, CREATE_TIME, CREATE_USER_ID)
+values (@USER_ID, @USER_NAME, @USER_GROUP_CODE, @USER_PASSWORD, @USER_GROUP_CODE,getdate(),@CREATE_USER_ID)";
 
 
 				using (SqlCommand cmd = new SqlCommand(sql, conn))
@@ -37,12 +37,10 @@ values (@USER_ID, @USER_NAME, @USER_GROUP_CODE, @USER_PASSWORD, @USER_DEPARTMENT
 					cmd.Parameters.AddWithValue("@USER_NAME", pr.USER_NAME);
 					cmd.Parameters.AddWithValue("@USER_GROUP_CODE", pr.USER_GROUP_CODE);
 					cmd.Parameters.AddWithValue("@USER_PASSWORD", pr.USER_PASSWORD);
-					cmd.Parameters.AddWithValue("@USER_DEPARTMENT", pr.USER_DEPARTMENT);
-
-					cmd.Parameters.AddWithValue("@CREATE_TIME", pr.CREATE_TIME);
+					cmd.Parameters.AddWithValue("@USER_GROUP_CODE", pr.USER_DEPARTMENT);
 					cmd.Parameters.AddWithValue("@CREATE_USER_ID", pr.CREATE_USER_ID);
-					cmd.Parameters.AddWithValue("@UPDATE_TIME", pr.UPDATE_TIME);
-					cmd.Parameters.AddWithValue("@UPDATE_USER_ID", pr.UPDATE_USER_ID);
+					//cmd.Parameters.AddWithValue("@UPDATE_TIME", pr.UPDATE_TIME);
+					//cmd.Parameters.AddWithValue("@UPDATE_USER_ID", pr.UPDATE_USER_ID);
 
 					int row = cmd.ExecuteNonQuery();
 					return row > 0;
@@ -57,8 +55,8 @@ values (@USER_ID, @USER_NAME, @USER_GROUP_CODE, @USER_PASSWORD, @USER_DEPARTMENT
 		public bool Update(User_MST_Property pr)
 		{
 			string sql = @"update USER_MST 
-set USER_ID = @USER_ID, USER_NAME = @USER_NAME , USER_GROUP_CODE = @USER_GROUP_CODE, USER_PASSWORD = @USER_PASSWORD, USER_DEPARTMENT = @USER_DEPARTMENT, CREATE_TIME = @CREATE_TIME, 
-CREATE_USER_ID, @CREATE_USER_ID, UPDATE_TIME = @UPDATE_TIME UPDATE_USER_ID = @UPDATE_USER_ID
+set USER_ID = @USER_ID, USER_NAME = @USER_NAME , USER_GROUP_CODE = @USER_GROUP_CODE, USER_PASSWORD = @USER_PASSWORD, USER_DEPARTMENT = @USER_DEPARTMENT,, 
+ UPDATE_TIME = getdate() ,UPDATE_USER_ID = @UPDATE_USER_ID
 where USER_ID = @USER_ID";
 			using (SqlCommand cmd = new SqlCommand(sql, conn))
 			{
@@ -68,9 +66,9 @@ where USER_ID = @USER_ID";
 				cmd.Parameters.AddWithValue("@USER_PASSWORD", pr.USER_PASSWORD);
 				cmd.Parameters.AddWithValue("@USER_DEPARTMENT", pr.USER_DEPARTMENT);
 
-				cmd.Parameters.AddWithValue("@CREATE_TIME", pr.CREATE_TIME);
-				cmd.Parameters.AddWithValue("@CREATE_USER_ID", pr.CREATE_USER_ID);
-				cmd.Parameters.AddWithValue("@UPDATE_TIME", pr.UPDATE_TIME);
+				//cmd.Parameters.AddWithValue("@CREATE_TIME", pr.CREATE_TIME);
+				//cmd.Parameters.AddWithValue("@CREATE_USER_ID", pr.CREATE_USER_ID);
+				//cmd.Parameters.AddWithValue("@UPDATE_TIME", pr.UPDATE_TIME);
 				cmd.Parameters.AddWithValue("@UPDATE_USER_ID", pr.UPDATE_USER_ID);
 
 				int row = cmd.ExecuteNonQuery();

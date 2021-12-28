@@ -36,9 +36,7 @@ namespace DAC
 
 		[DisplayName("사용자 그룹")]
 		[Browsable(true)]
-		[TypeConverter(typeof(UserMstTypeConverter))]
-
-
+		[TypeConverter(typeof(UserMstGroupTypeConverter))]
 		public string USER_GROUP_CODE { get { return Group_Code; } set { Group_Code = value; } }
 
 		[DisplayName("비밀번호")]
@@ -49,8 +47,6 @@ namespace DAC
 		[DisplayName("부서")]
 		[Browsable(true)]
 		[TypeConverter(typeof(DepartmentTypeConverter))]
-
-
 
 		public string USER_DEPARTMENT { get { return Department; } set { Department = value; } }
 
@@ -83,7 +79,7 @@ namespace DAC
 				IsSearchPannel = value;
 
 				PropertyDescriptorCollection propCollection = TypeDescriptor.GetProperties(this.GetType());
-
+				
 				PropertyDescriptor descriptor = propCollection["USER_NAME"];
 				PropertyDescriptor descriptor1 = propCollection["USER_PASSWORD"];
 				PropertyDescriptor descriptor2 = propCollection["CREATE_TIME"];
