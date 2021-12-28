@@ -58,11 +58,14 @@ namespace MES_Team3
             bool bResult = serv.Insert(save);
             if (bResult)
             {
+                MessageBox.Show("등록되었습니다.");
                 LoadData();
+                return;
             }
             else
             {
-
+                MessageBox.Show("등록 중 실패하였습니다.");
+                return;
             }
         }
     }
