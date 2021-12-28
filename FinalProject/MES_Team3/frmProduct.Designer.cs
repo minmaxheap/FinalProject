@@ -36,8 +36,6 @@ namespace MES_Team3
             this.pgProperty = new System.Windows.Forms.PropertyGrid();
             this.pgSearch = new System.Windows.Forms.PropertyGrid();
             this.csDataGridView1 = new MES_Team3.csDataGridView();
-            this.panel6.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.propertyPanel.SuspendLayout();
             this.searchPanel.SuspendLayout();
@@ -46,32 +44,10 @@ namespace MES_Team3
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.csDataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnInsert
-            // 
-            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
-            // 
-            // btnClear
-            // 
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // btnRead
-            // 
-            this.btnRead.Click += new System.EventHandler(this.btnRead_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // button3
-            // 
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.panel3.Controls.SetChildIndex(this.button3, 0);
             // 
             // lblTitle
             // 
@@ -80,12 +56,10 @@ namespace MES_Team3
             // propertyPanel
             // 
             this.propertyPanel.Controls.Add(this.pgProperty);
-            this.propertyPanel.Size = new System.Drawing.Size(360, 527);
             // 
             // searchPanel
             // 
             this.searchPanel.Controls.Add(this.pgSearch);
-            this.searchPanel.Size = new System.Drawing.Size(360, 524);
             // 
             // splitContainer1
             // 
@@ -94,13 +68,29 @@ namespace MES_Team3
             // 
             this.panel4.Controls.Add(this.csDataGridView1);
             // 
-            // button2
+            // button3
             // 
-            //this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button1
+            // btnInsert
             // 
-            //this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnRead
+            // 
+            this.btnRead.Click += new System.EventHandler(this.btnRead_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // pgProperty
             // 
@@ -108,9 +98,9 @@ namespace MES_Team3
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pgProperty.HelpVisible = false;
-            this.pgProperty.Location = new System.Drawing.Point(1, 1);
+            this.pgProperty.Location = new System.Drawing.Point(0, 0);
             this.pgProperty.Name = "pgProperty";
-            this.pgProperty.Size = new System.Drawing.Size(358, 563);
+            this.pgProperty.Size = new System.Drawing.Size(386, 676);
             this.pgProperty.TabIndex = 4;
             this.pgProperty.ToolbarVisible = false;
             // 
@@ -120,9 +110,9 @@ namespace MES_Team3
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pgSearch.HelpVisible = false;
-            this.pgSearch.Location = new System.Drawing.Point(1, 3);
+            this.pgSearch.Location = new System.Drawing.Point(0, 0);
             this.pgSearch.Name = "pgSearch";
-            this.pgSearch.Size = new System.Drawing.Size(358, 552);
+            this.pgSearch.Size = new System.Drawing.Size(386, 679);
             this.pgSearch.TabIndex = 3;
             this.pgSearch.ToolbarVisible = false;
             // 
@@ -163,7 +153,7 @@ namespace MES_Team3
             this.csDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.csDataGridView1.RowHeadersWidth = 30;
             this.csDataGridView1.RowTemplate.Height = 23;
-            this.csDataGridView1.Size = new System.Drawing.Size(771, 575);
+            this.csDataGridView1.Size = new System.Drawing.Size(779, 622);
             this.csDataGridView1.TabIndex = 0;
             this.csDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellClick);
             // 
@@ -175,8 +165,6 @@ namespace MES_Team3
             this.SearchPanel = true;
             this.Text = "품번 설정";
             this.Load += new System.EventHandler(this.frmProduct1_Load);
-            this.panel6.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.propertyPanel.ResumeLayout(false);
@@ -186,6 +174,7 @@ namespace MES_Team3
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.csDataGridView1)).EndInit();
             this.ResumeLayout(false);
 

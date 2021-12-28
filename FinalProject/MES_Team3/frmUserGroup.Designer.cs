@@ -35,7 +35,7 @@
 			this.pgProperty = new System.Windows.Forms.PropertyGrid();
 			this.pgSearch = new System.Windows.Forms.PropertyGrid();
 			this.csDataGridView1 = new MES_Team3.csDataGridView();
-			this.panel6.SuspendLayout();
+			//this.panel6.SuspendLayout();
 			this.panel5.SuspendLayout();
 			this.panel3.SuspendLayout();
 			this.propertyPanel.SuspendLayout();
@@ -157,7 +157,7 @@
 			this.PropertyPanel = true;
 			this.SearchPanel = true;
 			this.Load += new System.EventHandler(this.frmUserGroup_Load);
-			this.panel6.ResumeLayout(false);
+			//this.panel6.ResumeLayout(false);
 			this.panel5.ResumeLayout(false);
 			this.panel3.ResumeLayout(false);
 			this.panel3.PerformLayout();

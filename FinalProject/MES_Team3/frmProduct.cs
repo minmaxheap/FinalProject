@@ -183,9 +183,9 @@ namespace MES_Team3
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string txt = textBox1.Text;
-            List<ProductProperty> txtSearch = allList.FindAll((x) => x.PRODUCT_CODE.Contains(txt) || x.PRODUCT_NAME.Contains(txt)||x.PRODUCT_TYPE.Contains(txt) || x.CUSTOMER_CODE.Contains(txt)||x.VENDOR_CODE.Contains(txt) || x.CREATE_USER_ID.Contains(txt)||x.UPDATE_USER_ID.Contains(txt));
-            csDataGridView1.DataSource = txtSearch;
+            //string txt = textBox1.Text;
+            //List<ProductProperty> txtSearch = allList.FindAll((x) => x.PRODUCT_CODE.Contains(txt) || x.PRODUCT_NAME.Contains(txt)||//x.PRODUCT_TYPE.Contains(txt) || x.CUSTOMER_CODE.Contains(txt)||x.VENDOR_CODE.Contains(txt) || x.CREATE_USER_ID.Contains(txt)||//x.UPDATE_USER_ID.Contains(txt));
+           // csDataGridView1.DataSource = txtSearch;
             
         }
 

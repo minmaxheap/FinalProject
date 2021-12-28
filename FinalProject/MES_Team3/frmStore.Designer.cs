@@ -36,7 +36,7 @@ namespace MES_Team3
             this.pgSearch = new System.Windows.Forms.PropertyGrid();
             this.pgProperty = new System.Windows.Forms.PropertyGrid();
             this.csDataGridView1 = new MES_Team3.csDataGridView();
-            this.panel6.SuspendLayout();
+           // this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.propertyPanel.SuspendLayout();
@@ -52,7 +52,7 @@ namespace MES_Team3
             // btnInsert
             // 
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
-            this.panel3.Controls.SetChildIndex(this.textBox1, 0);
+           // this.panel3.Controls.SetChildIndex(this.textBox1, 0);
             this.panel3.Controls.SetChildIndex(this.button3, 0);
             // 
             // propertyPanel
@@ -141,7 +141,7 @@ namespace MES_Team3
             this.PropertyPanel = true;
             this.SearchPanel = true;
             this.Load += new System.EventHandler(this.frmStore_Load);
-            this.panel6.ResumeLayout(false);
+           // this.panel6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
