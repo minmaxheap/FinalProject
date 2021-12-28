@@ -105,8 +105,12 @@ namespace MES_Team3
 
 		private void btnUpdate_Click(object sender, EventArgs e)
 		{
-			User_MST_Property pr = (User_MST_Property)pgSearch.SelectedObject;
-
+			User_MST_Property pr = (User_MST_Property)pgProperty.SelectedObject;
+			if (string.IsNullOrWhiteSpace(pr.UPDATE_USER_ID))
+			{
+				MessageBox.Show("변경사용자를 입력해주세요");
+				return;
+			}
 			bool result = serv.Update(pr);
 			if (result)
 			{

@@ -88,7 +88,11 @@ namespace MES_Team3
 		{
 			UserGroupVO vo = (UserGroupVO)pgProperty.SelectedObject;
 
-
+			if (string.IsNullOrWhiteSpace(vo.UPDATE_USER_ID))
+			{
+				MessageBox.Show("변경 사용자가 없습니다.");
+				return;
+			}
 			bool result = serv.Update(vo);
 
 			if (result)
@@ -108,7 +112,11 @@ namespace MES_Team3
 		private void btnDelete_Click(object sender, EventArgs e)
 		{
 			bool result = serv.Delete(Code);
-
+			if (string.IsNullOrWhiteSpace(Code))
+			{
+				MessageBox.Show("해당 코드(아이디가 존재하지 않습니다.");
+				return;
+			}
 			if (result)
 			{
 				MessageBox.Show("삭제하였습니다.");
