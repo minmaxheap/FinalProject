@@ -19,7 +19,7 @@ namespace MES_Team3
         TreeView mTrvMenu;
         FunctionServ mServ;
 
-        public string SUserID { get { return msUserID; } set { msUserID = value; } }
+        public string SUserID { get { return msUserID; } set { } }
         public frmMain(string ID)
         {
             InitializeComponent();

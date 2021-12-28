@@ -31,7 +31,7 @@ from [dbo].[PRODUCT_MST]";
             return Helper.DataReaderMapToList<ProductProperty>(cmd.ExecuteReader());
         }
 
-        public bool Insert(ProductProperty vo, string sCurrentID)
+        public bool Insert(ProductProperty pt)
         {
             try
             {
@@ -55,12 +55,21 @@ from [dbo].[PRODUCT_MST]";
     ) ";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
-                    cmd.Parameters.AddWithValue("@PRODUCT_CODE", vo.PRODUCT_CODE);
-                    cmd.Parameters.AddWithValue("@PRODUCT_NAME", vo.PRODUCT_NAME);
-                    cmd.Parameters.AddWithValue("@PRODUCT_TYPE", vo.PRODUCT_TYPE);
-                    cmd.Parameters.AddWithValue("@CUSTOMER_CODE", vo.CUSTOMER_CODE);
-                    cmd.Parameters.AddWithValue("@VENDOR_CODE", vo.VENDOR_CODE);
-                    cmd.Parameters.AddWithValue("@CREATE_USER_ID", sCurrentID);
+                    cmd.Parameters.AddWithValue("@PRODUCT_CODE", pt.PRODUCT_CODE);
+                    if (pt.PRODUCT_NAME == null)
+                        cmd.Parameters.AddWithValue("@PRODUCT_NAME", DBNull.Value);
+                    else
+                     cmd.Parameters.AddWithValue("@PRODUCT_NAME", pt.PRODUCT_NAME); 
+                    if (pt.PRODUCT_TYPE == null)
+                        cmd.Parameters.AddWithValue("@PRODUCT_TYPE", DBNull.Value);
+                    else  cmd.Parameters.AddWithValue("@PRODUCT_TYPE", pt.PRODUCT_TYPE); 
+                    if (pt.CUSTOMER_CODE == null)
+                     cmd.Parameters.AddWithValue("@CUSTOMER_CODE", DBNull.Value); 
+                   else  cmd.Parameters.AddWithValue("@CUSTOMER_CODE", pt.CUSTOMER_CODE); 
+                    if (pt.VENDOR_CODE == null)
+                        cmd.Parameters.AddWithValue("@VENDOR_CODE", DBNull.Value);
+                    else { cmd.Parameters.AddWithValue("@VENDOR_CODE", pt.VENDOR_CODE); }
+                    cmd.Parameters.AddWithValue("@CREATE_USER_ID", pt.CREATE_USER_ID);
  
                     int row = cmd.ExecuteNonQuery();
                     return row > 0;
@@ -95,7 +104,7 @@ where PRODUCT_CODE = @PRODUCT_CODE ";
             }
         }
 
-        public bool Update(ProductProperty pt, string sCurrentID)
+        public bool Update(ProductProperty pt)
         {
             try
             {
@@ -110,11 +119,20 @@ where PRODUCT_CODE = @PRODUCT_CODE";
                 using (SqlCommand cmd = new SqlCommand(sql, conn)) 
                 {
                     cmd.Parameters.AddWithValue("@PRODUCT_CODE", pt.PRODUCT_CODE);
-                    cmd.Parameters.AddWithValue("@PRODUCT_NAME", pt.PRODUCT_NAME);
-                    cmd.Parameters.AddWithValue("@PRODUCT_TYPE", pt.PRODUCT_TYPE);
-                    cmd.Parameters.AddWithValue("@CUSTOMER_CODE", pt.CUSTOMER_CODE);
-                    cmd.Parameters.AddWithValue("@VENDOR_CODE", pt.VENDOR_CODE);
-                    cmd.Parameters.AddWithValue("@UPDATE_USER_ID", sCurrentID);
+                    if (pt.PRODUCT_NAME == null)
+                        cmd.Parameters.AddWithValue("@PRODUCT_NAME", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@PRODUCT_NAME", pt.PRODUCT_NAME);
+                    if (pt.PRODUCT_TYPE == null)
+                        cmd.Parameters.AddWithValue("@PRODUCT_TYPE", DBNull.Value);
+                    else cmd.Parameters.AddWithValue("@PRODUCT_TYPE", pt.PRODUCT_TYPE);
+                    if (pt.CUSTOMER_CODE == null)
+                        cmd.Parameters.AddWithValue("@CUSTOMER_CODE", DBNull.Value);
+                    else cmd.Parameters.AddWithValue("@CUSTOMER_CODE", pt.CUSTOMER_CODE);
+                    if (pt.VENDOR_CODE == null)
+                        cmd.Parameters.AddWithValue("@VENDOR_CODE", DBNull.Value);
+                    else { cmd.Parameters.AddWithValue("@VENDOR_CODE", pt.VENDOR_CODE); }
+                    cmd.Parameters.AddWithValue("@UPDATE_USER_ID",pt.UPDATE_USER_ID);
                     int row = cmd.ExecuteNonQuery();
                     return row > 0;
 
