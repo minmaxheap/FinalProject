@@ -192,7 +192,7 @@ namespace MES_Team3.BaseForms
             this.propertyPanel.Location = new System.Drawing.Point(0, 37);
             this.propertyPanel.Margin = new System.Windows.Forms.Padding(0);
             this.propertyPanel.Name = "propertyPanel";
-            this.propertyPanel.Size = new System.Drawing.Size(355, 621);
+            this.propertyPanel.Size = new System.Drawing.Size(353, 621);
             this.propertyPanel.TabIndex = 29;
             // 
             // panel7
