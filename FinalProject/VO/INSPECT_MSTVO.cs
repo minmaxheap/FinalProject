@@ -51,10 +51,38 @@ namespace VO
 
 		[DisplayName("값 유형")]
 		[Browsable(true)]
-
 		[TypeConverter(typeof(ValueTypeConverter))]
-		public string VALUE_TYPE { get { return value_type; } set { value_type = value; } }
+		[ReadOnly(false)]
+		public string VALUE_TYPE
+		{
+			get { return value_type; }
+			set
+			{
+				value_type = value;
+				PropertyDescriptorCollection propCollection = TypeDescriptor.GetProperties(this.GetType());
+				PropertyDescriptor descriptor = propCollection["SPEC_LSL"];
+				PropertyDescriptor descriptor1 = propCollection["SPEC_USL"];
 
+
+				ReadOnlyAttribute attrib = (ReadOnlyAttribute)descriptor.Attributes[typeof(ReadOnlyAttribute)];
+				FieldInfo isBrow = attrib.GetType().GetField("readonly", BindingFlags.NonPublic | BindingFlags.Instance);
+
+				ReadOnlyAttribute attrib1 = (ReadOnlyAttribute)descriptor1.Attributes[typeof(ReadOnlyAttribute)];
+				FieldInfo isBrow1 = attrib1.GetType().GetField("readonly", BindingFlags.NonPublic | BindingFlags.Instance);
+				if (value_type == "N")
+				{
+					isBrow.SetValue(attrib, false);
+					isBrow1.SetValue(attrib1, false);
+				}
+				else
+				{
+					isBrow.SetValue(attrib, true);
+					isBrow1.SetValue(attrib1, true);
+				}
+
+			}
+		}
+		[ReadOnly(false)]
 		[DisplayName("LSL")]
 		[Browsable(true)]
 
@@ -67,7 +95,7 @@ namespace VO
 
 		[DisplayName("USL")]
 		[Browsable(true)]
-
+		[ReadOnly(false)]
 		public string SPEC_USL { get { return spec_target; } set { spec_target = value; } }
 
 		[DisplayName("생성시간")]

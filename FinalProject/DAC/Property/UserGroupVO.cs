@@ -41,7 +41,6 @@ namespace DAC
 		}
 		[DisplayName("사용자 그룹 유형")]
 		[Browsable(true)]
-
 		[TypeConverter(typeof(UserGroupTypeConverter))]
 		public string USER_GROUP_TYPE { get { return user_type; } set { user_type = value; } }
 
