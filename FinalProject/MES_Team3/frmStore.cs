@@ -28,7 +28,7 @@ namespace MES_Team3
             SearchPanel = false;
         }
 
-        private void frmProduct1_Load(object sender, EventArgs e)
+        private void frmStore_Load(object sender, EventArgs e)
         {
             DataGridViewUtil.SetInitGridView(csDataGridView1);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "창고", "PRODUCT_CODE");
@@ -48,7 +48,6 @@ namespace MES_Team3
             pgProperty.SelectedObject = vo;
 
             pgProperty.PropertySort = PropertySort.NoSort;
-
 
         }
     }

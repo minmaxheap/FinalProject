@@ -48,6 +48,8 @@ namespace MES_Team3
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.csDataGridView1)).BeginInit();
             this.SuspendLayout();
+            this.panel3.Controls.SetChildIndex(this.textBox1, 0);
+            this.panel3.Controls.SetChildIndex(this.button3, 0);
             // 
             // propertyPanel
             // 
@@ -128,12 +130,13 @@ namespace MES_Team3
             this.csDataGridView1.Size = new System.Drawing.Size(771, 575);
             this.csDataGridView1.TabIndex = 0;
             // 
-            // Form1
+            // frmStore
             // 
             this.ClientSize = new System.Drawing.Size(1168, 778);
-            this.Name = "Form1";
+            this.Name = "frmStore";
             this.PropertyPanel = true;
             this.SearchPanel = true;
+            this.Load += new System.EventHandler(this.frmStore_Load);
             this.panel6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
