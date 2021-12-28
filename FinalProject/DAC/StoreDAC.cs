@@ -42,8 +42,7 @@ from [dbo].[STORE_MST]";
            ,[FIFO_FLAG]
            ,[CREATE_TIME]
            ,[CREATE_USER_ID]
-           ,[UPDATE_TIME]
-           ,[UPDATE_USER_ID]
+
         )
      VALUES
            (@STORE_CODE,
@@ -51,9 +50,8 @@ from [dbo].[STORE_MST]";
             @STORE_TYPE,
             @FIFO_FLAG,
             getdate(),
-            @CREATE_USER_ID,
-            getdate(),
-            @UPDATE_USER_ID,
+            @CREATE_USER_ID
+
     ) ";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
@@ -61,12 +59,7 @@ from [dbo].[STORE_MST]";
                     cmd.Parameters.AddWithValue("@STORE_NAME", vo.STORE_NAME);
                     cmd.Parameters.AddWithValue("@STORE_TYPE", vo.STORE_TYPE);
                     cmd.Parameters.AddWithValue("@FIFO_FLAG", vo.FIFO_FLAG);
-                    cmd.Parameters.AddWithValue("@CREATE_TIME", vo.CREATE_TIME);
                     cmd.Parameters.AddWithValue("@CREATE_USER_ID", vo.CREATE_USER_ID);
-                    cmd.Parameters.AddWithValue("@UPDATE_TIME", vo.UPDATE_TIME);
-                    cmd.Parameters.AddWithValue("@UPDATE_USER_ID", vo.UPDATE_USER_ID);
-                    //cmd.Parameters.AddWithValue("@CREATE_TIME",vo.CREATE_TIME);
-                    //cmd.Parameters.AddWithValue("@UPDATE_TIME", vo.UPDATE_TIME);
                     int row = cmd.ExecuteNonQuery();
                     return row > 0;
 
