@@ -18,5 +18,14 @@ namespace MES_Team3
             dac.Dispose();
             return list;
         }
+
+
+        public bool Insert(StoreVO vo)
+        {
+            StoreDAC dac = new StoreDAC();
+            bool bResult = dac.Insert(vo);
+            dac.Dispose();
+            return bResult;
+        }
     }
 }

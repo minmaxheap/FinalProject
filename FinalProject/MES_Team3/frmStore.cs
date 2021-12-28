@@ -50,5 +50,20 @@ namespace MES_Team3
             pgProperty.PropertySort = PropertySort.NoSort;
 
         }
+
+        private void btnInsert_Click(object sender, EventArgs e)
+        {
+            StoreVO save = (StoreVO)pgProperty.SelectedObject;
+            StoreServ serv = new StoreServ();
+            bool bResult = serv.Insert(save);
+            if (bResult)
+            {
+                LoadData();
+            }
+            else
+            {
+
+            }
+        }
     }
 }

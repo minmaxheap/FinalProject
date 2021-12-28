@@ -48,6 +48,10 @@ namespace MES_Team3
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.csDataGridView1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // btnInsert
+            // 
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             this.panel3.Controls.SetChildIndex(this.textBox1, 0);
             this.panel3.Controls.SetChildIndex(this.button3, 0);
             // 
