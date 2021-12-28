@@ -238,33 +238,33 @@ namespace MES_Team3
         private void btnTxtSearch_Click(object sender, EventArgs e)
         {
             string searchValue = txtSearch.Text;
-            int cr = -1;
+            //int cr = -1;
             csDataGridView1.Rows[rowIndex].Selected = false;
 
-            MessageBox.Show("1번째" + rowIndex.ToString());
-            //csDataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            //try
-            //{
-            //    foreach (DataGridViewRow row in csDataGridView1.Rows)
-            //    {
-            //        if (row.Cells["검사항목명"].Value.ToString().Equals(searchValue))
-            //        {
-            //            rowIndex++;
-            //            csDataGridView1.Rows[rowIndex].Selected = true;
+			MessageBox.Show("1번째" + rowIndex.ToString());
+			csDataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+			try
+			{
+				foreach (DataGridViewRow row in csDataGridView1.Rows)
+				{
+					if (row.Cells[2].Value.ToString().Equals(searchValue))
+					{
+						rowIndex++;
+						csDataGridView1.Rows[rowIndex].Selected = true;
 
-            //            break;
-            //        }
-            //    }
-            //    MessageBox.Show("3번째" + rowIndex.ToString());
+						break;
+					}
+				}
+				MessageBox.Show("3번째" + rowIndex.ToString());
 
-            //}
-            //catch (Exception exc)
-            //{
-            //    MessageBox.Show(exc.Message);
-            //}
+			}
+			catch (Exception exc)
+			{
+				MessageBox.Show(exc.Message);
+			}
 
-        }
-    }
+		}
+	}
 }
 
 
