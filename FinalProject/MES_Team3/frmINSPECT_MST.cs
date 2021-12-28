@@ -224,5 +224,10 @@ namespace MES_Team3
 		{
 
 		}
+
+		private void panel3_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
 	}
 }

@@ -50,9 +50,9 @@ from [dbo].[STORE_MST]";
             @STORE_NAME,
             @STORE_TYPE,
             @FIFO_FLAG,
-            @CREATE_TIME,
+            getdate(),
             @CREATE_USER_ID,
-            @UPDATE_TIME,
+            getdate(),
             @UPDATE_USER_ID,
     ) ";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))

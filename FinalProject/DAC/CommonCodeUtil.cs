@@ -205,6 +205,38 @@ namespace DAC
         }
     }
 
+    public class User_Mst_Group
+    {
+        public List<string> GetSourceList()
+        {
+            //dac에서 list 받아오기
+            List<string> Type = new List<string>();
+            Type.Add("ADMINGROUP");
+            Type.Add("Press 라인");
+            Type.Add("사출 라인");
+            Type.Add("SMT 라인");
+            Type.Add("조합 라인");
+
+            return Type;
+        }
+    }
+    public class UserMstGroupTypeConverter : StringConverter
+    {
+        public override bool GetStandardValuesSupported(ITypeDescriptorContext context)
+        {
+            return true;
+        }
+
+
+        public override TypeConverter.StandardValuesCollection GetStandardValues(ITypeDescriptorContext context)
+        {
+            // ProductVO refMyObject = context.Instance as ProductVO;
+            return new StandardValuesCollection(new User_Mst_Group().GetSourceList());
+        }
+    }
+
+
+
 
     public class Store_Type
     {
