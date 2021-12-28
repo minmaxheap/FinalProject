@@ -37,6 +37,8 @@ namespace MES_Team3.BaseForms
                 propertyPanel.Visible = false;
                 searchPanel.Visible = true;
                 lblPanel.Text = "▶ 검색 조건";
+                lblPanel.BackColor = Color.FromArgb(164, 194, 229);
+                btnPanel.BackColor = lblPanel.BackColor;
 
             }
             else
@@ -44,6 +46,8 @@ namespace MES_Team3.BaseForms
                 propertyPanel.Visible = true;
                 searchPanel.Visible = false;
                 lblPanel.Text = "▶ 속성";
+                lblPanel.BackColor = Color.FromArgb(82, 152, 216);
+                btnPanel.BackColor = lblPanel.BackColor;
 
             }
         }

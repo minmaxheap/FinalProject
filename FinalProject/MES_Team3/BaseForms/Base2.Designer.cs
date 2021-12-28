@@ -64,7 +64,7 @@ namespace MES_Team3
             // button2
             // 
             button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            button2.BackgroundImage = global::MES_Team3.Properties.Resources.pngegg;
+           // button2.BackgroundImage = global::MES_Team3.Properties.Resources.pngegg;
             button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             button2.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
