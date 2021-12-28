@@ -14,9 +14,11 @@ namespace MES_Team3
     public partial class frmOperation : MES_Team3.BaseForms.Base1_1
     {
         //public List<Bar> barlist;
+        string sUserID;
         public frmOperation()
         {
             InitializeComponent();
+            sUserID= frmLogin.userID;
         }
 
         private void frmProduct1_Load(object sender, EventArgs e)
