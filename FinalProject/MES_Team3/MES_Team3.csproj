@@ -245,6 +245,12 @@
     <None Include="Resources\Data-Find41.png" />
     <None Include="Resources\Data-Find1.png" />
     <None Include="Resources\Data-Find12.png" />
+    <None Include="Resources\Save_02.png" />
+    <None Include="Resources\Delete.png" />
+    <None Include="Resources\Delete_03.png" />
+    <None Include="Resources\Trash Can_02.png" />
+    <None Include="Resources\Add-New.png" />
+    <None Include="Resources\Command-Refresh-01.png" />
     <Content Include="Resources\twocirclingarrows1_120592.png" />
   </ItemGroup>
   <ItemGroup>

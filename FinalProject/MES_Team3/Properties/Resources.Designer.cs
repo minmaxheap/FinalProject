@@ -73,6 +73,16 @@ namespace MES_Team3.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap Add_New {
+            get {
+                object obj = ResourceManager.GetObject("Add-New", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap Arrowhead_Right_01 {
             get {
                 object obj = ResourceManager.GetObject("Arrowhead-Right-01", resourceCulture);
@@ -96,6 +106,16 @@ namespace MES_Team3.Properties {
         internal static System.Drawing.Bitmap close_white {
             get {
                 object obj = ResourceManager.GetObject("close_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap Command_Refresh_01 {
+            get {
+                object obj = ResourceManager.GetObject("Command-Refresh-01", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,6 +166,26 @@ namespace MES_Team3.Properties {
         internal static System.Drawing.Bitmap Data_Find41 {
             get {
                 object obj = ResourceManager.GetObject("Data-Find41", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap Delete {
+            get {
+                object obj = ResourceManager.GetObject("Delete", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap Delete_03 {
+            get {
+                object obj = ResourceManager.GetObject("Delete_03", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,9 +253,29 @@ namespace MES_Team3.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap Save_02 {
+            get {
+                object obj = ResourceManager.GetObject("Save_02", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap Search_Find1 {
             get {
                 object obj = ResourceManager.GetObject("Search_Find1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap Trash_Can_02 {
+            get {
+                object obj = ResourceManager.GetObject("Trash Can_02", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

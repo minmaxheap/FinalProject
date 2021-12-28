@@ -19,6 +19,7 @@ namespace MES_Team3
 
         public frmProduct()
         {
+           
             InitializeComponent();
             DataGridViewUtil.SetInitGridView(csDataGridView1);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "품번", "PRODUCT_CODE");
@@ -114,7 +115,7 @@ namespace MES_Team3
                 pr.UPDATE_TIME = Convert.ToDateTime(dr.Cells["UPDATE_TIME"].Value);
             if (dr.Cells["UPDATE_USER_ID"].Value != null && dr.Cells["UPDATE_USER_ID"].Value != DBNull.Value)
                 pr.UPDATE_USER_ID = dr.Cells["UPDATE_USER_ID"].Value.ToString();
-            //ProductVO vo = new ProductVO(csDataGridView1.Rows[e.RowIndex]); //데이터그리드뷰 row를 한 개만 선택되는 경우로 상정함
+
 
             pgProperty.SelectedObject = pr;
 
@@ -185,14 +186,15 @@ namespace MES_Team3
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            if (pgSearch.SelectedGridItem != null)
+
+            if (pgProperty.SelectedGridItem != null)
             {
-                PropertyDescriptor pd = pgSearch.SelectedGridItem.PropertyDescriptor;
-                pd.ResetValue(pgSearch.SelectedObject);
-                ProductProperty search = new ProductProperty();
-                search.IsSearchPanel = true;
-                pgSearch.SelectedObject = search;
-                pgSearch.PropertySort = PropertySort.NoSort;
+                PropertyDescriptor pd = pgProperty.SelectedGridItem.PropertyDescriptor;
+                pd.ResetValue(pgProperty.SelectedObject);
+                ProductProperty pr = new ProductProperty();
+                pr.IsSearchPanel = false;
+                pgProperty.SelectedObject = pr;
+                pgProperty.PropertySort = PropertySort.NoSort;
                 SearchPanel = true;
                 csDataGridView1.DataSource = null;
                 csDataGridView1.DataSource = allList;
@@ -201,16 +203,34 @@ namespace MES_Team3
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //string txt = textBox1.Text;
-            //List<ProductProperty> txtSearch = allList.FindAll((x) => x.PRODUCT_CODE.Contains(txt) || x.PRODUCT_NAME.Contains(txt)||//x.PRODUCT_TYPE.Contains(txt) || x.CUSTOMER_CODE.Contains(txt)||x.VENDOR_CODE.Contains(txt) || x.CREATE_USER_ID.Contains(txt)||//x.UPDATE_USER_ID.Contains(txt));
-           // csDataGridView1.DataSource = txtSearch;
             
+            string txt = textBox1.Text.ToUpper();
+            //List<ProductProperty> txtSearch = allList.FindAll((x) => x.PRODUCT_CODE.Contains(txt) || x.PRODUCT_NAME.Contains(txt)||//x.PRODUCT_TYPE.Contains(txt) || x.CUSTOMER_CODE.Contains(txt)||x.VENDOR_CODE.Contains(txt) || x.CREATE_USER_ID.Contains(txt)||//x.UPDATE_USER_ID.Contains(txt));
+            // csDataGridView1.DataSource = txtSearch;
+            foreach (DataGridViewRow row in csDataGridView1.Rows)
+            {
+                // Test if the first column of the current row equals
+                // the value in the text box
+                if (row.Cells["PRODUCT_CODE"].Value.ToString().Contains(txt)|| row.Cells["PRODUCT_NAME"].Value.ToString().ToUpper().Contains(txt)|| row.Cells["PRODUCT_TYPE"].Value.ToString().ToUpper().Contains(txt)|| row.Cells["CUSTOMER_CODE"].Value.ToString().ToUpper().Contains(txt)|| row.Cells["VENDOR_CODE"].Value.ToString().ToUpper().Contains(txt) || row.Cells["CREATE_USER_ID"].Value.ToString().ToUpper().Contains(txt) || row.Cells["UPDATE_USER_ID"].Value.ToString().ToUpper().Contains(txt))
+                {
+                    // we have a match
+                    row.Selected = true;
+                }
+                else
+                {
+                    row.Selected = false;
+                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            csDataGridView1.DataSource = null;
-            csDataGridView1.DataSource = allList;
+            btnRead.PerformClick();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 
