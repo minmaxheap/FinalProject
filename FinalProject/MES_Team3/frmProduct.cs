@@ -167,16 +167,18 @@ namespace MES_Team3
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            PropertyDescriptor pd = pgSearch.SelectedGridItem.PropertyDescriptor;
-            pd.ResetValue(pgSearch.SelectedObject);
-            ProductProperty search = new ProductProperty();
-            search.IsSearchPanel = true;
-            pgSearch.SelectedObject = search;
-            pgSearch.PropertySort = PropertySort.NoSort;
-            SearchPanel = true;
-            csDataGridView1.DataSource = null;
-            csDataGridView1.DataSource = allList;
-
+            if (pgSearch.SelectedGridItem != null)
+            {
+                PropertyDescriptor pd = pgSearch.SelectedGridItem.PropertyDescriptor;
+                pd.ResetValue(pgSearch.SelectedObject);
+                ProductProperty search = new ProductProperty();
+                search.IsSearchPanel = true;
+                pgSearch.SelectedObject = search;
+                pgSearch.PropertySort = PropertySort.NoSort;
+                SearchPanel = true;
+                csDataGridView1.DataSource = null;
+                csDataGridView1.DataSource = allList;
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
