@@ -49,50 +49,54 @@ namespace MES_Team3
 			((System.ComponentModel.ISupportInitialize)(this.csDataGridView1)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// panel6
-			// 
-			//this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
-			// 
-			// btnInsert
-			// 
-			this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
-			// 
-			// btnClear
-			// 
-			this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-			// 
-			// btnUpdate
-			// 
-			this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-			// 
-			// btnRead
-			// 
-			this.btnReadBottom.Click += new System.EventHandler(this.btnRead_Click);
-			// 
-			// btnDelete
-			// 
-			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-			// 
-			// button3
-			// 
-			this.btnSearchPnl.Click += new System.EventHandler(this.button3_Click);
-			// 
 			// lblTitle
 			// 
 			this.lblTitle.Text = "사용자 그륩";
 			// 
 			// propertyPanel
 			// 
-			this.pnlProperty.Controls.Add(this.pgProperty);
+			this.propertyPanel.Controls.Add(this.pgProperty);
 			// 
 			// searchPanel
 			// 
-			this.pnlSearch.Controls.Add(this.pgSearch);
+			this.searchPanel.Controls.Add(this.pgSearch);
+			// 
+			// btnPanel
+			// 
+			this.btnPanel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
+			this.btnPanel.FlatAppearance.BorderSize = 0;
+			this.btnPanel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
+			this.btnPanel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
 			// 
 			// splitContainer1
 			// 
+			this.btnReadBottom.Click += new System.EventHandler(this.btnRead_Click);
 			// 
 			// panel4
+			// 
+			this.panel4.Controls.Add(this.csDataGridView1);
+			// 
+			// button3
+			// 
+			this.btnSearchPnl.Click += new System.EventHandler(this.button3_Click);
+			// 
+			// btnInsert
+			// 
+			this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
+			// 
+			// btnDelete
+			// 
+			this.pnlProperty.Controls.Add(this.pgProperty);
+			// 
+			// btnClear
+			// 
+			this.pnlSearch.Controls.Add(this.pgSearch);
+			// 
+			// btnUpdate
+			// 
+			this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+			// 
+			// button2
 			// 
 			this.pnlDgv.Controls.Add(this.csDataGridView1);
 			// 
@@ -151,13 +155,14 @@ namespace MES_Team3
 			this.csDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
 			this.csDataGridView1.RowHeadersWidth = 30;
 			this.csDataGridView1.RowTemplate.Height = 23;
-			this.csDataGridView1.Size = new System.Drawing.Size(771, 575);
+			this.csDataGridView1.Size = new System.Drawing.Size(784, 622);
 			this.csDataGridView1.TabIndex = 0;
 			this.csDataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellDoubleClick);
 			// 
 			// frmUser_MST
 			// 
 			this.ClientSize = new System.Drawing.Size(1168, 778);
+			this.IsSearchPanel = true;
 			this.Name = "frmUser_MST";
 			this.BPropertyPanel = true;
 			this.BSearchPanel = true;

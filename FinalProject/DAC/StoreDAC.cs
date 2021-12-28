@@ -72,6 +72,57 @@ from [dbo].[STORE_MST]";
             }
         }
 
+        public bool Delete(StoreVO sv)
+        {
+            try
+            {
+                string sql = @"delete from [dbo].[STORE_MST]
+where STORE_CODE = @STORE_CODE ";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@STORE_CODE", sv.STORE_CODE);
+                    int row = cmd.ExecuteNonQuery();
+                    return row > 0;
+
+                }
+            }
+            catch (Exception err)
+            {
+                Debug.WriteLine(err.Message);
+                return false;
+            }
+        }
+
+        public bool Update(StoreVO sv)
+        {
+            try
+            {
+                string sql = @"update  [dbo].[STORE_MST] set
+STORE_NAME= @STORE_NAME, 
+STORE_TYPE= @STORE_TYPE, 
+FIFO_FLAG= @FIFO_FLAG, 
+UPDATE_TIME= getdate(), 
+UPDATE_USER_ID= @UPDATE_USER_ID
+where STORE_CODE = @STORE_CODE";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@STORE_CODE", sv.STORE_CODE);
+                    cmd.Parameters.AddWithValue("@STORE_NAME", sv.STORE_NAME);
+                    cmd.Parameters.AddWithValue("@STORE_TYPE", sv.STORE_TYPE);
+                    cmd.Parameters.AddWithValue("@FIFO_FLAG", sv.FIFO_FLAG);
+                    cmd.Parameters.AddWithValue("@UPDATE_USER_ID", sv.UPDATE_USER_ID);
+                    int row = cmd.ExecuteNonQuery();
+                    return row > 0;
+
+                }
+            }
+            catch (Exception err)
+            {
+                Debug.WriteLine(err.Message);
+                return false;
+            }
+        }
+
         public void Dispose()
         {
             conn.Close();
