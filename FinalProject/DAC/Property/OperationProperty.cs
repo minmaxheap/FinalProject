@@ -26,13 +26,31 @@ namespace DAC
         [DisplayName("공정")]
         public string OPERATION_CODE { get { return operation_code; } set { operation_code = value; } }
 
+        [ReadOnly(false)]
         [DisplayName("공정명")]
         public string OPERATION_NAME { get { return operation_name; } set { operation_name = value; } }
 
         [DisplayName("불량 입력")]
         [TypeConverter(typeof(Check_Value_Converter))]
         public string CHECK_DEFECT_FLAG
-        { get { return check_defect_flag; } set { check_defect_flag = value; } }
+        { get { return check_defect_flag; } 
+            set {
+                check_defect_flag = value;
+                if (check_defect_flag != "Y")
+                {
+                    PropertyDescriptor descriptor = TypeDescriptor.GetProperties(this.GetType())["OPERATION_NAME"];
+                    ReadOnlyAttribute attrib = (ReadOnlyAttribute)descriptor.Attributes[typeof(ReadOnlyAttribute)];
+                    FieldInfo isReadOnly = attrib.GetType().GetField("isReadOnly", BindingFlags.NonPublic | BindingFlags.Instance);
+                    isReadOnly.SetValue(attrib, false);
+                }
+                else
+                {
+                    PropertyDescriptor descriptor = TypeDescriptor.GetProperties(this.GetType())["OPERATION_NAME"];
+                    ReadOnlyAttribute attrib = (ReadOnlyAttribute)descriptor.Attributes[typeof(ReadOnlyAttribute)];
+                    FieldInfo isReadOnly = attrib.GetType().GetField("isReadOnly", BindingFlags.NonPublic | BindingFlags.Instance);
+                    isReadOnly.SetValue(attrib, true);
+                }
+            } }
 
         [DisplayName("검사 데이터 입력")]
         [TypeConverter(typeof(Check_Value_Converter))]
