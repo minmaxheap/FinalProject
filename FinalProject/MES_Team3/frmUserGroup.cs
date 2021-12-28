@@ -33,7 +33,7 @@ namespace MES_Team3
 
 			
 
-			searchPanel.Visible = false;
+			pnlSearch.Visible = false;
 			UserGroupVO vo = new UserGroupVO();
 
 			pgProperty.SelectedObject = vo;
@@ -50,7 +50,7 @@ namespace MES_Team3
 			DataTable dt = serv.GetTable();
 			csDataGridView1.DataSource = null;
 			csDataGridView1.DataSource = dt;
-			searchPanel.Visible = false;
+			pnlSearch.Visible = false;
 
 		}
 
@@ -155,7 +155,7 @@ namespace MES_Team3
 
 			DataGridViewRow dr = csDataGridView1.Rows[e.RowIndex];
 			UserGroupVO vo = new UserGroupVO();
-			IsSearchPanel = false;
+			BIsSearchPanel = false;
 			vo.IsSearchPanel = false;
 			//lblPanel.Text = "▶ 속성";
 			//lblPanel.BackColor = Color.FromArgb(82, 152, 216);
@@ -180,8 +180,8 @@ namespace MES_Team3
 			pgProperty.PropertySort = PropertySort.NoSort;
 
 
-			propertyPanel.Visible = true;
-			searchPanel.Visible = false;
+			pnlProperty.Visible = true;
+			pnlSearch.Visible = false;
 		}
 
 		private void btnClear_Click(object sender, EventArgs e)

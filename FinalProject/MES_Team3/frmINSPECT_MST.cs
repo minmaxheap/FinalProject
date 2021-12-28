@@ -48,7 +48,7 @@ namespace MES_Team3
 
             LoadData();
 
-            SearchPanel = false;
+            BSearchPanel = false;
          INSPECT_MSTVO   vo = new INSPECT_MSTVO();
 
             pgGrid.SelectedObject = vo;
@@ -97,7 +97,7 @@ namespace MES_Team3
             DataTable dt = serv.GetTable();
             csDataGridView1.DataSource = null;
             csDataGridView1.DataSource = dt;
-            SearchPanel = false;
+            BSearchPanel = false;
         }
 
 		private void btnDelete_Click(object sender, EventArgs e)
@@ -161,8 +161,8 @@ namespace MES_Team3
             pgGrid.PropertySort = PropertySort.NoSort;
 
 
-            propertyPanel.Visible = true;
-            searchPanel.Visible = false;
+            pnlProperty.Visible = true;
+            pnlSearch.Visible = false;
 
 
         }

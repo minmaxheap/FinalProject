@@ -19,28 +19,28 @@ namespace MES_Team3
             return list;
         }
 
-        public bool Insert(ProductProperty vo)
+        public bool Insert(ProductProperty pr, string sCurrentID)
         {
             ProductDAC dac = new ProductDAC();
-            bool bResult = dac.Insert(vo);
+            bool bResult = dac.Insert(pr, sCurrentID);
             dac.Dispose();
             return bResult;
         }
 
-        public bool Delete(ProductProperty vo)
+        public bool Delete(ProductProperty pr)
         {
             ProductDAC dac = new ProductDAC();
-            bool bResult = dac.Delete(vo);
+            bool bResult = dac.Delete(pr);
             dac.Dispose();
             return bResult;
         }
 
 
-        public bool Update(ProductProperty vo)
+        public bool Update(ProductProperty pr, string sCurrentID)
         {
 
             ProductDAC dac = new ProductDAC();
-            bool bResult = dac.Update(vo);
+            bool bResult = dac.Update(pr, sCurrentID);
             dac.Dispose();
             return bResult;
         }

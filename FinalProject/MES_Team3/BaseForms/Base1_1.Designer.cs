@@ -29,133 +29,133 @@ namespace MES_Team3.BaseForms
         /// </summary>
         private void InitializeComponent()
         {
-           
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Base1_1));
             
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.panel4 = new System.Windows.Forms.Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Base1_1));
+ 
+            this.pnlTop = new System.Windows.Forms.Panel();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnSearchPnl = new System.Windows.Forms.Button();
+            this.spcBase = new System.Windows.Forms.SplitContainer();
+            this.pnlDgv = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.searchPanel = new System.Windows.Forms.Panel();
-            this.propertyPanel = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.pnlSearch = new System.Windows.Forms.Panel();
+            this.pnlProperty = new System.Windows.Forms.Panel();
+            this.pnlTopLbl = new System.Windows.Forms.Panel();
             this.btnPanel = new System.Windows.Forms.Button();
             this.lblPanel = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.pnlCrud = new System.Windows.Forms.Panel();
             this.btnInsert = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.btnRead = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnReadBottom = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel5.SuspendLayout();
+            this.btnTxtSearch = new System.Windows.Forms.Button();
+            this.btnReadTop = new System.Windows.Forms.Button();
+            this.pnlTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spcBase)).BeginInit();
+            this.spcBase.Panel1.SuspendLayout();
+            this.spcBase.Panel2.SuspendLayout();
+            this.spcBase.SuspendLayout();
+            this.pnlTopLbl.SuspendLayout();
+            this.pnlCrud.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button2
+            // pnlTop
             // 
-            button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            button2.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            button2.ForeColor = System.Drawing.SystemColors.ControlText;
-            button2.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            button2.Location = new System.Drawing.Point(294, 2);
-            button2.Name = "button2";
-            button2.Size = new System.Drawing.Size(32, 26);
-            button2.TabIndex = 49;
-            button2.UseVisualStyleBackColor = false;
+            this.pnlTop.Controls.Add(this.txtSearch);
+            this.pnlTop.Controls.Add(this.btnSearchPnl);
+            this.pnlTop.Controls.Add(btnTxtSearch);
+            this.pnlTop.Controls.Add(btnReadTop);
+            this.pnlTop.Location = new System.Drawing.Point(5, 9);
+            this.pnlTop.Name = "pnlTop";
+            this.pnlTop.Size = new System.Drawing.Size(410, 30);
+            this.pnlTop.TabIndex = 39;
             // 
-            // button1
+            // txtSearch
             // 
-            button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            button1.BackgroundImage = global::MES_Team3.Properties.Resources.Data_Find12;
-            button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            button1.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            button1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            button1.Location = new System.Drawing.Point(5, 2);
-            button1.Name = "button1";
-            button1.Size = new System.Drawing.Size(33, 26);
-            button1.TabIndex = 47;
-            button1.UseVisualStyleBackColor = false;
+            this.txtSearch.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtSearch.Location = new System.Drawing.Point(44, 2);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(244, 26);
+            this.txtSearch.TabIndex = 50;
             // 
-            // panel3
+            // btnSearchPnl
             // 
-            this.panel3.Controls.Add(this.textBox1);
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(button2);
-            this.panel3.Controls.Add(button1);
-            this.panel3.Location = new System.Drawing.Point(5, 9);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(410, 30);
-            this.panel3.TabIndex = 39;
+            this.btnSearchPnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            this.btnSearchPnl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSearchPnl.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSearchPnl.Location = new System.Drawing.Point(332, 2);
+            this.btnSearchPnl.Name = "btnSearchPnl";
+            this.btnSearchPnl.Size = new System.Drawing.Size(73, 26);
+            this.btnSearchPnl.TabIndex = 48;
+            this.btnSearchPnl.Text = "검색 조건";
+            this.btnSearchPnl.UseVisualStyleBackColor = false;
+            this.btnSearchPnl.Click += new System.EventHandler(this.btnSearchPnl_Click);
             // 
-            // textBox1
+            // btnTxtSearch
             // 
-            this.textBox1.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox1.Location = new System.Drawing.Point(44, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(244, 26);
-            this.textBox1.TabIndex = 50;
+            this.btnTxtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            this.btnTxtSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTxtSearch.BackgroundImage")));
+            this.btnTxtSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnTxtSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnTxtSearch.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnTxtSearch.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnTxtSearch.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnTxtSearch.Location = new System.Drawing.Point(294, 2);
+            this.btnTxtSearch.Name = "btnTxtSearch";
+            this.btnTxtSearch.Size = new System.Drawing.Size(32, 26);
+            this.btnTxtSearch.TabIndex = 49;
+            this.btnTxtSearch.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnReadTop
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button3.Location = new System.Drawing.Point(332, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(73, 26);
-            this.button3.TabIndex = 48;
-            this.button3.Text = "검색 조건";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnReadTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            this.btnReadTop.BackgroundImage = global::MES_Team3.Properties.Resources.Data_Find12;
+            this.btnReadTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnReadTop.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnReadTop.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnReadTop.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnReadTop.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnReadTop.Location = new System.Drawing.Point(5, 2);
+            this.btnReadTop.Name = "btnReadTop";
+            this.btnReadTop.Size = new System.Drawing.Size(33, 26);
+            this.btnReadTop.TabIndex = 47;
+            this.btnReadTop.UseVisualStyleBackColor = false;
             // 
-            // splitContainer1
+            // spcBase
             // 
-            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.spcBase.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.splitContainer1.Location = new System.Drawing.Point(9, 42);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(0);
-            this.splitContainer1.Name = "splitContainer1";
+            this.spcBase.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.spcBase.Location = new System.Drawing.Point(9, 42);
+            this.spcBase.Margin = new System.Windows.Forms.Padding(0);
+            this.spcBase.Name = "spcBase";
             // 
-            // splitContainer1.Panel1
+            // spcBase.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.panel4);
-            this.splitContainer1.Panel1.Controls.Add(this.lblTitle);
+            this.spcBase.Panel1.Controls.Add(this.pnlDgv);
+            this.spcBase.Panel1.Controls.Add(this.lblTitle);
             // 
-            // splitContainer1.Panel2
+            // spcBase.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.searchPanel);
-            this.splitContainer1.Panel2.Controls.Add(this.propertyPanel);
-            this.splitContainer1.Panel2.Controls.Add(this.panel7);
-            this.splitContainer1.Size = new System.Drawing.Size(1150, 660);
-            this.splitContainer1.SplitterDistance = 786;
-            this.splitContainer1.SplitterWidth = 6;
-            this.splitContainer1.TabIndex = 41;
+            this.spcBase.Panel2.Controls.Add(this.pnlSearch);
+            this.spcBase.Panel2.Controls.Add(this.pnlProperty);
+            this.spcBase.Panel2.Controls.Add(this.pnlTopLbl);
+            this.spcBase.Size = new System.Drawing.Size(1150, 660);
+            this.spcBase.SplitterDistance = 786;
+            this.spcBase.SplitterWidth = 6;
+            this.spcBase.TabIndex = 41;
             // 
-            // panel4
+            // pnlDgv
             // 
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 36);
-            this.panel4.Margin = new System.Windows.Forms.Padding(0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(784, 622);
-            this.panel4.TabIndex = 18;
+            this.pnlDgv.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlDgv.Location = new System.Drawing.Point(0, 36);
+            this.pnlDgv.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlDgv.Name = "pnlDgv";
+            this.pnlDgv.Size = new System.Drawing.Size(784, 622);
+            this.pnlDgv.TabIndex = 18;
             // 
             // lblTitle
             // 
@@ -169,42 +169,42 @@ namespace MES_Team3.BaseForms
             this.lblTitle.Text = "title";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // searchPanel
+            // pnlSearch
             // 
-            this.searchPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.pnlSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
-            this.searchPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.searchPanel.Location = new System.Drawing.Point(0, 37);
-            this.searchPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.searchPanel.Name = "searchPanel";
-            this.searchPanel.Size = new System.Drawing.Size(340, 621);
-            this.searchPanel.TabIndex = 31;
+            this.pnlSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
+            this.pnlSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlSearch.Location = new System.Drawing.Point(0, 37);
+            this.pnlSearch.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlSearch.Name = "pnlSearch";
+            this.pnlSearch.Size = new System.Drawing.Size(334, 621);
+            this.pnlSearch.TabIndex = 31;
             // 
-            // propertyPanel
+            // pnlProperty
             // 
-            this.propertyPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.pnlProperty.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.propertyPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
-            this.propertyPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.propertyPanel.Location = new System.Drawing.Point(0, 37);
-            this.propertyPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.propertyPanel.Name = "propertyPanel";
-            this.propertyPanel.Size = new System.Drawing.Size(337, 621);
-            this.propertyPanel.TabIndex = 29;
+            this.pnlProperty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
+            this.pnlProperty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlProperty.Location = new System.Drawing.Point(0, 37);
+            this.pnlProperty.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlProperty.Name = "pnlProperty";
+            this.pnlProperty.Size = new System.Drawing.Size(331, 621);
+            this.pnlProperty.TabIndex = 29;
             // 
-            // panel7
+            // pnlTopLbl
             // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(152)))), ((int)(((byte)(216)))));
-            this.panel7.Controls.Add(this.btnPanel);
-            this.panel7.Controls.Add(this.lblPanel);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(356, 40);
-            this.panel7.TabIndex = 0;
+            this.pnlTopLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(152)))), ((int)(((byte)(216)))));
+            this.pnlTopLbl.Controls.Add(this.btnPanel);
+            this.pnlTopLbl.Controls.Add(this.lblPanel);
+            this.pnlTopLbl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTopLbl.Location = new System.Drawing.Point(0, 0);
+            this.pnlTopLbl.Name = "pnlTopLbl";
+            this.pnlTopLbl.Size = new System.Drawing.Size(356, 40);
+            this.pnlTopLbl.TabIndex = 0;
             // 
             // btnPanel
             // 
@@ -240,20 +240,20 @@ namespace MES_Team3.BaseForms
             this.lblPanel.Text = "▶ 속성";
             this.lblPanel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // panel5
+            // pnlCrud
             // 
-            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel5.Controls.Add(this.btnInsert);
-            this.panel5.Controls.Add(this.btnDelete);
-            this.panel5.Controls.Add(this.btnClear);
-            this.panel5.Controls.Add(this.button11);
-            this.panel5.Controls.Add(this.btnRead);
-            this.panel5.Controls.Add(this.btnUpdate);
-            this.panel5.Location = new System.Drawing.Point(617, 712);
-            this.panel5.Margin = new System.Windows.Forms.Padding(0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(543, 66);
-            this.panel5.TabIndex = 40;
+            this.pnlCrud.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlCrud.Controls.Add(this.btnInsert);
+            this.pnlCrud.Controls.Add(this.btnDelete);
+            this.pnlCrud.Controls.Add(this.btnClear);
+            this.pnlCrud.Controls.Add(this.btnClose);
+            this.pnlCrud.Controls.Add(this.btnReadBottom);
+            this.pnlCrud.Controls.Add(this.btnUpdate);
+            this.pnlCrud.Location = new System.Drawing.Point(616, 712);
+            this.pnlCrud.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlCrud.Name = "pnlCrud";
+            this.pnlCrud.Size = new System.Drawing.Size(543, 66);
+            this.pnlCrud.TabIndex = 40;
             // 
             // btnInsert
             // 
@@ -309,41 +309,41 @@ namespace MES_Team3.BaseForms
             this.btnClear.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnClear.UseVisualStyleBackColor = false;
             // 
-            // button11
+            // btnClose
             // 
-            this.button11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button11.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button11.Image = global::MES_Team3.Properties.Resources.Delete;
-            this.button11.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button11.Location = new System.Drawing.Point(474, 8);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(67, 48);
-            this.button11.TabIndex = 83;
-            this.button11.Text = "닫기";
-            this.button11.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button11.UseVisualStyleBackColor = false;
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnClose.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnClose.Image = global::MES_Team3.Properties.Resources.Delete;
+            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnClose.Location = new System.Drawing.Point(474, 8);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(67, 48);
+            this.btnClose.TabIndex = 83;
+            this.btnClose.Text = "닫기";
+            this.btnClose.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnClose.UseVisualStyleBackColor = false;
             // 
-            // btnRead
+            // btnReadBottom
             // 
-            this.btnRead.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnReadBottom.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRead.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            this.btnRead.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRead.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnRead.Image = global::MES_Team3.Properties.Resources.Data_Find12;
-            this.btnRead.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnRead.Location = new System.Drawing.Point(14, 8);
-            this.btnRead.Name = "btnRead";
-            this.btnRead.Size = new System.Drawing.Size(67, 48);
-            this.btnRead.TabIndex = 79;
-            this.btnRead.Text = "조회";
-            this.btnRead.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnRead.UseVisualStyleBackColor = false;
+            this.btnReadBottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            this.btnReadBottom.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnReadBottom.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnReadBottom.Image = global::MES_Team3.Properties.Resources.Data_Find12;
+            this.btnReadBottom.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnReadBottom.Location = new System.Drawing.Point(14, 8);
+            this.btnReadBottom.Name = "btnReadBottom";
+            this.btnReadBottom.Size = new System.Drawing.Size(67, 48);
+            this.btnReadBottom.TabIndex = 79;
+            this.btnReadBottom.Text = "조회";
+            this.btnReadBottom.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnReadBottom.UseVisualStyleBackColor = false;
             // 
             // btnUpdate
             // 
@@ -368,46 +368,46 @@ namespace MES_Team3.BaseForms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
             this.ClientSize = new System.Drawing.Size(1168, 778);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.splitContainer1);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.pnlCrud);
+            this.Controls.Add(this.spcBase);
+            this.Controls.Add(this.pnlTop);
             this.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Base1_1";
             this.Text = "Base1_1";
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
+            this.pnlTop.ResumeLayout(false);
+            this.pnlTop.PerformLayout();
+            this.spcBase.Panel1.ResumeLayout(false);
+            this.spcBase.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.spcBase)).EndInit();
+            this.spcBase.ResumeLayout(false);
+            this.pnlTopLbl.ResumeLayout(false);
+            this.pnlCrud.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
  
-        public System.Windows.Forms.Panel panel3;
+        public System.Windows.Forms.Panel pnlTop;
         public System.Windows.Forms.Label lblTitle;
-        public System.Windows.Forms.Panel propertyPanel;
+        public System.Windows.Forms.Panel pnlProperty;
         public System.Windows.Forms.Label lblPanel;
-        public System.Windows.Forms.Panel searchPanel;
+        public System.Windows.Forms.Panel pnlSearch;
         public System.Windows.Forms.Button btnPanel;
-        public System.Windows.Forms.SplitContainer splitContainer1;
-        public System.Windows.Forms.Panel panel4;
-        public System.Windows.Forms.Button button3;
-        public System.Windows.Forms.Panel panel5;
+        public System.Windows.Forms.SplitContainer spcBase;
+        public System.Windows.Forms.Panel pnlDgv;
+        public System.Windows.Forms.Button btnSearchPnl;
+        public System.Windows.Forms.Panel pnlCrud;
         public System.Windows.Forms.Button btnInsert;
         public System.Windows.Forms.Button btnDelete;
         public System.Windows.Forms.Button btnClear;
-        public System.Windows.Forms.Button button11;
-        public System.Windows.Forms.Button btnRead;
+        public System.Windows.Forms.Button btnClose;
+        public System.Windows.Forms.Button btnReadBottom;
         public System.Windows.Forms.Button btnUpdate;
-        public System.Windows.Forms.Panel panel7;
-        public System.Windows.Forms.TextBox textBox1;
-        public System.Windows.Forms.Button button1;
-        public System.Windows.Forms.Button button2;
+        public System.Windows.Forms.Panel pnlTopLbl;
+        public System.Windows.Forms.TextBox txtSearch;
+        public System.Windows.Forms.Button btnTxtSearch;
+        public System.Windows.Forms.Button btnReadTop;
     }
 }

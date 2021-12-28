@@ -15,7 +15,7 @@ namespace DAC
             //dac에서 list 받아오기 //앗 근데 DAC을 참조할 수가 없구나(순환 종속성 때문에) => 그래서 여기로 vo를 옮겼다.
 
             ProductDAC dac = new ProductDAC();
-            List<string> productType = dac.GetSourceList();
+            List<string> productType = dac.GetProductType();
             return productType; //한번에 다 가져오는 게 나을 것 같은데? 쿼리 수정해야겠다. 
         }
     }

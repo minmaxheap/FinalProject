@@ -25,7 +25,7 @@ namespace MES_Team3
             allList = serv.GetStoreList();
             csDataGridView1.DataSource = null;
             csDataGridView1.DataSource = allList;
-            SearchPanel = false;
+            BSearchPanel = false;
         }
 
         private void frmStore_Load(object sender, EventArgs e)

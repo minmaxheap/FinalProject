@@ -31,7 +31,7 @@ from [dbo].[PRODUCT_MST]";
             return Helper.DataReaderMapToList<ProductProperty>(cmd.ExecuteReader());
         }
 
-        public bool Insert(ProductProperty vo)
+        public bool Insert(ProductProperty vo, string sCurrentID)
         {
             try
             {
@@ -60,10 +60,8 @@ from [dbo].[PRODUCT_MST]";
                     cmd.Parameters.AddWithValue("@PRODUCT_TYPE", vo.PRODUCT_TYPE);
                     cmd.Parameters.AddWithValue("@CUSTOMER_CODE", vo.CUSTOMER_CODE);
                     cmd.Parameters.AddWithValue("@VENDOR_CODE", vo.VENDOR_CODE);
-                    //cmd.Parameters.AddWithValue("@CREATE_TIME",vo.CREATE_TIME);
-                    cmd.Parameters.AddWithValue("@CREATE_USER_ID", vo.CREATE_USER_ID);
-                    //cmd.Parameters.AddWithValue("@UPDATE_TIME", vo.UPDATE_TIME);
-                    cmd.Parameters.AddWithValue("@UPDATE_USER_ID", vo.UPDATE_USER_ID);
+                    cmd.Parameters.AddWithValue("@CREATE_USER_ID", sCurrentID);
+ 
                     int row = cmd.ExecuteNonQuery();
                     return row > 0;
 
@@ -97,7 +95,7 @@ where PRODUCT_CODE = @PRODUCT_CODE ";
             }
         }
 
-        public bool Update(ProductProperty pt)
+        public bool Update(ProductProperty pt, string sCurrentID)
         {
             try
             {
@@ -116,7 +114,7 @@ where PRODUCT_CODE = @PRODUCT_CODE";
                     cmd.Parameters.AddWithValue("@PRODUCT_TYPE", pt.PRODUCT_TYPE);
                     cmd.Parameters.AddWithValue("@CUSTOMER_CODE", pt.CUSTOMER_CODE);
                     cmd.Parameters.AddWithValue("@VENDOR_CODE", pt.VENDOR_CODE);
-                    cmd.Parameters.AddWithValue("@UPDATE_USER_ID", pt.UPDATE_USER_ID);
+                    cmd.Parameters.AddWithValue("@UPDATE_USER_ID", sCurrentID);
                     int row = cmd.ExecuteNonQuery();
                     return row > 0;
 
@@ -129,7 +127,7 @@ where PRODUCT_CODE = @PRODUCT_CODE";
             }
         }
 
-        public List<string> GetSourceList()
+        public List<string> GetProductType()
         {
             string sql = @"SELECT [KEY_1] as 'PRODUCT_TYPE'
 FROM [dbo].[CODE_DATA_MST]

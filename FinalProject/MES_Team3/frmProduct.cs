@@ -14,13 +14,20 @@ namespace MES_Team3
 {
     public partial class frmProduct : MES_Team3.BaseForms.Base1_1
     {
-        List<ProductProperty> allList;
-
+        List<ProductProperty> mAllList;
+        string msUserID;
 
         public frmProduct()
         {
            
             InitializeComponent();
+          
+        }
+
+        private void frmProduct1_Load(object sender, EventArgs e)
+        {
+            frmMain frm = (frmMain)this.MdiParent;
+            msUserID = frm.SUserID;
             DataGridViewUtil.SetInitGridView(csDataGridView1);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "품번", "PRODUCT_CODE");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "품명", "PRODUCT_NAME");
@@ -40,29 +47,6 @@ namespace MES_Team3
             pgProperty.SelectedObject = vo;
 
             pgProperty.PropertySort = PropertySort.NoSort;
-        }
-
-        private void frmProduct1_Load(object sender, EventArgs e)
-        {
-        //    DataGridViewUtil.SetInitGridView(csDataGridView1);
-        //    DataGridViewUtil.AddGridTextColumn(csDataGridView1, "품번", "PRODUCT_CODE");
-        //    DataGridViewUtil.AddGridTextColumn(csDataGridView1, "품명", "PRODUCT_NAME");
-        //    DataGridViewUtil.AddGridTextColumn(csDataGridView1, "품번 유형", "PRODUCT_TYPE");
-        //    DataGridViewUtil.AddGridTextColumn(csDataGridView1, "고객 코드", "CUSTOMER_CODE");
-        //    DataGridViewUtil.AddGridTextColumn(csDataGridView1, "업체 코드", "VENDOR_CODE");
-        //    DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성 시간", "CREATE_TIME");
-        //    DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성 사용자", "CREATE_USER_ID");
-        //    DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 시간", "UPDATE_TIME");
-        //    DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 사용자", "UPDATE_USER_ID");
-        //    List<ProductProperty> list = new List<ProductProperty>();
-
-        //    LoadData();
-
-        //    ProductProperty vo = new ProductProperty();
-
-        //    pgProperty.SelectedObject = vo;
-
-        //    pgProperty.PropertySort = PropertySort.NoSort;
 
 
         }
@@ -73,15 +57,18 @@ namespace MES_Team3
 
             ProductProperty save = (ProductProperty)pgProperty.SelectedObject;
             ProductServ serv = new ProductServ();
-            bool bResult = serv.Insert(save);
+            bool bResult = serv.Insert(save, msUserID);
             if (bResult)
             {
+                MessageBox.Show("등록되었습니다.");
                 LoadData();
             }
             else
             {
-                
+                MessageBox.Show("등록 중 실패하였습니다.");
             }
+
+          
         }
 
 
@@ -94,7 +81,7 @@ namespace MES_Team3
        
             DataGridViewRow dr = csDataGridView1.Rows[e.RowIndex];
             ProductProperty pr = new ProductProperty();
-            IsSearchPanel = false;
+            BIsSearchPanel = false;
             pr.IsSearchPanel = false;
 
             if (dr.Cells["PRODUCT_CODE"].Value != null && dr.Cells["PRODUCT_CODE"].Value != DBNull.Value)
@@ -131,17 +118,25 @@ namespace MES_Team3
             ProductProperty save = (ProductProperty)pgProperty.SelectedObject;
             ProductServ serv = new ProductServ();
             bool bResult = serv.Delete(save);
-            LoadData();
+            if (bResult)
+            {
+                MessageBox.Show("삭제되었습니다.");
+                LoadData();
+            }
+            else
+            {
+                MessageBox.Show("삭제 중 실패하였습니다.");
+            }
 
         }
 
         public void LoadData()
         {
             ProductServ serv = new ProductServ();
-             allList = serv.GetProductsList();
+             mAllList = serv.GetProductsList();
             csDataGridView1.DataSource = null;
-            csDataGridView1.DataSource = allList;
-            SearchPanel = false;
+            csDataGridView1.DataSource = mAllList;
+            BSearchPanel = false;
         }
 
 		private void button3_Click(object sender, EventArgs e)
@@ -158,8 +153,17 @@ namespace MES_Team3
         {
             ProductProperty save = (ProductProperty)pgProperty.SelectedObject;
             ProductServ serv = new ProductServ();
-            bool bResult = serv.Update(save);
-            LoadData();
+            bool bResult = serv.Update(save, msUserID);
+            if (bResult)
+            {
+                MessageBox.Show("수정되었습니다.");
+                LoadData();
+            }
+            else
+            {
+                MessageBox.Show("수정 중 실패하였습니다.");
+            }
+
         }
 
         private void btnRead_Click(object sender, EventArgs e)
@@ -195,23 +199,28 @@ namespace MES_Team3
                 pr.IsSearchPanel = false;
                 pgProperty.SelectedObject = pr;
                 pgProperty.PropertySort = PropertySort.NoSort;
-                SearchPanel = true;
+                BSearchPanel = true;
                 csDataGridView1.DataSource = null;
-                csDataGridView1.DataSource = allList;
+                csDataGridView1.DataSource = mAllList;
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+
+        private void btnClose_Click(object sender, EventArgs e)
         {
-            
-            string txt = textBox1.Text.ToUpper();
+            this.Close();
+        }
+
+        private void btnTxtSearch_Click(object sender, EventArgs e)
+        {
+            string txt = txtSearch.Text.ToUpper();
             //List<ProductProperty> txtSearch = allList.FindAll((x) => x.PRODUCT_CODE.Contains(txt) || x.PRODUCT_NAME.Contains(txt)||//x.PRODUCT_TYPE.Contains(txt) || x.CUSTOMER_CODE.Contains(txt)||x.VENDOR_CODE.Contains(txt) || x.CREATE_USER_ID.Contains(txt)||//x.UPDATE_USER_ID.Contains(txt));
             // csDataGridView1.DataSource = txtSearch;
             foreach (DataGridViewRow row in csDataGridView1.Rows)
             {
                 // Test if the first column of the current row equals
                 // the value in the text box
-                if (row.Cells["PRODUCT_CODE"].Value.ToString().Contains(txt)|| row.Cells["PRODUCT_NAME"].Value.ToString().ToUpper().Contains(txt)|| row.Cells["PRODUCT_TYPE"].Value.ToString().ToUpper().Contains(txt)|| row.Cells["CUSTOMER_CODE"].Value.ToString().ToUpper().Contains(txt)|| row.Cells["VENDOR_CODE"].Value.ToString().ToUpper().Contains(txt) || row.Cells["CREATE_USER_ID"].Value.ToString().ToUpper().Contains(txt) || row.Cells["UPDATE_USER_ID"].Value.ToString().ToUpper().Contains(txt))
+                if (row.Cells["PRODUCT_CODE"].Value.ToString().Contains(txt) || row.Cells["PRODUCT_NAME"].Value.ToString().ToUpper().Contains(txt) || row.Cells["PRODUCT_TYPE"].Value.ToString().ToUpper().Contains(txt) || row.Cells["CUSTOMER_CODE"].Value.ToString().ToUpper().Contains(txt) || row.Cells["VENDOR_CODE"].Value.ToString().ToUpper().Contains(txt) || row.Cells["CREATE_USER_ID"].Value.ToString().ToUpper().Contains(txt) || row.Cells["UPDATE_USER_ID"].Value.ToString().ToUpper().Contains(txt))
                 {
                     // we have a match
                     row.Selected = true;
@@ -223,14 +232,9 @@ namespace MES_Team3
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnReadTop_Click(object sender, EventArgs e)
         {
-            btnRead.PerformClick();
-        }
-
-        private void button11_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            btnReadBottom.PerformClick();
         }
     }
 

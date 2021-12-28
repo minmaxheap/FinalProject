@@ -30,33 +30,36 @@ namespace MES_Team3
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.flpMenu = new System.Windows.Forms.FlowLayoutPanel();
+            this.mnuMenu = new System.Windows.Forms.MenuStrip();
             this.lblID = new System.Windows.Forms.Label();
+            this.tabMenu = new MES_Team3.csTabControl();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tabControl1 = new MES_Team3.csTabControl();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.SuspendLayout();
             // 
-            // flowLayoutPanel1
+            // flpMenu
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.flowLayoutPanel1.Font = new System.Drawing.Font("나눔스퀘어OTF ExtraBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 24);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(162, 715);
-            this.flowLayoutPanel1.TabIndex = 2;
+            this.flpMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
+            this.flpMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.flpMenu.Font = new System.Drawing.Font("나눔스퀘어OTF ExtraBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.flpMenu.Location = new System.Drawing.Point(0, 24);
+            this.flpMenu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flpMenu.Name = "flpMenu";
+            this.flpMenu.Size = new System.Drawing.Size(162, 715);
+            this.flpMenu.TabIndex = 2;
             // 
-            // menuStrip1
+            // mnuMenu
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1299, 24);
-            this.menuStrip1.TabIndex = 3;
-            this.menuStrip1.Text = "menuStrip1";
+            this.mnuMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
+            this.mnuMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.mnuMenu.Location = new System.Drawing.Point(0, 0);
+            this.mnuMenu.Name = "mnuMenu";
+            this.mnuMenu.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.mnuMenu.Size = new System.Drawing.Size(1299, 24);
+            this.mnuMenu.TabIndex = 3;
+            this.mnuMenu.Text = "menuStrip1";
             // 
             // lblID
             // 
@@ -69,6 +72,30 @@ namespace MES_Team3
             this.lblID.TabIndex = 18;
             this.lblID.Text = "ID";
             this.lblID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tabMenu
+            // 
+            this.tabMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tabMenu.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
+            this.tabMenu.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tabMenu.Location = new System.Drawing.Point(162, 24);
+            this.tabMenu.Name = "tabMenu";
+            this.tabMenu.SelectedIndex = 0;
+            this.tabMenu.Size = new System.Drawing.Size(1137, 22);
+            this.tabMenu.TabIndex = 6;
+            this.tabMenu.Visible = false;
+            this.tabMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabControl1_MouseDown);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.flowLayoutPanel1.Font = new System.Drawing.Font("나눔스퀘어OTF ExtraBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 24);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(162, 715);
+            this.flowLayoutPanel1.TabIndex = 2;
             // 
             // tabControl1
             // 
@@ -83,18 +110,29 @@ namespace MES_Team3
             this.tabControl1.Visible = false;
             this.tabControl1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabControl1_MouseDown);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1299, 24);
+            this.menuStrip1.TabIndex = 3;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
             // frmMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1299, 739);
             this.Controls.Add(this.lblID);
-            this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.tabMenu);
+            this.Controls.Add(this.flpMenu);
+            this.Controls.Add(this.mnuMenu);
             this.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 12F, System.Drawing.FontStyle.Bold);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
-            this.MainMenuStrip = this.menuStrip1;
+            this.MainMenuStrip = this.mnuMenu;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmMain";
             this.Text = "메인화면";
@@ -108,10 +146,13 @@ namespace MES_Team3
 
         #endregion
 
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private csTabControl tabControl1;
+        private System.Windows.Forms.FlowLayoutPanel flpMenu;
+        private System.Windows.Forms.MenuStrip mnuMenu;
+        private csTabControl tabMenu;
         public System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private csTabControl tabControl1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
     }
 }
 

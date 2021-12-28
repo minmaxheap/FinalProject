@@ -44,7 +44,7 @@ namespace MES_Team3
 
 
 
-			searchPanel.Visible = false;
+			pnlSearch.Visible = false;
 			User_MST_Property vo  = new User_MST_Property();
 
 			pgProperty.SelectedObject = vo;
@@ -193,8 +193,8 @@ namespace MES_Team3
 			pgProperty.PropertySort = PropertySort.NoSort;
 
 
-			propertyPanel.Visible = true;
-			searchPanel.Visible = false;
+			pnlProperty.Visible = true;
+			pnlSearch.Visible = false;
 		}
 
 		private void panel6_Paint(object sender, PaintEventArgs e)

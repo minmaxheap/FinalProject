@@ -117,7 +117,7 @@ namespace MES_Team3
             DataTable dt = serv.GetOperationList();
             csDataGridView1.DataSource = null;
             csDataGridView1.DataSource = dt;
-            SearchPanel = false;
+            BSearchPanel = false;
         }
 
 		private void button3_Click(object sender, EventArgs e)

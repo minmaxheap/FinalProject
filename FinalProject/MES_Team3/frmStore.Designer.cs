@@ -37,15 +37,15 @@ namespace MES_Team3
             this.pgProperty = new System.Windows.Forms.PropertyGrid();
             this.csDataGridView1 = new MES_Team3.csDataGridView();
            // this.panel6.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.propertyPanel.SuspendLayout();
-            this.searchPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.pnlCrud.SuspendLayout();
+            this.pnlTop.SuspendLayout();
+            this.pnlProperty.SuspendLayout();
+            this.pnlSearch.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spcBase)).BeginInit();
+            this.spcBase.Panel1.SuspendLayout();
+            this.spcBase.Panel2.SuspendLayout();
+            this.spcBase.SuspendLayout();
+            this.pnlDgv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.csDataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,22 +53,22 @@ namespace MES_Team3
             // 
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
            // this.panel3.Controls.SetChildIndex(this.textBox1, 0);
-            this.panel3.Controls.SetChildIndex(this.button3, 0);
+            this.pnlTop.Controls.SetChildIndex(this.btnSearchPnl, 0);
             // 
             // propertyPanel
             // 
-            this.propertyPanel.Controls.Add(this.pgProperty);
+            this.pnlProperty.Controls.Add(this.pgProperty);
             // 
             // searchPanel
             // 
-            this.searchPanel.Controls.Add(this.pgSearch);
+            this.pnlSearch.Controls.Add(this.pgSearch);
             // 
             // splitContainer1
             // 
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.csDataGridView1);
+            this.pnlDgv.Controls.Add(this.csDataGridView1);
             // 
             // pgSearch
             // 
@@ -138,20 +138,20 @@ namespace MES_Team3
             // 
             this.ClientSize = new System.Drawing.Size(1168, 778);
             this.Name = "frmStore";
-            this.PropertyPanel = true;
-            this.SearchPanel = true;
+            this.BPropertyPanel = true;
+            this.BSearchPanel = true;
             this.Load += new System.EventHandler(this.frmStore_Load);
            // this.panel6.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.propertyPanel.ResumeLayout(false);
-            this.searchPanel.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
+            this.pnlCrud.ResumeLayout(false);
+            this.pnlTop.ResumeLayout(false);
+            this.pnlTop.PerformLayout();
+            this.pnlProperty.ResumeLayout(false);
+            this.pnlSearch.ResumeLayout(false);
+            this.spcBase.Panel1.ResumeLayout(false);
+            this.spcBase.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.spcBase)).EndInit();
+            this.spcBase.ResumeLayout(false);
+            this.pnlDgv.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.csDataGridView1)).EndInit();
             this.ResumeLayout(false);
 
