@@ -12,7 +12,8 @@ namespace MES_Team3
 {
     public partial class frmLogin : Form
     {
-        public string userID { get { return txtID.Text; } }
+        public static string userID { get { return sID_Test; } }
+        static string sID_Test;
         public frmLogin()
         {
             InitializeComponent();
@@ -32,7 +33,7 @@ namespace MES_Team3
         private void frmLogin_Load(object sender, EventArgs e)
         {
             txtID.Text = "0324234";
-
+            sID_Test = txtID.Text;
         }
 
         private void frmLogin_Shown(object sender, EventArgs e)
