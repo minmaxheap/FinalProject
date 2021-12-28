@@ -216,11 +216,11 @@ namespace MES_Team3
 		//아래로 내려가듯이
 		private void button2_Click(object sender, EventArgs e)
 		{
-			String searchValue = textBox1.Text;
+			String searchValue = txtSearch.Text;
 			int rowIndex = -1;
 			foreach (DataGridViewRow row in csDataGridView1.Rows)
 			{
-				if (row.Cells[2].Value.ToString().Equals(textBox1.Text))
+				if (row.Cells[2].Value.ToString().Equals(txtSearch.Text))
 				{
 					rowIndex = row.Index;
 					break;

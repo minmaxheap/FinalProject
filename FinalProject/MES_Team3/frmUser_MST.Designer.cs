@@ -55,11 +55,11 @@ namespace MES_Team3
 			// 
 			// propertyPanel
 			// 
-			this.propertyPanel.Controls.Add(this.pgProperty);
+			this.pnlProperty.Controls.Add(this.pgProperty);
 			// 
 			// searchPanel
 			// 
-			this.searchPanel.Controls.Add(this.pgSearch);
+			this.pnlSearch.Controls.Add(this.pgSearch);
 			// 
 			// btnPanel
 			// 
@@ -74,7 +74,7 @@ namespace MES_Team3
 			// 
 			// panel4
 			// 
-			this.panel4.Controls.Add(this.csDataGridView1);
+			this.pnlDgv.Controls.Add(this.csDataGridView1);
 			// 
 			// button3
 			// 
@@ -162,7 +162,7 @@ namespace MES_Team3
 			// frmUser_MST
 			// 
 			this.ClientSize = new System.Drawing.Size(1168, 778);
-			this.IsSearchPanel = true;
+			this.BIsSearchPanel = true;
 			this.Name = "frmUser_MST";
 			this.BPropertyPanel = true;
 			this.BSearchPanel = true;

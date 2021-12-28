@@ -29,9 +29,9 @@ namespace MES_Team3.BaseForms
         /// </summary>
         private void InitializeComponent()
         {
-            
+          
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Base1_1));
- 
+      
             this.pnlTop = new System.Windows.Forms.Panel();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearchPnl = new System.Windows.Forms.Button();
@@ -95,33 +95,33 @@ namespace MES_Team3.BaseForms
             // 
             // btnTxtSearch
             // 
-            this.btnTxtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            this.btnTxtSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTxtSearch.BackgroundImage")));
-            this.btnTxtSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnTxtSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnTxtSearch.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnTxtSearch.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnTxtSearch.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnTxtSearch.Location = new System.Drawing.Point(294, 2);
-            this.btnTxtSearch.Name = "btnTxtSearch";
-            this.btnTxtSearch.Size = new System.Drawing.Size(32, 26);
-            this.btnTxtSearch.TabIndex = 49;
-            this.btnTxtSearch.UseVisualStyleBackColor = false;
+            btnTxtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            btnTxtSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTxtSearch.BackgroundImage")));
+            btnTxtSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            btnTxtSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            btnTxtSearch.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            btnTxtSearch.ForeColor = System.Drawing.SystemColors.ControlText;
+            btnTxtSearch.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            btnTxtSearch.Location = new System.Drawing.Point(294, 2);
+            btnTxtSearch.Name = "btnTxtSearch";
+            btnTxtSearch.Size = new System.Drawing.Size(32, 26);
+            btnTxtSearch.TabIndex = 49;
+            btnTxtSearch.UseVisualStyleBackColor = false;
             // 
             // btnReadTop
             // 
-            this.btnReadTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            this.btnReadTop.BackgroundImage = global::MES_Team3.Properties.Resources.Data_Find12;
-            this.btnReadTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnReadTop.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnReadTop.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnReadTop.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnReadTop.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnReadTop.Location = new System.Drawing.Point(5, 2);
-            this.btnReadTop.Name = "btnReadTop";
-            this.btnReadTop.Size = new System.Drawing.Size(33, 26);
-            this.btnReadTop.TabIndex = 47;
-            this.btnReadTop.UseVisualStyleBackColor = false;
+            btnReadTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            btnReadTop.BackgroundImage = global::MES_Team3.Properties.Resources.Data_Find12;
+            btnReadTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            btnReadTop.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            btnReadTop.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            btnReadTop.ForeColor = System.Drawing.SystemColors.ControlText;
+            btnReadTop.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            btnReadTop.Location = new System.Drawing.Point(5, 2);
+            btnReadTop.Name = "btnReadTop";
+            btnReadTop.Size = new System.Drawing.Size(33, 26);
+            btnReadTop.TabIndex = 47;
+            btnReadTop.UseVisualStyleBackColor = false;
             // 
             // spcBase
             // 
@@ -179,7 +179,7 @@ namespace MES_Team3.BaseForms
             this.pnlSearch.Location = new System.Drawing.Point(0, 37);
             this.pnlSearch.Margin = new System.Windows.Forms.Padding(0);
             this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(334, 621);
+            this.pnlSearch.Size = new System.Drawing.Size(357, 621);
             this.pnlSearch.TabIndex = 31;
             // 
             // pnlProperty
@@ -192,7 +192,7 @@ namespace MES_Team3.BaseForms
             this.pnlProperty.Location = new System.Drawing.Point(0, 37);
             this.pnlProperty.Margin = new System.Windows.Forms.Padding(0);
             this.pnlProperty.Name = "pnlProperty";
-            this.pnlProperty.Size = new System.Drawing.Size(331, 621);
+            this.pnlProperty.Size = new System.Drawing.Size(329, 621);
             this.pnlProperty.TabIndex = 29;
             // 
             // pnlTopLbl
@@ -407,7 +407,7 @@ namespace MES_Team3.BaseForms
         public System.Windows.Forms.Button btnUpdate;
         public System.Windows.Forms.Panel pnlTopLbl;
         public System.Windows.Forms.TextBox txtSearch;
-        public System.Windows.Forms.Button btnTxtSearch;
         public System.Windows.Forms.Button btnReadTop;
+        public System.Windows.Forms.Button btnTxtSearch;
     }
 }
