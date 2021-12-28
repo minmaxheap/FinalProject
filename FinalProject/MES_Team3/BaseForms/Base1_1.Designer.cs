@@ -121,6 +121,7 @@ namespace MES_Team3.BaseForms
             this.button3.TabIndex = 48;
             this.button3.Text = "검색 조건";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // splitContainer1
             // 
