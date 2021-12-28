@@ -29,8 +29,7 @@ namespace MES_Team3.BaseForms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Button button2;
-            System.Windows.Forms.Button button1;
+            
             this.panel3 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
@@ -49,8 +48,8 @@ namespace MES_Team3.BaseForms
             this.button11 = new System.Windows.Forms.Button();
             this.btnRead = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            button2 = new System.Windows.Forms.Button();
-            button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -369,9 +368,7 @@ namespace MES_Team3.BaseForms
         public System.Windows.Forms.Panel searchPanel;
         public System.Windows.Forms.Button btnPanel;
         public System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Panel panel7;
         public System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.Button button3;
         public System.Windows.Forms.Panel panel5;
         public System.Windows.Forms.Button btnInsert;
@@ -380,5 +377,9 @@ namespace MES_Team3.BaseForms
         public System.Windows.Forms.Button button11;
         public System.Windows.Forms.Button btnRead;
         public System.Windows.Forms.Button btnUpdate;
+        public System.Windows.Forms.Panel panel7;
+        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.Button button2;
+        public System.Windows.Forms.Button button1;
     }
 }
