@@ -28,8 +28,8 @@ namespace DAC
 		{
 			try
 			{
-				string sql = @"insert into  [dbo].[USER_GROUP_MST] (USER_GROUP_CODE, USER_GROUP_NAME, USER_GROUP_TYPE, CREATE_TIME, CREATE_USER_ID, UPDATE_TIME, UPDATE_USER_ID)
-values(@USER_GROUP_CODE, @USER_GROUP_NAME, @USER_GROUP_TYPE, @CREATE_TIME, @CREATE_USER_ID, @UPDATE_TIME,@UPDATE_USER_ID)";
+				string sql = @"insert into  [dbo].[USER_GROUP_MST] (USER_GROUP_CODE, USER_GROUP_NAME, USER_GROUP_TYPE, CREATE_TIME, CREATE_USER_ID)
+values(@USER_GROUP_CODE, @USER_GROUP_NAME, @USER_GROUP_TYPE,getdate(), @CREATE_USER_ID)";
 
 				using (SqlCommand cmd = new SqlCommand(sql, conn))
 				{
@@ -37,10 +37,10 @@ values(@USER_GROUP_CODE, @USER_GROUP_NAME, @USER_GROUP_TYPE, @CREATE_TIME, @CREA
 					cmd.Parameters.AddWithValue("@USER_GROUP_NAME", vo.USER_GROUP_NAME);
 					cmd.Parameters.AddWithValue("@USER_GROUP_TYPE", vo.USER_GROUP_TYPE);
 					
-					cmd.Parameters.AddWithValue("@CREATE_TIME", vo.CREATE_TIME);
+					//cmd.Parameters.AddWithValue("@CREATE_TIME", vo.CREATE_TIME);
 					cmd.Parameters.AddWithValue("@CREATE_USER_ID", vo.CREATE_USER_ID);
-					cmd.Parameters.AddWithValue("@UPDATE_TIME", vo.UPDATE_TIME);
-					cmd.Parameters.AddWithValue("@UPDATE_USER_ID", vo.UPDATE_USER_ID);
+					//cmd.Parameters.AddWithValue("@UPDATE_TIME", vo.UPDATE_TIME);
+					//cmd.Parameters.AddWithValue("@UPDATE_USER_ID", vo.UPDATE_USER_ID);
 
 					int row = cmd.ExecuteNonQuery();
 					return row > 0;
@@ -71,7 +71,7 @@ values(@USER_GROUP_CODE, @USER_GROUP_NAME, @USER_GROUP_TYPE, @CREATE_TIME, @CREA
 		public bool Update(UserGroupVO vo)
 		{
 			string sql = @"update [dbo].[USER_GROUP_MST]
-set USER_GROUP_CODE = @USER_GROUP_CODE, USER_GROUP_NAME = @USER_GROUP_NAME, USER_GROUP_TYPE = @USER_GROUP_TYPE, CREATE_TIME = @CREATE_TIME, CREATE_USER_ID =@CREATE_USER_ID, UPDATE_TIME = @UPDATE_TIME, UPDATE_USER_ID = @UPDATE_USER_ID
+set USER_GROUP_CODE = @USER_GROUP_CODE, USER_GROUP_NAME = @USER_GROUP_NAME, USER_GROUP_TYPE = @USER_GROUP_TYPE,UPDATE_TIME = @UPDATE_TIME, UPDATE_USER_ID = @UPDATE_USER_ID
 where USER_GROUP_CODE = @USER_GROUP_CODE";
 
 			using (SqlCommand cmd = new SqlCommand(sql, conn))
@@ -80,8 +80,8 @@ where USER_GROUP_CODE = @USER_GROUP_CODE";
 				cmd.Parameters.AddWithValue("@USER_GROUP_NAME", vo.USER_GROUP_NAME);
 				cmd.Parameters.AddWithValue("@USER_GROUP_TYPE", vo.USER_GROUP_TYPE);
 
-				cmd.Parameters.AddWithValue("@CREATE_TIME", vo.CREATE_TIME);
-				cmd.Parameters.AddWithValue("@CREATE_USER_ID", vo.CREATE_USER_ID);
+				//cmd.Parameters.AddWithValue("@CREATE_TIME", vo.CREATE_TIME);
+				//cmd.Parameters.AddWithValue("@CREATE_USER_ID", vo.CREATE_USER_ID);
 				cmd.Parameters.AddWithValue("@UPDATE_TIME", vo.UPDATE_TIME);
 				cmd.Parameters.AddWithValue("@UPDATE_USER_ID", vo.UPDATE_USER_ID);
 
