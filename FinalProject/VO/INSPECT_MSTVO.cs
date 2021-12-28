@@ -81,7 +81,6 @@ namespace VO
 					PropertyDescriptor descriptor = TypeDescriptor.GetProperties(this.GetType())["SPEC_LSL"];
 					PropertyDescriptor descriptor1 = TypeDescriptor.GetProperties(this.GetType())["SPEC_USL"];
 
-					//PropertyDescriptor descriptor1 = propCollection["SPEC_USL"];
 					ReadOnlyAttribute attrib = (ReadOnlyAttribute)descriptor.Attributes[typeof(ReadOnlyAttribute)];
 					FieldInfo isReadOnly = attrib.GetType().GetField("isReadOnly", BindingFlags.NonPublic | BindingFlags.Instance);
 
@@ -107,7 +106,7 @@ namespace VO
 		[DisplayName("USL")]
 		[Browsable(true)]
 		[ReadOnly(false)]
-		public string SPEC_USL { get { return spec_target; } set { spec_target = value; } }
+		public string SPEC_USL { get { return spec_usl; } set { spec_usl = value; } }
 
 		[DisplayName("생성시간")]
 		[Browsable(true)]

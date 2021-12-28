@@ -13,8 +13,8 @@ namespace MES_Team3
     {
         InspecServ serv = null;
         string Inspect_id = string.Empty;
+        int rowIndex = -1;
 
-       
         public frmINSPECT_MST()
         {
             InitializeComponent();
@@ -234,5 +234,30 @@ namespace MES_Team3
 		{
 
 		}
+
+		private void btnTxtSearch_Click(object sender, EventArgs e)
+		{
+            string searchValue = txtSearch.Text;
+            
+
+            csDataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            try
+            {
+                foreach (DataGridViewRow row in csDataGridView1.Rows)
+                {
+                    if (row.Cells[1].Value.ToString().Equals(searchValue))
+                    {
+                        rowIndex = row.Index;
+                        csDataGridView1.Rows[rowIndex].Selected = true;
+
+                        break;
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+        }
 	}
 }
