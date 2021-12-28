@@ -79,7 +79,7 @@ namespace DAC
 				IsSearchPannel = value;
 
 				PropertyDescriptorCollection propCollection = TypeDescriptor.GetProperties(this.GetType());
-
+				
 				PropertyDescriptor descriptor = propCollection["USER_NAME"];
 				PropertyDescriptor descriptor1 = propCollection["USER_PASSWORD"];
 				PropertyDescriptor descriptor2 = propCollection["CREATE_TIME"];
