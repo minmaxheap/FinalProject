@@ -155,10 +155,12 @@ namespace MES_Team3
 
 			DataGridViewRow dr = csDataGridView1.Rows[e.RowIndex];
 			UserGroupVO vo = new UserGroupVO();
-			lblPanel.Text = "▶ 속성";
-			lblPanel.BackColor = Color.FromArgb(82, 152, 216);
-			btnPanel.BackColor = lblPanel.BackColor;
+			IsSearchPanel = false;
 			vo.IsSearchPanel = false;
+			//lblPanel.Text = "▶ 속성";
+			//lblPanel.BackColor = Color.FromArgb(82, 152, 216);
+			//btnPanel.BackColor = lblPanel.BackColor;
+			//vo.IsSearchPanel = false;
 			vo.USER_GROUP_CODE = dr.Cells["USER_GROUP_CODE"].Value.ToString();
 			vo.USER_GROUP_NAME = dr.Cells["USER_GROUP_NAME"].Value.ToString();
 			vo.USER_GROUP_TYPE = dr.Cells["USER_GROUP_TYPE"].Value.ToString();
