@@ -216,18 +216,7 @@ namespace MES_Team3
 		//아래로 내려가듯이
 		private void button2_Click(object sender, EventArgs e)
 		{
-			String searchValue = txtSearch.Text;
-			int rowIndex = -1;
-			foreach (DataGridViewRow row in csDataGridView1.Rows)
-			{
-				if (row.Cells[2].Value.ToString().Equals(txtSearch.Text))
-				{
-					rowIndex = row.Index;
-					break;
-				}
-			}
-
-			csDataGridView1.Rows[rowIndex].Selected = true;
+		
 		}
 
 		private DataGridViewCell GetCellWhereTextExistsInGridView(string searchText, DataGridView dataGridView, int columnIndex)
@@ -249,6 +238,30 @@ namespace MES_Team3
 			
 
 			return cellWhereTextIsMet;
+		}
+
+		private void btnTxtSearch_Click(object sender, EventArgs e)
+		{
+			string searchValue = txtSearch.Text;
+			int rowIndex = -1;
+
+			csDataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+			try
+			{
+				foreach (DataGridViewRow row in csDataGridView1.Rows)
+				{
+					if (row.Cells[row.Index].Value.ToString().Equals(searchValue))
+					{
+						rowIndex = row.Index;
+						csDataGridView1.Rows[row.Index].Selected = true;
+						break;
+					}
+				}
+			}
+			catch (Exception exc)
+			{
+				MessageBox.Show(exc.Message);
+			}
 		}
 	}
 }

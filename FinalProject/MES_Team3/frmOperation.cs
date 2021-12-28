@@ -39,7 +39,7 @@ namespace MES_Team3
             OperationProperty vo = new OperationProperty();
 
             pgProperty.SelectedObject = vo;
-
+            
             pgProperty.PropertySort = PropertySort.NoSort;
 
 
@@ -49,6 +49,7 @@ namespace MES_Team3
         private void btnInsert_Click(object sender, EventArgs e)
         {
             OperationProperty save = (OperationProperty)pgProperty.SelectedObject;
+            save.CREATE_USER_ID = sUserID;
             OperationServ serv = new OperationServ();
             bool bResult = serv.Insert(save);
             if (bResult)
@@ -135,9 +136,17 @@ namespace MES_Team3
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             OperationProperty save = (OperationProperty)pgProperty.SelectedObject;
+            save.UPDATE_USER_ID = sUserID;
             OperationServ serv = new OperationServ();
             bool bResult = serv.Update(save);
-            LoadData();
+            if (bResult)
+            {
+                LoadData();
+            }
+            else
+            {
+
+            }
         }
 
         private void btnRead_Click(object sender, EventArgs e)

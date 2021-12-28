@@ -32,25 +32,7 @@ namespace DAC
 
         [DisplayName("불량 입력")]
         [TypeConverter(typeof(Check_Value_Converter))]
-        public string CHECK_DEFECT_FLAG
-        { get { return check_defect_flag; } 
-            set {
-                check_defect_flag = value;
-                if (check_defect_flag != "Y")
-                {
-                    PropertyDescriptor descriptor = TypeDescriptor.GetProperties(this.GetType())["OPERATION_NAME"];
-                    ReadOnlyAttribute attrib = (ReadOnlyAttribute)descriptor.Attributes[typeof(ReadOnlyAttribute)];
-                    FieldInfo isReadOnly = attrib.GetType().GetField("isReadOnly", BindingFlags.NonPublic | BindingFlags.Instance);
-                    isReadOnly.SetValue(attrib, false);
-                }
-                else
-                {
-                    PropertyDescriptor descriptor = TypeDescriptor.GetProperties(this.GetType())["OPERATION_NAME"];
-                    ReadOnlyAttribute attrib = (ReadOnlyAttribute)descriptor.Attributes[typeof(ReadOnlyAttribute)];
-                    FieldInfo isReadOnly = attrib.GetType().GetField("isReadOnly", BindingFlags.NonPublic | BindingFlags.Instance);
-                    isReadOnly.SetValue(attrib, true);
-                }
-            } }
+        public string CHECK_DEFECT_FLAG {get { return check_defect_flag; }set { check_defect_flag = value; }}
 
         [DisplayName("검사 데이터 입력")]
         [TypeConverter(typeof(Check_Value_Converter))]
@@ -60,15 +42,19 @@ namespace DAC
         [TypeConverter(typeof(Check_Value_Converter))]
         public string CHECK_MATERIAL_FLAG { get { return check_material_flag; } set { check_material_flag = value; } }
 
+        [ReadOnly(true)]
         [DisplayName("생성 시간")]
         public DateTime CREATE_TIME { get { return create_time; } set { create_time = value; } }
 
+        [ReadOnly(true)]
         [DisplayName("생성 사용자")]
         public string CREATE_USER_ID { get { return create_user_id; } set { create_user_id = value; } }
 
+        [ReadOnly(true)]
         [DisplayName("변경 시간")]
         public DateTime UPDATE_TIME { get { return update_time; } set { update_time = value; } }
 
+        [ReadOnly(true)]
         [DisplayName("변경 사용자")]
         public string UPDATE_USER_ID 
         { get { return update_user_id; } set  {update_user_id = value;} }

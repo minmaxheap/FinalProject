@@ -21,7 +21,7 @@ namespace DAC
 		private string CreateUserID;
 		private DateTime UpdateTime;
 		private string UpdateUserID;
-
+		private string em = string.Empty;
 		private bool IsSearchPannel;
 
 		[DisplayName("사용자 아이디")]
@@ -42,7 +42,17 @@ namespace DAC
 		[DisplayName("비밀번호")]
 		[Browsable(true)]
 
-		public string USER_PASSWORD { get { return Password; } set { Password = value; } }
+		public string USER_PASSWORD 
+		{ 
+			get 
+			{
+				if (Department == "임원")
+					return "";
+				else
+				return Password;
+			}   
+			set { Password = value; } 
+		}
 
 		[DisplayName("부서")]
 		[Browsable(true)]

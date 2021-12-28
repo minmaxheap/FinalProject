@@ -36,8 +36,6 @@ namespace MES_Team3
 			this.pgSearch = new System.Windows.Forms.PropertyGrid();
 			this.pgProperty = new System.Windows.Forms.PropertyGrid();
 			this.csDataGridView1 = new MES_Team3.csDataGridView();
-			//this.panel6.SuspendLayout();
-			this.pnlCrud.SuspendLayout();
 			this.pnlTop.SuspendLayout();
 			this.pnlProperty.SuspendLayout();
 			this.pnlSearch.SuspendLayout();
@@ -46,6 +44,8 @@ namespace MES_Team3
 			this.spcBase.Panel2.SuspendLayout();
 			this.spcBase.SuspendLayout();
 			this.pnlDgv.SuspendLayout();
+			this.pnlCrud.SuspendLayout();
+			this.pnlTopLbl.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.csDataGridView1)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -53,30 +53,30 @@ namespace MES_Team3
 			// 
 			this.lblTitle.Text = "사용자 그륩";
 			// 
-			// propertyPanel
+			// pnlProperty
 			// 
 			this.pnlProperty.Controls.Add(this.pgProperty);
 			// 
-			// searchPanel
+			// pnlSearch
 			// 
 			this.pnlSearch.Controls.Add(this.pgSearch);
 			// 
 			// btnPanel
 			// 
+			this.btnPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(152)))), ((int)(((byte)(216)))));
 			this.btnPanel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
 			this.btnPanel.FlatAppearance.BorderSize = 0;
 			this.btnPanel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
 			this.btnPanel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
 			// 
-			// splitContainer1
+			// spcBase
 			// 
-			this.btnReadBottom.Click += new System.EventHandler(this.btnRead_Click);
 			// 
-			// panel4
+			// pnlDgv
 			// 
 			this.pnlDgv.Controls.Add(this.csDataGridView1);
 			// 
-			// button3
+			// btnSearchPnl
 			// 
 			this.btnSearchPnl.Click += new System.EventHandler(this.button3_Click);
 			// 
@@ -84,21 +84,17 @@ namespace MES_Team3
 			// 
 			this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
 			// 
-			// btnDelete
+			// btnReadBottom
 			// 
-			this.pnlProperty.Controls.Add(this.pgProperty);
-			// 
-			// btnClear
-			// 
-			this.pnlSearch.Controls.Add(this.pgSearch);
+			this.btnReadBottom.Click += new System.EventHandler(this.btnRead_Click);
 			// 
 			// btnUpdate
 			// 
 			this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
 			// 
-			// button2
+			// btnTxtSearch
 			// 
-			this.pnlDgv.Controls.Add(this.csDataGridView1);
+			this.btnTxtSearch.Click += new System.EventHandler(this.btnTxtSearch_Click);
 			// 
 			// pgSearch
 			// 
@@ -161,14 +157,12 @@ namespace MES_Team3
 			// 
 			// frmUser_MST
 			// 
-			this.ClientSize = new System.Drawing.Size(1168, 778);
 			this.BIsSearchPanel = true;
-			this.Name = "frmUser_MST";
 			this.BPropertyPanel = true;
 			this.BSearchPanel = true;
+			this.ClientSize = new System.Drawing.Size(1168, 778);
+			this.Name = "frmUser_MST";
 			this.Load += new System.EventHandler(this.frmUser_MST_Load);
-			//this.panel6.ResumeLayout(false);
-			this.pnlCrud.ResumeLayout(false);
 			this.pnlTop.ResumeLayout(false);
 			this.pnlTop.PerformLayout();
 			this.pnlProperty.ResumeLayout(false);
@@ -178,6 +172,8 @@ namespace MES_Team3
 			((System.ComponentModel.ISupportInitialize)(this.spcBase)).EndInit();
 			this.spcBase.ResumeLayout(false);
 			this.pnlDgv.ResumeLayout(false);
+			this.pnlCrud.ResumeLayout(false);
+			this.pnlTopLbl.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.csDataGridView1)).EndInit();
 			this.ResumeLayout(false);
 
