@@ -29,7 +29,8 @@ namespace MES_Team3.BaseForms
         /// </summary>
         private void InitializeComponent()
         {
-           
+            System.Windows.Forms.Button button2;
+            System.Windows.Forms.Button button1;
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnInsert = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
@@ -37,8 +38,6 @@ namespace MES_Team3.BaseForms
             this.button11 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnRead = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
@@ -51,8 +50,8 @@ namespace MES_Team3.BaseForms
             this.panel7 = new System.Windows.Forms.Panel();
             this.btnPanel = new System.Windows.Forms.Button();
             this.lblPanel = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            button2 = new System.Windows.Forms.Button();
+            button1 = new System.Windows.Forms.Button();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -62,36 +61,6 @@ namespace MES_Team3.BaseForms
             this.splitContainer1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button2
-            // 
-            button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            button2.BackgroundImage = global::MES_Team3.Properties.Resources.pngegg;
-            button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            button2.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            button2.ForeColor = System.Drawing.SystemColors.ControlText;
-            button2.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            button2.Location = new System.Drawing.Point(298, 3);
-            button2.Name = "button2";
-            button2.Size = new System.Drawing.Size(32, 29);
-            button2.TabIndex = 33;
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            button1.BackgroundImage = global::MES_Team3.Properties.Resources._refresh_90271;
-            button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            button1.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            button1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            button1.Location = new System.Drawing.Point(9, 5);
-            button1.Name = "button1";
-            button1.Size = new System.Drawing.Size(32, 29);
-            button1.TabIndex = 16;
-            button1.UseVisualStyleBackColor = false;
             // 
             // panel6
             // 
@@ -157,8 +126,6 @@ namespace MES_Team3.BaseForms
             // 
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panel5.Controls.Add(this.btnRead);
-            this.panel5.Controls.Add(this.button5);
-            this.panel5.Controls.Add(this.button4);
             this.panel5.Controls.Add(this.btnDelete);
             this.panel5.Location = new System.Drawing.Point(12, 692);
             this.panel5.Name = "panel5";
@@ -178,30 +145,6 @@ namespace MES_Team3.BaseForms
             this.btnRead.TabIndex = 23;
             this.btnRead.Text = "조회";
             this.btnRead.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button5.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button5.Location = new System.Drawing.Point(85, 14);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(70, 31);
-            this.button5.TabIndex = 21;
-            this.button5.Text = "불러오기";
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button4.Location = new System.Drawing.Point(0, 14);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(70, 31);
-            this.button4.TabIndex = 20;
-            this.button4.Text = "내보내기";
-            this.button4.UseVisualStyleBackColor = false;
             // 
             // btnDelete
             // 
@@ -246,6 +189,36 @@ namespace MES_Team3.BaseForms
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(245, 25);
             this.textBox1.TabIndex = 15;
+            // 
+            // button2
+            // 
+            button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            button2.BackgroundImage = global::MES_Team3.Properties.Resources.pngegg;
+            button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            button2.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            button2.ForeColor = System.Drawing.SystemColors.ControlText;
+            button2.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            button2.Location = new System.Drawing.Point(298, 3);
+            button2.Name = "button2";
+            button2.Size = new System.Drawing.Size(32, 29);
+            button2.TabIndex = 33;
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            button1.BackgroundImage = global::MES_Team3.Properties.Resources._refresh_90271;
+            button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            button1.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            button1.ForeColor = System.Drawing.SystemColors.ControlText;
+            button1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            button1.Location = new System.Drawing.Point(9, 5);
+            button1.Name = "button1";
+            button1.Size = new System.Drawing.Size(32, 29);
+            button1.TabIndex = 16;
+            button1.UseVisualStyleBackColor = false;
             // 
             // splitContainer1
             // 
@@ -388,8 +361,6 @@ namespace MES_Team3.BaseForms
         public System.Windows.Forms.Button button11;
         public System.Windows.Forms.Panel panel5;
         public System.Windows.Forms.Button btnRead;
-        public System.Windows.Forms.Button button5;
-        public System.Windows.Forms.Button button4;
         public System.Windows.Forms.Button btnDelete;
         public System.Windows.Forms.Panel panel3;
         public System.Windows.Forms.Button button3;
@@ -402,7 +373,5 @@ namespace MES_Team3.BaseForms
         public System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Panel panel7;
         public System.Windows.Forms.Panel panel4;
-        public System.Windows.Forms.Button button2;
-        public System.Windows.Forms.Button button1;
     }
 }

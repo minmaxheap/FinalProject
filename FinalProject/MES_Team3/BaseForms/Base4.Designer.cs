@@ -29,7 +29,8 @@ namespace MES_Team3.BaseForms
         /// </summary>
         private void InitializeComponent()
         {
-           
+            System.Windows.Forms.Button button2;
+            System.Windows.Forms.Button button1;
             this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -48,8 +49,6 @@ namespace MES_Team3.BaseForms
             this.button11 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -57,8 +56,8 @@ namespace MES_Team3.BaseForms
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            button2 = new System.Windows.Forms.Button();
+            button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -313,8 +312,6 @@ namespace MES_Team3.BaseForms
             // panel1
             // 
             this.panel1.Controls.Add(this.button9);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button6);
             this.panel1.Location = new System.Drawing.Point(12, 304);
             this.panel1.Name = "panel1";
@@ -334,30 +331,6 @@ namespace MES_Team3.BaseForms
             this.button9.TabIndex = 23;
             this.button9.Text = "조회";
             this.button9.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button5.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button5.Location = new System.Drawing.Point(85, 12);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(70, 27);
-            this.button5.TabIndex = 21;
-            this.button5.Text = "불러오기";
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button4.Location = new System.Drawing.Point(0, 12);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(70, 27);
-            this.button4.TabIndex = 20;
-            this.button4.Text = "내보내기";
-            this.button4.UseVisualStyleBackColor = false;
             // 
             // button6
             // 
@@ -490,8 +463,6 @@ namespace MES_Team3.BaseForms
         public System.Windows.Forms.Label label6;
         public System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.Button button9;
-        public System.Windows.Forms.Button button5;
-        public System.Windows.Forms.Button button4;
         public System.Windows.Forms.Button button6;
         public System.Windows.Forms.Panel panel6;
         public System.Windows.Forms.Button button8;
@@ -507,7 +478,5 @@ namespace MES_Team3.BaseForms
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.Panel panel9;
         public System.Windows.Forms.Panel panel7;
-        public System.Windows.Forms.Button button2;
-        public System.Windows.Forms.Button button1;
     }
 }
