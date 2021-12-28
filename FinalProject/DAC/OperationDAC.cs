@@ -168,7 +168,7 @@ where OPERATION_CODE = @OPERATION_CODE";
             }
         }
 
-        public List<OperationProperty> GetOperationSearch(OperationProperty pr)
+        public List<OperationProperty> GetOperationSearch(OperationProperty vo)
         {
             StringBuilder sb = new StringBuilder();
 
@@ -179,30 +179,25 @@ where 1=1");
 
             using (SqlCommand cmd = new SqlCommand())
             {
-                if (!string.IsNullOrWhiteSpace(pr.OPERATION_CODE))
+                if (!string.IsNullOrWhiteSpace(vo.OPERATION_CODE))
                 {
                     sb.Append(" and OPERATION_CODE = @OPERATION_CODE");
-                    cmd.Parameters.AddWithValue("@OPERATION_CODE", pr.OPERATION_CODE);
+                    cmd.Parameters.AddWithValue("@OPERATION_CODE", vo.OPERATION_CODE);
                 }
-                if (!string.IsNullOrWhiteSpace(pr.OPERATION_NAME))
-                {
-                    sb.Append(" and OPERATION_NAME=@OPERATION_NAME");
-                    cmd.Parameters.AddWithValue("@OPERATION_NAME", pr.OPERATION_NAME);
-                }
-                if (!string.IsNullOrWhiteSpace(pr.CHECK_DEFECT_FLAG))
+                if (!string.IsNullOrWhiteSpace(vo.CHECK_DEFECT_FLAG))
                 {
                     sb.Append(" and CHECK_DEFECT_FLAG=@CHECK_DEFECT_FLAG");
-                    cmd.Parameters.AddWithValue("@CHECK_DEFECT_FLAG", pr.CHECK_DEFECT_FLAG);
+                    cmd.Parameters.AddWithValue("@CHECK_DEFECT_FLAG", vo.CHECK_DEFECT_FLAG);
                 }
-                if (!string.IsNullOrWhiteSpace(pr.CHECK_INSPECT_FLAG))
+                if (!string.IsNullOrWhiteSpace(vo.CHECK_INSPECT_FLAG))
                 {
                     sb.Append(" and CHECK_INSPECT_FLAG=@CHECK_INSPECT_FLAG");
-                    cmd.Parameters.AddWithValue("@CHECK_INSPECT_FLAG", pr.CHECK_INSPECT_FLAG);
+                    cmd.Parameters.AddWithValue("@CHECK_INSPECT_FLAG", vo.CHECK_INSPECT_FLAG);
                 }
-                if (!string.IsNullOrWhiteSpace(pr.CHECK_MATERIAL_FLAG))
+                if (!string.IsNullOrWhiteSpace(vo.CHECK_MATERIAL_FLAG))
                 {
                     sb.Append(" and CHECK_MATERIAL_FLAG=@CHECK_MATERIAL_FLAG");
-                    cmd.Parameters.AddWithValue("@CHECK_MATERIAL_FLAG", pr.CHECK_MATERIAL_FLAG);
+                    cmd.Parameters.AddWithValue("@CHECK_MATERIAL_FLAG", vo.CHECK_MATERIAL_FLAG);
                 }
                 cmd.CommandText = sb.ToString();
                 cmd.Connection = conn;

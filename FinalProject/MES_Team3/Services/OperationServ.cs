@@ -48,7 +48,7 @@ namespace MES_Team3
         public List<OperationProperty> GetOperationSearch(OperationProperty pr)
         {
             OperationDAC dac = new OperationDAC();
-            List < OperationProperty > list = dac.GetOperationSearch(pr);
+            List <OperationProperty> list = dac.GetOperationSearch(pr);
             dac.Dispose();
             return list;
         }
