@@ -141,7 +141,7 @@ namespace MES_Team3
 
         }
 
-        public void LoadData()
+        private void LoadData()
         {
             ProductServ serv = new ProductServ();
              mAllList = serv.GetProductsList();
@@ -180,13 +180,17 @@ namespace MES_Team3
 
         private void btnRead_Click(object sender, EventArgs e)
         {
-            ProductProperty search = (ProductProperty)pgSearch.SelectedObject;
-            ProductServ serv = new ProductServ();
-            List<ProductProperty> list = serv.GetProductSearch(search);
-            search.IsSearchPanel = false;
+            if (pgSearch.SelectedObject != null)
+            { ProductProperty search = (ProductProperty)pgSearch.SelectedObject;
+                ProductServ serv = new ProductServ();
+                List<ProductProperty> list = serv.GetProductSearch(search);
+                search.IsSearchPanel = false;
 
-            csDataGridView1.DataSource = null;
-            csDataGridView1.DataSource = list;
+                csDataGridView1.DataSource = null;
+                csDataGridView1.DataSource = list;
+                    
+                   
+            }
 
             //ProductProperty search = (ProductProperty)pgSearch.SelectedObject;
             //var searchList = (from pr in allList
