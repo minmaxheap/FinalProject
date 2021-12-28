@@ -244,6 +244,7 @@
     <None Include="Resources\Data-Find.png" />
     <None Include="Resources\Data-Find41.png" />
     <None Include="Resources\Data-Find1.png" />
+    <None Include="Resources\Data-Find12.png" />
     <Content Include="Resources\twocirclingarrows1_120592.png" />
   </ItemGroup>
   <ItemGroup>

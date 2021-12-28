@@ -79,7 +79,7 @@ namespace MES_Team3.BaseForms
             // button1
             // 
             button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            button1.BackgroundImage = global::MES_Team3.Properties.Resources.Data_Find4;
+            button1.BackgroundImage = global::MES_Team3.Properties.Resources.Data_Find12;
             button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             button1.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -192,7 +192,7 @@ namespace MES_Team3.BaseForms
             this.propertyPanel.Location = new System.Drawing.Point(0, 37);
             this.propertyPanel.Margin = new System.Windows.Forms.Padding(0);
             this.propertyPanel.Name = "propertyPanel";
-            this.propertyPanel.Size = new System.Drawing.Size(355, 621);
+            this.propertyPanel.Size = new System.Drawing.Size(353, 621);
             this.propertyPanel.TabIndex = 29;
             // 
             // panel7

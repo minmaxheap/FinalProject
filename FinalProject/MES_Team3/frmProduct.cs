@@ -74,8 +74,7 @@ namespace MES_Team3
        
             DataGridViewRow dr = csDataGridView1.Rows[e.RowIndex];
             ProductProperty pr = new ProductProperty();
-
-            lblPanel.Text = "▶ 속성";
+            IsSearchPanel = false;
             pr.IsSearchPanel = false;
 
             if (dr.Cells["PRODUCT_CODE"].Value != null && dr.Cells["PRODUCT_CODE"].Value != DBNull.Value)
