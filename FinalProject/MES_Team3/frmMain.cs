@@ -49,9 +49,9 @@ namespace MES_Team3
                 p_menu.Dock = DockStyle.Top;
                 p_menu.Location = new Point(0);
                 p_menu.Margin = new Padding(3,4,3,4);
-                p_menu.Size = new Size(130, 41);
+                p_menu.Size = new Size(155, 41);
                 p_menu.Tag = i.ToString();
-                p_menu.Font = new Font("나눔스퀘어OTF Bold", 12F, FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+               // p_menu.Font = new Font("나눔스퀘어OTF Bold", 11F, FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
                 p_menu.BackColor = Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
                 p_menu.FlatStyle = FlatStyle.Flat;
                 p_menu.UseVisualStyleBackColor = false;
@@ -71,14 +71,14 @@ namespace MES_Team3
             panel1.Location = new Point(3, (dv1.Count * 40));
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(130, 300);
+            panel1.Size = new Size(155, 300);
             flowLayoutPanel1.Controls.Add(this.panel1);
 
             treeView1 = new TreeView();
             treeView1.Dock = DockStyle.Fill;
             treeView1.Location = new Point(0, 0);
             treeView1.Name = "treeView1";
-            treeView1.Size = new Size(125, 300);
+            treeView1.Size = new Size(120, 300);
             treeView1.AfterSelect += TreeView1_AfterSelect;
             panel1.Controls.Add(this.treeView1);
        
