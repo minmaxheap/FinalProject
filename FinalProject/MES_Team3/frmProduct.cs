@@ -310,6 +310,11 @@ namespace MES_Team3
         {
             //csDataGridView1.ClearSelection(); shown이벤트일 때만 clearSelection()이 먹힌다 Load이벤트일 때는 안 먹힌다
         }
+
+        private void csDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 
 
