@@ -19,10 +19,10 @@ namespace MES_Team3
             return list;
         }
 
-        public bool Insert(ProductProperty pr, string sCurrentID)
+        public bool Insert(ProductProperty pr)
         {
             ProductDAC dac = new ProductDAC();
-            bool bResult = dac.Insert(pr, sCurrentID);
+            bool bResult = dac.Insert(pr);
             dac.Dispose();
             return bResult;
         }
@@ -36,11 +36,11 @@ namespace MES_Team3
         }
 
 
-        public bool Update(ProductProperty pr, string sCurrentID)
+        public bool Update(ProductProperty pr)
         {
 
             ProductDAC dac = new ProductDAC();
-            bool bResult = dac.Update(pr, sCurrentID);
+            bool bResult = dac.Update(pr);
             dac.Dispose();
             return bResult;
         }
