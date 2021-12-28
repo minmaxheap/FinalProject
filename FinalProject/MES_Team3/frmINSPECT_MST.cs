@@ -13,15 +13,15 @@ namespace MES_Team3
     {
         InspecServ serv = null;
         string Inspect_id = string.Empty;
-        int rowIndex = -1;
+        int rowIndex;
 
         public frmINSPECT_MST()
         {
             InitializeComponent();
         }
 
-		private void frmINSPECT_MST_Load(object sender, EventArgs e)
-		{
+        private void frmINSPECT_MST_Load(object sender, EventArgs e)
+        {
 
             //INSPECT_ITEM_CODE
             //,[INSPECT_ITEM_NAME]
@@ -49,7 +49,7 @@ namespace MES_Team3
             LoadData();
 
             BSearchPanel = false;
-         INSPECT_MSTVO   vo = new INSPECT_MSTVO();
+            INSPECT_MSTVO vo = new INSPECT_MSTVO();
 
             pgGrid.SelectedObject = vo;
 
@@ -57,14 +57,14 @@ namespace MES_Team3
 
         }
 
-		private void Search_Grid_Click(object sender, EventArgs e)
-		{
+        private void Search_Grid_Click(object sender, EventArgs e)
+        {
 
         }
 
         //검색조건 
-		private void button3_Click(object sender, EventArgs e)
-		{
+        private void button3_Click(object sender, EventArgs e)
+        {
             INSPECT_MSTVO vo = new INSPECT_MSTVO();
             vo.IsSearchPanel = true;
 
@@ -73,8 +73,8 @@ namespace MES_Team3
             pgSearch.PropertySort = PropertySort.NoSort;
         }
 
-		private void btnInsert_Click(object sender, EventArgs e)
-		{
+        private void btnInsert_Click(object sender, EventArgs e)
+        {
             INSPECT_MSTVO save = (INSPECT_MSTVO)pgGrid.SelectedObject;
             InspecServ serv = new InspecServ();
             bool bResult = serv.insert(save);
@@ -100,10 +100,10 @@ namespace MES_Team3
             BSearchPanel = false;
         }
 
-		private void btnDelete_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
             //수정
-            
+
             // Inspect_id 
             INSPECT_MSTVO save = (INSPECT_MSTVO)pgGrid.SelectedObject;
 
@@ -119,11 +119,11 @@ namespace MES_Team3
                 MessageBox.Show("삭제 중 실패되었습니다.");
                 return;
             }
-            
+
         }
 
-		private void csDataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-		{
+        private void csDataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
 
             //이거 안됨 
             if (e.RowIndex < 0)
@@ -167,12 +167,12 @@ namespace MES_Team3
 
         }
 
-		private void btnRead_Click(object sender, EventArgs e)
-		{
+        private void btnRead_Click(object sender, EventArgs e)
+        {
             //SearchVo vo = new SearchVo();
             INSPECT_MSTVO save = (INSPECT_MSTVO)pgSearch.SelectedObject;
 
-            List<INSPECT_MSTVO>  list = serv.GetINSPECT_MST_Search(save);
+            List<INSPECT_MSTVO> list = serv.GetINSPECT_MST_Search(save);
             save.IsSearchPanel = false;
 
             csDataGridView1.DataSource = null;
@@ -180,8 +180,8 @@ namespace MES_Team3
 
         }
 
-		private void btnUpdate_Click(object sender, EventArgs e)
-		{
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
             INSPECT_MSTVO save = (INSPECT_MSTVO)pgGrid.SelectedObject;
             InspecServ serv = new InspecServ();
             bool bResult = serv.Update(save);
@@ -198,20 +198,20 @@ namespace MES_Team3
             }
         }
 
-		private void panel5_Paint(object sender, PaintEventArgs e)
-		{
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
 
-		}
+        }
 
-		private void pgGrid_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)
-		{
+        private void pgGrid_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)
+        {
             if (e.ChangedItem.Label == "C")
             {
                 INSPECT_MSTVO vo = new INSPECT_MSTVO();
                 vo.SPEC_LSL = "";
                 vo.SPEC_USL = "";
             }
-		}
+        }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
@@ -225,39 +225,46 @@ namespace MES_Team3
         }
 
         // Like 부분을 써서 사용해야함 
-		private void button2_Click(object sender, EventArgs e)
-		{
+        private void button2_Click(object sender, EventArgs e)
+        {
 
-		}
-
-		private void panel3_Paint(object sender, PaintEventArgs e)
-		{
-
-		}
-
-		private void btnTxtSearch_Click(object sender, EventArgs e)
-		{
-            string searchValue = txtSearch.Text;
-            
-
-            csDataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            try
-            {
-                foreach (DataGridViewRow row in csDataGridView1.Rows)
-                {
-                    if (row.Cells[1].Value.ToString().Equals(searchValue))
-                    {
-                        rowIndex = row.Index;
-                        csDataGridView1.Rows[rowIndex].Selected = true;
-
-                        break;
-                    }
-                }
-            }
-            catch (Exception exc)
-            {
-                MessageBox.Show(exc.Message);
-            }
         }
-	}
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnTxtSearch_Click(object sender, EventArgs e)
+        {
+            string searchValue = txtSearch.Text;
+            int cr = -1;
+            csDataGridView1.Rows[rowIndex].Selected = false;
+
+            MessageBox.Show("1번째" + rowIndex.ToString());
+            //csDataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            //try
+            //{
+            //    foreach (DataGridViewRow row in csDataGridView1.Rows)
+            //    {
+            //        if (row.Cells["검사항목명"].Value.ToString().Equals(searchValue))
+            //        {
+            //            rowIndex++;
+            //            csDataGridView1.Rows[rowIndex].Selected = true;
+
+            //            break;
+            //        }
+            //    }
+            //    MessageBox.Show("3번째" + rowIndex.ToString());
+
+            //}
+            //catch (Exception exc)
+            //{
+            //    MessageBox.Show(exc.Message);
+            //}
+
+        }
+    }
 }
+
+
