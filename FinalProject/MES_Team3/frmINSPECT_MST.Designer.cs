@@ -73,6 +73,12 @@ namespace MES_Team3
 			// 
 			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
 			// 
+			// panel3
+			// 
+			this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+			this.panel3.Controls.SetChildIndex(this.textBox1, 0);
+			this.panel3.Controls.SetChildIndex(this.button3, 0);
+			// 
 			// button3
 			// 
 			this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -96,10 +102,6 @@ namespace MES_Team3
 			// panel4
 			// 
 			this.panel4.Controls.Add(this.csDataGridView1);
-			// 
-			// button2
-			// 
-			//this.button2.Click += new System.EventHandler(this.button2_Click);
 			// 
 			// pgGrid
 			// 
