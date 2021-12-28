@@ -286,7 +286,7 @@ namespace DAC
 
         public override TypeConverter.StandardValuesCollection GetStandardValues(ITypeDescriptorContext context)
         {
-            return new StandardValuesCollection(new Store_Type().GetSourceList());
+            return new StandardValuesCollection(new FIFO_FLAG().GetSourceList());
         }
     }
 }

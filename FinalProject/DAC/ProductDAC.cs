@@ -144,7 +144,7 @@ WHERE [CODE_TABLE_NAME] ='CM_PRODUCT_TYPE'";
                     productType.Add(reader["PRODUCT_TYPE"].ToString());
 
                 }
-            }
+            } 
 
             return productType;
         }
