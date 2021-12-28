@@ -205,7 +205,12 @@ namespace MES_Team3
 
 		private void pgGrid_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)
 		{
-           
+            if (e.ChangedItem.Label == "C")
+            {
+                INSPECT_MSTVO vo = new INSPECT_MSTVO();
+                vo.SPEC_LSL = "";
+                vo.SPEC_USL = "";
+            }
 		}
 
         private void btnClear_Click(object sender, EventArgs e)
