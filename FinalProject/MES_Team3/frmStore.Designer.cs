@@ -36,8 +36,6 @@ namespace MES_Team3
             this.pgSearch = new System.Windows.Forms.PropertyGrid();
             this.pgProperty = new System.Windows.Forms.PropertyGrid();
             this.csDataGridView1 = new MES_Team3.csDataGridView();
-           // this.panel6.SuspendLayout();
-            this.pnlCrud.SuspendLayout();
             this.pnlTop.SuspendLayout();
             this.pnlProperty.SuspendLayout();
             this.pnlSearch.SuspendLayout();
@@ -46,29 +44,45 @@ namespace MES_Team3
             this.spcBase.Panel2.SuspendLayout();
             this.spcBase.SuspendLayout();
             this.pnlDgv.SuspendLayout();
+            this.pnlCrud.SuspendLayout();
+            this.pnlTopLbl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.csDataGridView1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // pnlProperty
+            // 
+            this.pnlProperty.Controls.Add(this.pgProperty);
+            // 
+            // pnlSearch
+            // 
+            this.pnlSearch.Controls.Add(this.pgSearch);
+            // 
+            // btnPanel
+            // 
+            this.btnPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(152)))), ((int)(((byte)(216)))));
+            this.btnPanel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
+            this.btnPanel.FlatAppearance.BorderSize = 0;
+            this.btnPanel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
+            this.btnPanel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
+            // 
+            // spcBase
+            // 
+            // 
+            // pnlDgv
+            // 
+            this.pnlDgv.Controls.Add(this.csDataGridView1);
             // 
             // btnInsert
             // 
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
-           // this.panel3.Controls.SetChildIndex(this.textBox1, 0);
-            this.pnlTop.Controls.SetChildIndex(this.btnSearchPnl, 0);
             // 
-            // propertyPanel
+            // btnDelete
             // 
-            this.pnlProperty.Controls.Add(this.pgProperty);
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // searchPanel
+            // btnUpdate
             // 
-            this.pnlSearch.Controls.Add(this.pgSearch);
-            // 
-            // splitContainer1
-            // 
-            // 
-            // panel4
-            // 
-            this.pnlDgv.Controls.Add(this.csDataGridView1);
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // pgSearch
             // 
@@ -131,18 +145,18 @@ namespace MES_Team3
             this.csDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.csDataGridView1.RowHeadersWidth = 30;
             this.csDataGridView1.RowTemplate.Height = 23;
-            this.csDataGridView1.Size = new System.Drawing.Size(771, 575);
+            this.csDataGridView1.Size = new System.Drawing.Size(784, 622);
             this.csDataGridView1.TabIndex = 0;
+            this.csDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellClick);
             // 
             // frmStore
             // 
-            this.ClientSize = new System.Drawing.Size(1168, 778);
-            this.Name = "frmStore";
+            this.BIsSearchPanel = true;
             this.BPropertyPanel = true;
             this.BSearchPanel = true;
+            this.ClientSize = new System.Drawing.Size(1168, 778);
+            this.Name = "frmStore";
             this.Load += new System.EventHandler(this.frmStore_Load);
-           // this.panel6.ResumeLayout(false);
-            this.pnlCrud.ResumeLayout(false);
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
             this.pnlProperty.ResumeLayout(false);
@@ -152,6 +166,8 @@ namespace MES_Team3
             ((System.ComponentModel.ISupportInitialize)(this.spcBase)).EndInit();
             this.spcBase.ResumeLayout(false);
             this.pnlDgv.ResumeLayout(false);
+            this.pnlCrud.ResumeLayout(false);
+            this.pnlTopLbl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.csDataGridView1)).EndInit();
             this.ResumeLayout(false);
 
