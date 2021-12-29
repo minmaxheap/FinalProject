@@ -29,11 +29,9 @@ namespace MES_Team3
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Button btnTxtSearch;
+           
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Base3_1));
-            System.Windows.Forms.Button btnReadTop;
-            System.Windows.Forms.Button btnAdd;
-            System.Windows.Forms.Button btnSubtract;
+         
             this.pnlTop = new System.Windows.Forms.Panel();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearchPnl = new System.Windows.Forms.Button();
@@ -77,6 +75,7 @@ namespace MES_Team3
             btnTxtSearch.ForeColor = System.Drawing.SystemColors.ControlText;
             btnTxtSearch.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             btnTxtSearch.Location = new System.Drawing.Point(291, 1);
+         
             btnTxtSearch.Margin = new System.Windows.Forms.Padding(0);
             btnTxtSearch.Name = "btnTxtSearch";
             btnTxtSearch.Size = new System.Drawing.Size(32, 26);
@@ -424,5 +423,9 @@ namespace MES_Team3
         public System.Windows.Forms.Label lblAdd;
         public System.Windows.Forms.Label lblAddList;
         public System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Button btnReadTop;
+        public System.Windows.Forms.Button btnAdd;
+        public System.Windows.Forms.Button btnSubtract;
+        public System.Windows.Forms.Button btnTxtSearch;
     }
 }
