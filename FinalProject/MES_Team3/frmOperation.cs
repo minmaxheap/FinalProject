@@ -186,23 +186,21 @@ namespace MES_Team3
             //        propertyGridControl1.FocusNext();
             //}
             {
-                DataTable form1DT_copy = dt; // form1의 datatable form1DT_copy에 복사
+                DataTable copy_dt = dt; // form1의 datatable form1DT_copy에 복사
                 MainSearchResult = txtSearch.Text;
                 IEnumerable<DataRow> linq_row = null;
 
                 DataTable form1DT_re = new DataTable();
-                form1DT_re = form1DT_copy.Clone();
+                form1DT_re = copy_dt.Clone();
 
                 if (MainSearchResult == "")
                 {
-                    csDataGridView1.DataSource = form1DT_copy;
-
-
+                    csDataGridView1.DataSource = copy_dt;
                 }
                 else
                 {
                     //MainSearchResult가 ""이 아니면 일치하는 데이터 찾는 코드
-                    foreach (DataRow row in form1DT_copy.Rows)
+                    foreach (DataRow row in copy_dt.Rows)
                     {
                         linq_row = from item in row.ItemArray
                                    where item.ToString().ToLower().Equals(MainSearchResult.ToLower())
@@ -219,7 +217,7 @@ namespace MES_Team3
                     //입력된 값이 부분적으로 일치하는 경우 
                     if (form1DT_re.Rows.Count == 0)
                     {
-                        foreach (DataRow row in form1DT_copy.Rows)
+                        foreach (DataRow row in copy_dt.Rows)
                         {
 
                             linq_row = from item in row.ItemArray
