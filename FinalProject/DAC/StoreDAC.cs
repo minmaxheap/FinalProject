@@ -106,14 +106,29 @@ UPDATE_USER_ID= @UPDATE_USER_ID
 where STORE_CODE = @STORE_CODE";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
+                    //cmd.Parameters.AddWithValue("@STORE_CODE", sv.STORE_CODE);
+                    //cmd.Parameters.AddWithValue("@STORE_NAME", sv.STORE_NAME);
+                    //cmd.Parameters.AddWithValue("@STORE_TYPE", sv.STORE_TYPE);
+                    //cmd.Parameters.AddWithValue("@FIFO_FLAG", sv.FIFO_FLAG);
+                    //cmd.Parameters.AddWithValue("@UPDATE_USER_ID", sv.UPDATE_USER_ID);
+                    //int row = cmd.ExecuteNonQuery();
+                    //return row > 0;
+
+
                     cmd.Parameters.AddWithValue("@STORE_CODE", sv.STORE_CODE);
-                    cmd.Parameters.AddWithValue("@STORE_NAME", sv.STORE_NAME);
-                    cmd.Parameters.AddWithValue("@STORE_TYPE", sv.STORE_TYPE);
-                    cmd.Parameters.AddWithValue("@FIFO_FLAG", sv.FIFO_FLAG);
+                    if (sv.STORE_NAME == null)
+                        cmd.Parameters.AddWithValue("@STORE_NAME", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@STORE_NAME", sv.STORE_NAME);
+                    if (sv.STORE_TYPE == null)
+                        cmd.Parameters.AddWithValue("@STORE_TYPE", DBNull.Value);
+                    else cmd.Parameters.AddWithValue("@STORE_TYPE", sv.STORE_TYPE);
+                    if (sv.FIFO_FLAG == null)
+                        cmd.Parameters.AddWithValue("@FIFO_FLAG", DBNull.Value);
+                    else cmd.Parameters.AddWithValue("@FIFO_FLAG", sv.FIFO_FLAG);
                     cmd.Parameters.AddWithValue("@UPDATE_USER_ID", sv.UPDATE_USER_ID);
                     int row = cmd.ExecuteNonQuery();
                     return row > 0;
-
                 }
             }
             catch (Exception err)
