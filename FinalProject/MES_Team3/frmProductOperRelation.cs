@@ -6,7 +6,6 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-
 namespace MES_Team3
 {
     public partial class frmProductOperRelation : MES_Team3.Base3_1

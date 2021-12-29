@@ -5,11 +5,12 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-
+using DAC;
 namespace MES_Team3
 {
 	public partial class frm_INSPECT_ITEM_OPERATION : MES_Team3.BaseForms.Base3
 	{
+		INSPECT_OPServ  serv = null;
 		public frm_INSPECT_ITEM_OPERATION()
 		{
 			InitializeComponent();
@@ -34,6 +35,7 @@ namespace MES_Team3
 		{
 			//OPERATION_CODE, OPERATION_NAME, CHECK_DEFECT_FLAG, CHECK_INSPECT_FLAG, CHECK_MATERIAL_FLAG, CREATE_TIME, CREATE_USER_ID, UPDATE_TIME, UPDATE_USER_ID
 			DataGridViewUtil.SetInitGridView(csDataGridView1);
+			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "순번", "RowNum");
 			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "공정", "OPERATION_CODE");
 			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "공정명", "OPERATION_NAME");
 			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "불량입력", "CHECK_DEFECT_FLAG");
@@ -45,15 +47,33 @@ namespace MES_Team3
 			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 사용자", "UPDATE_USER_ID");
 
 			LoadData();
+
+			INSPECT_OPERATIONProperty pr = new INSPECT_OPERATIONProperty();
+
+			pgdSearch.SelectedObject = pr;
+
+			pgdSearch.PropertySort = PropertySort.NoSort;
 		}
 
 		private void LoadData()
 		{
-			INSPECT_OPServ serv = new INSPECT_OPServ();
+			serv = new INSPECT_OPServ();
 			DataTable dt = serv.Op_GetTable();
 			csDataGridView1.DataSource = null;
 			csDataGridView1.DataSource = dt;
 
+		}
+
+		//조회조건
+		private void btnReadBottom_Click(object sender, EventArgs e)
+		{
+			INSPECT_OPERATIONProperty pr = (INSPECT_OPERATIONProperty)pgdSearch.SelectedObject;
+
+			List<INSPECT_OPERATIONProperty> list = serv.GetSearch(pr);
+			//pr.IsSearchPanel = false;
+
+			csDataGridView1.DataSource = null;
+			csDataGridView1.DataSource = list;
 		}
 	}
 }

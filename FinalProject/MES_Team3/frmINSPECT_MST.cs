@@ -15,6 +15,8 @@ namespace MES_Team3
         string Inspect_id = string.Empty;
         int rowIndex;
 
+        string mUserID = frmLogin.userID;
+
         public frmINSPECT_MST()
         {
             InitializeComponent();
@@ -76,6 +78,7 @@ namespace MES_Team3
         private void btnInsert_Click(object sender, EventArgs e)
         {
             INSPECT_MSTVO save = (INSPECT_MSTVO)pgGrid.SelectedObject;
+            save.CREATE_USER_ID = mUserID;
             InspecServ serv = new InspecServ();
             bool bResult = serv.insert(save);
             if (bResult)
@@ -196,6 +199,7 @@ namespace MES_Team3
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             INSPECT_MSTVO save = (INSPECT_MSTVO)pgGrid.SelectedObject;
+            save.UPDATE_USER_ID = mUserID;
             InspecServ serv = new InspecServ();
             bool bResult = serv.Update(save);
             if (bResult)

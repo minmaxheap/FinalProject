@@ -15,5 +15,13 @@ namespace MES_Team3
 			DataTable dt = dac.Op_GetTable();
 			return dt;
 		}
+
+		public List<INSPECT_OPERATIONProperty> GetSearch(INSPECT_OPERATIONProperty pr)
+		{
+			INSPECT_OPERATIONDAC dac = new INSPECT_OPERATIONDAC();
+			List<INSPECT_OPERATIONProperty> list = dac.GetSearch(pr);
+			dac.Dispose();
+			return list;
+		}
 	}
 }
