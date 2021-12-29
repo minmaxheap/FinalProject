@@ -15,8 +15,8 @@ namespace DAC
         
         public FunctionDAC()
         {
-            conn = new SqlConnection(ConfigurationManager.ConnectionStrings["local"].ConnectionString);
-            //conn = new SqlConnection(ConfigurationManager.ConnectionStrings["project"].ConnectionString);
+           // conn = new SqlConnection(ConfigurationManager.ConnectionStrings["local"].ConnectionString);
+            conn = new SqlConnection(ConfigurationManager.ConnectionStrings["project"].ConnectionString);
             conn.Open();
             
         }

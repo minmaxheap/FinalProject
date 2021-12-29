@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POPprogram", "POPprogram\PO
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAC", "DAC\DAC.csproj", "{13022F90-2D5F-4E81-ABD8-09986126E2E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VO", "VO\VO.csproj", "{221C90D4-B98E-420B-B982-732140CADAF8}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{13022F90-2D5F-4E81-ABD8-09986126E2E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13022F90-2D5F-4E81-ABD8-09986126E2E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13022F90-2D5F-4E81-ABD8-09986126E2E7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{221C90D4-B98E-420B-B982-732140CADAF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{221C90D4-B98E-420B-B982-732140CADAF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{221C90D4-B98E-420B-B982-732140CADAF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{221C90D4-B98E-420B-B982-732140CADAF8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

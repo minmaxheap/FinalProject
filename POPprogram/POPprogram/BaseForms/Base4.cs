@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace POPprogram.BaseForms
+namespace POPprogram
 {
     public partial class Base4 : Form
     {
