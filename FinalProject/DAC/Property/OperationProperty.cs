@@ -65,4 +65,34 @@ namespace DAC
          }
 
     }
+    public class OperationPropertySch
+    {
+        private string operation_code;
+        private string check_defect_flag;
+        private string check_inspect_flag;
+        private string check_material_flag;
+
+        [System.ComponentModel.RefreshProperties(RefreshProperties.All)]
+        [DisplayName("공정")]
+        public string OPERATION_CODE { get { return operation_code; } set { operation_code = value; } }
+
+        [DisplayName("불량 입력")]
+        [TypeConverter(typeof(Check_Value_Converter))]
+        public string CHECK_DEFECT_FLAG { get { return check_defect_flag; } set { check_defect_flag = value; } }
+
+        [DisplayName("검사 데이터 입력")]
+        [TypeConverter(typeof(Check_Value_Converter))]
+        public string CHECK_INSPECT_FLAG { get { return check_inspect_flag; } set { check_inspect_flag = value; } }
+
+        [DisplayName("자재 사용")]
+        [TypeConverter(typeof(Check_Value_Converter))]
+        public string CHECK_MATERIAL_FLAG { get { return check_material_flag; } set { check_material_flag = value; } }
+
+
+        public OperationPropertySch()
+        {
+
+        }
+
+    }
 }

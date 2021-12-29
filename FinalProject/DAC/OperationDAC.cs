@@ -61,12 +61,29 @@ from [dbo].[OPERATION_MST]";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("@OPERATION_CODE", vo.OPERATION_CODE);
-                    cmd.Parameters.AddWithValue("@OPERATION_NAME", vo.OPERATION_NAME);
-                    cmd.Parameters.AddWithValue("@CHECK_DEFECT_FLAG", vo.CHECK_DEFECT_FLAG);
-                    cmd.Parameters.AddWithValue("@CHECK_INSPECT_FLAG", vo.CHECK_INSPECT_FLAG);
-                    cmd.Parameters.AddWithValue("@CHECK_MATERIAL_FLAG", vo.CHECK_MATERIAL_FLAG);
+                    if (vo.OPERATION_NAME == null)
+                        cmd.Parameters.AddWithValue("@OPERATION_NAME", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@OPERATION_NAME", vo.OPERATION_NAME);
+                    if (vo.CHECK_DEFECT_FLAG == null)
+                        cmd.Parameters.AddWithValue("@CHECK_DEFECT_FLAG", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@CHECK_DEFECT_FLAG", vo.CHECK_DEFECT_FLAG);
+                    if (vo.CHECK_INSPECT_FLAG == null)
+                        cmd.Parameters.AddWithValue("@CHECK_INSPECT_FLAG", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@CHECK_INSPECT_FLAG", vo.CHECK_INSPECT_FLAG);
+                    if (vo.CHECK_MATERIAL_FLAG == null)
+                        cmd.Parameters.AddWithValue("@CHECK_MATERIAL_FLAG", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@CHECK_MATERIAL_FLAG", vo.CHECK_MATERIAL_FLAG);
+
                     //cmd.Parameters.AddWithValue("@CREATE_TIME",vo.CREATE_TIME);
-                    cmd.Parameters.AddWithValue("@CREATE_USER_ID", vo.CREATE_USER_ID);
+                    if (vo.CREATE_USER_ID == null)
+                        cmd.Parameters.AddWithValue("@CREATE_USER_ID", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@CREATE_USER_ID", vo.CREATE_USER_ID);
+                    //cmd.Parameters.AddWithValue("@CREATE_USER_ID", vo.CREATE_USER_ID);
                     //cmd.Parameters.AddWithValue("@UPDATE_TIME", vo.UPDATE_TIME);
                     //cmd.Parameters.AddWithValue("@UPDATE_USER_ID", vo.UPDATE_USER_ID);
                     int row = cmd.ExecuteNonQuery();
@@ -102,7 +119,7 @@ where OPERATION_CODE = @OPERATION_CODE ";
             }
         }
 
-        public bool Update(OperationProperty pt)
+        public bool Update(OperationProperty vo)
         {
             try
             {
@@ -116,12 +133,29 @@ UPDATE_USER_ID= @UPDATE_USER_ID
 where OPERATION_CODE = @OPERATION_CODE";
                 using (SqlCommand cmd = new SqlCommand(sql, conn)) 
                 {
-                    cmd.Parameters.AddWithValue("@OPERATION_CODE", pt.OPERATION_CODE);
-                    cmd.Parameters.AddWithValue("@OPERATION_NAME", pt.OPERATION_NAME);
-                    cmd.Parameters.AddWithValue("@CHECK_DEFECT_FLAG", pt.CHECK_DEFECT_FLAG);
-                    cmd.Parameters.AddWithValue("@CHECK_INSPECT_FLAG", pt.CHECK_INSPECT_FLAG);
-                    cmd.Parameters.AddWithValue("@CHECK_MATERIAL_FLAG", pt.CHECK_MATERIAL_FLAG);
-                    cmd.Parameters.AddWithValue("@UPDATE_USER_ID", pt.UPDATE_USER_ID);
+                    cmd.Parameters.AddWithValue("@OPERATION_CODE", vo.OPERATION_CODE);
+                    if (vo.OPERATION_NAME == null)
+                        cmd.Parameters.AddWithValue("@OPERATION_NAME", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@OPERATION_NAME", vo.OPERATION_NAME);
+                    if (vo.CHECK_DEFECT_FLAG == null)
+                        cmd.Parameters.AddWithValue("@CHECK_DEFECT_FLAG", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@CHECK_DEFECT_FLAG", vo.CHECK_DEFECT_FLAG);
+                    if (vo.CHECK_INSPECT_FLAG == null)
+                        cmd.Parameters.AddWithValue("@CHECK_INSPECT_FLAG", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@CHECK_INSPECT_FLAG", vo.CHECK_INSPECT_FLAG);
+                    if (vo.CHECK_MATERIAL_FLAG == null)
+                        cmd.Parameters.AddWithValue("@CHECK_MATERIAL_FLAG", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@CHECK_MATERIAL_FLAG", vo.CHECK_MATERIAL_FLAG);
+
+                    //cmd.Parameters.AddWithValue("@CREATE_TIME",vo.CREATE_TIME);
+                    if (vo.UPDATE_USER_ID == null)
+                        cmd.Parameters.AddWithValue("@UPDATE_USER_ID", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@UPDATE_USER_ID", vo.UPDATE_USER_ID);
                     int row = cmd.ExecuteNonQuery();
                     return row > 0;
 
@@ -134,7 +168,7 @@ where OPERATION_CODE = @OPERATION_CODE";
             }
         }
 
-        public List<OperationProperty> GetOperationSearch(OperationProperty pr)
+        public List<OperationProperty> GetOperationSearch(OperationProperty vo)
         {
             StringBuilder sb = new StringBuilder();
 
@@ -145,30 +179,25 @@ where 1=1");
 
             using (SqlCommand cmd = new SqlCommand())
             {
-                if (!string.IsNullOrWhiteSpace(pr.OPERATION_CODE))
+                if (!string.IsNullOrWhiteSpace(vo.OPERATION_CODE))
                 {
                     sb.Append(" and OPERATION_CODE = @OPERATION_CODE");
-                    cmd.Parameters.AddWithValue("@OPERATION_CODE", pr.OPERATION_CODE);
+                    cmd.Parameters.AddWithValue("@OPERATION_CODE", vo.OPERATION_CODE);
                 }
-                if (!string.IsNullOrWhiteSpace(pr.OPERATION_NAME))
-                {
-                    sb.Append(" and OPERATION_NAME=@OPERATION_NAME");
-                    cmd.Parameters.AddWithValue("@OPERATION_NAME", pr.OPERATION_NAME);
-                }
-                if (!string.IsNullOrWhiteSpace(pr.CHECK_DEFECT_FLAG))
+                if (!string.IsNullOrWhiteSpace(vo.CHECK_DEFECT_FLAG))
                 {
                     sb.Append(" and CHECK_DEFECT_FLAG=@CHECK_DEFECT_FLAG");
-                    cmd.Parameters.AddWithValue("@CHECK_DEFECT_FLAG", pr.CHECK_DEFECT_FLAG);
+                    cmd.Parameters.AddWithValue("@CHECK_DEFECT_FLAG", vo.CHECK_DEFECT_FLAG);
                 }
-                if (!string.IsNullOrWhiteSpace(pr.CHECK_INSPECT_FLAG))
+                if (!string.IsNullOrWhiteSpace(vo.CHECK_INSPECT_FLAG))
                 {
                     sb.Append(" and CHECK_INSPECT_FLAG=@CHECK_INSPECT_FLAG");
-                    cmd.Parameters.AddWithValue("@CHECK_INSPECT_FLAG", pr.CHECK_INSPECT_FLAG);
+                    cmd.Parameters.AddWithValue("@CHECK_INSPECT_FLAG", vo.CHECK_INSPECT_FLAG);
                 }
-                if (!string.IsNullOrWhiteSpace(pr.CHECK_MATERIAL_FLAG))
+                if (!string.IsNullOrWhiteSpace(vo.CHECK_MATERIAL_FLAG))
                 {
                     sb.Append(" and CHECK_MATERIAL_FLAG=@CHECK_MATERIAL_FLAG");
-                    cmd.Parameters.AddWithValue("@CHECK_MATERIAL_FLAG", pr.CHECK_MATERIAL_FLAG);
+                    cmd.Parameters.AddWithValue("@CHECK_MATERIAL_FLAG", vo.CHECK_MATERIAL_FLAG);
                 }
                 cmd.CommandText = sb.ToString();
                 cmd.Connection = conn;

@@ -16,18 +16,22 @@ namespace MES_Team3
     {
         List<ProductProperty> mAllList;
         string msUserID;
-
+        int mirowIndex;
+        List<int> mFindIndex;
+        bool mbFirst;
+        bool mbSearch;
+        string txt;
         public frmProduct()
         {
            
             InitializeComponent();
-          
+            msUserID = frmLogin.userID;
         }
 
         private void frmProduct1_Load(object sender, EventArgs e)
         {
-            frmMain frm = (frmMain)this.MdiParent;
-            msUserID = frm.SUserID;
+            
+           
             DataGridViewUtil.SetInitGridView(csDataGridView1);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "품번", "PRODUCT_CODE");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "품명", "PRODUCT_NAME");
@@ -47,8 +51,10 @@ namespace MES_Team3
             pgProperty.SelectedObject = vo;
 
             pgProperty.PropertySort = PropertySort.NoSort;
+            mbFirst = true;
 
 
+            mbSearch= true;
         }
 
         
@@ -56,8 +62,9 @@ namespace MES_Team3
         {
 
             ProductProperty save = (ProductProperty)pgProperty.SelectedObject;
+            save.CREATE_USER_ID = msUserID;
             ProductServ serv = new ProductServ();
-            bool bResult = serv.Insert(save, msUserID);
+            bool bResult = serv.Insert(save);
             if (bResult)
             {
                 MessageBox.Show("등록되었습니다.");
@@ -109,6 +116,10 @@ namespace MES_Team3
             pgProperty.PropertySort = PropertySort.NoSort;
 
             pgProperty.Visible = true;
+
+
+            
+           
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -130,7 +141,7 @@ namespace MES_Team3
 
         }
 
-        public void LoadData()
+        private void LoadData()
         {
             ProductServ serv = new ProductServ();
              mAllList = serv.GetProductsList();
@@ -152,8 +163,9 @@ namespace MES_Team3
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             ProductProperty save = (ProductProperty)pgProperty.SelectedObject;
+            save.CREATE_USER_ID = msUserID;
             ProductServ serv = new ProductServ();
-            bool bResult = serv.Update(save, msUserID);
+            bool bResult = serv.Update(save);
             if (bResult)
             {
                 MessageBox.Show("수정되었습니다.");
@@ -168,13 +180,17 @@ namespace MES_Team3
 
         private void btnRead_Click(object sender, EventArgs e)
         {
-            ProductProperty search = (ProductProperty)pgSearch.SelectedObject;
-            ProductServ serv = new ProductServ();
-            List<ProductProperty> list = serv.GetProductSearch(search);
-            search.IsSearchPanel = false;
+            if (pgSearch.SelectedObject != null)
+            { ProductProperty search = (ProductProperty)pgSearch.SelectedObject;
+                ProductServ serv = new ProductServ();
+                List<ProductProperty> list = serv.GetProductSearch(search);
+                search.IsSearchPanel = false;
 
-            csDataGridView1.DataSource = null;
-            csDataGridView1.DataSource = list;
+                csDataGridView1.DataSource = null;
+                csDataGridView1.DataSource = list;
+                    
+                   
+            }
 
             //ProductProperty search = (ProductProperty)pgSearch.SelectedObject;
             //var searchList = (from pr in allList
@@ -195,13 +211,11 @@ namespace MES_Team3
             {
                 PropertyDescriptor pd = pgProperty.SelectedGridItem.PropertyDescriptor;
                 pd.ResetValue(pgProperty.SelectedObject);
+
                 ProductProperty pr = new ProductProperty();
                 pr.IsSearchPanel = false;
                 pgProperty.SelectedObject = pr;
                 pgProperty.PropertySort = PropertySort.NoSort;
-                BSearchPanel = true;
-                csDataGridView1.DataSource = null;
-                csDataGridView1.DataSource = mAllList;
             }
         }
 
@@ -213,28 +227,97 @@ namespace MES_Team3
 
         private void btnTxtSearch_Click(object sender, EventArgs e)
         {
-            string txt = txtSearch.Text.ToUpper();
-            //List<ProductProperty> txtSearch = allList.FindAll((x) => x.PRODUCT_CODE.Contains(txt) || x.PRODUCT_NAME.Contains(txt)||//x.PRODUCT_TYPE.Contains(txt) || x.CUSTOMER_CODE.Contains(txt)||x.VENDOR_CODE.Contains(txt) || x.CREATE_USER_ID.Contains(txt)||//x.UPDATE_USER_ID.Contains(txt));
-            // csDataGridView1.DataSource = txtSearch;
-            foreach (DataGridViewRow row in csDataGridView1.Rows)
+            //밑으로 내려가는 건 되는데..
+            
+            if (mbFirst && mbSearch)
             {
-                // Test if the first column of the current row equals
-                // the value in the text box
-                if (row.Cells["PRODUCT_CODE"].Value.ToString().Contains(txt) || row.Cells["PRODUCT_NAME"].Value.ToString().ToUpper().Contains(txt) || row.Cells["PRODUCT_TYPE"].Value.ToString().ToUpper().Contains(txt) || row.Cells["CUSTOMER_CODE"].Value.ToString().ToUpper().Contains(txt) || row.Cells["VENDOR_CODE"].Value.ToString().ToUpper().Contains(txt) || row.Cells["CREATE_USER_ID"].Value.ToString().ToUpper().Contains(txt) || row.Cells["UPDATE_USER_ID"].Value.ToString().ToUpper().Contains(txt))
+                txt = txtSearch.Text.ToUpper();
+                //    //List<ProductProperty> txtSearch = allList.FindAll((x) => x.PRODUCT_CODE.Contains(txt) || x.PRODUCT_NAME.Contains(txt)||//x.PRODUCT_TYPE.Contains(txt) || x.CUSTOMER_CODE.Contains(txt)||x.VENDOR_CODE.Contains(txt) || x.CREATE_USER_ID.Contains(txt)||//x.UPDATE_USER_ID.Contains(txt));
+                //    // csDataGridView1.DataSource = txtSearch;
+
+                mFindIndex = new List<int>();
+                foreach (DataGridViewRow row in csDataGridView1.Rows)
                 {
-                    // we have a match
-                    row.Selected = true;
+
+                    if ((row.Cells["PRODUCT_CODE"].Value != null && row.Cells["PRODUCT_CODE"].Value.ToString().ToUpper().Contains(txt)) ||
+                    (row.Cells["PRODUCT_NAME"].Value != null && row.Cells["PRODUCT_NAME"].Value.ToString().ToUpper().Contains(txt)) ||
+                    (row.Cells["PRODUCT_TYPE"].Value != null && row.Cells["PRODUCT_TYPE"].Value.ToString().ToUpper().Contains(txt)) ||
+                    (row.Cells["CUSTOMER_CODE"].Value != null && row.Cells["CUSTOMER_CODE"].Value.ToString().ToUpper().Contains(txt)) ||
+                    (row.Cells["VENDOR_CODE"].Value != null && row.Cells["VENDOR_CODE"].Value.ToString().ToUpper().Contains(txt)) ||
+                    (row.Cells["CREATE_USER_ID"].Value != null && row.Cells["CREATE_USER_ID"].Value.ToString().ToUpper().Contains(txt)) ||
+                    (row.Cells["UPDATE_USER_ID"].Value != null && row.Cells["UPDATE_USER_ID"].Value.ToString().ToUpper().Contains(txt)))
+                    {
+
+                        //row.Selected = true;
+                        mFindIndex.Add(row.Index);
+                    }
+                    else
+                    {
+                        //row.Selected = false;
+                    }
                 }
-                else
-                {
-                    row.Selected = false;
-                }
+                mbFirst = false;
             }
+            if (mFindIndex == null) { return; }
+            if (mirowIndex == mFindIndex.Count) { MessageBox.Show("검색한 값이 포함된 마지막 행입니다."); return; }
+            if (mFindIndex.Count > 0 && mbFirst == false) { mirowIndex = 0; mbFirst = true; }
+            if (mFindIndex[mirowIndex] == 0)
+            { csDataGridView1.Rows[0].Selected = false; }
+            else { csDataGridView1.Rows[mFindIndex[mirowIndex] - 1].Selected = false; }
+            if (mbFirst)
+            {
+
+                csDataGridView1.Rows[mFindIndex[mirowIndex]].Selected = true;
+                mirowIndex++;
+
+            }
+            mbFirst = true;
+            mbSearch = false;
+        
         }
+
 
         private void btnReadTop_Click(object sender, EventArgs e)
         {
             btnReadBottom.PerformClick();
+        }
+
+
+        private void csDataGridView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            //KeyDown event 왜 안 먹히지..
+
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (mFindIndex == null) { MessageBox.Show("검색 중 오류가 발생했습니다."); return; }
+                if (mirowIndex == mFindIndex[mFindIndex.Count]) { MessageBox.Show("검색한 값이 포함된 마지막 행입니다."); return; }
+                foreach (int irowIndex in mFindIndex)
+                {
+                    mirowIndex = irowIndex;
+                    csDataGridView1.Rows[irowIndex].Selected = true;
+
+                }
+            }
+            else if (e.KeyCode == Keys.Escape)
+            {
+                foreach (DataGridViewRow dr in csDataGridView1.Rows)
+                {
+                    dr.Selected = false;
+                    mFindIndex.Clear();
+                }
+            }
+
+        }
+
+
+        private void frmProduct_Shown(object sender, EventArgs e)
+        {
+            //csDataGridView1.ClearSelection(); shown이벤트일 때만 clearSelection()이 먹힌다 Load이벤트일 때는 안 먹힌다
+        }
+
+        private void csDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 

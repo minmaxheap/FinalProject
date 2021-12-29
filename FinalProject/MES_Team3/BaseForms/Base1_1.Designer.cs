@@ -29,9 +29,9 @@ namespace MES_Team3.BaseForms
         /// </summary>
         private void InitializeComponent()
         {
-          
+           
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Base1_1));
-      
+ 
             this.pnlTop = new System.Windows.Forms.Panel();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearchPnl = new System.Windows.Forms.Button();
@@ -50,8 +50,8 @@ namespace MES_Team3.BaseForms
             this.btnClose = new System.Windows.Forms.Button();
             this.btnReadBottom = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnTxtSearch = new System.Windows.Forms.Button();
-            this.btnReadTop = new System.Windows.Forms.Button();
+            btnTxtSearch = new System.Windows.Forms.Button();
+            btnReadTop = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcBase)).BeginInit();
             this.spcBase.Panel1.SuspendLayout();
@@ -67,15 +67,16 @@ namespace MES_Team3.BaseForms
             this.pnlTop.Controls.Add(this.btnSearchPnl);
             this.pnlTop.Controls.Add(btnTxtSearch);
             this.pnlTop.Controls.Add(btnReadTop);
-            this.pnlTop.Location = new System.Drawing.Point(5, 9);
+            this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTop.Location = new System.Drawing.Point(0, 0);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(410, 30);
+            this.pnlTop.Size = new System.Drawing.Size(1168, 30);
             this.pnlTop.TabIndex = 39;
             // 
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtSearch.Location = new System.Drawing.Point(44, 2);
+            this.txtSearch.Location = new System.Drawing.Point(44, 1);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(244, 26);
             this.txtSearch.TabIndex = 50;
@@ -85,7 +86,7 @@ namespace MES_Team3.BaseForms
             this.btnSearchPnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
             this.btnSearchPnl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSearchPnl.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSearchPnl.Location = new System.Drawing.Point(332, 2);
+            this.btnSearchPnl.Location = new System.Drawing.Point(332, 1);
             this.btnSearchPnl.Name = "btnSearchPnl";
             this.btnSearchPnl.Size = new System.Drawing.Size(73, 26);
             this.btnSearchPnl.TabIndex = 48;
@@ -102,7 +103,7 @@ namespace MES_Team3.BaseForms
             btnTxtSearch.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             btnTxtSearch.ForeColor = System.Drawing.SystemColors.ControlText;
             btnTxtSearch.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            btnTxtSearch.Location = new System.Drawing.Point(294, 2);
+            btnTxtSearch.Location = new System.Drawing.Point(294, 1);
             btnTxtSearch.Name = "btnTxtSearch";
             btnTxtSearch.Size = new System.Drawing.Size(32, 26);
             btnTxtSearch.TabIndex = 49;
@@ -117,7 +118,7 @@ namespace MES_Team3.BaseForms
             btnReadTop.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             btnReadTop.ForeColor = System.Drawing.SystemColors.ControlText;
             btnReadTop.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            btnReadTop.Location = new System.Drawing.Point(5, 2);
+            btnReadTop.Location = new System.Drawing.Point(0, 1);
             btnReadTop.Name = "btnReadTop";
             btnReadTop.Size = new System.Drawing.Size(33, 26);
             btnReadTop.TabIndex = 47;
@@ -129,7 +130,7 @@ namespace MES_Team3.BaseForms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.spcBase.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.spcBase.Location = new System.Drawing.Point(9, 42);
+            this.spcBase.Location = new System.Drawing.Point(-2, 42);
             this.spcBase.Margin = new System.Windows.Forms.Padding(0);
             this.spcBase.Name = "spcBase";
             // 
@@ -143,8 +144,8 @@ namespace MES_Team3.BaseForms
             this.spcBase.Panel2.Controls.Add(this.pnlSearch);
             this.spcBase.Panel2.Controls.Add(this.pnlProperty);
             this.spcBase.Panel2.Controls.Add(this.pnlTopLbl);
-            this.spcBase.Size = new System.Drawing.Size(1150, 660);
-            this.spcBase.SplitterDistance = 786;
+            this.spcBase.Size = new System.Drawing.Size(1170, 660);
+            this.spcBase.SplitterDistance = 799;
             this.spcBase.SplitterWidth = 6;
             this.spcBase.TabIndex = 41;
             // 
@@ -154,17 +155,18 @@ namespace MES_Team3.BaseForms
             this.pnlDgv.Location = new System.Drawing.Point(0, 36);
             this.pnlDgv.Margin = new System.Windows.Forms.Padding(0);
             this.pnlDgv.Name = "pnlDgv";
-            this.pnlDgv.Size = new System.Drawing.Size(784, 622);
+            this.pnlDgv.Size = new System.Drawing.Size(797, 622);
             this.pnlDgv.TabIndex = 18;
             // 
             // lblTitle
             // 
             this.lblTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            this.lblTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblTitle.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblTitle.Location = new System.Drawing.Point(0, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(784, 36);
+            this.lblTitle.Size = new System.Drawing.Size(797, 36);
             this.lblTitle.TabIndex = 17;
             this.lblTitle.Text = "title";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -179,7 +181,7 @@ namespace MES_Team3.BaseForms
             this.pnlSearch.Location = new System.Drawing.Point(0, 37);
             this.pnlSearch.Margin = new System.Windows.Forms.Padding(0);
             this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(357, 621);
+            this.pnlSearch.Size = new System.Drawing.Size(364, 621);
             this.pnlSearch.TabIndex = 31;
             // 
             // pnlProperty
@@ -192,7 +194,7 @@ namespace MES_Team3.BaseForms
             this.pnlProperty.Location = new System.Drawing.Point(0, 37);
             this.pnlProperty.Margin = new System.Windows.Forms.Padding(0);
             this.pnlProperty.Name = "pnlProperty";
-            this.pnlProperty.Size = new System.Drawing.Size(329, 621);
+            this.pnlProperty.Size = new System.Drawing.Size(356, 620);
             this.pnlProperty.TabIndex = 29;
             // 
             // pnlTopLbl
@@ -203,7 +205,7 @@ namespace MES_Team3.BaseForms
             this.pnlTopLbl.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTopLbl.Location = new System.Drawing.Point(0, 0);
             this.pnlTopLbl.Name = "pnlTopLbl";
-            this.pnlTopLbl.Size = new System.Drawing.Size(356, 40);
+            this.pnlTopLbl.Size = new System.Drawing.Size(363, 40);
             this.pnlTopLbl.TabIndex = 0;
             // 
             // btnPanel
@@ -219,7 +221,7 @@ namespace MES_Team3.BaseForms
             this.btnPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPanel.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnPanel.ForeColor = System.Drawing.Color.Transparent;
-            this.btnPanel.Location = new System.Drawing.Point(308, 0);
+            this.btnPanel.Location = new System.Drawing.Point(309, 0);
             this.btnPanel.Margin = new System.Windows.Forms.Padding(0);
             this.btnPanel.Name = "btnPanel";
             this.btnPanel.Size = new System.Drawing.Size(47, 36);
@@ -232,10 +234,11 @@ namespace MES_Team3.BaseForms
             this.lblPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(152)))), ((int)(((byte)(216)))));
+            this.lblPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblPanel.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblPanel.Location = new System.Drawing.Point(0, 0);
             this.lblPanel.Name = "lblPanel";
-            this.lblPanel.Size = new System.Drawing.Size(353, 36);
+            this.lblPanel.Size = new System.Drawing.Size(354, 36);
             this.lblPanel.TabIndex = 29;
             this.lblPanel.Text = "▶ 속성";
             this.lblPanel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -407,7 +410,7 @@ namespace MES_Team3.BaseForms
         public System.Windows.Forms.Button btnUpdate;
         public System.Windows.Forms.Panel pnlTopLbl;
         public System.Windows.Forms.TextBox txtSearch;
-        public System.Windows.Forms.Button btnReadTop;
         public System.Windows.Forms.Button btnTxtSearch;
+        public System.Windows.Forms.Button btnReadTop;
     }
 }
