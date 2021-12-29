@@ -98,7 +98,8 @@ namespace DAC
 			}
 		}
 
-		public List<INSPECT_OPERATIONProperty> GetSearch(INSPECT_OPERATIONProperty pr)
+		//조회조건
+		public DataTable GetSearch(INSPECT_OPERATIONProperty pr)
 		{
 			StringBuilder sb = new StringBuilder();
 			sb.Append(@"select ROW_NUMBER() over(order by(select 1)) as RowNum,OPERATION_CODE, OPERATION_NAME, CHECK_DEFECT_FLAG, CHECK_INSPECT_FLAG, CHECK_MATERIAL_FLAG, CREATE_TIME, CREATE_USER_ID, UPDATE_TIME, UPDATE_USER_ID
@@ -138,7 +139,12 @@ namespace DAC
 				cmd.CommandText = sb.ToString();
 				cmd.Connection = conn;
 
-				return Helper.DataReaderMapToList<INSPECT_OPERATIONProperty>(cmd.ExecuteReader());
+				DataTable dt = new DataTable();
+				using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+				{
+					da.Fill(dt);
+					return dt;
+				}
 			}
 		}
 	}

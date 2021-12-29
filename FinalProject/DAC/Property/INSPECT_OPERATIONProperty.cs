@@ -39,27 +39,27 @@ namespace DAC
 		[Browsable(true)]
 		public string CHECK_MATERIAL_FLAG { get { return Check_Materal; } set { Check_Materal = value; } }
 
-		[Browsable(false)]
-		public int RowNum { get; set; }
+		//[Browsable(false)]
+		//public int RowNum { get; set; }
 
-		[Browsable(false)]
+		//[Browsable(false)]
 
-		public string OPERATION_NAME { get; set; }
+		//public string OPERATION_NAME { get; set; }
 
-		[Browsable(false)]
+		//[Browsable(false)]
 
-		public DateTime CREATE_TIME { get; set; }
+		//public DateTime CREATE_TIME { get; set; }
 
-		[Browsable(false)]
+		//[Browsable(false)]
 
-		public string CREATE_USER_ID { get; set; }
+		//public string CREATE_USER_ID { get; set; }
 
-		[Browsable(false)]
+		//[Browsable(false)]
 
-		public DateTime UPDATE_TIME { get; set; }
+		//public DateTime UPDATE_TIME { get; set; }
 
-		[Browsable(false)]
-		public string UPDATE_USER_ID { get; set; }
+		//[Browsable(false)]
+		//public string UPDATE_USER_ID { get; set; }
 
 
 
@@ -68,9 +68,5 @@ namespace DAC
 		{
 			
 		}
-
-
-
-
 	}
 }
