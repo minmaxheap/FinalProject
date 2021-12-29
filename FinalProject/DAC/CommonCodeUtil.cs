@@ -125,7 +125,7 @@ namespace DAC
             //dac에서 list 받아오기
             List<string> check_value = new List<string>();
             check_value.Add("Y");
-            check_value.Add("");
+            check_value.Add(null);
             return check_value;
         }
     }
