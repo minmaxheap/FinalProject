@@ -1,5 +1,6 @@
 ﻿
 namespace MES_Team3
+{ 
     partial class Base4
     {
         /// <summary>
