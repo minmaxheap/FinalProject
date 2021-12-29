@@ -47,6 +47,7 @@
     <Compile Include="FunctionDAC.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="InspectDAC.cs" />
+    <Compile Include="Property\INSPECT_MSTVO.cs" />
     <Compile Include="StoreDAC.cs" />
     <Compile Include="OperationDAC.cs" />
     <Compile Include="ProductDAC.cs" />
