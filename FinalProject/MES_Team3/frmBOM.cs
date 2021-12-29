@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace MES_Team3
 {
-    public partial class frmBOM : MES_Team3.BaseForms.Base4
+    public partial class frmBOM : MES_Team3.Base4
     {
         public frmBOM()
         {

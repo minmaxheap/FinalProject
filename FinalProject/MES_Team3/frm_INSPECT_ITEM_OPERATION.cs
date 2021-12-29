@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using DAC;
 namespace MES_Team3
 {
-	public partial class frm_INSPECT_ITEM_OPERATION : MES_Team3.BaseForms.Base3
+	public partial class frm_INSPECT_ITEM_OPERATION : MES_Team3.Base3
 	{
 		INSPECT_OPServ  serv = null;
 		public frm_INSPECT_ITEM_OPERATION()
