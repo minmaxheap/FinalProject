@@ -50,8 +50,7 @@ namespace MES_Team3
             vo.IsSearchPanel = false;
             //BIsSearchPanel = false;
             pgdSearch.SelectedObject = vo;
-            
-
+          
            pgdSearch.PropertySort = PropertySort.NoSort;
         }
         private void LoadData()
@@ -63,10 +62,6 @@ namespace MES_Team3
 
         }
 
-        private void btnSearchPnl_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void dgvProducts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -79,7 +74,7 @@ namespace MES_Team3
             dgvAll.DataSource = dtAll;
 
             GetDgvAddData();
-            dgvAdd.Columns["FLOW_SEQ"].ReadOnly = false;
+            //dgvAdd.Columns["FLOW_SEQ"].ReadOnly = false;
      
 
         }
@@ -172,6 +167,9 @@ namespace MES_Team3
             dgvAdd.DataSource = mdtAdd;
         }
 
+        private void btnReadTop_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
