@@ -145,9 +145,29 @@ where PRODUCT_CODE = @PRODUCT_CODE";
             }
         }
 
+        //        public List<string> GetProductType()
+        //        {
+        //            string sql = @"SELECT [KEY_1] as 'PRODUCT_TYPE'
+        //FROM [dbo].[CODE_DATA_MST]
+        //WHERE [CODE_TABLE_NAME] ='CM_PRODUCT_TYPE'";
+        //            SqlCommand cmd = new SqlCommand(sql, conn);
+        //            List<string> productType = new List<string>();
+        //            using (SqlDataReader reader = cmd.ExecuteReader())
+        //            {
+
+        //                while (reader.Read())
+        //                {
+        //                    productType.Add(reader["PRODUCT_TYPE"].ToString());
+
+        //                }
+        //            } 
+
+        //            return productType;
+        //        }
+
         public List<string> GetProductType()
         {
-            string sql = @"SELECT [KEY_1] as 'PRODUCT_TYPE'
+            string sql = @"SELECT concat([KEY_1],'(',[DATA_1],')') as 'PRODUCT_TYPE'
 FROM [dbo].[CODE_DATA_MST]
 WHERE [CODE_TABLE_NAME] ='CM_PRODUCT_TYPE'";
             SqlCommand cmd = new SqlCommand(sql, conn);
@@ -160,7 +180,47 @@ WHERE [CODE_TABLE_NAME] ='CM_PRODUCT_TYPE'";
                     productType.Add(reader["PRODUCT_TYPE"].ToString());
 
                 }
-            } 
+            }
+
+            return productType;
+        }
+        public List<string> GetCustomerCode()
+        {
+            string sql = @"SELECT concat([KEY_1],'(',[DATA_1],')') as 'CUSTOMER_CODE'
+FROM [dbo].[CODE_DATA_MST]
+WHERE [CODE_TABLE_NAME] ='CM_CUSTOMER'";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            List<string> productType = new List<string>();
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+
+                while (reader.Read())
+                {
+                    productType.Add(reader["CUSTOMER_CODE"].ToString());
+
+                }
+            }
+
+            return productType;
+        }
+
+        public List<string> GetVendorCode()
+        {
+            string sql = @"SELECT concat([KEY_1],'(',[DATA_1],')') as 'VENDOR_CODE'
+FROM [dbo].[CODE_DATA_MST]
+WHERE [CODE_TABLE_NAME] ='CM_VENDOR'
+";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            List<string> productType = new List<string>();
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+
+                while (reader.Read())
+                {
+                    productType.Add(reader["VENDOR_CODE"].ToString());
+
+                }
+            }
 
             return productType;
         }
