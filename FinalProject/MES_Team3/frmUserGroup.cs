@@ -161,11 +161,18 @@ namespace MES_Team3
 			//lblPanel.BackColor = Color.FromArgb(82, 152, 216);
 			//btnPanel.BackColor = lblPanel.BackColor;
 			//vo.IsSearchPanel = false;
-			vo.USER_GROUP_CODE = dr.Cells["USER_GROUP_CODE"].Value.ToString();
-			vo.USER_GROUP_NAME = dr.Cells["USER_GROUP_NAME"].Value.ToString();
+			if (dr.Cells["USER_GROUP_CODE"].Value != null && dr.Cells["USER_GROUP_CODE"].Value != DBNull.Value)
+				vo.USER_GROUP_CODE = dr.Cells["USER_GROUP_CODE"].Value.ToString();
+
+			if (dr.Cells["USER_GROUP_NAME"].Value != null && dr.Cells["USER_GROUP_NAME"].Value != DBNull.Value)
+				vo.USER_GROUP_NAME = dr.Cells["USER_GROUP_NAME"].Value.ToString();
 			vo.USER_GROUP_TYPE = dr.Cells["USER_GROUP_TYPE"].Value.ToString();
-			vo.CREATE_USER_ID = dr.Cells["CREATE_TIME"].Value.ToString();
-			vo.UPDATE_USER_ID = dr.Cells["UPDATE_USER_ID"].Value.ToString();
+
+			if (dr.Cells["CREATE_USER_ID"].Value != null && dr.Cells["CREATE_USER_ID"].Value != DBNull.Value)
+				vo.CREATE_USER_ID = dr.Cells["CREATE_USER_ID"].Value.ToString();
+
+			if (dr.Cells["UPDATE_USER_ID"].Value != null && dr.Cells["UPDATE_USER_ID"].Value != DBNull.Value)
+				vo.UPDATE_USER_ID = dr.Cells["UPDATE_USER_ID"].Value.ToString(); ;
 
 			if (dr.Cells["CREATE_TIME"].Value != null && dr.Cells["CREATE_TIME"].Value != DBNull.Value)
 				vo.CREATE_TIME = Convert.ToDateTime(dr.Cells["CREATE_TIME"].Value);
@@ -193,6 +200,17 @@ namespace MES_Team3
 			search.IsSearchPanel = false;
 			pgProperty.SelectedObject = search;
 			pgProperty.PropertySort = PropertySort.NoSort;
+		}
+
+		private void btnPanel_Click(object sender, EventArgs e)
+		{
+
+			UserGroupVO vo = new UserGroupVO();
+			vo.IsSearchPanel = true;
+
+			pgSearch.SelectedObject = vo;
+
+			pgSearch.PropertySort = PropertySort.NoSort;
 		}
 	}
 }

@@ -46,9 +46,6 @@ namespace DAC
 		{ 
 			get 
 			{
-				if (Department == "임원")
-					return "";
-				else
 				return Password;
 			}   
 			set { Password = value; } 

@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace VO
+namespace DAC
 {
 	public class INSPECT_MSTVO
 	{
@@ -96,17 +96,17 @@ namespace VO
 		[DisplayName("LSL")]
 		[Browsable(true)]
 
-		public string SPEC_LSL { get { return spec_lsl; } set { spec_lsl = value; } }
+		public string SPEC_LSL { get { if (value_type == "C") return null; else return spec_lsl; } set { spec_lsl = value; } }
 
 		[DisplayName("Target")]
 		[Browsable(true)]
 
-		public string SPEC_TARGET { get { return spec_target; } set { spec_target = value; } }
+		public string SPEC_TARGET { get {return spec_target; } set { spec_target = value; } }
 
 		[DisplayName("USL")]
 		[Browsable(true)]
 		[ReadOnly(false)]
-		public string SPEC_USL { get { return spec_usl; } set { spec_usl = value; } }
+		public string SPEC_USL { get { if (value_type == "C") return null; else return spec_usl; } set { spec_usl = value; } }
 
 		[DisplayName("생성시간")]
 		[Browsable(true)]

@@ -106,7 +106,7 @@ where USER_ID = @USER_ID";
 		public List<User_MST_Property> GetSearch(User_MST_Property pr)
 		{
 			StringBuilder sb = new StringBuilder();
-			sb.Append(@"select  USER_ID, USER_NAME, USER_GROUP_CODE, USER_PASSWORD, USER_DEPARTMENT, CREATE_TIME, CREATE_USER_ID, UPDATE_TIME, UPDATE_USER_ID 
+			sb.Append(@"select USER_ID, USER_NAME, USER_GROUP_CODE, USER_PASSWORD, USER_DEPARTMENT, CREATE_TIME, CREATE_USER_ID, UPDATE_TIME, UPDATE_USER_ID
 from USER_MST
 where 1=1");
 
@@ -136,6 +136,46 @@ where 1=1");
 				return Helper.DataReaderMapToList<User_MST_Property>(cmd.ExecuteReader());
 			}
 			
+		}
+
+		//공통코드 조회하기(부서)
+		public List<string> GetCode()
+		{
+			string sql = @"SELECT [KEY_1] as 'PRODUCT_TYPE'
+FROM [dbo].[CODE_DATA_MST]
+WHERE [CODE_TABLE_NAME] ='CM_DEPARTMENT'";
+
+			SqlCommand cmd = new SqlCommand(sql, conn);
+			List<string> productType = new List<string>();
+			using (SqlDataReader reader = cmd.ExecuteReader())
+			{
+
+				while (reader.Read())
+				{
+					productType.Add(reader["PRODUCT_TYPE"].ToString());
+
+				}
+			}
+			return productType;
+		}
+
+		//사용자 그룹 아이디 가지고오기
+		public List<string> GetGroupCode()
+		{
+			string sql = @"SELECT USER_GROUP_CODE FROM USER_GROUP_MST";
+
+			SqlCommand cmd = new SqlCommand(sql, conn);
+			List<string> list = new List<string>();
+			using (SqlDataReader reader = cmd.ExecuteReader())
+			{
+
+				while (reader.Read())
+				{
+					list.Add(reader["USER_GROUP_CODE"].ToString());
+
+				}
+			}
+			return list;
 		}
 	}
 }
