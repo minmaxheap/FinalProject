@@ -47,11 +47,11 @@ namespace MES_Team3.BaseForms
             this.pnlCrud = new System.Windows.Forms.Panel();
             this.btnReadBottom = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.pnlAdd = new System.Windows.Forms.Panel();
-            this.lblAdd = new System.Windows.Forms.Label();
             this.pnlAll = new System.Windows.Forms.Panel();
             this.lblAll = new System.Windows.Forms.Label();
             this.lblAddList = new System.Windows.Forms.Label();
+            this.pnlAdd = new System.Windows.Forms.Panel();
+            this.lblAdd = new System.Windows.Forms.Label();
             btnTxtSearch = new System.Windows.Forms.Button();
             btnReadTop = new System.Windows.Forms.Button();
             btnAdd = new System.Windows.Forms.Button();
@@ -68,8 +68,8 @@ namespace MES_Team3.BaseForms
             this.pnlDgv.SuspendLayout();
             this.pnlTopLbl.SuspendLayout();
             this.pnlCrud.SuspendLayout();
-            this.pnlAdd.SuspendLayout();
             this.pnlAll.SuspendLayout();
+            this.pnlAdd.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnTxtSearch
@@ -112,7 +112,7 @@ namespace MES_Team3.BaseForms
             btnAdd.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             btnAdd.ForeColor = System.Drawing.SystemColors.ControlText;
             btnAdd.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            btnAdd.Location = new System.Drawing.Point(526, 266);
+            btnAdd.Location = new System.Drawing.Point(519, 81);
             btnAdd.Margin = new System.Windows.Forms.Padding(0);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new System.Drawing.Size(117, 31);
@@ -129,7 +129,7 @@ namespace MES_Team3.BaseForms
             btnSubtract.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             btnSubtract.ForeColor = System.Drawing.SystemColors.ControlText;
             btnSubtract.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            btnSubtract.Location = new System.Drawing.Point(526, 314);
+            btnSubtract.Location = new System.Drawing.Point(519, 129);
             btnSubtract.Margin = new System.Windows.Forms.Padding(0);
             btnSubtract.Name = "btnSubtract";
             btnSubtract.Size = new System.Drawing.Size(117, 31);
@@ -155,10 +155,10 @@ namespace MES_Team3.BaseForms
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
+            this.splitContainer1.Panel2.Controls.Add(this.pnlAdd);
             this.splitContainer1.Panel2.Controls.Add(btnAdd);
             this.splitContainer1.Panel2.Controls.Add(btnSubtract);
             this.splitContainer1.Panel2.Controls.Add(this.pnlCrud);
-            this.splitContainer1.Panel2.Controls.Add(this.pnlAdd);
             this.splitContainer1.Panel2.Controls.Add(this.pnlAll);
             this.splitContainer1.Panel2.Controls.Add(this.lblAddList);
             this.splitContainer1.Size = new System.Drawing.Size(1168, 667);
@@ -232,7 +232,7 @@ namespace MES_Team3.BaseForms
             this.pnlDgv.Location = new System.Drawing.Point(0, 71);
             this.pnlDgv.Margin = new System.Windows.Forms.Padding(0);
             this.pnlDgv.Name = "pnlDgv";
-            this.pnlDgv.Size = new System.Drawing.Size(402, 263);
+            this.pnlDgv.Size = new System.Drawing.Size(756, 263);
             this.pnlDgv.TabIndex = 36;
             // 
             // lblTitle
@@ -243,7 +243,7 @@ namespace MES_Team3.BaseForms
             this.lblTitle.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblTitle.Location = new System.Drawing.Point(0, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(400, 31);
+            this.lblTitle.Size = new System.Drawing.Size(754, 31);
             this.lblTitle.TabIndex = 17;
             this.lblTitle.Text = "공정 목록";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -258,7 +258,7 @@ namespace MES_Team3.BaseForms
             this.pnlSearch.Location = new System.Drawing.Point(0, 36);
             this.pnlSearch.Margin = new System.Windows.Forms.Padding(0);
             this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(387, 304);
+            this.pnlSearch.Size = new System.Drawing.Size(405, 304);
             this.pnlSearch.TabIndex = 33;
             // 
             // pnlTopLbl
@@ -289,7 +289,7 @@ namespace MES_Team3.BaseForms
             // 
             this.pnlCrud.Controls.Add(this.btnReadBottom);
             this.pnlCrud.Controls.Add(this.btnClose);
-            this.pnlCrud.Location = new System.Drawing.Point(832, 310);
+            this.pnlCrud.Location = new System.Drawing.Point(840, 277);
             this.pnlCrud.Margin = new System.Windows.Forms.Padding(0);
             this.pnlCrud.Name = "pnlCrud";
             this.pnlCrud.Size = new System.Drawing.Size(270, 49);
@@ -331,38 +331,13 @@ namespace MES_Team3.BaseForms
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnClose.UseVisualStyleBackColor = false;
             // 
-            // pnlAdd
-            // 
-            this.pnlAdd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.pnlAdd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlAdd.Controls.Add(this.lblAdd);
-            this.pnlAdd.Location = new System.Drawing.Point(-64, 117);
-            this.pnlAdd.Name = "pnlAdd";
-            this.pnlAdd.Size = new System.Drawing.Size(327, 388);
-            this.pnlAdd.TabIndex = 37;
-            // 
-            // lblAdd
-            // 
-            this.lblAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            this.lblAdd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblAdd.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblAdd.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblAdd.Location = new System.Drawing.Point(0, 0);
-            this.lblAdd.Margin = new System.Windows.Forms.Padding(0);
-            this.lblAdd.Name = "lblAdd";
-            this.lblAdd.Size = new System.Drawing.Size(325, 31);
-            this.lblAdd.TabIndex = 17;
-            this.lblAdd.Text = "할당 공정 목록";
-            this.lblAdd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // pnlAll
             // 
             this.pnlAll.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlAll.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlAll.Controls.Add(this.lblAll);
-            this.pnlAll.Location = new System.Drawing.Point(733, 55);
+            this.pnlAll.Location = new System.Drawing.Point(745, 34);
             this.pnlAll.Name = "pnlAll";
             this.pnlAll.Size = new System.Drawing.Size(422, 242);
             this.pnlAll.TabIndex = 38;
@@ -395,6 +370,31 @@ namespace MES_Team3.BaseForms
             this.lblAddList.Text = "할당 공정 목록";
             this.lblAddList.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pnlAdd
+            // 
+            this.pnlAdd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.pnlAdd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlAdd.Controls.Add(this.lblAdd);
+            this.pnlAdd.Location = new System.Drawing.Point(1, 34);
+            this.pnlAdd.Name = "pnlAdd";
+            this.pnlAdd.Size = new System.Drawing.Size(327, 253);
+            this.pnlAdd.TabIndex = 41;
+            // 
+            // lblAdd
+            // 
+            this.lblAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            this.lblAdd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblAdd.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblAdd.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblAdd.Location = new System.Drawing.Point(0, 0);
+            this.lblAdd.Margin = new System.Windows.Forms.Padding(0);
+            this.lblAdd.Name = "lblAdd";
+            this.lblAdd.Size = new System.Drawing.Size(325, 31);
+            this.lblAdd.TabIndex = 17;
+            this.lblAdd.Text = "할당 공정 목록";
+            this.lblAdd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Base3
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -419,8 +419,8 @@ namespace MES_Team3.BaseForms
             this.pnlDgv.ResumeLayout(false);
             this.pnlTopLbl.ResumeLayout(false);
             this.pnlCrud.ResumeLayout(false);
-            this.pnlAdd.ResumeLayout(false);
             this.pnlAll.ResumeLayout(false);
+            this.pnlAdd.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -433,8 +433,6 @@ namespace MES_Team3.BaseForms
         public System.Windows.Forms.Label lblTitle;
         public System.Windows.Forms.Panel pnlAll;
         public System.Windows.Forms.Label lblAll;
-        public System.Windows.Forms.Panel pnlAdd;
-        public System.Windows.Forms.Label lblAdd;
         public System.Windows.Forms.Label lblAddList;
         public System.Windows.Forms.Label lblPanel;
         public System.Windows.Forms.Panel pnlSearch;
@@ -445,5 +443,7 @@ namespace MES_Team3.BaseForms
         public System.Windows.Forms.Button btnClose;
         public System.Windows.Forms.Button btnReadBottom;
         public System.Windows.Forms.Panel pnlCrud;
+        public System.Windows.Forms.Panel pnlAdd;
+        public System.Windows.Forms.Label lblAdd;
     }
 }

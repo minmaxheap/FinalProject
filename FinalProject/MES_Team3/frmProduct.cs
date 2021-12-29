@@ -16,11 +16,11 @@ namespace MES_Team3
     {
         List<ProductProperty> mAllList;
         string msUserID;
-        int mirowIndex;
-        List<int> mFindIndex;
-        bool mbFirst;
-        bool mbSearch;
-        string txt;
+        //int mirowIndex;
+        //List<int> mFindIndex;
+        //bool mbFirst;
+        //bool mbSearch;
+        //string txt;
         public frmProduct()
         {
            
@@ -38,23 +38,26 @@ namespace MES_Team3
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "품번 유형", "PRODUCT_TYPE");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "고객 코드", "CUSTOMER_CODE");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "업체 코드", "VENDOR_CODE");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성 시간", "CREATE_TIME");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성 시간", "CREATE_TIME", width: 150);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성 사용자", "CREATE_USER_ID");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 시간", "UPDATE_TIME");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 시간", "UPDATE_TIME", width: 150);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 사용자", "UPDATE_USER_ID");
             List<ProductProperty> list = new List<ProductProperty>();
 
             LoadData();
 
             ProductProperty vo = new ProductProperty();
-
+            vo.IsSearchPanel = false;
             pgProperty.SelectedObject = vo;
 
             pgProperty.PropertySort = PropertySort.NoSort;
-            mbFirst = true;
+            //mbFirst = true;
 
 
-            mbSearch= true;
+            //mbSearch= true;
+
+            BIsSearchPanel = false;
+     
         }
 
         
@@ -62,6 +65,12 @@ namespace MES_Team3
         {
 
             ProductProperty save = (ProductProperty)pgProperty.SelectedObject;
+            //if (save.PRODUCT_TYPE != null)
+            //    save.PRODUCT_TYPE = save.PRODUCT_TYPE.Split('(')[0];
+            //if (save.CUSTOMER_CODE != null)
+            //    save.CUSTOMER_CODE = save.CUSTOMER_CODE.Split('(')[0];
+            //if (save.VENDOR_CODE != null)
+            //    save.VENDOR_CODE = save.VENDOR_CODE.Split('(')[0];
             save.CREATE_USER_ID = msUserID;
             ProductServ serv = new ProductServ();
             bool bResult = serv.Insert(save);
@@ -147,6 +156,8 @@ namespace MES_Team3
              mAllList = serv.GetProductsList();
             csDataGridView1.DataSource = null;
             csDataGridView1.DataSource = mAllList;
+            csDataGridView1.Focus();
+            csDataGridView1.Rows[0].Selected = true;
             BSearchPanel = false;
         }
 
@@ -163,7 +174,13 @@ namespace MES_Team3
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             ProductProperty save = (ProductProperty)pgProperty.SelectedObject;
-            save.CREATE_USER_ID = msUserID;
+            //if (save.PRODUCT_TYPE != null)
+            //    save.PRODUCT_TYPE = save.PRODUCT_TYPE.Split('(')[0];
+            //if(save.CUSTOMER_CODE!=null)
+            //    save.CUSTOMER_CODE = save.CUSTOMER_CODE.Split('(')[0];
+            //if (save.VENDOR_CODE != null)
+            //    save.VENDOR_CODE = save.VENDOR_CODE.Split('(')[0];
+            save.UPDATE_USER_ID = msUserID;
             ProductServ serv = new ProductServ();
             bool bResult = serv.Update(save);
             if (bResult)
@@ -227,53 +244,81 @@ namespace MES_Team3
 
         private void btnTxtSearch_Click(object sender, EventArgs e)
         {
-            //밑으로 내려가는 건 되는데..
-            
-            if (mbFirst && mbSearch)
-            {
-                txt = txtSearch.Text.ToUpper();
-                //    //List<ProductProperty> txtSearch = allList.FindAll((x) => x.PRODUCT_CODE.Contains(txt) || x.PRODUCT_NAME.Contains(txt)||//x.PRODUCT_TYPE.Contains(txt) || x.CUSTOMER_CODE.Contains(txt)||x.VENDOR_CODE.Contains(txt) || x.CREATE_USER_ID.Contains(txt)||//x.UPDATE_USER_ID.Contains(txt));
-                //    // csDataGridView1.DataSource = txtSearch;
+            //txt = txtSearch.Text.ToUpper();
+            ////    //List<ProductProperty> txtSearch = allList.FindAll((x) => x.PRODUCT_CODE.Contains(txt) || x.PRODUCT_NAME.Contains(txt)||//x.PRODUCT_TYPE.Contains(txt) || x.CUSTOMER_CODE.Contains(txt)||x.VENDOR_CODE.Contains(txt) || x.CREATE_USER_ID.Contains(txt)||//x.UPDATE_USER_ID.Contains(txt));
+            ////    // csDataGridView1.DataSource = txtSearch;
 
-                mFindIndex = new List<int>();
-                foreach (DataGridViewRow row in csDataGridView1.Rows)
-                {
+            ////mFindIndex = new List<int>();
+            //foreach (DataGridViewRow row in csDataGridView1.Rows)
+            //{
 
-                    if ((row.Cells["PRODUCT_CODE"].Value != null && row.Cells["PRODUCT_CODE"].Value.ToString().ToUpper().Contains(txt)) ||
-                    (row.Cells["PRODUCT_NAME"].Value != null && row.Cells["PRODUCT_NAME"].Value.ToString().ToUpper().Contains(txt)) ||
-                    (row.Cells["PRODUCT_TYPE"].Value != null && row.Cells["PRODUCT_TYPE"].Value.ToString().ToUpper().Contains(txt)) ||
-                    (row.Cells["CUSTOMER_CODE"].Value != null && row.Cells["CUSTOMER_CODE"].Value.ToString().ToUpper().Contains(txt)) ||
-                    (row.Cells["VENDOR_CODE"].Value != null && row.Cells["VENDOR_CODE"].Value.ToString().ToUpper().Contains(txt)) ||
-                    (row.Cells["CREATE_USER_ID"].Value != null && row.Cells["CREATE_USER_ID"].Value.ToString().ToUpper().Contains(txt)) ||
-                    (row.Cells["UPDATE_USER_ID"].Value != null && row.Cells["UPDATE_USER_ID"].Value.ToString().ToUpper().Contains(txt)))
-                    {
+            //    if ((row.Cells["PRODUCT_CODE"].Value != null && row.Cells["PRODUCT_CODE"].Value.ToString().ToUpper().Contains(txt)) ||
+            //    (row.Cells["PRODUCT_NAME"].Value != null && row.Cells["PRODUCT_NAME"].Value.ToString().ToUpper().Contains(txt)) ||
+            //    (row.Cells["PRODUCT_TYPE"].Value != null && row.Cells["PRODUCT_TYPE"].Value.ToString().ToUpper().Contains(txt)) ||
+            //    (row.Cells["CUSTOMER_CODE"].Value != null && row.Cells["CUSTOMER_CODE"].Value.ToString().ToUpper().Contains(txt)) ||
+            //    (row.Cells["VENDOR_CODE"].Value != null && row.Cells["VENDOR_CODE"].Value.ToString().ToUpper().Contains(txt)) ||
+            //    (row.Cells["CREATE_USER_ID"].Value != null && row.Cells["CREATE_USER_ID"].Value.ToString().ToUpper().Contains(txt)) ||
+            //    (row.Cells["UPDATE_USER_ID"].Value != null && row.Cells["UPDATE_USER_ID"].Value.ToString().ToUpper().Contains(txt)))
+            //    {
 
-                        //row.Selected = true;
-                        mFindIndex.Add(row.Index);
-                    }
-                    else
-                    {
-                        //row.Selected = false;
-                    }
-                }
-                mbFirst = false;
-            }
-            if (mFindIndex == null) { return; }
-            if (mirowIndex == mFindIndex.Count) { MessageBox.Show("검색한 값이 포함된 마지막 행입니다."); return; }
-            if (mFindIndex.Count > 0 && mbFirst == false) { mirowIndex = 0; mbFirst = true; }
-            if (mFindIndex[mirowIndex] == 0)
-            { csDataGridView1.Rows[0].Selected = false; }
-            else { csDataGridView1.Rows[mFindIndex[mirowIndex] - 1].Selected = false; }
-            if (mbFirst)
-            {
+            //        row.Selected = true;
+            //        //mFindIndex.Add(row.Index);
+            //    }
+            //    else
+            //    {
+            //        row.Selected = false;
+            //    }
+            //}
 
-                csDataGridView1.Rows[mFindIndex[mirowIndex]].Selected = true;
-                mirowIndex++;
 
-            }
-            mbFirst = true;
-            mbSearch = false;
-        
+            //내가 생각한 흐름
+            //if (mbFirst && mbSearch)
+            //{
+            //    txt = txtSearch.Text.ToUpper();
+            //    //List<ProductProperty> txtSearch = allList.FindAll((x) => x.PRODUCT_CODE.Contains(txt) || x.PRODUCT_NAME.Contains(txt)||//x.PRODUCT_TYPE.Contains(txt) || x.CUSTOMER_CODE.Contains(txt)||x.VENDOR_CODE.Contains(txt) || x.CREATE_USER_ID.Contains(txt)||//x.UPDATE_USER_ID.Contains(txt));
+            //    // csDataGridView1.DataSource = txtSearch;
+
+            //    mFindIndex = new List<int>();
+            //    foreach (DataGridViewRow row in csDataGridView1.Rows)
+            //    {
+
+            //        if ((row.Cells["PRODUCT_CODE"].Value != null && row.Cells["PRODUCT_CODE"].Value.ToString().ToUpper().Contains(txt)) ||
+            //        (row.Cells["PRODUCT_NAME"].Value != null && row.Cells["PRODUCT_NAME"].Value.ToString().ToUpper().Contains(txt)) ||
+            //        (row.Cells["PRODUCT_TYPE"].Value != null && row.Cells["PRODUCT_TYPE"].Value.ToString().ToUpper().Contains(txt)) ||
+            //        (row.Cells["CUSTOMER_CODE"].Value != null && row.Cells["CUSTOMER_CODE"].Value.ToString().ToUpper().Contains(txt)) ||
+            //        (row.Cells["VENDOR_CODE"].Value != null && row.Cells["VENDOR_CODE"].Value.ToString().ToUpper().Contains(txt)) ||
+            //        (row.Cells["CREATE_USER_ID"].Value != null && row.Cells["CREATE_USER_ID"].Value.ToString().ToUpper().Contains(txt)) ||
+            //        (row.Cells["UPDATE_USER_ID"].Value != null && row.Cells["UPDATE_USER_ID"].Value.ToString().ToUpper().Contains(txt)))
+            //        {
+
+            //            row.Selected = true;
+            //            mFindIndex.Add(row.Index);
+            //        }
+            //        else
+            //        {
+            //            row.Selected = false;
+            //        }
+            //    }
+            //    mbFirst = false;
+
+            //    if (mFindIndex == null) { return; }
+            //    if (mirowIndex == mFindIndex.Count) { MessageBox.Show("검색한 값이 포함된 마지막 행입니다."); return; }
+            //    if (mFindIndex.Count > 0 && mbFirst == false) { mirowIndex = 0; mbFirst = true; }
+            //    if (mFindIndex[mirowIndex] == 0)
+            //    { csDataGridView1.Rows[0].Selected = false; }
+            //    else { csDataGridView1.Rows[mFindIndex[mirowIndex] - 1].Selected = false; }
+            //    if (mbFirst)
+            //    {
+
+            //        csDataGridView1.Rows[mFindIndex[mirowIndex]].Selected = true;
+            //        mirowIndex++;
+
+            //    }
+            //    mbFirst = true;
+            //    mbSearch = false;
+            //}
+
+
         }
 
 
@@ -287,24 +332,32 @@ namespace MES_Team3
         {
             //KeyDown event 왜 안 먹히지..
 
+            //if (e.KeyCode == Keys.Enter)
+            //{
+            //    if (mFindIndex == null) { MessageBox.Show("검색 중 오류가 발생했습니다."); return; }
+            //    if (mirowIndex == mFindIndex[mFindIndex.Count]) { MessageBox.Show("검색한 값이 포함된 마지막 행입니다."); return; }
+            //    foreach (int irowIndex in mFindIndex)
+            //    {
+            //        mirowIndex = irowIndex;
+            //        csDataGridView1.Rows[irowIndex].Selected = true;
+
+            //    }
+            //}
+            //else if (e.KeyCode == Keys.Escape)
+            //{
+            //    foreach (DataGridViewRow dr in csDataGridView1.Rows)
+            //    {
+            //        dr.Selected = false;
+            //        mFindIndex.Clear();
+            //    }
+            //}
+
             if (e.KeyCode == Keys.Enter)
             {
-                if (mFindIndex == null) { MessageBox.Show("검색 중 오류가 발생했습니다."); return; }
-                if (mirowIndex == mFindIndex[mFindIndex.Count]) { MessageBox.Show("검색한 값이 포함된 마지막 행입니다."); return; }
-                foreach (int irowIndex in mFindIndex)
-                {
-                    mirowIndex = irowIndex;
-                    csDataGridView1.Rows[irowIndex].Selected = true;
+                MessageBox.Show(csDataGridView1[0, csDataGridView1.CurrentRow.Index].Value.ToString());
 
-                }
-            }
-            else if (e.KeyCode == Keys.Escape)
-            {
-                foreach (DataGridViewRow dr in csDataGridView1.Rows)
-                {
-                    dr.Selected = false;
-                    mFindIndex.Clear();
-                }
+                csDataGridView1.CurrentCell = csDataGridView1[csDataGridView1.CurrentCell.ColumnIndex, csDataGridView1.CurrentCell.RowIndex];
+                e.Handled = true;
             }
 
         }
@@ -312,13 +365,12 @@ namespace MES_Team3
 
         private void frmProduct_Shown(object sender, EventArgs e)
         {
-            //csDataGridView1.ClearSelection(); shown이벤트일 때만 clearSelection()이 먹힌다 Load이벤트일 때는 안 먹힌다
+           // csDataGridView1.ClearSelection();// shown이벤트일 때만 clearSelection()이 먹힌다 Load이벤트일 때는 안 먹힌다
         }
 
-        private void csDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+    
 
-        }
+
     }
 
 

@@ -83,6 +83,8 @@ from [dbo].[PRODUCT_MST]";
             }
         }
 
+      
+
         public bool Delete(ProductProperty pt)
         {
             try
@@ -148,8 +150,8 @@ where PRODUCT_CODE = @PRODUCT_CODE";
         public List<string> GetProductType()
         {
             string sql = @"SELECT [KEY_1] as 'PRODUCT_TYPE'
-FROM [dbo].[CODE_DATA_MST]
-WHERE [CODE_TABLE_NAME] ='CM_PRODUCT_TYPE'";
+        FROM [dbo].[CODE_DATA_MST]
+        WHERE [CODE_TABLE_NAME] ='CM_PRODUCT_TYPE'";
             SqlCommand cmd = new SqlCommand(sql, conn);
             List<string> productType = new List<string>();
             using (SqlDataReader reader = cmd.ExecuteReader())
@@ -160,7 +162,67 @@ WHERE [CODE_TABLE_NAME] ='CM_PRODUCT_TYPE'";
                     productType.Add(reader["PRODUCT_TYPE"].ToString());
 
                 }
-            } 
+            }
+
+            return productType;
+        }
+
+        //        public List<string> GetProductType()
+        //        {
+        //            string sql = @"SELECT concat([KEY_1],'(',[DATA_1],')') as 'PRODUCT_TYPE'
+        //FROM [dbo].[CODE_DATA_MST]
+        //WHERE [CODE_TABLE_NAME] ='CM_PRODUCT_TYPE'";
+        //            SqlCommand cmd = new SqlCommand(sql, conn);
+        //            List<string> productType = new List<string>();
+        //            using (SqlDataReader reader = cmd.ExecuteReader())
+        //            {
+
+        //                while (reader.Read())
+        //                {
+        //                    productType.Add(reader["PRODUCT_TYPE"].ToString());
+
+        //                }
+        //            }
+
+        //            return productType;
+        //        }
+        public List<string> GetCustomerCode()
+        {
+            string sql = @"SELECT [KEY_1]  as 'CUSTOMER_CODE'
+FROM [dbo].[CODE_DATA_MST]
+WHERE [CODE_TABLE_NAME] ='CM_CUSTOMER'";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            List<string> productType = new List<string>();
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+
+                while (reader.Read())
+                {
+                    productType.Add(reader["CUSTOMER_CODE"].ToString());
+
+                }
+            }
+
+            return productType;
+        }
+
+        public List<string> GetVendorCode()
+        {
+            string sql = @"SELECT [KEY_1]  as 'VENDOR_CODE'
+FROM [dbo].[CODE_DATA_MST]
+WHERE [CODE_TABLE_NAME] ='CM_VENDOR'
+";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            List<string> productType = new List<string>();
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+
+                while (reader.Read())
+                {
+                    productType.Add(reader["VENDOR_CODE"].ToString());
+
+                }
+            }
 
             return productType;
         }
@@ -207,6 +269,108 @@ where 1=1");
                 return Helper.DataReaderMapToList<ProductProperty>(cmd.ExecuteReader());
             }
 
+        }
+
+        //operation 부분
+                public DataTable GetOperRelation(string prodCode)
+        {
+            string sql = @"select FLOW_SEQ,r.OPERATION_CODE, m.OPERATION_NAME
+        from [dbo].[PRODUCT_OPERATION_REL] r
+        inner join OPERATION_MST m on m.OPERATION_CODE = r.OPERATION_CODE
+        where PRODUCT_CODE = @PRODUCT_CODE
+        order by FLOW_SEQ";
+            DataTable dt = new DataTable();
+            using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
+            {
+                da.SelectCommand.Parameters.AddWithValue("@PRODUCT_CODE", prodCode);
+                da.Fill(dt);
+                return dt;
+            }
+        }
+
+//        public List<int,string,string> GetOperRelation(string prodCode)
+//        {
+//            string sql = @"select FLOW_SEQ,r.OPERATION_CODE, m.OPERATION_NAME
+//from [dbo].[PRODUCT_OPERATION_REL] r
+//inner join OPERATION_MST m on m.OPERATION_CODE = r.OPERATION_CODE
+//where PRODUCT_CODE = @PRODUCT_CODE
+//order by FLOW_SEQ";
+
+//            SqlCommand cmd = new SqlCommand(sql, conn);
+//             List<string> operRelList = new List<string>();
+//            cmd.Parameters.AddWithValue("@PRODUCT_CODE", prodCode);
+//            using (SqlDataReader reader = cmd.ExecuteReader())
+//            {
+
+//                while (reader.Read())
+//                {
+//                    operRelList.Add(reader["VENDOR_CODE"].ToString());
+
+//                }
+//            }
+
+//            return operRelList;
+//        }
+
+        public bool SetOperation(string prodCode, string userID, List<string> list)
+        {
+            try
+            {
+                int row = 0;
+                string sql = @"
+declare @vSEQ NUMERIC(5,0)
+
+select @vSEQ = max([FLOW_SEQ] )
+from PRODUCT_OPERATION_REL
+where  PRODUCT_CODE =@PRODUCT_CODE
+
+insert into [dbo].[PRODUCT_OPERATION_REL]([PRODUCT_CODE],[OPERATION_CODE],[FLOW_SEQ],[CREATE_TIME] ,[CREATE_USER_ID] ) values(@PRODUCT_CODE,@OPERATION_CODE, ISNULL(@vSEQ+1,1),getdate(), @CREATE_USER_ID); ";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@PRODUCT_CODE", prodCode);
+                    cmd.Parameters.AddWithValue("@CREATE_USER_ID", userID);
+                    foreach (string operCode in list)
+                    {
+                        
+                        cmd.Parameters.AddWithValue("@OPERATION_CODE", operCode);
+                        row = cmd.ExecuteNonQuery();
+                    }
+                    return row > 0;
+
+                }
+            }
+            catch (Exception err)
+            {
+                Debug.WriteLine(err.Message);
+                return false;
+            }
+        }
+
+        public bool DeleteOperation(string prodCode, List<string> list)
+        {
+            try
+            {
+                int row = 0;
+                string sql = @"delete from PRODUCT_OPERATION_REL
+where PRODUCT_CODE = @PRODUCT_CODE and OPERATION_CODE =@OPERATION_CODE ";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@PRODUCT_CODE", prodCode);
+                    foreach (string operCode in list)
+                    {
+                    
+                        cmd.Parameters.AddWithValue("@OPERATION_CODE", operCode);
+                        row = cmd.ExecuteNonQuery();
+                    }
+                    return row > 0;
+
+                }
+            }
+            catch (Exception err)
+            {
+                Debug.WriteLine(err.Message);
+                return false;
+            }
         }
 
         public void Dispose()

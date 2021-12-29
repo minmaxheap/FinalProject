@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using VO;
-
+using DAC;
 namespace MES_Team3
 {
     public partial class frmINSPECT_MST : MES_Team3.BaseForms.Base1_1
@@ -14,6 +14,8 @@ namespace MES_Team3
         InspecServ serv = null;
         string Inspect_id = string.Empty;
         int rowIndex;
+
+        string mUserID = frmLogin.userID;
 
         public frmINSPECT_MST()
         {
@@ -76,6 +78,7 @@ namespace MES_Team3
         private void btnInsert_Click(object sender, EventArgs e)
         {
             INSPECT_MSTVO save = (INSPECT_MSTVO)pgGrid.SelectedObject;
+            save.CREATE_USER_ID = mUserID;
             InspecServ serv = new InspecServ();
             bool bResult = serv.insert(save);
             if (bResult)
@@ -135,26 +138,39 @@ namespace MES_Team3
             Inspect_id = csDataGridView1["INSPECT_ITEM_CODE", e.RowIndex].Value.ToString();
             MessageBox.Show($"{Inspect_id}를 선택하셨습니다.");
 
+            //유효값 처리
 
             DataGridViewRow dr = csDataGridView1.Rows[e.RowIndex];
             INSPECT_MSTVO vo = new INSPECT_MSTVO();
-            lblPanel.Text = "▶ 속성";
+            BIsSearchPanel = false;
             vo.IsSearchPanel = false;
-            vo.INSPECT_ITEM_CODE = dr.Cells["INSPECT_ITEM_CODE"].Value.ToString();
-            vo.INSPECT_ITEM_NAME = dr.Cells["INSPECT_ITEM_NAME"].Value.ToString();
-            vo.VALUE_TYPE = dr.Cells["VALUE_TYPE"].Value.ToString();
-            vo.SPEC_LSL = dr.Cells["SPEC_LSL"].Value.ToString();
-            vo.SPEC_USL = dr.Cells["SPEC_USL"].Value.ToString();
+
+            if (dr.Cells["INSPECT_ITEM_CODE"].Value != null && dr.Cells["INSPECT_ITEM_CODE"].Value != DBNull.Value)
+                vo.INSPECT_ITEM_CODE = dr.Cells["INSPECT_ITEM_CODE"].Value.ToString();
+
+            if (dr.Cells["INSPECT_ITEM_NAME"].Value != null && dr.Cells["INSPECT_ITEM_NAME"].Value != DBNull.Value)
+                vo.INSPECT_ITEM_NAME = dr.Cells["INSPECT_ITEM_NAME"].Value.ToString();
+
+            if (dr.Cells["VALUE_TYPE"].Value != null && dr.Cells["VALUE_TYPE"].Value != DBNull.Value)
+                vo.VALUE_TYPE = dr.Cells["VALUE_TYPE"].Value.ToString();
+
+            if (dr.Cells["SPEC_LSL"].Value != null && dr.Cells["SPEC_LSL"].Value != DBNull.Value)
+                vo.SPEC_LSL = dr.Cells["SPEC_LSL"].Value.ToString();
+
+            if (dr.Cells["SPEC_USL"].Value != null && dr.Cells["SPEC_USL"].Value != DBNull.Value)
+                vo.SPEC_USL = dr.Cells["SPEC_USL"].Value.ToString();
 
             if (dr.Cells["CREATE_TIME"].Value != null && dr.Cells["CREATE_TIME"].Value != DBNull.Value)
                 vo.CREATE_TIME = Convert.ToDateTime(dr.Cells["CREATE_TIME"].Value);
 
-            vo.CREATE_USER_ID = dr.Cells["CREATE_USER_ID"].Value.ToString();
+            if (dr.Cells["CREATE_USER_ID"].Value != null && dr.Cells["CREATE_USER_ID"].Value != DBNull.Value)
+                vo.CREATE_USER_ID = dr.Cells["CREATE_USER_ID"].Value.ToString();
 
             if (dr.Cells["UPDATE_TIME"].Value != null && dr.Cells["UPDATE_TIME"].Value != DBNull.Value)
                 vo.UPDATE_TIME = Convert.ToDateTime(dr.Cells["UPDATE_TIME"].Value);
 
-            vo.UPDATE_USER_ID = dr.Cells["UPDATE_USER_ID"].Value.ToString();
+            if (dr.Cells["UPDATE_USER_ID"].Value != null && dr.Cells["UPDATE_USER_ID"].Value != DBNull.Value)
+                vo.UPDATE_USER_ID = dr.Cells["UPDATE_USER_ID"].Value.ToString();
 
             pgGrid.SelectedObject = vo;
 
@@ -183,6 +199,7 @@ namespace MES_Team3
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             INSPECT_MSTVO save = (INSPECT_MSTVO)pgGrid.SelectedObject;
+            save.UPDATE_USER_ID = mUserID;
             InspecServ serv = new InspecServ();
             bool bResult = serv.Update(save);
             if (bResult)
@@ -264,6 +281,16 @@ namespace MES_Team3
 			}
 
 		}
+
+		private void btnPanel_Click(object sender, EventArgs e)
+		{
+            INSPECT_MSTVO vo = new INSPECT_MSTVO();
+            vo.IsSearchPanel = true;
+
+            pgSearch.SelectedObject = vo;
+
+            pgSearch.PropertySort = PropertySort.NoSort;
+        }
 	}
 }
 

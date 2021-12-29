@@ -29,7 +29,7 @@ namespace POPprogram
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Button button2;
+
             this.panel6 = new System.Windows.Forms.Panel();
             this.button10 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -54,7 +54,7 @@ namespace POPprogram
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            button2 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -64,7 +64,7 @@ namespace POPprogram
             // button2
             // 
             button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            button2.BackgroundImage = global::POPprogram.Properties.Resources.pngegg;
+            // button2.BackgroundImage = global::POPprogram.Properties.Resources.pngegg;
             button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             button2.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -382,5 +382,6 @@ namespace POPprogram
         public System.Windows.Forms.TextBox textBox7;
         public System.Windows.Forms.TextBox textBox8;
         public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Button button2;
     }
 }

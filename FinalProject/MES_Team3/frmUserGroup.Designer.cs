@@ -35,8 +35,6 @@
 			this.pgProperty = new System.Windows.Forms.PropertyGrid();
 			this.pgSearch = new System.Windows.Forms.PropertyGrid();
 			this.csDataGridView1 = new MES_Team3.csDataGridView();
-			//this.panel6.SuspendLayout();
-			this.pnlCrud.SuspendLayout();
 			this.pnlTop.SuspendLayout();
 			this.pnlProperty.SuspendLayout();
 			this.pnlSearch.SuspendLayout();
@@ -45,51 +43,61 @@
 			this.spcBase.Panel2.SuspendLayout();
 			this.spcBase.SuspendLayout();
 			this.pnlDgv.SuspendLayout();
+			this.pnlCrud.SuspendLayout();
+			this.pnlTopLbl.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.csDataGridView1)).BeginInit();
 			this.SuspendLayout();
-			// 
-			// btnInsert
-			// 
-			this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
-			// 
-			// btnClear
-			// 
-			this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-			// 
-			// btnUpdate
-			// 
-			this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-			// 
-			// btnRead
-			// 
-			this.btnReadBottom.Click += new System.EventHandler(this.btnRead_Click);
-			// 
-			// btnDelete
-			// 
-			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-			// 
-			// button3
-			// 
-			this.btnSearchPnl.Click += new System.EventHandler(this.button3_Click);
 			// 
 			// lblTitle
 			// 
 			this.lblTitle.Text = "사용자 그룹 목록";
 			// 
-			// propertyPanel
+			// pnlProperty
 			// 
 			this.pnlProperty.Controls.Add(this.pgProperty);
 			// 
-			// searchPanel
+			// pnlSearch
 			// 
 			this.pnlSearch.Controls.Add(this.pgSearch);
 			// 
-			// splitContainer1
+			// btnPanel
+			// 
+			this.btnPanel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
+			this.btnPanel.FlatAppearance.BorderSize = 0;
+			this.btnPanel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
+			this.btnPanel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
+			this.btnPanel.Click += new System.EventHandler(this.btnPanel_Click);
+			// 
+			// spcBase
 			// 
 			// 
-			// panel4
+			// pnlDgv
 			// 
 			this.pnlDgv.Controls.Add(this.csDataGridView1);
+			// 
+			// btnSearchPnl
+			// 
+			this.btnSearchPnl.Click += new System.EventHandler(this.button3_Click);
+			// 
+			// btnInsert
+			// 
+			this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
+			// 
+			// btnDelete
+			// 
+			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+			// 
+			// btnClear
+			// 
+			this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+			// 
+			// btnReadBottom
+			// 
+			this.btnReadBottom.Click += new System.EventHandler(this.btnRead_Click);
+			// 
+			// btnUpdate
+			// 
+			this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
 			// 
 			// pgProperty
 			// 
@@ -146,19 +154,18 @@
 			this.csDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
 			this.csDataGridView1.RowHeadersWidth = 30;
 			this.csDataGridView1.RowTemplate.Height = 23;
-			this.csDataGridView1.Size = new System.Drawing.Size(771, 575);
+			this.csDataGridView1.Size = new System.Drawing.Size(797, 622);
 			this.csDataGridView1.TabIndex = 0;
 			this.csDataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellDoubleClick);
 			// 
 			// frmUserGroup
 			// 
-			this.ClientSize = new System.Drawing.Size(1168, 778);
-			this.Name = "frmUserGroup";
+			this.BIsSearchPanel = true;
 			this.BPropertyPanel = true;
 			this.BSearchPanel = true;
+			this.ClientSize = new System.Drawing.Size(1168, 778);
+			this.Name = "frmUserGroup";
 			this.Load += new System.EventHandler(this.frmUserGroup_Load);
-			//this.panel6.ResumeLayout(false);
-			this.pnlCrud.ResumeLayout(false);
 			this.pnlTop.ResumeLayout(false);
 			this.pnlTop.PerformLayout();
 			this.pnlProperty.ResumeLayout(false);
@@ -168,6 +175,8 @@
 			((System.ComponentModel.ISupportInitialize)(this.spcBase)).EndInit();
 			this.spcBase.ResumeLayout(false);
 			this.pnlDgv.ResumeLayout(false);
+			this.pnlCrud.ResumeLayout(false);
+			this.pnlTopLbl.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.csDataGridView1)).EndInit();
 			this.ResumeLayout(false);
 

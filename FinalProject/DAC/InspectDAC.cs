@@ -183,38 +183,26 @@ where 1=1");
 			}
 
 		}
-		public DataTable GetSearchTable(INSPECT_MSTVO vo)
+
+		//공통코드 불러오기
+		public List<string> GetCode()
 		{
-			StringBuilder sb = new StringBuilder();
-
-			sb.Append(@"select INSPECT_ITEM_CODE, INSPECT_ITEM_NAME, VALUE_TYPE, SPEC_LSL, SPEC_TARGET, SPEC_USL, CREATE_TIME, CREATE_USER_ID, UPDATE_TIME, UPDATE_USER_ID
-from [dbo].[INSPECT_ITEM_MST]
-where 1=1");
-
-			if (!string.IsNullOrWhiteSpace(vo.INSPECT_ITEM_CODE))
+			string sql = @"SELECT [KEY_1] as 'PRODUCT_TYPE'
+FROM [dbo].[CODE_DATA_MST]
+WHERE [CODE_TABLE_NAME] ='CM_VALUE_TYPE'";
+			SqlCommand cmd = new SqlCommand(sql, conn);
+			List<string> productType = new List<string>();
+			using (SqlDataReader reader = cmd.ExecuteReader())
 			{
-				sb.Append(" and INSPECT_ITEM_CODE = @INSPECT_ITEM_CODE");
+
+				while (reader.Read())
+				{
+					productType.Add(reader["PRODUCT_TYPE"].ToString());
+					
+				}
 			}
-
-			if (!string.IsNullOrWhiteSpace(vo.VALUE_TYPE))
-			{
-				sb.Append(" and VALUE_TYPE = @VALUE_TYPE");
-			}
-
-
-			using (SqlCommand cmd = new SqlCommand(sb.ToString(), conn))
-			{
-				cmd.Parameters.AddWithValue("@INSPECT_ITEM_CODE",vo.INSPECT_ITEM_CODE );
-				cmd.Parameters.AddWithValue("@VALUE_TYPE", vo.VALUE_TYPE);
-
-				SqlDataAdapter da = new SqlDataAdapter(cmd);
-				DataTable dt = new DataTable();
-				da.Fill(dt);
-
-				return dt;
-				//return Helper.DataReaderMapToList<Search_INSPEC_MSEVO>(cmd.ExecuteReader());
-			}
-
+			return productType;
 		}
+		
 	}
 }
