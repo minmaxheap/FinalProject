@@ -16,11 +16,11 @@ namespace MES_Team3
     {
         List<ProductProperty> mAllList;
         string msUserID;
-        int mirowIndex;
-        List<int> mFindIndex;
-        bool mbFirst;
-        bool mbSearch;
-        string txt;
+        //int mirowIndex;
+        //List<int> mFindIndex;
+        //bool mbFirst;
+        //bool mbSearch;
+        //string txt;
         public frmProduct()
         {
            
@@ -51,10 +51,10 @@ namespace MES_Team3
             pgProperty.SelectedObject = vo;
 
             pgProperty.PropertySort = PropertySort.NoSort;
-            mbFirst = true;
+            //mbFirst = true;
 
 
-            mbSearch= true;
+            //mbSearch= true;
 
             BIsSearchPanel = false;
      
