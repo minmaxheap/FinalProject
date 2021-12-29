@@ -72,6 +72,10 @@ namespace MES_Team3
             // 
             this.pnlDgv.Controls.Add(this.csDataGridView1);
             // 
+            // btnSearchPnl
+            // 
+            this.btnSearchPnl.Click += new System.EventHandler(this.btnSearchPnl_Click);
+            // 
             // btnInsert
             // 
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
@@ -79,6 +83,10 @@ namespace MES_Team3
             // btnDelete
             // 
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnUpdate
             // 
@@ -145,7 +153,7 @@ namespace MES_Team3
             this.csDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.csDataGridView1.RowHeadersWidth = 30;
             this.csDataGridView1.RowTemplate.Height = 23;
-            this.csDataGridView1.Size = new System.Drawing.Size(784, 622);
+            this.csDataGridView1.Size = new System.Drawing.Size(797, 622);
             this.csDataGridView1.TabIndex = 0;
             this.csDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellClick);
             // 

@@ -49,38 +49,64 @@ namespace DAC
 		[TypeConverter(typeof(FifoFlagConverter))]
 		public string FIFO_FLAG { get { return fifo_flag; } set { fifo_flag = value; } }
 
-		[DisplayName("생성시간")]
+		//[DisplayName("생성시간")]
+		//[Browsable(true)]
+
+		//public DateTime CREATE_TIME
+		//{
+		//	get { return create_time; }
+		//	set { create_time = value; }
+		//}
+
+		//[DisplayName("생성 사용자")]
+		//[Browsable(true)]
+
+		//public string CREATE_USER_ID
+		//{
+		//	get { return create_user_id; }
+		//	set { create_user_id = value; }
+		//}
+		//[DisplayName("변경시간")]
+		//[Browsable(true)]
+
+		//public DateTime UPDATE_TIME
+		//{
+		//	get { return update_time; }
+		//	set { update_time = value; }
+		//}
+		//[DisplayName("변경사용자")]
+		//[Browsable(true)]
+
+		//public string UPDATE_USER_ID
+		//{
+		//	get { return update_user_id; }
+		//	set { update_user_id = value; }
+		//}
+
+		[DisplayName("생성 시간")]
 		[Browsable(true)]
-
-		public DateTime CREATE_TIME
-		{
-			get { return create_time; }
-			set { create_time = value; }
-		}
-
+		[ReadOnly(true)]
+		public DateTime CREATE_TIME { get { return create_time; } set { create_time = value; } }
 		[DisplayName("생성 사용자")]
 		[Browsable(true)]
-
-		public string CREATE_USER_ID
-		{
-			get { return create_user_id; }
-			set { create_user_id = value; }
-		}
-		[DisplayName("변경시간")]
+		[ReadOnly(true)]
+		public string CREATE_USER_ID { get { return create_user_id; } set { create_user_id = value; } }
+		[DisplayName("변경 시간")]
 		[Browsable(true)]
+		[ReadOnly(true)]
+		public DateTime UPDATE_TIME { get { return update_time; } set { update_time = value; } }
 
-		public DateTime UPDATE_TIME
-		{
-			get { return update_time; }
-			set { update_time = value; }
-		}
-		[DisplayName("변경사용자")]
+		[DisplayName("변경 사용자")]
 		[Browsable(true)]
-
+		[ReadOnly(true)]
 		public string UPDATE_USER_ID
 		{
 			get { return update_user_id; }
-			set { update_user_id = value; }
+			set
+			{
+				update_user_id = value;
+
+			}
 		}
 
 		[Browsable(false)]

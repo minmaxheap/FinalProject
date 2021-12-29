@@ -15,7 +15,8 @@ namespace MES_Team3
     public partial class frmStore : MES_Team3.BaseForms.Base1_1
     {
         List<StoreVO> allList;
-        string msUserID;
+        //string msUserID;
+        string msUserID = frmLogin.userID;
         public frmStore()
         {
             InitializeComponent();
@@ -47,6 +48,7 @@ namespace MES_Team3
             StoreVO vo = new StoreVO();
 
             pgProperty.SelectedObject = vo;
+            vo.IsSearchPanel = false;
 
             pgProperty.PropertySort = PropertySort.NoSort;
 
@@ -55,6 +57,7 @@ namespace MES_Team3
         private void btnInsert_Click(object sender, EventArgs e)
         {
             StoreVO save = (StoreVO)pgProperty.SelectedObject;
+            save.CREATE_USER_ID = msUserID;
             StoreServ serv = new StoreServ();
             bool bResult = serv.Insert(save);
             if (bResult)
@@ -89,7 +92,7 @@ namespace MES_Team3
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             StoreVO save = (StoreVO)pgProperty.SelectedObject;
-            //save.CREATE_USER_ID = msUserID;   
+            save.UPDATE_USER_ID = msUserID;
             StoreServ serv = new StoreServ();
             bool bResult = serv.Update(save);
             if (bResult)
@@ -140,6 +143,30 @@ namespace MES_Team3
             pgProperty.Visible = true;
 
 
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            if (pgProperty.SelectedGridItem != null)
+            {
+                PropertyDescriptor pd = pgProperty.SelectedGridItem.PropertyDescriptor;
+                pd.ResetValue(pgProperty.SelectedObject);
+
+                StoreVO sv = new StoreVO();
+                sv.IsSearchPanel = false;
+                pgProperty.SelectedObject = sv;
+                pgProperty.PropertySort = PropertySort.NoSort;
+            }
+        }
+
+        private void btnSearchPnl_Click(object sender, EventArgs e)
+        {
+
+            StoreVO search = new StoreVO();
+            search.IsSearchPanel = true;
+            pgSearch.SelectedObject = search;
+            pgSearch.PropertySort = PropertySort.NoSort;
+            // propertyPanel.Visible = false;
         }
     }
 }
