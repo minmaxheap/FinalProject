@@ -16,12 +16,12 @@ namespace MES_Team3
 			return dt;
 		}
 
-		public List<INSPECT_OPERATIONProperty> GetSearch(INSPECT_OPERATIONProperty pr)
+		public DataTable GetSearch(INSPECT_OPERATIONProperty pr)
 		{
 			INSPECT_OPERATIONDAC dac = new INSPECT_OPERATIONDAC();
-			List<INSPECT_OPERATIONProperty> list = dac.GetSearch(pr);
+			DataTable dt  = dac.GetSearch(pr);
 			dac.Dispose();
-			return list;
+			return dt;
 		}
 	}
 }

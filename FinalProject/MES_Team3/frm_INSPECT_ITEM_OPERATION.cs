@@ -69,11 +69,11 @@ namespace MES_Team3
 		{
 			INSPECT_OPERATIONProperty pr = (INSPECT_OPERATIONProperty)pgdSearch.SelectedObject;
 
-			List<INSPECT_OPERATIONProperty> list = serv.GetSearch(pr);
+			//List<INSPECT_OPERATIONProperty> list = serv.GetSearch(pr);
 			//pr.IsSearchPanel = false;
 
 			csDataGridView1.DataSource = null;
-			csDataGridView1.DataSource = list;
+			//csDataGridView1.DataSource = list;
 		}
 	}
 }

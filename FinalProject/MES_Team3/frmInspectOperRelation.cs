@@ -53,13 +53,35 @@ namespace MES_Team3
 		//조회조건
 		private void btnReadBottom_Click(object sender, EventArgs e)
 		{
+		}
+
+		private void btnReadBottom_Click_1(object sender, EventArgs e)
+		{
+
 			INSPECT_OPERATIONProperty pr = (INSPECT_OPERATIONProperty)pgdSearch.SelectedObject;
 
-			List<INSPECT_OPERATIONProperty> list = serv.GetSearch(pr);
+			DataTable dt = serv.GetSearch(pr);
 			//pr.IsSearchPanel = false;
 
 			csDataGridView1.DataSource = null;
-			csDataGridView1.DataSource = list;
+			csDataGridView1.DataSource = dt;
+		}
+
+		private void csDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+
+		}
+
+		private void btnReadTop_Click(object sender, EventArgs e)
+		{
+
+			INSPECT_OPERATIONProperty pr = (INSPECT_OPERATIONProperty)pgdSearch.SelectedObject;
+
+			DataTable dt = serv.GetSearch(pr);
+			//pr.IsSearchPanel = false;
+
+			csDataGridView1.DataSource = null;
+			csDataGridView1.DataSource = dt;
 		}
 	}
 }
