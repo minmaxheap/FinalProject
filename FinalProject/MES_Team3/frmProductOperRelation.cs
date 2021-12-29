@@ -12,9 +12,12 @@ namespace MES_Team3
     {
         List<ProductProperty> mAllList;
         string msprodCode;
+        string msUserID;
+        DataTable mdtAdd;
         public frmProductOperRelation()
         {
             InitializeComponent();
+            msUserID = frmLogin.userID;
         }
 
         private void frmProductOperRelation_Load(object sender, EventArgs e)
@@ -67,19 +70,16 @@ namespace MES_Team3
 
         private void dgvProducts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            msprodCode = dgvProducts["PRODUCT_CODE", e.RowIndex].Value.ToString();
 
             OperationServ operServ = new OperationServ();
             DataTable dtAll = operServ.GetOperationList();
             dgvAll.DataSource = null;
             dgvAll.DataSource = dtAll;
 
-            ProductServ prodServ = new ProductServ();
-            DataTable dtAdd = prodServ.GetOperRelation(dgvProducts["PRODUCT_CODE",e.RowIndex].Value.ToString());
-            dgvAdd.DataSource = null;
-            dgvAdd.DataSource = dtAdd;
-
+            GetDgvAddData();
             dgvAdd.Columns["FLOW_SEQ"].ReadOnly = false;
-            msprodCode = dgvProducts["PRODUCT_CODE", e.RowIndex].Value.ToString();
+     
 
         }
 
@@ -106,31 +106,45 @@ namespace MES_Team3
         private void btnAdd_Click(object sender, EventArgs e)
         {
             List<string> list = new List<string>();
-          
+            bool bResult = false;
+
+
             foreach (DataGridViewRow dr in dgvAll.SelectedRows)
             {
+               
+                //if(mdtAdd.Rows.find (dr.Cells["OPERATION_CODE"].Value.ToString())) 어떻게 값 비교를 할까
                 list.Add(dr.Cells["OPERATION_CODE"].Value.ToString());
 
             }
-            ProductServ serv = new ProductServ();
-            bool bResult = serv.SetOpertation(msprodCode,list); //이미 들어갔던 공정 못 들어가게 막기 & 한 번에 여러개 넣도록 수정하기
-            if(bResult)
+            if (list.Count > 0)
             {
-                //dgvadd 재로딩
+                ProductServ serv = new ProductServ();
+                bResult = serv.SetOpertation(msprodCode, msUserID, list);
+                if (bResult)
+                {
+                    //dgvadd 재로딩
+
+                }
+                else
+                {
+                    //메시지 박스
+                    MessageBox.Show("할당 중 실패하였습니다.");
+                }
                 GetDgvAddData();
             }
             else
             {
-                //메시지 박스
-                MessageBox.Show("오류가 발생했습니다.");
+                MessageBox.Show("이미 들어간 공정은 넣을 수 없습니다.");
             }
+            //이미 들어갔던 공정 못 들어가게 막기 & 한 번에 여러개 넣도록 수정하기(?) 한 개씩 넣어도 되나? 그럼 여러개 선택 못하도록 막아야 하구!
+       
         }
 
         private void btnSubtract_Click(object sender, EventArgs e)
         {
             List<string> list = new List<string>();
 
-            foreach (DataGridViewRow dr in dgvAll.SelectedRows)
+            foreach (DataGridViewRow dr in dgvAdd.SelectedRows)
             {
                 list.Add(dr.Cells["OPERATION_CODE"].Value.ToString());
 
@@ -140,21 +154,41 @@ namespace MES_Team3
             if (bResult)
             {
                 //dgvadd 재로딩
-                GetDgvAddData();
+              
             }
             else
             {
                 //메시지 박스
-                MessageBox.Show("오류가 발생했습니다.");
+                MessageBox.Show("할당 제거 중 실패하였습니다.");
             }
+            GetDgvAddData();
         }
 
         private void GetDgvAddData()
         {
             ProductServ prodServ = new ProductServ();
-            DataTable dtAdd = prodServ.GetOperRelation(msprodCode);
+             mdtAdd = prodServ.GetOperRelation(msprodCode);
             dgvAdd.DataSource = null;
-            dgvAdd.DataSource = dtAdd;
+            dgvAdd.DataSource = mdtAdd;
         }
+
+        //private string GetItem(string GUBUN, string CODE)
+        //{
+        //    //try
+        //    //{
+        //    //    var rowColl = mdtAdd.AsEnumerable(); // dataTable
+
+        //    //    string name = (from r in rowColl
+        //    //                   where r.Field(mdtAdd.Columns["OPERATION_CODE"].ColumnName) == CODE
+        //    //                   select r.Field(GUBUN)).First();
+
+        //    //    return name;
+        //    //}
+        //    //catch
+        //    //{
+        //    //    return "";
+        //    //}
+        //}
+
     }
 }

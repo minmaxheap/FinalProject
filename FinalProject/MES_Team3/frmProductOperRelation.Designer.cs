@@ -63,7 +63,7 @@ namespace MES_Team3
             // 
             // btnSearchPnl
             // 
-            this.btnSearchPnl.Click += new System.EventHandler(this.btnSearchPnl_Click);
+            //this.btnSearchPnl.Click += new System.EventHandler(this.btnSearchPnl_Click);
             // 
             // spcBase
             // 
