@@ -70,6 +70,7 @@ namespace MES_Team3
 
         private void dgvProducts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0) return;
             msprodCode = dgvProducts["PRODUCT_CODE", e.RowIndex].Value.ToString();
 
             OperationServ operServ = new OperationServ();
@@ -108,11 +109,10 @@ namespace MES_Team3
             List<string> list = new List<string>();
             bool bResult = false;
 
-
             foreach (DataGridViewRow dr in dgvAll.SelectedRows)
             {
-               
-                //if(mdtAdd.Rows.find (dr.Cells["OPERATION_CODE"].Value.ToString())) 어떻게 값 비교를 할까
+                DataRow[] drArray = mdtAdd.Select($"OPERATION_CODE='{dr.Cells["OPERATION_CODE"].Value.ToString()}'");
+                if(!(drArray.Length>0))
                 list.Add(dr.Cells["OPERATION_CODE"].Value.ToString());
 
             }
@@ -136,7 +136,7 @@ namespace MES_Team3
             {
                 MessageBox.Show("이미 들어간 공정은 넣을 수 없습니다.");
             }
-            //이미 들어갔던 공정 못 들어가게 막기 & 한 번에 여러개 넣도록 수정하기(?) 한 개씩 넣어도 되나? 그럼 여러개 선택 못하도록 막아야 하구!
+            //이미 들어갔던 공정 못 들어가게 막기(성공) & 한 번에 여러개 넣도록 수정하기(?) 한 개씩 넣어도 되나? 그럼 양쪽 그리드 모두 multiselection = false; (이부분은 같이 이야기해보기)
        
         }
 
@@ -172,23 +172,6 @@ namespace MES_Team3
             dgvAdd.DataSource = mdtAdd;
         }
 
-        //private string GetItem(string GUBUN, string CODE)
-        //{
-        //    //try
-        //    //{
-        //    //    var rowColl = mdtAdd.AsEnumerable(); // dataTable
-
-        //    //    string name = (from r in rowColl
-        //    //                   where r.Field(mdtAdd.Columns["OPERATION_CODE"].ColumnName) == CODE
-        //    //                   select r.Field(GUBUN)).First();
-
-        //    //    return name;
-        //    //}
-        //    //catch
-        //    //{
-        //    //    return "";
-        //    //}
-        //}
 
     }
 }
