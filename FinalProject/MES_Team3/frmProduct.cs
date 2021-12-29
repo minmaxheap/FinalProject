@@ -38,16 +38,16 @@ namespace MES_Team3
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "품번 유형", "PRODUCT_TYPE");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "고객 코드", "CUSTOMER_CODE");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "업체 코드", "VENDOR_CODE");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성 시간", "CREATE_TIME");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성 시간", "CREATE_TIME", width: 150);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성 사용자", "CREATE_USER_ID");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 시간", "UPDATE_TIME");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 시간", "UPDATE_TIME", width: 150);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 사용자", "UPDATE_USER_ID");
             List<ProductProperty> list = new List<ProductProperty>();
 
             LoadData();
 
             ProductProperty vo = new ProductProperty();
-
+            vo.IsSearchPanel = false;
             pgProperty.SelectedObject = vo;
 
             pgProperty.PropertySort = PropertySort.NoSort;
@@ -55,6 +55,9 @@ namespace MES_Team3
 
 
             mbSearch= true;
+
+            BIsSearchPanel = false;
+     
         }
 
         
@@ -287,25 +290,25 @@ namespace MES_Team3
         {
             //KeyDown event 왜 안 먹히지..
 
-            if (e.KeyCode == Keys.Enter)
-            {
-                if (mFindIndex == null) { MessageBox.Show("검색 중 오류가 발생했습니다."); return; }
-                if (mirowIndex == mFindIndex[mFindIndex.Count]) { MessageBox.Show("검색한 값이 포함된 마지막 행입니다."); return; }
-                foreach (int irowIndex in mFindIndex)
-                {
-                    mirowIndex = irowIndex;
-                    csDataGridView1.Rows[irowIndex].Selected = true;
+            //if (e.KeyCode == Keys.Enter)
+            //{
+            //    if (mFindIndex == null) { MessageBox.Show("검색 중 오류가 발생했습니다."); return; }
+            //    if (mirowIndex == mFindIndex[mFindIndex.Count]) { MessageBox.Show("검색한 값이 포함된 마지막 행입니다."); return; }
+            //    foreach (int irowIndex in mFindIndex)
+            //    {
+            //        mirowIndex = irowIndex;
+            //        csDataGridView1.Rows[irowIndex].Selected = true;
 
-                }
-            }
-            else if (e.KeyCode == Keys.Escape)
-            {
-                foreach (DataGridViewRow dr in csDataGridView1.Rows)
-                {
-                    dr.Selected = false;
-                    mFindIndex.Clear();
-                }
-            }
+            //    }
+            //}
+            //else if (e.KeyCode == Keys.Escape)
+            //{
+            //    foreach (DataGridViewRow dr in csDataGridView1.Rows)
+            //    {
+            //        dr.Selected = false;
+            //        mFindIndex.Clear();
+            //    }
+            //}
 
         }
 

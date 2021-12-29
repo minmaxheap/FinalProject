@@ -209,6 +209,22 @@ where 1=1");
 
         }
 
+        public DataTable GetOperRelation(string prodCode)
+        {
+            string sql = @"select FLOW_SEQ,r.OPERATION_CODE, m.OPERATION_NAME
+from [dbo].[PRODUCT_OPERATION_REL] r
+inner join OPERATION_MST m on m.OPERATION_CODE = r.OPERATION_CODE
+where PRODUCT_CODE = @PRODUCT_CODE
+order by FLOW_SEQ";
+            DataTable dt = new DataTable();
+            using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
+            {
+                da.SelectCommand.Parameters.AddWithValue("@PRODUCT_CODE", prodCode);
+                da.Fill(dt);
+                return dt;
+            }
+        }
+
         public void Dispose()
         {
             conn.Close();

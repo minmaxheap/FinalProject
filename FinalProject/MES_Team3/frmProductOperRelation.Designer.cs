@@ -56,7 +56,7 @@ namespace MES_Team3
             this.pnlCrud.SuspendLayout();
             this.pnlAdd.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            //this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAll)).BeginInit();
@@ -256,7 +256,7 @@ namespace MES_Team3
             this.pnlCrud.ResumeLayout(false);
             this.pnlAdd.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
+           // this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAll)).EndInit();
