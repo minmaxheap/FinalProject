@@ -18,19 +18,11 @@ namespace DAC
 		private string Check_Materal;
 
 
-		[Browsable(false)]
-		public int RowNum { get; set; }
+	
 
 		[DisplayName("공정")]
 		[Browsable(true)]
 		public string OPERATION_CODE { get { return operation_code; } set { operation_code = value; } }
-
-
-
-
-		[Browsable(false)]
-
-		public string OPERATION_NAME { get; set; }
 
 		[DisplayName("불량체크")]
 		[Browsable(true)]
@@ -48,6 +40,13 @@ namespace DAC
 		public string CHECK_MATERIAL_FLAG { get { return Check_Materal; } set { Check_Materal = value; } }
 
 		[Browsable(false)]
+		public int RowNum { get; set; }
+
+		[Browsable(false)]
+
+		public string OPERATION_NAME { get; set; }
+
+		[Browsable(false)]
 
 		public DateTime CREATE_TIME { get; set; }
 
@@ -58,6 +57,7 @@ namespace DAC
 		[Browsable(false)]
 
 		public DateTime UPDATE_TIME { get; set; }
+
 		[Browsable(false)]
 		public string UPDATE_USER_ID { get; set; }
 
