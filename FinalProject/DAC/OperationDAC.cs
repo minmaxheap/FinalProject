@@ -168,7 +168,7 @@ where OPERATION_CODE = @OPERATION_CODE";
             }
         }
 
-        public List<OperationProperty> GetOperationSearch(OperationProperty vo)
+        public List<OperationProperty> GetOperationSearch(OperationPropertySch vo)
         {
             StringBuilder sb = new StringBuilder();
 

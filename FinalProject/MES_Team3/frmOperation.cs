@@ -16,12 +16,14 @@ namespace MES_Team3
     {
         //public List<Bar> barlist;
         string sUserID;
-        string MainSearchResult;
+
+        List<int> iSearchedList = new List<int>();
+        List<int> iSelectedRow = new List<int>();
         DataTable dt;
         public frmOperation()
         {
             InitializeComponent();
-            sUserID= frmLogin.userID;
+            sUserID = frmLogin.userID;
         }
 
         private void frmProduct1_Load(object sender, EventArgs e)
@@ -71,7 +73,7 @@ namespace MES_Team3
             }
             else
             {
-                
+
             }
         }
 
@@ -128,14 +130,8 @@ namespace MES_Team3
         }
 
 
-		private void button3_Click(object sender, EventArgs e)
-		{
-
-            OperationProperty search = new OperationProperty();
-
-            pgSearch.SelectedObject = search;
-            pgSearch.PropertySort = PropertySort.NoSort;
-            // propertyPanel.Visible = false;
+        private void button3_Click(object sender, EventArgs e)
+        {
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -156,90 +152,152 @@ namespace MES_Team3
 
         private void btnRead_Click(object sender, EventArgs e)
         {
-            LoadData();
+            OperationPropertySch search = (OperationPropertySch)pgSearch.SelectedObject;
+            OperationServ serv = new OperationServ();
+            List<OperationProperty> list = serv.GetOperationSearch(search);
+
+            csDataGridView1.DataSource = null;
+            csDataGridView1.DataSource = list;
         }
 
         private void btnReadTop_Click(object sender, EventArgs e)
         {
-            LoadData();
+            OperationPropertySch search = (OperationPropertySch)pgSearch.SelectedObject;
+            OperationServ serv = new OperationServ();
+            List<OperationProperty> list = serv.GetOperationSearch(search);
+
+            csDataGridView1.DataSource = null;
+            csDataGridView1.DataSource = list;
         }
 
         private void btnTxtSearch_Click(object sender, EventArgs e)
         {
-            String searchValue = "Oper";
-            int rowIndex = -1;
-            foreach (DataGridViewRow row in csDataGridView1.Rows)
-            {
-                if (row.Cells[0].Value.ToString().Contains(searchValue))
-                {
-                    rowIndex = row.Index;
-                }
-            }
+            txtSearch_KeyDown(null,null);
         }
 
         private void txtSearch_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
-            //{
-            //    propertyGridControl1.FocusNext();
-            //    if (propertyGridControl1.FocusedRow.GetType() == typeof(CategoryRow))
-            //        propertyGridControl1.FocusNext();
-            //}
             {
-                DataTable copy_dt = dt; // form1의 datatable form1DT_copy에 복사
-                MainSearchResult = txtSearch.Text;
-                IEnumerable<DataRow> linq_row = null;
-
-                DataTable form1DT_re = new DataTable();
-                form1DT_re = copy_dt.Clone();
-
-                if (MainSearchResult == "")
+                if (iSearchedList.Count == 0)
                 {
-                    csDataGridView1.DataSource = copy_dt;
-                }
-                else
-                {
-                    //MainSearchResult가 ""이 아니면 일치하는 데이터 찾는 코드
-                    foreach (DataRow row in copy_dt.Rows)
+                    DataTable copy_dt = dt;
+                    IEnumerable<DataRow> linq_row = null;
+                    if (txtSearch.Text == "")
                     {
-                        linq_row = from item in row.ItemArray
-                                   where item.ToString().ToLower().Equals(MainSearchResult.ToLower())
-                                   select row;
-                        //입력된 값이 완전히 일치하는지 확인
-
-                        foreach (DataRow dt in linq_row)
-                        {
-                            form1DT_re.Rows.Add(dt.ItemArray);
-
-                        }
-                        //linq 결과를 datatable에 넣어주는 작업
+                        csDataGridView1.DataSource = copy_dt;
                     }
-                    //입력된 값이 부분적으로 일치하는 경우 
-                    if (form1DT_re.Rows.Count == 0)
+                    else
                     {
                         foreach (DataRow row in copy_dt.Rows)
                         {
-
                             linq_row = from item in row.ItemArray
-                                       where item.ToString().ToLower().Contains(MainSearchResult.ToLower())
+                                       where item.ToString().ToLower().Contains(txtSearch.Text.ToLower())
                                        select row;
-                            //입력된 값이 부분적으로 일치하는지 확인
                             foreach (DataRow dt in linq_row)
                             {
-                                form1DT_re.Rows.Add(dt.ItemArray);
-
+                                int iCntSearch = copy_dt.Rows.IndexOf(row);
+                                iSearchedList.Add(iCntSearch);
+                                break;
                             }
-
+                        }
+                        iSelectedRow = iSearchedList.ToList();
+                    }
+                }
+                if (iSearchedList.Count > 0)
+                {
+                    int iTestNum = iSelectedRow.Count(n => n == -1);
+                    if (iTestNum == iSearchedList.Count)
+                        iSelectedRow = iSearchedList.ToList();
+                    for (int i = 0; i < iSearchedList.Count; i++)
+                    {
+                        if (iSelectedRow[i] == iSearchedList[i])
+                        {
+                            csDataGridView1.CurrentCell = csDataGridView1.Rows[iSearchedList[i]].Cells[0];
+                            iSelectedRow[i] = -1;
+                            break;
                         }
                     }
-                    form1DT_re = form1DT_re.DefaultView.ToTable(true);
-                    csDataGridView1.DataSource = form1DT_re;
-
                 }
-
             }
+            else
+            {
+                iSearchedList.Clear();
+                iSelectedRow.Clear();
+            }
+        }
 
+        private void btnPanel_Click(object sender, EventArgs e)
+        {
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            OperationProperty vo = new OperationProperty();
+            OperationPropertySch svo = new OperationPropertySch();
+
+            pgProperty.SelectedObject = vo;
+            pgSearch.SelectedObject = svo;
+
+            pgProperty.PropertySort = PropertySort.NoSort;
+            pgSearch.PropertySort = PropertySort.NoSort;
         }
+        //private void txtSearch_KeyDown(object sender, KeyEventArgs e)
+        //{
+        //    if (e.KeyCode == Keys.Enter)
+        //    {
+        //        if (iSearchedList.Count == 0)
+        //        {
+        //            DataTable copy_dt = dt;
+        //            IEnumerable<DataRow> linq_row = null;
+        //            if (txtSearch.Text == "")
+        //            {
+        //                csDataGridView1.DataSource = copy_dt;
+        //            }
+        //            else
+        //            {
+        //                foreach (DataRow row in copy_dt.Rows)
+        //                {
+        //                    linq_row = from item in row.ItemArray
+        //                               where item.ToString().ToLower().Contains(txtSearch.Text.ToLower())
+        //                               select row;
+        //                    foreach (DataRow dt in linq_row)
+        //                    {
+        //                        int iCntSearch = copy_dt.Rows.IndexOf(row);
+        //                        iSearchedList.Add(iCntSearch);
+        //                        DataRow dr = dtSearchedList.NewRow();
+        //                        dr["Count"] = iCntSearch;
+        //                        dtSearchedList.Rows.Add(dr);
+        //                        break;
+        //                    }
+        //                }
+        //                iSelectedRow = iSearchedList.ToList();
+        //                dtSearchedList.AsEnumerable().CopyToDataTable(dtSelectedRow, LoadOption.Upsert);
+
+        //            }
+        //        }
+        //        if (iSearchedList.Count > 0)
+        //        {
+        //            int iTestNum = iSelectedRow.Count(n => n == -1);
+        //            if (iTestNum == iSearchedList.Count)
+        //                iSelectedRow = iSearchedList.ToList();
+        //            for (int i = 0; i < iSearchedList.Count; i++)
+        //            {
+        //                if (iSelectedRow[i] == iSearchedList[i])
+        //                {
+        //                    csDataGridView1.CurrentCell = csDataGridView1.Rows[iSearchedList[i]].Cells[0];
+        //                    iSelectedRow[i] = -1;
+        //                    break;
+        //                }
+        //            }
+        //        }
+        //    }
+        //    else
+        //    {
+        //        iSearchedList.Clear();
+        //        iSelectedRow.Clear();
+        //    }
+        //}
     }
+}
 

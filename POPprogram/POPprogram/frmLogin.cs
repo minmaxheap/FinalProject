@@ -12,8 +12,8 @@ namespace POPprogram
 {
     public partial class frmLogin : Form
     {
-      
-    
+        public static string userID { get { return sID_Test; } }
+        static string sID_Test;
         public frmLogin()
         {
             InitializeComponent();
@@ -33,6 +33,14 @@ namespace POPprogram
         private void frmLogin_Load(object sender, EventArgs e)
         {
             txtID.Text = "0324234";
+            sID_Test = txtID.Text;
+        }
+
+        private void frmLogin_Shown(object sender, EventArgs e)
+        {
+            frmMain frm = new frmMain(txtID.Text);
+            frm.Show();
+            this.Hide();
         }
     }
 }

@@ -47,11 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseForms\Base1.cs">
+    <Compile Include="BaseForms\Base1_1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BaseForms\Base1.Designer.cs">
-      <DependentUpon>Base1.cs</DependentUpon>
+    <Compile Include="BaseForms\Base1_1.Designer.cs">
+      <DependentUpon>Base1_1.cs</DependentUpon>
     </Compile>
     <Compile Include="BaseForms\Base2.cs">
       <SubType>Form</SubType>
@@ -65,6 +65,12 @@
     <Compile Include="BaseForms\Base3.Designer.cs">
       <DependentUpon>Base3.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaseForms\Base3_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForms\Base3_1.Designer.cs">
+      <DependentUpon>Base3_1.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaseForms\Base4.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,29 +83,11 @@
     <Compile Include="BaseForms\Base5.Designer.cs">
       <DependentUpon>Base5.cs</DependentUpon>
     </Compile>
-    <Compile Include="BaseForms\frmMessageBox.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BaseForms\frmMessageBox.Designer.cs">
-      <DependentUpon>frmMessageBox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BaseForms\frmSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BaseForms\frmSearch.Designer.cs">
-      <DependentUpon>frmSearch.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controls\csDataGridView.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\csDataGridView.designer.cs">
       <DependentUpon>csDataGridView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\csLabel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\csLabel.Designer.cs">
-      <DependentUpon>csLabel.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\csTabControl.cs">
       <SubType>Component</SubType>
@@ -107,35 +95,11 @@
     <Compile Include="Controls\csTabControl.designer.cs">
       <DependentUpon>csTabControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\csTableLayout.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\csTableLayout.Designer.cs">
-      <DependentUpon>csTableLayout.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\csTextBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\csTextBox.Designer.cs">
-      <DependentUpon>csTextBox.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controls\NumTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\NumTextBox.Designer.cs">
       <DependentUpon>NumTextBox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmEquipment.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmEquipment.designer.cs">
-      <DependentUpon>frmEquipment.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmFunction.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmFunction.designer.cs">
-      <DependentUpon>frmFunction.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -146,15 +110,22 @@
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMain.designer.cs">
+    <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\FunctionServ.cs" />
+    <Compile Include="Services\InspecServ.cs" />
+    <Compile Include="Services\INSPECT_OPServ.cs" />
+    <Compile Include="Services\OperationServ.cs" />
+    <Compile Include="Services\ProductServ.cs" />
+    <Compile Include="Services\StoreServ.cs" />
+    <Compile Include="Services\UserGroupServ.cs" />
+    <Compile Include="Services\User_MSTServ.cs" />
     <Compile Include="Util\DataGridViewUtil.cs" />
-    <EmbeddedResource Include="BaseForms\Base1.resx">
-      <DependentUpon>Base1.cs</DependentUpon>
+    <EmbeddedResource Include="BaseForms\Base1_1.resx">
+      <DependentUpon>Base1_1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaseForms\Base2.resx">
       <DependentUpon>Base2.cs</DependentUpon>
@@ -162,23 +133,14 @@
     <EmbeddedResource Include="BaseForms\Base3.resx">
       <DependentUpon>Base3.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BaseForms\Base3_1.resx">
+      <DependentUpon>Base3_1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BaseForms\Base4.resx">
       <DependentUpon>Base4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaseForms\Base5.resx">
       <DependentUpon>Base5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BaseForms\frmMessageBox.resx">
-      <DependentUpon>frmMessageBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BaseForms\frmSearch.resx">
-      <DependentUpon>frmSearch.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmEquipment.resx">
-      <DependentUpon>frmEquipment.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmFunction.resx">
-      <DependentUpon>frmFunction.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -215,14 +177,32 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\-refresh_90271.png" />
-    <Content Include="Resources\97a64971e2a6741339b09c64c93e448e.png" />
-    <Content Include="Resources\close white .png" />
-    <Content Include="Resources\close.png" />
-    <Content Include="Resources\KEY0.CC-회사-제품-아이콘-블루-2.ico" />
-    <Content Include="Resources\pngegg.png" />
-    <Content Include="Resources\Search--v2.png" />
-    <Content Include="Resources\twocirclingarrows1_120592.png" />
+    <None Include="Resources\그림51.png" />
+    <None Include="Resources\97a64971e2a6741339b09c64c93e448e.png" />
+    <None Include="Resources\Add-New.png" />
+    <None Include="Resources\Arrowhead-Right-01.png" />
+    <None Include="Resources\Arrowhead-Right-011.png" />
+    <None Include="Resources\close white .png" />
+    <None Include="Resources\close.png" />
+    <None Include="Resources\Command-Refresh-01.png" />
+    <None Include="Resources\Data-Find.png" />
+    <None Include="Resources\Data-Find1.png" />
+    <None Include="Resources\Data-Find4.png" />
+    <None Include="Resources\Data-Find12.png" />
+    <None Include="Resources\Data-Find41.png" />
+    <None Include="Resources\Delete.png" />
+    <None Include="Resources\Delete_03.png" />
+    <None Include="Resources\Folder-Find-01.png" />
+    <None Include="Resources\KEY0.CC-회사-제품-아이콘-블루-2.ico" />
+    <None Include="Resources\pngegg.png" />
+    <None Include="Resources\-refresh_90271.png" />
+    <None Include="Resources\Save_02.png" />
+    <None Include="Resources\Search-Find.png" />
+    <None Include="Resources\Search-Find1.png" />
+    <None Include="Resources\Search--v2.png" />
+    <None Include="Resources\Show.png" />
+    <None Include="Resources\Trash Can_02.png" />
+    <None Include="Resources\twocirclingarrows1_120592.png" />
     <Content Include="Resources\그림1.png" />
     <Content Include="Resources\그림5.png" />
   </ItemGroup>
