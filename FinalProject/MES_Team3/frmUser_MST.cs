@@ -169,16 +169,29 @@ namespace MES_Team3
 
 			DataGridViewRow dr = csDataGridView1.Rows[e.RowIndex];
 			User_MST_Property vo = new User_MST_Property();
-			lblPanel.Text = "▶ 속성";
+			BIsSearchPanel = false;
 			vo.IsSearchPanel = false;
-			vo.USER_ID = dr.Cells["USER_ID"].Value.ToString();
-			vo.USER_NAME = dr.Cells["USER_NAME"].Value.ToString();
-			vo.USER_GROUP_CODE = dr.Cells["USER_GROUP_CODE"].Value.ToString();
-			vo.USER_PASSWORD = dr.Cells["USER_PASSWORD"].Value.ToString();
-			vo.USER_DEPARTMENT = dr.Cells["USER_DEPARTMENT"].Value.ToString();
+			
+			if (dr.Cells["USER_ID"].Value != null && dr.Cells["USER_ID"].Value != DBNull.Value)
+				vo.USER_ID = dr.Cells["USER_ID"].Value.ToString();
+			
+			if (dr.Cells["USER_NAME"].Value != null && dr.Cells["USER_NAME"].Value != DBNull.Value)
+				vo.USER_NAME = dr.Cells["USER_NAME"].Value.ToString();
 
-			vo.CREATE_USER_ID = dr.Cells["CREATE_TIME"].Value.ToString();
-			vo.UPDATE_USER_ID = dr.Cells["UPDATE_USER_ID"].Value.ToString();
+			if (dr.Cells["USER_GROUP_CODE"].Value != null && dr.Cells["USER_GROUP_CODE"].Value != DBNull.Value)
+				vo.USER_GROUP_CODE = dr.Cells["USER_GROUP_CODE"].Value.ToString();
+
+			if (dr.Cells["USER_PASSWORD"].Value != null && dr.Cells["USER_PASSWORD"].Value != DBNull.Value)
+				vo.USER_PASSWORD = dr.Cells["USER_PASSWORD"].Value.ToString();
+
+			if (dr.Cells["USER_DEPARTMENT"].Value != null && dr.Cells["USER_DEPARTMENT"].Value != DBNull.Value)
+				vo.USER_DEPARTMENT = dr.Cells["USER_DEPARTMENT"].Value.ToString();
+
+			if (dr.Cells["CREATE_USER_ID"].Value != null && dr.Cells["CREATE_USER_ID"].Value != DBNull.Value)
+				vo.CREATE_USER_ID = dr.Cells["CREATE_USER_ID"].Value.ToString();
+
+			if (dr.Cells["UPDATE_USER_ID"].Value != null && dr.Cells["UPDATE_USER_ID"].Value != DBNull.Value)
+				vo.UPDATE_USER_ID = dr.Cells["UPDATE_USER_ID"].Value.ToString();
 
 			if (dr.Cells["CREATE_TIME"].Value != null && dr.Cells["CREATE_TIME"].Value != DBNull.Value)
 				vo.CREATE_TIME = Convert.ToDateTime(dr.Cells["CREATE_TIME"].Value);
@@ -262,6 +275,38 @@ namespace MES_Team3
 			{
 				MessageBox.Show(exc.Message);
 			}
+		}
+
+		private void btnReadTop_Click(object sender, EventArgs e)
+		{
+			User_MST_Property pr = (User_MST_Property)pgSearch.SelectedObject;
+
+			List<User_MST_Property> list = serv.GetSearch(pr);
+			pr.IsSearchPanel = false;
+
+			csDataGridView1.DataSource = null;
+			csDataGridView1.DataSource = list;
+		}
+
+		private void btnClear_Click_1(object sender, EventArgs e)
+		{
+			PropertyDescriptor pd = pgProperty.SelectedGridItem.PropertyDescriptor;
+			pd.ResetValue(pgProperty.SelectedObject);
+
+			User_MST_Property search = new User_MST_Property();
+			search.IsSearchPanel = false;
+			pgProperty.SelectedObject = search;
+			pgProperty.PropertySort = PropertySort.NoSort;
+		}
+
+		private void btnPanel_Click(object sender, EventArgs e)
+		{
+			User_MST_Property vo = new User_MST_Property();
+			vo.IsSearchPanel = true;
+
+			pgSearch.SelectedObject = vo;
+
+			pgSearch.PropertySort = PropertySort.NoSort;
 		}
 	}
 }

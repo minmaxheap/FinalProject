@@ -95,10 +95,9 @@ namespace DAC
         public List<string> GetSourceList()
         {
             //dac에서 list 받아오기
-            List<string> Type = new List<string>();
-            Type.Add("ADMIN");
-            Type.Add("OPERATOR");
-            //valueType.Add("Employee");
+
+            UserGroupDAC dac = new UserGroupDAC();
+            List<string> Type = dac.GetCode();
 
             return Type;
         }
@@ -170,17 +169,16 @@ namespace DAC
         }
     }
 
+    //홍직(부서)
     public class DepartMent
     {
         public List<string> GetSourceList()
         {
             //dac에서 list 받아오기
-            List<string> Type = new List<string>();
-            Type.Add("임원");
-            Type.Add("Press 라인");
-            Type.Add("사출 라인");
-            Type.Add("SMT 라인");
-            Type.Add("조합 라인");
+            UserMstDAC dac = new UserMstDAC();
+            List<string> Type = dac.GetCode();
+            return Type;
+            
 
 
 
@@ -205,17 +203,13 @@ namespace DAC
         }
     }
 
+    //홍직(
     public class User_Mst_Group
     {
         public List<string> GetSourceList()
         {
-            //dac에서 list 받아오기
-            List<string> Type = new List<string>();
-            Type.Add("ADMINGROUP");
-            Type.Add("Press 라인");
-            Type.Add("사출 라인");
-            Type.Add("SMT 라인");
-            Type.Add("조합 라인");
+            UserMstDAC dac =  new UserMstDAC();
+            List<string> Type = dac.GetGroupCode();
 
             return Type;
         }
@@ -287,6 +281,31 @@ namespace DAC
         public override TypeConverter.StandardValuesCollection GetStandardValues(ITypeDescriptorContext context)
         {
             return new StandardValuesCollection(new FIFO_FLAG().GetSourceList());
+        }
+    }
+
+    //홍직 값
+    public class ValueType
+    {
+        public List<string> GetSourceList()
+        {
+           InspectDAC dac = new InspectDAC();
+            List<string> productType = dac.GetCode();
+            return productType;
+        }
+    }
+    public class ValueTypeConverter : StringConverter
+    {
+        public override bool GetStandardValuesSupported(ITypeDescriptorContext context)
+        {
+            return true;
+        }
+    
+
+        public override TypeConverter.StandardValuesCollection GetStandardValues(ITypeDescriptorContext context)
+        {
+            // ProductVO refMyObject = context.Instance as ProductVO;
+            return new StandardValuesCollection(new ValueType().GetSourceList());
         }
     }
 }

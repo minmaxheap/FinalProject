@@ -68,10 +68,12 @@ namespace MES_Team3
 			// 
 			// btnPanel
 			// 
+			this.btnPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(152)))), ((int)(((byte)(216)))));
 			this.btnPanel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
 			this.btnPanel.FlatAppearance.BorderSize = 0;
 			this.btnPanel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
 			this.btnPanel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
+			this.btnPanel.Click += new System.EventHandler(this.btnPanel_Click);
 			// 
 			// spcBase
 			// 
@@ -169,7 +171,7 @@ namespace MES_Team3
 			this.csDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
 			this.csDataGridView1.RowHeadersWidth = 30;
 			this.csDataGridView1.RowTemplate.Height = 23;
-			this.csDataGridView1.Size = new System.Drawing.Size(784, 622);
+			this.csDataGridView1.Size = new System.Drawing.Size(797, 622);
 			this.csDataGridView1.TabIndex = 0;
 			this.csDataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellDoubleClick);
 			// 

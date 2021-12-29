@@ -111,18 +111,20 @@ where USER_GROUP_CODE = @USER_GROUP_CODE";
 
 		public List<UserGroupVO> GetSearch(UserGroupVO vo)
 		{
+			//StringBuilder sb = new StringBuilder();
+
 			StringBuilder sb = new StringBuilder();
 
-			sb.Append(@"select USER_GROUP_CODE, USER_GROUP_NAME, USER_GROUP_TYPE, CREATE_TIME, CREATE_USER_ID, UPDATE_TIME, UPDATE_USER_ID
-from USER_GROUP_MST 
-where 1=1");
+			sb.Append(@"SELECT USER_GROUP_CODE, USER_GROUP_NAME, USER_GROUP_TYPE, CREATE_TIME, CREATE_USER_ID, UPDATE_TIME, UPDATE_USER_ID
+FROM USER_GROUP_MST
+WHERE 1=1");
 
 			using (SqlCommand cmd = new SqlCommand())
 			{
 				if (!string.IsNullOrWhiteSpace(vo.USER_GROUP_CODE))
 				{
 					sb.Append(" and USER_GROUP_CODE = @USER_GROUP_CODE");
-					cmd.Parameters.AddWithValue("@INSPECT_ITEM_CODE", vo.USER_GROUP_CODE);
+					cmd.Parameters.AddWithValue("@USER_GROUP_CODE", vo.USER_GROUP_CODE);
 
 				}
 
@@ -139,6 +141,27 @@ where 1=1");
 
 				return Helper.DataReaderMapToList<UserGroupVO>(cmd.ExecuteReader());
 			}
+		}
+
+		//공통코드로 조회하기 => 사용자 그룹유형
+		public List<string> GetCode()
+		{
+			string sql = @"SELECT [KEY_1] as 'PRODUCT_TYPE'
+FROM [dbo].[CODE_DATA_MST]
+WHERE [CODE_TABLE_NAME] ='CM_Group_Code'";
+
+			SqlCommand cmd = new SqlCommand(sql, conn);
+			List<string> list = new List<string>();
+			using (SqlDataReader reader = cmd.ExecuteReader())
+			{
+
+				while (reader.Read())
+				{
+					list.Add(reader["PRODUCT_TYPE"].ToString());
+
+				}
+			}
+			return list;
 		}
 	}
 }
