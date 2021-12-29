@@ -105,6 +105,12 @@
     <Compile Include="Controls\NumTextBox.Designer.cs">
       <DependentUpon>NumTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmInspectOperRelation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInspectOperRelation.Designer.cs">
+      <DependentUpon>frmInspectOperRelation.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmProductOperRelation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaseForms\Base5.resx">
       <DependentUpon>Base5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInspectOperRelation.resx">
+      <DependentUpon>frmInspectOperRelation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProductOperRelation.resx">
       <DependentUpon>frmProductOperRelation.cs</DependentUpon>
