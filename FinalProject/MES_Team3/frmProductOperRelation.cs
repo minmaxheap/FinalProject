@@ -12,6 +12,7 @@ namespace MES_Team3
     public partial class frmProductOperRelation : MES_Team3.Base3_1
     {
         List<ProductProperty> mAllList;
+        string msprodCode;
         public frmProductOperRelation()
         {
             InitializeComponent();
@@ -79,7 +80,7 @@ namespace MES_Team3
             dgvAdd.DataSource = dtAdd;
 
             dgvAdd.Columns["FLOW_SEQ"].ReadOnly = false;
-
+            msprodCode = dgvProducts["PRODUCT_CODE", e.RowIndex].Value.ToString();
 
         }
 
@@ -101,6 +102,60 @@ namespace MES_Team3
                 dgvProducts.DataSource = list;
             }
 
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            List<string> list = new List<string>();
+          
+            foreach (DataGridViewRow dr in dgvAll.SelectedRows)
+            {
+                list.Add(dr.Cells["OPERATION_CODE"].Value.ToString());
+
+            }
+            ProductServ serv = new ProductServ();
+            bool bResult = serv.SetOpertation(msprodCode,list); //이미 들어갔던 공정 못 들어가게 막기 & 한 번에 여러개 넣도록 수정하기
+            if(bResult)
+            {
+                //dgvadd 재로딩
+                GetDgvAddData();
+            }
+            else
+            {
+                //메시지 박스
+                MessageBox.Show("오류가 발생했습니다.");
+            }
+        }
+
+        private void btnSubtract_Click(object sender, EventArgs e)
+        {
+            List<string> list = new List<string>();
+
+            foreach (DataGridViewRow dr in dgvAll.SelectedRows)
+            {
+                list.Add(dr.Cells["OPERATION_CODE"].Value.ToString());
+
+            }
+            ProductServ serv = new ProductServ();
+            bool bResult = serv.DeleteOperation(msprodCode, list);
+            if (bResult)
+            {
+                //dgvadd 재로딩
+                GetDgvAddData();
+            }
+            else
+            {
+                //메시지 박스
+                MessageBox.Show("오류가 발생했습니다.");
+            }
+        }
+
+        private void GetDgvAddData()
+        {
+            ProductServ prodServ = new ProductServ();
+            DataTable dtAdd = prodServ.GetOperRelation(msprodCode);
+            dgvAdd.DataSource = null;
+            dgvAdd.DataSource = dtAdd;
         }
     }
 }

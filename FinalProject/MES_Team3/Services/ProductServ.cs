@@ -60,5 +60,21 @@ namespace MES_Team3
             dac.Dispose();
             return dt;
         }
+
+        public bool SetOpertation(string prodCode, List<string> list)
+        {
+            ProductDAC dac = new ProductDAC();
+            bool bResult = dac.SetOperation(prodCode, list);
+            dac.Dispose();
+            return bResult;
+        }
+
+        public bool DeleteOperation(string prodCode, List<string> list)
+        {
+            ProductDAC dac = new ProductDAC();
+            bool bResult = dac.DeleteOperation(prodCode, list);
+            dac.Dispose();
+            return bResult;
+        }
     }
 }

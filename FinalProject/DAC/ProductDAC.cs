@@ -83,6 +83,8 @@ from [dbo].[PRODUCT_MST]";
             }
         }
 
+      
+
         public bool Delete(ProductProperty pt)
         {
             try
@@ -145,31 +147,11 @@ where PRODUCT_CODE = @PRODUCT_CODE";
             }
         }
 
-        //        public List<string> GetProductType()
-        //        {
-        //            string sql = @"SELECT [KEY_1] as 'PRODUCT_TYPE'
-        //FROM [dbo].[CODE_DATA_MST]
-        //WHERE [CODE_TABLE_NAME] ='CM_PRODUCT_TYPE'";
-        //            SqlCommand cmd = new SqlCommand(sql, conn);
-        //            List<string> productType = new List<string>();
-        //            using (SqlDataReader reader = cmd.ExecuteReader())
-        //            {
-
-        //                while (reader.Read())
-        //                {
-        //                    productType.Add(reader["PRODUCT_TYPE"].ToString());
-
-        //                }
-        //            } 
-
-        //            return productType;
-        //        }
-
         public List<string> GetProductType()
         {
-            string sql = @"SELECT concat([KEY_1],'(',[DATA_1],')') as 'PRODUCT_TYPE'
-FROM [dbo].[CODE_DATA_MST]
-WHERE [CODE_TABLE_NAME] ='CM_PRODUCT_TYPE'";
+            string sql = @"SELECT [KEY_1] as 'PRODUCT_TYPE'
+        FROM [dbo].[CODE_DATA_MST]
+        WHERE [CODE_TABLE_NAME] ='CM_PRODUCT_TYPE'";
             SqlCommand cmd = new SqlCommand(sql, conn);
             List<string> productType = new List<string>();
             using (SqlDataReader reader = cmd.ExecuteReader())
@@ -184,9 +166,29 @@ WHERE [CODE_TABLE_NAME] ='CM_PRODUCT_TYPE'";
 
             return productType;
         }
+
+        //        public List<string> GetProductType()
+        //        {
+        //            string sql = @"SELECT concat([KEY_1],'(',[DATA_1],')') as 'PRODUCT_TYPE'
+        //FROM [dbo].[CODE_DATA_MST]
+        //WHERE [CODE_TABLE_NAME] ='CM_PRODUCT_TYPE'";
+        //            SqlCommand cmd = new SqlCommand(sql, conn);
+        //            List<string> productType = new List<string>();
+        //            using (SqlDataReader reader = cmd.ExecuteReader())
+        //            {
+
+        //                while (reader.Read())
+        //                {
+        //                    productType.Add(reader["PRODUCT_TYPE"].ToString());
+
+        //                }
+        //            }
+
+        //            return productType;
+        //        }
         public List<string> GetCustomerCode()
         {
-            string sql = @"SELECT concat([KEY_1],'(',[DATA_1],')') as 'CUSTOMER_CODE'
+            string sql = @"SELECT [KEY_1]  as 'CUSTOMER_CODE'
 FROM [dbo].[CODE_DATA_MST]
 WHERE [CODE_TABLE_NAME] ='CM_CUSTOMER'";
             SqlCommand cmd = new SqlCommand(sql, conn);
@@ -206,7 +208,7 @@ WHERE [CODE_TABLE_NAME] ='CM_CUSTOMER'";
 
         public List<string> GetVendorCode()
         {
-            string sql = @"SELECT concat([KEY_1],'(',[DATA_1],')') as 'VENDOR_CODE'
+            string sql = @"SELECT [KEY_1]  as 'VENDOR_CODE'
 FROM [dbo].[CODE_DATA_MST]
 WHERE [CODE_TABLE_NAME] ='CM_VENDOR'
 ";
@@ -269,6 +271,7 @@ where 1=1");
 
         }
 
+        //operation 부분
         public DataTable GetOperRelation(string prodCode)
         {
             string sql = @"select FLOW_SEQ,r.OPERATION_CODE, m.OPERATION_NAME
@@ -282,6 +285,65 @@ order by FLOW_SEQ";
                 da.SelectCommand.Parameters.AddWithValue("@PRODUCT_CODE", prodCode);
                 da.Fill(dt);
                 return dt;
+            }
+        }
+
+        public bool SetOperation(string prodCode, List<string> list)
+        {
+            try
+            {
+                int row = 0;
+                string sql = @"
+declare @vSEQ NUMERIC(5,0)
+
+select @vSEQ = max([FLOW_SEQ] )
+from PRODUCT_OPERATION_REL
+where  PRODUCT_CODE =@PRODUCT_CODE
+
+insert into [dbo].[PRODUCT_OPERATION_REL]([PRODUCT_CODE],[OPERATION_CODE],[FLOW_SEQ] ) values(@PRODUCT_CODE,@OPERATION_CODE, ISNULL(@vSEQ+1,1)); ";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@PRODUCT_CODE", prodCode);
+                    foreach (string operCode in list)
+                    {
+                        
+                        cmd.Parameters.AddWithValue("@OPERATION_CODE", operCode);
+                        row = cmd.ExecuteNonQuery();
+                    }
+                    return row > 0;
+
+                }
+            }
+            catch (Exception err)
+            {
+                Debug.WriteLine(err.Message);
+                return false;
+            }
+        }
+
+        public bool DeleteOperation(string prodCode, List<string> list)
+        {
+            try
+            {
+                int row = 0;
+                string sql = @"delete from PRODUCT_OPERATION_REL
+where PRODUCT_CODE = @PRODUCT_CODE and OPERATION_CODE =@OPERATION_CODE ";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    foreach (string operCode in list)
+                    {
+                        cmd.Parameters.AddWithValue("@PRODUCT_CODE", prodCode);
+                        cmd.Parameters.AddWithValue("@OPERATION_CODE", operCode);
+                        row = cmd.ExecuteNonQuery();
+                    }
+                    return row > 0;
+
+                }
+            }
+            catch (Exception err)
+            {
+                Debug.WriteLine(err.Message);
+                return false;
             }
         }
 
