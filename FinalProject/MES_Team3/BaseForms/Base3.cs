@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MES_Team3.BaseForms
+namespace MES_Team3
 {
     public partial class Base3 : Form
     {

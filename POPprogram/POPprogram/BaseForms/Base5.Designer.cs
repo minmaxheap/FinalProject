@@ -643,10 +643,6 @@ namespace POPprogram
         public System.Windows.Forms.Label label5;
         public System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
         public System.Windows.Forms.Panel pnlCrud;
         public System.Windows.Forms.Button btnInsert;
         public System.Windows.Forms.Button btnDelete;
@@ -654,5 +650,9 @@ namespace POPprogram
         public System.Windows.Forms.Button btnClose;
         public System.Windows.Forms.Button btnReadBottom;
         public System.Windows.Forms.Button btnUpdate;
+        public System.Windows.Forms.Label label17;
+        public System.Windows.Forms.Label label16;
+        public System.Windows.Forms.Label label15;
+        public System.Windows.Forms.Label label14;
     }
 }
