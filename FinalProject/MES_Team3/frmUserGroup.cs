@@ -13,6 +13,7 @@ namespace MES_Team3
 	{
 		UserGroupServ serv;
 		string Code = string.Empty;
+		string ID = frmLogin.userID;
 		public frmUserGroup()
 		{
 			InitializeComponent();
@@ -56,6 +57,14 @@ namespace MES_Team3
 		private void btnInsert_Click(object sender, EventArgs e)
 		{
             UserGroupVO vo = (UserGroupVO)pgProperty.SelectedObject;
+			vo.CREATE_USER_ID = ID;
+
+			if (string.IsNullOrWhiteSpace(vo.USER_GROUP_CODE) || string.IsNullOrWhiteSpace(vo.USER_GROUP_NAME) || string.IsNullOrWhiteSpace(vo.USER_GROUP_NAME))
+			{
+				MessageBox.Show("필요한 정보가 없습니다.");
+				return;
+			}
+
 			bool result = serv.Insert(vo);
 
 			if (result)
@@ -77,6 +86,12 @@ namespace MES_Team3
 		{
 			UserGroupVO save = (UserGroupVO)pgSearch.SelectedObject;
 
+			if (save == null)
+			{
+				MessageBox.Show("검색조건을 키시고 조회 클릭하세요");
+				return;
+			}
+
 			List<UserGroupVO> list = serv.GetSearch(save);
 			save.IsSearchPanel = false;
 
@@ -86,10 +101,11 @@ namespace MES_Team3
 		private void btnUpdate_Click(object sender, EventArgs e)
 		{
 			UserGroupVO vo = (UserGroupVO)pgProperty.SelectedObject;
+			vo.UPDATE_USER_ID = ID;
 
-			if (string.IsNullOrWhiteSpace(vo.UPDATE_USER_ID))
+			if (string.IsNullOrWhiteSpace(vo.USER_GROUP_CODE) || string.IsNullOrWhiteSpace(vo.USER_GROUP_NAME) || string.IsNullOrWhiteSpace(vo.USER_GROUP_NAME))
 			{
-				MessageBox.Show("변경 사용자가 없습니다.");
+				MessageBox.Show("필요한 정보가 없습니다.");
 				return;
 			}
 			bool result = serv.Update(vo);
@@ -139,7 +155,47 @@ namespace MES_Team3
 
 		}
 
-		private void csDataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+		
+
+		private void btnClear_Click(object sender, EventArgs e)
+		{
+			PropertyDescriptor pd = pgProperty.SelectedGridItem.PropertyDescriptor;
+			pd.ResetValue(pgProperty.SelectedObject);
+
+			UserGroupVO search = new UserGroupVO();
+			search.IsSearchPanel = false;
+			pgProperty.SelectedObject = search;
+			pgProperty.PropertySort = PropertySort.NoSort;
+		}
+
+		private void btnPanel_Click(object sender, EventArgs e)
+		{
+
+			UserGroupVO vo = new UserGroupVO();
+			vo.IsSearchPanel = true;
+
+			pgSearch.SelectedObject = vo;
+
+			pgSearch.PropertySort = PropertySort.NoSort;
+		}
+
+		private void btnReadTop_Click(object sender, EventArgs e)
+		{
+			UserGroupVO save = (UserGroupVO)pgSearch.SelectedObject;
+
+			if (save == null)
+			{
+				MessageBox.Show("검색조건을 키시고 조회 클릭하세요");
+				return;
+			}
+
+			List<UserGroupVO> list = serv.GetSearch(save);
+			save.IsSearchPanel = false;
+
+			csDataGridView1.DataSource = list;
+		}
+
+		private void csDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
 			//이거 안됨 
 			if (e.RowIndex < 0)
@@ -188,28 +244,6 @@ namespace MES_Team3
 
 			pnlProperty.Visible = true;
 			pnlSearch.Visible = false;
-		}
-
-		private void btnClear_Click(object sender, EventArgs e)
-		{
-			PropertyDescriptor pd = pgProperty.SelectedGridItem.PropertyDescriptor;
-			pd.ResetValue(pgProperty.SelectedObject);
-
-			UserGroupVO search = new UserGroupVO();
-			search.IsSearchPanel = false;
-			pgProperty.SelectedObject = search;
-			pgProperty.PropertySort = PropertySort.NoSort;
-		}
-
-		private void btnPanel_Click(object sender, EventArgs e)
-		{
-
-			UserGroupVO vo = new UserGroupVO();
-			vo.IsSearchPanel = true;
-
-			pgSearch.SelectedObject = vo;
-
-			pgSearch.PropertySort = PropertySort.NoSort;
 		}
 	}
 }

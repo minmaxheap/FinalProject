@@ -77,6 +77,14 @@ namespace MES_Team3
             return bResult;
         }
 
+        public bool GetLOTOperate(string prodCode, List<string> list)
+        {
+            ProductDAC dac = new ProductDAC();
+            bool bResult = dac.GetLOTOperate(prodCode, list);
+            dac.Dispose();
+            return bResult;
+        }
+
         public bool DeleteOperation(string prodCode,List<string> list)
         {
             ProductDAC dac = new ProductDAC();
@@ -84,5 +92,8 @@ namespace MES_Team3
             dac.Dispose();
             return bResult;
         }
+
+
+   
     }
 }

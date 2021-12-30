@@ -50,12 +50,12 @@ namespace MES_Team3
 			return b;
 		}
 
-		public List<INSPECT_MSTVO> GetAll(string Value)
+		public DataTable GetAll(string Value)
 		{
 			INSPECT_OPERATIONDAC dac = new INSPECT_OPERATIONDAC();
-			List<INSPECT_MSTVO> list = dac.GetAll(Value);
+			DataTable dt = dac.GetAll(Value);
 			dac.Dispose();
-			return list;
+			return dt;
 		}
 	}
 }

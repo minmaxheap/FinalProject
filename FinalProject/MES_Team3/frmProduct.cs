@@ -354,6 +354,18 @@ namespace MES_Team3
                 iSelectedRow.Clear();
             }
         }
+
+        private void btnPanel_Click(object sender, EventArgs e)
+        {
+            ProductProperty vo = new ProductProperty();
+            vo.IsSearchPanel = true;
+
+            pgSearch.SelectedObject = vo;
+
+            pgSearch.PropertySort = PropertySort.NoSort;
+        }
+
+     
     }
 
 
