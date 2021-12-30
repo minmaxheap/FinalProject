@@ -307,6 +307,8 @@
     <None Include="Resources\Add-New.png" />
     <None Include="Resources\Command-Refresh-01.png" />
     <None Include="Resources\Search-Find.png" />
+    <None Include="Resources\Print - 01.png" />
+    <None Include="Resources\Export.png" />
     <Content Include="Resources\twocirclingarrows1_120592.png" />
   </ItemGroup>
   <ItemGroup>
