@@ -172,53 +172,53 @@ namespace MES_Team3
 
         private void btnTxtSearch_Click(object sender, EventArgs e)
         {
-            txtSearch_KeyDown(null,null);
+            if (iSearchedList.Count == 0)
+            {
+                DataTable copy_dt = dt;
+                IEnumerable<DataRow> linq_row = null;
+                if (txtSearch.Text == "")
+                {
+                    csDataGridView1.DataSource = copy_dt;
+                }
+                else
+                {
+                    foreach (DataRow row in copy_dt.Rows)
+                    {
+                        linq_row = from item in row.ItemArray
+                                   where item.ToString().ToLower().Contains(txtSearch.Text.ToLower())
+                                   select row;
+                        foreach (DataRow dt in linq_row)
+                        {
+                            int iCntSearch = copy_dt.Rows.IndexOf(row);
+                            iSearchedList.Add(iCntSearch);
+                            break;
+                        }
+                    }
+                    iSelectedRow = iSearchedList.ToList();
+                }
+            }
+            if (iSearchedList.Count > 0)
+            {
+                int iTestNum = iSelectedRow.Count(n => n == -1);
+                if (iTestNum == iSearchedList.Count)
+                    iSelectedRow = iSearchedList.ToList();
+                for (int i = 0; i < iSearchedList.Count; i++)
+                {
+                    if (iSelectedRow[i] == iSearchedList[i])
+                    {
+                        csDataGridView1.CurrentCell = csDataGridView1.Rows[iSearchedList[i]].Cells[0];
+                        iSelectedRow[i] = -1;
+                        break;
+                    }
+                }
+            }
         }
 
         private void txtSearch_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if (iSearchedList.Count == 0)
-                {
-                    DataTable copy_dt = dt;
-                    IEnumerable<DataRow> linq_row = null;
-                    if (txtSearch.Text == "")
-                    {
-                        csDataGridView1.DataSource = copy_dt;
-                    }
-                    else
-                    {
-                        foreach (DataRow row in copy_dt.Rows)
-                        {
-                            linq_row = from item in row.ItemArray
-                                       where item.ToString().ToLower().Contains(txtSearch.Text.ToLower())
-                                       select row;
-                            foreach (DataRow dt in linq_row)
-                            {
-                                int iCntSearch = copy_dt.Rows.IndexOf(row);
-                                iSearchedList.Add(iCntSearch);
-                                break;
-                            }
-                        }
-                        iSelectedRow = iSearchedList.ToList();
-                    }
-                }
-                if (iSearchedList.Count > 0)
-                {
-                    int iTestNum = iSelectedRow.Count(n => n == -1);
-                    if (iTestNum == iSearchedList.Count)
-                        iSelectedRow = iSearchedList.ToList();
-                    for (int i = 0; i < iSearchedList.Count; i++)
-                    {
-                        if (iSelectedRow[i] == iSearchedList[i])
-                        {
-                            csDataGridView1.CurrentCell = csDataGridView1.Rows[iSearchedList[i]].Cells[0];
-                            iSelectedRow[i] = -1;
-                            break;
-                        }
-                    }
-                }
+                btnTxtSearch.PerformClick();
             }
             else
             {
