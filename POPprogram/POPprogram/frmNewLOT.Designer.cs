@@ -40,12 +40,12 @@ namespace POPprogram
             // 
             // pnlCrud
             // 
-            this.pnlCrud.Location = new System.Drawing.Point(844, 788);
+            this.pnlCrud.Location = new System.Drawing.Point(577, 563);
             // 
             // frmNewLOT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(1413, 862);
+            this.ClientSize = new System.Drawing.Size(1146, 637);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "frmNewLOT";
             this.panel4.ResumeLayout(false);
