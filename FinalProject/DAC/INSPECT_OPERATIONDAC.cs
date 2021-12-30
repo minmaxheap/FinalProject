@@ -150,16 +150,25 @@ namespace DAC
 		}
 
 		//값 유형에 따라 전체 할당조건 보여주기
-		public List<string> GetAll(string Value)
+		public List<INSPECT_MSTVO> GetAll(string Value)
 		{
-			string sql = @"select ROW_NUMBER() over(order by(select 1)) as RowNum,[INSPECT_ITEM_CODE],[INSPECT_ITEM_NAME]
+			try
+			{
+				string sql = @"select ROW_NUMBER() over(order by(select 1)) as RowNum,[INSPECT_ITEM_CODE],[INSPECT_ITEM_NAME]
 from [dbo].[INSPECT_ITEM_MST]
 where VALUE_TYPE = @VALUE_TYPE";
 
-			using (SqlCommand cmd = new SqlCommand(sql, conn))
+				using (SqlCommand cmd = new SqlCommand(sql, conn))
+				{
+
+					cmd.Parameters.AddWithValue("@VALUE_TYPE", Value);
+					return Helper.DataReaderMapToList<INSPECT_MSTVO>(cmd.ExecuteReader());
+				}
+			}
+			catch (Exception err)
 			{
-				cmd.Parameters.AddWithValue("@VALUE_TYPE", Value);
-				return Helper.DataReaderMapToList<string>(cmd.ExecuteReader());
+				Debug.WriteLine(err.Message);
+				return null;
 			}
 		}
 

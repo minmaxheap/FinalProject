@@ -219,7 +219,7 @@ namespace MES_Team3
 			Value = (comboBox1.SelectedValue == null) ? "" : comboBox1.SelectedValue.ToString();
 
 			serv = new INSPECT_OPServ();
-			List<string> List = serv.GetAll(Value);
+			List<INSPECT_MSTVO> List = serv.GetAll(Value);
 			csDataGridView3.DataSource = null;
 			csDataGridView3.DataSource = List;
 

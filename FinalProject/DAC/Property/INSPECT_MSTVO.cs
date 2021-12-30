@@ -21,7 +21,7 @@ namespace DAC
 		private string create_userid;
 		private DateTime updatetime;
 		private string update_userid;
-
+		private int rownum;
 		private bool isSearchPanel;
 
 
@@ -36,7 +36,12 @@ namespace DAC
 		//    ,[UPDATE_TIME]
 		//    ,[UPDATE_USER_ID]
 
-	
+
+
+		//[DisplayName("순번")]
+		[Browsable(true)]
+
+		public int RowNum { get; set; }
 
 
 		[DisplayName("검사항목")]
@@ -140,6 +145,7 @@ namespace DAC
 
 				PropertyDescriptorCollection propCollection = TypeDescriptor.GetProperties(this.GetType());
 
+				PropertyDescriptor descriptorNum = propCollection["RowNum"];
 				PropertyDescriptor descriptor = propCollection["INSPECT_ITEM_NAME"];
 				PropertyDescriptor descriptor1 = propCollection["SPEC_LSL"];
 				PropertyDescriptor descriptor2 = propCollection["SPEC_USL"];
@@ -148,6 +154,9 @@ namespace DAC
 				PropertyDescriptor descriptor5 = propCollection["UPDATE_TIME"];
 				PropertyDescriptor descriptor6 = propCollection["UPDATE_USER_ID"];
 				PropertyDescriptor descriptor7 = propCollection["SPEC_TARGET"];
+
+				BrowsableAttribute attribNum = (BrowsableAttribute)descriptorNum.Attributes[typeof(BrowsableAttribute)];
+				FieldInfo isBrowNum = attribNum.GetType().GetField("browsable", BindingFlags.NonPublic | BindingFlags.Instance);
 
 				BrowsableAttribute attrib = (BrowsableAttribute)descriptor.Attributes[typeof(BrowsableAttribute)];
 				FieldInfo isBrow = attrib.GetType().GetField("browsable", BindingFlags.NonPublic | BindingFlags.Instance);
@@ -183,6 +192,7 @@ namespace DAC
 
 					//모듈화하고 싶다..
 
+					isBrowNum.SetValue(attribNum, false);
 					isBrow.SetValue(attrib, false);
 					isBrow1.SetValue(attrib1, false);
 					isBrow2.SetValue(attrib2, false);
@@ -194,7 +204,7 @@ namespace DAC
 				}
 				else
 				{
-
+					isBrowNum.SetValue(attribNum, true);
 					isBrow.SetValue(attrib, true);
 					isBrow1.SetValue(attrib1, true);
 					isBrow2.SetValue(attrib2, true);
