@@ -190,5 +190,10 @@ namespace MES_Team3
             pgSearch.PropertySort = PropertySort.NoSort;
             // propertyPanel.Visible = false;
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
