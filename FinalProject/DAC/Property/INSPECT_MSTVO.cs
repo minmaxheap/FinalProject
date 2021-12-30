@@ -21,7 +21,7 @@ namespace DAC
 		private string create_userid;
 		private DateTime updatetime;
 		private string update_userid;
-		private int rownum;
+		//private int rownum;
 		private bool isSearchPanel;
 
 
@@ -38,12 +38,8 @@ namespace DAC
 
 
 
-		//[DisplayName("순번")]
-		[Browsable(true)]
-
-		public int RowNum { get; set; }
-
-
+	
+		
 		[DisplayName("검사항목")]
 		[Browsable(true)]
 
@@ -51,7 +47,7 @@ namespace DAC
 
 		[DisplayName("검사항목명")]
 		[Browsable(true)]
-
+		
 		public string INSPECT_ITEM_NAME { get { return inspect_itemname; } set { inspect_itemname = value; } }
 
 		[DisplayName("값 유형")]
@@ -115,7 +111,7 @@ namespace DAC
 
 		[DisplayName("생성시간")]
 		[Browsable(true)]
-
+		[ReadOnly(true)]
 		public DateTime CREATE_TIME { get { return create_time; } set { create_time = value; } }
 
 		[DisplayName("생성사용자")]
@@ -125,11 +121,13 @@ namespace DAC
 
 		[DisplayName("변경시간")]
 		[Browsable(true)]
+		[ReadOnly(true)]
 
 		public DateTime UPDATE_TIME { get { return updatetime; } set { updatetime = value; } }
 
 		[DisplayName("변경사용자")]
 		[Browsable(true)]
+		[ReadOnly(true)]
 
 		public string UPDATE_USER_ID { get { return update_userid; } set { update_userid = value; } }
 
@@ -155,9 +153,7 @@ namespace DAC
 				PropertyDescriptor descriptor6 = propCollection["UPDATE_USER_ID"];
 				PropertyDescriptor descriptor7 = propCollection["SPEC_TARGET"];
 
-				BrowsableAttribute attribNum = (BrowsableAttribute)descriptorNum.Attributes[typeof(BrowsableAttribute)];
-				FieldInfo isBrowNum = attribNum.GetType().GetField("browsable", BindingFlags.NonPublic | BindingFlags.Instance);
-
+				
 				BrowsableAttribute attrib = (BrowsableAttribute)descriptor.Attributes[typeof(BrowsableAttribute)];
 				FieldInfo isBrow = attrib.GetType().GetField("browsable", BindingFlags.NonPublic | BindingFlags.Instance);
 
@@ -192,7 +188,6 @@ namespace DAC
 
 					//모듈화하고 싶다..
 
-					isBrowNum.SetValue(attribNum, false);
 					isBrow.SetValue(attrib, false);
 					isBrow1.SetValue(attrib1, false);
 					isBrow2.SetValue(attrib2, false);
@@ -204,7 +199,6 @@ namespace DAC
 				}
 				else
 				{
-					isBrowNum.SetValue(attribNum, true);
 					isBrow.SetValue(attrib, true);
 					isBrow1.SetValue(attrib1, true);
 					isBrow2.SetValue(attrib2, true);

@@ -150,7 +150,7 @@ namespace DAC
 		}
 
 		//값 유형에 따라 전체 할당조건 보여주기
-		public List<INSPECT_MSTVO> GetAll(string Value)
+		public DataTable GetAll(string Value)
 		{
 			try
 			{
@@ -158,12 +158,18 @@ namespace DAC
 from [dbo].[INSPECT_ITEM_MST]
 where VALUE_TYPE = @VALUE_TYPE";
 
-				using (SqlCommand cmd = new SqlCommand(sql, conn))
-				{
+				SqlCommand cmd = new SqlCommand(sql, conn);
+				cmd.Parameters.AddWithValue("@VALUE_TYPE", Value);
+				//SqlDataReader reader = cmd.ExecuteReader();
 
-					cmd.Parameters.AddWithValue("@VALUE_TYPE", Value);
-					return Helper.DataReaderMapToList<INSPECT_MSTVO>(cmd.ExecuteReader());
-				}
+				DataTable dt = new DataTable();
+
+				SqlDataAdapter da = new SqlDataAdapter(cmd);
+				da.Fill(dt);
+				return dt;
+
+				//return Helper.DataReaderMapToList<INSPECT_MSTVO>(cmd.ExecuteReader());
+
 			}
 			catch (Exception err)
 			{

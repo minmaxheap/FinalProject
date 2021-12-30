@@ -16,10 +16,7 @@ namespace DAC
 		private string Check_Defect;
 		private string Check_Inspect;
 		private string Check_Materal;
-
-
-	
-
+		
 		[DisplayName("공정")]
 		[Browsable(true)]
 		public string OPERATION_CODE { get { return operation_code; } set { operation_code = value; } }

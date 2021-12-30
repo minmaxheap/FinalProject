@@ -101,13 +101,13 @@ namespace MES_Team3
 			// 
 			this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
 			// 
-			// btnReadTop
-			// 
-			this.btnReadTop.Click += new System.EventHandler(this.btnReadTop_Click);
-			// 
 			// btnTxtSearch
 			// 
 			this.btnTxtSearch.Click += new System.EventHandler(this.btnTxtSearch_Click);
+			// 
+			// btnReadTop
+			// 
+			this.btnReadTop.Click += new System.EventHandler(this.btnReadTop_Click);
 			// 
 			// pgSearch
 			// 
@@ -164,9 +164,10 @@ namespace MES_Team3
 			this.csDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
 			this.csDataGridView1.RowHeadersWidth = 30;
 			this.csDataGridView1.RowTemplate.Height = 23;
-			this.csDataGridView1.Size = new System.Drawing.Size(797, 622);
+			this.csDataGridView1.Size = new System.Drawing.Size(794, 597);
 			this.csDataGridView1.TabIndex = 0;
-			this.csDataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellDoubleClick);
+			this.csDataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellContentClick);
+//			this.csDataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellDoubleClick);
 			// 
 			// frmUser_MST
 			// 

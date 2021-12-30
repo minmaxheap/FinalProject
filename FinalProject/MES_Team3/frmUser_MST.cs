@@ -12,6 +12,7 @@ namespace MES_Team3
 	{
 		User_MSTServ serv;
 		string Code = string.Empty;
+		string ID = frmLogin.userID;
 		public frmUser_MST()
 		{
 			InitializeComponent();
@@ -19,15 +20,15 @@ namespace MES_Team3
 
 		private void frmUser_MST_Load(object sender, EventArgs e)
 		{
-//			USER_ID
-//USER_NAME
-//USER_GROUP_CODE
-//USER_PASSWORD
-//USER_DEPARTMENT
-//CREATE_TIME
-//CREATE_USER_ID
-//UPDATE_TIME
-//UPDATE_USER_ID
+			//			USER_ID
+			//USER_NAME
+			//USER_GROUP_CODE
+			//USER_PASSWORD
+			//USER_DEPARTMENT
+			//CREATE_TIME
+			//CREATE_USER_ID
+			//UPDATE_TIME
+			//UPDATE_USER_ID
 
 
 			DataGridViewUtil.SetInitGridView(csDataGridView1);
@@ -45,7 +46,7 @@ namespace MES_Team3
 
 
 			pnlSearch.Visible = false;
-			User_MST_Property vo  = new User_MST_Property();
+			User_MST_Property vo = new User_MST_Property();
 
 			pgProperty.SelectedObject = vo;
 
@@ -76,6 +77,14 @@ namespace MES_Team3
 		private void btnInsert_Click(object sender, EventArgs e)
 		{
 			User_MST_Property vo = (User_MST_Property)pgProperty.SelectedObject;
+			vo.CREATE_USER_ID = ID;
+
+			if (string.IsNullOrWhiteSpace(vo.USER_ID) || string.IsNullOrWhiteSpace(vo.USER_NAME) || string.IsNullOrWhiteSpace(vo.USER_PASSWORD) || string.IsNullOrWhiteSpace(vo.USER_DEPARTMENT))
+			{
+				MessageBox.Show("필요한 정보가 없으니 다시 확인해주세요.");
+				return;
+			}
+
 			bool result = serv.Insert(vo);
 
 			if (result)
@@ -96,6 +105,12 @@ namespace MES_Team3
 		{
 			User_MST_Property pr = (User_MST_Property)pgSearch.SelectedObject;
 
+			if (pr == null)
+			{
+				MessageBox.Show("검색조건을 키시고 조회 클릭하세요");
+				return;
+			}
+
 			List<User_MST_Property> list = serv.GetSearch(pr);
 			pr.IsSearchPanel = false;
 
@@ -106,9 +121,17 @@ namespace MES_Team3
 		private void btnUpdate_Click(object sender, EventArgs e)
 		{
 			User_MST_Property pr = (User_MST_Property)pgProperty.SelectedObject;
+			pr.UPDATE_USER_ID = ID;
+
+		
 			if (string.IsNullOrWhiteSpace(pr.UPDATE_USER_ID))
 			{
 				MessageBox.Show("변경사용자를 입력해주세요");
+				return;
+			}
+			if ( string.IsNullOrWhiteSpace(pr.USER_ID) || string.IsNullOrWhiteSpace(pr.USER_NAME) || string.IsNullOrWhiteSpace(pr.USER_PASSWORD) || string.IsNullOrWhiteSpace(pr.USER_DEPARTMENT))
+			{
+				MessageBox.Show("필요한 정보가 없으니 다시 확인해주세요.");
 				return;
 			}
 			bool result = serv.Update(pr);
@@ -128,7 +151,13 @@ namespace MES_Team3
 
 		private void btnDelete_Click(object sender, EventArgs e)
 		{
-			//User_MST_Property pr = (User_MST_Property)pgSearch.SelectedObject;
+			//User_MST_Property pr = (User_MST_Property)pgSearch.SelectedObject;'
+
+			if (string.IsNullOrWhiteSpace(Code))
+			{
+				MessageBox.Show("삭제할 아이디가 존재하지 않습니다.");
+				return;
+			}
 
 			bool result = serv.Delete(Code);
 			if (result)
@@ -144,71 +173,7 @@ namespace MES_Team3
 			}
 		}
 
-		private void csDataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-		{
-
-			//			USER_ID
-			//USER_NAME
-			//USER_GROUP_CODE
-			//USER_PASSWORD
-			//USER_DEPARTMENT
-			//CREATE_TIME
-			//CREATE_USER_ID
-			//UPDATE_TIME
-			//UPDATE_USER_ID
-
-			if (e.RowIndex < 0)
-			{
-				return;
-			}
-
-			//아이디
-			Code = csDataGridView1["USER_ID", e.RowIndex].Value.ToString();
-			MessageBox.Show($"{Code}를 선택하셨습니다.");
-
-
-			DataGridViewRow dr = csDataGridView1.Rows[e.RowIndex];
-			User_MST_Property vo = new User_MST_Property();
-			BIsSearchPanel = false;
-			vo.IsSearchPanel = false;
-			
-			if (dr.Cells["USER_ID"].Value != null && dr.Cells["USER_ID"].Value != DBNull.Value)
-				vo.USER_ID = dr.Cells["USER_ID"].Value.ToString();
-			
-			if (dr.Cells["USER_NAME"].Value != null && dr.Cells["USER_NAME"].Value != DBNull.Value)
-				vo.USER_NAME = dr.Cells["USER_NAME"].Value.ToString();
-
-			if (dr.Cells["USER_GROUP_CODE"].Value != null && dr.Cells["USER_GROUP_CODE"].Value != DBNull.Value)
-				vo.USER_GROUP_CODE = dr.Cells["USER_GROUP_CODE"].Value.ToString();
-
-			if (dr.Cells["USER_PASSWORD"].Value != null && dr.Cells["USER_PASSWORD"].Value != DBNull.Value)
-				vo.USER_PASSWORD = dr.Cells["USER_PASSWORD"].Value.ToString();
-
-			if (dr.Cells["USER_DEPARTMENT"].Value != null && dr.Cells["USER_DEPARTMENT"].Value != DBNull.Value)
-				vo.USER_DEPARTMENT = dr.Cells["USER_DEPARTMENT"].Value.ToString();
-
-			if (dr.Cells["CREATE_USER_ID"].Value != null && dr.Cells["CREATE_USER_ID"].Value != DBNull.Value)
-				vo.CREATE_USER_ID = dr.Cells["CREATE_USER_ID"].Value.ToString();
-
-			if (dr.Cells["UPDATE_USER_ID"].Value != null && dr.Cells["UPDATE_USER_ID"].Value != DBNull.Value)
-				vo.UPDATE_USER_ID = dr.Cells["UPDATE_USER_ID"].Value.ToString();
-
-			if (dr.Cells["CREATE_TIME"].Value != null && dr.Cells["CREATE_TIME"].Value != DBNull.Value)
-				vo.CREATE_TIME = Convert.ToDateTime(dr.Cells["CREATE_TIME"].Value);
-
-
-			if (dr.Cells["UPDATE_TIME"].Value != null && dr.Cells["UPDATE_TIME"].Value != DBNull.Value)
-				vo.UPDATE_TIME = Convert.ToDateTime(dr.Cells["UPDATE_TIME"].Value);
-
-
-			pgProperty.SelectedObject = vo;
-
-			pgProperty.PropertySort = PropertySort.NoSort;
-
-
-			pnlProperty.Visible = true;
-			pnlSearch.Visible = false;
-		}
+		
 
 		private void panel6_Paint(object sender, PaintEventArgs e)
 		{
@@ -281,6 +246,12 @@ namespace MES_Team3
 		{
 			User_MST_Property pr = (User_MST_Property)pgSearch.SelectedObject;
 
+			if (pr == null)
+			{
+				MessageBox.Show("검색조건을 키시고 조회 클릭하세요");
+				return;
+			}
+
 			List<User_MST_Property> list = serv.GetSearch(pr);
 			pr.IsSearchPanel = false;
 
@@ -307,6 +278,61 @@ namespace MES_Team3
 			pgSearch.SelectedObject = vo;
 
 			pgSearch.PropertySort = PropertySort.NoSort;
+		}
+
+		private void csDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+			if (e.RowIndex < 0)
+			{
+				return;
+			}
+
+			//아이디
+			Code = csDataGridView1["USER_ID", e.RowIndex].Value.ToString();
+			MessageBox.Show($"{Code}를 선택하셨습니다.");
+
+
+			DataGridViewRow dr = csDataGridView1.Rows[e.RowIndex];
+			User_MST_Property vo = new User_MST_Property();
+			BIsSearchPanel = false;
+			vo.IsSearchPanel = false;
+
+			if (dr.Cells["USER_ID"].Value != null && dr.Cells["USER_ID"].Value != DBNull.Value)
+				vo.USER_ID = dr.Cells["USER_ID"].Value.ToString();
+
+			if (dr.Cells["USER_NAME"].Value != null && dr.Cells["USER_NAME"].Value != DBNull.Value)
+				vo.USER_NAME = dr.Cells["USER_NAME"].Value.ToString();
+
+			if (dr.Cells["USER_GROUP_CODE"].Value != null && dr.Cells["USER_GROUP_CODE"].Value != DBNull.Value)
+				vo.USER_GROUP_CODE = dr.Cells["USER_GROUP_CODE"].Value.ToString();
+
+			if (dr.Cells["USER_PASSWORD"].Value != null && dr.Cells["USER_PASSWORD"].Value != DBNull.Value)
+				vo.USER_PASSWORD = dr.Cells["USER_PASSWORD"].Value.ToString();
+
+			if (dr.Cells["USER_DEPARTMENT"].Value != null && dr.Cells["USER_DEPARTMENT"].Value != DBNull.Value)
+				vo.USER_DEPARTMENT = dr.Cells["USER_DEPARTMENT"].Value.ToString();
+
+			if (dr.Cells["CREATE_USER_ID"].Value != null && dr.Cells["CREATE_USER_ID"].Value != DBNull.Value)
+				vo.CREATE_USER_ID = dr.Cells["CREATE_USER_ID"].Value.ToString();
+
+			if (dr.Cells["UPDATE_USER_ID"].Value != null && dr.Cells["UPDATE_USER_ID"].Value != DBNull.Value)
+				vo.UPDATE_USER_ID = dr.Cells["UPDATE_USER_ID"].Value.ToString();
+
+			if (dr.Cells["CREATE_TIME"].Value != null && dr.Cells["CREATE_TIME"].Value != DBNull.Value)
+				vo.CREATE_TIME = Convert.ToDateTime(dr.Cells["CREATE_TIME"].Value);
+
+
+			if (dr.Cells["UPDATE_TIME"].Value != null && dr.Cells["UPDATE_TIME"].Value != DBNull.Value)
+				vo.UPDATE_TIME = Convert.ToDateTime(dr.Cells["UPDATE_TIME"].Value);
+
+
+			pgProperty.SelectedObject = vo;
+
+			pgProperty.PropertySort = PropertySort.NoSort;
+
+
+			pnlProperty.Visible = true;
+			pnlSearch.Visible = false;
 		}
 	}
 }
