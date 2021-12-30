@@ -71,8 +71,8 @@ namespace POPprogram
             this.btnInsert = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
             this.btnReadBottom = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel4.SuspendLayout();
@@ -112,13 +112,13 @@ namespace POPprogram
             // 
             // label13
             // 
-            this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold);
             this.label13.Location = new System.Drawing.Point(108, 299);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(64, 31);
             this.label13.TabIndex = 38;
             this.label13.Text = "주석";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // textBox13
             // 
@@ -134,23 +134,23 @@ namespace POPprogram
             // 
             // label11
             // 
-            this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold);
             this.label11.Location = new System.Drawing.Point(83, 244);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(89, 31);
             this.label11.TabIndex = 36;
             this.label11.Text = "고객사";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label12
             // 
-            this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold);
             this.label12.Location = new System.Drawing.Point(108, 189);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(64, 31);
             this.label12.TabIndex = 35;
             this.label12.Text = "품번";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // textBox9
             // 
@@ -192,23 +192,23 @@ namespace POPprogram
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold);
             this.label9.Location = new System.Drawing.Point(83, 134);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(89, 31);
             this.label9.TabIndex = 30;
             this.label9.Text = "고객사";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label10
             // 
-            this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold);
             this.label10.Location = new System.Drawing.Point(108, 79);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(64, 31);
             this.label10.TabIndex = 29;
             this.label10.Text = "품번";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // textBox1
             // 
@@ -445,23 +445,23 @@ namespace POPprogram
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.Location = new System.Drawing.Point(83, 116);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 31);
             this.label3.TabIndex = 24;
             this.label3.Text = "고객사";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.Location = new System.Drawing.Point(108, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 31);
             this.label2.TabIndex = 23;
             this.label2.Text = "품번";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // textBox5
             // 
@@ -587,25 +587,6 @@ namespace POPprogram
             this.btnClear.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnClear.UseVisualStyleBackColor = false;
             // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.AutoSize = true;
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnClose.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnClose.Image = global::POPprogram.Properties.Resources.Delete;
-            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnClose.Location = new System.Drawing.Point(572, 13);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(94, 70);
-            this.btnClose.TabIndex = 83;
-            this.btnClose.Text = "닫기";
-            this.btnClose.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnClose.UseVisualStyleBackColor = false;
-            // 
             // btnReadBottom
             // 
             this.btnReadBottom.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -624,6 +605,25 @@ namespace POPprogram
             this.btnReadBottom.Text = "조회";
             this.btnReadBottom.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnReadBottom.UseVisualStyleBackColor = false;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.AutoSize = true;
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnClose.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnClose.Image = global::POPprogram.Properties.Resources.Delete;
+            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnClose.Location = new System.Drawing.Point(572, 13);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(94, 70);
+            this.btnClose.TabIndex = 83;
+            this.btnClose.Text = "닫기";
+            this.btnClose.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnClose.UseVisualStyleBackColor = false;
             // 
             // btnUpdate
             // 
