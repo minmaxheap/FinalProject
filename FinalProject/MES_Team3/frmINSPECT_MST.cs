@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace MES_Team3
 {
-    
+
     public partial class frmINSPECT_MST : MES_Team3.BaseForms.Base1_1
     {
         DataTable mdtAll;
@@ -101,6 +101,13 @@ namespace MES_Team3
             INSPECT_MSTVO save = (INSPECT_MSTVO)pgGrid.SelectedObject;
             save.CREATE_USER_ID = mUserID;
             InspecServ serv = new InspecServ();
+
+            if (string.IsNullOrWhiteSpace(save.INSPECT_ITEM_CODE) || string.IsNullOrWhiteSpace(save.INSPECT_ITEM_NAME))
+            {
+                MessageBox.Show("필요한 값을 입력해주세요");
+                return;
+            }
+
             bool bResult = serv.insert(save);
             if (bResult)
             {
@@ -131,6 +138,12 @@ namespace MES_Team3
             // Inspect_id 
             INSPECT_MSTVO save = (INSPECT_MSTVO)pgGrid.SelectedObject;
 
+            if (save == null)
+            {
+                MessageBox.Show("아이디가 존재 하지않습니다.");
+                return;
+            }
+
             bool result = serv.Delete(save);
             if (result)
             {
@@ -146,68 +159,16 @@ namespace MES_Team3
 
         }
 
-        private void csDataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-            //이거 안됨 
-            if (e.RowIndex < 0)
-            {
-                return;
-            }
-
-            //아이디
-            Inspect_id = csDataGridView1["INSPECT_ITEM_CODE", e.RowIndex].Value.ToString();
-            MessageBox.Show($"{Inspect_id}를 선택하셨습니다.");
-
-            //유효값 처리
-
-            DataGridViewRow dr = csDataGridView1.Rows[e.RowIndex];
-            INSPECT_MSTVO vo = new INSPECT_MSTVO();
-            BIsSearchPanel = false;
-            vo.IsSearchPanel = false;
-
-            if (dr.Cells["INSPECT_ITEM_CODE"].Value != null && dr.Cells["INSPECT_ITEM_CODE"].Value != DBNull.Value)
-                vo.INSPECT_ITEM_CODE = dr.Cells["INSPECT_ITEM_CODE"].Value.ToString();
-
-            if (dr.Cells["INSPECT_ITEM_NAME"].Value != null && dr.Cells["INSPECT_ITEM_NAME"].Value != DBNull.Value)
-                vo.INSPECT_ITEM_NAME = dr.Cells["INSPECT_ITEM_NAME"].Value.ToString();
-
-            if (dr.Cells["VALUE_TYPE"].Value != null && dr.Cells["VALUE_TYPE"].Value != DBNull.Value)
-                vo.VALUE_TYPE = dr.Cells["VALUE_TYPE"].Value.ToString();
-
-            if (dr.Cells["SPEC_LSL"].Value != null && dr.Cells["SPEC_LSL"].Value != DBNull.Value)
-                vo.SPEC_LSL = dr.Cells["SPEC_LSL"].Value.ToString();
-
-            if (dr.Cells["SPEC_USL"].Value != null && dr.Cells["SPEC_USL"].Value != DBNull.Value)
-                vo.SPEC_USL = dr.Cells["SPEC_USL"].Value.ToString();
-
-            if (dr.Cells["CREATE_TIME"].Value != null && dr.Cells["CREATE_TIME"].Value != DBNull.Value)
-                vo.CREATE_TIME = Convert.ToDateTime(dr.Cells["CREATE_TIME"].Value);
-
-            if (dr.Cells["CREATE_USER_ID"].Value != null && dr.Cells["CREATE_USER_ID"].Value != DBNull.Value)
-                vo.CREATE_USER_ID = dr.Cells["CREATE_USER_ID"].Value.ToString();
-
-            if (dr.Cells["UPDATE_TIME"].Value != null && dr.Cells["UPDATE_TIME"].Value != DBNull.Value)
-                vo.UPDATE_TIME = Convert.ToDateTime(dr.Cells["UPDATE_TIME"].Value);
-
-            if (dr.Cells["UPDATE_USER_ID"].Value != null && dr.Cells["UPDATE_USER_ID"].Value != DBNull.Value)
-                vo.UPDATE_USER_ID = dr.Cells["UPDATE_USER_ID"].Value.ToString();
-
-            pgGrid.SelectedObject = vo;
-
-            pgGrid.PropertySort = PropertySort.NoSort;
-
-
-            pnlProperty.Visible = true;
-            pnlSearch.Visible = false;
-
-
-        }
 
         private void btnRead_Click(object sender, EventArgs e)
         {
             //SearchVo vo = new SearchVo();
             INSPECT_MSTVO save = (INSPECT_MSTVO)pgSearch.SelectedObject;
+            if (save == null)
+            {
+                MessageBox.Show("검색조건을 키시고 조회 클릭하세요");
+                return;
+            }
 
             List<INSPECT_MSTVO> list = serv.GetINSPECT_MST_Search(save);
             save.IsSearchPanel = false;
@@ -221,8 +182,15 @@ namespace MES_Team3
         {
             INSPECT_MSTVO save = (INSPECT_MSTVO)pgGrid.SelectedObject;
             save.UPDATE_USER_ID = mUserID;
+            // save.CREATE_USER_ID = null;
+            //save.CREATE_TIME = DateTime.n;
             InspecServ serv = new InspecServ();
-            bool bResult = serv.Update(save);
+            if (string.IsNullOrWhiteSpace(save.INSPECT_ITEM_CODE) || string.IsNullOrWhiteSpace(save.INSPECT_ITEM_NAME))
+            {
+                MessageBox.Show("필요한 값을 입력해주세요");
+                return;
+            }
+                bool bResult = serv.Update(save);
             if (bResult)
             {
                 MessageBox.Show("수정되었습니다.");
@@ -248,6 +216,10 @@ namespace MES_Team3
                 INSPECT_MSTVO vo = new INSPECT_MSTVO();
                 vo.SPEC_LSL = "";
                 vo.SPEC_USL = "";
+            }
+            if (e.ChangedItem.Label == "LSL")
+            {
+                
             }
         }
 
@@ -370,7 +342,63 @@ namespace MES_Team3
             }
 
         }
-	}
+
+		private void csDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+            //이거 안됨 
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+
+            //아이디
+            Inspect_id = csDataGridView1["INSPECT_ITEM_CODE", e.RowIndex].Value.ToString();
+            MessageBox.Show($"{Inspect_id}를 선택하셨습니다.");
+
+            //유효값 처리
+
+            DataGridViewRow dr = csDataGridView1.Rows[e.RowIndex];
+            INSPECT_MSTVO vo = new INSPECT_MSTVO();
+            BIsSearchPanel = false;
+            vo.IsSearchPanel = false;
+
+            if (dr.Cells["INSPECT_ITEM_CODE"].Value != null && dr.Cells["INSPECT_ITEM_CODE"].Value != DBNull.Value)
+                vo.INSPECT_ITEM_CODE = dr.Cells["INSPECT_ITEM_CODE"].Value.ToString();
+
+            if (dr.Cells["INSPECT_ITEM_NAME"].Value != null && dr.Cells["INSPECT_ITEM_NAME"].Value != DBNull.Value)
+                vo.INSPECT_ITEM_NAME = dr.Cells["INSPECT_ITEM_NAME"].Value.ToString();
+
+            if (dr.Cells["VALUE_TYPE"].Value != null && dr.Cells["VALUE_TYPE"].Value != DBNull.Value)
+                vo.VALUE_TYPE = dr.Cells["VALUE_TYPE"].Value.ToString();
+
+            if (dr.Cells["SPEC_LSL"].Value != null && dr.Cells["SPEC_LSL"].Value != DBNull.Value)
+                vo.SPEC_LSL = dr.Cells["SPEC_LSL"].Value.ToString();
+
+            if (dr.Cells["SPEC_USL"].Value != null && dr.Cells["SPEC_USL"].Value != DBNull.Value)
+                vo.SPEC_USL = dr.Cells["SPEC_USL"].Value.ToString();
+
+            if (dr.Cells["CREATE_TIME"].Value != null && dr.Cells["CREATE_TIME"].Value != DBNull.Value)
+                vo.CREATE_TIME = Convert.ToDateTime(dr.Cells["CREATE_TIME"].Value);
+
+            if (dr.Cells["CREATE_USER_ID"].Value != null && dr.Cells["CREATE_USER_ID"].Value != DBNull.Value)
+                vo.CREATE_USER_ID = dr.Cells["CREATE_USER_ID"].Value.ToString();
+
+            if (dr.Cells["UPDATE_TIME"].Value != null && dr.Cells["UPDATE_TIME"].Value != DBNull.Value)
+                vo.UPDATE_TIME = Convert.ToDateTime(dr.Cells["UPDATE_TIME"].Value);
+
+            if (dr.Cells["UPDATE_USER_ID"].Value != null && dr.Cells["UPDATE_USER_ID"].Value != DBNull.Value)
+                vo.UPDATE_USER_ID = dr.Cells["UPDATE_USER_ID"].Value.ToString();
+
+            pgGrid.SelectedObject = vo;
+
+            pgGrid.PropertySort = PropertySort.NoSort;
+
+
+            pnlProperty.Visible = true;
+            pnlSearch.Visible = false;
+
+        }
+    }
 }
 
 

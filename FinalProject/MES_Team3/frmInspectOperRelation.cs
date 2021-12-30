@@ -47,9 +47,9 @@ namespace MES_Team3
 		
 			INSPECT_OPERATIONProperty pr = new INSPECT_OPERATIONProperty();
 
-			pgdSearch.SelectedObject = pr;
+			pgSearch .SelectedObject = pr;
 
-			pgdSearch.PropertySort = PropertySort.NoSort;
+			pgSearch.PropertySort = PropertySort.NoSort;
 		}
 
 		private void INSPECT_Grid()
@@ -90,7 +90,7 @@ namespace MES_Team3
 		private void btnReadBottom_Click_1(object sender, EventArgs e)
 		{
 
-			INSPECT_OPERATIONProperty pr = (INSPECT_OPERATIONProperty)pgdSearch.SelectedObject;
+			INSPECT_OPERATIONProperty pr = (INSPECT_OPERATIONProperty)pgSearch.SelectedObject;
 
 			DataTable dt = serv.GetSearch(pr);
 			//pr.IsSearchPanel = false;
@@ -107,7 +107,7 @@ namespace MES_Team3
 		private void btnReadTop_Click(object sender, EventArgs e)
 		{
 
-			INSPECT_OPERATIONProperty pr = (INSPECT_OPERATIONProperty)pgdSearch.SelectedObject;
+			INSPECT_OPERATIONProperty pr = (INSPECT_OPERATIONProperty)pgSearch.SelectedObject;
 
 			DataTable dt = serv.GetSearch(pr);
 			//pr.IsSearchPanel = false;
@@ -219,9 +219,9 @@ namespace MES_Team3
 			Value = (comboBox1.SelectedValue == null) ? "" : comboBox1.SelectedValue.ToString();
 
 			serv = new INSPECT_OPServ();
-			List<INSPECT_MSTVO> List = serv.GetAll(Value);
+			DataTable dt = serv.GetAll(Value);
 			csDataGridView3.DataSource = null;
-			csDataGridView3.DataSource = List;
+			csDataGridView3.DataSource = dt;
 
 
 		}

@@ -71,7 +71,7 @@ values(@USER_GROUP_CODE, @USER_GROUP_NAME, @USER_GROUP_TYPE,getdate(), @CREATE_U
 		public bool Update(UserGroupVO vo)
 		{
 			string sql = @"update [dbo].[USER_GROUP_MST]
-set USER_GROUP_CODE = @USER_GROUP_CODE, USER_GROUP_NAME = @USER_GROUP_NAME, USER_GROUP_TYPE = @USER_GROUP_TYPE,UPDATE_TIME = @UPDATE_TIME, UPDATE_USER_ID = @UPDATE_USER_ID
+set USER_GROUP_CODE = @USER_GROUP_CODE, USER_GROUP_NAME = @USER_GROUP_NAME, USER_GROUP_TYPE = @USER_GROUP_TYPE,UPDATE_TIME = getdate(), UPDATE_USER_ID = @UPDATE_USER_ID
 where USER_GROUP_CODE = @USER_GROUP_CODE";
 
 			using (SqlCommand cmd = new SqlCommand(sql, conn))
@@ -82,7 +82,7 @@ where USER_GROUP_CODE = @USER_GROUP_CODE";
 
 				//cmd.Parameters.AddWithValue("@CREATE_TIME", vo.CREATE_TIME);
 				//cmd.Parameters.AddWithValue("@CREATE_USER_ID", vo.CREATE_USER_ID);
-				cmd.Parameters.AddWithValue("@UPDATE_TIME", vo.UPDATE_TIME);
+				//cmd.Parameters.AddWithValue("@UPDATE_TIME", vo.UPDATE_TIME);
 				cmd.Parameters.AddWithValue("@UPDATE_USER_ID", vo.UPDATE_USER_ID);
 
 				int row = cmd.ExecuteNonQuery();

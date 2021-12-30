@@ -59,21 +59,25 @@ namespace DAC
 
 		[DisplayName("생성시간")]
 		[Browsable(true)]
+		[ReadOnly(true)]
 
 		public DateTime CREATE_TIME { get { return CreateTime; } set { CreateTime = value; } }
 
 		[DisplayName("생성사용자")]
 		[Browsable(true)]
+		[ReadOnly(true)]
 
 		public string CREATE_USER_ID { get { return CreateUserID; } set { CreateUserID = value; } }
 
 		[DisplayName("변경시간")]
 		[Browsable(true)]
+		[ReadOnly(true)]
 
 		public DateTime UPDATE_TIME { get { return UpdateTime; } set { UpdateTime = value; } }
 
 		[DisplayName("변경사용자")]
 		[Browsable(true)]
+		[ReadOnly(true)]
 
 		public string UPDATE_USER_ID { get { return UpdateUserID; } set { UpdateUserID = value; } }
 
