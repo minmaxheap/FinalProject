@@ -358,23 +358,14 @@ namespace MES_Team3
         private void btnPanel_Click(object sender, EventArgs e)
         {
             ProductProperty vo = new ProductProperty();
-            OperationPropertySch svo = new OperationPropertySch();
+            vo.IsSearchPanel = true;
 
-            pgProperty.SelectedObject = vo;
-            pgSearch.SelectedObject = svo;
+            pgSearch.SelectedObject = vo;
 
-            pgProperty.PropertySort = PropertySort.NoSort;
             pgSearch.PropertySort = PropertySort.NoSort;
         }
 
-        private void pgSearch_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)
-        {
-        }
-
-        private void pgProperty_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)
-        {
-            
-        }
+     
     }
 
 
