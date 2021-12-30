@@ -110,6 +110,10 @@ namespace MES_Team3
 			// 
 			this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
 			// 
+			// txtSearch
+			// 
+			this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
+			// 
 			// btnTxtSearch
 			// 
 			this.btnTxtSearch.Click += new System.EventHandler(this.btnTxtSearch_Click);
