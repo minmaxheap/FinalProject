@@ -1,7 +1,7 @@
 ﻿
 namespace MES_Team3
 {
-    partial class frmBOM
+    partial class frmBOM111
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
