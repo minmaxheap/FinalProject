@@ -5,19 +5,27 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using VO;
+ 
 
 namespace MES_Team3
 {
     public class ProductServ
     {
-        public List<ProductProperty> GetProductsList()
+
+        public DataTable GetProductsList()
         {
             ProductDAC dac = new ProductDAC();
-            List<ProductProperty> list = dac.GetProductsList();
+            DataTable dt = dac.GetProductsList();
             dac.Dispose();
-            return list;
+            return dt;
         }
+        //public List<ProductProperty> GetProductsList()
+        //{
+        //    ProductDAC dac = new ProductDAC();
+        //    List<ProductProperty> list = dac.GetProductsList();
+        //    dac.Dispose();
+        //    return list;
+        //}
 
         public bool Insert(ProductProperty pr)
         {

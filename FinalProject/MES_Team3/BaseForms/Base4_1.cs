@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace POPprogram
+namespace MES_Team3.BaseForms
 {
-    public partial class Base4 : Form
+    public partial class Base4_1 : Form
     {
-        public Base4()
+        public Base4_1()
         {
             InitializeComponent();
         }

@@ -112,9 +112,10 @@ namespace MES_Team3
                 Form frm = (Form)Activator.CreateInstance(frmType);
                 frm.MdiParent = this;
              
-                //frm.ControlBox = false;
+                frm.ControlBox = false;
                 frm.FormBorderStyle = FormBorderStyle.None;
                 frm.WindowState = FormWindowState.Maximized;
+              
                 frm.Text = formText;
                 frm.Show();
             }
@@ -146,6 +147,10 @@ namespace MES_Team3
                     this.ActiveMdiChild.FormClosed += ActiveMdiChild_FormClosed;
 
                     this.ActiveMdiChild.Tag = tp;
+                }
+                else
+                {
+                    tabControl1.SelectedTab = (TabPage)this.ActiveMdiChild.Tag;
                 }
 
                 if (!tabMenu.Visible)

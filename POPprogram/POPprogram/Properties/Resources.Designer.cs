@@ -213,6 +213,16 @@ namespace POPprogram.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        public static System.Drawing.Bitmap Export {
+            get {
+                object obj = ResourceManager.GetObject("Export", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         public static System.Drawing.Bitmap Folder_Find_01 {
             get {
                 object obj = ResourceManager.GetObject("Folder_Find_01", resourceCulture);
@@ -276,6 +286,16 @@ namespace POPprogram.Properties {
         public static System.Drawing.Bitmap pngegg {
             get {
                 object obj = ResourceManager.GetObject("pngegg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        public static System.Drawing.Bitmap Print___01 {
+            get {
+                object obj = ResourceManager.GetObject("Print___01", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

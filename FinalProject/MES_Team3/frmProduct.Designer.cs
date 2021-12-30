@@ -55,13 +55,19 @@ namespace MES_Team3
             // 
             // pnlProperty
             // 
+            this.pnlProperty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
             this.pnlProperty.Controls.Add(this.pgProperty);
-            this.pnlProperty.Size = new System.Drawing.Size(364, 621);
+            this.pnlProperty.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlProperty.Location = new System.Drawing.Point(0, 40);
+            this.pnlProperty.Size = new System.Drawing.Size(357, 593);
             // 
             // pnlSearch
             // 
+            this.pnlSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
             this.pnlSearch.Controls.Add(this.pgSearch);
-            this.pnlSearch.Size = new System.Drawing.Size(364, 621);
+            this.pnlSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlSearch.Location = new System.Drawing.Point(0, 40);
+            this.pnlSearch.Size = new System.Drawing.Size(357, 593);
             // 
             // btnPanel
             // 
@@ -106,8 +112,13 @@ namespace MES_Team3
             // 
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
+            // txtSearch
+            // 
+            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
+            // 
             // btnTxtSearch
             // 
+            this.btnTxtSearch.Location = new System.Drawing.Point(294, 0);
             this.btnTxtSearch.Click += new System.EventHandler(this.btnTxtSearch_Click);
             // 
             // btnReadTop
@@ -116,25 +127,21 @@ namespace MES_Team3
             // 
             // pgProperty
             // 
-            this.pgProperty.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pgProperty.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pgProperty.HelpVisible = false;
             this.pgProperty.Location = new System.Drawing.Point(0, 0);
             this.pgProperty.Name = "pgProperty";
-            this.pgProperty.Size = new System.Drawing.Size(363, 621);
+            this.pgProperty.Size = new System.Drawing.Size(355, 591);
             this.pgProperty.TabIndex = 4;
             this.pgProperty.ToolbarVisible = false;
             // 
             // pgSearch
             // 
-            this.pgSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pgSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pgSearch.HelpVisible = false;
             this.pgSearch.Location = new System.Drawing.Point(0, 0);
             this.pgSearch.Name = "pgSearch";
-            this.pgSearch.Size = new System.Drawing.Size(363, 621);
+            this.pgSearch.Size = new System.Drawing.Size(355, 591);
             this.pgSearch.TabIndex = 3;
             this.pgSearch.ToolbarVisible = false;
             // 
@@ -175,10 +182,9 @@ namespace MES_Team3
             this.csDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.csDataGridView1.RowHeadersWidth = 30;
             this.csDataGridView1.RowTemplate.Height = 23;
-            this.csDataGridView1.Size = new System.Drawing.Size(797, 622);
+            this.csDataGridView1.Size = new System.Drawing.Size(780, 597);
             this.csDataGridView1.TabIndex = 0;
             this.csDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellClick);
-            this.csDataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.csDataGridView1_KeyDown);
             // 
             // frmProduct
             // 

@@ -81,6 +81,12 @@
     <Compile Include="BaseForms\Base2.Designer.cs">
       <DependentUpon>Base2.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaseForms\Base4_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForms\Base4_1.Designer.cs">
+      <DependentUpon>Base4_1.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaseForms\Base5.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +205,18 @@
     <Compile Include="Services\StoreServ.cs" />
     <Compile Include="Services\UserGroupServ.cs" />
     <Compile Include="Services\User_MSTServ.cs" />
+    <Compile Include="test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="test.Designer.cs">
+      <DependentUpon>test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="test1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="test1.Designer.cs">
+      <DependentUpon>test1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Util\DataGridViewUtil.cs" />
     <Compile Include="Util\LoggingUtility.cs" />
     <EmbeddedResource Include="BaseForms\Base1_1.resx">
@@ -216,8 +234,14 @@
     <EmbeddedResource Include="BaseForms\Base4.resx">
       <DependentUpon>Base4.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BaseForms\Base4_1.resx">
+      <DependentUpon>Base4_1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BaseForms\Base5.resx">
       <DependentUpon>Base5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBOM.resx">
+      <DependentUpon>frmBOM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInspectOperRelation.resx">
       <DependentUpon>frmInspectOperRelation.cs</DependentUpon>
@@ -259,6 +283,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="test.resx">
+      <DependentUpon>test.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -305,6 +332,8 @@
     <None Include="Resources\Add-New.png" />
     <None Include="Resources\Command-Refresh-01.png" />
     <None Include="Resources\Search-Find.png" />
+    <None Include="Resources\Print - 01.png" />
+    <None Include="Resources\Export.png" />
     <Content Include="Resources\twocirclingarrows1_120592.png" />
   </ItemGroup>
   <ItemGroup>

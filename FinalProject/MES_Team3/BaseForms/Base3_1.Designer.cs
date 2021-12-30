@@ -29,7 +29,7 @@ namespace MES_Team3
         /// </summary>
         private void InitializeComponent()
         {
-  
+
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Base3_1));
 
             this.pnlTop = new System.Windows.Forms.Panel();
@@ -69,9 +69,8 @@ namespace MES_Team3
             this.pnlTop.Controls.Add(this.txtSearch);
             this.pnlTop.Controls.Add(btnTxtSearch);
             this.pnlTop.Controls.Add(btnReadTop);
-            this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.pnlTop.Location = new System.Drawing.Point(0, 0);
+            this.pnlTop.Location = new System.Drawing.Point(0, 17);
             this.pnlTop.Margin = new System.Windows.Forms.Padding(0);
             this.pnlTop.Name = "pnlTop";
             this.pnlTop.Size = new System.Drawing.Size(1152, 30);
@@ -80,7 +79,7 @@ namespace MES_Team3
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.txtSearch.Location = new System.Drawing.Point(40, 1);
+            this.txtSearch.Location = new System.Drawing.Point(42, 1);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(0);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(244, 26);
@@ -95,7 +94,7 @@ namespace MES_Team3
             btnTxtSearch.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F);
             btnTxtSearch.ForeColor = System.Drawing.SystemColors.ControlText;
             btnTxtSearch.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            btnTxtSearch.Location = new System.Drawing.Point(291, 1);
+            btnTxtSearch.Location = new System.Drawing.Point(293, 1);
             btnTxtSearch.Margin = new System.Windows.Forms.Padding(0);
             btnTxtSearch.Name = "btnTxtSearch";
             btnTxtSearch.Size = new System.Drawing.Size(32, 26);
@@ -111,7 +110,7 @@ namespace MES_Team3
             btnReadTop.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F);
             btnReadTop.ForeColor = System.Drawing.SystemColors.ControlText;
             btnReadTop.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            btnReadTop.Location = new System.Drawing.Point(0, 1);
+            btnReadTop.Location = new System.Drawing.Point(2, 1);
             btnReadTop.Name = "btnReadTop";
             btnReadTop.Size = new System.Drawing.Size(33, 26);
             btnReadTop.TabIndex = 47;
@@ -124,7 +123,7 @@ namespace MES_Team3
             | System.Windows.Forms.AnchorStyles.Right)));
             this.spcBase.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.spcBase.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.spcBase.Location = new System.Drawing.Point(0, 39);
+            this.spcBase.Location = new System.Drawing.Point(0, 63);
             this.spcBase.Margin = new System.Windows.Forms.Padding(0);
             this.spcBase.Name = "spcBase";
             // 
@@ -136,7 +135,7 @@ namespace MES_Team3
             // 
             this.spcBase.Panel2.Controls.Add(this.lblPanel);
             this.spcBase.Panel2.Controls.Add(this.pnlSearch);
-            this.spcBase.Size = new System.Drawing.Size(1152, 293);
+            this.spcBase.Size = new System.Drawing.Size(1152, 269);
             this.spcBase.SplitterDistance = 726;
             this.spcBase.SplitterWidth = 6;
             this.spcBase.TabIndex = 42;
@@ -149,7 +148,7 @@ namespace MES_Team3
             this.pnlDgv.Location = new System.Drawing.Point(0, 0);
             this.pnlDgv.Margin = new System.Windows.Forms.Padding(0);
             this.pnlDgv.Name = "pnlDgv";
-            this.pnlDgv.Size = new System.Drawing.Size(724, 291);
+            this.pnlDgv.Size = new System.Drawing.Size(724, 267);
             this.pnlDgv.TabIndex = 18;
             // 
             // lblTitle
@@ -168,6 +167,7 @@ namespace MES_Team3
             // lblPanel
             // 
             this.lblPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            this.lblPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblPanel.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblPanel.Location = new System.Drawing.Point(0, 0);
@@ -180,16 +180,14 @@ namespace MES_Team3
             // 
             // pnlSearch
             // 
-            this.pnlSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
             this.pnlSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlSearch.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.pnlSearch.Location = new System.Drawing.Point(0, 37);
+            this.pnlSearch.Location = new System.Drawing.Point(0, 0);
             this.pnlSearch.Margin = new System.Windows.Forms.Padding(0);
             this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(415, 254);
+            this.pnlSearch.Size = new System.Drawing.Size(418, 267);
             this.pnlSearch.TabIndex = 31;
             // 
             // panel1
@@ -373,6 +371,7 @@ namespace MES_Team3
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Base3_1";
             this.Text = "Base3_1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
             this.spcBase.Panel1.ResumeLayout(false);
@@ -406,9 +405,9 @@ namespace MES_Team3
         public System.Windows.Forms.Label lblAdd;
         public System.Windows.Forms.Label lblAddList;
         public System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Button btnTxtSearch;
         public System.Windows.Forms.Button btnReadTop;
         public System.Windows.Forms.Button btnSubtract;
         public System.Windows.Forms.Button btnAdd;
-        public System.Windows.Forms.Button btnTxtSearch;
     }
 }

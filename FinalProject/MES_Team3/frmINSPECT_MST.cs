@@ -1,16 +1,22 @@
-﻿using System;
+﻿using DAC;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
-using VO;
-using DAC;
+
 namespace MES_Team3
 {
+    
     public partial class frmINSPECT_MST : MES_Team3.BaseForms.Base1_1
     {
+        DataTable mdtAll;
+        List<int> iSearchedList;
+        List<int> iSelectedRow;
         InspecServ serv = null;
         string Inspect_id = string.Empty;
         int rowIndex;
@@ -254,31 +260,36 @@ namespace MES_Team3
 
         private void btnTxtSearch_Click(object sender, EventArgs e)
         {
-            string searchValue = txtSearch.Text;
-            //int cr = -1;
-            csDataGridView1.Rows[rowIndex].Selected = false;
+            KeyEventArgs enter = new KeyEventArgs(Keys.Enter);
 
-			MessageBox.Show("1번째" + rowIndex.ToString());
-			csDataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-			try
-			{
-				foreach (DataGridViewRow row in csDataGridView1.Rows)
-				{
-					if (row.Cells[2].Value.ToString().Equals(searchValue))
-					{
-						rowIndex++;
-						csDataGridView1.Rows[rowIndex].Selected = true;
+            txtSearch_KeyDown(null,enter);
 
-						break;
-					}
-				}
-				MessageBox.Show("3번째" + rowIndex.ToString());
 
-			}
-			catch (Exception exc)
-			{
-				MessageBox.Show(exc.Message);
-			}
+   //         string searchValue = txtSearch.Text;
+   //         //int cr = -1;
+   //         csDataGridView1.Rows[rowIndex].Selected = false;
+
+			//MessageBox.Show("1번째" + rowIndex.ToString());
+			//csDataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+			//try
+			//{
+			//	foreach (DataGridViewRow row in csDataGridView1.Rows)
+			//	{
+			//		if (row.Cells[2].Value.ToString().Equals(searchValue))
+			//		{
+			//			rowIndex++;
+			//			csDataGridView1.Rows[rowIndex].Selected = true;
+
+			//			break;
+			//		}
+			//	}
+			//	MessageBox.Show("3번째" + rowIndex.ToString());
+
+			//}
+			//catch (Exception exc)
+			//{
+			//	MessageBox.Show(exc.Message);
+			//}
 
 		}
 
@@ -290,6 +301,59 @@ namespace MES_Team3
             pgSearch.SelectedObject = vo;
 
             pgSearch.PropertySort = PropertySort.NoSort;
+        }
+
+		private void txtSearch_KeyDown(object sender, KeyEventArgs e)
+		{
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (iSearchedList.Count == 0)
+                {
+                    DataTable copy_dt = mdtAll;
+                    IEnumerable<DataRow> linq_row = null;
+                    if (txtSearch.Text == "")
+                    {
+                        csDataGridView1.DataSource = copy_dt;
+                    }
+                    else
+                    {
+                        foreach (DataRow row in copy_dt.Rows)
+                        {
+                            linq_row = from item in row.ItemArray
+                                       where item.ToString().ToLower().Contains(txtSearch.Text.ToLower())
+                                       select row;
+                            foreach (DataRow dt in linq_row)
+                            {
+                                int iCntSearch = copy_dt.Rows.IndexOf(row);
+                                iSearchedList.Add(iCntSearch);
+                                break;
+                            }
+                        }
+                        iSelectedRow = iSearchedList.ToList();
+                    }
+                }
+                if (iSearchedList.Count > 0)
+                {
+                    int iTestNum = iSelectedRow.Count(n => n == -1);
+                    if (iTestNum == iSearchedList.Count)
+                        iSelectedRow = iSearchedList.ToList();
+                    for (int i = 0; i < iSearchedList.Count; i++)
+                    {
+                        if (iSelectedRow[i] == iSearchedList[i])
+                        {
+                            csDataGridView1.CurrentCell = csDataGridView1.Rows[iSearchedList[i]].Cells[0];
+                            iSelectedRow[i] = -1;
+                            break;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                iSearchedList.Clear();
+                iSelectedRow.Clear();
+            }
+
         }
 	}
 }
