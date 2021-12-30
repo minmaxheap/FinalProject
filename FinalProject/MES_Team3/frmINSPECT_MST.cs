@@ -102,10 +102,27 @@ namespace MES_Team3
             save.CREATE_USER_ID = mUserID;
             InspecServ serv = new InspecServ();
 
-            if (string.IsNullOrWhiteSpace(save.INSPECT_ITEM_CODE) || string.IsNullOrWhiteSpace(save.INSPECT_ITEM_NAME))
+            if (string.IsNullOrWhiteSpace(save.INSPECT_ITEM_CODE) || string.IsNullOrWhiteSpace(save.INSPECT_ITEM_NAME) || string.IsNullOrWhiteSpace(save.VALUE_TYPE))
             {
                 MessageBox.Show("필요한 값을 입력해주세요");
                 return;
+            }
+
+            if (save.VALUE_TYPE == "N")
+            {
+                if (string.IsNullOrWhiteSpace(save.SPEC_LSL) || string.IsNullOrWhiteSpace(save.SPEC_USL))
+                {
+                    MessageBox.Show("LSL,USL을 입력해주세요");
+                    return;
+                }
+            }
+            if (save.VALUE_TYPE == "C")
+            {
+                if (string.IsNullOrWhiteSpace(save.SPEC_TARGET))
+                {
+                    MessageBox.Show("Target 입력하세요");
+                    return;
+                }
             }
 
             bool bResult = serv.insert(save);
@@ -211,12 +228,38 @@ namespace MES_Team3
 
         private void pgGrid_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)
         {
+            double k;
             if (e.ChangedItem.Label == "C")
             {
                 INSPECT_MSTVO vo = new INSPECT_MSTVO();
-                vo.SPEC_LSL = "";
-                vo.SPEC_USL = "";
+               
+                if (!double.TryParse(e.ChangedItem.Value.ToString(), out k))
+                {
+                    MessageBox.Show("문자 입력 할수없습니다.");
+                    
+                    return;
+                }
             }
+            else
+            {
+                if (double.TryParse(e.ChangedItem.Value.ToString(), out k))
+                {
+                    INSPECT_MSTVO vo = new INSPECT_MSTVO();
+                    MessageBox.Show("문자 입력하세요.");
+                    vo.SPEC_LSL = string.Empty;
+                    
+                    return;
+                }
+            }
+
+            //int k;
+            //    //if (e.ChangedItem.Label == "품번")
+            //    //{
+            //    //    if (!int.TryParse(e.ChangedItem.Value.ToString(), out k))
+            //    //    {
+            //    //        MessageBox.Show("문자 입력할 수 없습니다");
+            //    //    }
+            //    //}
             if (e.ChangedItem.Label == "LSL")
             {
                 
