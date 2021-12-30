@@ -55,6 +55,7 @@ namespace POPprogram
                 btnPanel.BackColor = lblPanel.BackColor;
 
             }
+
         }
 
         private void btnSearchPnl_Click(object sender, EventArgs e)

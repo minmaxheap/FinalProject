@@ -518,7 +518,7 @@ namespace POPprogram
             // 
             // pnlCrud
             // 
-            this.pnlCrud.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlCrud.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pnlCrud.Controls.Add(this.btnInsert);
             this.pnlCrud.Controls.Add(this.btnDelete);
             this.pnlCrud.Controls.Add(this.btnClear);

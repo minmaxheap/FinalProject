@@ -71,6 +71,12 @@
     <Compile Include="BaseForms\Base5.Designer.cs">
       <DependentUpon>Base5.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaseForms\Base6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForms\Base6.Designer.cs">
+      <DependentUpon>Base6.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\csDataGridView.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -129,6 +135,12 @@
     <Compile Include="Services\StoreServ.cs" />
     <Compile Include="Services\UserGroupServ.cs" />
     <Compile Include="Services\User_MSTServ.cs" />
+    <Compile Include="testDefect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testDefect.Designer.cs">
+      <DependentUpon>testDefect.cs</DependentUpon>
+    </Compile>
     <Compile Include="Util\DataGridViewUtil.cs" />
     <EmbeddedResource Include="BaseForms\Base1_1.resx">
       <DependentUpon>Base1_1.cs</DependentUpon>
@@ -141,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaseForms\Base5.resx">
       <DependentUpon>Base5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForms\Base6.resx">
+      <DependentUpon>Base6.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
