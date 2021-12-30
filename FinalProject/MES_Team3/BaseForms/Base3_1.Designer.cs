@@ -29,8 +29,9 @@ namespace MES_Team3
         /// </summary>
         private void InitializeComponent()
         {
-
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Base3_1));
+
+
 
             this.pnlTop = new System.Windows.Forms.Panel();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -180,14 +181,16 @@ namespace MES_Team3
             // 
             // pnlSearch
             // 
+            this.pnlSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
             this.pnlSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlSearch.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.pnlSearch.Location = new System.Drawing.Point(0, 0);
+            this.pnlSearch.Location = new System.Drawing.Point(0, 36);
             this.pnlSearch.Margin = new System.Windows.Forms.Padding(0);
             this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(418, 267);
+            this.pnlSearch.Size = new System.Drawing.Size(418, 231);
             this.pnlSearch.TabIndex = 31;
             // 
             // panel1

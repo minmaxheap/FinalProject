@@ -23,6 +23,18 @@ namespace MES_Team3
 
         string mUserID = frmLogin.userID;
 
+        //private void pgProperty_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)
+        //{
+        //    //int k;
+        //    //if (e.ChangedItem.Label == "품번")
+        //    //{
+        //    //    if (!int.TryParse(e.ChangedItem.Value.ToString(), out k))
+        //    //    {
+        //    //        MessageBox.Show("문자 입력할 수 없습니다");
+        //    //    }
+        //    //}
+        //}
+
         public frmINSPECT_MST()
         {
             InitializeComponent();

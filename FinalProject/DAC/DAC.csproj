@@ -43,11 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BomDAC.cs" />
     <Compile Include="CommonCodeUtil.cs" />
     <Compile Include="FunctionDAC.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="InspectDAC.cs" />
     <Compile Include="INSPECT_OPERATIONDAC.cs" />
+    <Compile Include="Property\BomVO.cs" />
     <Compile Include="WorkOrderDAC.cs" />
     <Compile Include="Property\INSPECT_OPERATIONProperty.cs" />
     <Compile Include="Property\INSPECT_MSTVO.cs" />

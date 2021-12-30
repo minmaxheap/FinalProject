@@ -55,19 +55,11 @@ namespace MES_Team3
             // 
             // pnlProperty
             // 
-            this.pnlProperty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
             this.pnlProperty.Controls.Add(this.pgProperty);
-            this.pnlProperty.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlProperty.Location = new System.Drawing.Point(0, 40);
-            this.pnlProperty.Size = new System.Drawing.Size(357, 593);
             // 
             // pnlSearch
             // 
-            this.pnlSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
             this.pnlSearch.Controls.Add(this.pgSearch);
-            this.pnlSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlSearch.Location = new System.Drawing.Point(0, 40);
-            this.pnlSearch.Size = new System.Drawing.Size(357, 593);
             // 
             // btnPanel
             // 
@@ -76,6 +68,7 @@ namespace MES_Team3
             this.btnPanel.FlatAppearance.BorderSize = 0;
             this.btnPanel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
             this.btnPanel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
+            this.btnPanel.Click += new System.EventHandler(this.btnPanel_Click);
             // 
             // spcBase
             // 
@@ -131,9 +124,10 @@ namespace MES_Team3
             this.pgProperty.HelpVisible = false;
             this.pgProperty.Location = new System.Drawing.Point(0, 0);
             this.pgProperty.Name = "pgProperty";
-            this.pgProperty.Size = new System.Drawing.Size(355, 591);
+            this.pgProperty.Size = new System.Drawing.Size(362, 591);
             this.pgProperty.TabIndex = 4;
             this.pgProperty.ToolbarVisible = false;
+            this.pgProperty.PropertyValueChanged += new System.Windows.Forms.PropertyValueChangedEventHandler(this.pgProperty_PropertyValueChanged);
             // 
             // pgSearch
             // 
@@ -141,7 +135,7 @@ namespace MES_Team3
             this.pgSearch.HelpVisible = false;
             this.pgSearch.Location = new System.Drawing.Point(0, 0);
             this.pgSearch.Name = "pgSearch";
-            this.pgSearch.Size = new System.Drawing.Size(355, 591);
+            this.pgSearch.Size = new System.Drawing.Size(362, 591);
             this.pgSearch.TabIndex = 3;
             this.pgSearch.ToolbarVisible = false;
             // 
@@ -182,7 +176,7 @@ namespace MES_Team3
             this.csDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.csDataGridView1.RowHeadersWidth = 30;
             this.csDataGridView1.RowTemplate.Height = 23;
-            this.csDataGridView1.Size = new System.Drawing.Size(780, 597);
+            this.csDataGridView1.Size = new System.Drawing.Size(794, 597);
             this.csDataGridView1.TabIndex = 0;
             this.csDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellClick);
             // 
