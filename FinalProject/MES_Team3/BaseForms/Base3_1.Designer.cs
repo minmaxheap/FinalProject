@@ -29,9 +29,9 @@ namespace MES_Team3
         /// </summary>
         private void InitializeComponent()
         {
-  
+           
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Base3_1));
-
+      
             this.pnlTop = new System.Windows.Forms.Panel();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.spcBase = new System.Windows.Forms.SplitContainer();
@@ -189,7 +189,7 @@ namespace MES_Team3
             this.pnlSearch.Location = new System.Drawing.Point(0, 37);
             this.pnlSearch.Margin = new System.Windows.Forms.Padding(0);
             this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(415, 254);
+            this.pnlSearch.Size = new System.Drawing.Size(413, 254);
             this.pnlSearch.TabIndex = 31;
             // 
             // panel1

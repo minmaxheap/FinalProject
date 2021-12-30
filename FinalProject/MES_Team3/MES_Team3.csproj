@@ -81,6 +81,12 @@
     <Compile Include="BaseForms\Base2.Designer.cs">
       <DependentUpon>Base2.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaseForms\Base4_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForms\Base4_1.Designer.cs">
+      <DependentUpon>Base4_1.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaseForms\Base5.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +192,12 @@
     <Compile Include="Services\StoreServ.cs" />
     <Compile Include="Services\UserGroupServ.cs" />
     <Compile Include="Services\User_MSTServ.cs" />
+    <Compile Include="test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="test.Designer.cs">
+      <DependentUpon>test.cs</DependentUpon>
+    </Compile>
     <Compile Include="Util\DataGridViewUtil.cs" />
     <Compile Include="Util\LoggingUtility.cs" />
     <EmbeddedResource Include="BaseForms\Base1_1.resx">
@@ -202,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaseForms\Base4.resx">
       <DependentUpon>Base4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForms\Base4_1.resx">
+      <DependentUpon>Base4_1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaseForms\Base5.resx">
       <DependentUpon>Base5.cs</DependentUpon>
@@ -243,6 +258,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="test.resx">
+      <DependentUpon>test.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

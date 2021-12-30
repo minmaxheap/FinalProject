@@ -29,9 +29,9 @@ namespace MES_Team3.BaseForms
         /// </summary>
         private void InitializeComponent()
         {
-           
+            
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Base1_1));
- 
+       
             this.pnlTop = new System.Windows.Forms.Panel();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearchPnl = new System.Windows.Forms.Button();
@@ -181,7 +181,7 @@ namespace MES_Team3.BaseForms
             this.pnlSearch.Location = new System.Drawing.Point(0, 37);
             this.pnlSearch.Margin = new System.Windows.Forms.Padding(0);
             this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(364, 621);
+            this.pnlSearch.Size = new System.Drawing.Size(362, 621);
             this.pnlSearch.TabIndex = 31;
             // 
             // pnlProperty
@@ -194,7 +194,7 @@ namespace MES_Team3.BaseForms
             this.pnlProperty.Location = new System.Drawing.Point(0, 37);
             this.pnlProperty.Margin = new System.Windows.Forms.Padding(0);
             this.pnlProperty.Name = "pnlProperty";
-            this.pnlProperty.Size = new System.Drawing.Size(356, 620);
+            this.pnlProperty.Size = new System.Drawing.Size(354, 620);
             this.pnlProperty.TabIndex = 29;
             // 
             // pnlTopLbl
@@ -410,7 +410,7 @@ namespace MES_Team3.BaseForms
         public System.Windows.Forms.Button btnUpdate;
         public System.Windows.Forms.Panel pnlTopLbl;
         public System.Windows.Forms.TextBox txtSearch;
-        public System.Windows.Forms.Button btnTxtSearch;
         public System.Windows.Forms.Button btnReadTop;
+        public System.Windows.Forms.Button btnTxtSearch;
     }
 }
