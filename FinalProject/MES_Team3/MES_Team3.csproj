@@ -117,6 +117,12 @@
     <Compile Include="frmInspectOperRelation.Designer.cs">
       <DependentUpon>frmInspectOperRelation.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmWorkOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWorkOrder.Designer.cs">
+      <DependentUpon>frmWorkOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmProductOperRelation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +193,7 @@
     </Compile>
     <Compile Include="Services\InspecServ.cs" />
     <Compile Include="Services\INSPECT_OPServ.cs" />
+    <Compile Include="Services\WorkOrderServ.cs" />
     <Compile Include="Services\OperationServ.cs" />
     <Compile Include="Services\ProductServ.cs" />
     <Compile Include="Services\StoreServ.cs" />
@@ -214,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmInspectOperRelation.resx">
       <DependentUpon>frmInspectOperRelation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWorkOrder.resx">
+      <DependentUpon>frmWorkOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProductOperRelation.resx">
       <DependentUpon>frmProductOperRelation.cs</DependentUpon>

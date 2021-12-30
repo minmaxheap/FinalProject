@@ -48,8 +48,10 @@
     <Compile Include="Helper.cs" />
     <Compile Include="InspectDAC.cs" />
     <Compile Include="INSPECT_OPERATIONDAC.cs" />
+    <Compile Include="WorkOrderDAC.cs" />
     <Compile Include="Property\INSPECT_OPERATIONProperty.cs" />
     <Compile Include="Property\INSPECT_MSTVO.cs" />
+    <Compile Include="Property\WorkOrderProperty.cs" />
     <Compile Include="StoreDAC.cs" />
     <Compile Include="OperationDAC.cs" />
     <Compile Include="ProductDAC.cs" />
