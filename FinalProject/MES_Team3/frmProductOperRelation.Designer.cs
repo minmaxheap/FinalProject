@@ -81,11 +81,8 @@ namespace MES_Team3
             // 
             // pnlSearch
             // 
-            this.pnlSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
             this.pnlSearch.Controls.Add(this.pgdSearch);
-            this.pnlSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlSearch.Location = new System.Drawing.Point(0, 0);
-            this.pnlSearch.Size = new System.Drawing.Size(418, 267);
+            this.pnlSearch.Size = new System.Drawing.Size(418, 231);
             // 
             // pnlAll
             // 
@@ -254,7 +251,7 @@ namespace MES_Team3
             this.pgdSearch.HelpVisible = false;
             this.pgdSearch.Location = new System.Drawing.Point(0, 0);
             this.pgdSearch.Name = "pgdSearch";
-            this.pgdSearch.Size = new System.Drawing.Size(416, 265);
+            this.pgdSearch.Size = new System.Drawing.Size(416, 229);
             this.pgdSearch.TabIndex = 0;
             this.pgdSearch.ToolbarVisible = false;
             // 
