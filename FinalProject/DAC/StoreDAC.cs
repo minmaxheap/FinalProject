@@ -138,6 +138,51 @@ where STORE_CODE = @STORE_CODE";
             }
         }
 
+        public List<StoreVO> GetStoreSearch(StoreVO sv)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append(@"select STORE_CODE, STORE_NAME, STORE_TYPE, FIFO_FLAG, CREATE_TIME, CREATE_USER_ID, UPDATE_TIME, UPDATE_USER_ID
+from [dbo].[STORE_MST]
+where 1=1");
+
+
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                if (!string.IsNullOrWhiteSpace(sv.STORE_CODE))
+                {
+                    sb.Append(" and STORE_CODE = @STORE_CODE");
+
+                    cmd.Parameters.AddWithValue("@STORE_CODE", sv.STORE_CODE);
+                }
+                if (!string.IsNullOrWhiteSpace(sv.STORE_NAME))
+                {
+                    sb.Append(" and STORE_NAME=@STORE_NAME");
+                    cmd.Parameters.AddWithValue("@STORE_NAME", sv.STORE_NAME);
+                }
+                if (!string.IsNullOrWhiteSpace(sv.STORE_TYPE))
+                {
+                    sb.Append(" and STORE_TYPE=@STORE_TYPE");
+                    cmd.Parameters.AddWithValue("@STORE_TYPE", sv.STORE_TYPE);
+                }
+                if (!string.IsNullOrWhiteSpace(sv.FIFO_FLAG))
+                {
+                    sb.Append(" and FIFO_FLAG=@FIFO_FLAG");
+                    cmd.Parameters.AddWithValue("@FIFO_FLAG", sv.FIFO_FLAG);
+                }
+
+
+
+                cmd.CommandText = sb.ToString();
+                cmd.Connection = conn;
+
+
+                return Helper.DataReaderMapToList<StoreVO>(cmd.ExecuteReader());
+            }
+
+        }
+
+
         public void Dispose()
         {
             conn.Close();

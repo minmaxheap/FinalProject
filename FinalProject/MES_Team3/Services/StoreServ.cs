@@ -45,5 +45,13 @@ namespace MES_Team3
             dac.Dispose();
             return bResult;
         }
+
+        public List<StoreVO> GetStoreSearch(StoreVO sv)
+        {
+            StoreDAC dac = new StoreDAC();
+            List<StoreVO> list = dac.GetStoreSearch(sv);
+            dac.Dispose();
+            return list;
+        }
     }
 }

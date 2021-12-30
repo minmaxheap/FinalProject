@@ -167,5 +167,19 @@ namespace MES_Team3
             pgSearch.PropertySort = PropertySort.NoSort;
             // propertyPanel.Visible = false;
         }
+
+        private void btnReadBottom_Click(object sender, EventArgs e)
+        {
+            if (pgSearch.SelectedObject != null)
+            {
+                StoreVO search = (StoreVO)pgSearch.SelectedObject;
+                StoreServ serv = new StoreServ();
+                List<StoreVO> list = serv.GetStoreSearch(search);
+                search.IsSearchPanel = false;
+
+                csDataGridView1.DataSource = null;
+                csDataGridView1.DataSource = list;
+            }
+        }
     }
 }
