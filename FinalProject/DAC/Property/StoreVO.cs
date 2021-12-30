@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace DAC
 {
-    public class StoreVO
-    {
+	public class StoreVO
+	{
 		private bool isSearchPanel;
 
 		public bool IsSearchl;
@@ -17,13 +17,13 @@ namespace DAC
 
 
 		private string store_code;
-        private string store_name;
-        private string store_type;
-        private string fifo_flag;
-        private DateTime create_time;
-        private string create_user_id;
-        private DateTime update_time;
-        private string update_user_id;
+		private string store_name;
+		private string store_type;
+		private string fifo_flag;
+		private DateTime create_time;
+		private string create_user_id;
+		private DateTime update_time;
+		private string update_user_id;
 
 
 		[DisplayName("창고")]
@@ -109,6 +109,7 @@ namespace DAC
 			}
 		}
 
+
 		[Browsable(false)]
 		public bool IsSearchPanel
 		{
@@ -134,7 +135,7 @@ namespace DAC
 				BrowsableAttribute attrib2 = (BrowsableAttribute)descriptor2.Attributes[typeof(BrowsableAttribute)];
 				FieldInfo isBrow2 = attrib2.GetType().GetField("browsable", BindingFlags.NonPublic | BindingFlags.Instance);
 
-				BrowsableAttribute attrib3 = (BrowsableAttribute)descriptor2.Attributes[typeof(BrowsableAttribute)];
+				BrowsableAttribute attrib3 = (BrowsableAttribute)descriptor3.Attributes[typeof(BrowsableAttribute)];
 				FieldInfo isBrow3 = attrib3.GetType().GetField("browsable", BindingFlags.NonPublic | BindingFlags.Instance);
 
 				if (IsSearchPanel)
@@ -154,6 +155,39 @@ namespace DAC
 
 				}
 			}
+
+
+		}
+
+		public class StoreProperty
+		{
+			private string store_code;
+			private string store_name;
+			private string store_type;
+			private string fifo_flag;
+			[DisplayName("창고")]
+			[Browsable(true)]
+			public string STORE_CODE { get { return store_code; } set { store_code = value; } }
+
+			[DisplayName("창고명")]
+			[Browsable(true)]
+
+			public string STORE_NAME
+			{
+				get { return store_name; }
+				set { store_name = value; }
+			}
+			[DisplayName("창고 유형")]
+			[Browsable(true)]
+
+			[TypeConverter(typeof(StoreTypeConverter))]
+			public string STORE_TYPE { get { return store_type; } set { store_type = value; } }
+
+			[DisplayName("선입선출 여부")]
+			[Browsable(true)]
+			[TypeConverter(typeof(FifoFlagConverter))]
+			public string FIFO_FLAG { get { return fifo_flag; } set { fifo_flag = value; } }
+
 
 		}
 	}
