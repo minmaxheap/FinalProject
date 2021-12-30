@@ -85,6 +85,10 @@ namespace MES_Team3
 			// 
 			this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
 			// 
+			// btnDelete
+			// 
+			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+			// 
 			// btnClear
 			// 
 			this.btnClear.Click += new System.EventHandler(this.btnClear_Click_1);
@@ -97,13 +101,13 @@ namespace MES_Team3
 			// 
 			this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
 			// 
-			// btnTxtSearch
-			// 
-			this.btnTxtSearch.Click += new System.EventHandler(this.btnTxtSearch_Click);
-			// 
 			// btnReadTop
 			// 
 			this.btnReadTop.Click += new System.EventHandler(this.btnReadTop_Click);
+			// 
+			// btnTxtSearch
+			// 
+			this.btnTxtSearch.Click += new System.EventHandler(this.btnTxtSearch_Click);
 			// 
 			// pgSearch
 			// 

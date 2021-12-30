@@ -44,6 +44,8 @@ namespace MES_Team3
 			this.pgdSearch = new System.Windows.Forms.PropertyGrid();
 			this.csDataGridView1 = new MES_Team3.csDataGridView();
 			this.csDataGridView2 = new MES_Team3.csDataGridView();
+			this.label1 = new System.Windows.Forms.Label();
+			this.comboBox1 = new System.Windows.Forms.ComboBox();
 			this.csDataGridView3 = new MES_Team3.csDataGridView();
 			this.pnlTop.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.spcBase)).BeginInit();
@@ -81,7 +83,11 @@ namespace MES_Team3
 			// pnlAll
 			// 
 			this.pnlAll.Controls.Add(this.csDataGridView3);
+			this.pnlAll.Controls.Add(this.comboBox1);
+			this.pnlAll.Controls.Add(this.label1);
 			this.pnlAll.Controls.SetChildIndex(this.lblAll, 0);
+			this.pnlAll.Controls.SetChildIndex(this.label1, 0);
+			this.pnlAll.Controls.SetChildIndex(this.comboBox1, 0);
 			this.pnlAll.Controls.SetChildIndex(this.csDataGridView3, 0);
 			// 
 			// btnReadBottom
@@ -98,6 +104,14 @@ namespace MES_Team3
 			// 
 			this.btnReadTop.Click += new System.EventHandler(this.btnReadTop_Click);
 			// 
+			// btnSubtract
+			// 
+			this.btnSubtract.Click += new System.EventHandler(this.btnSubtract_Click);
+			// 
+			// btnAdd
+			// 
+			this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+			// 
 			// pgdSearch
 			// 
 			this.pgdSearch.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -105,7 +119,7 @@ namespace MES_Team3
 			this.pgdSearch.HelpVisible = false;
 			this.pgdSearch.Location = new System.Drawing.Point(0, 0);
 			this.pgdSearch.Name = "pgdSearch";
-			this.pgdSearch.Size = new System.Drawing.Size(411, 252);
+			this.pgdSearch.Size = new System.Drawing.Size(409, 252);
 			this.pgdSearch.TabIndex = 2;
 			this.pgdSearch.ToolbarVisible = false;
 			// 
@@ -149,6 +163,7 @@ namespace MES_Team3
 			this.csDataGridView1.Size = new System.Drawing.Size(724, 255);
 			this.csDataGridView1.TabIndex = 19;
 			this.csDataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellContentClick);
+			this.csDataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellDoubleClick);
 			// 
 			// csDataGridView2
 			// 
@@ -188,7 +203,27 @@ namespace MES_Team3
 			this.csDataGridView2.RowHeadersWidth = 30;
 			this.csDataGridView2.RowTemplate.Height = 23;
 			this.csDataGridView2.Size = new System.Drawing.Size(514, 284);
-			this.csDataGridView2.TabIndex = 19;
+			this.csDataGridView2.TabIndex = 20;
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.label1.Location = new System.Drawing.Point(82, 43);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(58, 19);
+			this.label1.TabIndex = 18;
+			this.label1.Text = "값 유형";
+			// 
+			// comboBox1
+			// 
+			this.comboBox1.FormattingEnabled = true;
+			this.comboBox1.Location = new System.Drawing.Point(159, 44);
+			this.comboBox1.Name = "comboBox1";
+			this.comboBox1.Size = new System.Drawing.Size(235, 22);
+			this.comboBox1.TabIndex = 19;
+			this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+			this.comboBox1.SelectedValueChanged += new System.EventHandler(this.comboBox1_SelectedValueChanged);
 			// 
 			// csDataGridView3
 			// 
@@ -213,9 +248,9 @@ namespace MES_Team3
 			dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
 			dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
 			this.csDataGridView3.DefaultCellStyle = dataGridViewCellStyle7;
-			this.csDataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.csDataGridView3.Dock = System.Windows.Forms.DockStyle.Bottom;
 			this.csDataGridView3.EnableHeadersVisualStyles = false;
-			this.csDataGridView3.Location = new System.Drawing.Point(0, 31);
+			this.csDataGridView3.Location = new System.Drawing.Point(0, 75);
 			this.csDataGridView3.Name = "csDataGridView3";
 			dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
@@ -227,7 +262,7 @@ namespace MES_Team3
 			this.csDataGridView3.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
 			this.csDataGridView3.RowHeadersWidth = 30;
 			this.csDataGridView3.RowTemplate.Height = 23;
-			this.csDataGridView3.Size = new System.Drawing.Size(501, 284);
+			this.csDataGridView3.Size = new System.Drawing.Size(501, 240);
 			this.csDataGridView3.TabIndex = 20;
 			// 
 			// frmInspectOperRelation
@@ -244,6 +279,7 @@ namespace MES_Team3
 			this.pnlDgv.ResumeLayout(false);
 			this.pnlSearch.ResumeLayout(false);
 			this.pnlAll.ResumeLayout(false);
+			this.pnlAll.PerformLayout();
 			this.pnlCrud.ResumeLayout(false);
 			this.pnlAdd.ResumeLayout(false);
 			this.panel1.ResumeLayout(false);
@@ -258,7 +294,9 @@ namespace MES_Team3
 
         private System.Windows.Forms.PropertyGrid pgdSearch;
         private csDataGridView csDataGridView1;
-        private csDataGridView csDataGridView2;
-        private csDataGridView csDataGridView3;
-    }
+		private csDataGridView csDataGridView3;
+		private System.Windows.Forms.ComboBox comboBox1;
+		private System.Windows.Forms.Label label1;
+		private csDataGridView csDataGridView2;
+	}
 }
