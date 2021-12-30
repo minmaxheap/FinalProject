@@ -4,13 +4,16 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 namespace MES_Team3
 {
     public partial class frmProductOperRelation : MES_Team3.Base3_1
     {
-        List<ProductProperty> mAllList;
+        DataTable mdtProducts;
+        List<int> iSearchedList;
+        List<int> iSelectedRow;
         string msprodCode;
         string msUserID;
         DataTable mdtAdd;
@@ -42,8 +45,9 @@ namespace MES_Team3
             DataGridViewUtil.AddGridTextColumn(dgvAll, "공정",  "OPERATION_CODE");
             DataGridViewUtil.AddGridTextColumn(dgvAll, "공정명","OPERATION_NAME",width: 300);
 
-            List<ProductProperty> list = new List<ProductProperty>();
 
+            iSearchedList = new List<int>();
+            iSelectedRow = new List<int>();
             LoadData();
 
             ProductProperty vo = new ProductProperty();
@@ -56,9 +60,9 @@ namespace MES_Team3
         private void LoadData()
         {
             ProductServ serv = new ProductServ();
-            mAllList = serv.GetProductsList();
+            mdtProducts = serv.GetProductsList();
             dgvProducts.DataSource = null;
-            dgvProducts.DataSource = mAllList;
+            dgvProducts.DataSource = mdtProducts;
 
         }
 
@@ -170,6 +174,64 @@ namespace MES_Team3
         private void btnReadTop_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (iSearchedList.Count == 0)
+                {
+                    DataTable copy_dt = mdtProducts;
+                    IEnumerable<DataRow> linq_row = null;
+                    if (txtSearch.Text == "")
+                    {
+                        dgvProducts.DataSource = copy_dt;
+                    }
+                    else
+                    {
+                        foreach (DataRow row in copy_dt.Rows)
+                        {
+                            linq_row = from item in row.ItemArray
+                                       where item.ToString().ToLower().Contains(txtSearch.Text.ToLower())
+                                       select row;
+                            foreach (DataRow dt in linq_row)
+                            {
+                                int iCntSearch = copy_dt.Rows.IndexOf(row);
+                                iSearchedList.Add(iCntSearch);
+                                break;
+                            }
+                        }
+                        iSelectedRow = iSearchedList.ToList();
+                    }
+                }
+                if (iSearchedList.Count > 0)
+                {
+                    int iTestNum = iSelectedRow.Count(n => n == -1);
+                    if (iTestNum == iSearchedList.Count)
+                        iSelectedRow = iSearchedList.ToList();
+                    for (int i = 0; i < iSearchedList.Count; i++)
+                    {
+                        if (iSelectedRow[i] == iSearchedList[i])
+                        {
+                            dgvProducts.CurrentCell = dgvProducts.Rows[iSearchedList[i]].Cells[0];
+                            iSelectedRow[i] = -1;
+                            break;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                iSearchedList.Clear();
+                iSelectedRow.Clear();
+            }
+        }
+
+        private void btnTxtSearch_Click(object sender, EventArgs e)
+        {
+            KeyEventArgs enter = new KeyEventArgs(Keys.Enter);
+            txtSearch_KeyDown(null, null);
         }
     }
 }

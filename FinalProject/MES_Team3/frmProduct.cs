@@ -14,13 +14,10 @@ namespace MES_Team3
 {
     public partial class frmProduct : MES_Team3.BaseForms.Base1_1
     {
-        List<ProductProperty> mAllList;
+       DataTable mdtAll;
         string msUserID;
-        //int mirowIndex;
-        //List<int> mFindIndex;
-        //bool mbFirst;
-        //bool mbSearch;
-        //string txt;
+        List<int> iSearchedList;
+        List<int> iSelectedRow;
         public frmProduct()
         {
            
@@ -42,7 +39,9 @@ namespace MES_Team3
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성 사용자", "CREATE_USER_ID");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 시간", "UPDATE_TIME", width: 150);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 사용자", "UPDATE_USER_ID");
-            List<ProductProperty> list = new List<ProductProperty>();
+             iSearchedList = new List<int>();
+            iSelectedRow = new List<int>();
+
 
             LoadData();
 
@@ -51,10 +50,6 @@ namespace MES_Team3
             pgProperty.SelectedObject = vo;
 
             pgProperty.PropertySort = PropertySort.NoSort;
-            //mbFirst = true;
-
-
-            //mbSearch= true;
 
             BIsSearchPanel = false;
      
@@ -153,11 +148,11 @@ namespace MES_Team3
         private void LoadData()
         {
             ProductServ serv = new ProductServ();
-             mAllList = serv.GetProductsList();
+             mdtAll = serv.GetProductsList();
             csDataGridView1.DataSource = null;
-            csDataGridView1.DataSource = mAllList;
+            csDataGridView1.DataSource = mdtAll;
             csDataGridView1.Focus();
-            csDataGridView1.Rows[0].Selected = true;
+            //csDataGridView1.Rows[0].Selected = true;
             BSearchPanel = false;
         }
 
@@ -244,37 +239,15 @@ namespace MES_Team3
 
         private void btnTxtSearch_Click(object sender, EventArgs e)
         {
-            //txt = txtSearch.Text.ToUpper();
-            ////    //List<ProductProperty> txtSearch = allList.FindAll((x) => x.PRODUCT_CODE.Contains(txt) || x.PRODUCT_NAME.Contains(txt)||//x.PRODUCT_TYPE.Contains(txt) || x.CUSTOMER_CODE.Contains(txt)||x.VENDOR_CODE.Contains(txt) || x.CREATE_USER_ID.Contains(txt)||//x.UPDATE_USER_ID.Contains(txt));
-            ////    // csDataGridView1.DataSource = txtSearch;
+            KeyEventArgs enter = new KeyEventArgs(Keys.Enter);
 
-            ////mFindIndex = new List<int>();
-            //foreach (DataGridViewRow row in csDataGridView1.Rows)
-            //{
-
-            //    if ((row.Cells["PRODUCT_CODE"].Value != null && row.Cells["PRODUCT_CODE"].Value.ToString().ToUpper().Contains(txt)) ||
-            //    (row.Cells["PRODUCT_NAME"].Value != null && row.Cells["PRODUCT_NAME"].Value.ToString().ToUpper().Contains(txt)) ||
-            //    (row.Cells["PRODUCT_TYPE"].Value != null && row.Cells["PRODUCT_TYPE"].Value.ToString().ToUpper().Contains(txt)) ||
-            //    (row.Cells["CUSTOMER_CODE"].Value != null && row.Cells["CUSTOMER_CODE"].Value.ToString().ToUpper().Contains(txt)) ||
-            //    (row.Cells["VENDOR_CODE"].Value != null && row.Cells["VENDOR_CODE"].Value.ToString().ToUpper().Contains(txt)) ||
-            //    (row.Cells["CREATE_USER_ID"].Value != null && row.Cells["CREATE_USER_ID"].Value.ToString().ToUpper().Contains(txt)) ||
-            //    (row.Cells["UPDATE_USER_ID"].Value != null && row.Cells["UPDATE_USER_ID"].Value.ToString().ToUpper().Contains(txt)))
-            //    {
-
-            //        row.Selected = true;
-            //        //mFindIndex.Add(row.Index);
-            //    }
-            //    else
-            //    {
-            //        row.Selected = false;
-            //    }
-            //}
+            
+            txtSearch_KeyDown(null, enter );
 
 
-            //내가 생각한 흐름
             //if (mbFirst && mbSearch)
             //{
-            //    txt = txtSearch.Text.ToUpper();
+
             //    //List<ProductProperty> txtSearch = allList.FindAll((x) => x.PRODUCT_CODE.Contains(txt) || x.PRODUCT_NAME.Contains(txt)||//x.PRODUCT_TYPE.Contains(txt) || x.CUSTOMER_CODE.Contains(txt)||x.VENDOR_CODE.Contains(txt) || x.CREATE_USER_ID.Contains(txt)||//x.UPDATE_USER_ID.Contains(txt));
             //    // csDataGridView1.DataSource = txtSearch;
 
@@ -291,12 +264,12 @@ namespace MES_Team3
             //        (row.Cells["UPDATE_USER_ID"].Value != null && row.Cells["UPDATE_USER_ID"].Value.ToString().ToUpper().Contains(txt)))
             //        {
 
-            //            row.Selected = true;
+            //           // row.Selected = true;
             //            mFindIndex.Add(row.Index);
             //        }
             //        else
             //        {
-            //            row.Selected = false;
+            //            //row.Selected = false;
             //        }
             //    }
             //    mbFirst = false;
@@ -327,50 +300,62 @@ namespace MES_Team3
             btnReadBottom.PerformClick();
         }
 
-
-        private void csDataGridView1_KeyDown(object sender, KeyEventArgs e)
-        {
-            //KeyDown event 왜 안 먹히지..
-
-            //if (e.KeyCode == Keys.Enter)
-            //{
-            //    if (mFindIndex == null) { MessageBox.Show("검색 중 오류가 발생했습니다."); return; }
-            //    if (mirowIndex == mFindIndex[mFindIndex.Count]) { MessageBox.Show("검색한 값이 포함된 마지막 행입니다."); return; }
-            //    foreach (int irowIndex in mFindIndex)
-            //    {
-            //        mirowIndex = irowIndex;
-            //        csDataGridView1.Rows[irowIndex].Selected = true;
-
-            //    }
-            //}
-            //else if (e.KeyCode == Keys.Escape)
-            //{
-            //    foreach (DataGridViewRow dr in csDataGridView1.Rows)
-            //    {
-            //        dr.Selected = false;
-            //        mFindIndex.Clear();
-            //    }
-            //}
-
-            if (e.KeyCode == Keys.Enter)
-            {
-                MessageBox.Show(csDataGridView1[0, csDataGridView1.CurrentRow.Index].Value.ToString());
-
-                csDataGridView1.CurrentCell = csDataGridView1[csDataGridView1.CurrentCell.ColumnIndex, csDataGridView1.CurrentCell.RowIndex];
-                e.Handled = true;
-            }
-
-        }
-
-
         private void frmProduct_Shown(object sender, EventArgs e)
         {
-           // csDataGridView1.ClearSelection();// shown이벤트일 때만 clearSelection()이 먹힌다 Load이벤트일 때는 안 먹힌다
+            csDataGridView1.ClearSelection();// shown이벤트일 때만 clearSelection()이 먹힌다 Load이벤트일 때는 안 먹힌다
         }
 
-    
-
-
+        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (iSearchedList.Count == 0)
+                {
+                    DataTable copy_dt = mdtAll;
+                    IEnumerable<DataRow> linq_row = null;
+                    if (txtSearch.Text == "")
+                    {
+                        csDataGridView1.DataSource = copy_dt;
+                    }
+                    else
+                    {
+                        foreach (DataRow row in copy_dt.Rows)
+                        {
+                            linq_row = from item in row.ItemArray
+                                       where item.ToString().ToLower().Contains(txtSearch.Text.ToLower())
+                                       select row;
+                            foreach (DataRow dt in linq_row)
+                            {
+                                int iCntSearch = copy_dt.Rows.IndexOf(row);
+                                iSearchedList.Add(iCntSearch);
+                                break;
+                            }
+                        }
+                        iSelectedRow = iSearchedList.ToList();
+                    }
+                }
+                if (iSearchedList.Count > 0)
+                {
+                    int iTestNum = iSelectedRow.Count(n => n == -1);
+                    if (iTestNum == iSearchedList.Count)
+                        iSelectedRow = iSearchedList.ToList();
+                    for (int i = 0; i < iSearchedList.Count; i++)
+                    {
+                        if (iSelectedRow[i] == iSearchedList[i])
+                        {
+                            csDataGridView1.CurrentCell = csDataGridView1.Rows[iSearchedList[i]].Cells[0];
+                            iSelectedRow[i] = -1;
+                            break;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                iSearchedList.Clear();
+                iSelectedRow.Clear();
+            }
+        }
     }
 
 
