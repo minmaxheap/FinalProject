@@ -29,9 +29,9 @@ namespace MES_Team3.BaseForms
         /// </summary>
         private void InitializeComponent()
         {
-            
+            System.Windows.Forms.Button btnTxtSearch;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Base4_1));
-
+            System.Windows.Forms.Button btnReadTop;
             this.lblAddList = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -203,7 +203,7 @@ namespace MES_Team3.BaseForms
             this.panel3.Location = new System.Drawing.Point(0, 37);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(417, 254);
+            this.panel3.Size = new System.Drawing.Size(413, 254);
             this.panel3.TabIndex = 31;
             // 
             // pnlCrud
@@ -353,7 +353,7 @@ namespace MES_Team3.BaseForms
             this.pnlSearch.Location = new System.Drawing.Point(0, 37);
             this.pnlSearch.Margin = new System.Windows.Forms.Padding(0);
             this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(416, 254);
+            this.pnlSearch.Size = new System.Drawing.Size(420, 254);
             this.pnlSearch.TabIndex = 31;
             // 
             // lblTitle
@@ -478,8 +478,6 @@ namespace MES_Team3.BaseForms
         public System.Windows.Forms.Label lblTitle2;
         public System.Windows.Forms.Label lblPnlBottom;
         public System.Windows.Forms.Panel panel3;
-        public System.Windows.Forms.Button btnTxtSearch;
-        public System.Windows.Forms.Button btnReadTop;
 
     }
 }

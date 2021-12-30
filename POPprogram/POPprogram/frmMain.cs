@@ -31,7 +31,7 @@ namespace POPprogram
 
             DrawMenuStrip();
 
-            tabMenu.Visible = false;
+            //tabMenu.Visible = false;
       
       
 
@@ -89,10 +89,10 @@ namespace POPprogram
             {
                 Form frm = (Form)Activator.CreateInstance(frmType);
                 frm.MdiParent = this;
-
-                //frm.ControlBox = false;
-                frm.FormBorderStyle = FormBorderStyle.None;
                 frm.WindowState = FormWindowState.Maximized;
+                frm.ControlBox = false;
+                frm.FormBorderStyle = FormBorderStyle.None;
+      
                 frm.Text = formText;
                 frm.Show();
             }
@@ -107,29 +107,29 @@ namespace POPprogram
 
         private void frmMain_MdiChildActivate(object sender, EventArgs e)
         {
-            if (this.ActiveMdiChild == null)
-            {
-                tabMenu.Visible = false;
-            }
-            else
-            {
-                this.ActiveMdiChild.WindowState = FormWindowState.Maximized;
+            //if (this.ActiveMdiChild == null)
+            //{
+            //    tabMenu.Visible = false;
+            //}
+            //else
+            //{
+               this.ActiveMdiChild.WindowState = FormWindowState.Maximized;
 
-                if (this.ActiveMdiChild.Tag == null)
-                {
-                    TabPage tp = new TabPage(this.ActiveMdiChild.Text + "    ");
-                    tp.Parent = tabMenu;
-                    tp.Tag = this.ActiveMdiChild;
-                    tabMenu.SelectedTab = tp;
+            //    if (this.ActiveMdiChild.Tag == null)
+            //    {
+            //        TabPage tp = new TabPage(this.ActiveMdiChild.Text + "    ");
+            //        tp.Parent = tabMenu;
+            //        tp.Tag = this.ActiveMdiChild;
+            //        tabMenu.SelectedTab = tp;
 
-                    this.ActiveMdiChild.FormClosed += ActiveMdiChild_FormClosed;
+            //        this.ActiveMdiChild.FormClosed += ActiveMdiChild_FormClosed;
 
-                    this.ActiveMdiChild.Tag = tp;
-                }
+            //        this.ActiveMdiChild.Tag = tp;
+            //    }
 
-                if (!tabMenu.Visible)
-                    tabMenu.Visible = true;
-            }
+            //    if (!tabMenu.Visible)
+            //        tabMenu.Visible = true;
+            //}
         }
 
         private void ActiveMdiChild_FormClosed(object sender, FormClosedEventArgs e)
@@ -157,26 +157,26 @@ namespace POPprogram
 
         private void tabMain_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (tabMenu.SelectedTab != null)
-            {
-                Form frm = (Form)tabMenu.SelectedTab.Tag;
-                frm.Select();
-            }
+            //if (tabMenu.SelectedTab != null)
+            //{
+            //    Form frm = (Form)tabMenu.SelectedTab.Tag;
+            //    frm.Select();
+            //}
         }
 
         private void tabMenu_MouseDown(object sender, MouseEventArgs e)
         {
-            for (int i = 0; i < tabMenu.TabPages.Count; i++)
-            {
-                var r = tabMenu.GetTabRect(i);
-                var closeImage = Properties.Resources.close;
-                var closeRect = new Rectangle((r.Right - closeImage.Width), r.Top + (r.Height - closeImage.Height) / 2, closeImage.Width, closeImage.Height);
-                if (closeRect.Contains(e.Location))
-                {
-                    this.ActiveMdiChild.Close();
-                    break;
-                }
-            }
+        //    for (int i = 0; i < tabMenu.TabPages.Count; i++)
+        //    {
+        //        var r = tabMenu.GetTabRect(i);
+        //        var closeImage = Properties.Resources.close;
+        //        var closeRect = new Rectangle((r.Right - closeImage.Width), r.Top + (r.Height - closeImage.Height) / 2, closeImage.Width, closeImage.Height);
+        //        if (closeRect.Contains(e.Location))
+        //        {
+        //            this.ActiveMdiChild.Close();
+        //            break;
+        //        }
+        //    }
         }
 
      

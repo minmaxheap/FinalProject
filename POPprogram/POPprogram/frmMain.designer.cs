@@ -30,22 +30,8 @@ namespace POPprogram
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            this.tabMenu = new POPprogram.csTabControl();
             this.mnuMain = new System.Windows.Forms.MenuStrip();
             this.SuspendLayout();
-            // 
-            // tabMenu
-            // 
-            this.tabMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tabMenu.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.tabMenu.Location = new System.Drawing.Point(0, 24);
-            this.tabMenu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabMenu.Name = "tabMenu";
-            this.tabMenu.SelectedIndex = 0;
-            this.tabMenu.Size = new System.Drawing.Size(1595, 28);
-            this.tabMenu.TabIndex = 3;
-            this.tabMenu.SelectedIndexChanged += new System.EventHandler(this.tabMain_SelectedIndexChanged);
-            this.tabMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabMenu_MouseDown);
             // 
             // mnuMain
             // 
@@ -64,7 +50,6 @@ namespace POPprogram
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1595, 1030);
-            this.Controls.Add(this.tabMenu);
             this.Controls.Add(this.mnuMain);
             this.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -82,7 +67,6 @@ namespace POPprogram
         }
 
         #endregion
-        private csTabControl tabMenu;
         private System.Windows.Forms.MenuStrip mnuMain;
     }
 }

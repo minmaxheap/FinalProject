@@ -84,6 +84,7 @@ namespace MES_Team3
             this.tabMenu.Size = new System.Drawing.Size(1137, 22);
             this.tabMenu.TabIndex = 6;
             this.tabMenu.Visible = false;
+            this.tabMenu.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             this.tabMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabControl1_MouseDown);
             // 
             // flowLayoutPanel1

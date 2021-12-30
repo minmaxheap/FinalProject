@@ -13,6 +13,12 @@ namespace POPprogram
         public frmNewLOT()
         {
             InitializeComponent();
+            
+        }
+
+        private void frmNewLOT_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
         }
     }
 }

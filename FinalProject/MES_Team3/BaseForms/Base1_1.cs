@@ -30,6 +30,7 @@ namespace MES_Team3.BaseForms
         public Base1_1()
         {
             InitializeComponent();
+    
         }
 
         private void btnSearchPnl_Click(object sender, EventArgs e)

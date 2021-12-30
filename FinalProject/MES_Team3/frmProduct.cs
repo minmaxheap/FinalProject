@@ -51,7 +51,6 @@ namespace MES_Team3
             pgProperty.PropertySort = PropertySort.NoSort;
 
             BIsSearchPanel = false;
-     
         }
 
         

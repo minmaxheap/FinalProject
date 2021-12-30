@@ -1,7 +1,7 @@
 ﻿
-namespace POPprogram
+namespace MES_Team3
 {
-    partial class frmNewLOT
+    partial class test1
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -29,29 +29,7 @@ namespace POPprogram
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel4.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.pnlCrud.SuspendLayout();
-            this.SuspendLayout();
-            // 
-            // label17
-            // 
-            this.label17.Text = "100";
-            // 
-            // frmNewLOT
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(1373, 807);
-            this.Location = new System.Drawing.Point(0, 0);
-            this.Name = "frmNewLOT";
-            this.Load += new System.EventHandler(this.frmNewLOT_Load);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            this.pnlCrud.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            this.components = new System.ComponentModel.Container();
         }
 
         #endregion
