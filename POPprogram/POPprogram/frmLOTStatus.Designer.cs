@@ -71,14 +71,14 @@ namespace POPprogram
             this.label1 = new System.Windows.Forms.Label();
             this.pnlSearch = new System.Windows.Forms.Panel();
             this.pnlProperty = new System.Windows.Forms.Panel();
+            this.pgProperty = new System.Windows.Forms.PropertyGrid();
+            this.pgSearch = new System.Windows.Forms.PropertyGrid();
             this.pnlTopLbl = new System.Windows.Forms.Panel();
             this.btnPanel = new System.Windows.Forms.Button();
             this.lblPanel = new System.Windows.Forms.Label();
             this.pnlCrud = new System.Windows.Forms.Panel();
             this.btnReadBottom = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.pgSearch = new System.Windows.Forms.PropertyGrid();
-            this.pgProperty = new System.Windows.Forms.PropertyGrid();
             btnTxtSearch = new System.Windows.Forms.Button();
             btnReadTop = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
@@ -464,6 +464,26 @@ namespace POPprogram
             this.pnlProperty.Size = new System.Drawing.Size(381, 585);
             this.pnlProperty.TabIndex = 30;
             // 
+            // pgProperty
+            // 
+            this.pgProperty.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pgProperty.HelpVisible = false;
+            this.pgProperty.Location = new System.Drawing.Point(0, 0);
+            this.pgProperty.Name = "pgProperty";
+            this.pgProperty.Size = new System.Drawing.Size(379, 583);
+            this.pgProperty.TabIndex = 4;
+            this.pgProperty.ToolbarVisible = false;
+            // 
+            // pgSearch
+            // 
+            this.pgSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pgSearch.HelpVisible = false;
+            this.pgSearch.Location = new System.Drawing.Point(0, 0);
+            this.pgSearch.Name = "pgSearch";
+            this.pgSearch.Size = new System.Drawing.Size(381, 585);
+            this.pgSearch.TabIndex = 31;
+            this.pgSearch.ToolbarVisible = false;
+            // 
             // pnlTopLbl
             // 
             this.pnlTopLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(152)))), ((int)(((byte)(216)))));
@@ -560,30 +580,9 @@ namespace POPprogram
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnClose.UseVisualStyleBackColor = false;
             // 
-            // pgSearch
-            // 
-            this.pgSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pgSearch.HelpVisible = false;
-            this.pgSearch.Location = new System.Drawing.Point(0, 0);
-            this.pgSearch.Name = "pgSearch";
-            this.pgSearch.Size = new System.Drawing.Size(381, 585);
-            this.pgSearch.TabIndex = 31;
-            this.pgSearch.ToolbarVisible = false;
-            // 
-            // pgProperty
-            // 
-            this.pgProperty.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pgProperty.HelpVisible = false;
-            this.pgProperty.Location = new System.Drawing.Point(0, 0);
-            this.pgProperty.Name = "pgProperty";
-            this.pgProperty.Size = new System.Drawing.Size(379, 583);
-            this.pgProperty.TabIndex = 4;
-            this.pgProperty.ToolbarVisible = false;
-            // 
             // frmLOTStatus
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
             this.ClientSize = new System.Drawing.Size(1373, 807);
             this.Controls.Add(this.pnlCrud);

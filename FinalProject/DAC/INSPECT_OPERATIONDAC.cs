@@ -200,14 +200,14 @@ where VALUE_TYPE = @VALUE_TYPE";
 
 
 		//검사 공정관계 데이터 삭제
-		public bool Op_Delete(string code)
+		public bool Op_Delete(string op_code,string inspect_code)
 		{
-			string sql = "delete from  [dbo].[INSPECT_ITEM_OPERATION_REL] where OPERATION_CODE = @OPERATION_CODE";
+			string sql = "delete from  [dbo].[INSPECT_ITEM_OPERATION_REL] where OPERATION_CODE = @OPERATION_CODE and INSPECT_ITEM_CODE = @INSPECT_ITEM_CODE";
 
 		using (SqlCommand cmd = new SqlCommand(sql, conn))
 			{
-				cmd.Parameters.AddWithValue("@OPERATION_CODE",code);
-
+				cmd.Parameters.AddWithValue("@OPERATION_CODE",op_code);
+				cmd.Parameters.AddWithValue("@INSPECT_ITEM_CODE", inspect_code);
 				int row = cmd.ExecuteNonQuery();
 				return row > 0;
 			}
