@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace MES_Team3
 {
-    public partial class frmBOM111 : MES_Team3.Base4
+    public partial class frmBOM : MES_Team3.BaseForms.Base4_1
     {
-        public frmBOM111()
+        public frmBOM()
         {
             InitializeComponent();
         }

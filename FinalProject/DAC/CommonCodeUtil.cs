@@ -110,7 +110,7 @@ namespace DAC
         }
     }
 
-    public class Check_Value
+    public class Check_Value  //frmOperation
     {
         public List<string> GetSourceList()
         {
@@ -134,7 +134,61 @@ namespace DAC
             // ProductVO refMyObject = context.Instance as ProductVO;
             return new StandardValuesCollection(new Check_Value().GetSourceList());
         }
+    }//frmOperation
+    public class Check_Status  //frmWorkOrder
+    {
+        public List<string> GetSourceList()
+        {
+            //dac에서 list 받아오기
+            List<string> check_value = new List<string>();
+            check_value.Add("OPEN");
+            check_value.Add("PROC");
+            check_value.Add("CLOSE");
+            return check_value;
+        }
     }
+    public class Check_Status_Converter : StringConverter
+    {
+        public override bool GetStandardValuesSupported(ITypeDescriptorContext context)
+        {
+            return true;
+        }
+
+
+        public override TypeConverter.StandardValuesCollection GetStandardValues(ITypeDescriptorContext context)
+        {
+            // ProductVO refMyObject = context.Instance as ProductVO;
+            return new StandardValuesCollection(new Check_Status().GetSourceList());
+        }
+    }  //frmWorkOrder
+    public class Get_Product_CodeList
+    {
+        public List<string> GetProductCodeList()
+        {
+            //dac에서 list 받아오기 //앗 근데 DAC을 참조할 수가 없구나(순환 종속성 때문에) => 그래서 여기로 vo를 옮겼다.
+
+            WorkOrderDAC dac = new WorkOrderDAC();
+            List<string> productCodeList = dac.GetProductCodeList();
+            return productCodeList; //한번에 다 가져올까 말까 
+        }
+    }
+    public class Get_Product_CodeList_Converter : StringConverter
+    {
+        public override bool GetStandardValuesSupported(ITypeDescriptorContext context)
+        {
+            return true;
+        }
+
+        public override TypeConverter.StandardValuesCollection GetStandardValues(ITypeDescriptorContext context)
+        {
+            //ProductVO refMyObject = context.Instance as ProductVO;
+            return new StandardValuesCollection(new Get_Product_CodeList().GetProductCodeList());
+        }
+    }
+
+
+
+
     public class User_Mst
     {
         public List<string> GetSourceList()
