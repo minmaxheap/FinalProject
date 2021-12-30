@@ -126,6 +126,7 @@ namespace MES_Team3
 				MessageBox.Show("공정코드 혹은 검사 항목이 존재 하지 않습니다.");
 				return;
 			}
+			
 			bool result = serv.Op_Insert(inspec_op_Code, inspect_Code,CreateID,updateID);
 			if (result)
 			{
@@ -152,11 +153,13 @@ namespace MES_Team3
 				MessageBox.Show("공정코드가 없거나 검사항목이 존재하지 않습니다.");
 				return;
 			}
-			bool result = serv.Op_Delete(inspec_op_Code);
+			bool result = serv.Op_Delete(inspec_op_Code,inspect_Code);
 			if (result)
 			{
 				MessageBox.Show("할당 제거");
 				Op_LoadData();
+				inspect_Code = string.Empty;
+				inspec_op_Code = string.Empty;
 				return;
 			}
 			else
@@ -234,7 +237,9 @@ namespace MES_Team3
 			MessageBox.Show($"{inspect_Code}를 선택하셨습니다.");
 		}
 
-		private void csDataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		
+
+		private void csDataGridView2_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
 		{
 			if (e.RowIndex < 0)
 			{
@@ -244,7 +249,6 @@ namespace MES_Team3
 			inspect_Code = csDataGridView2["INSPECT_ITEM_CODE", e.RowIndex].Value.ToString();
 			inspec_op_Code = csDataGridView2["OPERATION_CODE", e.RowIndex].Value.ToString();
 			MessageBox.Show($"{inspect_Code} , {inspec_op_Code}를 선택하셨습니다.");
-			
 		}
 	}
 }
