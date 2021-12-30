@@ -4,14 +4,14 @@ namespace MES_Team3
     partial class test
     {
         /// <summary>
-        /// 필수 디자이너 변수입니다.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// 사용 중인 모든 리소스를 정리합니다.
+        /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">관리되는 리소스를 삭제해야 하면 true이고, 그렇지 않으면 false입니다.</param>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -21,197 +21,386 @@ namespace MES_Team3
             base.Dispose(disposing);
         }
 
-        #region Windows Form 디자이너에서 생성한 코드
+        #region Windows Form Designer generated code
 
         /// <summary>
-        /// 디자이너 지원에 필요한 메서드입니다. 
-        /// 이 메서드의 내용을 코드 편집기로 수정하지 마세요.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.csDataGridView1 = new MES_Team3.csDataGridView();
-            this.csDataGridView2 = new MES_Team3.csDataGridView();
-            this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
-            this.propertyGrid2 = new System.Windows.Forms.PropertyGrid();
-            this.panel1.SuspendLayout();
-            this.pnlSearch.SuspendLayout();
-            this.pnlDgv.SuspendLayout();
+            System.Windows.Forms.Button btnTxtSearch;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(test));
+            System.Windows.Forms.Button btnReadTop;
+            this.btnInsert = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.pnlCrud = new System.Windows.Forms.Panel();
+            this.btnReadBottom = new System.Windows.Forms.Button();
+            this.btnPanel = new System.Windows.Forms.Button();
+            this.lblPanel = new System.Windows.Forms.Label();
+            this.pnlSearch = new System.Windows.Forms.Panel();
+            this.pnlProperty = new System.Windows.Forms.Panel();
+            this.pnlTopLbl = new System.Windows.Forms.Panel();
+            this.pnlDgv = new System.Windows.Forms.Panel();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.spcBase = new System.Windows.Forms.SplitContainer();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnSearchPnl = new System.Windows.Forms.Button();
+            this.pnlTop = new System.Windows.Forms.Panel();
+            btnTxtSearch = new System.Windows.Forms.Button();
+            btnReadTop = new System.Windows.Forms.Button();
+            this.pnlCrud.SuspendLayout();
+            this.pnlTopLbl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcBase)).BeginInit();
             this.spcBase.Panel1.SuspendLayout();
             this.spcBase.Panel2.SuspendLayout();
             this.spcBase.SuspendLayout();
             this.pnlTop.SuspendLayout();
-            this.pnlCrud.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            this.pnlDgv2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.csDataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.csDataGridView2)).BeginInit();
             this.SuspendLayout();
+            // 
+            // btnTxtSearch
+            // 
+            btnTxtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            btnTxtSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTxtSearch.BackgroundImage")));
+            btnTxtSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            btnTxtSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            btnTxtSearch.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            btnTxtSearch.ForeColor = System.Drawing.SystemColors.ControlText;
+            btnTxtSearch.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            btnTxtSearch.Location = new System.Drawing.Point(306, 1);
+            btnTxtSearch.Name = "btnTxtSearch";
+            btnTxtSearch.Size = new System.Drawing.Size(32, 26);
+            btnTxtSearch.TabIndex = 49;
+            btnTxtSearch.UseVisualStyleBackColor = false;
+            // 
+            // btnReadTop
+            // 
+            btnReadTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            btnReadTop.BackgroundImage = global::MES_Team3.Properties.Resources.Data_Find12;
+            btnReadTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            btnReadTop.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            btnReadTop.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            btnReadTop.ForeColor = System.Drawing.SystemColors.ControlText;
+            btnReadTop.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            btnReadTop.Location = new System.Drawing.Point(12, 1);
+            btnReadTop.Name = "btnReadTop";
+            btnReadTop.Size = new System.Drawing.Size(33, 26);
+            btnReadTop.TabIndex = 47;
+            btnReadTop.UseVisualStyleBackColor = false;
+            // 
+            // btnInsert
+            // 
+            this.btnInsert.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnInsert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnInsert.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnInsert.Image = global::MES_Team3.Properties.Resources.Add_New;
+            this.btnInsert.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnInsert.Location = new System.Drawing.Point(106, 8);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(67, 48);
+            this.btnInsert.TabIndex = 80;
+            this.btnInsert.Text = "생성";
+            this.btnInsert.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnInsert.UseVisualStyleBackColor = false;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDelete.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnDelete.Image = global::MES_Team3.Properties.Resources.Trash_Can_02;
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnDelete.Location = new System.Drawing.Point(382, 8);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(67, 48);
+            this.btnDelete.TabIndex = 78;
+            this.btnDelete.Text = "삭제";
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDelete.UseVisualStyleBackColor = false;
+            // 
+            // btnClear
+            // 
+            this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnClear.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnClear.Image = global::MES_Team3.Properties.Resources.Command_Refresh_01;
+            this.btnClear.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnClear.Location = new System.Drawing.Point(290, 8);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(67, 48);
+            this.btnClear.TabIndex = 82;
+            this.btnClear.Text = "초기화";
+            this.btnClear.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnClear.UseVisualStyleBackColor = false;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnClose.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnClose.Image = global::MES_Team3.Properties.Resources.Delete;
+            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnClose.Location = new System.Drawing.Point(474, 8);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(67, 48);
+            this.btnClose.TabIndex = 83;
+            this.btnClose.Text = "닫기";
+            this.btnClose.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnClose.UseVisualStyleBackColor = false;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnUpdate.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnUpdate.Image = global::MES_Team3.Properties.Resources.Save_02;
+            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnUpdate.Location = new System.Drawing.Point(198, 8);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(67, 48);
+            this.btnUpdate.TabIndex = 81;
+            this.btnUpdate.Text = "변경";
+            this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            // 
+            // pnlCrud
+            // 
+            this.pnlCrud.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlCrud.Controls.Add(this.btnInsert);
+            this.pnlCrud.Controls.Add(this.btnDelete);
+            this.pnlCrud.Controls.Add(this.btnClear);
+            this.pnlCrud.Controls.Add(this.btnClose);
+            this.pnlCrud.Controls.Add(this.btnReadBottom);
+            this.pnlCrud.Controls.Add(this.btnUpdate);
+            this.pnlCrud.Location = new System.Drawing.Point(714, 716);
+            this.pnlCrud.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlCrud.Name = "pnlCrud";
+            this.pnlCrud.Size = new System.Drawing.Size(543, 66);
+            this.pnlCrud.TabIndex = 43;
+            // 
+            // btnReadBottom
+            // 
+            this.btnReadBottom.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReadBottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            this.btnReadBottom.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnReadBottom.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnReadBottom.Image = global::MES_Team3.Properties.Resources.Data_Find12;
+            this.btnReadBottom.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnReadBottom.Location = new System.Drawing.Point(14, 8);
+            this.btnReadBottom.Name = "btnReadBottom";
+            this.btnReadBottom.Size = new System.Drawing.Size(67, 48);
+            this.btnReadBottom.TabIndex = 79;
+            this.btnReadBottom.Text = "조회";
+            this.btnReadBottom.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnReadBottom.UseVisualStyleBackColor = false;
+            // 
+            // btnPanel
+            // 
+            this.btnPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPanel.BackColor = System.Drawing.Color.Transparent;
+            this.btnPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPanel.BackgroundImage")));
+            this.btnPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPanel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
+            this.btnPanel.FlatAppearance.BorderSize = 0;
+            this.btnPanel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
+            this.btnPanel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
+            this.btnPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPanel.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnPanel.ForeColor = System.Drawing.Color.Transparent;
+            this.btnPanel.Location = new System.Drawing.Point(303, 0);
+            this.btnPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPanel.Name = "btnPanel";
+            this.btnPanel.Size = new System.Drawing.Size(47, 36);
+            this.btnPanel.TabIndex = 42;
+            this.btnPanel.UseVisualStyleBackColor = false;
+            // 
+            // lblPanel
+            // 
+            this.lblPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(152)))), ((int)(((byte)(216)))));
+            this.lblPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblPanel.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblPanel.Location = new System.Drawing.Point(0, 0);
+            this.lblPanel.Name = "lblPanel";
+            this.lblPanel.Size = new System.Drawing.Size(348, 36);
+            this.lblPanel.TabIndex = 29;
+            this.lblPanel.Text = "▶ 속성";
+            this.lblPanel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pnlSearch
             // 
-            this.pnlSearch.Controls.Add(this.propertyGrid1);
+            this.pnlSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
+            this.pnlSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlSearch.Location = new System.Drawing.Point(0, 40);
+            this.pnlSearch.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlSearch.Name = "pnlSearch";
+            this.pnlSearch.Size = new System.Drawing.Size(357, 593);
+            this.pnlSearch.TabIndex = 31;
+            // 
+            // pnlProperty
+            // 
+            this.pnlProperty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
+            this.pnlProperty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlProperty.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlProperty.Location = new System.Drawing.Point(0, 40);
+            this.pnlProperty.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlProperty.Name = "pnlProperty";
+            this.pnlProperty.Size = new System.Drawing.Size(357, 593);
+            this.pnlProperty.TabIndex = 29;
+            // 
+            // pnlTopLbl
+            // 
+            this.pnlTopLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(152)))), ((int)(((byte)(216)))));
+            this.pnlTopLbl.Controls.Add(this.btnPanel);
+            this.pnlTopLbl.Controls.Add(this.lblPanel);
+            this.pnlTopLbl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTopLbl.Location = new System.Drawing.Point(0, 0);
+            this.pnlTopLbl.Name = "pnlTopLbl";
+            this.pnlTopLbl.Size = new System.Drawing.Size(357, 40);
+            this.pnlTopLbl.TabIndex = 0;
             // 
             // pnlDgv
             // 
-            this.pnlDgv.Controls.Add(this.csDataGridView1);
-            this.pnlDgv.Controls.SetChildIndex(this.lblTitle, 0);
-            this.pnlDgv.Controls.SetChildIndex(this.csDataGridView1, 0);
+            this.pnlDgv.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlDgv.Location = new System.Drawing.Point(0, 36);
+            this.pnlDgv.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlDgv.Name = "pnlDgv";
+            this.pnlDgv.Size = new System.Drawing.Size(780, 597);
+            this.pnlDgv.TabIndex = 18;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            this.lblTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblTitle.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblTitle.Location = new System.Drawing.Point(0, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(780, 36);
+            this.lblTitle.TabIndex = 17;
+            this.lblTitle.Text = "title";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // spcBase
             // 
+            this.spcBase.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.spcBase.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.spcBase.Location = new System.Drawing.Point(110, 71);
+            this.spcBase.Margin = new System.Windows.Forms.Padding(0);
+            this.spcBase.Name = "spcBase";
             // 
-            // splitContainer1
+            // spcBase.Panel1
             // 
+            this.spcBase.Panel1.Controls.Add(this.pnlDgv);
+            this.spcBase.Panel1.Controls.Add(this.lblTitle);
             // 
-            // pnlDgv2
+            // spcBase.Panel2
             // 
-            this.pnlDgv2.Controls.Add(this.csDataGridView2);
-            this.pnlDgv2.Controls.SetChildIndex(this.lblTitle2, 0);
-            this.pnlDgv2.Controls.SetChildIndex(this.csDataGridView2, 0);
+            this.spcBase.Panel2.Controls.Add(this.pnlSearch);
+            this.spcBase.Panel2.Controls.Add(this.pnlProperty);
+            this.spcBase.Panel2.Controls.Add(this.pnlTopLbl);
+            this.spcBase.Size = new System.Drawing.Size(1147, 635);
+            this.spcBase.SplitterDistance = 782;
+            this.spcBase.SplitterWidth = 6;
+            this.spcBase.TabIndex = 44;
             // 
-            // panel3
+            // txtSearch
             // 
-            this.panel3.Controls.Add(this.propertyGrid2);
+            this.txtSearch.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtSearch.Location = new System.Drawing.Point(56, 1);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(244, 26);
+            this.txtSearch.TabIndex = 50;
             // 
-            // csDataGridView1
+            // btnSearchPnl
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.csDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.csDataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
-            this.csDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.csDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.csDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(195)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.csDataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.csDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.csDataGridView1.EnableHeadersVisualStyles = false;
-            this.csDataGridView1.Location = new System.Drawing.Point(0, 36);
-            this.csDataGridView1.Name = "csDataGridView1";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.csDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.csDataGridView1.RowHeadersWidth = 30;
-            this.csDataGridView1.Size = new System.Drawing.Size(724, 255);
-            this.csDataGridView1.TabIndex = 18;
+            this.btnSearchPnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            this.btnSearchPnl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSearchPnl.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSearchPnl.Location = new System.Drawing.Point(344, 1);
+            this.btnSearchPnl.Name = "btnSearchPnl";
+            this.btnSearchPnl.Size = new System.Drawing.Size(73, 26);
+            this.btnSearchPnl.TabIndex = 48;
+            this.btnSearchPnl.Text = "검색 조건";
+            this.btnSearchPnl.UseVisualStyleBackColor = false;
             // 
-            // csDataGridView2
+            // pnlTop
             // 
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.csDataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.csDataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
-            this.csDataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.csDataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.csDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(195)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.csDataGridView2.DefaultCellStyle = dataGridViewCellStyle7;
-            this.csDataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.csDataGridView2.EnableHeadersVisualStyles = false;
-            this.csDataGridView2.Location = new System.Drawing.Point(0, 36);
-            this.csDataGridView2.Name = "csDataGridView2";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.csDataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.csDataGridView2.RowHeadersWidth = 30;
-            this.csDataGridView2.Size = new System.Drawing.Size(724, 255);
-            this.csDataGridView2.TabIndex = 18;
-            // 
-            // propertyGrid1
-            // 
-            this.propertyGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.propertyGrid1.Location = new System.Drawing.Point(0, 0);
-            this.propertyGrid1.Name = "propertyGrid1";
-            this.propertyGrid1.Size = new System.Drawing.Size(412, 252);
-            this.propertyGrid1.TabIndex = 0;
-            // 
-            // propertyGrid2
-            // 
-            this.propertyGrid2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.propertyGrid2.Location = new System.Drawing.Point(0, 0);
-            this.propertyGrid2.Name = "propertyGrid2";
-            this.propertyGrid2.Size = new System.Drawing.Size(415, 252);
-            this.propertyGrid2.TabIndex = 1;
+            this.pnlTop.Controls.Add(this.txtSearch);
+            this.pnlTop.Controls.Add(this.btnSearchPnl);
+            this.pnlTop.Controls.Add(btnTxtSearch);
+            this.pnlTop.Controls.Add(btnReadTop);
+            this.pnlTop.Location = new System.Drawing.Point(98, 30);
+            this.pnlTop.Name = "pnlTop";
+            this.pnlTop.Size = new System.Drawing.Size(1168, 30);
+            this.pnlTop.TabIndex = 42;
             // 
             // test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.ClientSize = new System.Drawing.Size(1152, 739);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1365, 812);
+            this.Controls.Add(this.spcBase);
+            this.Controls.Add(this.pnlCrud);
+            this.Controls.Add(this.pnlTop);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "test";
-            this.panel1.ResumeLayout(false);
-            this.pnlSearch.ResumeLayout(false);
-            this.pnlDgv.ResumeLayout(false);
+            this.Text = "test";
+            this.pnlCrud.ResumeLayout(false);
+            this.pnlTopLbl.ResumeLayout(false);
             this.spcBase.Panel1.ResumeLayout(false);
             this.spcBase.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spcBase)).EndInit();
             this.spcBase.ResumeLayout(false);
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
-            this.pnlCrud.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            this.pnlDgv2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.csDataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.csDataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private csDataGridView csDataGridView1;
-        private System.Windows.Forms.PropertyGrid propertyGrid1;
-        private csDataGridView csDataGridView2;
-        private System.Windows.Forms.PropertyGrid propertyGrid2;
+        public System.Windows.Forms.Button btnInsert;
+        public System.Windows.Forms.Button btnDelete;
+        public System.Windows.Forms.Button btnClear;
+        public System.Windows.Forms.Button btnClose;
+        public System.Windows.Forms.Button btnUpdate;
+        public System.Windows.Forms.Panel pnlCrud;
+        public System.Windows.Forms.Button btnReadBottom;
+        public System.Windows.Forms.Button btnPanel;
+        public System.Windows.Forms.Label lblPanel;
+        public System.Windows.Forms.Panel pnlSearch;
+        public System.Windows.Forms.Panel pnlProperty;
+        public System.Windows.Forms.Panel pnlTopLbl;
+        public System.Windows.Forms.Panel pnlDgv;
+        public System.Windows.Forms.Label lblTitle;
+        public System.Windows.Forms.SplitContainer spcBase;
+        public System.Windows.Forms.TextBox txtSearch;
+        public System.Windows.Forms.Button btnSearchPnl;
+        public System.Windows.Forms.Panel pnlTop;
     }
 }

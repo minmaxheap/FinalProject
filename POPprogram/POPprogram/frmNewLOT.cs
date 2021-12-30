@@ -1,4 +1,5 @@
-﻿using System;
+﻿using POPprogram.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,46 @@ namespace POPprogram
         public frmNewLOT()
         {
             InitializeComponent();
+            
+        }
+
+        private void frmNewLOT_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            panel8.Controls.Remove(textBox3);
+           // Button btnSearch = new Button();
+           // btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+           // btnSearch.BackgroundImage = (Image)POPprogram.Properties.Resources.Search_Find1;
+           // btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+           // btnSearch.Text = "";
+           // btnSearch.TextAlign = ContentAlignment.MiddleCenter;
+           // btnSearch.Dock = DockStyle.None;
+           // btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+           //// btnSearch.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+           // btnSearch.Location = new System.Drawing.Point(482, 65);
+           // btnSearch.Margin = new System.Windows.Forms.Padding(0);
+           // btnSearch.Name = "btnSearch";
+           // btnSearch.Size = new System.Drawing.Size(32, 26);
+           // btnSearch.UseVisualStyleBackColor = false;
+           // btnSearch.Click += BtnSearch_Click;
+
+           // panel8.Controls.Add(btnSearch);
+
+        }
+
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            frmWorkOrderDialog dlg = new frmWorkOrderDialog();
+            if(dlg.ShowDialog() == DialogResult.OK)
+            {
+                //선택한 작업저시 정보 텍스트박스에 보여주기
+            }
         }
     }
 }

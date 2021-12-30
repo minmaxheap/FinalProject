@@ -8,39 +8,31 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MES_Team3.BaseForms
+namespace POPprogram
 {
-    public partial class Base1_1 : Form
+    public partial class frmLOTStatus : Form
     {
-        public bool BIsSearchPanel 
-        { 
-            get { return pnlSearch.Visible; } 
-            set 
-            { 
-                pnlSearch.Visible = value; 
+        public bool BIsSearchPanel
+        {
+            get { return pnlSearch.Visible; }
+            set
+            {
+                pnlSearch.Visible = value;
                 pnlProperty.Visible = true;
                 pnlSearch.Visible = false;
                 lblPanel.Text = "▶ 속성";
                 lblPanel.BackColor = Color.FromArgb(82, 152, 216);
                 btnPanel.BackColor = lblPanel.BackColor;
-            } 
+            }
         }
-        public bool BPropertyPanel { get { return pnlProperty.Visible; } set { pnlProperty.Visible = value; } }
-        public bool BSearchPanel { get { return pnlSearch.Visible; } set { pnlSearch.Visible = value; } }
-        public Base1_1()
+        public frmLOTStatus()
         {
             InitializeComponent();
-    
         }
 
-        private void btnSearchPnl_Click(object sender, EventArgs e)
+        private void frmLOTStatus_Load(object sender, EventArgs e)
         {
-            PanelVisible();
-        }
-
-        private void btnPanel_Click(object sender, EventArgs e)
-        {
-            PanelVisible();
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void PanelVisible()
@@ -65,6 +57,14 @@ namespace MES_Team3.BaseForms
             }
         }
 
-        
+        private void btnSearchPnl_Click(object sender, EventArgs e)
+        {
+            PanelVisible();
+        }
+
+        private void btnPanel_Click(object sender, EventArgs e)
+        {
+            PanelVisible();
+        }
     }
 }

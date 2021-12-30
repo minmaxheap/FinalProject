@@ -29,16 +29,16 @@ namespace MES_Team3.BaseForms
         /// </summary>
         private void InitializeComponent()
         {
-            
+            System.Windows.Forms.Button btnTxtSearch;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Base4_1));
-
+            System.Windows.Forms.Button btnReadTop;
             this.lblAddList = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.pnlDgv2 = new System.Windows.Forms.Panel();
             this.lblTitle2 = new System.Windows.Forms.Label();
             this.lblPnlBottom = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnlProperty = new System.Windows.Forms.Panel();
             this.pnlCrud = new System.Windows.Forms.Panel();
             this.btnInsert = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -76,10 +76,10 @@ namespace MES_Team3.BaseForms
             btnTxtSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTxtSearch.BackgroundImage")));
             btnTxtSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             btnTxtSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            btnTxtSearch.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F);
+            btnTxtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             btnTxtSearch.ForeColor = System.Drawing.SystemColors.ControlText;
             btnTxtSearch.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            btnTxtSearch.Location = new System.Drawing.Point(291, 1);
+            btnTxtSearch.Location = new System.Drawing.Point(297, 1);
             btnTxtSearch.Margin = new System.Windows.Forms.Padding(0);
             btnTxtSearch.Name = "btnTxtSearch";
             btnTxtSearch.Size = new System.Drawing.Size(32, 26);
@@ -92,10 +92,10 @@ namespace MES_Team3.BaseForms
             btnReadTop.BackgroundImage = global::MES_Team3.Properties.Resources.Data_Find12;
             btnReadTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             btnReadTop.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            btnReadTop.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F);
+            btnReadTop.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             btnReadTop.ForeColor = System.Drawing.SystemColors.ControlText;
             btnReadTop.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            btnReadTop.Location = new System.Drawing.Point(0, 1);
+            btnReadTop.Location = new System.Drawing.Point(6, 1);
             btnReadTop.Name = "btnReadTop";
             btnReadTop.Size = new System.Drawing.Size(33, 26);
             btnReadTop.TabIndex = 47;
@@ -106,7 +106,7 @@ namespace MES_Team3.BaseForms
             this.lblAddList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(152)))), ((int)(((byte)(216)))));
             this.lblAddList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblAddList.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblAddList.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblAddList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblAddList.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lblAddList.Location = new System.Drawing.Point(0, 0);
             this.lblAddList.Margin = new System.Windows.Forms.Padding(0);
@@ -124,7 +124,7 @@ namespace MES_Team3.BaseForms
             this.panel1.Controls.Add(this.splitContainer1);
             this.panel1.Controls.Add(this.pnlCrud);
             this.panel1.Controls.Add(this.lblAddList);
-            this.panel1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.panel1.Location = new System.Drawing.Point(0, 331);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
@@ -137,7 +137,7 @@ namespace MES_Team3.BaseForms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.splitContainer1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.splitContainer1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.splitContainer1.Location = new System.Drawing.Point(1, 31);
             this.splitContainer1.Margin = new System.Windows.Forms.Padding(0);
             this.splitContainer1.Name = "splitContainer1";
@@ -149,7 +149,7 @@ namespace MES_Team3.BaseForms
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.lblPnlBottom);
-            this.splitContainer1.Panel2.Controls.Add(this.panel3);
+            this.splitContainer1.Panel2.Controls.Add(this.pnlProperty);
             this.splitContainer1.Size = new System.Drawing.Size(1152, 293);
             this.splitContainer1.SplitterDistance = 726;
             this.splitContainer1.SplitterWidth = 6;
@@ -159,7 +159,7 @@ namespace MES_Team3.BaseForms
             // 
             this.pnlDgv2.Controls.Add(this.lblTitle2);
             this.pnlDgv2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDgv2.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.pnlDgv2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.pnlDgv2.Location = new System.Drawing.Point(0, 0);
             this.pnlDgv2.Margin = new System.Windows.Forms.Padding(0);
             this.pnlDgv2.Name = "pnlDgv2";
@@ -171,7 +171,7 @@ namespace MES_Team3.BaseForms
             this.lblTitle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
             this.lblTitle2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTitle2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblTitle2.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblTitle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblTitle2.Location = new System.Drawing.Point(0, 0);
             this.lblTitle2.Name = "lblTitle2";
             this.lblTitle2.Size = new System.Drawing.Size(724, 36);
@@ -183,7 +183,7 @@ namespace MES_Team3.BaseForms
             // 
             this.lblPnlBottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
             this.lblPnlBottom.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblPnlBottom.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblPnlBottom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblPnlBottom.Location = new System.Drawing.Point(0, 0);
             this.lblPnlBottom.Margin = new System.Windows.Forms.Padding(0);
             this.lblPnlBottom.Name = "lblPnlBottom";
@@ -192,19 +192,19 @@ namespace MES_Team3.BaseForms
             this.lblPnlBottom.Text = "속성";
             this.lblPnlBottom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // panel3
+            // pnlProperty
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.pnlProperty.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.panel3.Location = new System.Drawing.Point(0, 37);
-            this.panel3.Margin = new System.Windows.Forms.Padding(0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(417, 254);
-            this.panel3.TabIndex = 31;
+            this.pnlProperty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
+            this.pnlProperty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlProperty.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.pnlProperty.Location = new System.Drawing.Point(0, 37);
+            this.pnlProperty.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlProperty.Name = "pnlProperty";
+            this.pnlProperty.Size = new System.Drawing.Size(409, 254);
+            this.pnlProperty.TabIndex = 31;
             // 
             // pnlCrud
             // 
@@ -228,7 +228,7 @@ namespace MES_Team3.BaseForms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnInsert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
             this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnInsert.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnInsert.Image = global::MES_Team3.Properties.Resources.Add_New;
             this.btnInsert.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnInsert.Location = new System.Drawing.Point(106, 8);
@@ -246,7 +246,7 @@ namespace MES_Team3.BaseForms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnDelete.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnDelete.Image = global::MES_Team3.Properties.Resources.Trash_Can_02;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnDelete.Location = new System.Drawing.Point(382, 8);
@@ -264,7 +264,7 @@ namespace MES_Team3.BaseForms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnClear.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnClear.Image = global::MES_Team3.Properties.Resources.Command_Refresh_01;
             this.btnClear.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnClear.Location = new System.Drawing.Point(290, 8);
@@ -282,7 +282,7 @@ namespace MES_Team3.BaseForms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnClose.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnClose.Image = global::MES_Team3.Properties.Resources.Delete;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnClose.Location = new System.Drawing.Point(474, 8);
@@ -300,7 +300,7 @@ namespace MES_Team3.BaseForms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnReadBottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
             this.btnReadBottom.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnReadBottom.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnReadBottom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnReadBottom.Image = global::MES_Team3.Properties.Resources.Data_Find12;
             this.btnReadBottom.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnReadBottom.Location = new System.Drawing.Point(14, 8);
@@ -318,7 +318,7 @@ namespace MES_Team3.BaseForms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnUpdate.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnUpdate.Image = global::MES_Team3.Properties.Resources.Save_02;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnUpdate.Location = new System.Drawing.Point(198, 8);
@@ -333,7 +333,7 @@ namespace MES_Team3.BaseForms
             // 
             this.lblPnlTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
             this.lblPnlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblPnlTop.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblPnlTop.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblPnlTop.Location = new System.Drawing.Point(0, 0);
             this.lblPnlTop.Margin = new System.Windows.Forms.Padding(0);
             this.lblPnlTop.Name = "lblPnlTop";
@@ -349,11 +349,11 @@ namespace MES_Team3.BaseForms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
             this.pnlSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlSearch.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.pnlSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.pnlSearch.Location = new System.Drawing.Point(0, 37);
             this.pnlSearch.Margin = new System.Windows.Forms.Padding(0);
             this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(416, 254);
+            this.pnlSearch.Size = new System.Drawing.Size(416, 220);
             this.pnlSearch.TabIndex = 31;
             // 
             // lblTitle
@@ -361,7 +361,7 @@ namespace MES_Team3.BaseForms
             this.lblTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
             this.lblTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblTitle.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblTitle.Location = new System.Drawing.Point(0, 0);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(724, 36);
@@ -373,11 +373,11 @@ namespace MES_Team3.BaseForms
             // 
             this.pnlDgv.Controls.Add(this.lblTitle);
             this.pnlDgv.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDgv.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.pnlDgv.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.pnlDgv.Location = new System.Drawing.Point(0, 0);
             this.pnlDgv.Margin = new System.Windows.Forms.Padding(0);
             this.pnlDgv.Name = "pnlDgv";
-            this.pnlDgv.Size = new System.Drawing.Size(724, 291);
+            this.pnlDgv.Size = new System.Drawing.Size(724, 257);
             this.pnlDgv.TabIndex = 18;
             // 
             // spcBase
@@ -386,8 +386,8 @@ namespace MES_Team3.BaseForms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.spcBase.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.spcBase.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.spcBase.Location = new System.Drawing.Point(0, 38);
+            this.spcBase.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.spcBase.Location = new System.Drawing.Point(0, 72);
             this.spcBase.Margin = new System.Windows.Forms.Padding(0);
             this.spcBase.Name = "spcBase";
             // 
@@ -399,15 +399,15 @@ namespace MES_Team3.BaseForms
             // 
             this.spcBase.Panel2.Controls.Add(this.lblPnlTop);
             this.spcBase.Panel2.Controls.Add(this.pnlSearch);
-            this.spcBase.Size = new System.Drawing.Size(1152, 293);
+            this.spcBase.Size = new System.Drawing.Size(1152, 259);
             this.spcBase.SplitterDistance = 726;
             this.spcBase.SplitterWidth = 6;
             this.spcBase.TabIndex = 45;
             // 
             // txtSearch
             // 
-            this.txtSearch.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.txtSearch.Location = new System.Drawing.Point(40, 1);
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtSearch.Location = new System.Drawing.Point(46, 1);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(0);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(244, 26);
@@ -418,9 +418,8 @@ namespace MES_Team3.BaseForms
             this.pnlTop.Controls.Add(this.txtSearch);
             this.pnlTop.Controls.Add(btnTxtSearch);
             this.pnlTop.Controls.Add(btnReadTop);
-            this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTop.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.pnlTop.Location = new System.Drawing.Point(0, 0);
+            this.pnlTop.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.pnlTop.Location = new System.Drawing.Point(0, 25);
             this.pnlTop.Margin = new System.Windows.Forms.Padding(0);
             this.pnlTop.Name = "pnlTop";
             this.pnlTop.Size = new System.Drawing.Size(1152, 30);
@@ -477,9 +476,7 @@ namespace MES_Team3.BaseForms
         public System.Windows.Forms.Panel pnlDgv2;
         public System.Windows.Forms.Label lblTitle2;
         public System.Windows.Forms.Label lblPnlBottom;
-        public System.Windows.Forms.Panel panel3;
-        public System.Windows.Forms.Button btnTxtSearch;
-        public System.Windows.Forms.Button btnReadTop;
+        public System.Windows.Forms.Panel pnlProperty;
 
     }
 }

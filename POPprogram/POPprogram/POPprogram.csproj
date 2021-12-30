@@ -95,6 +95,12 @@
     <Compile Include="frmLogin.designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLOTStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLOTStatus.Designer.cs">
+      <DependentUpon>frmLOTStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,12 @@
     </Compile>
     <Compile Include="frmNewLOT.Designer.cs">
       <DependentUpon>frmNewLOT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmWorkOrderDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWorkOrderDialog.Designer.cs">
+      <DependentUpon>frmWorkOrderDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -133,11 +145,17 @@
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmLOTStatus.resx">
+      <DependentUpon>frmLOTStatus.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNewLOT.resx">
       <DependentUpon>frmNewLOT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWorkOrderDialog.resx">
+      <DependentUpon>frmWorkOrderDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
