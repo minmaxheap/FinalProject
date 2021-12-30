@@ -51,7 +51,7 @@ namespace MES_Team3
             LoadData();
 
             ProductProperty vo = new ProductProperty();
-            vo.IsSearchPanel = false;
+            vo.IsSearchPanel = true;
             //BIsSearchPanel = false;
             pgdSearch.SelectedObject = vo;
           
@@ -149,18 +149,27 @@ namespace MES_Team3
 
             }
             ProductServ serv = new ProductServ();
-            bool bResult = serv.DeleteOperation(msprodCode, list);
-            if (bResult)
+            bool bResult = serv.GetLOTOperate(msprodCode, list);
+            if (!bResult)
             {
-                //dgvadd 재로딩
-              
+                bResult = serv.DeleteOperation(msprodCode, list);
+                if (bResult)
+                {
+                    //dgvadd 재로딩
+
+                }
+                else
+                {
+                    //메시지 박스
+                    MessageBox.Show("할당 제거 중 실패하였습니다.");
+                }
+                GetDgvAddData();
             }
             else
             {
-                //메시지 박스
-                MessageBox.Show("할당 제거 중 실패하였습니다.");
+                MessageBox.Show("선택한 품번의 공정에 생산 LOT ID가 존재합니다.");
             }
-            GetDgvAddData();
+           
         }
 
         private void GetDgvAddData()
@@ -173,7 +182,7 @@ namespace MES_Team3
 
         private void btnReadTop_Click(object sender, EventArgs e)
         {
-
+            btnReadBottom.PerformClick();
         }
 
         private void txtSearch_KeyDown(object sender, KeyEventArgs e)
@@ -231,7 +240,7 @@ namespace MES_Team3
         private void btnTxtSearch_Click(object sender, EventArgs e)
         {
             KeyEventArgs enter = new KeyEventArgs(Keys.Enter);
-            txtSearch_KeyDown(null, null);
+            txtSearch_KeyDown(null, enter);
         }
     }
 }

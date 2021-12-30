@@ -359,6 +359,34 @@ insert into [dbo].[PRODUCT_OPERATION_REL]([PRODUCT_CODE],[OPERATION_CODE],[FLOW_
             }
         }
 
+        public bool GetLOTOperate(string prodCode, List<string> list)
+        {
+            try
+            {
+                int row = 0;
+                string sql = @"select [LOT_ID]
+from [dbo].[LOT_STS]
+where [PRODUCT_CODE] = @PRODUCT_CODE and [OPERATION_CODE] = @OPERATION_CODE and [LAST_TRAN_CODE] in('START','CREATE') ";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@PRODUCT_CODE", prodCode);
+                    foreach (string operCode in list)
+                    {
+
+                        cmd.Parameters.AddWithValue("@OPERATION_CODE", operCode);
+                        row = cmd.ExecuteNonQuery();
+                    }
+                    return row > 0;
+
+                }
+            }
+            catch (Exception err)
+            {
+                Debug.WriteLine(err.Message);
+                return false;
+            }
+        }
+
         public bool DeleteOperation(string prodCode, List<string> list)
         {
             try

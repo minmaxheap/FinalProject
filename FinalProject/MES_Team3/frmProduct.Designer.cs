@@ -127,7 +127,6 @@ namespace MES_Team3
             this.pgProperty.Size = new System.Drawing.Size(362, 591);
             this.pgProperty.TabIndex = 4;
             this.pgProperty.ToolbarVisible = false;
-            this.pgProperty.PropertyValueChanged += new System.Windows.Forms.PropertyValueChangedEventHandler(this.pgProperty_PropertyValueChanged);
             // 
             // pgSearch
             // 
