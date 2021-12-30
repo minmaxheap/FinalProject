@@ -61,6 +61,10 @@ namespace MES_Team3
             ((System.ComponentModel.ISupportInitialize)(this.dgvAll)).BeginInit();
             this.SuspendLayout();
             // 
+            // txtSearch
+            // 
+            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
+            // 
             // spcBase
             // 
             // 
@@ -114,6 +118,10 @@ namespace MES_Team3
             // btnAdd
             // 
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnTxtSearch
+            // 
+            this.btnTxtSearch.Click += new System.EventHandler(this.btnTxtSearch_Click);
             // 
             // dgvProducts
             // 

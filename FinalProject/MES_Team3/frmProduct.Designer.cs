@@ -106,6 +106,10 @@ namespace MES_Team3
             // 
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
+            // txtSearch
+            // 
+            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
+            // 
             // btnTxtSearch
             // 
             this.btnTxtSearch.Click += new System.EventHandler(this.btnTxtSearch_Click);
@@ -178,7 +182,6 @@ namespace MES_Team3
             this.csDataGridView1.Size = new System.Drawing.Size(797, 622);
             this.csDataGridView1.TabIndex = 0;
             this.csDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellClick);
-            this.csDataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.csDataGridView1_KeyDown);
             // 
             // frmProduct
             // 

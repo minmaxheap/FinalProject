@@ -30,114 +30,59 @@ namespace POPprogram
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+            this.tabMenu = new POPprogram.csTabControl();
             this.mnuMain = new System.Windows.Forms.MenuStrip();
-            this.lOT생성ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lOT조회ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lOT작업시작ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.검사데이터ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.자재사용ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.작업완료ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.불량등록ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.생산비가동등록ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuMain.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // tabMenu
+            // 
+            this.tabMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tabMenu.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
+            this.tabMenu.Location = new System.Drawing.Point(0, 24);
+            this.tabMenu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabMenu.Name = "tabMenu";
+            this.tabMenu.SelectedIndex = 0;
+            this.tabMenu.Size = new System.Drawing.Size(1595, 28);
+            this.tabMenu.TabIndex = 3;
+            this.tabMenu.SelectedIndexChanged += new System.EventHandler(this.tabMain_SelectedIndexChanged);
+            this.tabMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabMenu_MouseDown);
             // 
             // mnuMain
             // 
             this.mnuMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
             this.mnuMain.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lOT생성ToolStripMenuItem,
-            this.lOT조회ToolStripMenuItem,
-            this.lOT작업시작ToolStripMenuItem,
-            this.검사데이터ToolStripMenuItem,
-            this.자재사용ToolStripMenuItem,
-            this.작업완료ToolStripMenuItem,
-            this.불량등록ToolStripMenuItem,
-            this.생산비가동등록ToolStripMenuItem});
             this.mnuMain.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.mnuMain.Location = new System.Drawing.Point(0, 0);
             this.mnuMain.Name = "mnuMain";
-            this.mnuMain.Size = new System.Drawing.Size(1396, 45);
+            this.mnuMain.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+            this.mnuMain.Size = new System.Drawing.Size(1595, 24);
             this.mnuMain.TabIndex = 1;
             this.mnuMain.Text = "menuStrip1";
             // 
-            // lOT생성ToolStripMenuItem
-            // 
-            this.lOT생성ToolStripMenuItem.Name = "lOT생성ToolStripMenuItem";
-            this.lOT생성ToolStripMenuItem.Size = new System.Drawing.Size(187, 41);
-            this.lOT생성ToolStripMenuItem.Text = "LOT 생성";
-            // 
-            // lOT조회ToolStripMenuItem
-            // 
-            this.lOT조회ToolStripMenuItem.Name = "lOT조회ToolStripMenuItem";
-            this.lOT조회ToolStripMenuItem.Size = new System.Drawing.Size(187, 41);
-            this.lOT조회ToolStripMenuItem.Text = "LOT 조회";
-            // 
-            // lOT작업시작ToolStripMenuItem
-            // 
-            this.lOT작업시작ToolStripMenuItem.Name = "lOT작업시작ToolStripMenuItem";
-            this.lOT작업시작ToolStripMenuItem.Size = new System.Drawing.Size(187, 41);
-            this.lOT작업시작ToolStripMenuItem.Text = "작업 시작";
-            // 
-            // 검사데이터ToolStripMenuItem
-            // 
-            this.검사데이터ToolStripMenuItem.Name = "검사데이터ToolStripMenuItem";
-            this.검사데이터ToolStripMenuItem.Size = new System.Drawing.Size(224, 41);
-            this.검사데이터ToolStripMenuItem.Text = "검사 데이터";
-            // 
-            // 자재사용ToolStripMenuItem
-            // 
-            this.자재사용ToolStripMenuItem.Name = "자재사용ToolStripMenuItem";
-            this.자재사용ToolStripMenuItem.Size = new System.Drawing.Size(187, 41);
-            this.자재사용ToolStripMenuItem.Text = "자재 사용";
-            // 
-            // 작업완료ToolStripMenuItem
-            // 
-            this.작업완료ToolStripMenuItem.Name = "작업완료ToolStripMenuItem";
-            this.작업완료ToolStripMenuItem.Size = new System.Drawing.Size(187, 41);
-            this.작업완료ToolStripMenuItem.Text = "작업 완료";
-            // 
-            // 불량등록ToolStripMenuItem
-            // 
-            this.불량등록ToolStripMenuItem.Name = "불량등록ToolStripMenuItem";
-            this.불량등록ToolStripMenuItem.Size = new System.Drawing.Size(187, 41);
-            this.불량등록ToolStripMenuItem.Text = "불량 등록";
-            // 
-            // 생산비가동등록ToolStripMenuItem
-            // 
-            this.생산비가동등록ToolStripMenuItem.Name = "생산비가동등록ToolStripMenuItem";
-            this.생산비가동등록ToolStripMenuItem.Size = new System.Drawing.Size(224, 41);
-            this.생산비가동등록ToolStripMenuItem.Text = "비가동 등록";
-            // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1396, 824);
+            this.ClientSize = new System.Drawing.Size(1595, 1030);
+            this.Controls.Add(this.tabMenu);
             this.Controls.Add(this.mnuMain);
+            this.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.mnuMain;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmMain";
             this.Text = "메인 화면";
-            this.mnuMain.ResumeLayout(false);
-            this.mnuMain.PerformLayout();
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
+            this.Load += new System.EventHandler(this.frmMain_Load);
+            this.MdiChildActivate += new System.EventHandler(this.frmMain_MdiChildActivate);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
+        private csTabControl tabMenu;
         private System.Windows.Forms.MenuStrip mnuMain;
-        private System.Windows.Forms.ToolStripMenuItem lOT생성ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem lOT조회ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem lOT작업시작ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 검사데이터ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 자재사용ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 작업완료ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 불량등록ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 생산비가동등록ToolStripMenuItem;
     }
 }

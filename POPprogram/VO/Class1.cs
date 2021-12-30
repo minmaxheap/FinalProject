@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace VO
 {
-    public class FunctionVO
+    public class Class1
     {
-
     }
 }

@@ -3,16 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace POPprogram
+namespace MES_Team3
 {
-    public partial class Base3 : Form
+    public partial class test : MES_Team3.BaseForms.Base4_1
     {
-        public Base3()
+        public test()
         {
             InitializeComponent();
         }

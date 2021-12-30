@@ -59,23 +59,11 @@
     <Compile Include="BaseForms\Base2.Designer.cs">
       <DependentUpon>Base2.cs</DependentUpon>
     </Compile>
-    <Compile Include="BaseForms\Base3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BaseForms\Base3.Designer.cs">
-      <DependentUpon>Base3.cs</DependentUpon>
-    </Compile>
     <Compile Include="BaseForms\Base3_1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BaseForms\Base3_1.Designer.cs">
       <DependentUpon>Base3_1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BaseForms\Base4.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BaseForms\Base4.Designer.cs">
-      <DependentUpon>Base4.cs</DependentUpon>
     </Compile>
     <Compile Include="BaseForms\Base5.cs">
       <SubType>Form</SubType>
@@ -136,14 +124,8 @@
     <EmbeddedResource Include="BaseForms\Base2.resx">
       <DependentUpon>Base2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BaseForms\Base3.resx">
-      <DependentUpon>Base3.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="BaseForms\Base3_1.resx">
       <DependentUpon>Base3_1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BaseForms\Base4.resx">
-      <DependentUpon>Base4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaseForms\Base5.resx">
       <DependentUpon>Base5.cs</DependentUpon>
@@ -180,13 +162,13 @@
     <None Include="Resources\NanumSquareEB.otf" />
     <None Include="Resources\NanumSquareL.otf" />
     <None Include="Resources\NanumSquareR.otf" />
-    <None Include="Resources\yg-jalnan.otf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\그림51.png" />
+    <None Include="Resources\yg-jalnan.otf" />
     <None Include="Resources\97a64971e2a6741339b09c64c93e448e.png" />
     <None Include="Resources\Add-New.png" />
     <None Include="Resources\Arrowhead-Right-01.png" />
@@ -201,9 +183,11 @@
     <None Include="Resources\Data-Find41.png" />
     <None Include="Resources\Delete.png" />
     <None Include="Resources\Delete_03.png" />
+    <None Include="Resources\Export.png" />
     <None Include="Resources\Folder-Find-01.png" />
     <None Include="Resources\KEY0.CC-회사-제품-아이콘-블루-2.ico" />
     <None Include="Resources\pngegg.png" />
+    <None Include="Resources\Print - 01.png" />
     <None Include="Resources\-refresh_90271.png" />
     <None Include="Resources\Save_02.png" />
     <None Include="Resources\Search-Find.png" />

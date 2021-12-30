@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using VO;
+
 
 namespace DAC
 {
@@ -23,13 +23,26 @@ namespace DAC
 
         }
 
-        public List<ProductProperty> GetProductsList()
+        public DataTable GetProductsList()
         {
             string sql = @"select PRODUCT_CODE, PRODUCT_NAME, PRODUCT_TYPE, CUSTOMER_CODE, VENDOR_CODE, CREATE_TIME, CREATE_USER_ID, UPDATE_TIME, UPDATE_USER_ID
 from [dbo].[PRODUCT_MST]";
-            SqlCommand cmd = new SqlCommand(sql, conn);
-            return Helper.DataReaderMapToList<ProductProperty>(cmd.ExecuteReader());
+            DataTable dt = new DataTable();
+            using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
+            {
+                da.Fill(dt);
+                return dt;
+            }
         }
+
+//        public List<ProductProperty> GetProductsList()
+//        {
+//            string sql = @"select PRODUCT_CODE, PRODUCT_NAME, PRODUCT_TYPE, CUSTOMER_CODE, VENDOR_CODE, CREATE_TIME, CREATE_USER_ID, UPDATE_TIME, UPDATE_USER_ID
+//from [dbo].[PRODUCT_MST]";
+//            SqlCommand cmd = new SqlCommand(sql, conn);
+//            return Helper.DataReaderMapToList<ProductProperty>(cmd.ExecuteReader());
+//        }
+
 
         public bool Insert(ProductProperty pt)
         {
