@@ -119,9 +119,11 @@ namespace DAC
 
 				PropertyDescriptorCollection propCollection = TypeDescriptor.GetProperties(this.GetType());
 
-				PropertyDescriptor descriptor = propCollection["STORE_CODE"];
-				PropertyDescriptor descriptor1 = propCollection["STORE_TYPE"];
-				PropertyDescriptor descriptor2 = propCollection["FIFO_FLAG"];
+				PropertyDescriptor descriptor = propCollection["CREATE_TIME"];
+				PropertyDescriptor descriptor1 = propCollection["CREATE_USER_ID"];
+				PropertyDescriptor descriptor2 = propCollection["UPDATE_TIME"];
+				PropertyDescriptor descriptor3 = propCollection["UPDATE_USER_ID"];
+
 
 				BrowsableAttribute attrib = (BrowsableAttribute)descriptor.Attributes[typeof(BrowsableAttribute)];
 				FieldInfo isBrow = attrib.GetType().GetField("browsable", BindingFlags.NonPublic | BindingFlags.Instance);
@@ -132,11 +134,15 @@ namespace DAC
 				BrowsableAttribute attrib2 = (BrowsableAttribute)descriptor2.Attributes[typeof(BrowsableAttribute)];
 				FieldInfo isBrow2 = attrib2.GetType().GetField("browsable", BindingFlags.NonPublic | BindingFlags.Instance);
 
+				BrowsableAttribute attrib3 = (BrowsableAttribute)descriptor2.Attributes[typeof(BrowsableAttribute)];
+				FieldInfo isBrow3 = attrib3.GetType().GetField("browsable", BindingFlags.NonPublic | BindingFlags.Instance);
+
 				if (IsSearchPanel)
 				{
 					isBrow.SetValue(attrib, false);
 					isBrow1.SetValue(attrib1, false);
 					isBrow2.SetValue(attrib2, false);
+					isBrow3.SetValue(attrib3, false);
 
 				}
 				else
@@ -144,6 +150,7 @@ namespace DAC
 					isBrow.SetValue(attrib, true);
 					isBrow1.SetValue(attrib1, true);
 					isBrow2.SetValue(attrib2, true);
+					isBrow3.SetValue(attrib3, true);
 
 				}
 			}
