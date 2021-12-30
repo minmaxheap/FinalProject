@@ -24,6 +24,8 @@ namespace DAC
 			conn.Dispose();
 		}
 
+	
+
 		//공통코드 여기서 가지고오기
 
 		public List<string> GetDeffeg()
@@ -144,6 +146,82 @@ namespace DAC
 					da.Fill(dt);
 					return dt;
 				}
+			}
+		}
+
+		//값 유형에 따라 전체 할당조건 보여주기
+		public List<INSPECT_MSTVO> GetAll(string Value)
+		{
+			try
+			{
+				string sql = @"select ROW_NUMBER() over(order by(select 1)) as RowNum,[INSPECT_ITEM_CODE],[INSPECT_ITEM_NAME]
+from [dbo].[INSPECT_ITEM_MST]
+where VALUE_TYPE = @VALUE_TYPE";
+
+				using (SqlCommand cmd = new SqlCommand(sql, conn))
+				{
+
+					cmd.Parameters.AddWithValue("@VALUE_TYPE", Value);
+					return Helper.DataReaderMapToList<INSPECT_MSTVO>(cmd.ExecuteReader());
+				}
+			}
+			catch (Exception err)
+			{
+				Debug.WriteLine(err.Message);
+				return null;
+			}
+		}
+
+		//검사 공정관계 table 등록
+		public bool Op_Insert(string op_code, string inspect_code,string createID,string updateID)
+		{
+			string sql = @"insert into [dbo].[INSPECT_ITEM_OPERATION_REL](OPERATION_CODE, INSPECT_ITEM_CODE, CREATE_TIME, CREATE_USER_ID, UPDATE_TIME, UPDATE_USER_ID)
+		values (@OPERATION_CODE, @INSPECT_ITEM_CODE, getdate(), @CREATE_USER_ID, getdate(), @UPDATE_USER_ID)";
+
+			using (SqlCommand cmd = new SqlCommand(sql, conn))
+			{
+				cmd.Parameters.AddWithValue("@OPERATION_CODE", op_code);
+				cmd.Parameters.AddWithValue("@INSPECT_ITEM_CODE", inspect_code);
+				//cmd.Parameters.AddWithValue("@CREATE_TIME", createtime);
+				cmd.Parameters.AddWithValue("@CREATE_USER_ID", createID);
+				//cmd.Parameters.AddWithValue("@UPDATE_TIME", updateTime);
+				cmd.Parameters.AddWithValue("@UPDATE_USER_ID", updateID);
+
+				int row = cmd.ExecuteNonQuery();
+				return row > 0;
+			}
+		}
+
+
+		//검사 공정관계 데이터 삭제
+		public bool Op_Delete(string code)
+		{
+			string sql = "delete from  [dbo].[INSPECT_ITEM_OPERATION_REL] where OPERATION_CODE = @OPERATION_CODE";
+
+		using (SqlCommand cmd = new SqlCommand(sql, conn))
+			{
+				cmd.Parameters.AddWithValue("@OPERATION_CODE",code);
+
+				int row = cmd.ExecuteNonQuery();
+				return row > 0;
+			}
+		}
+
+		//할당 관계 grid보여주기
+		public DataTable GetOp_Table(string code)
+		{
+			string sql = @"select  ROW_NUMBER() over(order by(select 1)) as RowNum, OPERATION_CODE, i.INSPECT_ITEM_CODE , i.INSPECT_ITEM_NAME
+	from INSPECT_ITEM_OPERATION_REL ir left join INSPECT_ITEM_MST i on ir.INSPECT_ITEM_CODE = i.INSPECT_ITEM_CODE
+	where OPERATION_CODE =@OPERATION_CODE";
+
+			using (SqlCommand cmd = new SqlCommand(sql, conn))
+			{
+				DataTable dt = new DataTable();
+				cmd.Parameters.AddWithValue("@OPERATION_CODE", code);
+
+				SqlDataAdapter da = new SqlDataAdapter(cmd);
+				da.Fill(dt);
+				return dt;
 			}
 		}
 	}

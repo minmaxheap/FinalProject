@@ -117,11 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="btnTxtSearch.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="btnReadTop.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
+  <metadata name="imageList1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
   <metadata name="btnTxtSearch.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -141,22 +138,6 @@
         qrFFHQLHKb50WkiimJetxVcLufINHlvxJoWDACtwV44oyw4LBg7rxQrclbXUWHrtFwK7k1bgrheytbAD
         M1WswF3JZq1lUvoOzlz7qXwbh7RZVmdRDbfyfwwuFIvdewQ/cyzZ2oXcDaVEEfybpFwZOjgf4l9Trd4D
         MplMpqDT+QNit8b9BY0xagAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <metadata name="btnReadTop.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="btnPanel.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAYxJREFUaEPt2CEzhVEchPE3CIIgCIIgCKIgiOINoiAIguADCIImCKIoCsKNgijc
-        cIMgCoIgiIIgCDzb/nNnZ5wgrJmzM7++g3Pse4aenp6ef5U53OP7F49YQGSW8AJXvBojNhv4gCtenSI2
-        u3ClZ+0gNmdwpSv9ptYRm1u44tUzFhEZ3TZPcMWrO+gWi8wa3uGKVxeIzQhfcMWrA8TmGK509YlNxOYa
-        rnj1hmVEZh4PcMWrKWIP9Qr0U3bFq+i5sYWWQ61/hrE5hCs9aw+xuYQrXWluaCBGpvUb4hWxN1PrN8QE
-        kTdT629BmyryS04byBWutKUiZ/c+XOFK1622VFy0ebR9XOnqBHHRjaKbxRWutJ3iokOrG8UVrmKfX67g
-        ClfaStpMcTmCK1zp0G4jLirVMuC0keKyipYJrT+vuOgg6kC6wpX+G0dOhRu4wpW2UORY0/unK1zFzmW9
-        e7Yc2sgPFg2vlhfqyE9GvXO2PCfq3TTu0KqQ3jld4Sp225/DFa5it31PT0/PX2YYfgBLR1nv7eBmpwAA
-        AABJRU5ErkJggg==
 </value>
   </data>
 </root>

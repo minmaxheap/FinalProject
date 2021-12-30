@@ -128,7 +128,7 @@ namespace MES_Team3
 
 		private void btnDelete_Click(object sender, EventArgs e)
 		{
-			User_MST_Property pr = (User_MST_Property)pgSearch.SelectedObject;
+			//User_MST_Property pr = (User_MST_Property)pgSearch.SelectedObject;
 
 			bool result = serv.Delete(Code);
 			if (result)

@@ -29,9 +29,9 @@ namespace POPprogram
         /// </summary>
         private void InitializeComponent()
         {
-           
+            System.Windows.Forms.Button btnTxtSearch;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Base1_1));
- 
+            System.Windows.Forms.Button btnReadTop;
             this.pnlTop = new System.Windows.Forms.Panel();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearchPnl = new System.Windows.Forms.Button();
@@ -173,15 +173,13 @@ namespace POPprogram
             // 
             // pnlSearch
             // 
-            this.pnlSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
             this.pnlSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlSearch.Location = new System.Drawing.Point(0, 37);
+            this.pnlSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlSearch.Location = new System.Drawing.Point(0, 40);
             this.pnlSearch.Margin = new System.Windows.Forms.Padding(0);
             this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(364, 621);
+            this.pnlSearch.Size = new System.Drawing.Size(363, 618);
             this.pnlSearch.TabIndex = 31;
             // 
             // pnlProperty
@@ -194,7 +192,7 @@ namespace POPprogram
             this.pnlProperty.Location = new System.Drawing.Point(0, 37);
             this.pnlProperty.Margin = new System.Windows.Forms.Padding(0);
             this.pnlProperty.Name = "pnlProperty";
-            this.pnlProperty.Size = new System.Drawing.Size(356, 620);
+            this.pnlProperty.Size = new System.Drawing.Size(354, 620);
             this.pnlProperty.TabIndex = 29;
             // 
             // pnlTopLbl
@@ -231,14 +229,13 @@ namespace POPprogram
             // 
             // lblPanel
             // 
-            this.lblPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(152)))), ((int)(((byte)(216)))));
             this.lblPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblPanel.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblPanel.Location = new System.Drawing.Point(0, 0);
             this.lblPanel.Name = "lblPanel";
-            this.lblPanel.Size = new System.Drawing.Size(354, 36);
+            this.lblPanel.Size = new System.Drawing.Size(363, 40);
             this.lblPanel.TabIndex = 29;
             this.lblPanel.Text = "▶ 속성";
             this.lblPanel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -410,7 +407,5 @@ namespace POPprogram
         public System.Windows.Forms.Button btnUpdate;
         public System.Windows.Forms.Panel pnlTopLbl;
         public System.Windows.Forms.TextBox txtSearch;
-        public System.Windows.Forms.Button btnTxtSearch;
-        public System.Windows.Forms.Button btnReadTop;
     }
 }
