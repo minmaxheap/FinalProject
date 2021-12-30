@@ -56,6 +56,9 @@ namespace MES_Team3
 
             LoadData();
 
+            iSearchedList = new List<int>();
+            iSelectedRow = new List<int>();
+
             BSearchPanel = false;
             INSPECT_MSTVO vo = new INSPECT_MSTVO();
 
@@ -103,9 +106,9 @@ namespace MES_Team3
         private void LoadData()
         {
             serv = new InspecServ();
-            DataTable dt = serv.GetTable();
+            mdtAll = serv.GetTable();
             csDataGridView1.DataSource = null;
-            csDataGridView1.DataSource = dt;
+            csDataGridView1.DataSource = mdtAll;
             BSearchPanel = false;
         }
 

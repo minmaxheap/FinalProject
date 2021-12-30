@@ -202,6 +202,24 @@ WHERE [CODE_TABLE_NAME] ='CM_VALUE_TYPE'";
 			}
 			return productType;
 		}
-		
+
+		//공통코드 = > 관계에서 쓰임
+		public List<string> GetINSPECT_Code()
+		{
+			string sql = "select KEY_1 from [dbo].[CODE_DATA_MST] where CODE_TABLE_NAME = 'CM_VALUE_TYPE'";
+
+			SqlCommand cmd = new SqlCommand(sql, conn);
+			List<string> List = new List<string>();
+			using (SqlDataReader da = cmd.ExecuteReader())
+			{
+				while (da.Read())
+				{
+					List.Add(da["KEY_1"].ToString());
+
+				}
+			}
+			return List;
+		}
+
 	}
 }

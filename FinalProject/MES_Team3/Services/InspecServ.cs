@@ -59,5 +59,14 @@ namespace MES_Team3
 			dac.Dispose();
 			return list;
 		}
+
+		//combobox 바인딩
+		public List<string> GetINSPECT_Code()
+		{
+			InspectDAC dac = new InspectDAC();
+			List<string> List = dac.GetINSPECT_Code();
+			dac.Dispose();
+			return List;
+		}
 	}
 }
