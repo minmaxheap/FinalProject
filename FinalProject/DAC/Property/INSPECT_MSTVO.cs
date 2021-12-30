@@ -102,7 +102,7 @@ namespace DAC
 		[DisplayName("Target")]
 		[Browsable(true)]
 
-		public string SPEC_TARGET { get {return spec_target; } set { spec_target = value; } }
+		public string SPEC_TARGET {  get { if (value_type == "N") return null; else return spec_target; } set { spec_target = value; } }
 
 		[DisplayName("USL")]
 		[Browsable(true)]

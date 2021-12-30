@@ -24,10 +24,10 @@ namespace MES_Team3
 			return dt;
 		}
 
-		public bool Op_Delete(string code)
+		public bool Op_Delete(string op_code, string inspect_code)
 		{
 			INSPECT_OPERATIONDAC dac = new INSPECT_OPERATIONDAC();
-			bool result = dac.Op_Delete(code);
+			bool result = dac.Op_Delete(op_code,inspect_code);
 			dac.Dispose();
 			return result;
 		}
