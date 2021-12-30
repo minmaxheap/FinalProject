@@ -34,6 +34,10 @@ namespace POPprogram
             this.pnlCrud.SuspendLayout();
             this.SuspendLayout();
             // 
+            // btnClose
+            // 
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // label17
             // 
             this.label17.Text = "100";

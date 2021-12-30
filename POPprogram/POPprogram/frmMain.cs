@@ -113,7 +113,7 @@ namespace POPprogram
             //}
             //else
             //{
-               this.ActiveMdiChild.WindowState = FormWindowState.Maximized;
+             //  this.ActiveMdiChild.WindowState = FormWindowState.Maximized;
 
             //    if (this.ActiveMdiChild.Tag == null)
             //    {
