@@ -181,5 +181,14 @@ namespace MES_Team3
                 csDataGridView1.DataSource = list;
             }
         }
+
+        private void btnPanel_Click(object sender, EventArgs e)
+        {
+            StoreVO search = new StoreVO();
+            search.IsSearchPanel = true;
+            pgSearch.SelectedObject = search;
+            pgSearch.PropertySort = PropertySort.NoSort;
+            // propertyPanel.Visible = false;
+        }
     }
 }

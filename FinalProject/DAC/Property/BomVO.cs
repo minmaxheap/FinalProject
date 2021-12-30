@@ -48,9 +48,11 @@ namespace DAC
 		[TypeConverter(typeof(StoreTypeConverter))]
 		public string REQUIRE_QTY { get { return require_qty; } set { require_qty = value; } }
 
-		[DisplayName("대체 품번")]
-		[Browsable(true)]
-		public string ALTER_PRODUCT_CODE { get { return alter_product_code; } set { alter_product_code = value; } }
+		//[DisplayName("대체 품번")]
+		//[Browsable(true)]
+		//public string ALTER_PRODUCT_CODE { get { return alter_product_code; } set { alter_product_code = value; } }
+
+
 		[DisplayName("생성 시간")]
 		[Browsable(true)]
 		[ReadOnly(true)]

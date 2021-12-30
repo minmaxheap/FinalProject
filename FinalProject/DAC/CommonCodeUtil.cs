@@ -312,7 +312,7 @@ namespace DAC
             //dac에서 list 받아오기
             List<string> Type = new List<string>();
             Type.Add("Y");
-            Type.Add("N");
+            Type.Add(null);
 
             return Type;
         }

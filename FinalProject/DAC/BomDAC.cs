@@ -25,8 +25,9 @@ namespace DAC
 
         public List<BomVO> GetStoreList()
         {
-            string sql = @"select PRODUCT_CODE, CHILD_PRODUCT_CODE, REQUIRE_QTY, ALTER_PRODUCT_CODE, CREATE_TIME, CREATE_USER_ID, UPDATE_TIME, UPDATE_USER_ID
-from [dbo].[BOM_MST]";
+            string sql = @"select [dbo].[BOM_MST].PRODUCT_CODE,[dbo].[BOM_MST].CHILD_PRODUCT_CODE, [dbo].[BOM_MST].REQUIRE_QTY, [dbo].[BOM_MST].ALTER_PRODUCT_CODE, [dbo].[BOM_MST].CREATE_TIME, [dbo].[BOM_MST].CREATE_USER_ID, [dbo].[BOM_MST].UPDATE_TIME, [dbo].[BOM_MST].UPDATE_USER_ID
+from [dbo].[BOM_MST]
+INNER JOIN [dbo].[PRODUCT_MST] ON([dbo].[BOM_MST].PRODUCT_CODE = [dbo].[PRODUCT_MST].PRODUCT_CODE)";
             SqlCommand cmd = new SqlCommand(sql, conn);
             return Helper.DataReaderMapToList<BomVO>(cmd.ExecuteReader());
         }
@@ -58,7 +59,7 @@ from [dbo].[BOM_MST]";
                     cmd.Parameters.AddWithValue("@PRODUCT_CODE", vo.PRODUCT_CODE);
                     cmd.Parameters.AddWithValue("@CHILD_PRODUCT_CODE", vo.CHILD_PRODUCT_CODE);
                     cmd.Parameters.AddWithValue("@REQUIRE_QTY", vo.REQUIRE_QTY);
-                    cmd.Parameters.AddWithValue("@ALTER_PRODUCT_CODE", vo.ALTER_PRODUCT_CODE);
+                    //cmd.Parameters.AddWithValue("@ALTER_PRODUCT_CODE", vo.ALTER_PRODUCT_CODE);
                     cmd.Parameters.AddWithValue("@CREATE_USER_ID", vo.CREATE_USER_ID);
                     int row = cmd.ExecuteNonQuery();
                     return row > 0;
@@ -121,9 +122,9 @@ where CHILD_PRODUCT_CODE = @CHILD_PRODUCT_CODE";
                         cmd.Parameters.AddWithValue("@REQUIRE_QTY", DBNull.Value);
                     else
                         cmd.Parameters.AddWithValue("@REQUIRE_QTY", bv.REQUIRE_QTY);
-                    if (bv.ALTER_PRODUCT_CODE == null)
-                        cmd.Parameters.AddWithValue("@ALTER_PRODUCT_CODE", DBNull.Value);
-                    else cmd.Parameters.AddWithValue("@ALTER_PRODUCT_CODE", bv.ALTER_PRODUCT_CODE);
+                    //if (bv.ALTER_PRODUCT_CODE == null)
+                    //    cmd.Parameters.AddWithValue("@ALTER_PRODUCT_CODE", DBNull.Value);
+                    //else cmd.Parameters.AddWithValue("@ALTER_PRODUCT_CODE", bv.ALTER_PRODUCT_CODE);
                     cmd.Parameters.AddWithValue("@UPDATE_USER_ID", bv.UPDATE_USER_ID);
                     int row = cmd.ExecuteNonQuery();
                     return row > 0;
