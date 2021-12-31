@@ -20,7 +20,6 @@ namespace MES_Team3
         InspecServ serv = null;
         string Inspect_id = string.Empty;
         int rowIndex;
-
         string mUserID = frmLogin.userID;
 
         //private void pgProperty_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)
@@ -290,36 +289,63 @@ namespace MES_Team3
 
         private void btnTxtSearch_Click(object sender, EventArgs e)
         {
-            KeyEventArgs enter = new KeyEventArgs(Keys.Enter);
+            //KeyEventArgs enter = new KeyEventArgs(Keys.Enter);
 
-            txtSearch_KeyDown(null,enter);
+            // txtSearch_KeyDown(null,enter);
 
+            //int row = csDataGridView1.CurrentCellAddress.Y + 1;
+            //csDataGridView1.CurrentCell = csDataGridView1.Rows[row].Cells[0];
 
-   //         string searchValue = txtSearch.Text;
-   //         //int cr = -1;
-   //         csDataGridView1.Rows[rowIndex].Selected = false;
-
+            string searchValue = txtSearch.Text;
+            bool check = false;
 			//MessageBox.Show("1번째" + rowIndex.ToString());
 			//csDataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-			//try
-			//{
-			//	foreach (DataGridViewRow row in csDataGridView1.Rows)
-			//	{
-			//		if (row.Cells[2].Value.ToString().Equals(searchValue))
-			//		{
-			//			rowIndex++;
-			//			csDataGridView1.Rows[rowIndex].Selected = true;
+			try
+            {
 
-			//			break;
-			//		}
-			//	}
-			//	MessageBox.Show("3번째" + rowIndex.ToString());
+               // csDataGridView1.CurrentCell = csDataGridView1.Rows[row].Cells[0];
+                for (int i = csDataGridView1.CurrentCell.RowIndex; i < csDataGridView1.Rows.Count; i++)
+                {
+                    //i = csDataGridView1.CurrentCellAddress.Y + 1;
+                    if (csDataGridView1.Rows[i].Cells[0].Value.ToString().Contains(searchValue))
+                    {
 
-			//}
-			//catch (Exception exc)
-			//{
-			//	MessageBox.Show(exc.Message);
-			//}
+                        check = true;
+                        csDataGridView1.Rows[i].Selected = true;
+
+                        csDataGridView1.CurrentCell = csDataGridView1[0, i];
+
+                        break;
+                    }
+                    
+                    csDataGridView1.Rows[i].Selected = false;
+                }
+                if (!check)
+                {
+                    for (int j = 0; j < csDataGridView1.Rows.Count; j++)
+                    {
+                        if (csDataGridView1.Rows[j].Cells[0].Value.ToString().Contains(searchValue))
+                        {
+                            check = true;
+                            csDataGridView1.Rows[j].Selected = true;
+
+                            break;
+                        }
+                    }
+                }
+                if (check)
+                {
+                    MessageBox.Show("검색완료");
+                    return;
+                }
+
+				//MessageBox.Show("3번째" + rowIndex.ToString());
+
+			}
+			catch (Exception exc)
+			{
+				MessageBox.Show(exc.Message);
+			}
 
 		}
 
