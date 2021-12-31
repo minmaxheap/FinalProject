@@ -105,5 +105,10 @@ namespace MES_Team3
         {
 
         }
+
+        private void csDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
