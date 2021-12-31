@@ -228,43 +228,100 @@ namespace MES_Team3
 
         private void pgGrid_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)
         {
-            double k;
-            if (e.ChangedItem.Label == "C")
-            {
-                INSPECT_MSTVO vo = new INSPECT_MSTVO();
+            //double k;
+            //if (e.ChangedItem.Label == "C")
+            //{
+            //    INSPECT_MSTVO vo = new INSPECT_MSTVO();
                
-                if (!double.TryParse(e.ChangedItem.Value.ToString(), out k))
-                {
-                    MessageBox.Show("문자 입력 할수없습니다.");
+            //    if (!double.TryParse(e.ChangedItem.Value.ToString(), out k))
+            //    {
+            //        MessageBox.Show("문자 입력 할수없습니다.");
                     
-                    return;
-                }
-            }
-            else
+            //        return;
+            //    }
+            //}
+            //else
+            //{
+            //    if (double.TryParse(e.ChangedItem.Value.ToString(), out k))
+            //    {
+            //        INSPECT_MSTVO vo = new INSPECT_MSTVO();
+            //        MessageBox.Show("문자 입력하세요.");
+            //        vo.SPEC_LSL = string.Empty;
+                    
+            //        return;
+            //    }
+            //}
+
+            ////int k;
+            ////    //if (e.ChangedItem.Label == "품번")
+            ////    //{
+            ////    //    if (!int.TryParse(e.ChangedItem.Value.ToString(), out k))
+            ////    //    {
+            ////    //        MessageBox.Show("문자 입력할 수 없습니다");
+            ////    //    }
+            ////    //}
+            //if (e.ChangedItem.Label == "LSL")
+            //{
+                
+            //}
+
+            int k;
+            INSPECT_MSTVO vo = (INSPECT_MSTVO)pgGrid.SelectedObject;
+
+            if (vo.VALUE_TYPE.ToString() == "N" && e.ChangedItem.Label == "LSL")
             {
-                if (double.TryParse(e.ChangedItem.Value.ToString(), out k))
+                if (!int.TryParse(e.ChangedItem.Value.ToString(), out k))
                 {
-                    INSPECT_MSTVO vo = new INSPECT_MSTVO();
-                    MessageBox.Show("문자 입력하세요.");
-                    vo.SPEC_LSL = string.Empty;
-                    
-                    return;
+                    MessageBox.Show("문자 입력할 수 없습니다");
+                    vo.SPEC_LSL = null;
+
+                    this.currentItem = e.ChangedItem;
+
+                    this.BeginInvoke(new MethodInvoker(reset));//re-select the changed item.
+
                 }
+
             }
 
-            //int k;
-            //    //if (e.ChangedItem.Label == "품번")
-            //    //{
-            //    //    if (!int.TryParse(e.ChangedItem.Value.ToString(), out k))
-            //    //    {
-            //    //        MessageBox.Show("문자 입력할 수 없습니다");
-            //    //    }
-            //    //}
-            if (e.ChangedItem.Label == "LSL")
+            if (vo.VALUE_TYPE.ToString() == "C" && e.ChangedItem.Label == "Target")
             {
-                
+                if (int.TryParse(e.ChangedItem.Value.ToString(), out k))
+                {
+                    MessageBox.Show("숫자 입력할 수 없습니다");
+                    vo.SPEC_TARGET = null;
+
+                    this.currentItem = e.ChangedItem;
+
+                    this.BeginInvoke(new MethodInvoker(reset));//re-select the changed item.
+
+                }
+
             }
+
         }
+
+
+
+        private GridItem currentItem;
+
+
+
+        private void reset()
+
+        {
+
+            if (currentItem != null)
+
+            {
+
+                currentItem.Select();
+
+            }
+
+        }
+    
+            
+        
 
         private void btnClear_Click(object sender, EventArgs e)
         {
@@ -441,6 +498,8 @@ namespace MES_Team3
             pnlSearch.Visible = false;
 
         }
+
+   
     }
 }
 

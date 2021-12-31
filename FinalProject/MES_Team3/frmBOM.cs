@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace MES_Team3
 {
-    public partial class frmBOM : MES_Team3.BaseForms.Base4_1
+    public partial class frmBOM : Base4_1
     {
         DataTable mdtAll;
         //string msUserID;
@@ -102,6 +102,11 @@ namespace MES_Team3
         }
 
         private void btnClear_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void csDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

@@ -29,41 +29,10 @@ namespace POPprogram
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Button btnTxtSearch;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNewLOT));
-            btnTxtSearch = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel8.SuspendLayout();
             this.pnlCrud.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(btnTxtSearch);
-            this.panel8.Controls.SetChildIndex(this.label6, 0);
-            this.panel8.Controls.SetChildIndex(this.textBox2, 0);
-            this.panel8.Controls.SetChildIndex(this.textBox3, 0);
-            this.panel8.Controls.SetChildIndex(this.textBox4, 0);
-            this.panel8.Controls.SetChildIndex(this.textBox5, 0);
-            this.panel8.Controls.SetChildIndex(this.label2, 0);
-            this.panel8.Controls.SetChildIndex(this.label3, 0);
-            this.panel8.Controls.SetChildIndex(btnTxtSearch, 0);
-            // 
-            // btnTxtSearch
-            // 
-            btnTxtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            btnTxtSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTxtSearch.BackgroundImage")));
-            btnTxtSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            btnTxtSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            btnTxtSearch.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            btnTxtSearch.ForeColor = System.Drawing.SystemColors.ControlText;
-            btnTxtSearch.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            btnTxtSearch.Location = new System.Drawing.Point(482, 54);
-            btnTxtSearch.Margin = new System.Windows.Forms.Padding(0);
-            btnTxtSearch.Name = "btnTxtSearch";
-            btnTxtSearch.Size = new System.Drawing.Size(32, 26);
-            btnTxtSearch.TabIndex = 50;
-            btnTxtSearch.UseVisualStyleBackColor = false;
             // 
             // frmNewLOT
             // 
