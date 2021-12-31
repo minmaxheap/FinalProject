@@ -14,6 +14,7 @@ namespace MES_Team3
     public partial class frmBOM : MES_Team3.BaseForms.Base4_1
     {
         DataTable mdtAll;
+        string prodCode;
         //string msUserID;
         //List<int> iSearchedList;
         //List<int> iSelectedRow;
@@ -26,29 +27,29 @@ namespace MES_Team3
         private void frmBOM_Load(object sender, EventArgs e)
         {
 
-            DataGridViewUtil.SetInitGridView(csDataGridView1);
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "품번", "PRODUCT_CODE");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "품명", "PRODUCT_NAME");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "품번 유형", "PRODUCT_TYPE");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "고객 코드", "CUSTOMER_CODE");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "업체 코드", "VENDOR_CODE");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성 시간", "CREATE_TIME", width: 150);
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성 사용자", "CREATE_USER_ID");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 시간", "UPDATE_TIME", width: 150);
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 사용자", "UPDATE_USER_ID");
+            DataGridViewUtil.SetInitGridView(dgvProduct);
+            DataGridViewUtil.AddGridTextColumn(dgvProduct, "품번", "PRODUCT_CODE");
+            DataGridViewUtil.AddGridTextColumn(dgvProduct, "품명", "PRODUCT_NAME");
+            DataGridViewUtil.AddGridTextColumn(dgvProduct, "품번 유형", "PRODUCT_TYPE");
+            DataGridViewUtil.AddGridTextColumn(dgvProduct, "고객 코드", "CUSTOMER_CODE");
+            DataGridViewUtil.AddGridTextColumn(dgvProduct, "업체 코드", "VENDOR_CODE");
+            DataGridViewUtil.AddGridTextColumn(dgvProduct, "생성 시간", "CREATE_TIME", width: 150);
+            DataGridViewUtil.AddGridTextColumn(dgvProduct, "생성 사용자", "CREATE_USER_ID");
+            DataGridViewUtil.AddGridTextColumn(dgvProduct, "변경 시간", "UPDATE_TIME", width: 150);
+            DataGridViewUtil.AddGridTextColumn(dgvProduct, "변경 사용자", "UPDATE_USER_ID");
             //iSearchedList = new List<int>();
             //iSelectedRow = new List<int>();
 
 
-            DataGridViewUtil.SetInitGridView(csDataGridView2);
-            DataGridViewUtil.AddGridTextColumn(csDataGridView2, "자 품번", "PRODUCT_CODE");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView2, "자 품명", "PRODUCT_NAME");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView2, "단위 수량", "PRODUCT_TYPE");
+            DataGridViewUtil.SetInitGridView(dgvBOM);
+            DataGridViewUtil.AddGridTextColumn(dgvBOM, "자 품번", "PRODUCT_CODE");
+            DataGridViewUtil.AddGridTextColumn(dgvBOM, "자 품명", "PRODUCT_NAME");
+            DataGridViewUtil.AddGridTextColumn(dgvBOM, "단위 수량", "PRODUCT_TYPE");
             //DataGridViewUtil.AddGridTextColumn(csDataGridView2, "대체 품번", "CUSTOMER_CODE");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView2, "생성 시간", "CREATE_TIME", width: 150);
-            DataGridViewUtil.AddGridTextColumn(csDataGridView2, "생성 사용자", "CREATE_USER_ID");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView2, "변경 시간", "UPDATE_TIME", width: 150);
-            DataGridViewUtil.AddGridTextColumn(csDataGridView2, "변경 사용자", "UPDATE_USER_ID");
+            DataGridViewUtil.AddGridTextColumn(dgvBOM, "생성 시간", "CREATE_TIME", width: 150);
+            DataGridViewUtil.AddGridTextColumn(dgvBOM, "생성 사용자", "CREATE_USER_ID");
+            DataGridViewUtil.AddGridTextColumn(dgvBOM, "변경 시간", "UPDATE_TIME", width: 150);
+            DataGridViewUtil.AddGridTextColumn(dgvBOM, "변경 사용자", "UPDATE_USER_ID");
 
             LoadData();
 
@@ -63,9 +64,9 @@ namespace MES_Team3
         {
             ProductServ serv = new ProductServ();
             mdtAll = serv.GetProductsList();
-            csDataGridView1.DataSource = null;
-            csDataGridView1.DataSource = mdtAll;
-            csDataGridView1.Focus();
+            dgvProduct.DataSource = null;
+            dgvProduct.DataSource = mdtAll;
+            dgvProduct.Focus();
 
 
             ProductProperty search = new ProductProperty();
@@ -84,8 +85,8 @@ namespace MES_Team3
                 List<ProductProperty> list = serv.GetProductSearch(search);
                 search.IsSearchPanel = false;
 
-                csDataGridView1.DataSource = null;
-                csDataGridView1.DataSource = list;
+                dgvProduct.DataSource = null;
+                dgvProduct.DataSource = list;
 
 
             }
@@ -108,7 +109,15 @@ namespace MES_Team3
 
         private void csDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            //if (e.RowIndex < 0) return;
+            //prodCode = dgvProduct["PRODUCT_CODE", e.RowIndex].Value.ToString();
 
+            //BOMServ bomServ = new BOMServ();
+            //DataTable dtAll = bomServ.GetBOMList();
+            //dgvBOM.DataSource = null;
+            //dgvBOM.DataSource = dtAll;
+
+            //LoadData();
         }
     }
 }
