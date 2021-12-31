@@ -18,10 +18,10 @@ namespace MES_Team3
             return list;
         }
 
-        public DataTable GetOperationList()
+        public DataTable GetBOMList1()
         {
-            OperationDAC dac = new OperationDAC();
-            DataTable dt = dac.GetOperationList();
+            BomDAC dac = new BomDAC();
+            DataTable dt = dac.GetBOMList1();
             dac.Dispose();
             return dt;
         }
