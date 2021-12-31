@@ -126,7 +126,7 @@ namespace POPprogram
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox13.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox13.Location = new System.Drawing.Point(220, 194);
+            this.textBox13.Location = new System.Drawing.Point(209, 185);
             this.textBox13.Multiline = true;
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(847, 26);
@@ -135,7 +135,7 @@ namespace POPprogram
             // label11
             // 
             this.label11.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label11.Location = new System.Drawing.Point(82, 149);
+            this.label11.Location = new System.Drawing.Point(84, 139);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(89, 31);
             this.label11.TabIndex = 36;
@@ -145,7 +145,7 @@ namespace POPprogram
             // label12
             // 
             this.label12.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label12.Location = new System.Drawing.Point(107, 117);
+            this.label12.Location = new System.Drawing.Point(107, 108);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(64, 31);
             this.label12.TabIndex = 35;
@@ -194,7 +194,7 @@ namespace POPprogram
             // label9
             // 
             this.label9.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label9.Location = new System.Drawing.Point(82, 85);
+            this.label9.Location = new System.Drawing.Point(84, 76);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(89, 31);
             this.label9.TabIndex = 30;
@@ -244,7 +244,7 @@ namespace POPprogram
             // textBox8
             // 
             this.textBox8.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox8.Location = new System.Drawing.Point(179, 43);
+            this.textBox8.Location = new System.Drawing.Point(209, 42);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(245, 29);
             this.textBox8.TabIndex = 25;
@@ -539,12 +539,12 @@ namespace POPprogram
             this.btnInsert.AutoSize = true;
             this.btnInsert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
             this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnInsert.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnInsert.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnInsert.Image = global::POPprogram.Properties.Resources.Add_New;
             this.btnInsert.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnInsert.Location = new System.Drawing.Point(156, 0);
+            this.btnInsert.Location = new System.Drawing.Point(178, 0);
             this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(94, 70);
+            this.btnInsert.Size = new System.Drawing.Size(72, 70);
             this.btnInsert.TabIndex = 80;
             this.btnInsert.Text = "생성";
             this.btnInsert.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -558,12 +558,12 @@ namespace POPprogram
             this.btnDelete.AutoSize = true;
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnDelete.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnDelete.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnDelete.Image = global::POPprogram.Properties.Resources.Trash_Can_02;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDelete.Location = new System.Drawing.Point(471, 0);
+            this.btnDelete.Location = new System.Drawing.Point(493, 0);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(94, 70);
+            this.btnDelete.Size = new System.Drawing.Size(72, 70);
             this.btnDelete.TabIndex = 78;
             this.btnDelete.Text = "삭제";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -577,12 +577,12 @@ namespace POPprogram
             this.btnClear.AutoSize = true;
             this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnClear.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnClear.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnClear.Image = global::POPprogram.Properties.Resources.Command_Refresh_01;
             this.btnClear.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnClear.Location = new System.Drawing.Point(358, 0);
+            this.btnClear.Location = new System.Drawing.Point(380, 0);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(106, 70);
+            this.btnClear.Size = new System.Drawing.Size(93, 70);
             this.btnClear.TabIndex = 82;
             this.btnClear.Text = "초기화";
             this.btnClear.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -596,12 +596,12 @@ namespace POPprogram
             this.btnReadBottom.AutoSize = true;
             this.btnReadBottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
             this.btnReadBottom.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnReadBottom.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnReadBottom.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnReadBottom.Image = global::POPprogram.Properties.Resources.Data_Find12;
             this.btnReadBottom.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnReadBottom.Location = new System.Drawing.Point(55, 0);
+            this.btnReadBottom.Location = new System.Drawing.Point(77, 0);
             this.btnReadBottom.Name = "btnReadBottom";
-            this.btnReadBottom.Size = new System.Drawing.Size(94, 70);
+            this.btnReadBottom.Size = new System.Drawing.Size(72, 70);
             this.btnReadBottom.TabIndex = 79;
             this.btnReadBottom.Text = "조회";
             this.btnReadBottom.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -615,12 +615,12 @@ namespace POPprogram
             this.btnClose.AutoSize = true;
             this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnClose.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnClose.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnClose.Image = global::POPprogram.Properties.Resources.Delete;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnClose.Location = new System.Drawing.Point(572, 0);
+            this.btnClose.Location = new System.Drawing.Point(594, 0);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(94, 70);
+            this.btnClose.Size = new System.Drawing.Size(72, 70);
             this.btnClose.TabIndex = 83;
             this.btnClose.Text = "닫기";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -634,12 +634,12 @@ namespace POPprogram
             this.btnUpdate.AutoSize = true;
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnUpdate.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnUpdate.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnUpdate.Image = global::POPprogram.Properties.Resources.Save_02;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnUpdate.Location = new System.Drawing.Point(257, 0);
+            this.btnUpdate.Location = new System.Drawing.Point(279, 0);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(94, 70);
+            this.btnUpdate.Size = new System.Drawing.Size(72, 70);
             this.btnUpdate.TabIndex = 81;
             this.btnUpdate.Text = "변경";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
