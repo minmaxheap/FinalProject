@@ -51,7 +51,7 @@ namespace MES_Team3
             // 
             // lblTitle
             // 
-            this.lblTitle.Text = "품번 목록";
+            this.lblTitle.Text = "작업지시 목록";
             // 
             // pnlProperty
             // 
