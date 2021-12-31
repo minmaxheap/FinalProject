@@ -1,11 +1,14 @@
-﻿using System;
+﻿using DAC;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
-using DAC;
 
 namespace MES_Team3
 {
@@ -14,11 +17,20 @@ namespace MES_Team3
 		UserGroupServ serv;
 		string Code = string.Empty;
 		string ID = frmLogin.userID;
+
+		DataTable dt;
+		List<int> iSearchedList;
+		List<int> iSelectedRow;
+
 		public frmUserGroup()
 		{
 			InitializeComponent();
 		}
-
+		private void ResetCount()
+		{
+			iSearchedList.Clear();
+			iSelectedRow.Clear();
+		}
 		private void frmUserGroup_Load(object sender, EventArgs e)
 		{
 			//USER_GROUP_CODE, USER_GROUP_NAME, USER_GROUP_TYPE, CREATE_TIME, CREATE_USER_ID, UPDATE_TIME, UPDATE_USER_ID from USER_GROUP_MST
@@ -31,7 +43,8 @@ namespace MES_Team3
 			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경시간", "UPDATE_TIME");
 			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 사용자", "UPDATE_USER_ID");
 
-			
+			iSearchedList = new List<int>();
+			iSelectedRow = new List<int>();
 
 			pnlSearch.Visible = false;
 			UserGroupVO vo = new UserGroupVO();
@@ -51,6 +64,8 @@ namespace MES_Team3
 			csDataGridView1.DataSource = null;
 			csDataGridView1.DataSource = dt;
 			pnlSearch.Visible = false;
+
+			ResetCount();
 
 		}
 
@@ -96,6 +111,8 @@ namespace MES_Team3
 			save.IsSearchPanel = false;
 
 			csDataGridView1.DataSource = list;
+
+			ResetCount();
 		}
 
 		private void btnUpdate_Click(object sender, EventArgs e)
@@ -177,6 +194,9 @@ namespace MES_Team3
 			pgSearch.SelectedObject = vo;
 
 			pgSearch.PropertySort = PropertySort.NoSort;
+
+			ResetCount();
+
 		}
 
 		private void btnReadTop_Click(object sender, EventArgs e)
@@ -193,6 +213,9 @@ namespace MES_Team3
 			save.IsSearchPanel = false;
 
 			csDataGridView1.DataSource = list;
+
+			ResetCount();
+
 		}
 
 		private void csDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -244,6 +267,104 @@ namespace MES_Team3
 
 			pnlProperty.Visible = true;
 			pnlSearch.Visible = false;
+		}
+
+		private void btnTxtSearch_Click(object sender, EventArgs e)
+		{
+			if (iSearchedList.Count == 0)
+			{
+				DataTable copy_dt = GetDataGridViewAsDataTable(csDataGridView1);
+				IEnumerable<DataRow> linq_row = null;
+				if (txtSearch.Text == "")
+				{
+					csDataGridView1.DataSource = copy_dt;
+				}
+				else
+				{
+					foreach (DataRow row in copy_dt.Rows)
+					{
+						linq_row = from item in row.ItemArray
+								   where item.ToString().ToLower().Contains(txtSearch.Text.ToLower())
+								   select row;
+						foreach (DataRow dt in linq_row)
+						{
+							int iCntSearch = copy_dt.Rows.IndexOf(row);
+							iSearchedList.Add(iCntSearch);
+							break;
+						}
+					}
+					iSelectedRow = iSearchedList.ToList();
+				}
+			}
+			if (iSearchedList.Count > 0)
+			{
+				int iTestNum = iSelectedRow.Count(n => n == -1);
+				if (iTestNum == iSearchedList.Count)
+					iSelectedRow = iSearchedList.ToList();
+				for (int i = 0; i < iSearchedList.Count; i++)
+				{
+					if (iSelectedRow[i] == iSearchedList[i])
+					{
+						csDataGridView1.CurrentCell = csDataGridView1.Rows[iSearchedList[i]].Cells[0];
+						iSelectedRow[i] = -1;
+						break;
+					}
+				}
+			}
+		}
+
+
+
+
+
+
+
+
+		public static DataTable GetDataGridViewAsDataTable(DataGridView _DataGridView)
+		{
+			try
+			{
+				if (_DataGridView.ColumnCount == 0)
+					return null;
+				DataTable dtSource = new DataTable();
+				//////create columns
+				foreach (DataGridViewColumn col in _DataGridView.Columns)
+				{
+					if (col.ValueType == null)
+						dtSource.Columns.Add(col.Name, typeof(string));
+					else
+						dtSource.Columns.Add(col.Name, col.ValueType);
+					dtSource.Columns[col.Name].Caption = col.HeaderText;
+				}
+				///////insert row data
+				foreach (DataGridViewRow row in _DataGridView.Rows)
+				{
+					DataRow drNewRow = dtSource.NewRow();
+					foreach (DataColumn col in dtSource.Columns)
+					{
+						drNewRow[col.ColumnName] = row.Cells[col.ColumnName].Value;
+					}
+					dtSource.Rows.Add(drNewRow);
+				}
+				return dtSource;
+			}
+			catch (Exception err)
+			{
+				Debug.WriteLine(err.Message);
+				return null;
+			}
+		}
+
+		private void txtSearch_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Enter)
+			{
+				btnTxtSearch.PerformClick();
+			}
+			else
+			{
+				ResetCount();
+			}
 		}
 	}
 }
