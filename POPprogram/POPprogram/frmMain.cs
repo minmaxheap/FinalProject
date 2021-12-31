@@ -89,9 +89,11 @@ namespace POPprogram
             {
                 Form frm = (Form)Activator.CreateInstance(frmType);
                 frm.MdiParent = this;
-                frm.WindowState = FormWindowState.Maximized;
+                //frm.WindowState = FormWindowState.Maximized;
+                frm.FormBorderStyle = FormBorderStyle.FixedSingle;
+                frm.Dock = DockStyle.Fill;
                 frm.ControlBox = false;
-                frm.FormBorderStyle = FormBorderStyle.None;
+              
       
                 frm.Text = formText;
                 frm.Show();
