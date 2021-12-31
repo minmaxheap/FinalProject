@@ -152,6 +152,7 @@ namespace MES_Team3
             csDataGridView1.Focus();
             //csDataGridView1.Rows[0].Selected = true;
             BSearchPanel = false;
+            ResetCount();
         }
 
 		private void button3_Click(object sender, EventArgs e)
@@ -162,6 +163,7 @@ namespace MES_Team3
             pgSearch.SelectedObject = search;
             pgSearch.PropertySort = PropertySort.NoSort;
             // propertyPanel.Visible = false;
+            ResetCount();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -198,20 +200,10 @@ namespace MES_Team3
 
                 csDataGridView1.DataSource = null;
                 csDataGridView1.DataSource = list;
-                    
-                   
-            }
+                ResetCount();
 
-            //ProductProperty search = (ProductProperty)pgSearch.SelectedObject;
-            //var searchList = (from pr in allList
-            //                  where (!string.IsNullOrWhiteSpace(search.PRODUCT_CODE)) ? (pr.PRODUCT_CODE == search.PRODUCT_CODE) : 1 == 1
-            //                 && (!string.IsNullOrWhiteSpace(search.PRODUCT_TYPE)) ? (pr.PRODUCT_TYPE == search.PRODUCT_TYPE) : 1 == 1
-            //                 && (!string.IsNullOrWhiteSpace(search.CUSTOMER_CODE)) ? (pr.CUSTOMER_CODE == search.CUSTOMER_CODE) : 1 == 1
-            //                 && (!string.IsNullOrWhiteSpace(search.VENDOR_CODE)) ?) (pr.VENDOR_CODE == search.VENDOR_CODE): 1==1
-            //                  select pr
-            //                 ).ToList();
-            //csDataGridView1.DataSource = null;
-            //csDataGridView1.DataSource = searchList;
+
+            }
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -237,57 +229,47 @@ namespace MES_Team3
 
         private void btnTxtSearch_Click(object sender, EventArgs e)
         {
-            KeyEventArgs enter = new KeyEventArgs(Keys.Enter);
+            if (iSearchedList.Count == 0)
+            {
+                DataTable copy_dt = GetDataGridViewAsDataTable(csDataGridView1);
+                IEnumerable<DataRow> linq_row = null;
+                if (txtSearch.Text == "")
+                {
+                    csDataGridView1.DataSource = copy_dt;
+                }
+                else
+                {
+                    foreach (DataRow row in copy_dt.Rows)
+                    {
+                        linq_row = from item in row.ItemArray
+                                   where item.ToString().ToLower().Contains(txtSearch.Text.ToLower())
+                                   select row;
+                        foreach (DataRow dt in linq_row)
+                        {
+                            int iCntSearch = copy_dt.Rows.IndexOf(row);
+                            iSearchedList.Add(iCntSearch);
+                            break;
+                        }
+                    }
+                    iSelectedRow = iSearchedList.ToList();
+                }
+            }
+            if (iSearchedList.Count > 0)
+            {
+                int iTestNum = iSelectedRow.Count(n => n == -1);
+                if (iTestNum == iSearchedList.Count)
+                    iSelectedRow = iSearchedList.ToList();
+                for (int i = 0; i < iSearchedList.Count; i++)
+                {
+                    if (iSelectedRow[i] == iSearchedList[i])
+                    {
+                        csDataGridView1.CurrentCell = csDataGridView1.Rows[iSearchedList[i]].Cells[0];
+                        iSelectedRow[i] = -1;
+                        break;
+                    }
+                }
+            }
 
-            
-            txtSearch_KeyDown(null, enter );
-
-
-            //if (mbFirst && mbSearch)
-            //{
-
-            //    //List<ProductProperty> txtSearch = allList.FindAll((x) => x.PRODUCT_CODE.Contains(txt) || x.PRODUCT_NAME.Contains(txt)||//x.PRODUCT_TYPE.Contains(txt) || x.CUSTOMER_CODE.Contains(txt)||x.VENDOR_CODE.Contains(txt) || x.CREATE_USER_ID.Contains(txt)||//x.UPDATE_USER_ID.Contains(txt));
-            //    // csDataGridView1.DataSource = txtSearch;
-
-            //    mFindIndex = new List<int>();
-            //    foreach (DataGridViewRow row in csDataGridView1.Rows)
-            //    {
-
-            //        if ((row.Cells["PRODUCT_CODE"].Value != null && row.Cells["PRODUCT_CODE"].Value.ToString().ToUpper().Contains(txt)) ||
-            //        (row.Cells["PRODUCT_NAME"].Value != null && row.Cells["PRODUCT_NAME"].Value.ToString().ToUpper().Contains(txt)) ||
-            //        (row.Cells["PRODUCT_TYPE"].Value != null && row.Cells["PRODUCT_TYPE"].Value.ToString().ToUpper().Contains(txt)) ||
-            //        (row.Cells["CUSTOMER_CODE"].Value != null && row.Cells["CUSTOMER_CODE"].Value.ToString().ToUpper().Contains(txt)) ||
-            //        (row.Cells["VENDOR_CODE"].Value != null && row.Cells["VENDOR_CODE"].Value.ToString().ToUpper().Contains(txt)) ||
-            //        (row.Cells["CREATE_USER_ID"].Value != null && row.Cells["CREATE_USER_ID"].Value.ToString().ToUpper().Contains(txt)) ||
-            //        (row.Cells["UPDATE_USER_ID"].Value != null && row.Cells["UPDATE_USER_ID"].Value.ToString().ToUpper().Contains(txt)))
-            //        {
-
-            //           // row.Selected = true;
-            //            mFindIndex.Add(row.Index);
-            //        }
-            //        else
-            //        {
-            //            //row.Selected = false;
-            //        }
-            //    }
-            //    mbFirst = false;
-
-            //    if (mFindIndex == null) { return; }
-            //    if (mirowIndex == mFindIndex.Count) { MessageBox.Show("검색한 값이 포함된 마지막 행입니다."); return; }
-            //    if (mFindIndex.Count > 0 && mbFirst == false) { mirowIndex = 0; mbFirst = true; }
-            //    if (mFindIndex[mirowIndex] == 0)
-            //    { csDataGridView1.Rows[0].Selected = false; }
-            //    else { csDataGridView1.Rows[mFindIndex[mirowIndex] - 1].Selected = false; }
-            //    if (mbFirst)
-            //    {
-
-            //        csDataGridView1.Rows[mFindIndex[mirowIndex]].Selected = true;
-            //        mirowIndex++;
-
-            //    }
-            //    mbFirst = true;
-            //    mbSearch = false;
-            //}
 
 
         }
@@ -307,51 +289,11 @@ namespace MES_Team3
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if (iSearchedList.Count == 0)
-                {
-                    DataTable copy_dt = mdtAll;
-                    IEnumerable<DataRow> linq_row = null;
-                    if (txtSearch.Text == "")
-                    {
-                        csDataGridView1.DataSource = copy_dt;
-                    }
-                    else
-                    {
-                        foreach (DataRow row in copy_dt.Rows)
-                        {
-                            linq_row = from item in row.ItemArray
-                                       where item.ToString().ToLower().Contains(txtSearch.Text.ToLower())
-                                       select row;
-                            foreach (DataRow dt in linq_row)
-                            {
-                                int iCntSearch = copy_dt.Rows.IndexOf(row);
-                                iSearchedList.Add(iCntSearch);
-                                break;
-                            }
-                        }
-                        iSelectedRow = iSearchedList.ToList();
-                    }
-                }
-                if (iSearchedList.Count > 0)
-                {
-                    int iTestNum = iSelectedRow.Count(n => n == -1);
-                    if (iTestNum == iSearchedList.Count)
-                        iSelectedRow = iSearchedList.ToList();
-                    for (int i = 0; i < iSearchedList.Count; i++)
-                    {
-                        if (iSelectedRow[i] == iSearchedList[i])
-                        {
-                            csDataGridView1.CurrentCell = csDataGridView1.Rows[iSearchedList[i]].Cells[0];
-                            iSelectedRow[i] = -1;
-                            break;
-                        }
-                    }
-                }
+                btnTxtSearch.PerformClick();
             }
             else
             {
-                iSearchedList.Clear();
-                iSelectedRow.Clear();
+                ResetCount();
             }
         }
 
@@ -363,9 +305,50 @@ namespace MES_Team3
             pgSearch.SelectedObject = vo;
 
             pgSearch.PropertySort = PropertySort.NoSort;
+            ResetCount();
+
         }
 
-     
+        private void ResetCount()
+        {
+            iSearchedList.Clear();
+            iSelectedRow.Clear();
+        }
+
+        public static DataTable GetDataGridViewAsDataTable(DataGridView _DataGridView)
+        {
+            try
+            {
+                if (_DataGridView.ColumnCount == 0)
+                    return null;
+                DataTable dtSource = new DataTable();
+                //////create columns
+                foreach (DataGridViewColumn col in _DataGridView.Columns)
+                {
+                    if (col.ValueType == null)
+                        dtSource.Columns.Add(col.Name, typeof(string));
+                    else
+                        dtSource.Columns.Add(col.Name, col.ValueType);
+                    dtSource.Columns[col.Name].Caption = col.HeaderText;
+                }
+                ///////insert row data
+                foreach (DataGridViewRow row in _DataGridView.Rows)
+                {
+                    DataRow drNewRow = dtSource.NewRow();
+                    foreach (DataColumn col in dtSource.Columns)
+                    {
+                        drNewRow[col.ColumnName] = row.Cells[col.ColumnName].Value;
+                    }
+                    dtSource.Rows.Add(drNewRow);
+                }
+                return dtSource;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
     }
 
 
