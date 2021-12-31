@@ -19,7 +19,7 @@ namespace POPprogram
         {
 
             this.WindowState = FormWindowState.Maximized;
-            panel8.Controls.Remove(textBox3);
+
             // Button btnSearch = new Button();
             // btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
             // btnSearch.BackgroundImage = (Image)POPprogram.Properties.Resources.Search_Find1;
