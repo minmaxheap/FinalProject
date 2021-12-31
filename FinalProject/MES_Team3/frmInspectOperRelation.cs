@@ -121,6 +121,8 @@ namespace MES_Team3
 			//장바구니?
 			//선택된 datagrid를 할당시켜줘야함
 			//insert 시켜야함
+			// 메뉴권한 
+
 			if (string.IsNullOrWhiteSpace(inspec_op_Code) || string.IsNullOrWhiteSpace(inspect_Code))
 			{
 				MessageBox.Show("공정코드 혹은 검사 항목이 존재 하지 않습니다.");
