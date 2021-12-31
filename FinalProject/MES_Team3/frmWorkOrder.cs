@@ -14,6 +14,7 @@ namespace MES_Team3
 {
     public partial class frmWorkOrder : MES_Team3.BaseForms.Base1_1
     {
+
         //public List<Bar> barlist;
         string sUserID;
 
@@ -66,6 +67,7 @@ namespace MES_Team3
             csDataGridView1.DataSource = null;
             csDataGridView1.DataSource = dt;
             BSearchPanel = false;
+            ResetCount();
         }
 
 
@@ -163,6 +165,7 @@ namespace MES_Team3
 
             pgProperty.PropertySort = PropertySort.NoSort;
             pgSearch.PropertySort = PropertySort.NoSort;
+
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -190,6 +193,7 @@ namespace MES_Team3
 
             csDataGridView1.DataSource = null;
             csDataGridView1.DataSource = list;
+            ResetCount();
         }
 
         private void btnReadTop_Click(object sender, EventArgs e)
@@ -200,13 +204,14 @@ namespace MES_Team3
 
             csDataGridView1.DataSource = null;
             csDataGridView1.DataSource = list;
+            ResetCount();
         }
 
         private void btnTxtSearch_Click(object sender, EventArgs e)
         {
             if (iSearchedList.Count == 0)
             {
-                DataTable copy_dt = dt;
+                DataTable copy_dt = GetDataGridViewAsDataTable(csDataGridView1);
                 IEnumerable<DataRow> linq_row = null;
                 if (txtSearch.Text == "")
                 {
@@ -254,8 +259,7 @@ namespace MES_Team3
             }
             else
             {
-                iSearchedList.Clear();
-                iSelectedRow.Clear();
+                ResetCount();
             }
         }
 
@@ -269,6 +273,7 @@ namespace MES_Team3
 
             pgProperty.PropertySort = PropertySort.NoSort;
             pgSearch.PropertySort = PropertySort.NoSort;
+            ResetCount();
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -281,6 +286,7 @@ namespace MES_Team3
 
             pgProperty.PropertySort = PropertySort.NoSort;
             pgSearch.PropertySort = PropertySort.NoSort;
+            ResetCount();
         }
         //private void txtSearch_KeyDown(object sender, KeyEventArgs e)
         //{
@@ -338,6 +344,45 @@ namespace MES_Team3
         //        iSelectedRow.Clear();
         //    }
         //}
-    }
+        private void ResetCount()
+        {
+            iSearchedList.Clear();
+            iSelectedRow.Clear();
+        }
+        public static DataTable GetDataGridViewAsDataTable(DataGridView _DataGridView)
+        {
+            try
+            {
+                if (_DataGridView.ColumnCount == 0)
+                    return null;
+                DataTable dtSource = new DataTable();
+                //////create columns
+                foreach (DataGridViewColumn col in _DataGridView.Columns)
+                {
+                    if (col.ValueType == null)
+                        dtSource.Columns.Add(col.Name, typeof(string));
+                    else
+                        dtSource.Columns.Add(col.Name, col.ValueType);
+                    dtSource.Columns[col.Name].Caption = col.HeaderText;
+                }
+                ///////insert row data
+                foreach (DataGridViewRow row in _DataGridView.Rows)
+                {
+                    DataRow drNewRow = dtSource.NewRow();
+                    foreach (DataColumn col in dtSource.Columns)
+                    {
+                        drNewRow[col.ColumnName] = row.Cells[col.ColumnName].Value;
+                    }
+                    dtSource.Rows.Add(drNewRow);
+                }
+                return dtSource;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+}
 }
 
