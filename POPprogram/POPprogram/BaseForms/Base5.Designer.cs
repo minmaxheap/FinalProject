@@ -30,6 +30,8 @@ namespace POPprogram
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Button btnTxtSearch;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Base5));
             this.panel4 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.textBox13 = new System.Windows.Forms.TextBox();
@@ -64,7 +66,6 @@ namespace POPprogram
             this.label2 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.pnlCrud = new System.Windows.Forms.Panel();
@@ -75,6 +76,7 @@ namespace POPprogram
             this.btnClose = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            btnTxtSearch = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel8.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -87,7 +89,7 @@ namespace POPprogram
             // 
             // panel4
             // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.label13);
@@ -265,15 +267,16 @@ namespace POPprogram
             // 
             // panel8
             // 
-            this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.Controls.Add(btnTxtSearch);
             this.panel8.Controls.Add(this.tableLayoutPanel1);
             this.panel8.Controls.Add(this.label3);
             this.panel8.Controls.Add(this.label2);
             this.panel8.Controls.Add(this.textBox5);
             this.panel8.Controls.Add(this.textBox4);
-            this.panel8.Controls.Add(this.textBox3);
             this.panel8.Controls.Add(this.textBox2);
             this.panel8.Controls.Add(this.label6);
             this.panel8.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -483,17 +486,6 @@ namespace POPprogram
             this.textBox4.Size = new System.Drawing.Size(245, 29);
             this.textBox4.TabIndex = 20;
             // 
-            // textBox3
-            // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox3.Location = new System.Drawing.Point(482, 52);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(575, 29);
-            this.textBox3.TabIndex = 19;
-            // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -518,7 +510,7 @@ namespace POPprogram
             // 
             // pnlCrud
             // 
-            this.pnlCrud.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pnlCrud.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlCrud.Controls.Add(this.btnInsert);
             this.pnlCrud.Controls.Add(this.btnDelete);
             this.pnlCrud.Controls.Add(this.btnClear);
@@ -651,6 +643,22 @@ namespace POPprogram
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // btnTxtSearch
+            // 
+            btnTxtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            btnTxtSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTxtSearch.BackgroundImage")));
+            btnTxtSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            btnTxtSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            btnTxtSearch.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            btnTxtSearch.ForeColor = System.Drawing.SystemColors.ControlText;
+            btnTxtSearch.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            btnTxtSearch.Location = new System.Drawing.Point(480, 52);
+            btnTxtSearch.Margin = new System.Windows.Forms.Padding(0);
+            btnTxtSearch.Name = "btnTxtSearch";
+            btnTxtSearch.Size = new System.Drawing.Size(32, 26);
+            btnTxtSearch.TabIndex = 51;
+            btnTxtSearch.UseVisualStyleBackColor = false;
+            // 
             // Base5
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -685,7 +693,6 @@ namespace POPprogram
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.TextBox textBox5;
         public System.Windows.Forms.TextBox textBox4;
-        public System.Windows.Forms.TextBox textBox3;
         public System.Windows.Forms.TextBox textBox2;
         public System.Windows.Forms.Label label6;
         public System.Windows.Forms.Label label13;
