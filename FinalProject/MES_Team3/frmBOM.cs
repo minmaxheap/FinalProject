@@ -109,15 +109,15 @@ namespace MES_Team3
 
         private void csDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //if (e.RowIndex < 0) return;
-            //prodCode = dgvProduct["PRODUCT_CODE", e.RowIndex].Value.ToString();
+            if (e.RowIndex < 0) return;
+            prodCode = dgvProduct["PRODUCT_CODE", e.RowIndex].Value.ToString();
 
-            //BOMServ bomServ = new BOMServ();
-            //DataTable dtAll = bomServ.GetBOMList();
-            //dgvBOM.DataSource = null;
-            //dgvBOM.DataSource = dtAll;
+            BOMServ bomServ = new BOMServ();
+            DataTable dtAll = bomServ.GetBOMList1();
+            dgvBOM.DataSource = null;
+            dgvBOM.DataSource = dtAll;
 
-            //LoadData();
+            LoadData();
         }
     }
 }
