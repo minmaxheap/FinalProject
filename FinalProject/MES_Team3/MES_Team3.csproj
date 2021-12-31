@@ -190,6 +190,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Services\BOMServ.cs" />
     <Compile Include="Services\FunctionServ.cs" />
     <Compile Include="frmProduct.cs">
       <SubType>Form</SubType>

@@ -39,8 +39,8 @@ namespace MES_Team3
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pgSearch = new System.Windows.Forms.PropertyGrid();
             this.pgProperty = new System.Windows.Forms.PropertyGrid();
-            this.csDataGridView1 = new MES_Team3.csDataGridView();
-            this.csDataGridView2 = new MES_Team3.csDataGridView();
+            this.dgvProduct = new MES_Team3.csDataGridView();
+            this.dgvBOM = new MES_Team3.csDataGridView();
             this.panel1.SuspendLayout();
             this.pnlSearch.SuspendLayout();
             this.pnlDgv.SuspendLayout();
@@ -56,8 +56,8 @@ namespace MES_Team3
             this.splitContainer1.SuspendLayout();
             this.pnlDgv2.SuspendLayout();
             this.pnlProperty.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.csDataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.csDataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBOM)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlSearch
@@ -70,9 +70,9 @@ namespace MES_Team3
             // 
             // pnlDgv
             // 
-            this.pnlDgv.Controls.Add(this.csDataGridView1);
+            this.pnlDgv.Controls.Add(this.dgvProduct);
             this.pnlDgv.Controls.SetChildIndex(this.lblTitle, 0);
-            this.pnlDgv.Controls.SetChildIndex(this.csDataGridView1, 0);
+            this.pnlDgv.Controls.SetChildIndex(this.dgvProduct, 0);
             // 
             // spcBase
             // 
@@ -99,9 +99,9 @@ namespace MES_Team3
             // 
             // pnlDgv2
             // 
-            this.pnlDgv2.Controls.Add(this.csDataGridView2);
+            this.pnlDgv2.Controls.Add(this.dgvBOM);
             this.pnlDgv2.Controls.SetChildIndex(this.lblTitle2, 0);
-            this.pnlDgv2.Controls.SetChildIndex(this.csDataGridView2, 0);
+            this.pnlDgv2.Controls.SetChildIndex(this.dgvBOM, 0);
             // 
             // lblTitle2
             // 
@@ -133,12 +133,12 @@ namespace MES_Team3
             this.pgProperty.TabIndex = 3;
             this.pgProperty.ToolbarVisible = false;
             // 
-            // csDataGridView1
+            // dgvProduct
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.csDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.csDataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
-            this.csDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvProduct.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvProduct.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
+            this.dgvProduct.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -146,8 +146,8 @@ namespace MES_Team3
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.csDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.csDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -155,11 +155,11 @@ namespace MES_Team3
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(195)))), ((int)(((byte)(230)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.csDataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.csDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.csDataGridView1.EnableHeadersVisualStyles = false;
-            this.csDataGridView1.Location = new System.Drawing.Point(0, 36);
-            this.csDataGridView1.Name = "csDataGridView1";
+            this.dgvProduct.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvProduct.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvProduct.EnableHeadersVisualStyles = false;
+            this.dgvProduct.Location = new System.Drawing.Point(0, 36);
+            this.dgvProduct.Name = "dgvProduct";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -167,19 +167,19 @@ namespace MES_Team3
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.csDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.csDataGridView1.RowHeadersWidth = 30;
-            this.csDataGridView1.RowTemplate.Height = 23;
-            this.csDataGridView1.Size = new System.Drawing.Size(724, 221);
-            this.csDataGridView1.TabIndex = 4;
-            this.csDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellClick);
+            this.dgvProduct.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvProduct.RowHeadersWidth = 30;
+            this.dgvProduct.RowTemplate.Height = 23;
+            this.dgvProduct.Size = new System.Drawing.Size(724, 221);
+            this.dgvProduct.TabIndex = 4;
+            this.dgvProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellClick);
             // 
-            // csDataGridView2
+            // dgvBOM
             // 
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.csDataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.csDataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
-            this.csDataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvBOM.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvBOM.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
+            this.dgvBOM.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -187,8 +187,8 @@ namespace MES_Team3
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.csDataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.csDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBOM.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvBOM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -196,11 +196,11 @@ namespace MES_Team3
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(195)))), ((int)(((byte)(230)))));
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.csDataGridView2.DefaultCellStyle = dataGridViewCellStyle7;
-            this.csDataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.csDataGridView2.EnableHeadersVisualStyles = false;
-            this.csDataGridView2.Location = new System.Drawing.Point(0, 36);
-            this.csDataGridView2.Name = "csDataGridView2";
+            this.dgvBOM.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvBOM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvBOM.EnableHeadersVisualStyles = false;
+            this.dgvBOM.Location = new System.Drawing.Point(0, 36);
+            this.dgvBOM.Name = "dgvBOM";
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -208,11 +208,11 @@ namespace MES_Team3
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.csDataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.csDataGridView2.RowHeadersWidth = 30;
-            this.csDataGridView2.RowTemplate.Height = 23;
-            this.csDataGridView2.Size = new System.Drawing.Size(724, 255);
-            this.csDataGridView2.TabIndex = 18;
+            this.dgvBOM.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvBOM.RowHeadersWidth = 30;
+            this.dgvBOM.RowTemplate.Height = 23;
+            this.dgvBOM.Size = new System.Drawing.Size(724, 255);
+            this.dgvBOM.TabIndex = 18;
             // 
             // frmBOM
             // 
@@ -236,8 +236,8 @@ namespace MES_Team3
             this.splitContainer1.ResumeLayout(false);
             this.pnlDgv2.ResumeLayout(false);
             this.pnlProperty.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.csDataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.csDataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBOM)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -245,8 +245,8 @@ namespace MES_Team3
         #endregion
 
         private System.Windows.Forms.PropertyGrid pgSearch;
-        private csDataGridView csDataGridView1;
+        private csDataGridView dgvProduct;
         private System.Windows.Forms.PropertyGrid pgProperty;
-        private csDataGridView csDataGridView2;
+        private csDataGridView dgvBOM;
     }
 }

@@ -1,0 +1,29 @@
+﻿using DAC;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MES_Team3
+{
+    public class BOMServ
+    {
+        public List<BomVO> GetBOMList()
+        {
+            BomDAC dac = new BomDAC();
+            List<BomVO> list = dac.GetBOMList();
+            dac.Dispose();
+            return list;
+        }
+
+        public DataTable GetBOMList1()
+        {
+            BomDAC dac = new BomDAC();
+            DataTable dt = dac.GetBOMList1();
+            dac.Dispose();
+            return dt;
+        }
+    }
+}
