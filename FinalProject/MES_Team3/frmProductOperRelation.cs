@@ -99,6 +99,7 @@ namespace MES_Team3
 
                 dgvProducts.DataSource = null;
                 dgvProducts.DataSource = list;
+                ResetCount();
             }
 
         }
@@ -189,58 +190,97 @@ namespace MES_Team3
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if (iSearchedList.Count == 0)
-                {
-                    DataTable copy_dt = mdtProducts;
-                    IEnumerable<DataRow> linq_row = null;
-                    if (txtSearch.Text == "")
-                    {
-                        dgvProducts.DataSource = copy_dt;
-                    }
-                    else
-                    {
-                        foreach (DataRow row in copy_dt.Rows)
-                        {
-                            linq_row = from item in row.ItemArray
-                                       where item.ToString().ToLower().Contains(txtSearch.Text.ToLower())
-                                       select row;
-                            foreach (DataRow dt in linq_row)
-                            {
-                                int iCntSearch = copy_dt.Rows.IndexOf(row);
-                                iSearchedList.Add(iCntSearch);
-                                break;
-                            }
-                        }
-                        iSelectedRow = iSearchedList.ToList();
-                    }
-                }
-                if (iSearchedList.Count > 0)
-                {
-                    int iTestNum = iSelectedRow.Count(n => n == -1);
-                    if (iTestNum == iSearchedList.Count)
-                        iSelectedRow = iSearchedList.ToList();
-                    for (int i = 0; i < iSearchedList.Count; i++)
-                    {
-                        if (iSelectedRow[i] == iSearchedList[i])
-                        {
-                            dgvProducts.CurrentCell = dgvProducts.Rows[iSearchedList[i]].Cells[0];
-                            iSelectedRow[i] = -1;
-                            break;
-                        }
-                    }
-                }
+                btnTxtSearch.PerformClick();
             }
             else
             {
-                iSearchedList.Clear();
-                iSelectedRow.Clear();
+                ResetCount();
             }
         }
 
         private void btnTxtSearch_Click(object sender, EventArgs e)
         {
-            KeyEventArgs enter = new KeyEventArgs(Keys.Enter);
-            txtSearch_KeyDown(null, enter);
+            if (iSearchedList.Count == 0)
+            {
+                DataTable copy_dt = GetDataGridViewAsDataTable(dgvProducts);
+                IEnumerable<DataRow> linq_row = null;
+                if (txtSearch.Text == "")
+                {
+                    dgvProducts.DataSource = copy_dt;
+                }
+                else
+                {
+                    foreach (DataRow row in copy_dt.Rows)
+                    {
+                        linq_row = from item in row.ItemArray
+                                   where item.ToString().ToLower().Contains(txtSearch.Text.ToLower())
+                                   select row;
+                        foreach (DataRow dt in linq_row)
+                        {
+                            int iCntSearch = copy_dt.Rows.IndexOf(row);
+                            iSearchedList.Add(iCntSearch);
+                            break;
+                        }
+                    }
+                    iSelectedRow = iSearchedList.ToList();
+                }
+            }
+            if (iSearchedList.Count > 0)
+            {
+                int iTestNum = iSelectedRow.Count(n => n == -1);
+                if (iTestNum == iSearchedList.Count)
+                    iSelectedRow = iSearchedList.ToList();
+                for (int i = 0; i < iSearchedList.Count; i++)
+                {
+                    if (iSelectedRow[i] == iSearchedList[i])
+                    {
+                        dgvProducts.CurrentCell = dgvProducts.Rows[iSearchedList[i]].Cells[0];
+                        iSelectedRow[i] = -1;
+                        break;
+                    }
+                }
+            }
+        }
+
+
+        private void ResetCount()
+        {
+            iSearchedList.Clear();
+            iSelectedRow.Clear();
+        }
+
+        public static DataTable GetDataGridViewAsDataTable(DataGridView _DataGridView)
+        {
+            try
+            {
+                if (_DataGridView.ColumnCount == 0)
+                    return null;
+                DataTable dtSource = new DataTable();
+                //////create columns
+                foreach (DataGridViewColumn col in _DataGridView.Columns)
+                {
+                    if (col.ValueType == null)
+                        dtSource.Columns.Add(col.Name, typeof(string));
+                    else
+                        dtSource.Columns.Add(col.Name, col.ValueType);
+                    dtSource.Columns[col.Name].Caption = col.HeaderText;
+                }
+                ///////insert row data
+                foreach (DataGridViewRow row in _DataGridView.Rows)
+                {
+                    DataRow drNewRow = dtSource.NewRow();
+                    foreach (DataColumn col in dtSource.Columns)
+                    {
+                        drNewRow[col.ColumnName] = row.Cells[col.ColumnName].Value;
+                    }
+                    dtSource.Rows.Add(drNewRow);
+                }
+                return dtSource;
+            }
+            catch
+            {
+                return null;
+            }
         }
     }
 }

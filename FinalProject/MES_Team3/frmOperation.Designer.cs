@@ -51,7 +51,7 @@ namespace MES_Team3
             // 
             // lblTitle
             // 
-            this.lblTitle.Text = "품번 목록";
+            this.lblTitle.Text = "공정 목록";
             // 
             // pnlProperty
             // 
@@ -119,7 +119,7 @@ namespace MES_Team3
             this.pgProperty.HelpVisible = false;
             this.pgProperty.Location = new System.Drawing.Point(0, 0);
             this.pgProperty.Name = "pgProperty";
-            this.pgProperty.Size = new System.Drawing.Size(355, 591);
+            this.pgProperty.Size = new System.Drawing.Size(362, 591);
             this.pgProperty.TabIndex = 4;
             this.pgProperty.ToolbarVisible = false;
             // 
@@ -129,7 +129,7 @@ namespace MES_Team3
             this.pgSearch.HelpVisible = false;
             this.pgSearch.Location = new System.Drawing.Point(0, 0);
             this.pgSearch.Name = "pgSearch";
-            this.pgSearch.Size = new System.Drawing.Size(355, 591);
+            this.pgSearch.Size = new System.Drawing.Size(362, 591);
             this.pgSearch.TabIndex = 3;
             this.pgSearch.ToolbarVisible = false;
             // 
@@ -170,7 +170,7 @@ namespace MES_Team3
             this.csDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.csDataGridView1.RowHeadersWidth = 30;
             this.csDataGridView1.RowTemplate.Height = 23;
-            this.csDataGridView1.Size = new System.Drawing.Size(780, 597);
+            this.csDataGridView1.Size = new System.Drawing.Size(794, 597);
             this.csDataGridView1.TabIndex = 0;
             this.csDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellClick);
             // 
