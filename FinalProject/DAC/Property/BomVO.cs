@@ -20,7 +20,7 @@ namespace DAC
         private string product_code;
         private string child_product_code;
         private string require_qty;
-        private string alter_product_code;
+        //private string alter_product_code;
         private DateTime create_time;
         private string create_user_id;
         private DateTime update_time;

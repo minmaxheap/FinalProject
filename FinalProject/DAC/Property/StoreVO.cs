@@ -161,32 +161,32 @@ namespace DAC
 
 		public class StoreProperty
 		{
-			private string store_code;
-			private string store_name;
-			private string store_type;
-			private string fifo_flag;
-			[DisplayName("창고")]
-			[Browsable(true)]
-			public string STORE_CODE { get { return store_code; } set { store_code = value; } }
+			//private string store_code;
+			//private string store_name;
+			//private string store_type;
+			//private string fifo_flag;
+			//[DisplayName("창고")]
+			//[Browsable(true)]
+			//public string STORE_CODE { get { return store_code; } set { store_code = value; } }
 
-			[DisplayName("창고명")]
-			[Browsable(true)]
+			//[DisplayName("창고명")]
+			//[Browsable(true)]
 
-			public string STORE_NAME
-			{
-				get { return store_name; }
-				set { store_name = value; }
-			}
-			[DisplayName("창고 유형")]
-			[Browsable(true)]
+			//public string STORE_NAME
+			//{
+			//	get { return store_name; }
+			//	set { store_name = value; }
+			//}
+			//[DisplayName("창고 유형")]
+			//[Browsable(true)]
 
-			[TypeConverter(typeof(StoreTypeConverter))]
-			public string STORE_TYPE { get { return store_type; } set { store_type = value; } }
+			//[TypeConverter(typeof(StoreTypeConverter))]
+			//public string STORE_TYPE { get { return store_type; } set { store_type = value; } }
 
-			[DisplayName("선입선출 여부")]
-			[Browsable(true)]
-			[TypeConverter(typeof(FifoFlagConverter))]
-			public string FIFO_FLAG { get { return fifo_flag; } set { fifo_flag = value; } }
+			//[DisplayName("선입선출 여부")]
+			//[Browsable(true)]
+			//[TypeConverter(typeof(FifoFlagConverter))]
+			//public string FIFO_FLAG { get { return fifo_flag; } set { fifo_flag = value; } }
 
 
 		}

@@ -14,8 +14,11 @@ namespace MES_Team3
     public partial class frmStore : MES_Team3.BaseForms.Base1_1
     {
         List<StoreVO> allList;
+        DataTable mdtAll;
         //string msUserID;
         string msUserID = frmLogin.userID;
+        List<int> iSearchedList;
+        List<int> iSelectedRow;
         public frmStore()
         {
             InitializeComponent();
@@ -41,6 +44,9 @@ namespace MES_Team3
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 시간", "UPDATE_TIME");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 사용자", "UPDATE_USER_ID");
             List<StoreVO> list = new List<StoreVO>();
+            iSearchedList = new List<int>();
+            iSelectedRow = new List<int>();
+
 
             LoadData();
 
@@ -194,6 +200,63 @@ namespace MES_Team3
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (iSearchedList.Count == 0)
+                {
+                    DataTable copy_dt = mdtAll;
+                    IEnumerable<DataRow> linq_row = null;
+                    if (txtSearch.Text == "")
+                    {
+                        csDataGridView1.DataSource = copy_dt;
+                    }
+                    else
+                    {
+                        foreach (DataRow row in copy_dt.Rows)
+                        {
+                            linq_row = from item in row.ItemArray
+                                       where item.ToString().ToLower().Contains(txtSearch.Text.ToLower())
+                                       select row;
+                            foreach (DataRow dt in linq_row)
+                            {
+                                int iCntSearch = copy_dt.Rows.IndexOf(row);
+                                iSearchedList.Add(iCntSearch);
+                                break;
+                            }
+                        }
+                        iSelectedRow = iSearchedList.ToList();
+                    }
+                }
+                if (iSearchedList.Count > 0)
+                {
+                    int iTestNum = iSelectedRow.Count(n => n == -1);
+                    if (iTestNum == iSearchedList.Count)
+                        iSelectedRow = iSearchedList.ToList();
+                    for (int i = 0; i < iSearchedList.Count; i++)
+                    {
+                        if (iSelectedRow[i] == iSearchedList[i])
+                        {
+                            csDataGridView1.CurrentCell = csDataGridView1.Rows[iSearchedList[i]].Cells[0];
+                            iSelectedRow[i] = -1;
+                            break;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                iSearchedList.Clear();
+                iSelectedRow.Clear();
+            }
+        }
+
+        private void btnReadTop_Click(object sender, EventArgs e)
+        {
+            btnReadBottom.PerformClick();
         }
     }
 }
