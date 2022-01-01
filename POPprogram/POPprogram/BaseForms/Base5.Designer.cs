@@ -319,7 +319,7 @@ namespace POPprogram
             this.tableLayoutPanel1.Controls.Add(this.panel5, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 2, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(98, 137);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(118, 137);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));

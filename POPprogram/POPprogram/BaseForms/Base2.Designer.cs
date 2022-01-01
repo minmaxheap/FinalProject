@@ -29,8 +29,7 @@ namespace POPprogram
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Button btnReadTop;
-            System.Windows.Forms.Button btnTxtSearch;
+            
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Base2));
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
@@ -408,5 +407,7 @@ namespace POPprogram
         public System.Windows.Forms.TextBox textBox2;
         public System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.Button btnTxtSearch;
+        public System.Windows.Forms.Button btnReadTop;
     }
 }

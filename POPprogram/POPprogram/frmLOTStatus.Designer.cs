@@ -529,7 +529,7 @@ namespace POPprogram
             this.lblPanel.Name = "lblPanel";
             this.lblPanel.Size = new System.Drawing.Size(332, 55);
             this.lblPanel.TabIndex = 29;
-            this.lblPanel.Text = "▶ 속성";
+            this.lblPanel.Text = "▶ LOT 상태";
             this.lblPanel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pnlCrud

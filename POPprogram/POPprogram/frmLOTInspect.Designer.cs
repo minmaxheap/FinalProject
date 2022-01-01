@@ -65,10 +65,8 @@ namespace POPprogram
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.csDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.csDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.csDataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
+            this.csDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -99,8 +97,9 @@ namespace POPprogram
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.csDataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.csDataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
             this.csDataGridView1.EnableHeadersVisualStyles = false;
-            this.csDataGridView1.Location = new System.Drawing.Point(69, 59);
+            this.csDataGridView1.Location = new System.Drawing.Point(0, 43);
             this.csDataGridView1.Name = "csDataGridView1";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
@@ -112,7 +111,7 @@ namespace POPprogram
             this.csDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.csDataGridView1.RowHeadersWidth = 30;
             this.csDataGridView1.RowTemplate.Height = 23;
-            this.csDataGridView1.Size = new System.Drawing.Size(1033, 68);
+            this.csDataGridView1.Size = new System.Drawing.Size(1134, 68);
             this.csDataGridView1.TabIndex = 40;
             // 
             // Column1

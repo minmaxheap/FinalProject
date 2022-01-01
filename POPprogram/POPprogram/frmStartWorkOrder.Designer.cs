@@ -64,19 +64,21 @@ namespace POPprogram
             // 
             // textBox10
             // 
-            this.textBox10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBox10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox10.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textBox10.Location = new System.Drawing.Point(521, 46);
+            this.textBox10.Location = new System.Drawing.Point(521, 71);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(581, 29);
             this.textBox10.TabIndex = 58;
             // 
             // label12
             // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label12.Location = new System.Drawing.Point(102, 49);
+            this.label12.Location = new System.Drawing.Point(102, 75);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(46, 21);
             this.label12.TabIndex = 57;
@@ -85,9 +87,10 @@ namespace POPprogram
             // 
             // comboBox1
             // 
+            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.comboBox1.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(166, 46);
+            this.comboBox1.Location = new System.Drawing.Point(166, 71);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(335, 29);
             this.comboBox1.TabIndex = 59;

@@ -33,6 +33,34 @@ namespace POPprogram
             this.panel8.SuspendLayout();
             this.pnlCrud.SuspendLayout();
             this.SuspendLayout();
+            this.panel8.Controls.SetChildIndex(this.label6, 0);
+            this.panel8.Controls.SetChildIndex(this.textBox2, 0);
+            this.panel8.Controls.SetChildIndex(this.textBox4, 0);
+            this.panel8.Controls.SetChildIndex(this.textBox5, 0);
+            this.panel8.Controls.SetChildIndex(this.label3, 0);
+            this.panel8.Controls.SetChildIndex(this.label2, 0);
+            // 
+            // label10
+            // 
+            this.label10.Location = new System.Drawing.Point(85, 121);
+            this.label10.Size = new System.Drawing.Size(46, 21);
+            this.label10.Text = "공장";
+            // 
+            // label9
+            // 
+            this.label9.Text = "품번";
+            // 
+            // label22
+            // 
+            this.label22.Location = new System.Drawing.Point(22, 51);
+            this.label22.Size = new System.Drawing.Size(109, 21);
+            this.label22.Text = "생산 LOT ID";
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(49, 60);
+            this.label3.Size = new System.Drawing.Size(82, 21);
+            this.label3.Text = "작업지시";
             // 
             // frmNewLOT
             // 
