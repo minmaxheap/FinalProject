@@ -53,7 +53,9 @@ namespace POPprogram
                 ToolStripMenuItem p_menu = new ToolStripMenuItem();
                 p_menu.Name = $"p_menu{dv1[i]["FUNCTION_CODE"].ToString()}";
                 p_menu.Text = dv1[i]["FUNCTION_NAME"].ToString();
-                p_menu.Size = new Size(187, 41);
+                p_menu.TextAlign = ContentAlignment.MiddleCenter;
+                p_menu.AutoSize = false;
+                p_menu.Size = new Size(205, 90);
                 p_menu.Tag = dv1[i]["PROGRAM_NAME"].ToString();
                 p_menu.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
                 p_menu.Click += Menu_Click;
@@ -181,7 +183,5 @@ namespace POPprogram
         //        }
         //    }
         }
-
-     
     }
 }

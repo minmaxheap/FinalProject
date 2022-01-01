@@ -3,16 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace POPprogram
 {
-    public partial class Base6 : Form
+    public partial class frmLOTMaterial : POPprogram.Base6
     {
-        public Base6()
+        public frmLOTMaterial()
         {
             InitializeComponent();
         }

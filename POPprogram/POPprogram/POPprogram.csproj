@@ -95,11 +95,35 @@
     <Compile Include="Controls\NumTextBox.Designer.cs">
       <DependentUpon>NumTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDown.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDown.Designer.cs">
+      <DependentUpon>frmDown.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEndWorkOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEndWorkOrder.Designer.cs">
+      <DependentUpon>frmEndWorkOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLogin.designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLOTInspect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLOTInspect.Designer.cs">
+      <DependentUpon>frmLOTInspect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLOTMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLOTMaterial.Designer.cs">
+      <DependentUpon>frmLOTMaterial.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLOTStatus.cs">
       <SubType>Form</SubType>
@@ -119,6 +143,12 @@
     <Compile Include="frmNewLOT.Designer.cs">
       <DependentUpon>frmNewLOT.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmStartWorkOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStartWorkOrder.Designer.cs">
+      <DependentUpon>frmStartWorkOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmWorkOrderDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,11 +165,11 @@
     <Compile Include="Services\StoreServ.cs" />
     <Compile Include="Services\UserGroupServ.cs" />
     <Compile Include="Services\User_MSTServ.cs" />
-    <Compile Include="testDefect.cs">
+    <Compile Include="frmLOTDefect.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="testDefect.Designer.cs">
-      <DependentUpon>testDefect.cs</DependentUpon>
+    <Compile Include="frmLOTDefect.Designer.cs">
+      <DependentUpon>frmLOTDefect.cs</DependentUpon>
     </Compile>
     <Compile Include="Util\DataGridViewUtil.cs" />
     <EmbeddedResource Include="BaseForms\Base1_1.resx">
@@ -157,8 +187,17 @@
     <EmbeddedResource Include="BaseForms\Base6.resx">
       <DependentUpon>Base6.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDown.resx">
+      <DependentUpon>frmDown.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLOTInspect.resx">
+      <DependentUpon>frmLOTInspect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLOTMaterial.resx">
+      <DependentUpon>frmLOTMaterial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLOTStatus.resx">
       <DependentUpon>frmLOTStatus.cs</DependentUpon>
@@ -168,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNewLOT.resx">
       <DependentUpon>frmNewLOT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStartWorkOrder.resx">
+      <DependentUpon>frmStartWorkOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmWorkOrderDialog.resx">
       <DependentUpon>frmWorkOrderDialog.cs</DependentUpon>
@@ -229,6 +271,7 @@
     <None Include="Resources\Show.png" />
     <None Include="Resources\Trash Can_02.png" />
     <None Include="Resources\twocirclingarrows1_120592.png" />
+    <None Include="Resources\Minus.png" />
     <Content Include="Resources\그림1.png" />
     <Content Include="Resources\그림5.png" />
   </ItemGroup>

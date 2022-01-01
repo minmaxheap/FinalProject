@@ -1,7 +1,7 @@
 ﻿
 namespace POPprogram
 {
-    partial class testDefect
+    partial class frmEndWorkOrder
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
