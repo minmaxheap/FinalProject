@@ -124,14 +124,14 @@
   <data name="Data_Find4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Data-Find4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Delete_03" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Delete_03.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Arrowhead_Right_011" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Arrowhead-Right-011.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="close_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\close white .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Data_Find" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Data-Find.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_97a64971e2a6741339b09c64c93e448e" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\97a64971e2a6741339b09c64c93e448e.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -217,8 +217,11 @@
   <data name="yg_jalnan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\yg-jalnan.otf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="Delete_03" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Delete_03.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Touch-Screen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Touch-Screen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Data_Find" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Data-Find.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Data_Find1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Data-Find1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -226,7 +229,7 @@
   <data name="Trash_Can_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Trash Can_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Touch-Screen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Touch-Screen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Data-Import" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Data-Import.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

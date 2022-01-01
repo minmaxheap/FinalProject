@@ -47,23 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseForms\Base1_1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BaseForms\Base1_1.Designer.cs">
-      <DependentUpon>Base1_1.cs</DependentUpon>
-    </Compile>
     <Compile Include="BaseForms\Base2.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BaseForms\Base2.Designer.cs">
       <DependentUpon>Base2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BaseForms\Base3_1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BaseForms\Base3_1.Designer.cs">
-      <DependentUpon>Base3_1.cs</DependentUpon>
     </Compile>
     <Compile Include="BaseForms\Base5.cs">
       <SubType>Form</SubType>
@@ -184,14 +172,8 @@
       <DependentUpon>frmLOTDefect.cs</DependentUpon>
     </Compile>
     <Compile Include="Util\DataGridViewUtil.cs" />
-    <EmbeddedResource Include="BaseForms\Base1_1.resx">
-      <DependentUpon>Base1_1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="BaseForms\Base2.resx">
       <DependentUpon>Base2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BaseForms\Base3_1.resx">
-      <DependentUpon>Base3_1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaseForms\Base5.resx">
       <DependentUpon>Base5.cs</DependentUpon>
@@ -223,8 +205,14 @@
     <EmbeddedResource Include="frmNewLOT.resx">
       <DependentUpon>frmNewLOT.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmShip.resx">
+      <DependentUpon>frmShip.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmStartWorkOrder.resx">
       <DependentUpon>frmStartWorkOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStockIN.resx">
+      <DependentUpon>frmStockIN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmWorkOrderDialog.resx">
       <DependentUpon>frmWorkOrderDialog.cs</DependentUpon>
@@ -288,6 +276,7 @@
     <None Include="Resources\twocirclingarrows1_120592.png" />
     <None Include="Resources\Minus.png" />
     <None Include="Resources\Touch-Screen.png" />
+    <None Include="Resources\Data-Import.png" />
     <Content Include="Resources\그림1.png" />
     <Content Include="Resources\그림5.png" />
   </ItemGroup>
