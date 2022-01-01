@@ -175,20 +175,20 @@
 
 
                             <tr>
-                                <th style="text-align: center; font-size: 25px;" scope="col">작업지시수</th>
-                                <td align="center" style="font-weight: bold; font-size: 25px; ">@ViewBag.work</td>
+                                <th style="text-align: center; vertical-align: middle; font-size: 25px;" scope="col">작업지시수</th>
+                                <td align="center" style="font-weight: bold; vertical-align: middle; font-size: 25px; ">@ViewBag.work</td>
                             </tr>
                             <tr>
-                                <th style="text-align: center; font-size: 25px;" scope="col">총 계획수량</th>
-                                <td align="center" style="font-weight: bold; font-size: 25px; ">@String.Format("{0:#,###}", ViewBag.ordQty)</td>
+                                <th style="text-align: center; vertical-align: middle; font-size: 25px;" scope="col">총 계획수량</th>
+                                <td align="center" style="font-weight: bold; vertical-align: middle; font-size: 25px; ">@String.Format("{0:#,###}", ViewBag.ordQty)</td>
                             </tr>
                             <tr>
-                                <th style="text-align: center; font-size: 25px;" scope="col">총 양품수량</th>
-                                <td align="center" style="font-weight: bold; font-size: 25px; color: #0D94B6 ">@String.Format("{0:#,###}", Math.Round(ViewBag.prdQty))</td>
+                                <th style="text-align: center; vertical-align: middle; font-size: 25px;" scope="col">총 양품수량</th>
+                                <td align="center" style="font-weight: bold; vertical-align: middle; font-size: 25px; color: #0D94B6 ">@String.Format("{0:#,###}", Math.Round(ViewBag.prdQty))</td>
                             </tr>
                             <tr>
-                                <th style="text-align: center; font-size: 25px;" scope="col">총 불량수량</th>
-                                <td align="center" style="font-weight: bold; font-size: 25px; color: #A32D04">@String.Format("{0:#,###}", Math.Round(ViewBag.defQty))</td>
+                                <th style="text-align: center; vertical-align: middle; font-size: 25px;" scope="col">총 불량수량</th>
+                                <td align="center" style="font-weight: bold; vertical-align: middle; font-size: 25px; color: #A32D04">@String.Format("{0:#,###}", Math.Round(ViewBag.defQty))</td>
                             </tr>
 
 
@@ -196,18 +196,17 @@
 
                     </div>
                     <div class="col-4">
-                        <div id="preview-textfield" class="preview-textfield reset" align="center" style="font-size: 25px; font-weight: bold;">총 양품률</div>
+                        <div id="preview-textfield" class="preview-textfield reset" align="center" style="font-size: 25px; font-weight: bold; margin-left:5px;">총 양품률</div>
                         <canvas id="gauge1" width="550" height="275">
                         </canvas>
-                        <div id="preview-textfield" class="preview-textfield reset" align="center" style="font-size: 25px; font-weight: bold;">@ViewBag.qualityRate%</div>
+                        <div id="preview-textfield" class="preview-textfield reset" align="center" style="font-size: 25px; font-weight: bold; margin-left: 20px;">@ViewBag.qualityRate%</div>
 
                     </div>
                     <div class="col-4">
-                        <div id="preview-textfield" class="preview-textfield reset" align="center" style="font-size: 25px; font-weight: bold;">총 불량률</div>
+                        <div id="preview-textfield" class="preview-textfield reset" align="center" style="font-size: 25px; font-weight: bold; margin-left: 5px;">총 불량률</div>
                         <canvas id="gauge2" width="550" height="275">
                         </canvas>
-
-                        <div id="preview-textfield" class="preview-textfield reset" align="center" style="font-size: 25px; font-weight: bold;">@ViewBag.defectRate%</div>
+                        <div id="preview-textfield" class="preview-textfield reset" align="center" style="font-size: 25px; font-weight: bold; margin-left: 20px;">@ViewBag.defectRate%</div>
 
                     </div>
 
