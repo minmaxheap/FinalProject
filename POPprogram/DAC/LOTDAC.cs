@@ -55,6 +55,30 @@ namespace DAC
             }
         }
 
+        public DataTable GetLOTList()
+        {
+            string sql = @"select LOT_ID, LOT_DESC, L.PRODUCT_CODE, P.PRODUCT_NAME PRODUCT_NAME, OPERATION_CODE,LOT_QTY
+from [dbo].[LOT_STS] L inner join PRODUCT_MST P ON L.PRODUCT_CODE = P.PRODUCT_CODE
+
+select LOT_ID, LOT_DESC, PRODUCT_CODE, OPERATION_CODE, STORE_CODE, LOT_QTY, CREATE_QTY, OPER_IN_QTY, START_FLAG, START_QTY, 
+START_TIME, START_EQUIPMENT_CODE, END_FLAG, END_TIME, END_EQUIPMENT_CODE, SHIP_FLAG, SHIP_CODE, SHIP_TIME, PRODUCTION_TIME, 
+CREATE_TIME, OPER_IN_TIME, WORK_ORDER_ID, LOT_DELETE_FLAG, LOT_DELETE_CODE, LOT_DELETE_TIME, LAST_TRAN_CODE, LAST_TRAN_TIME, LAST_TRAN_USER_ID, LAST_TRAN_COMMENT, LAST_HIST_SEQ
+from [dbo].[LOT_STS]
+WHERE LOT_ID=''
+
+SELECT  HIST_SEQ, TRAN_TIME, TRAN_CODE, L.OPERATION_CODE,O.OPERATION_NAME OPERATION_NAME,LOT_QTY, START_FLAG
+from [dbo].[LOT_HIS] L inner join [dbo].[OPERATION_MST] O ON L.OPERATION_CODE = O.OPERATION_CODE
+where LOT_ID=''
+order by HIST_SEQ desc";
+            DataTable dt = new DataTable();
+            using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
+            {
+                da.Fill(dt);
+                return dt;
+            }
+        }
+
+
         public List<string> GetOperationCode()
         {
             string sql = @"SELECT [KEY_1] as 'PRODUCT_TYPE'
