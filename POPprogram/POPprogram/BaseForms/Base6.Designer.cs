@@ -68,8 +68,8 @@ namespace POPprogram
             this.label13 = new System.Windows.Forms.Label();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.pnlCrud = new System.Windows.Forms.Panel();
-            this.btnReadBottom = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.btnReadBottom = new System.Windows.Forms.Button();
             this.panel7.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -147,8 +147,7 @@ namespace POPprogram
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 4;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -522,24 +521,6 @@ namespace POPprogram
             this.pnlCrud.Size = new System.Drawing.Size(668, 70);
             this.pnlCrud.TabIndex = 52;
             // 
-            // btnReadBottom
-            // 
-            this.btnReadBottom.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnReadBottom.AutoSize = true;
-            this.btnReadBottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            this.btnReadBottom.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnReadBottom.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnReadBottom.Image = global::POPprogram.Properties.Resources.Data_Find12;
-            this.btnReadBottom.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnReadBottom.Location = new System.Drawing.Point(439, 0);
-            this.btnReadBottom.Margin = new System.Windows.Forms.Padding(0);
-            this.btnReadBottom.Name = "btnReadBottom";
-            this.btnReadBottom.Size = new System.Drawing.Size(94, 70);
-            this.btnReadBottom.TabIndex = 79;
-            this.btnReadBottom.Text = "실행";
-            this.btnReadBottom.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnReadBottom.UseVisualStyleBackColor = false;
-            // 
             // btnClose
             // 
             this.btnClose.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -557,6 +538,26 @@ namespace POPprogram
             this.btnClose.Text = "닫기";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnClose.UseVisualStyleBackColor = false;
+            // 
+            // btnReadBottom
+            // 
+            this.btnReadBottom.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReadBottom.AutoSize = true;
+            this.btnReadBottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            this.btnReadBottom.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnReadBottom.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnReadBottom.Image = global::POPprogram.Properties.Resources.Touch_Screen;
+            this.btnReadBottom.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnReadBottom.Location = new System.Drawing.Point(453, 0);
+            this.btnReadBottom.Margin = new System.Windows.Forms.Padding(0);
+            this.btnReadBottom.Name = "btnReadBottom";
+            this.btnReadBottom.Size = new System.Drawing.Size(94, 70);
+            this.btnReadBottom.TabIndex = 84;
+            this.btnReadBottom.Text = "실행";
+            this.btnReadBottom.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnReadBottom.UseVisualStyleBackColor = false;
             // 
             // Base6
             // 
@@ -624,9 +625,9 @@ namespace POPprogram
         public System.Windows.Forms.TextBox textBox4;
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.Panel pnlCrud;
-        public System.Windows.Forms.Button btnReadBottom;
         public System.Windows.Forms.Button btnClose;
         public System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.TextBox textBox9;
+        public System.Windows.Forms.Button btnReadBottom;
     }
 }

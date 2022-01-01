@@ -275,6 +275,7 @@
     <None Include="Resources\Trash Can_02.png" />
     <None Include="Resources\twocirclingarrows1_120592.png" />
     <None Include="Resources\Minus.png" />
+    <None Include="Resources\Touch-Screen.png" />
     <Content Include="Resources\그림1.png" />
     <Content Include="Resources\그림5.png" />
   </ItemGroup>
