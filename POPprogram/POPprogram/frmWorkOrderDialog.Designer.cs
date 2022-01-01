@@ -51,7 +51,7 @@ namespace POPprogram
             this.lblPanel.Size = new System.Drawing.Size(416, 43);
             this.lblPanel.TabIndex = 30;
             this.lblPanel.Text = "작업지시 선택";
-            this.lblPanel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblPanel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // csDataGridView1
             // 
@@ -137,7 +137,7 @@ namespace POPprogram
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
-            this.ClientSize = new System.Drawing.Size(416, 539);
+            this.ClientSize = new System.Drawing.Size(416, 526);
             this.Controls.Add(this.btnSelect);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.csDataGridView1);

@@ -170,7 +170,8 @@ namespace POPprogram
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.splitContainer1.Location = new System.Drawing.Point(12, 72);
@@ -184,14 +185,16 @@ namespace POPprogram
             // 
             this.splitContainer1.Panel2.Controls.Add(this.pnlSearch);
             this.splitContainer1.Panel2.Controls.Add(this.pnlTopLbl);
-            this.splitContainer1.Size = new System.Drawing.Size(1349, 644);
-            this.splitContainer1.SplitterDistance = 960;
+            this.splitContainer1.Size = new System.Drawing.Size(1170, 471);
+            this.splitContainer1.SplitterDistance = 832;
             this.splitContainer1.TabIndex = 41;
             // 
             // splitContainer2
             // 
+            this.splitContainer2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer2.Location = new System.Drawing.Point(0, 0);
             this.splitContainer2.Name = "splitContainer2";
             this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
@@ -205,8 +208,8 @@ namespace POPprogram
             // 
             this.splitContainer2.Panel2.Controls.Add(this.csDataGridView2);
             this.splitContainer2.Panel2.Controls.Add(this.label1);
-            this.splitContainer2.Size = new System.Drawing.Size(960, 644);
-            this.splitContainer2.SplitterDistance = 369;
+            this.splitContainer2.Size = new System.Drawing.Size(832, 471);
+            this.splitContainer2.SplitterDistance = 269;
             this.splitContainer2.TabIndex = 0;
             // 
             // csDataGridView1
@@ -257,7 +260,7 @@ namespace POPprogram
             this.csDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.csDataGridView1.RowHeadersWidth = 30;
             this.csDataGridView1.RowTemplate.Height = 23;
-            this.csDataGridView1.Size = new System.Drawing.Size(958, 312);
+            this.csDataGridView1.Size = new System.Drawing.Size(830, 212);
             this.csDataGridView1.TabIndex = 19;
             // 
             // Column1
@@ -319,7 +322,7 @@ namespace POPprogram
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(0, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(958, 55);
+            this.label6.Size = new System.Drawing.Size(830, 55);
             this.label6.TabIndex = 18;
             this.label6.Text = "LOT 목록";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -372,7 +375,7 @@ namespace POPprogram
             this.csDataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.csDataGridView2.RowHeadersWidth = 30;
             this.csDataGridView2.RowTemplate.Height = 23;
-            this.csDataGridView2.Size = new System.Drawing.Size(958, 214);
+            this.csDataGridView2.Size = new System.Drawing.Size(830, 141);
             this.csDataGridView2.TabIndex = 19;
             // 
             // Column11
@@ -434,7 +437,7 @@ namespace POPprogram
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(958, 55);
+            this.label1.Size = new System.Drawing.Size(830, 55);
             this.label1.TabIndex = 18;
             this.label1.Text = "LOT 이력";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -449,7 +452,7 @@ namespace POPprogram
             this.pnlSearch.Location = new System.Drawing.Point(0, 55);
             this.pnlSearch.Margin = new System.Windows.Forms.Padding(0);
             this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(383, 587);
+            this.pnlSearch.Size = new System.Drawing.Size(332, 414);
             this.pnlSearch.TabIndex = 32;
             // 
             // pnlProperty
@@ -461,7 +464,7 @@ namespace POPprogram
             this.pnlProperty.Location = new System.Drawing.Point(0, 0);
             this.pnlProperty.Margin = new System.Windows.Forms.Padding(0);
             this.pnlProperty.Name = "pnlProperty";
-            this.pnlProperty.Size = new System.Drawing.Size(381, 585);
+            this.pnlProperty.Size = new System.Drawing.Size(330, 412);
             this.pnlProperty.TabIndex = 30;
             // 
             // pgProperty
@@ -470,7 +473,7 @@ namespace POPprogram
             this.pgProperty.HelpVisible = false;
             this.pgProperty.Location = new System.Drawing.Point(0, 0);
             this.pgProperty.Name = "pgProperty";
-            this.pgProperty.Size = new System.Drawing.Size(379, 583);
+            this.pgProperty.Size = new System.Drawing.Size(328, 410);
             this.pgProperty.TabIndex = 4;
             this.pgProperty.ToolbarVisible = false;
             // 
@@ -480,7 +483,7 @@ namespace POPprogram
             this.pgSearch.HelpVisible = false;
             this.pgSearch.Location = new System.Drawing.Point(0, 0);
             this.pgSearch.Name = "pgSearch";
-            this.pgSearch.Size = new System.Drawing.Size(381, 585);
+            this.pgSearch.Size = new System.Drawing.Size(330, 412);
             this.pgSearch.TabIndex = 31;
             this.pgSearch.ToolbarVisible = false;
             // 
@@ -492,7 +495,7 @@ namespace POPprogram
             this.pnlTopLbl.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTopLbl.Location = new System.Drawing.Point(0, 0);
             this.pnlTopLbl.Name = "pnlTopLbl";
-            this.pnlTopLbl.Size = new System.Drawing.Size(383, 55);
+            this.pnlTopLbl.Size = new System.Drawing.Size(332, 55);
             this.pnlTopLbl.TabIndex = 1;
             // 
             // btnPanel
@@ -508,7 +511,7 @@ namespace POPprogram
             this.btnPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPanel.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnPanel.ForeColor = System.Drawing.Color.Transparent;
-            this.btnPanel.Location = new System.Drawing.Point(318, 0);
+            this.btnPanel.Location = new System.Drawing.Point(267, 0);
             this.btnPanel.Margin = new System.Windows.Forms.Padding(0);
             this.btnPanel.Name = "btnPanel";
             this.btnPanel.Size = new System.Drawing.Size(65, 55);
@@ -524,7 +527,7 @@ namespace POPprogram
             this.lblPanel.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 24F, System.Drawing.FontStyle.Bold);
             this.lblPanel.Location = new System.Drawing.Point(0, 0);
             this.lblPanel.Name = "lblPanel";
-            this.lblPanel.Size = new System.Drawing.Size(383, 55);
+            this.lblPanel.Size = new System.Drawing.Size(332, 55);
             this.lblPanel.TabIndex = 29;
             this.lblPanel.Text = "▶ 속성";
             this.lblPanel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -534,7 +537,7 @@ namespace POPprogram
             this.pnlCrud.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlCrud.Controls.Add(this.btnReadBottom);
             this.pnlCrud.Controls.Add(this.btnClose);
-            this.pnlCrud.Location = new System.Drawing.Point(691, 727);
+            this.pnlCrud.Location = new System.Drawing.Point(512, 555);
             this.pnlCrud.Margin = new System.Windows.Forms.Padding(0);
             this.pnlCrud.Name = "pnlCrud";
             this.pnlCrud.Size = new System.Drawing.Size(668, 70);
@@ -584,7 +587,7 @@ namespace POPprogram
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
-            this.ClientSize = new System.Drawing.Size(1373, 807);
+            this.ClientSize = new System.Drawing.Size(1194, 634);
             this.Controls.Add(this.pnlCrud);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.pnlTop);
