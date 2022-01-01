@@ -34,38 +34,38 @@ namespace POPprogram
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Base5));
             this.panel4 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
+            this.txtOperName = new System.Windows.Forms.TextBox();
+            this.lblComment = new System.Windows.Forms.Label();
+            this.txtComment = new System.Windows.Forms.TextBox();
+            this.txtOperID = new System.Windows.Forms.TextBox();
+            this.txtQty = new System.Windows.Forms.TextBox();
+            this.lblOperation = new System.Windows.Forms.Label();
+            this.lblQty = new System.Windows.Forms.Label();
+            this.txtProdName = new System.Windows.Forms.TextBox();
+            this.txtProdCode = new System.Windows.Forms.TextBox();
+            this.lblProduct = new System.Windows.Forms.Label();
+            this.txtLOTDescription = new System.Windows.Forms.TextBox();
+            this.txtLOTID = new System.Windows.Forms.TextBox();
+            this.lblLOT = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblCustomer = new System.Windows.Forms.Label();
+            this.lblWorkOrder = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label17 = new System.Windows.Forms.Label();
+            this.lblDefectQty = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label15 = new System.Windows.Forms.Label();
+            this.lblOrderQty = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label16 = new System.Windows.Forms.Label();
+            this.lblProdQty = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtCustName = new System.Windows.Forms.TextBox();
+            this.txtCustID = new System.Windows.Forms.TextBox();
+            this.txtWorkOrderID = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.pnlCrud = new System.Windows.Forms.Panel();
@@ -88,19 +88,19 @@ namespace POPprogram
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.label11);
-            this.panel4.Controls.Add(this.textBox1);
-            this.panel4.Controls.Add(this.label13);
-            this.panel4.Controls.Add(this.textBox13);
-            this.panel4.Controls.Add(this.textBox6);
-            this.panel4.Controls.Add(this.textBox8);
-            this.panel4.Controls.Add(this.label10);
-            this.panel4.Controls.Add(this.label1);
-            this.panel4.Controls.Add(this.textBox3);
-            this.panel4.Controls.Add(this.textBox9);
-            this.panel4.Controls.Add(this.label9);
-            this.panel4.Controls.Add(this.textBox20);
-            this.panel4.Controls.Add(this.textBox10);
-            this.panel4.Controls.Add(this.label22);
+            this.panel4.Controls.Add(this.txtOperName);
+            this.panel4.Controls.Add(this.lblComment);
+            this.panel4.Controls.Add(this.txtComment);
+            this.panel4.Controls.Add(this.txtOperID);
+            this.panel4.Controls.Add(this.txtQty);
+            this.panel4.Controls.Add(this.lblOperation);
+            this.panel4.Controls.Add(this.lblQty);
+            this.panel4.Controls.Add(this.txtProdName);
+            this.panel4.Controls.Add(this.txtProdCode);
+            this.panel4.Controls.Add(this.lblProduct);
+            this.panel4.Controls.Add(this.txtLOTDescription);
+            this.panel4.Controls.Add(this.txtLOTID);
+            this.panel4.Controls.Add(this.lblLOT);
             this.panel4.Location = new System.Drawing.Point(30, 288);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1136, 243);
@@ -120,133 +120,133 @@ namespace POPprogram
             this.label11.Text = "생산 LOT 정보";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // txtOperName
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtOperName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textBox1.Location = new System.Drawing.Point(505, 116);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(581, 29);
-            this.textBox1.TabIndex = 87;
+            this.txtOperName.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
+            this.txtOperName.Location = new System.Drawing.Point(505, 116);
+            this.txtOperName.Name = "txtOperName";
+            this.txtOperName.Size = new System.Drawing.Size(581, 29);
+            this.txtOperName.TabIndex = 87;
             // 
-            // label13
+            // lblComment
             // 
-            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label13.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label13.Location = new System.Drawing.Point(67, 185);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(64, 31);
-            this.label13.TabIndex = 86;
-            this.label13.Text = "주석";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblComment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblComment.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblComment.Location = new System.Drawing.Point(67, 185);
+            this.lblComment.Name = "lblComment";
+            this.lblComment.Size = new System.Drawing.Size(64, 31);
+            this.lblComment.TabIndex = 86;
+            this.lblComment.Text = "주석";
+            this.lblComment.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox13
+            // txtComment
             // 
-            this.textBox13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtComment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox13.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox13.Location = new System.Drawing.Point(149, 187);
-            this.textBox13.Multiline = true;
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(937, 46);
-            this.textBox13.TabIndex = 85;
+            this.txtComment.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtComment.Location = new System.Drawing.Point(149, 187);
+            this.txtComment.Multiline = true;
+            this.txtComment.Name = "txtComment";
+            this.txtComment.Size = new System.Drawing.Size(937, 46);
+            this.txtComment.TabIndex = 85;
             // 
-            // textBox6
+            // txtOperID
             // 
-            this.textBox6.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textBox6.Location = new System.Drawing.Point(149, 118);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(335, 29);
-            this.textBox6.TabIndex = 83;
+            this.txtOperID.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
+            this.txtOperID.Location = new System.Drawing.Point(149, 118);
+            this.txtOperID.Name = "txtOperID";
+            this.txtOperID.Size = new System.Drawing.Size(335, 29);
+            this.txtOperID.TabIndex = 83;
             // 
-            // textBox8
+            // txtQty
             // 
-            this.textBox8.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textBox8.Location = new System.Drawing.Point(149, 153);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(335, 29);
-            this.textBox8.TabIndex = 78;
+            this.txtQty.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
+            this.txtQty.Location = new System.Drawing.Point(149, 153);
+            this.txtQty.Name = "txtQty";
+            this.txtQty.Size = new System.Drawing.Size(335, 29);
+            this.txtQty.TabIndex = 78;
             // 
-            // label10
+            // lblOperation
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label10.Location = new System.Drawing.Point(49, 121);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(82, 21);
-            this.label10.TabIndex = 84;
-            this.label10.Text = "작업지시";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblOperation.AutoSize = true;
+            this.lblOperation.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblOperation.Location = new System.Drawing.Point(85, 121);
+            this.lblOperation.Name = "lblOperation";
+            this.lblOperation.Size = new System.Drawing.Size(46, 21);
+            this.lblOperation.TabIndex = 84;
+            this.lblOperation.Text = "공정";
+            this.lblOperation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // lblQty
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(85, 156);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 21);
-            this.label1.TabIndex = 81;
-            this.label1.Text = "수량";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblQty.AutoSize = true;
+            this.lblQty.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblQty.Location = new System.Drawing.Point(85, 156);
+            this.lblQty.Name = "lblQty";
+            this.lblQty.Size = new System.Drawing.Size(46, 21);
+            this.lblQty.TabIndex = 81;
+            this.lblQty.Text = "수량";
+            this.lblQty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox3
+            // txtProdName
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtProdName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textBox3.Location = new System.Drawing.Point(505, 83);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(581, 29);
-            this.textBox3.TabIndex = 77;
+            this.txtProdName.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
+            this.txtProdName.Location = new System.Drawing.Point(505, 83);
+            this.txtProdName.Name = "txtProdName";
+            this.txtProdName.Size = new System.Drawing.Size(581, 29);
+            this.txtProdName.TabIndex = 77;
             // 
-            // textBox9
+            // txtProdCode
             // 
-            this.textBox9.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textBox9.Location = new System.Drawing.Point(149, 83);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(335, 29);
-            this.textBox9.TabIndex = 75;
+            this.txtProdCode.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
+            this.txtProdCode.Location = new System.Drawing.Point(149, 83);
+            this.txtProdCode.Name = "txtProdCode";
+            this.txtProdCode.Size = new System.Drawing.Size(335, 29);
+            this.txtProdCode.TabIndex = 75;
             // 
-            // label9
+            // lblProduct
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label9.Location = new System.Drawing.Point(85, 86);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(46, 21);
-            this.label9.TabIndex = 76;
-            this.label9.Text = "공정";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblProduct.AutoSize = true;
+            this.lblProduct.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblProduct.Location = new System.Drawing.Point(85, 86);
+            this.lblProduct.Name = "lblProduct";
+            this.lblProduct.Size = new System.Drawing.Size(46, 21);
+            this.lblProduct.TabIndex = 76;
+            this.lblProduct.Text = "품번";
+            this.lblProduct.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox20
+            // txtLOTDescription
             // 
-            this.textBox20.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtLOTDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox20.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textBox20.Location = new System.Drawing.Point(505, 48);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(581, 29);
-            this.textBox20.TabIndex = 74;
+            this.txtLOTDescription.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
+            this.txtLOTDescription.Location = new System.Drawing.Point(505, 48);
+            this.txtLOTDescription.Name = "txtLOTDescription";
+            this.txtLOTDescription.Size = new System.Drawing.Size(581, 29);
+            this.txtLOTDescription.TabIndex = 74;
             // 
-            // textBox10
+            // txtLOTID
             // 
-            this.textBox10.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textBox10.Location = new System.Drawing.Point(149, 48);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(335, 29);
-            this.textBox10.TabIndex = 72;
+            this.txtLOTID.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
+            this.txtLOTID.Location = new System.Drawing.Point(149, 48);
+            this.txtLOTID.Name = "txtLOTID";
+            this.txtLOTID.Size = new System.Drawing.Size(335, 29);
+            this.txtLOTID.TabIndex = 72;
             // 
-            // label22
+            // lblLOT
             // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label22.Location = new System.Drawing.Point(85, 51);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(46, 21);
-            this.label22.TabIndex = 73;
-            this.label22.Text = "품번";
-            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblLOT.AutoSize = true;
+            this.lblLOT.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblLOT.Location = new System.Drawing.Point(22, 51);
+            this.lblLOT.Name = "lblLOT";
+            this.lblLOT.Size = new System.Drawing.Size(109, 21);
+            this.lblLOT.TabIndex = 73;
+            this.lblLOT.Text = "생산 LOT ID";
+            this.lblLOT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel8
             // 
@@ -254,13 +254,13 @@ namespace POPprogram
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel8.Controls.Add(this.label2);
-            this.panel8.Controls.Add(this.label3);
+            this.panel8.Controls.Add(this.lblCustomer);
+            this.panel8.Controls.Add(this.lblWorkOrder);
             this.panel8.Controls.Add(btnTxtSearch);
             this.panel8.Controls.Add(this.tableLayoutPanel1);
-            this.panel8.Controls.Add(this.textBox5);
-            this.panel8.Controls.Add(this.textBox4);
-            this.panel8.Controls.Add(this.textBox2);
+            this.panel8.Controls.Add(this.txtCustName);
+            this.panel8.Controls.Add(this.txtCustID);
+            this.panel8.Controls.Add(this.txtWorkOrderID);
             this.panel8.Controls.Add(this.label6);
             this.panel8.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.panel8.Location = new System.Drawing.Point(31, 26);
@@ -268,27 +268,27 @@ namespace POPprogram
             this.panel8.Size = new System.Drawing.Size(1136, 256);
             this.panel8.TabIndex = 46;
             // 
-            // label2
+            // lblCustomer
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(67, 95);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 21);
-            this.label2.TabIndex = 78;
-            this.label2.Text = "고객사";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCustomer.AutoSize = true;
+            this.lblCustomer.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblCustomer.Location = new System.Drawing.Point(67, 95);
+            this.lblCustomer.Name = "lblCustomer";
+            this.lblCustomer.Size = new System.Drawing.Size(64, 21);
+            this.lblCustomer.TabIndex = 78;
+            this.lblCustomer.Text = "고객사";
+            this.lblCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label3
+            // lblWorkOrder
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(85, 60);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 21);
-            this.label3.TabIndex = 77;
-            this.label3.Text = "품번";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblWorkOrder.AutoSize = true;
+            this.lblWorkOrder.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblWorkOrder.Location = new System.Drawing.Point(49, 60);
+            this.lblWorkOrder.Name = "lblWorkOrder";
+            this.lblWorkOrder.Size = new System.Drawing.Size(82, 21);
+            this.lblWorkOrder.TabIndex = 77;
+            this.lblWorkOrder.Text = "작업지시";
+            this.lblWorkOrder.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnTxtSearch
             // 
@@ -329,7 +329,7 @@ namespace POPprogram
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.lblStatus);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
@@ -338,16 +338,16 @@ namespace POPprogram
             this.panel1.TabIndex = 46;
             this.panel1.Tag = "";
             // 
-            // label14
+            // lblStatus
             // 
-            this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label14.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label14.Location = new System.Drawing.Point(0, 41);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(234, 55);
-            this.label14.TabIndex = 18;
-            this.label14.Text = "Closed";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblStatus.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblStatus.Location = new System.Drawing.Point(0, 41);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(234, 55);
+            this.lblStatus.TabIndex = 18;
+            this.lblStatus.Text = "Closed";
+            this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
@@ -365,7 +365,7 @@ namespace POPprogram
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.label17);
+            this.panel5.Controls.Add(this.lblDefectQty);
             this.panel5.Controls.Add(this.label8);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(729, 3);
@@ -373,16 +373,16 @@ namespace POPprogram
             this.panel5.Size = new System.Drawing.Size(236, 98);
             this.panel5.TabIndex = 47;
             // 
-            // label17
+            // lblDefectQty
             // 
-            this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label17.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label17.Location = new System.Drawing.Point(0, 41);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(234, 55);
-            this.label17.TabIndex = 20;
-            this.label17.Text = "1000";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDefectQty.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblDefectQty.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblDefectQty.Location = new System.Drawing.Point(0, 41);
+            this.lblDefectQty.Name = "lblDefectQty";
+            this.lblDefectQty.Size = new System.Drawing.Size(234, 55);
+            this.lblDefectQty.TabIndex = 20;
+            this.lblDefectQty.Text = "1000";
+            this.lblDefectQty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label8
             // 
@@ -400,7 +400,7 @@ namespace POPprogram
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.label15);
+            this.panel2.Controls.Add(this.lblOrderQty);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(245, 3);
@@ -408,16 +408,16 @@ namespace POPprogram
             this.panel2.Size = new System.Drawing.Size(236, 98);
             this.panel2.TabIndex = 47;
             // 
-            // label15
+            // lblOrderQty
             // 
-            this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label15.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label15.Location = new System.Drawing.Point(0, 41);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(234, 55);
-            this.label15.TabIndex = 19;
-            this.label15.Text = "1000";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblOrderQty.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblOrderQty.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblOrderQty.Location = new System.Drawing.Point(0, 41);
+            this.lblOrderQty.Name = "lblOrderQty";
+            this.lblOrderQty.Size = new System.Drawing.Size(234, 55);
+            this.lblOrderQty.TabIndex = 19;
+            this.lblOrderQty.Text = "1000";
+            this.lblOrderQty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
@@ -435,7 +435,7 @@ namespace POPprogram
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.label16);
+            this.panel3.Controls.Add(this.lblProdQty);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(487, 3);
@@ -443,16 +443,16 @@ namespace POPprogram
             this.panel3.Size = new System.Drawing.Size(236, 98);
             this.panel3.TabIndex = 47;
             // 
-            // label16
+            // lblProdQty
             // 
-            this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label16.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label16.Location = new System.Drawing.Point(0, 41);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(234, 55);
-            this.label16.TabIndex = 20;
-            this.label16.Text = "1000";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblProdQty.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblProdQty.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblProdQty.Location = new System.Drawing.Point(0, 41);
+            this.lblProdQty.Name = "lblProdQty";
+            this.lblProdQty.Size = new System.Drawing.Size(234, 55);
+            this.lblProdQty.TabIndex = 20;
+            this.lblProdQty.Text = "1000";
+            this.lblProdQty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label7
             // 
@@ -467,32 +467,32 @@ namespace POPprogram
             this.label7.Text = "생산 수량";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox5
+            // txtCustName
             // 
-            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtCustName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox5.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox5.Location = new System.Drawing.Point(505, 91);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(575, 29);
-            this.textBox5.TabIndex = 21;
+            this.txtCustName.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtCustName.Location = new System.Drawing.Point(505, 91);
+            this.txtCustName.Name = "txtCustName";
+            this.txtCustName.Size = new System.Drawing.Size(575, 29);
+            this.txtCustName.TabIndex = 21;
             // 
-            // textBox4
+            // txtCustID
             // 
-            this.textBox4.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox4.Location = new System.Drawing.Point(149, 91);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(335, 29);
-            this.textBox4.TabIndex = 20;
+            this.txtCustID.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtCustID.Location = new System.Drawing.Point(149, 91);
+            this.txtCustID.Name = "txtCustID";
+            this.txtCustID.Size = new System.Drawing.Size(335, 29);
+            this.txtCustID.TabIndex = 20;
             // 
-            // textBox2
+            // txtWorkOrderID
             // 
-            this.textBox2.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox2.Location = new System.Drawing.Point(149, 56);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(335, 29);
-            this.textBox2.TabIndex = 18;
+            this.txtWorkOrderID.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtWorkOrderID.Location = new System.Drawing.Point(149, 56);
+            this.txtWorkOrderID.Name = "txtWorkOrderID";
+            this.txtWorkOrderID.Size = new System.Drawing.Size(335, 29);
+            this.txtWorkOrderID.TabIndex = 18;
             // 
             // label6
             // 
@@ -595,9 +595,9 @@ namespace POPprogram
         #endregion
         public System.Windows.Forms.Panel panel4;
         public System.Windows.Forms.Panel panel8;
-        public System.Windows.Forms.TextBox textBox5;
-        public System.Windows.Forms.TextBox textBox4;
-        public System.Windows.Forms.TextBox textBox2;
+        public System.Windows.Forms.TextBox txtCustName;
+        public System.Windows.Forms.TextBox txtCustID;
+        public System.Windows.Forms.TextBox txtWorkOrderID;
         public System.Windows.Forms.Label label6;
         public System.Windows.Forms.Panel panel5;
         public System.Windows.Forms.Label label8;
@@ -606,32 +606,32 @@ namespace POPprogram
         public System.Windows.Forms.Panel panel2;
         public System.Windows.Forms.Label label5;
         public System.Windows.Forms.Panel panel1;
-        public System.Windows.Forms.Label label14;
-        public System.Windows.Forms.Label label17;
-        public System.Windows.Forms.Label label16;
-        public System.Windows.Forms.Label label15;
+        public System.Windows.Forms.Label lblStatus;
+        public System.Windows.Forms.Label lblDefectQty;
+        public System.Windows.Forms.Label lblProdQty;
+        public System.Windows.Forms.Label lblOrderQty;
         public System.Windows.Forms.Label label4;
         public System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         public System.Windows.Forms.ImageList imageList1;
         public System.Windows.Forms.Panel pnlCrud;
         public System.Windows.Forms.Button btnExecute;
         public System.Windows.Forms.Button btnClose;
-        public System.Windows.Forms.TextBox textBox6;
-        public System.Windows.Forms.TextBox textBox8;
-        public System.Windows.Forms.Label label10;
-        public System.Windows.Forms.Label label1;
-        public System.Windows.Forms.TextBox textBox3;
-        public System.Windows.Forms.TextBox textBox9;
-        public System.Windows.Forms.Label label9;
-        public System.Windows.Forms.TextBox textBox20;
-        public System.Windows.Forms.TextBox textBox10;
-        public System.Windows.Forms.Label label22;
-        public System.Windows.Forms.TextBox textBox1;
-        public System.Windows.Forms.Label label13;
-        public System.Windows.Forms.TextBox textBox13;
+        public System.Windows.Forms.TextBox txtOperID;
+        public System.Windows.Forms.TextBox txtQty;
+        public System.Windows.Forms.Label lblOperation;
+        public System.Windows.Forms.Label lblQty;
+        public System.Windows.Forms.TextBox txtProdName;
+        public System.Windows.Forms.TextBox txtProdCode;
+        public System.Windows.Forms.Label lblProduct;
+        public System.Windows.Forms.TextBox txtLOTDescription;
+        public System.Windows.Forms.TextBox txtLOTID;
+        public System.Windows.Forms.Label lblLOT;
+        public System.Windows.Forms.TextBox txtOperName;
+        public System.Windows.Forms.Label lblComment;
+        public System.Windows.Forms.TextBox txtComment;
         public System.Windows.Forms.Label label11;
-        public System.Windows.Forms.Label label2;
-        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Label lblCustomer;
+        public System.Windows.Forms.Label lblWorkOrder;
         public System.Windows.Forms.Button btnTxtSearch;
     }
 }

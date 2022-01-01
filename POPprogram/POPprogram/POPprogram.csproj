@@ -164,7 +164,7 @@
       <DependentUpon>frmLOTDefect.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\FunctionServ.cs" />
-    <Compile Include="Services\NewLOTServ.cs" />
+    <Compile Include="Services\LOTServ.cs" />
     <Compile Include="Util\DataGridViewUtil.cs" />
     <EmbeddedResource Include="BaseForms\Base2.resx">
       <DependentUpon>Base2.cs</DependentUpon>

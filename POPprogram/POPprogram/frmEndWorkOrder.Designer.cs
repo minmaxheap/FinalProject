@@ -60,18 +60,18 @@ namespace POPprogram
             this.panel8.Size = new System.Drawing.Size(1136, 338);
             this.panel8.Controls.SetChildIndex(this.label6, 0);
             this.panel8.Controls.SetChildIndex(this.label22, 0);
-            this.panel8.Controls.SetChildIndex(this.textBox5, 0);
-            this.panel8.Controls.SetChildIndex(this.textBox20, 0);
+            this.panel8.Controls.SetChildIndex(this.txtProdCode, 0);
+            this.panel8.Controls.SetChildIndex(this.txtProdName, 0);
             this.panel8.Controls.SetChildIndex(this.label2, 0);
-            this.panel8.Controls.SetChildIndex(this.textBox4, 0);
-            this.panel8.Controls.SetChildIndex(this.textBox3, 0);
+            this.panel8.Controls.SetChildIndex(this.txtOperCode, 0);
+            this.panel8.Controls.SetChildIndex(this.txtOperName, 0);
             this.panel8.Controls.SetChildIndex(this.label3, 0);
-            this.panel8.Controls.SetChildIndex(this.textBox2, 0);
+            this.panel8.Controls.SetChildIndex(this.txtQty, 0);
             this.panel8.Controls.SetChildIndex(this.label10, 0);
             this.panel8.Controls.SetChildIndex(this.label11, 0);
-            this.panel8.Controls.SetChildIndex(this.textBox8, 0);
-            this.panel8.Controls.SetChildIndex(this.textBox6, 0);
-            this.panel8.Controls.SetChildIndex(this.textBox7, 0);
+            this.panel8.Controls.SetChildIndex(this.txtCustID, 0);
+            this.panel8.Controls.SetChildIndex(this.txtWorkOrder, 0);
+            this.panel8.Controls.SetChildIndex(this.txtCustName, 0);
             this.panel8.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
             // 
             // panel4
@@ -83,7 +83,7 @@ namespace POPprogram
             this.panel4.Controls.Add(this.label12);
             this.panel4.Location = new System.Drawing.Point(31, 403);
             this.panel4.Size = new System.Drawing.Size(1136, 146);
-            this.panel4.Controls.SetChildIndex(this.textBox13, 0);
+            this.panel4.Controls.SetChildIndex(this.txtComment, 0);
             this.panel4.Controls.SetChildIndex(this.label13, 0);
             this.panel4.Controls.SetChildIndex(this.label1, 0);
             this.panel4.Controls.SetChildIndex(this.label12, 0);
@@ -96,7 +96,7 @@ namespace POPprogram
             // 
             // textBox13
             // 
-            this.textBox13.Location = new System.Drawing.Point(165, 87);
+            this.txtComment.Location = new System.Drawing.Point(165, 87);
             // 
             // comboBox1
             // 

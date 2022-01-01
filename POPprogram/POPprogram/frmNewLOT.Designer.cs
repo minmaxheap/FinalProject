@@ -44,25 +44,25 @@ namespace POPprogram
             // 
             // label10
             // 
-            this.label10.Location = new System.Drawing.Point(85, 121);
-            this.label10.Size = new System.Drawing.Size(46, 21);
-            this.label10.Text = "공장";
+            this.lblOperation.Location = new System.Drawing.Point(85, 121);
+            this.lblOperation.Size = new System.Drawing.Size(46, 21);
+            this.lblOperation.Text = "공장";
             // 
             // label9
             // 
-            this.label9.Text = "품번";
+            this.lblProduct.Text = "품번";
             // 
             // label22
             // 
-            this.label22.Location = new System.Drawing.Point(22, 51);
-            this.label22.Size = new System.Drawing.Size(109, 21);
-            this.label22.Text = "생산 LOT ID";
+            this.lblLOT.Location = new System.Drawing.Point(22, 51);
+            this.lblLOT.Size = new System.Drawing.Size(109, 21);
+            this.lblLOT.Text = "생산 LOT ID";
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(49, 60);
-            this.label3.Size = new System.Drawing.Size(82, 21);
-            this.label3.Text = "작업지시";
+            this.lblWorkOrder.Location = new System.Drawing.Point(49, 60);
+            this.lblWorkOrder.Size = new System.Drawing.Size(82, 21);
+            this.lblWorkOrder.Text = "작업지시";
             // 
             // btnTxtSearch
             // 

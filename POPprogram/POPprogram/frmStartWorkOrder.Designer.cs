@@ -54,7 +54,7 @@ namespace POPprogram
             this.panel4.Controls.SetChildIndex(this.label12, 0);
             this.panel4.Controls.SetChildIndex(this.textBox10, 0);
             this.panel4.Controls.SetChildIndex(this.comboBox1, 0);
-            this.panel4.Controls.SetChildIndex(this.textBox13, 0);
+            this.panel4.Controls.SetChildIndex(this.txtComment, 0);
             this.panel4.Controls.SetChildIndex(this.label13, 0);
             this.panel4.Controls.SetChildIndex(this.label1, 0);
             // 

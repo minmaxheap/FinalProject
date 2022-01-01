@@ -6,18 +6,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace POPprogram
 {
-    public class WorkOrderServ
+    public class LOTServ
     {
         public DataTable GetWorkOrderList()
         {
-            NewLOTDAC dac = new NewLOTDAC();
+            LOTDAC dac = new LOTDAC();
             DataTable dt = dac.GetWorkOrderList();
             dac.Dispose();
             return dt;
         }
 
+        public DataTable GetLOTList()
+        {
+            LOTDAC dac = new LOTDAC();
+            DataTable dt = dac.GetWorkOrderList();
+            dac.Dispose();
+            return dt;
+        }
     }
 }

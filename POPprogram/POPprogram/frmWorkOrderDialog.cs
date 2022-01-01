@@ -12,6 +12,7 @@ namespace POPprogram
 {
     public partial class frmWorkOrderDialog : Form
     {
+        public DataGridViewRow SelectedRow { get { return csDataGridView1.SelectedRows[0]; } set { } }
         public frmWorkOrderDialog()
         {
             InitializeComponent();
@@ -34,7 +35,8 @@ namespace POPprogram
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "마감 처리자", "WORK_CLOSE_USER_ID");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "마감 시간", "WORK_CLOSE_TIME");
 
-            WorkOrderServ serv = new WorkOrderServ();
+           
+            LOTServ serv = new LOTServ();
             DataTable dt = serv.GetWorkOrderList();
             csDataGridView1.DataSource = null;
             csDataGridView1.DataSource = dt;
@@ -47,9 +49,15 @@ namespace POPprogram
 
         private void btnSelect_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
-            this.Close();
-            //값 전달
+            if (true) //작업일자 등 유효성 검사 통과했을 때만. 아직 안 함
+            {
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("다른 작업지시를 선택해주시길 바랍니다.");
+            }
         }
 
         

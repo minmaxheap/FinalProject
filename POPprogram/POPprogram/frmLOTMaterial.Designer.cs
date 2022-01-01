@@ -56,7 +56,7 @@ namespace POPprogram
             // panel4
             // 
             this.panel4.Controls.Add(this.csDataGridView1);
-            this.panel4.Controls.SetChildIndex(this.textBox13, 0);
+            this.panel4.Controls.SetChildIndex(this.txtComment, 0);
             this.panel4.Controls.SetChildIndex(this.label13, 0);
             this.panel4.Controls.SetChildIndex(this.label1, 0);
             this.panel4.Controls.SetChildIndex(this.csDataGridView1, 0);
