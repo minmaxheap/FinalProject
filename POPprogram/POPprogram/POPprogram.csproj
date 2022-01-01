@@ -143,11 +143,23 @@
     <Compile Include="frmNewLOT.Designer.cs">
       <DependentUpon>frmNewLOT.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmShip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShip.Designer.cs">
+      <DependentUpon>frmShip.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmStartWorkOrder.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmStartWorkOrder.Designer.cs">
       <DependentUpon>frmStartWorkOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStockIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStockIN.Designer.cs">
+      <DependentUpon>frmStockIN.cs</DependentUpon>
     </Compile>
     <Compile Include="frmWorkOrderDialog.cs">
       <SubType>Form</SubType>
