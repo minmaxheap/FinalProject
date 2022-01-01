@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using DAC;
 namespace MES_Team3
 {
-	public partial class frmUser_MST : MES_Team3.BaseForms.Base1_1
+	public partial class frmUser_MST : MES_Team3.Base1_1
 	{
 		User_MSTServ serv;
 		string Code = string.Empty;

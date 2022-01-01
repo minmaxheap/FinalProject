@@ -335,6 +335,7 @@
     <None Include="Resources\Search-Find.png" />
     <None Include="Resources\Print - 01.png" />
     <None Include="Resources\Export.png" />
+    <None Include="Resources\Check-01.png" />
     <Content Include="Resources\twocirclingarrows1_120592.png" />
   </ItemGroup>
   <ItemGroup>

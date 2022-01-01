@@ -36,6 +36,7 @@ namespace MES_Team3
             this.pgProperty = new System.Windows.Forms.PropertyGrid();
             this.pgSearch = new System.Windows.Forms.PropertyGrid();
             this.csDataGridView1 = new MES_Team3.csDataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
             this.pnlProperty.SuspendLayout();
             this.pnlSearch.SuspendLayout();
@@ -81,29 +82,49 @@ namespace MES_Team3
             // 
             this.btnSearchPnl.Click += new System.EventHandler(this.button3_Click);
             // 
-            // btnInsert
+            // pnlCrud
             // 
-            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnClear
-            // 
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // btnReadBottom
-            // 
-            this.btnReadBottom.Click += new System.EventHandler(this.btnRead_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.pnlCrud.Controls.Add(this.button1);
+            this.pnlCrud.Controls.SetChildIndex(this.btnUpdate, 0);
+            this.pnlCrud.Controls.SetChildIndex(this.btnReadBottom, 0);
+            this.pnlCrud.Controls.SetChildIndex(this.btnClose, 0);
+            this.pnlCrud.Controls.SetChildIndex(this.btnClear, 0);
+            this.pnlCrud.Controls.SetChildIndex(this.btnDelete, 0);
+            this.pnlCrud.Controls.SetChildIndex(this.btnInsert, 0);
+            this.pnlCrud.Controls.SetChildIndex(this.button1, 0);
             // 
             // txtSearch
             // 
             this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
+            // 
+            // btnInsert
+            // 
+            this.btnInsert.Size = new System.Drawing.Size(63, 48);
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Size = new System.Drawing.Size(63, 48);
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Size = new System.Drawing.Size(63, 48);
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Size = new System.Drawing.Size(63, 48);
+            // 
+            // btnReadBottom
+            // 
+            this.btnReadBottom.Size = new System.Drawing.Size(63, 48);
+            this.btnReadBottom.Click += new System.EventHandler(this.btnRead_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Size = new System.Drawing.Size(63, 48);
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnTxtSearch
             // 
@@ -174,6 +195,24 @@ namespace MES_Team3
             this.csDataGridView1.TabIndex = 0;
             this.csDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellClick);
             // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button1.Image = global::MES_Team3.Properties.Resources.Check_01;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.Location = new System.Drawing.Point(108, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(67, 48);
+            this.button1.TabIndex = 86;
+            this.button1.Text = "마감";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // frmWorkOrder
             // 
             this.BIsSearchPanel = true;
@@ -204,5 +243,6 @@ namespace MES_Team3
         private System.Windows.Forms.PropertyGrid pgProperty;
         private System.Windows.Forms.PropertyGrid pgSearch;
         private csDataGridView csDataGridView1;
+        public System.Windows.Forms.Button button1;
     }
 }

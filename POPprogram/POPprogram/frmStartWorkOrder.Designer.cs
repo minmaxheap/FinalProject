@@ -37,12 +37,17 @@ namespace POPprogram
             this.panel4.SuspendLayout();
             this.pnlCrud.SuspendLayout();
             this.SuspendLayout();
-            //this.panel7.Controls.SetChildIndex(this.button3, 0);
-            this.panel7.Controls.SetChildIndex(this.label9, 0);
-            this.panel7.Controls.SetChildIndex(this.textBox1, 0);
+            // 
+            // panel8
+            // 
+            this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // panel4
             // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.Controls.Add(this.comboBox1);
             this.panel4.Controls.Add(this.textBox10);
             this.panel4.Controls.Add(this.label12);
@@ -57,13 +62,13 @@ namespace POPprogram
             // 
             this.label1.Text = "작업 시작 정보";
             // 
-            // textBox9
+            // textBox10
             // 
             this.textBox10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox10.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
             this.textBox10.Location = new System.Drawing.Point(521, 46);
-            this.textBox10.Name = "textBox9";
+            this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(581, 29);
             this.textBox10.TabIndex = 58;
             // 

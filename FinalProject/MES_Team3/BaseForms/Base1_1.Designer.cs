@@ -1,5 +1,5 @@
 ﻿
-namespace MES_Team3.BaseForms
+namespace MES_Team3
 {
     partial class Base1_1
     {
@@ -29,7 +29,6 @@ namespace MES_Team3.BaseForms
         /// </summary>
         private void InitializeComponent()
         {
-         
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Base1_1));
             this.pnlTop = new System.Windows.Forms.Panel();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -251,10 +250,10 @@ namespace MES_Team3.BaseForms
             this.pnlCrud.Controls.Add(this.btnClose);
             this.pnlCrud.Controls.Add(this.btnReadBottom);
             this.pnlCrud.Controls.Add(this.btnUpdate);
-            this.pnlCrud.Location = new System.Drawing.Point(626, 712);
+            this.pnlCrud.Location = new System.Drawing.Point(439, 712);
             this.pnlCrud.Margin = new System.Windows.Forms.Padding(0);
             this.pnlCrud.Name = "pnlCrud";
-            this.pnlCrud.Size = new System.Drawing.Size(543, 66);
+            this.pnlCrud.Size = new System.Drawing.Size(730, 66);
             this.pnlCrud.TabIndex = 40;
             // 
             // btnInsert
@@ -267,10 +266,10 @@ namespace MES_Team3.BaseForms
             this.btnInsert.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnInsert.Image = global::MES_Team3.Properties.Resources.Add_New;
             this.btnInsert.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnInsert.Location = new System.Drawing.Point(107, 8);
+            this.btnInsert.Location = new System.Drawing.Point(295, 6);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(67, 48);
-            this.btnInsert.TabIndex = 80;
+            this.btnInsert.TabIndex = 86;
             this.btnInsert.Text = "생성";
             this.btnInsert.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnInsert.UseVisualStyleBackColor = false;
@@ -285,10 +284,10 @@ namespace MES_Team3.BaseForms
             this.btnDelete.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnDelete.Image = global::MES_Team3.Properties.Resources.Trash_Can_02;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDelete.Location = new System.Drawing.Point(383, 8);
+            this.btnDelete.Location = new System.Drawing.Point(571, 6);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(67, 48);
-            this.btnDelete.TabIndex = 78;
+            this.btnDelete.TabIndex = 84;
             this.btnDelete.Text = "삭제";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -303,10 +302,10 @@ namespace MES_Team3.BaseForms
             this.btnClear.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnClear.Image = global::MES_Team3.Properties.Resources.Command_Refresh_01;
             this.btnClear.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnClear.Location = new System.Drawing.Point(291, 8);
+            this.btnClear.Location = new System.Drawing.Point(479, 6);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(67, 48);
-            this.btnClear.TabIndex = 82;
+            this.btnClear.TabIndex = 88;
             this.btnClear.Text = "초기화";
             this.btnClear.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnClear.UseVisualStyleBackColor = false;
@@ -321,10 +320,10 @@ namespace MES_Team3.BaseForms
             this.btnClose.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnClose.Image = global::MES_Team3.Properties.Resources.Delete;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnClose.Location = new System.Drawing.Point(475, 8);
+            this.btnClose.Location = new System.Drawing.Point(663, 6);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(67, 48);
-            this.btnClose.TabIndex = 83;
+            this.btnClose.TabIndex = 89;
             this.btnClose.Text = "닫기";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnClose.UseVisualStyleBackColor = false;
@@ -339,10 +338,10 @@ namespace MES_Team3.BaseForms
             this.btnReadBottom.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnReadBottom.Image = global::MES_Team3.Properties.Resources.Data_Find12;
             this.btnReadBottom.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnReadBottom.Location = new System.Drawing.Point(15, 8);
+            this.btnReadBottom.Location = new System.Drawing.Point(203, 6);
             this.btnReadBottom.Name = "btnReadBottom";
             this.btnReadBottom.Size = new System.Drawing.Size(67, 48);
-            this.btnReadBottom.TabIndex = 79;
+            this.btnReadBottom.TabIndex = 85;
             this.btnReadBottom.Text = "조회";
             this.btnReadBottom.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnReadBottom.UseVisualStyleBackColor = false;
@@ -357,10 +356,10 @@ namespace MES_Team3.BaseForms
             this.btnUpdate.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnUpdate.Image = global::MES_Team3.Properties.Resources.Save_02;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnUpdate.Location = new System.Drawing.Point(199, 8);
+            this.btnUpdate.Location = new System.Drawing.Point(387, 6);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(67, 48);
-            this.btnUpdate.TabIndex = 81;
+            this.btnUpdate.TabIndex = 87;
             this.btnUpdate.Text = "변경";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -401,15 +400,14 @@ namespace MES_Team3.BaseForms
         public System.Windows.Forms.Panel pnlDgv;
         public System.Windows.Forms.Button btnSearchPnl;
         public System.Windows.Forms.Panel pnlCrud;
+        public System.Windows.Forms.Panel pnlTopLbl;
+        public System.Windows.Forms.TextBox txtSearch;
         public System.Windows.Forms.Button btnInsert;
         public System.Windows.Forms.Button btnDelete;
         public System.Windows.Forms.Button btnClear;
         public System.Windows.Forms.Button btnClose;
         public System.Windows.Forms.Button btnReadBottom;
         public System.Windows.Forms.Button btnUpdate;
-        public System.Windows.Forms.Panel pnlTopLbl;
-        public System.Windows.Forms.TextBox txtSearch;
-
         public System.Windows.Forms.Button btnTxtSearch;
         public System.Windows.Forms.Button btnReadTop;
     }

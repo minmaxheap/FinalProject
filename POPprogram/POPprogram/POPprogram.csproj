@@ -190,6 +190,9 @@
     <EmbeddedResource Include="frmDown.resx">
       <DependentUpon>frmDown.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEndWorkOrder.resx">
+      <DependentUpon>frmEndWorkOrder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>

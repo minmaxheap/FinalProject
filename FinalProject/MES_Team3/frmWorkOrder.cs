@@ -12,7 +12,7 @@ using VO;
 
 namespace MES_Team3
 {
-    public partial class frmWorkOrder : MES_Team3.BaseForms.Base1_1
+    public partial class frmWorkOrder : MES_Team3.Base1_1
     {
 
         //public List<Bar> barlist;

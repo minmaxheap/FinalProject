@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace MES_Team3
 {
-    public partial class frmProduct : MES_Team3.BaseForms.Base1_1
+    public partial class frmProduct : MES_Team3.Base1_1
     {
        DataTable mdtAll;
         string msUserID;

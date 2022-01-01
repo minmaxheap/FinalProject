@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace MES_Team3
 {
-	public partial class frmUserGroup : MES_Team3.BaseForms.Base1_1
+	public partial class frmUserGroup : MES_Team3.Base1_1
 	{
 		UserGroupServ serv;
 		string Code = string.Empty;
