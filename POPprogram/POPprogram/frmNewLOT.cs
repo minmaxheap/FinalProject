@@ -54,5 +54,10 @@ namespace POPprogram
                 //선택한 작업저시 정보 텍스트박스에 보여주기
             }
         }
+
+        private void btnExecute_Click(object sender, EventArgs e)
+        {
+            //생산 LOT 생성 
+        }
     }
 }

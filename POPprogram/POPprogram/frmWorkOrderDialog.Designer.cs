@@ -33,10 +33,14 @@ namespace POPprogram
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.Button btnTxtSearch;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmWorkOrderDialog));
             this.lblPanel = new System.Windows.Forms.Label();
             this.csDataGridView1 = new POPprogram.csDataGridView();
             this.btnSelect = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            btnTxtSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.csDataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,9 +80,8 @@ namespace POPprogram
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.csDataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.csDataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
             this.csDataGridView1.EnableHeadersVisualStyles = false;
-            this.csDataGridView1.Location = new System.Drawing.Point(0, 43);
+            this.csDataGridView1.Location = new System.Drawing.Point(0, 92);
             this.csDataGridView1.Name = "csDataGridView1";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
@@ -90,13 +93,12 @@ namespace POPprogram
             this.csDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.csDataGridView1.RowHeadersWidth = 30;
             this.csDataGridView1.RowTemplate.Height = 23;
-            this.csDataGridView1.Size = new System.Drawing.Size(416, 374);
+            this.csDataGridView1.Size = new System.Drawing.Size(416, 339);
             this.csDataGridView1.TabIndex = 31;
             // 
             // btnSelect
             // 
-            this.btnSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnSelect.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSelect.AutoSize = true;
             this.btnSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
@@ -104,7 +106,7 @@ namespace POPprogram
             this.btnSelect.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSelect.Image = global::POPprogram.Properties.Resources.Add_New;
             this.btnSelect.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSelect.Location = new System.Drawing.Point(50, 437);
+            this.btnSelect.Location = new System.Drawing.Point(12, 444);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(94, 70);
             this.btnSelect.TabIndex = 84;
@@ -115,8 +117,7 @@ namespace POPprogram
             // 
             // btnClose
             // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.AutoSize = true;
             this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
@@ -124,7 +125,7 @@ namespace POPprogram
             this.btnClose.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnClose.Image = global::POPprogram.Properties.Resources.Delete;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnClose.Location = new System.Drawing.Point(264, 437);
+            this.btnClose.Location = new System.Drawing.Point(305, 444);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(94, 70);
             this.btnClose.TabIndex = 85;
@@ -133,11 +134,37 @@ namespace POPprogram
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // btnTxtSearch
+            // 
+            btnTxtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            btnTxtSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTxtSearch.BackgroundImage")));
+            btnTxtSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            btnTxtSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            btnTxtSearch.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            btnTxtSearch.ForeColor = System.Drawing.SystemColors.ControlText;
+            btnTxtSearch.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            btnTxtSearch.Location = new System.Drawing.Point(367, 54);
+            btnTxtSearch.Margin = new System.Windows.Forms.Padding(0);
+            btnTxtSearch.Name = "btnTxtSearch";
+            btnTxtSearch.Size = new System.Drawing.Size(32, 26);
+            btnTxtSearch.TabIndex = 87;
+            btnTxtSearch.UseVisualStyleBackColor = false;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox2.Location = new System.Drawing.Point(12, 53);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(335, 29);
+            this.textBox2.TabIndex = 86;
+            // 
             // frmWorkOrderDialog
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
-            this.ClientSize = new System.Drawing.Size(416, 526);
+            this.ClientSize = new System.Drawing.Size(416, 527);
+            this.Controls.Add(btnTxtSearch);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.btnSelect);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.csDataGridView1);
@@ -147,6 +174,7 @@ namespace POPprogram
             this.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.Name = "frmWorkOrderDialog";
             this.Text = "작업지시 선택";
+            this.Load += new System.EventHandler(this.frmWorkOrderDialog_Load);
             ((System.ComponentModel.ISupportInitialize)(this.csDataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -159,5 +187,6 @@ namespace POPprogram
         private csDataGridView csDataGridView1;
         public System.Windows.Forms.Button btnSelect;
         public System.Windows.Forms.Button btnClose;
+        public System.Windows.Forms.TextBox textBox2;
     }
 }

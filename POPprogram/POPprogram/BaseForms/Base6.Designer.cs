@@ -64,7 +64,7 @@ namespace POPprogram
             this.label13 = new System.Windows.Forms.Label();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.pnlCrud = new System.Windows.Forms.Panel();
-            this.btnReadBottom = new System.Windows.Forms.Button();
+            this.btnExecute = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -474,7 +474,7 @@ namespace POPprogram
             // pnlCrud
             // 
             this.pnlCrud.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlCrud.Controls.Add(this.btnReadBottom);
+            this.pnlCrud.Controls.Add(this.btnExecute);
             this.pnlCrud.Controls.Add(this.btnClose);
             this.pnlCrud.Location = new System.Drawing.Point(500, 555);
             this.pnlCrud.Margin = new System.Windows.Forms.Padding(0);
@@ -482,25 +482,25 @@ namespace POPprogram
             this.pnlCrud.Size = new System.Drawing.Size(668, 70);
             this.pnlCrud.TabIndex = 52;
             // 
-            // btnReadBottom
+            // btnExecute
             // 
-            this.btnReadBottom.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnExecute.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReadBottom.AutoSize = true;
-            this.btnReadBottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            this.btnReadBottom.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnReadBottom.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnReadBottom.Image = global::POPprogram.Properties.Resources.Touch_Screen;
-            this.btnReadBottom.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnReadBottom.Location = new System.Drawing.Point(453, 0);
-            this.btnReadBottom.Margin = new System.Windows.Forms.Padding(0);
-            this.btnReadBottom.Name = "btnReadBottom";
-            this.btnReadBottom.Size = new System.Drawing.Size(94, 70);
-            this.btnReadBottom.TabIndex = 84;
-            this.btnReadBottom.Text = "실행";
-            this.btnReadBottom.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnReadBottom.UseVisualStyleBackColor = false;
+            this.btnExecute.AutoSize = true;
+            this.btnExecute.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            this.btnExecute.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnExecute.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnExecute.Image = global::POPprogram.Properties.Resources.Touch_Screen;
+            this.btnExecute.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnExecute.Location = new System.Drawing.Point(453, 0);
+            this.btnExecute.Margin = new System.Windows.Forms.Padding(0);
+            this.btnExecute.Name = "btnExecute";
+            this.btnExecute.Size = new System.Drawing.Size(94, 70);
+            this.btnExecute.TabIndex = 84;
+            this.btnExecute.Text = "실행";
+            this.btnExecute.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnExecute.UseVisualStyleBackColor = false;
             // 
             // btnClose
             // 
@@ -572,7 +572,7 @@ namespace POPprogram
         public System.Windows.Forms.Button btnClose;
         public System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.TextBox textBox9;
-        public System.Windows.Forms.Button btnReadBottom;
+        public System.Windows.Forms.Button btnExecute;
         public System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         public System.Windows.Forms.Label label4;
         public System.Windows.Forms.Label label25;

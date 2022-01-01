@@ -33,12 +33,14 @@ namespace POPprogram
             this.panel8.SuspendLayout();
             this.pnlCrud.SuspendLayout();
             this.SuspendLayout();
-            this.panel8.Controls.SetChildIndex(this.label6, 0);
-            this.panel8.Controls.SetChildIndex(this.textBox2, 0);
-            this.panel8.Controls.SetChildIndex(this.textBox4, 0);
-            this.panel8.Controls.SetChildIndex(this.textBox5, 0);
-            this.panel8.Controls.SetChildIndex(this.label3, 0);
-            this.panel8.Controls.SetChildIndex(this.label2, 0);
+            // 
+            // btnExecute
+            // 
+            this.btnExecute.Click += new System.EventHandler(this.btnExecute_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // label10
             // 
@@ -61,6 +63,10 @@ namespace POPprogram
             this.label3.Location = new System.Drawing.Point(49, 60);
             this.label3.Size = new System.Drawing.Size(82, 21);
             this.label3.Text = "작업지시";
+            // 
+            // btnTxtSearch
+            // 
+            this.btnTxtSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // frmNewLOT
             // 
