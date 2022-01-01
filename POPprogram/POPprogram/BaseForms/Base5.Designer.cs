@@ -37,7 +37,6 @@ namespace POPprogram
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -108,7 +107,6 @@ namespace POPprogram
             this.panel4.Controls.Add(this.textBox1);
             this.panel4.Controls.Add(this.label13);
             this.panel4.Controls.Add(this.textBox13);
-            this.panel4.Controls.Add(this.textBox7);
             this.panel4.Controls.Add(this.textBox6);
             this.panel4.Controls.Add(this.textBox8);
             this.panel4.Controls.Add(this.label10);
@@ -169,16 +167,6 @@ namespace POPprogram
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(937, 46);
             this.textBox13.TabIndex = 85;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox7.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textBox7.Location = new System.Drawing.Point(505, 153);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(581, 29);
-            this.textBox7.TabIndex = 82;
             // 
             // textBox6
             // 
@@ -628,7 +616,6 @@ namespace POPprogram
         public System.Windows.Forms.Panel pnlCrud;
         public System.Windows.Forms.Button btnReadBottom;
         public System.Windows.Forms.Button btnClose;
-        public System.Windows.Forms.TextBox textBox7;
         public System.Windows.Forms.TextBox textBox6;
         public System.Windows.Forms.TextBox textBox8;
         public System.Windows.Forms.Label label10;
