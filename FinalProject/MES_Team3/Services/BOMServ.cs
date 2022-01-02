@@ -33,5 +33,14 @@ namespace MES_Team3
             dac.Dispose();
             return dt;
         }
+
+        public bool Insert(BomVO vo)
+        {
+            BomDAC dac = new BomDAC();
+            bool bResult = dac.Insert(vo);
+            dac.Dispose();
+            return bResult;
+        }
+
     }
 }

@@ -45,11 +45,31 @@ INNER JOIN [dbo].[PRODUCT_MST] ON([dbo].[BOM_MST].PRODUCT_CODE = [dbo].[PRODUCT_
             }
         }
 
+        public List<string> GetCPCList()
+        {
+            string sql = @"SELECT [PRODUCT_CODE] as 'CHILD_PRODUCT_CODE'
+FROM [dbo].[PRODUCT_MST]
+WHERE [PRODUCT_TYPE] in ('ROH', 'HALB')";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            List<string> productType = new List<string>();
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+
+                while (reader.Read())
+                {
+                    productType.Add(reader["CHILD_PRODUCT_CODE"].ToString());
+
+                }
+            }
+            return productType;
+        }
+
         public DataTable GetOperRelation(string prodCode)
         {
-            string sql = @"select [dbo].[BOM_MST].PRODUCT_CODE,[dbo].[BOM_MST].CHILD_PRODUCT_CODE, [dbo].[BOM_MST].REQUIRE_QTY, [dbo].[BOM_MST].ALTER_PRODUCT_CODE, [dbo].[BOM_MST].CREATE_TIME, [dbo].[BOM_MST].CREATE_USER_ID, [dbo].[BOM_MST].UPDATE_TIME, [dbo].[BOM_MST].UPDATE_USER_ID
+            string sql = @"select [dbo].[BOM_MST].CHILD_PRODUCT_CODE,[dbo].[PRODUCT_MST].PRODUCT_NAME, [dbo].[BOM_MST].REQUIRE_QTY, [dbo].[BOM_MST].ALTER_PRODUCT_CODE, [dbo].[BOM_MST].CREATE_TIME, [dbo].[BOM_MST].CREATE_USER_ID, [dbo].[BOM_MST].UPDATE_TIME, [dbo].[BOM_MST].UPDATE_USER_ID
 from [dbo].[BOM_MST]
-INNER JOIN [dbo].[PRODUCT_MST] ON([dbo].[BOM_MST].PRODUCT_CODE = [dbo].[PRODUCT_MST].PRODUCT_CODE)";
+INNER JOIN [dbo].[PRODUCT_MST] ON([dbo].[BOM_MST].CHILD_PRODUCT_CODE = [dbo].[PRODUCT_MST].PRODUCT_CODE)
+where [dbo].[BOM_MST].PRODUCT_CODE = @PRODUCT_CODE";
             DataTable dt = new DataTable();
             using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
             {
