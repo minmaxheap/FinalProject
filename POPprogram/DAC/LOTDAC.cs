@@ -64,13 +64,49 @@ namespace DAC
         {
             try
             {
-                string sql = @"INSERT ";
+                string sql = @"INSERT[dbo].[LOT_STS]
+(LOT_ID, LOT_DESC, 
+PRODUCT_CODE, OPERATION_CODE, 
+LOT_QTY, CREATE_QTY,CREATE_TIME,
+ WORK_ORDER_ID,
+LAST_TRAN_CODE,LAST_TRAN_TIME, LAST_TRAN_USER_ID, LAST_TRAN_COMMENT, LAST_HIST_SEQ) 
+VALUES(@LOT_ID, @LOT_DESC, 
+@PRODUCT_CODE, @OPERATION_CODE, 
+@LOT_QTY, @CREATE_QTY, GETDATE(),
+ @WORK_ORDER_ID,
+'CREATE',GETDATE(), @LAST_TRAN_USER_ID, @LAST_TRAN_COMMENT, 1  )
+
+insert [dbo].[LOT_HIS]
+(LOT_ID, HIST_SEQ, TRAN_TIME, TRAN_CODE, LOT_DESC, 
+PRODUCT_CODE, OPERATION_CODE, LOT_QTY, 
+CREATE_QTY, CREATE_TIME, WORK_ORDER_ID,TRAN_USER_ID, TRAN_COMMENT)
+select LOT_ID, s.LAST_HIST_SEQ, s.LAST_TRAN_TIME, s.LAST_TRAN_CODE, LOT_DESC, 
+PRODUCT_CODE, OPERATION_CODE, LOT_QTY, 
+CREATE_QTY,CREATE_TIME, WORK_ORDER_ID,LAST_TRAN_USER_ID, LAST_TRAN_COMMENT
+from [dbo].[LOT_STS] s
+where LOT_ID = @LOT_ID
+
+
+";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
-                    return true;
+                    cmd.Parameters.AddWithValue("@LOT_ID", lot.LOT_ID);
+                    cmd.Parameters.AddWithValue("@LOT_DESC", lot.LOT_DESC);
+                    cmd.Parameters.AddWithValue("@PRODUCT_CODE", lot.PRODUCT_CODE);
+                    cmd.Parameters.AddWithValue("@OPERATION_CODE", lot.OPERATION_CODE);
+                    cmd.Parameters.AddWithValue("@WORK_ORDER_ID", lot.WORK_ORDER_ID);
+                    cmd.Parameters.AddWithValue("@LOT_QTY", lot.LOT_QTY);
+                    cmd.Parameters.AddWithValue("@CREATE_QTY", lot.CREATE_QTY);
+                    cmd.Parameters.AddWithValue("@LAST_TRAN_USER_ID", lot.LAST_TRAN_USER_ID);
+                    cmd.Parameters.AddWithValue("@LAST_TRAN_COMMENT", lot.LAST_TRAN_COMMENT);
+
+
+
+                    int row = cmd.ExecuteNonQuery();
+                    return row > 0;
                 }
             }
-            catch(Exception err)
+            catch (Exception err)
             {
                 Debug.WriteLine(err.Message);
                 return false;

@@ -185,9 +185,58 @@ namespace DAC
             return new StandardValuesCollection(new Get_Product_CodeList().GetProductCodeList());
         }
     }
+    public class Check_Confirm  //frmWorkOrder
+    {
+        public List<string> GetSourceList()
+        {
+            //dac에서 list 받아오기
+            List<string> check_value = new List<string>();
+            check_value.Add("ALL");
+            check_value.Add("Y");
+            check_value.Add("N");
+            return check_value;
+        }
+    }
+    public class Check_Confirm_Converter : StringConverter
+    {
+        public override bool GetStandardValuesSupported(ITypeDescriptorContext context)
+        {
+            return true;
+        }
 
 
+        public override TypeConverter.StandardValuesCollection GetStandardValues(ITypeDescriptorContext context)
+        {
+            // ProductVO refMyObject = context.Instance as ProductVO;
+            return new StandardValuesCollection(new Check_Confirm().GetSourceList());
+        }
+    }  //frmWorkOrder
+    public class Check_Confirm_YN  //frmWorkOrder
+    {
+        public List<string> GetSourceList()
+        {
+            //dac에서 list 받아오기
+            List<string> check_value = new List<string>();
+            check_value.Add("Y");
+            check_value.Add("N");
+            check_value.Add(null);
+            return check_value;
+        }
+    }
+    public class Check_Confirm_YN_Converter : StringConverter
+    {
+        public override bool GetStandardValuesSupported(ITypeDescriptorContext context)
+        {
+            return true;
+        }
 
+
+        public override TypeConverter.StandardValuesCollection GetStandardValues(ITypeDescriptorContext context)
+        {
+            // ProductVO refMyObject = context.Instance as ProductVO;
+            return new StandardValuesCollection(new Check_Confirm_YN().GetSourceList());
+        }
+    }  //frmWorkOrder
 
     public class User_Mst
     {

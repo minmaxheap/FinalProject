@@ -32,10 +32,6 @@ namespace POPprogram
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -43,8 +39,12 @@ namespace POPprogram
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox15 = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
+            this.numTextBox1 = new POPprogram.NumTextBox();
+            this.numTextBox2 = new POPprogram.NumTextBox();
+            this.numTextBox3 = new POPprogram.NumTextBox();
+            this.numTextBox4 = new POPprogram.NumTextBox();
+            this.numTextBox5 = new POPprogram.NumTextBox();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -61,7 +61,11 @@ namespace POPprogram
             // 
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.Controls.Add(this.textBox15);
+            this.panel4.Controls.Add(this.numTextBox5);
+            this.panel4.Controls.Add(this.numTextBox4);
+            this.panel4.Controls.Add(this.numTextBox3);
+            this.panel4.Controls.Add(this.numTextBox2);
+            this.panel4.Controls.Add(this.numTextBox1);
             this.panel4.Controls.Add(this.label25);
             this.panel4.Controls.Add(this.label20);
             this.panel4.Controls.Add(this.label19);
@@ -69,11 +73,7 @@ namespace POPprogram
             this.panel4.Controls.Add(this.comboBox3);
             this.panel4.Controls.Add(this.label23);
             this.panel4.Controls.Add(this.comboBox2);
-            this.panel4.Controls.Add(this.textBox14);
             this.panel4.Controls.Add(this.label21);
-            this.panel4.Controls.Add(this.textBox12);
-            this.panel4.Controls.Add(this.textBox11);
-            this.panel4.Controls.Add(this.textBox10);
             this.panel4.Controls.Add(this.label18);
             this.panel4.Controls.Add(this.label12);
             this.panel4.Controls.Add(this.comboBox1);
@@ -83,11 +83,7 @@ namespace POPprogram
             this.panel4.Controls.SetChildIndex(this.label1, 0);
             this.panel4.Controls.SetChildIndex(this.label12, 0);
             this.panel4.Controls.SetChildIndex(this.label18, 0);
-            this.panel4.Controls.SetChildIndex(this.textBox10, 0);
-            this.panel4.Controls.SetChildIndex(this.textBox11, 0);
-            this.panel4.Controls.SetChildIndex(this.textBox12, 0);
             this.panel4.Controls.SetChildIndex(this.label21, 0);
-            this.panel4.Controls.SetChildIndex(this.textBox14, 0);
             this.panel4.Controls.SetChildIndex(this.comboBox2, 0);
             this.panel4.Controls.SetChildIndex(this.label23, 0);
             this.panel4.Controls.SetChildIndex(this.comboBox3, 0);
@@ -95,7 +91,11 @@ namespace POPprogram
             this.panel4.Controls.SetChildIndex(this.label19, 0);
             this.panel4.Controls.SetChildIndex(this.label20, 0);
             this.panel4.Controls.SetChildIndex(this.label25, 0);
-            this.panel4.Controls.SetChildIndex(this.textBox15, 0);
+            this.panel4.Controls.SetChildIndex(this.numTextBox1, 0);
+            this.panel4.Controls.SetChildIndex(this.numTextBox2, 0);
+            this.panel4.Controls.SetChildIndex(this.numTextBox3, 0);
+            this.panel4.Controls.SetChildIndex(this.numTextBox4, 0);
+            this.panel4.Controls.SetChildIndex(this.numTextBox5, 0);
             // 
             // comboBox1
             // 
@@ -131,48 +131,12 @@ namespace POPprogram
             this.label18.Text = "불량 수량 1";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox10
-            // 
-            this.textBox10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox10.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textBox10.Location = new System.Drawing.Point(686, 46);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(119, 29);
-            this.textBox10.TabIndex = 65;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox11.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textBox11.Location = new System.Drawing.Point(686, 78);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(119, 29);
-            this.textBox11.TabIndex = 67;
-            // 
-            // textBox12
-            // 
-            this.textBox12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox12.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textBox12.Location = new System.Drawing.Point(686, 110);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(119, 29);
-            this.textBox12.TabIndex = 69;
-            // 
-            // textBox14
-            // 
-            this.textBox14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox14.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textBox14.Location = new System.Drawing.Point(983, 46);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(119, 29);
-            this.textBox14.TabIndex = 71;
-            // 
             // label21
             // 
             this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label21.Location = new System.Drawing.Point(867, 50);
+            this.label21.Location = new System.Drawing.Point(867, 49);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(110, 21);
             this.label21.TabIndex = 70;
@@ -247,15 +211,6 @@ namespace POPprogram
             this.label20.Text = "불량 수량 3";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox15
-            // 
-            this.textBox15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox15.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textBox15.Location = new System.Drawing.Point(983, 78);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(119, 29);
-            this.textBox15.TabIndex = 79;
-            // 
             // label25
             // 
             this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -267,6 +222,51 @@ namespace POPprogram
             this.label25.TabIndex = 78;
             this.label25.Text = "불량 후 LOT 수량";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // numTextBox1
+            // 
+            this.numTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.numTextBox1.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
+            this.numTextBox1.Location = new System.Drawing.Point(686, 45);
+            this.numTextBox1.Name = "numTextBox1";
+            this.numTextBox1.Size = new System.Drawing.Size(119, 29);
+            this.numTextBox1.TabIndex = 81;
+            // 
+            // numTextBox2
+            // 
+            this.numTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.numTextBox2.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
+            this.numTextBox2.Location = new System.Drawing.Point(686, 78);
+            this.numTextBox2.Name = "numTextBox2";
+            this.numTextBox2.Size = new System.Drawing.Size(119, 29);
+            this.numTextBox2.TabIndex = 82;
+            // 
+            // numTextBox3
+            // 
+            this.numTextBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.numTextBox3.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
+            this.numTextBox3.Location = new System.Drawing.Point(686, 110);
+            this.numTextBox3.Name = "numTextBox3";
+            this.numTextBox3.Size = new System.Drawing.Size(119, 29);
+            this.numTextBox3.TabIndex = 83;
+            // 
+            // numTextBox4
+            // 
+            this.numTextBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.numTextBox4.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
+            this.numTextBox4.Location = new System.Drawing.Point(984, 45);
+            this.numTextBox4.Name = "numTextBox4";
+            this.numTextBox4.Size = new System.Drawing.Size(119, 29);
+            this.numTextBox4.TabIndex = 84;
+            // 
+            // numTextBox5
+            // 
+            this.numTextBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.numTextBox5.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
+            this.numTextBox5.Location = new System.Drawing.Point(984, 78);
+            this.numTextBox5.Name = "numTextBox5";
+            this.numTextBox5.Size = new System.Drawing.Size(119, 29);
+            this.numTextBox5.TabIndex = 85;
             // 
             // frmLOTDefect
             // 
@@ -295,12 +295,12 @@ namespace POPprogram
         private System.Windows.Forms.ComboBox comboBox3;
         public System.Windows.Forms.Label label23;
         private System.Windows.Forms.ComboBox comboBox2;
-        public System.Windows.Forms.TextBox textBox14;
         public System.Windows.Forms.Label label21;
-        public System.Windows.Forms.TextBox textBox12;
-        public System.Windows.Forms.TextBox textBox11;
-        public System.Windows.Forms.TextBox textBox10;
-        public System.Windows.Forms.TextBox textBox15;
         public System.Windows.Forms.Label label25;
+        private NumTextBox numTextBox5;
+        private NumTextBox numTextBox4;
+        private NumTextBox numTextBox3;
+        private NumTextBox numTextBox2;
+        private NumTextBox numTextBox1;
     }
 }
