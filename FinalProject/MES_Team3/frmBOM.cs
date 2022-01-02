@@ -106,12 +106,31 @@ namespace MES_Team3
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
+            BomVO save = (BomVO)pgProperty.SelectedObject;
+            BOMServ serv = new BOMServ();
+            bool bResult = serv.Delete(save);
+            if (bResult)
+            {
+                MessageBox.Show("삭제되었습니다.");
+                GetDgvAddData();
+            }
+            else
+            {
+                MessageBox.Show("삭제 중 실패하였습니다.");
+            }
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            if (pgProperty.SelectedGridItem != null)
+            {
+                PropertyDescriptor pd = pgProperty.SelectedGridItem.PropertyDescriptor;
+                pd.ResetValue(pgProperty.SelectedObject);
 
+                BomVO sv = new BomVO();
+                pgProperty.SelectedObject = sv;
+                pgProperty.PropertySort = PropertySort.NoSort;
+            }
         }
 
         private void csDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -196,6 +215,28 @@ namespace MES_Team3
             pgProperty.PropertySort = PropertySort.NoSort;
 
             pgProperty.Visible = true;
+
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            BomVO save = (BomVO)pgProperty.SelectedObject;
+            save.UPDATE_USER_ID = msUserID;
+            BOMServ serv = new BOMServ();
+            bool bResult = serv.Update(save);
+            if (bResult)
+            {
+                MessageBox.Show("수정되었습니다.");
+                LoadData();
+            }
+            else
+            {
+                MessageBox.Show("수정 중 실패하였습니다.");
+            }
+        }
+
+        private void pnlTop_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

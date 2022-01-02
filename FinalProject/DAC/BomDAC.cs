@@ -125,9 +125,10 @@ where [dbo].[BOM_MST].PRODUCT_CODE = @PRODUCT_CODE";
             try
             {
                 string sql = @"delete from [dbo].[BOM_MST]
-where CHILD_PRODUCT_CODE = @CHILD_PRODUCT_CODE ";
+where CHILD_PRODUCT_CODE = @CHILD_PRODUCT_CODE and PRODUCT_CODE = @PRODUCT_CODE";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
+                    cmd.Parameters.AddWithValue("@PRODUCT_CODE", bv.PRODUCT_CODE);
                     cmd.Parameters.AddWithValue("@CHILD_PRODUCT_CODE", bv.CHILD_PRODUCT_CODE);
                     int row = cmd.ExecuteNonQuery();
                     return row > 0;
@@ -148,10 +149,9 @@ where CHILD_PRODUCT_CODE = @CHILD_PRODUCT_CODE ";
             {
                 string sql = @"update  [dbo].[BOM_MST] set
 REQUIRE_QTY= @REQUIRE_QTY, 
-ALTER_PRODUCT_CODE= @ALTER_PRODUCT_CODE, 
 UPDATE_TIME= getdate(), 
 UPDATE_USER_ID= @UPDATE_USER_ID
-where CHILD_PRODUCT_CODE = @CHILD_PRODUCT_CODE";
+where CHILD_PRODUCT_CODE = @CHILD_PRODUCT_CODE and PRODUCT_CODE = @PRODUCT_CODE";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
                     //cmd.Parameters.AddWithValue("@STORE_CODE", sv.STORE_CODE);
@@ -162,7 +162,7 @@ where CHILD_PRODUCT_CODE = @CHILD_PRODUCT_CODE";
                     //int row = cmd.ExecuteNonQuery();
                     //return row > 0;
 
-
+                    cmd.Parameters.AddWithValue("@PRODUCT_CODE", bv.PRODUCT_CODE);
                     cmd.Parameters.AddWithValue("@CHILD_PRODUCT_CODE", bv.CHILD_PRODUCT_CODE);
                     if (bv.REQUIRE_QTY == null)
                         cmd.Parameters.AddWithValue("@REQUIRE_QTY", DBNull.Value);
