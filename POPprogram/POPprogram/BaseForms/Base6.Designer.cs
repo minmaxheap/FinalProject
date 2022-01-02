@@ -99,6 +99,7 @@ namespace POPprogram
             this.txtLOTDescription.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
             this.txtLOTDescription.Location = new System.Drawing.Point(522, 1);
             this.txtLOTDescription.Name = "txtLOTDescription";
+            this.txtLOTDescription.ReadOnly = true;
             this.txtLOTDescription.Size = new System.Drawing.Size(581, 29);
             this.txtLOTDescription.TabIndex = 57;
             // 
@@ -142,6 +143,7 @@ namespace POPprogram
             this.txtProdCode.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
             this.txtProdCode.Location = new System.Drawing.Point(166, 50);
             this.txtProdCode.Name = "txtProdCode";
+            this.txtProdCode.ReadOnly = true;
             this.txtProdCode.Size = new System.Drawing.Size(335, 29);
             this.txtProdCode.TabIndex = 49;
             // 
@@ -179,6 +181,7 @@ namespace POPprogram
             this.txtQty.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
             this.txtQty.Location = new System.Drawing.Point(802, 120);
             this.txtQty.Name = "txtQty";
+            this.txtQty.ReadOnly = true;
             this.txtQty.Size = new System.Drawing.Size(301, 29);
             this.txtQty.TabIndex = 90;
             // 
@@ -319,6 +322,7 @@ namespace POPprogram
             this.txtCustName.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
             this.txtCustName.Location = new System.Drawing.Point(522, 155);
             this.txtCustName.Name = "txtCustName";
+            this.txtCustName.ReadOnly = true;
             this.txtCustName.Size = new System.Drawing.Size(581, 29);
             this.txtCustName.TabIndex = 69;
             // 
@@ -327,6 +331,7 @@ namespace POPprogram
             this.txtWorkOrder.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
             this.txtWorkOrder.Location = new System.Drawing.Point(166, 120);
             this.txtWorkOrder.Name = "txtWorkOrder";
+            this.txtWorkOrder.ReadOnly = true;
             this.txtWorkOrder.Size = new System.Drawing.Size(335, 29);
             this.txtWorkOrder.TabIndex = 69;
             // 
@@ -335,6 +340,7 @@ namespace POPprogram
             this.txtCustID.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
             this.txtCustID.Location = new System.Drawing.Point(166, 155);
             this.txtCustID.Name = "txtCustID";
+            this.txtCustID.ReadOnly = true;
             this.txtCustID.Size = new System.Drawing.Size(335, 29);
             this.txtCustID.TabIndex = 67;
             // 
@@ -378,6 +384,7 @@ namespace POPprogram
             this.txtOperName.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
             this.txtOperName.Location = new System.Drawing.Point(522, 85);
             this.txtOperName.Name = "txtOperName";
+            this.txtOperName.ReadOnly = true;
             this.txtOperName.Size = new System.Drawing.Size(581, 29);
             this.txtOperName.TabIndex = 66;
             // 
@@ -386,6 +393,7 @@ namespace POPprogram
             this.txtOperCode.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
             this.txtOperCode.Location = new System.Drawing.Point(166, 85);
             this.txtOperCode.Name = "txtOperCode";
+            this.txtOperCode.ReadOnly = true;
             this.txtOperCode.Size = new System.Drawing.Size(335, 29);
             this.txtOperCode.TabIndex = 64;
             // 
@@ -407,6 +415,7 @@ namespace POPprogram
             this.txtProdName.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
             this.txtProdName.Location = new System.Drawing.Point(522, 50);
             this.txtProdName.Name = "txtProdName";
+            this.txtProdName.ReadOnly = true;
             this.txtProdName.Size = new System.Drawing.Size(581, 29);
             this.txtProdName.TabIndex = 55;
             // 

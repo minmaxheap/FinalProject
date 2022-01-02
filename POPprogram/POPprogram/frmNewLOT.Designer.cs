@@ -34,6 +34,14 @@ namespace POPprogram
             this.pnlCrud.SuspendLayout();
             this.SuspendLayout();
             // 
+            // txtCustName
+            // 
+            this.txtCustName.ReadOnly = true;
+            // 
+            // txtCustID
+            // 
+            this.txtCustID.ReadOnly = true;
+            // 
             // btnExecute
             // 
             this.btnExecute.Click += new System.EventHandler(this.btnExecute_Click);
@@ -42,9 +50,25 @@ namespace POPprogram
             // 
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // txtOperCode
+            // 
+            this.txtOperCode.ReadOnly = true;
+            // 
             // lblOperation
             // 
             this.lblOperation.Text = "공장";
+            // 
+            // txtProdName
+            // 
+            this.txtProdName.ReadOnly = true;
+            // 
+            // txtProdCode
+            // 
+            this.txtProdCode.ReadOnly = true;
+            // 
+            // txtOperName
+            // 
+            this.txtOperName.ReadOnly = true;
             // 
             // btnTxtSearch
             // 
