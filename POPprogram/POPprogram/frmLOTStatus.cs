@@ -184,5 +184,11 @@ namespace POPprogram
         {
 
         }
+
+        private void csDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //lot 상태 바인딩
+            //아래 데이터 그리드뷰 데이터 불러오기
+        }
     }
 }
