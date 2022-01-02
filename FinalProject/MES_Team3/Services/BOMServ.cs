@@ -42,5 +42,23 @@ namespace MES_Team3
             return bResult;
         }
 
+        public bool Delete(BomVO vo)
+        {
+            BomDAC dac = new BomDAC();
+            bool bResult = dac.Delete(vo);
+            dac.Dispose();
+            return bResult;
+        }
+
+
+        public bool Update(BomVO vo)
+        {
+
+            BomDAC dac = new BomDAC();
+            bool bResult = dac.Update(vo);
+            dac.Dispose();
+            return bResult;
+        }
+
     }
 }

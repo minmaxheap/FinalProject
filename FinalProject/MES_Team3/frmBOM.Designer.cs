@@ -76,6 +76,10 @@ namespace MES_Team3
             // 
             // spcBase
             // 
+            // 
+            // pnlTop
+            // 
+            this.pnlTop.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlTop_Paint);
             this.pnlTop.Controls.SetChildIndex(this.txtSearch, 0);
             // 
             // btnInsert
@@ -97,6 +101,10 @@ namespace MES_Team3
             // btnReadBottom
             // 
             this.btnReadBottom.Click += new System.EventHandler(this.btnReadBottom_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // splitContainer1
             // 
