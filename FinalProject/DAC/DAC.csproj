@@ -50,6 +50,8 @@
     <Compile Include="InspectDAC.cs" />
     <Compile Include="INSPECT_OPERATIONDAC.cs" />
     <Compile Include="Property\BomVO.cs" />
+    <Compile Include="Property\SalesOrderProperty.cs" />
+    <Compile Include="SalesOrderDAC.cs" />
     <Compile Include="WorkOrderDAC.cs" />
     <Compile Include="Property\INSPECT_OPERATIONProperty.cs" />
     <Compile Include="Property\INSPECT_MSTVO.cs" />
