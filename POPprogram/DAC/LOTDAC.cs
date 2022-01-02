@@ -176,6 +176,63 @@ WHERE LOT_ID=@LOT_ID
         //            }
         //        }
 
+        public DataTable GetLOTSearch(LOTSearchProperty pr)
+        {
+            try
+            {
+                StringBuilder sb = new StringBuilder();
+
+                sb.Append(@"select LOT_ID, LOT_DESC, L.PRODUCT_CODE, P.PRODUCT_NAME PRODUCT_NAME, OPERATION_CODE,LOT_QTY
+from [dbo].[LOT_STS] L inner join PRODUCT_MST P ON L.PRODUCT_CODE = P.PRODUCT_CODE
+where 1=1");
+
+                using (SqlDataAdapter da = new SqlDataAdapter())
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    //da.SelectCommand.Connection = conn;
+                    if (!string.IsNullOrWhiteSpace(pr.OPERATION_CODE))
+                    {
+                        sb.Append(" and OPERATION_CODE = @OPERATION_CODE");
+                        cmd.Parameters.AddWithValue("@OPERATION_CODE", pr.OPERATION_CODE);
+                    }
+                    if (!string.IsNullOrWhiteSpace(pr.LOT_ID))
+                    {
+                        sb.Append(" and LOT_ID=@LOT_ID");
+                        cmd.Parameters.AddWithValue("@LOT_ID", pr.LOT_ID);
+                    }
+                    if (!string.IsNullOrWhiteSpace(pr.PRODUCT_CODE))
+                    {
+                        sb.Append(" and L.PRODUCT_CODE=@PRODUCT_CODE");
+                        cmd.Parameters.AddWithValue("@PRODUCT_CODE", pr.PRODUCT_CODE);
+                    }
+                    if (!string.IsNullOrWhiteSpace(pr.STORE_CODE))
+                    {
+                        sb.Append(" and STORE_CODE=@STORE_CODE");
+                        cmd.Parameters.AddWithValue("@STORE_CODE", pr.STORE_CODE);
+                    }
+                    cmd.CommandText = sb.ToString();
+                    cmd.Connection = conn;
+
+                    da.SelectCommand = cmd;
+
+                    DataTable dt = new DataTable();
+
+                    da.Fill(dt);
+                    return dt;
+                }
+
+            
+                
+            }
+
+            catch(Exception err)
+            {
+                Debug.WriteLine(err.Message);
+                return null;
+            }
+
+        }
+
         public List<string> GetOperationCode()
         {
             string sql = @"select OPERATION_CODE

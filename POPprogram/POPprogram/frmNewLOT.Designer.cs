@@ -42,6 +42,10 @@ namespace POPprogram
             // 
             this.txtCustID.ReadOnly = true;
             // 
+            // txtWorkOrderID
+            // 
+            this.txtWorkOrderID.ReadOnly = true;
+            // 
             // btnExecute
             // 
             this.btnExecute.Click += new System.EventHandler(this.btnExecute_Click);

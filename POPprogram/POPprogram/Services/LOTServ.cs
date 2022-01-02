@@ -57,5 +57,14 @@ namespace POPprogram
             dac.Dispose();
             return bResult;
         }
+
+        public DataTable GetLOTSearch(LOTSearchProperty pr)
+        {
+            LOTDAC dac = new LOTDAC();
+            DataTable dt = dac.GetLOTSearch(pr);
+            dac.Dispose();
+            return dt;
+
+        }
     }
 }

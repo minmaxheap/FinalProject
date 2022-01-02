@@ -15,11 +15,11 @@ namespace DAC
         private string product_code;
         private string operation_code;
         private string store_code;
-        private int lot_qty;
-        private int create_qty;
-        private int oper_in_qty;
+        private decimal lot_qty;
+        private decimal create_qty;
+        private decimal oper_in_qty;
         private string start_flag;
-        private int start_qty;
+        private decimal start_qty;
         private DateTime start_time;
         private string start_equipment_code;
         private string end_flag;
@@ -47,20 +47,21 @@ namespace DAC
         public string LOT_DESC { get { return lot_desc; } set { lot_desc = value; } }
         [DisplayName("품번")]
         public string PRODUCT_CODE { get { return product_code; } set { product_code = value; } }
+
         [DisplayName("공정")]
         public string OPERATION_CODE { get { return operation_code; } set { operation_code = value; } }
         [DisplayName("창고")]
         public string STORE_CODE { get { return store_code; } set { store_code = value; } }
         [DisplayName("수량")]
-        public int LOT_QTY { get { return lot_qty; } set { lot_qty = value; } }
+        public decimal LOT_QTY { get { return lot_qty; } set { lot_qty = value; } }
         [DisplayName("생성 수량")]
-        public int CREATE_QTY { get { return create_qty; } set { create_qty = value; } }
+        public decimal CREATE_QTY { get { return create_qty; } set { create_qty = value; } }
         [DisplayName("공정 투입 수량")]
-        public int OPER_IN_QTY { get { return oper_in_qty; } set { oper_in_qty = value; } }
+        public decimal OPER_IN_QTY { get { return oper_in_qty; } set { oper_in_qty = value; } }
         [DisplayName("작업 시작 여부")]
         public string START_FLAG { get { return start_flag; } set { start_flag = value; } }
         [DisplayName("작업 시작 수량")]
-        public int START_QTY { get { return start_qty; } set { start_qty = value; } }
+        public decimal START_QTY { get { return start_qty; } set { start_qty = value; } }
 
         [DisplayName("작업 시작 시간")]
         public DateTime START_TIME { get { return start_time; } set { start_time = value; } }
