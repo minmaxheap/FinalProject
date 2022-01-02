@@ -15,6 +15,7 @@ namespace MES_Team3
     {
         DataTable mdtAll;
         string prodCode;
+        DataTable mdtAdd;
         //string msUserID;
         //List<int> iSearchedList;
         //List<int> iSelectedRow;
@@ -117,7 +118,15 @@ namespace MES_Team3
             dgvBOM.DataSource = null;
             dgvBOM.DataSource = dtAll;
 
-            LoadData();
+            GetDgvAddData();
         }
+        private void GetDgvAddData()
+        {
+            BOMServ bomServ = new BOMServ();
+            mdtAdd = bomServ.GetOperRelation(prodCode);
+            dgvBOM.DataSource = null;
+            dgvBOM.DataSource = mdtAdd;
+        }
+
     }
 }
