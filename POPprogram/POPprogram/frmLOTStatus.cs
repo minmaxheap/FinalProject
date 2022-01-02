@@ -90,8 +90,13 @@ namespace POPprogram
         }
         private void btnSearchPnl_Click(object sender, EventArgs e)
         {
+            LOTProperty lot = new LOTProperty();
             LOTSearchProperty ps = new LOTSearchProperty();
+
+            pgProperty.SelectedObject = lot;
             pgSearch.SelectedObject = ps;
+
+            pgProperty.PropertySort = PropertySort.NoSort;
             pgSearch.PropertySort = PropertySort.NoSort;
             ResetCount();
             PanelVisible();
@@ -99,6 +104,15 @@ namespace POPprogram
 
         private void btnPanel_Click(object sender, EventArgs e)
         {
+            LOTProperty lot = new LOTProperty();
+            LOTSearchProperty ps = new LOTSearchProperty();
+
+            pgProperty.SelectedObject = lot;
+            pgSearch.SelectedObject = ps;
+
+            pgProperty.PropertySort = PropertySort.NoSort;
+            pgSearch.PropertySort = PropertySort.NoSort;
+            ResetCount();
             PanelVisible();
         }
 
