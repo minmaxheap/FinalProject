@@ -11,10 +11,11 @@ namespace POPprogram
 {
     public partial class frmNewLOT : POPprogram.Base5
     {
-       
+        string msUserID;
         public frmNewLOT()
         {
             InitializeComponent();
+            msUserID = frmLogin.userID;
         }
 
         private void frmNewLOT_Load(object sender, EventArgs e)
@@ -35,15 +36,15 @@ namespace POPprogram
                 DataGridViewRow dr = dlg.SelectedRow;
                 txtWorkOrderID.Text = dr.Cells["WORK_ORDER_ID"].Value.ToString();
                 txtCustID.Text = dr.Cells["CUSTOMER_CODE"].Value.ToString();
-                txtCustName.Text = dr.Cells["CUSTOMER_NAME_JOIN"].Value.ToString();
+                txtCustName.Text = dr.Cells["CUSTOMER_NAME"].Value.ToString();
                 txtProdCode.Text = dr.Cells["PRODUCT_CODE"].Value.ToString();
-                txtProdName.Text = dr.Cells["PRODUCT_CODE_JOIN"].Value.ToString();
+                txtProdName.Text = dr.Cells["PRODUCT_NAME"].Value.ToString();
                 lblStatus.Text = dr.Cells["ORDER_STATUS"].Value.ToString();
                 lblOrderQty.Text = dr.Cells["ORDER_QTY"].Value.ToString();
                 lblProdQty.Text = dr.Cells["PRODUCT_QTY"].Value.ToString();
                 lblDefectQty.Text = dr.Cells["DEFECT_QTY"].Value.ToString();
-                //txtOperName.Text = dr.Cells["공정 불러오기"].Value.ToString();
-                //선택한 작업저시 정보 텍스트박스에 보여주기
+                txtOperCode.Text = dr.Cells["OPERATION_CODE"].Value.ToString();
+                txtOperName.Text = dr.Cells["OPERATION_NAME"].Value.ToString();
 
             }
         }
@@ -56,10 +57,11 @@ namespace POPprogram
                 LOT_ID = txtLOTID.Text,
                 LOT_DESC = txtLOTDescription.Text,
                 PRODUCT_CODE = txtProdCode.Text,
-                OPERATION_CODE = txtOperID.Text,
+                OPERATION_CODE = txtOperCode.Text,
                 WORK_ORDER_ID = txtWorkOrderID.Text,
                 LOT_QTY = Convert.ToInt32(txtQty.Text),
-                LAST_TRAN_COMMENT = txtComment.Text
+                LAST_TRAN_COMMENT = txtComment.Text,
+                LAST_TRAN_USER_ID = msUserID
 
             };
             //입력한 정보로 status & history에 insert
