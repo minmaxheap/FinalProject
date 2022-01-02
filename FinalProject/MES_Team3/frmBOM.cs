@@ -17,6 +17,7 @@ namespace MES_Team3
         string prodCode;
         DataTable mdtAdd;
         string msUserID = frmLogin.userID;
+        string prod_code;
         //string msUserID;
         //List<int> iSearchedList;
         //List<int> iSelectedRow;
@@ -122,11 +123,12 @@ namespace MES_Team3
 
             if (dr.Cells["PRODUCT_CODE"].Value != null && dr.Cells["PRODUCT_CODE"].Value != DBNull.Value)
                 vo.PRODUCT_CODE = dr.Cells["PRODUCT_CODE"].Value.ToString();
+
+
+            prod_code = vo.PRODUCT_CODE; 
             pgProperty.SelectedObject = vo;
 
             pgProperty.PropertySort = PropertySort.NoSort;
-
-            pgProperty.Visible = true;
 
             prodCode = dgvProduct["PRODUCT_CODE", e.RowIndex].Value.ToString();
 
@@ -154,7 +156,7 @@ namespace MES_Team3
             if (bResult)
             {
                 MessageBox.Show("등록되었습니다.");
-                LoadData();
+                GetDgvAddData();
                 return;
             }
             else
@@ -175,24 +177,20 @@ namespace MES_Team3
             BomVO vo = new BomVO();
 
 
-            //if (dr.Cells["STORE_CODE"].Value != null && dr.Cells["STORE_CODE"].Value != DBNull.Value)
-            //    vo.STORE_CODE = dr.Cells["STORE_CODE"].Value.ToString();
-            //if (dr.Cells["STORE_NAME"].Value != null && dr.Cells["STORE_NAME"].Value != DBNull.Value)
-            //    vo.STORE_NAME = dr.Cells["STORE_NAME"].Value.ToString();
-            //if (dr.Cells["STORE_TYPE"].Value != null && dr.Cells["STORE_TYPE"].Value != DBNull.Value)
-            //    vo.STORE_TYPE = dr.Cells["STORE_TYPE"].Value.ToString();
-            //if (dr.Cells["FIFO_FLAG"].Value != null && dr.Cells["FIFO_FLAG"].Value != DBNull.Value)
-            //    vo.FIFO_FLAG = dr.Cells["FIFO_FLAG"].Value.ToString();
-            //if (dr.Cells["CREATE_TIME"].Value != null && dr.Cells["CREATE_TIME"].Value != DBNull.Value)
-            //    vo.CREATE_TIME = Convert.ToDateTime(dr.Cells["CREATE_TIME"].Value);
-            //if (dr.Cells["CREATE_USER_ID"].Value != null && dr.Cells["CREATE_USER_ID"].Value != DBNull.Value)
-            //    vo.CREATE_USER_ID = csDataGridView1.Rows[e.RowIndex].Cells["CREATE_USER_ID"].Value.ToString();
-            //if (dr.Cells["UPDATE_TIME"].Value != null && dr.Cells["UPDATE_TIME"].Value != DBNull.Value)
-            //    vo.UPDATE_TIME = Convert.ToDateTime(dr.Cells["UPDATE_TIME"].Value);
-            //if (dr.Cells["UPDATE_USER_ID"].Value != null && dr.Cells["UPDATE_USER_ID"].Value != DBNull.Value)
-            //    vo.UPDATE_USER_ID = dr.Cells["UPDATE_USER_ID"].Value.ToString();
+            if (dr.Cells["CHILD_PRODUCT_CODE"].Value != null && dr.Cells["CHILD_PRODUCT_CODE"].Value != DBNull.Value)
+                vo.CHILD_PRODUCT_CODE = dr.Cells["CHILD_PRODUCT_CODE"].Value.ToString();
+            if (dr.Cells["REQUIRE_QTY"].Value != null && dr.Cells["REQUIRE_QTY"].Value != DBNull.Value)
+                vo.REQUIRE_QTY = dr.Cells["REQUIRE_QTY"].Value.ToString();
+            if (dr.Cells["CREATE_TIME"].Value != null && dr.Cells["CREATE_TIME"].Value != DBNull.Value)
+                vo.CREATE_TIME = Convert.ToDateTime(dr.Cells["CREATE_TIME"].Value);
+            if (dr.Cells["CREATE_USER_ID"].Value != null && dr.Cells["CREATE_USER_ID"].Value != DBNull.Value)
+                vo.CREATE_USER_ID = dgvBOM.Rows[e.RowIndex].Cells["CREATE_USER_ID"].Value.ToString();
+            if (dr.Cells["UPDATE_TIME"].Value != null && dr.Cells["UPDATE_TIME"].Value != DBNull.Value)
+                vo.UPDATE_TIME = Convert.ToDateTime(dr.Cells["UPDATE_TIME"].Value);
+            if (dr.Cells["UPDATE_USER_ID"].Value != null && dr.Cells["UPDATE_USER_ID"].Value != DBNull.Value)
+                vo.UPDATE_USER_ID = dr.Cells["UPDATE_USER_ID"].Value.ToString();
 
-
+            vo.PRODUCT_CODE = prod_code; 
             pgProperty.SelectedObject = vo;
 
             pgProperty.PropertySort = PropertySort.NoSort;
