@@ -50,6 +50,7 @@ namespace POPprogram
         private void btnExecute_Click(object sender, EventArgs e)
         {
             //생산 LOT 생성 
+            //입력한 정보로 status history에 insert
         }
     }
 }

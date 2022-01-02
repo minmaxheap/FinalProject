@@ -44,7 +44,14 @@ namespace MES_Team3
             dac.Dispose();
             return bResult;
         }
+        public bool WorkEnd(WorkOrderProperty vo)
+        {
 
+            WorkOrderDAC dac = new WorkOrderDAC();
+            bool bResult = dac.WorkEnd(vo);
+            dac.Dispose();
+            return bResult;
+        }
         public List<WorkOrderProperty> GetWorkOrderSearch(WorkOrderPropertySch pr)
         {
             WorkOrderDAC dac = new WorkOrderDAC();

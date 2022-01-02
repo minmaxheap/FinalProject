@@ -353,7 +353,75 @@ WHERE [CODE_TABLE_NAME] ='CM_CUSTOMER'";
 
             return productCodeList;
         }
+        public bool WorkEnd(WorkOrderProperty vo)
+        {
+            try
+            {
+                string sql = @"UPDATE [dbo].[WORK_ORDER_MST] SET
+      WORK_CLOSE_TIME = getdate()
+      ,WORK_CLOSE_USER_ID = @WORK_CLOSE_USER_ID
+      WHERE WORK_ORDER_ID = @WORK_ORDER_ID";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@WORK_ORDER_ID", vo.WORK_ORDER_ID);
+                    if ((vo.ORDER_DATE == default(DateTime)))
+                        cmd.Parameters.AddWithValue("@ORDER_DATE", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@ORDER_DATE", vo.ORDER_DATE);
+                    if (vo.CUSTOMER_CODE == null)
+                        cmd.Parameters.AddWithValue("@CUSTOMER_CODE", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@CUSTOMER_CODE", vo.CUSTOMER_CODE);
+                    if (vo.PRODUCT_CODE == null)
+                        cmd.Parameters.AddWithValue("@PRODUCT_CODE", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@PRODUCT_CODE", vo.PRODUCT_CODE);
+                    if (vo.ORDER_QTY == null)
+                        cmd.Parameters.AddWithValue("@ORDER_QTY", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@ORDER_QTY", vo.ORDER_QTY);
+                    if (vo.ORDER_STATUS == null)
+                        cmd.Parameters.AddWithValue("@ORDER_STATUS", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@ORDER_STATUS", vo.ORDER_STATUS);
 
+                    if (vo.PRODUCT_QTY == null)
+                        cmd.Parameters.AddWithValue("@PRODUCT_QTY", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@PRODUCT_QTY", vo.PRODUCT_QTY);
+                    if (vo.DEFECT_QTY == null)
+                        cmd.Parameters.AddWithValue("@DEFECT_QTY", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@DEFECT_QTY", vo.DEFECT_QTY);
+                    if ((vo.WORK_START_TIME == default(DateTime)))
+                        cmd.Parameters.AddWithValue("@WORK_START_TIME", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@WORK_START_TIME", vo.WORK_START_TIME);
+                    if (vo.WORK_CLOSE_USER_ID == null)
+                        cmd.Parameters.AddWithValue("@WORK_CLOSE_USER_ID", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@WORK_CLOSE_USER_ID", vo.WORK_CLOSE_USER_ID);
+                    if ((vo.WORK_CLOSE_TIME == default(DateTime)))
+                        cmd.Parameters.AddWithValue("@WORK_CLOSE_TIME", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@WORK_CLOSE_TIME", vo.WORK_CLOSE_TIME);
+
+                    //cmd.Parameters.AddWithValue("@CREATE_TIME",vo.CREATE_TIME);
+                    if (vo.UPDATE_USER_ID == null)
+                        cmd.Parameters.AddWithValue("@UPDATE_USER_ID", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@UPDATE_USER_ID", vo.UPDATE_USER_ID);
+                    int row = cmd.ExecuteNonQuery();
+                    return row > 0;
+
+                }
+            }
+            catch (Exception err)
+            {
+                Debug.WriteLine(err.Message);
+                return false;
+            }
+        }
         public void Dispose()
         {
             conn.Close();
