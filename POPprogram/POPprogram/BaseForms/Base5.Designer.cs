@@ -33,12 +33,12 @@ namespace POPprogram
 
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Base5));
             this.panel4 = new System.Windows.Forms.Panel();
+            this.txtQty = new POPprogram.NumTextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtOperName = new System.Windows.Forms.TextBox();
             this.lblComment = new System.Windows.Forms.Label();
             this.txtComment = new System.Windows.Forms.TextBox();
-            this.txtOperID = new System.Windows.Forms.TextBox();
-            this.txtQty = new System.Windows.Forms.TextBox();
+            this.txtOperCode = new System.Windows.Forms.TextBox();
             this.lblOperation = new System.Windows.Forms.Label();
             this.lblQty = new System.Windows.Forms.Label();
             this.txtProdName = new System.Windows.Forms.TextBox();
@@ -82,17 +82,33 @@ namespace POPprogram
             this.pnlCrud.SuspendLayout();
             this.SuspendLayout();
             // 
+            // btnTxtSearch
+            // 
+            btnTxtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            btnTxtSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTxtSearch.BackgroundImage")));
+            btnTxtSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            btnTxtSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            btnTxtSearch.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            btnTxtSearch.ForeColor = System.Drawing.SystemColors.ControlText;
+            btnTxtSearch.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            btnTxtSearch.Location = new System.Drawing.Point(504, 57);
+            btnTxtSearch.Margin = new System.Windows.Forms.Padding(0);
+            btnTxtSearch.Name = "btnTxtSearch";
+            btnTxtSearch.Size = new System.Drawing.Size(32, 26);
+            btnTxtSearch.TabIndex = 51;
+            btnTxtSearch.UseVisualStyleBackColor = false;
+            // 
             // panel4
             // 
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.txtQty);
             this.panel4.Controls.Add(this.label11);
             this.panel4.Controls.Add(this.txtOperName);
             this.panel4.Controls.Add(this.lblComment);
             this.panel4.Controls.Add(this.txtComment);
-            this.panel4.Controls.Add(this.txtOperID);
-            this.panel4.Controls.Add(this.txtQty);
+            this.panel4.Controls.Add(this.txtOperCode);
             this.panel4.Controls.Add(this.lblOperation);
             this.panel4.Controls.Add(this.lblQty);
             this.panel4.Controls.Add(this.txtProdName);
@@ -105,6 +121,14 @@ namespace POPprogram
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1136, 243);
             this.panel4.TabIndex = 45;
+            // 
+            // txtQty
+            // 
+            this.txtQty.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
+            this.txtQty.Location = new System.Drawing.Point(149, 152);
+            this.txtQty.Name = "txtQty";
+            this.txtQty.Size = new System.Drawing.Size(335, 29);
+            this.txtQty.TabIndex = 89;
             // 
             // label11
             // 
@@ -152,21 +176,13 @@ namespace POPprogram
             this.txtComment.Size = new System.Drawing.Size(937, 46);
             this.txtComment.TabIndex = 85;
             // 
-            // txtOperID
+            // txtOperCode
             // 
-            this.txtOperID.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
-            this.txtOperID.Location = new System.Drawing.Point(149, 118);
-            this.txtOperID.Name = "txtOperID";
-            this.txtOperID.Size = new System.Drawing.Size(335, 29);
-            this.txtOperID.TabIndex = 83;
-            // 
-            // txtQty
-            // 
-            this.txtQty.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
-            this.txtQty.Location = new System.Drawing.Point(149, 153);
-            this.txtQty.Name = "txtQty";
-            this.txtQty.Size = new System.Drawing.Size(335, 29);
-            this.txtQty.TabIndex = 78;
+            this.txtOperCode.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
+            this.txtOperCode.Location = new System.Drawing.Point(149, 118);
+            this.txtOperCode.Name = "txtOperCode";
+            this.txtOperCode.Size = new System.Drawing.Size(335, 29);
+            this.txtOperCode.TabIndex = 83;
             // 
             // lblOperation
             // 
@@ -289,22 +305,6 @@ namespace POPprogram
             this.lblWorkOrder.TabIndex = 77;
             this.lblWorkOrder.Text = "작업지시";
             this.lblWorkOrder.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnTxtSearch
-            // 
-            btnTxtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            btnTxtSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTxtSearch.BackgroundImage")));
-            btnTxtSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            btnTxtSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            btnTxtSearch.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            btnTxtSearch.ForeColor = System.Drawing.SystemColors.ControlText;
-            btnTxtSearch.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            btnTxtSearch.Location = new System.Drawing.Point(504, 57);
-            btnTxtSearch.Margin = new System.Windows.Forms.Padding(0);
-            btnTxtSearch.Name = "btnTxtSearch";
-            btnTxtSearch.Size = new System.Drawing.Size(32, 26);
-            btnTxtSearch.TabIndex = 51;
-            btnTxtSearch.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel1
             // 
@@ -616,8 +616,7 @@ namespace POPprogram
         public System.Windows.Forms.Panel pnlCrud;
         public System.Windows.Forms.Button btnExecute;
         public System.Windows.Forms.Button btnClose;
-        public System.Windows.Forms.TextBox txtOperID;
-        public System.Windows.Forms.TextBox txtQty;
+        public System.Windows.Forms.TextBox txtOperCode;
         public System.Windows.Forms.Label lblOperation;
         public System.Windows.Forms.Label lblQty;
         public System.Windows.Forms.TextBox txtProdName;
@@ -632,6 +631,7 @@ namespace POPprogram
         public System.Windows.Forms.Label label11;
         public System.Windows.Forms.Label lblCustomer;
         public System.Windows.Forms.Label lblWorkOrder;
+        public NumTextBox txtQty;
         public System.Windows.Forms.Button btnTxtSearch;
     }
 }

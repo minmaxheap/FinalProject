@@ -404,4 +404,28 @@ namespace DAC
             return new StandardValuesCollection(new ValueType().GetSourceList());
         }
     }
+
+    public class RM_CODE
+    {
+        public List<string> GetSourceList()
+        {
+            BomDAC dac = new BomDAC();
+            List<string> productType = dac.GetCPCList();
+            return productType;
+        }
+    }
+    public class RM_CODEConverter : StringConverter
+    {
+        public override bool GetStandardValuesSupported(ITypeDescriptorContext context)
+        {
+            return true;
+        }
+
+
+        public override TypeConverter.StandardValuesCollection GetStandardValues(ITypeDescriptorContext context)
+        {
+            // ProductVO refMyObject = context.Instance as ProductVO;
+            return new StandardValuesCollection(new RM_CODE().GetSourceList());
+        }
+    }
 }

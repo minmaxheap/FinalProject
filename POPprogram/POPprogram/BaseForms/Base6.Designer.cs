@@ -38,6 +38,7 @@ namespace POPprogram
             this.label6 = new System.Windows.Forms.Label();
             this.txtProdCode = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.txtQty = new POPprogram.NumTextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
@@ -52,7 +53,6 @@ namespace POPprogram
             this.txtCustID = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtQty = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtOperName = new System.Windows.Forms.TextBox();
             this.txtOperCode = new System.Windows.Forms.TextBox();
@@ -150,13 +150,13 @@ namespace POPprogram
             this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.Controls.Add(this.txtQty);
             this.panel8.Controls.Add(this.tableLayoutPanel2);
             this.panel8.Controls.Add(this.txtCustName);
             this.panel8.Controls.Add(this.txtWorkOrder);
             this.panel8.Controls.Add(this.txtCustID);
             this.panel8.Controls.Add(this.label11);
             this.panel8.Controls.Add(this.label10);
-            this.panel8.Controls.Add(this.txtQty);
             this.panel8.Controls.Add(this.label3);
             this.panel8.Controls.Add(this.txtOperName);
             this.panel8.Controls.Add(this.txtOperCode);
@@ -171,6 +171,16 @@ namespace POPprogram
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1136, 284);
             this.panel8.TabIndex = 49;
+            // 
+            // txtQty
+            // 
+            this.txtQty.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtQty.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
+            this.txtQty.Location = new System.Drawing.Point(802, 120);
+            this.txtQty.Name = "txtQty";
+            this.txtQty.Size = new System.Drawing.Size(301, 29);
+            this.txtQty.TabIndex = 90;
             // 
             // tableLayoutPanel2
             // 
@@ -349,16 +359,6 @@ namespace POPprogram
             this.label10.TabIndex = 70;
             this.label10.Text = "작업지시";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtQty
-            // 
-            this.txtQty.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtQty.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
-            this.txtQty.Location = new System.Drawing.Point(802, 120);
-            this.txtQty.Name = "txtQty";
-            this.txtQty.Size = new System.Drawing.Size(301, 29);
-            this.txtQty.TabIndex = 67;
             // 
             // label3
             // 
@@ -563,7 +563,6 @@ namespace POPprogram
         public System.Windows.Forms.TextBox txtCustID;
         public System.Windows.Forms.Label label11;
         public System.Windows.Forms.Label label10;
-        public System.Windows.Forms.TextBox txtQty;
         public System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox txtOperName;
         public System.Windows.Forms.TextBox txtOperCode;
@@ -582,5 +581,6 @@ namespace POPprogram
         public System.Windows.Forms.Label label20;
         public System.Windows.Forms.Label label19;
         public System.Windows.Forms.Label label12;
+        public NumTextBox txtQty;
     }
 }

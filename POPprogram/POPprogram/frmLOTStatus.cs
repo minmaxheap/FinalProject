@@ -39,12 +39,12 @@ namespace POPprogram
         {
 
             DataGridViewUtil.SetInitGridView(csDataGridView1);
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "LOT ID", "PRODUCT_CODE");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "LOT 설명", "PRODUCT_NAME");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "품번", "PRODUCT_TYPE");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "품명", "CUSTOMER_CODE");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "수량", "VENDOR_CODE");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "공정", "CREATE_TIME", width: 150);
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "LOT ID", "LOT_ID");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "LOT 설명", "LOT_DESC");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "품번", "PRODUCT_CODE");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "품명", "PRODUCT_NAME");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "수량", "LOT_QTY");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "공정", "OPERATION_CODE");
 
             iSearchedList = new List<int>();
             iSelectedRow = new List<int>();
@@ -53,7 +53,6 @@ namespace POPprogram
 
 
             LOTProperty pr = new LOTProperty();
-            //pr.IsSearchPanel = false;
             pgProperty.SelectedObject = pr;
 
             pgProperty.PropertySort = PropertySort.NoSort;
@@ -61,19 +60,20 @@ namespace POPprogram
             BIsSearchPanel = false;
 
             LOTSearchProperty ps = new LOTSearchProperty();
-            //pr.IsSearchPanel = false;
             pgSearch.SelectedObject = ps;
 
             pgSearch.PropertySort = PropertySort.NoSort;
 
             DataGridViewUtil.SetInitGridView(csDataGridView2);
-            DataGridViewUtil.AddGridTextColumn(csDataGridView2, "처리 시간", "PRODUCT_CODE");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView2, "처리 코드", "PRODUCT_NAME");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView2, "공정", "PRODUCT_TYPE");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView2, "공정명", "CUSTOMER_CODE");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView2, "수량", "VENDOR_CODE");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView2, "작업 시작 여부", "CREATE_TIME");
- 
+            DataGridViewUtil.AddGridTextColumn(csDataGridView2, "이력 순번", "HIST_SEQ");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView2, "처리 시간", "TRAN_TIME");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView2, "처리 코드", "TRAN_CODE");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView2, "공정", "OPERATION_CODE");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView2, "공정명", "OPERATION_NAME");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView2, "수량", "LOT_QTY");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView2, "작업 시작 여부", "START_FLAG");
+
+
         }
 
 
@@ -111,7 +111,7 @@ namespace POPprogram
         private void LoadData()
         {
             LOTServ serv = new LOTServ();
-            mdtAll = serv.GetLOTList();
+            mdtAll = serv.GetLOTAllList();
             csDataGridView1.DataSource = null;
             csDataGridView1.DataSource = mdtAll;
             csDataGridView1.Focus();
@@ -139,7 +139,7 @@ namespace POPprogram
             {
                 pnlProperty.Visible = true;
                 pnlSearch.Visible = false;
-                lblPanel.Text = "▶ 속성";
+                lblPanel.Text = "▶ LOT 상태";
                 lblPanel.BackColor = Color.FromArgb(82, 152, 216);
                 btnPanel.BackColor = lblPanel.BackColor;
 
@@ -187,8 +187,16 @@ namespace POPprogram
 
         private void csDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //lot 상태 바인딩
-            //아래 데이터 그리드뷰 데이터 불러오기
+            if (e.RowIndex < 0) return;
+            string lotID = csDataGridView1["LOT_ID", e.RowIndex].Value.ToString();
+
+            LOTServ serv = new LOTServ();
+            DataTable dtHis = serv.GetLOTHistory(lotID);
+           List<LOTProperty> list = serv.GetLOTStatus(lotID);
+
+            csDataGridView2.DataSource = dtHis;
+            if(list.Count>0) pgProperty.SelectedObject = list[0];
+       
         }
     }
 }

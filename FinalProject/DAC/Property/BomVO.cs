@@ -28,10 +28,12 @@ namespace DAC
 
 		[DisplayName("제품 코드")]
 		[Browsable(true)]
+		[ReadOnly(true)]
 		public string PRODUCT_CODE { get { return product_code; } set { product_code = value; } }
 
 		[DisplayName("자품번")]
 		[Browsable(true)]
+		[TypeConverter(typeof(RM_CODEConverter))]
 		public string CHILD_PRODUCT_CODE { get { return child_product_code; } set { child_product_code = value; } }
 
 		//[DisplayName("자 품명")]
@@ -44,8 +46,6 @@ namespace DAC
 		//}
 		[DisplayName("단위 수량")]
 		[Browsable(true)]
-
-		[TypeConverter(typeof(StoreTypeConverter))]
 		public string REQUIRE_QTY { get { return require_qty; } set { require_qty = value; } }
 
 		//[DisplayName("대체 품번")]

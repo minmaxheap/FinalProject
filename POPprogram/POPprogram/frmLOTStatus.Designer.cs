@@ -29,9 +29,9 @@ namespace POPprogram
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Button btnTxtSearch;
+         
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLOTStatus));
-            System.Windows.Forms.Button btnReadTop;
+       
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -501,5 +501,8 @@ namespace POPprogram
         private System.Windows.Forms.PropertyGrid pgProperty;
         public System.Windows.Forms.Panel pnlSearch;
         private System.Windows.Forms.PropertyGrid pgSearch;
+
+        public System.Windows.Forms.Button btnTxtSearch;
+        public System.Windows.Forms.Button btnReadTop;
     }
 }

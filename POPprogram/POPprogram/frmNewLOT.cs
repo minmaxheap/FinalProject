@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAC;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,16 +11,17 @@ namespace POPprogram
 {
     public partial class frmNewLOT : POPprogram.Base5
     {
+        string msUserID;
         public frmNewLOT()
         {
             InitializeComponent();
+            msUserID = frmLogin.userID;
         }
 
-        private void frmNewLot1_Load(object sender, EventArgs e)
+        private void frmNewLOT_Load(object sender, EventArgs e)
         {
-
+           
         }
-
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -34,23 +36,47 @@ namespace POPprogram
                 DataGridViewRow dr = dlg.SelectedRow;
                 txtWorkOrderID.Text = dr.Cells["WORK_ORDER_ID"].Value.ToString();
                 txtCustID.Text = dr.Cells["CUSTOMER_CODE"].Value.ToString();
-                txtCustName.Text = dr.Cells["CUSTOMER_NAME_JOIN"].Value.ToString();
+                txtCustName.Text = dr.Cells["CUSTOMER_NAME"].Value.ToString();
                 txtProdCode.Text = dr.Cells["PRODUCT_CODE"].Value.ToString();
-                txtProdName.Text = dr.Cells["PRODUCT_CODE_JOIN"].Value.ToString();
+                txtProdName.Text = dr.Cells["PRODUCT_NAME"].Value.ToString();
                 lblStatus.Text = dr.Cells["ORDER_STATUS"].Value.ToString();
                 lblOrderQty.Text = dr.Cells["ORDER_QTY"].Value.ToString();
                 lblProdQty.Text = dr.Cells["PRODUCT_QTY"].Value.ToString();
                 lblDefectQty.Text = dr.Cells["DEFECT_QTY"].Value.ToString();
-                //txtOperName.Text = dr.Cells["공정 불러오기"].Value.ToString();
-                //선택한 작업저시 정보 텍스트박스에 보여주기
+                txtOperCode.Text = dr.Cells["OPERATION_CODE"].Value.ToString();
+                txtOperName.Text = dr.Cells["OPERATION_NAME"].Value.ToString();
 
             }
         }
 
         private void btnExecute_Click(object sender, EventArgs e)
         {
-            //생산 LOT 생성 
-            //입력한 정보로 status history에 insert
+            //LOT ID랑 수량 입력 안 하면 RETURN 되도록 해야함(아직 안 함)
+            LOTProperty mLOT = new LOTProperty()
+            {
+                LOT_ID = txtLOTID.Text,
+                LOT_DESC = txtLOTDescription.Text,
+                PRODUCT_CODE = txtProdCode.Text,
+                OPERATION_CODE = txtOperCode.Text,
+                WORK_ORDER_ID = txtWorkOrderID.Text,
+                LOT_QTY = Convert.ToInt32(txtQty.Text),
+                LAST_TRAN_COMMENT = txtComment.Text,
+                LAST_TRAN_USER_ID = msUserID
+
+            };
+            //입력한 정보로 status & history에 insert
+            LOTServ serv = new LOTServ();
+            bool bResult = serv.SetNewLOT(mLOT);
+            if(bResult)
+            {
+                MessageBox.Show("LOT 생성을 성공적으로 실행했습니다.");
+            }
+            else
+            {
+                MessageBox.Show("LOT 생성 중 오류가 발생했습니다.");
+            }
         }
+
+      
     }
 }
