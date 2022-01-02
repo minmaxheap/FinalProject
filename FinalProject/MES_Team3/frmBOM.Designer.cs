@@ -78,6 +78,10 @@ namespace MES_Team3
             // 
             this.pnlTop.Controls.SetChildIndex(this.txtSearch, 0);
             // 
+            // btnInsert
+            // 
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
+            // 
             // btnDelete
             // 
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -213,6 +217,7 @@ namespace MES_Team3
             this.dgvBOM.RowTemplate.Height = 23;
             this.dgvBOM.Size = new System.Drawing.Size(724, 255);
             this.dgvBOM.TabIndex = 18;
+            this.dgvBOM.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBOM_CellClick);
             // 
             // frmBOM
             // 
