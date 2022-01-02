@@ -88,7 +88,6 @@ where [dbo].[BOM_MST].PRODUCT_CODE = @PRODUCT_CODE";
            ([PRODUCT_CODE]
            ,[CHILD_PRODUCT_CODE]
            ,[REQUIRE_QTY]
-           ,[ALTER_PRODUCT_CODE]
            ,[CREATE_TIME]
            ,[CREATE_USER_ID]
 
@@ -97,7 +96,6 @@ where [dbo].[BOM_MST].PRODUCT_CODE = @PRODUCT_CODE";
            (@PRODUCT_CODE,
             @CHILD_PRODUCT_CODE,
             @REQUIRE_QTY,
-            @ALTER_PRODUCT_CODE,
             getdate(),
             @CREATE_USER_ID
 
