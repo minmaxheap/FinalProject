@@ -25,5 +25,13 @@ namespace MES_Team3
             dac.Dispose();
             return dt;
         }
+
+        public DataTable GetOperRelation(string prodCode)
+        {
+            BomDAC dac = new BomDAC();
+            DataTable dt = dac.GetOperRelation(prodCode);
+            dac.Dispose();
+            return dt;
+        }
     }
 }

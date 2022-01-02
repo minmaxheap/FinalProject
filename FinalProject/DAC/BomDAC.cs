@@ -45,6 +45,21 @@ INNER JOIN [dbo].[PRODUCT_MST] ON([dbo].[BOM_MST].PRODUCT_CODE = [dbo].[PRODUCT_
             }
         }
 
+        public DataTable GetOperRelation(string prodCode)
+        {
+            string sql = @"select [dbo].[BOM_MST].PRODUCT_CODE,[dbo].[BOM_MST].CHILD_PRODUCT_CODE, [dbo].[BOM_MST].REQUIRE_QTY, [dbo].[BOM_MST].ALTER_PRODUCT_CODE, [dbo].[BOM_MST].CREATE_TIME, [dbo].[BOM_MST].CREATE_USER_ID, [dbo].[BOM_MST].UPDATE_TIME, [dbo].[BOM_MST].UPDATE_USER_ID
+from [dbo].[BOM_MST]
+INNER JOIN [dbo].[PRODUCT_MST] ON([dbo].[BOM_MST].PRODUCT_CODE = [dbo].[PRODUCT_MST].PRODUCT_CODE)";
+            DataTable dt = new DataTable();
+            using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
+            {
+                da.SelectCommand.Parameters.AddWithValue("@PRODUCT_CODE", prodCode);
+                da.Fill(dt);
+                return dt;
+            }
+        }
+
+
         public bool Insert(BomVO vo)
         {
             try
