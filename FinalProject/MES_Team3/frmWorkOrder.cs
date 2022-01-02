@@ -80,10 +80,11 @@ namespace MES_Team3
             if (bResult)
             {
                 LoadData();
+                MessageBox.Show("생성이 성공적으로 작업되었습니다.");
             }
             else
             {
-
+                MessageBox.Show("생성 중 문제가 발생했습니다. 다시 확인하여 주시기 바랍니다.");
             }
         }
 
@@ -150,7 +151,15 @@ namespace MES_Team3
             WorkOrderProperty save = (WorkOrderProperty)pgProperty.SelectedObject;
             WorkOrderServ serv = new WorkOrderServ();
             bool bResult = serv.Delete(save);
-            LoadData();
+            if (bResult)
+            {
+                LoadData();
+                MessageBox.Show("삭제가 성공적으로 작업되었습니다.");
+            }
+            else
+            {
+                MessageBox.Show("삭제 중 문제가 발생했습니다. 다시 확인하여 주시기 바랍니다.");
+            }
 
         }
 
@@ -178,10 +187,11 @@ namespace MES_Team3
             if (bResult)
             {
                 LoadData();
+                MessageBox.Show("변경이 성공적으로 작업되었습니다.");
             }
             else
             {
-
+                MessageBox.Show("변경 중 문제가 발생했습니다. 다시 확인하여 주시기 바랍니다.");
             }
         }
 
@@ -383,6 +393,22 @@ namespace MES_Team3
             }
         }
 
-}
+        private void button1_Click(object sender, EventArgs e)
+        {
+            WorkOrderProperty save = (WorkOrderProperty)pgProperty.SelectedObject;
+            save.WORK_CLOSE_USER_ID = sUserID;
+            WorkOrderServ serv = new WorkOrderServ();
+            bool bResult = serv.WorkEnd(save);
+            if (bResult)
+            {
+                LoadData();
+                MessageBox.Show("마감이 성공적으로 등록되었습니다.");
+            }
+            else
+            {
+                MessageBox.Show("마감 중 문제가 발생했습니다. 다시 확인하여 주시기 바랍니다.");
+            }
+        }
+    }
 }
 
