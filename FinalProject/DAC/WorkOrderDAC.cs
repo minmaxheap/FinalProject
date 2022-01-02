@@ -383,6 +383,7 @@ WHERE [CODE_TABLE_NAME] ='CM_CUSTOMER'";
         {
             string sql = @"SELECT 
 CASE
+		WHEN Convert(int, Max(RIGHT(SALES_ORDER_ID,3)))<9 THEN concat('SALES_00',Max(RIGHT(SALES_ORDER_ID,3))+1)
     	WHEN Convert(int, Max(RIGHT(SALES_ORDER_ID,3)))<99 THEN concat('SALES_0',Max(RIGHT(SALES_ORDER_ID,3))+1)
     	WHEN Convert(int, Max(RIGHT(SALES_ORDER_ID,3)))>=99 THEN concat('SALES_',Max(RIGHT(SALES_ORDER_ID,3))+1)
 	END AS NUM
