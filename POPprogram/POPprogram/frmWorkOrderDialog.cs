@@ -12,7 +12,7 @@ namespace POPprogram
 {
     public partial class frmWorkOrderDialog : Form
     {
-        public DataGridViewRow SelectedRow { get { return csDataGridView1.SelectedRows[0]; } set { } }
+        public DataGridViewRow SelectedRow { get { if (csDataGridView1.SelectedRows.Count > 0) return csDataGridView1.SelectedRows[0]; else return null; } set { } }
         public frmWorkOrderDialog()
         {
             InitializeComponent();
@@ -24,9 +24,11 @@ namespace POPprogram
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "작업일자", "ORDER_DATE");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "작업지시", "WORK_ORDER_ID");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "고객사", "CUSTOMER_CODE");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "고객사명", "CUSTOMER_NAME_JOIN");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "고객사명", "CUSTOMER_NAME");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "품번", "PRODUCT_CODE");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "품명", "PRODUCT_CODE_JOIN");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "품명", "PRODUCT_NAME");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "공정코드", "OPERATION_CODE");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "공정명", "OPERATION_NAME");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "지시수량", "ORDER_QTY");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "상태", "ORDER_STATUS");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생산수량", "PRODUCT_QTY");
@@ -35,7 +37,7 @@ namespace POPprogram
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "마감 처리자", "WORK_CLOSE_USER_ID");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "마감 시간", "WORK_CLOSE_TIME");
 
-           
+
             LOTServ serv = new LOTServ();
             DataTable dt = serv.GetWorkOrderList();
             csDataGridView1.DataSource = null;

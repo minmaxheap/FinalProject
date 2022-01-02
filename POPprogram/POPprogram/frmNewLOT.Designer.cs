@@ -42,27 +42,9 @@ namespace POPprogram
             // 
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // label10
+            // lblOperation
             // 
-            this.lblOperation.Location = new System.Drawing.Point(85, 121);
-            this.lblOperation.Size = new System.Drawing.Size(46, 21);
             this.lblOperation.Text = "공장";
-            // 
-            // label9
-            // 
-            this.lblProduct.Text = "품번";
-            // 
-            // label22
-            // 
-            this.lblLOT.Location = new System.Drawing.Point(22, 51);
-            this.lblLOT.Size = new System.Drawing.Size(109, 21);
-            this.lblLOT.Text = "생산 LOT ID";
-            // 
-            // label3
-            // 
-            this.lblWorkOrder.Location = new System.Drawing.Point(49, 60);
-            this.lblWorkOrder.Size = new System.Drawing.Size(82, 21);
-            this.lblWorkOrder.Text = "작업지시";
             // 
             // btnTxtSearch
             // 
@@ -72,7 +54,7 @@ namespace POPprogram
             // 
             this.ClientSize = new System.Drawing.Size(1194, 634);
             this.Name = "frmNewLOT";
-            this.Load += new System.EventHandler(this.frmNewLot1_Load);
+            this.Load += new System.EventHandler(this.frmNewLOT_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel8.ResumeLayout(false);

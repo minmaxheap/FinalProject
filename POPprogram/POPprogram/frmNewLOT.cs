@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAC;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,16 +11,16 @@ namespace POPprogram
 {
     public partial class frmNewLOT : POPprogram.Base5
     {
+       
         public frmNewLOT()
         {
             InitializeComponent();
         }
 
-        private void frmNewLot1_Load(object sender, EventArgs e)
+        private void frmNewLOT_Load(object sender, EventArgs e)
         {
-
+           
         }
-
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -49,8 +50,31 @@ namespace POPprogram
 
         private void btnExecute_Click(object sender, EventArgs e)
         {
-            //생산 LOT 생성 
-            //입력한 정보로 status history에 insert
+            //LOT ID랑 수량 입력 안 하면 RETURN 되도록 해야함(아직 안 함)
+            LOTProperty mLOT = new LOTProperty()
+            {
+                LOT_ID = txtLOTID.Text,
+                LOT_DESC = txtLOTDescription.Text,
+                PRODUCT_CODE = txtProdCode.Text,
+                OPERATION_CODE = txtOperID.Text,
+                WORK_ORDER_ID = txtWorkOrderID.Text,
+                LOT_QTY = Convert.ToInt32(txtQty.Text),
+                LAST_TRAN_COMMENT = txtComment.Text
+
+            };
+            //입력한 정보로 status & history에 insert
+            LOTServ serv = new LOTServ();
+            bool bResult = serv.SetNewLOT(mLOT);
+            if(bResult)
+            {
+                MessageBox.Show("LOT 생성을 성공적으로 실행했습니다.");
+            }
+            else
+            {
+                MessageBox.Show("LOT 생성 중 오류가 발생했습니다.");
+            }
         }
+
+      
     }
 }
