@@ -101,7 +101,7 @@ namespace POPprogram
         {
             foreach (DataGridViewRow r in csDataGridView1.Rows)
             {
-                r.Cells["Column0"].Value = ((CheckBox)sender).Checked;
+                r.Cells["Column1"].Value = ((CheckBox)sender).Checked;
             }
         }
 
