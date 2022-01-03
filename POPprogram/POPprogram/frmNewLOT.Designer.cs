@@ -62,6 +62,10 @@ namespace POPprogram
             // 
             this.lblOperation.Text = "공장";
             // 
+            // lblQty
+            // 
+            this.lblQty.ForeColor = System.Drawing.Color.Red;
+            // 
             // txtProdName
             // 
             this.txtProdName.ReadOnly = true;
@@ -69,6 +73,10 @@ namespace POPprogram
             // txtProdCode
             // 
             this.txtProdCode.ReadOnly = true;
+            // 
+            // lblLOT
+            // 
+            this.lblLOT.ForeColor = System.Drawing.Color.Red;
             // 
             // txtOperName
             // 

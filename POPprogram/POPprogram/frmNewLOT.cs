@@ -51,7 +51,8 @@ namespace POPprogram
 
         private void btnExecute_Click(object sender, EventArgs e)
         {
-            //LOT ID랑 수량 입력 안 하면 RETURN 되도록 해야함(아직 안 함)
+            if (string.IsNullOrWhiteSpace(txtLOTID.Text)) { MessageBox.Show("LOT ID를 반드시 입력해주세요."); return; }
+            if (string.IsNullOrWhiteSpace(txtQty.Text)) { MessageBox.Show("수량을 반드시 입력해주세요."); return; }
             LOTProperty mLOT = new LOTProperty()
             {
                 LOT_ID = txtLOTID.Text,
