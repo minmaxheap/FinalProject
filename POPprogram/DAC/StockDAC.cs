@@ -45,11 +45,11 @@ WHERE  P.PRODUCT_CODE = O.MATERIAL_CODE AND V.CODE_TABLE_NAME ='CM_VENDOR' AND V
   from	[dbo].[PURCHASE_ORDER_MST] po 
   left join [dbo].[PRODUCT_MST] p on po.MATERIAL_CODE = p.PRODUCT_CODE
   left join [dbo].[BOM_MST] b on p.PRODUCT_CODE = b.PRODUCT_CODE
-   where po.PURCHASE_ORDER_ID =@po.PURCHASE_ORDER_ID";
+   where po.PURCHASE_ORDER_ID = @PURCHASE_ORDER_ID";
 
             using (SqlCommand cmd = new SqlCommand(sql, conn))
             {
-                cmd.Parameters.AddWithValue("@po.PURCHASE_ORDER_ID", Code);
+                cmd.Parameters.AddWithValue("@PURCHASE_ORDER_ID", Code);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
