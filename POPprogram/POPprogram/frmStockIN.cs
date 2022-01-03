@@ -17,6 +17,11 @@ namespace POPprogram
 
         private void btnReadTop_Click(object sender, EventArgs e)
         {
+           
+        }
+
+        private void btnTxtSearch_Click(object sender, EventArgs e)
+        {
             frmPrurchaseDialog dlg = new frmPrurchaseDialog();
             if (dlg.ShowDialog() == DialogResult.OK)
             {
