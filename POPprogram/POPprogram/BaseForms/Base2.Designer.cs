@@ -29,7 +29,7 @@ namespace POPprogram
         /// </summary>
         private void InitializeComponent()
         {
-            
+           
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Base2));
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
@@ -41,16 +41,16 @@ namespace POPprogram
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtCode3 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtName2 = new System.Windows.Forms.TextBox();
+            this.txtCode2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtName1 = new System.Windows.Forms.TextBox();
+            this.txtCode1 = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             btnReadTop = new System.Windows.Forms.Button();
@@ -185,7 +185,7 @@ namespace POPprogram
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel7.Controls.Add(btnReadTop);
             this.panel7.Controls.Add(btnTxtSearch);
-            this.panel7.Controls.Add(this.textBox9);
+            this.panel7.Controls.Add(this.txtSearch);
             this.panel7.Controls.Add(this.label9);
             this.panel7.Location = new System.Drawing.Point(31, 26);
             this.panel7.Margin = new System.Windows.Forms.Padding(0);
@@ -225,13 +225,13 @@ namespace POPprogram
             btnTxtSearch.TabIndex = 57;
             btnTxtSearch.UseVisualStyleBackColor = false;
             // 
-            // textBox9
+            // txtSearch
             // 
-            this.textBox9.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textBox9.Location = new System.Drawing.Point(166, 1);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(335, 29);
-            this.textBox9.TabIndex = 56;
+            this.txtSearch.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
+            this.txtSearch.Location = new System.Drawing.Point(166, 1);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(335, 29);
+            this.txtSearch.TabIndex = 56;
             // 
             // label9
             // 
@@ -251,13 +251,13 @@ namespace POPprogram
             this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel8.Controls.Add(this.textBox6);
+            this.panel8.Controls.Add(this.txtCode3);
             this.panel8.Controls.Add(this.label10);
-            this.panel8.Controls.Add(this.textBox3);
-            this.panel8.Controls.Add(this.textBox4);
+            this.panel8.Controls.Add(this.txtName2);
+            this.panel8.Controls.Add(this.txtCode2);
             this.panel8.Controls.Add(this.label2);
-            this.panel8.Controls.Add(this.textBox20);
-            this.panel8.Controls.Add(this.textBox5);
+            this.panel8.Controls.Add(this.txtName1);
+            this.panel8.Controls.Add(this.txtCode1);
             this.panel8.Controls.Add(this.label22);
             this.panel8.Controls.Add(this.label6);
             this.panel8.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -267,13 +267,13 @@ namespace POPprogram
             this.panel8.Size = new System.Drawing.Size(1136, 168);
             this.panel8.TabIndex = 52;
             // 
-            // textBox6
+            // txtCode3
             // 
-            this.textBox6.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textBox6.Location = new System.Drawing.Point(166, 120);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(335, 29);
-            this.textBox6.TabIndex = 69;
+            this.txtCode3.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
+            this.txtCode3.Location = new System.Drawing.Point(166, 120);
+            this.txtCode3.Name = "txtCode3";
+            this.txtCode3.Size = new System.Drawing.Size(335, 29);
+            this.txtCode3.TabIndex = 69;
             // 
             // label10
             // 
@@ -286,23 +286,23 @@ namespace POPprogram
             this.label10.Text = "작업지시";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox3
+            // txtName2
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtName2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textBox3.Location = new System.Drawing.Point(522, 85);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(581, 29);
-            this.textBox3.TabIndex = 66;
+            this.txtName2.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
+            this.txtName2.Location = new System.Drawing.Point(522, 85);
+            this.txtName2.Name = "txtName2";
+            this.txtName2.Size = new System.Drawing.Size(581, 29);
+            this.txtName2.TabIndex = 66;
             // 
-            // textBox4
+            // txtCode2
             // 
-            this.textBox4.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textBox4.Location = new System.Drawing.Point(166, 85);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(335, 29);
-            this.textBox4.TabIndex = 64;
+            this.txtCode2.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
+            this.txtCode2.Location = new System.Drawing.Point(166, 85);
+            this.txtCode2.Name = "txtCode2";
+            this.txtCode2.Size = new System.Drawing.Size(335, 29);
+            this.txtCode2.TabIndex = 64;
             // 
             // label2
             // 
@@ -315,23 +315,23 @@ namespace POPprogram
             this.label2.Text = "공정";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox20
+            // txtName1
             // 
-            this.textBox20.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtName1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox20.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textBox20.Location = new System.Drawing.Point(522, 50);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(581, 29);
-            this.textBox20.TabIndex = 55;
+            this.txtName1.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
+            this.txtName1.Location = new System.Drawing.Point(522, 50);
+            this.txtName1.Name = "txtName1";
+            this.txtName1.Size = new System.Drawing.Size(581, 29);
+            this.txtName1.TabIndex = 55;
             // 
-            // textBox5
+            // txtCode1
             // 
-            this.textBox5.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textBox5.Location = new System.Drawing.Point(166, 50);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(335, 29);
-            this.textBox5.TabIndex = 49;
+            this.txtCode1.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
+            this.txtCode1.Location = new System.Drawing.Point(166, 50);
+            this.txtCode1.Name = "txtCode1";
+            this.txtCode1.Size = new System.Drawing.Size(335, 29);
+            this.txtCode1.TabIndex = 49;
             // 
             // label22
             // 
@@ -389,16 +389,16 @@ namespace POPprogram
         public System.Windows.Forms.Panel panel4;
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.Panel panel7;
-        public System.Windows.Forms.TextBox textBox9;
+        public System.Windows.Forms.TextBox txtSearch;
         public System.Windows.Forms.Label label9;
         public System.Windows.Forms.Panel panel8;
-        public System.Windows.Forms.TextBox textBox6;
+        public System.Windows.Forms.TextBox txtCode3;
         public System.Windows.Forms.Label label10;
-        public System.Windows.Forms.TextBox textBox3;
-        public System.Windows.Forms.TextBox textBox4;
+        public System.Windows.Forms.TextBox txtName2;
+        public System.Windows.Forms.TextBox txtCode2;
         public System.Windows.Forms.Label label2;
-        public System.Windows.Forms.TextBox textBox20;
-        public System.Windows.Forms.TextBox textBox5;
+        public System.Windows.Forms.TextBox txtName1;
+        public System.Windows.Forms.TextBox txtCode1;
         public System.Windows.Forms.Label label22;
         public System.Windows.Forms.Label label6;
         public System.Windows.Forms.Button btnClose;

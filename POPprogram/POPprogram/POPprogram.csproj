@@ -65,6 +65,12 @@
     <Compile Include="BaseForms\Base6.Designer.cs">
       <DependentUpon>Base6.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaseForms\BaseDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForms\BaseDialog.Designer.cs">
+      <DependentUpon>BaseDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\csDataGridView.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -131,6 +137,12 @@
     <Compile Include="frmNewLOT.Designer.cs">
       <DependentUpon>frmNewLOT.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPrurchaseDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrurchaseDialog.Designer.cs">
+      <DependentUpon>frmPrurchaseDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmShip.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +187,9 @@
     <EmbeddedResource Include="BaseForms\Base6.resx">
       <DependentUpon>Base6.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BaseForms\BaseDialog.resx">
+      <DependentUpon>BaseDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDown.resx">
       <DependentUpon>frmDown.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,6 +216,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNewLOT.resx">
       <DependentUpon>frmNewLOT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrurchaseDialog.resx">
+      <DependentUpon>frmPrurchaseDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmShip.resx">
       <DependentUpon>frmShip.cs</DependentUpon>

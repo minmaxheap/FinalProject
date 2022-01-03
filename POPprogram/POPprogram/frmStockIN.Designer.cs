@@ -76,8 +76,6 @@ namespace POPprogram
             // label1
             // 
             this.label1.Text = "구매 입고 자재 목록";
-            this.panel7.Controls.SetChildIndex(this.label9, 0);
-            this.panel7.Controls.SetChildIndex(this.textBox9, 0);
             // 
             // label9
             // 
@@ -122,6 +120,10 @@ namespace POPprogram
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(974, 203);
+            // 
+            // btnReadTop
+            // 
+            this.btnReadTop.Click += new System.EventHandler(this.btnReadTop_Click);
             // 
             // comboBox1
             // 

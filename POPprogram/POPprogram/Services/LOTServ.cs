@@ -10,6 +10,13 @@ namespace POPprogram
 {
     public class LOTServ
     {
+        public DataTable GetPurchaseList()
+        {
+            LOTDAC dac = new LOTDAC();
+            DataTable dt = dac.GetPurchaseList();
+            dac.Dispose();
+            return dt;
+        }
         public DataTable GetWorkOrderList()
         {
             LOTDAC dac = new LOTDAC();
