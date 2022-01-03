@@ -21,17 +21,12 @@ namespace POPprogram
             if (dlg.ShowDialog() == DialogResult.OK)
             {
                 DataGridViewRow dr = dlg.SelectedRow;
-                //txtWorkOrderID.Text = dr.Cells["WORK_ORDER_ID"].Value.ToString();
-                //txtCustID.Text = dr.Cells["CUSTOMER_CODE"].Value.ToString();
-                //txtCustName.Text = dr.Cells["CUSTOMER_NAME"].Value.ToString();
-                //txtProdCode.Text = dr.Cells["PRODUCT_CODE"].Value.ToString();
-                //txtProdName.Text = dr.Cells["PRODUCT_NAME"].Value.ToString();
-                //lblStatus.Text = dr.Cells["ORDER_STATUS"].Value.ToString();
-                //lblOrderQty.Text = dr.Cells["ORDER_QTY"].Value.ToString();
-                //lblProdQty.Text = dr.Cells["PRODUCT_QTY"].Value.ToString();
-                //lblDefectQty.Text = dr.Cells["DEFECT_QTY"].Value.ToString();
-                //txtOperCode.Text = dr.Cells["OPERATION_CODE"].Value.ToString();
-                //txtOperName.Text = dr.Cells["OPERATION_NAME"].Value.ToString();
+                txtSearch.Text = dr.Cells["PURCHASE_ORDER_ID"].Value.ToString();
+                txtCode1.Text = dr.Cells["MATERIAL_CODE"].Value.ToString();
+                txtName1.Text = dr.Cells["PRODUCT_NAME"].Value.ToString();
+                txtCode2.Text = dr.Cells["VENDOR_CODE"].Value.ToString();
+                txtName2.Text = dr.Cells["VENDOR_NAME"].Value.ToString();
+                txtCode3.Text = dr.Cells["ORDER_QTY"].Value.ToString();
 
             }
         }
