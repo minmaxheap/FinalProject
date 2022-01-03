@@ -11,6 +11,7 @@ namespace POPprogram
     public partial class frmStockIN : POPprogram.Base2
     {
         StockServ serv;
+        DataGridViewCheckBoxColumn dgvChk = null;
 
         List<string> MstList = null;
         public frmStockIN()
@@ -18,9 +19,9 @@ namespace POPprogram
             InitializeComponent();
         }
 
-		public string name { get; set;}
+        public string name { get; set; }
 
-		private void btnReadTop_Click(object sender, EventArgs e)
+        private void btnReadTop_Click(object sender, EventArgs e)
         {
             serv = new StockServ();
             DataTable dt = serv.Purchase_warehousing(txtSearch.Text);
@@ -48,6 +49,7 @@ namespace POPprogram
         {
 
             DataGridViewUtil.SetInitGridView(csDataGridView1);
+            DgvChk(csDataGridView1);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "순번", "RowNum");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "자재 품번", "CHILD_PRODUCT_CODE");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "자재 품명", "PRODUCT_NAME");
@@ -59,8 +61,18 @@ namespace POPprogram
             LoadData();
         }
 
+        private void DgvChk(DataGridView dgv)
+        {
+            dgv.EndEdit();
+            dgvChk = new DataGridViewCheckBoxColumn();
+            dgvChk.HeaderText = " ";
+            dgvChk.Name = "chk";
+            dgvChk.Width = 40;
+
+            dgv.Columns.Add(dgvChk);
+        }
         private void LoadData()
-        { 
+        {
             serv = new StockServ();
             MstList = serv.GetStore_Code();
             MstList.Insert(0, "");
@@ -99,29 +111,36 @@ namespace POPprogram
         }
         private void csDataGridView1CheckBox_CheckedChanged(object sender, EventArgs e)
         {
+            csDataGridView1.EndEdit();
             foreach (DataGridViewRow r in csDataGridView1.Rows)
             {
-                r.Cells["Column1"].Value = ((CheckBox)sender).Checked;
+                r.Cells["chk"].Value = ((CheckBox)sender).Checked;
             }
         }
 
-        private void csDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow r in csDataGridView1.Rows)
+            csDataGridView1.EndEdit();
+            int countQty = 0;
+            int countLOT = 0;
+            //List<int> countQty = new List<int>();
+            foreach (DataGridViewRow row in csDataGridView1.Rows)
             {
-                DataGridViewCheckBoxCell chk = r.Cells["Column1"] as DataGridViewCheckBoxCell;
+                DataGridViewCheckBoxCell chk = row.Cells[0] as DataGridViewCheckBoxCell;
 
 
                 if (chk != null)
                 {
-                   
-                        if (Convert.ToBoolean(chk.Value))
-                        {
-                        MessageBox.Show("변환 성공");
-                        }
-                    
+                    if (Convert.ToBoolean(chk.Value))
+                    {
+                        countQty += Convert.ToInt32(row.Cells["수량"].Value);
+                        countLOT += 1;
+                    }
                 }
             }
+
+            textBox1.Text = countLOT.ToString();
+            textBox2.Text = countQty.ToString();
         }
 
         //private void DgvChk(DataGridView dgv)

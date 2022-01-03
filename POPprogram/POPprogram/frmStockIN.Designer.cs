@@ -38,7 +38,6 @@ namespace POPprogram
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.csDataGridView1 = new POPprogram.csDataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -129,6 +128,7 @@ namespace POPprogram
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(240, 32);
             this.comboBox1.TabIndex = 61;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -178,8 +178,6 @@ namespace POPprogram
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.csDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.csDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.csDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("나눔고딕", 9F);
@@ -204,13 +202,7 @@ namespace POPprogram
             this.csDataGridView1.RowTemplate.Height = 23;
             this.csDataGridView1.Size = new System.Drawing.Size(830, 261);
             this.csDataGridView1.TabIndex = 65;
-            this.csDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellClick);
             this.csDataGridView1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.csDataGridView1_CellPainting);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
             // 
             // frmStockIN
             // 
@@ -236,6 +228,5 @@ namespace POPprogram
         public System.Windows.Forms.TextBox textBox7;
         public System.Windows.Forms.Label label7;
         private csDataGridView csDataGridView1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column1;
     }
 }
