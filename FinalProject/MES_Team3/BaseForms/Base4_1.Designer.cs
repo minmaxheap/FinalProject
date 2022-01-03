@@ -29,9 +29,9 @@ namespace MES_Team3
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Button btnTxtSearch;
+           
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Base4_1));
-            System.Windows.Forms.Button btnReadTop;
+         
             this.lblAddList = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -477,6 +477,9 @@ namespace MES_Team3
         public System.Windows.Forms.Label lblTitle2;
         public System.Windows.Forms.Label lblPnlBottom;
         public System.Windows.Forms.Panel pnlProperty;
+
+        public System.Windows.Forms.Button btnTxtSearch;
+        public System.Windows.Forms.Button btnReadTop;
 
     }
 }

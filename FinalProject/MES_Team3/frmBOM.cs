@@ -239,5 +239,20 @@ namespace MES_Team3
         {
 
         }
+
+        private void btnTxtSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void btnReadTop_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

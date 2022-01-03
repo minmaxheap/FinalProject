@@ -29,9 +29,9 @@ namespace DAC
             string sql = @"SELECT SALES_ORDER_ID
       ,ORDER_DATE
       ,w.CUSTOMER_CODE
-	  ,cd.DATA_1 CUSTOMER_NAME_JOIN
+	  ,cd.DATA_1 CUSTOMER_NAME
       ,w.PRODUCT_CODE
-	  ,pm.PRODUCT_NAME PRODUCT_CODE_JOIN
+	  ,pm.PRODUCT_NAME PRODUCT_NAME
       ,ORDER_QTY
       ,CONFIRM_FLAG
       ,SHIP_FLAG
@@ -208,9 +208,9 @@ where SALES_ORDER_ID = @SALES_ORDER_ID";
             sb.Append(@"SELECT SALES_ORDER_ID
       ,ORDER_DATE
       ,w.CUSTOMER_CODE
-	  ,cd.DATA_1 CUSTOMER_NAME_JOIN
+	  ,cd.DATA_1 CUSTOMER_NAME
       ,w.PRODUCT_CODE
-	  ,pm.PRODUCT_NAME PRODUCT_CODE_JOIN
+	  ,pm.PRODUCT_NAME PRODUCT_NAME
       ,ORDER_QTY
       ,CONFIRM_FLAG
       ,SHIP_FLAG
@@ -304,5 +304,7 @@ WHERE [CODE_TABLE_NAME] ='CM_CUSTOMER'";
         {
             conn.Close();
         }
+
+
     }
 }
