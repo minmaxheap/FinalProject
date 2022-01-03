@@ -61,17 +61,10 @@ namespace MES_Team3
         public void LoadData()
         {
             SalesOrderServ serv = new SalesOrderServ();
-            dt = serv.GetSalesOrderList_Test();
-            dt_PRD = serv.GetProductCodeName();
-            dt_CUST = serv.CustomerCodeName();
-            dt.Columns.Add("PRODUCT_NAME");
-            dt.Columns.Add("CUSTOMER_NAME");
-
+            dt = serv.GetSalesOrderList();
             csDataGridView1.DataSource = null;
             csDataGridView1.DataSource = dt;
             BSearchPanel = false;
-
-
 
             SalesOrderProperty vo = new SalesOrderProperty();
             SalesOrderPropertySch svo = new SalesOrderPropertySch();

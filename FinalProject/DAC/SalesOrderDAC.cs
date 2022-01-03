@@ -306,51 +306,5 @@ WHERE [CODE_TABLE_NAME] ='CM_CUSTOMER'";
         }
 
 
-        ///////////////////////////////////////////////////////////////////////////////////
-        public DataTable GetProductCodeName()
-        {
-            string sql = @"SELECT [PRODUCT_CODE],[PRODUCT_NAME] FROM [PRODUCT_MST]";
-            DataTable dt = new DataTable();
-            using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
-            {
-                da.Fill(dt);
-                return dt;
-            }
-        }
-        public DataTable GetSalesOrderList_Test()
-        {
-            string sql = @"SELECT SALES_ORDER_ID
-      ,ORDER_DATE
-      ,CUSTOMER_CODE
-      ,PRODUCT_CODE
-      ,ORDER_QTY
-      ,CONFIRM_FLAG
-      ,SHIP_FLAG
-      ,CREATE_TIME
-      ,CREATE_USER_ID
-      ,UPDATE_TIME
-      ,UPDATE_USER_ID
-  FROM SALES_ORDER_MST";
-            DataTable dt = new DataTable();
-            using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
-            {
-                da.Fill(dt);
-                return dt;
-            }
-        }
-        public DataTable CustomerCodeName()
-        {
-            string sql = @"SELECT [KEY_1] CUSTOMER_CODE
-      ,[DATA_1] CUSTOMER_NAME
-  FROM [team3].[dbo].[CODE_DATA_MST]
-  WHERE CODE_TABLE_NAME='CM_CUSTOMER'";
-            DataTable dt = new DataTable();
-            using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
-            {
-                da.Fill(dt);
-                return dt;
-            }
-        }
-
     }
 }
