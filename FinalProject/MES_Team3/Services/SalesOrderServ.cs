@@ -52,5 +52,28 @@ namespace MES_Team3
             dac.Dispose();
             return list;
         }
+
+        public DataTable GetProductCodeName()
+        {
+            SalesOrderDAC dac = new SalesOrderDAC();
+            DataTable dt = dac.GetProductCodeName();
+            dac.Dispose();
+            return dt;
+        }
+        public DataTable GetSalesOrderList_Test()
+        {
+            SalesOrderDAC dac = new SalesOrderDAC();
+            DataTable dt = dac.GetSalesOrderList_Test();
+            dac.Dispose();
+            return dt;
+        }
+        public DataTable CustomerCodeName()
+        {
+            SalesOrderDAC dac = new SalesOrderDAC();
+            DataTable dt = dac.CustomerCodeName();
+            dac.Dispose();
+            return dt;
+        }
+
     }
 }

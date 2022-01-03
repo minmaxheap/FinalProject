@@ -21,6 +21,8 @@ namespace MES_Team3
         List<int> iSearchedList = new List<int>();
         List<int> iSelectedRow = new List<int>();
         DataTable dt;
+        DataTable dt_PRD;
+        DataTable dt_CUST;
         public frmSalesOrder()
         {
             InitializeComponent();
@@ -33,9 +35,9 @@ namespace MES_Team3
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "주문일자", "ORDER_DATE");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "주문서코드", "SALES_ORDER_ID");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "고객사", "CUSTOMER_CODE");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "고객사명", "CUSTOMER_NAME_JOIN");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "고객사명", "CUSTOMER_NAME");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "품번", "PRODUCT_CODE");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "품명", "PRODUCT_CODE_JOIN");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "품명", "PRODUCT_NAME");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "주문수량", "ORDER_QTY");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "확정여부", "CONFIRM_FLAG");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "출하여부", "SHIP_FLAG");
@@ -59,10 +61,27 @@ namespace MES_Team3
         public void LoadData()
         {
             SalesOrderServ serv = new SalesOrderServ();
-            dt = serv.GetSalesOrderList();
+            dt = serv.GetSalesOrderList_Test();
+            dt_PRD = serv.GetProductCodeName();
+            dt_CUST = serv.CustomerCodeName();
+            dt.Columns.Add("PRODUCT_NAME");
+            dt.Columns.Add("CUSTOMER_NAME");
+
             csDataGridView1.DataSource = null;
             csDataGridView1.DataSource = dt;
             BSearchPanel = false;
+
+
+
+            SalesOrderProperty vo = new SalesOrderProperty();
+            SalesOrderPropertySch svo = new SalesOrderPropertySch();
+
+            pgProperty.SelectedObject = vo;
+            pgSearch.SelectedObject = svo;
+
+            pgProperty.PropertySort = PropertySort.NoSort;
+            pgSearch.PropertySort = PropertySort.NoSort;
+
             ResetCount();
         }
 
@@ -89,56 +108,12 @@ namespace MES_Team3
         {
             if (e.RowIndex < 0) return;
             DataGridViewRow dr = csDataGridView1.Rows[e.RowIndex];
-            SalesOrderProperty vo = new SalesOrderProperty();
-            //vo.OPERATION_CODE = dr.Cells["OPERATION_CODE"].Value.ToString();
-            //vo.OPERATION_NAME = dr.Cells["OPERATION_NAME"].Value.ToString();
-            //vo.CHECK_DEFECT_FLAG = dr.Cells["CHECK_DEFECT_FLAG"].Value.ToString();
-            //vo.CHECK_INSPECT_FLAG = dr.Cells["CHECK_INSPECT_FLAG"].Value.ToString();
-            //vo.CHECK_MATERIAL_FLAG = dr.Cells["CHECK_MATERIAL_FLAG"].Value.ToString();
-            //if (csDataGridView1.Rows[e.RowIndex].Cells["CREATE_TIME"].Value != null && dr.Cells["CREATE_TIME"].Value != DBNull.Value)
-            //    vo.CREATE_TIME = Convert.ToDateTime(dr.Cells["CREATE_TIME"].Value);
-            //vo.CREATE_USER_ID = csDataGridView1.Rows[e.RowIndex].Cells["CREATE_USER_ID"].Value.ToString();
-            //if (dr.Cells["UPDATE_TIME"].Value != null && dr.Cells["UPDATE_TIME"].Value != DBNull.Value)
-            //    vo.UPDATE_TIME = Convert.ToDateTime(dr.Cells["UPDATE_TIME"].Value);
-            //vo.UPDATE_USER_ID = dr.Cells["UPDATE_USER_ID"].Value.ToString();
+            DataRow row = (DataRow)((DataRowView)dr.DataBoundItem).Row;
+            DataTable dt = row.Table.Clone();
+            dt.ImportRow(row);
+            List<SalesOrderProperty> selectedRow = Helper.DataTableMapToList<SalesOrderProperty>(dt);
 
-            //if (dr.Cells["ORDER_DATE"].Value != null && dr.Cells["ORDER_DATE"].Value != DBNull.Value)
-            //    vo.ORDER_DATE = Convert.ToDateTime(dr.Cells["ORDER_DATE"].Value);
-            //if (dr.Cells["WORK_ORDER_ID"].Value != null && dr.Cells["WORK_ORDER_ID"].Value != DBNull.Value)
-            //    vo.WORK_ORDER_ID = dr.Cells["WORK_ORDER_ID"].Value.ToString();
-            //if (dr.Cells["CUSTOMER_CODE"].Value != null && dr.Cells["CUSTOMER_CODE"].Value != DBNull.Value)
-            //    vo.CUSTOMER_CODE = dr.Cells["CUSTOMER_CODE"].Value.ToString();
-            //if (dr.Cells["PRODUCT_CODE"].Value != null && dr.Cells["PRODUCT_CODE"].Value != DBNull.Value)
-            //    vo.PRODUCT_CODE = dr.Cells["PRODUCT_CODE"].Value.ToString();
-
-            //if (dr.Cells["ORDER_QTY"].Value != null && dr.Cells["ORDER_QTY"].Value != DBNull.Value)
-            //    vo.ORDER_QTY = Convert.ToInt32(dr.Cells["ORDER_QTY"].Value);
-            //if (dr.Cells["ORDER_STATUS"].Value != null && dr.Cells["ORDER_STATUS"].Value != DBNull.Value)
-            //    vo.ORDER_STATUS = dr.Cells["ORDER_STATUS"].Value.ToString();
-            //if (dr.Cells["PRODUCT_QTY"].Value != null && dr.Cells["PRODUCT_QTY"].Value != DBNull.Value)
-            //    vo.PRODUCT_QTY = Convert.ToInt32(dr.Cells["PRODUCT_QTY"].Value);
-
-            //if (dr.Cells["DEFECT_QTY"].Value != null && dr.Cells["DEFECT_QTY"].Value != DBNull.Value)
-            //    vo.DEFECT_QTY = Convert.ToInt32(dr.Cells["DEFECT_QTY"].Value);
-            //if (dr.Cells["WORK_START_TIME"].Value != null && dr.Cells["WORK_START_TIME"].Value != DBNull.Value)
-            //    vo.WORK_START_TIME = Convert.ToDateTime(dr.Cells["WORK_START_TIME"].Value);
-            //if (dr.Cells["WORK_CLOSE_USER_ID"].Value != null && dr.Cells["WORK_CLOSE_USER_ID"].Value != DBNull.Value)
-            //    vo.WORK_CLOSE_USER_ID = dr.Cells["WORK_CLOSE_USER_ID"].Value.ToString();
-            //if (dr.Cells["WORK_CLOSE_TIME"].Value != null && dr.Cells["WORK_CLOSE_TIME"].Value != DBNull.Value)
-            //    vo.WORK_CLOSE_TIME = Convert.ToDateTime(dr.Cells["WORK_CLOSE_TIME"].Value);
-
-            //if (dr.Cells["CREATE_TIME"].Value != null && dr.Cells["CREATE_TIME"].Value != DBNull.Value)
-            //    vo.CREATE_TIME = Convert.ToDateTime(dr.Cells["CREATE_TIME"].Value);
-            //if (dr.Cells["CREATE_USER_ID"].Value != null && dr.Cells["CREATE_USER_ID"].Value != DBNull.Value)
-            //    vo.CREATE_USER_ID = csDataGridView1.Rows[e.RowIndex].Cells["CREATE_USER_ID"].Value.ToString();
-            //if (dr.Cells["UPDATE_TIME"].Value != null && dr.Cells["UPDATE_TIME"].Value != DBNull.Value)
-            //    vo.UPDATE_TIME = Convert.ToDateTime(dr.Cells["UPDATE_TIME"].Value);
-            //if (dr.Cells["UPDATE_USER_ID"].Value != null && dr.Cells["UPDATE_USER_ID"].Value != DBNull.Value)
-            //    vo.UPDATE_USER_ID = dr.Cells["UPDATE_USER_ID"].Value.ToString();
-
-
-            pgProperty.SelectedObject = vo;
-
+            pgProperty.SelectedObject = selectedRow[0];
             pgProperty.PropertySort = PropertySort.NoSort;
         }
 

@@ -33,9 +33,9 @@ namespace MES_Team3
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "작업일자", "ORDER_DATE");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "작업지시", "WORK_ORDER_ID");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "고객사", "CUSTOMER_CODE");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "고객사명", "CUSTOMER_NAME_JOIN");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "고객사명", "CUSTOMER_NAME");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "품번", "PRODUCT_CODE");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "품명", "PRODUCT_CODE_JOIN");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "품명", "PRODUCT_NAME");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "지시수량", "ORDER_QTY");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "상태", "ORDER_STATUS");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생산수량", "PRODUCT_QTY");
@@ -67,6 +67,16 @@ namespace MES_Team3
             csDataGridView1.DataSource = null;
             csDataGridView1.DataSource = dt;
             BSearchPanel = false;
+
+            WorkOrderProperty vo = new WorkOrderProperty();
+            WorkOrderPropertySch svo = new WorkOrderPropertySch();
+
+            pgProperty.SelectedObject = vo;
+            pgSearch.SelectedObject = svo;
+
+            pgProperty.PropertySort = PropertySort.NoSort;
+            pgSearch.PropertySort = PropertySort.NoSort;
+
             ResetCount();
         }
 
