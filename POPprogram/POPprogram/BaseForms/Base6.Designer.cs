@@ -33,7 +33,6 @@ namespace POPprogram
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel7 = new System.Windows.Forms.Panel();
             this.txtLOTDescription = new System.Windows.Forms.TextBox();
-            this.txtLotID = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtProdCode = new System.Windows.Forms.TextBox();
@@ -66,6 +65,7 @@ namespace POPprogram
             this.pnlCrud = new System.Windows.Forms.Panel();
             this.btnExecute = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.cboLOTID = new System.Windows.Forms.ComboBox();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -83,8 +83,8 @@ namespace POPprogram
             // 
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel7.Controls.Add(this.cboLOTID);
             this.panel7.Controls.Add(this.txtLOTDescription);
-            this.panel7.Controls.Add(this.txtLotID);
             this.panel7.Controls.Add(this.label9);
             this.panel7.Location = new System.Drawing.Point(31, 26);
             this.panel7.Margin = new System.Windows.Forms.Padding(0);
@@ -97,19 +97,11 @@ namespace POPprogram
             this.txtLOTDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtLOTDescription.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
-            this.txtLOTDescription.Location = new System.Drawing.Point(522, 1);
+            this.txtLOTDescription.Location = new System.Drawing.Point(522, 0);
             this.txtLOTDescription.Name = "txtLOTDescription";
             this.txtLOTDescription.ReadOnly = true;
             this.txtLOTDescription.Size = new System.Drawing.Size(581, 29);
             this.txtLOTDescription.TabIndex = 57;
-            // 
-            // txtLotID
-            // 
-            this.txtLotID.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
-            this.txtLotID.Location = new System.Drawing.Point(166, 1);
-            this.txtLotID.Name = "txtLotID";
-            this.txtLotID.Size = new System.Drawing.Size(335, 29);
-            this.txtLotID.TabIndex = 56;
             // 
             // label9
             // 
@@ -529,6 +521,15 @@ namespace POPprogram
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnClose.UseVisualStyleBackColor = false;
             // 
+            // cboLOTID
+            // 
+            this.cboLOTID.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
+            this.cboLOTID.FormattingEnabled = true;
+            this.cboLOTID.Location = new System.Drawing.Point(166, 0);
+            this.cboLOTID.Name = "cboLOTID";
+            this.cboLOTID.Size = new System.Drawing.Size(335, 29);
+            this.cboLOTID.TabIndex = 61;
+            // 
             // Base6
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -579,7 +580,6 @@ namespace POPprogram
         public System.Windows.Forms.Panel pnlCrud;
         public System.Windows.Forms.Button btnClose;
         public System.Windows.Forms.TextBox txtLOTDescription;
-        public System.Windows.Forms.TextBox txtLotID;
         public System.Windows.Forms.Button btnExecute;
         public System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         public System.Windows.Forms.Label label4;
@@ -591,5 +591,6 @@ namespace POPprogram
         public System.Windows.Forms.Label label19;
         public System.Windows.Forms.Label label12;
         public NumTextBox txtQty;
+        private System.Windows.Forms.ComboBox cboLOTID;
     }
 }
