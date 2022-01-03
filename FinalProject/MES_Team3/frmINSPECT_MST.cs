@@ -190,6 +190,8 @@ namespace MES_Team3
             csDataGridView1.DataSource = null;
             csDataGridView1.DataSource = list;
 
+            txtSearch.Text = save.INSPECT_ITEM_CODE;
+
             ResetCount();
 
 

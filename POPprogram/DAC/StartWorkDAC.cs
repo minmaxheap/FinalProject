@@ -56,7 +56,7 @@ namespace DAC
 		}
 
 
-			public List<StarWorkProperty>  GetData(string Code)
+		public List<StarWorkProperty>  GetData(string Code)
 		{
 			string sql = @"   select lot.PRODUCT_CODE as PRODUCT_CODE,lot.OPERATION_CODE as OPERATION_CODE,p.PRODUCT_NAME as PRODUCT_NAME,o.OPERATION_NAME, lot.WORK_ORDER_ID, work.CUSTOMER_CODE,work.ORDER_STATUS,work.ORDER_QTY,work.PRODUCT_QTY,work.DEFECT_QTY 
    from LOT_STS lot

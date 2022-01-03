@@ -62,6 +62,10 @@ namespace POPprogram
 			// 
 			this.label1.Text = "작업 시작 정보";
 			// 
+			// btnExecute
+			// 
+			this.btnExecute.Click += new System.EventHandler(this.btnExecute_Click);
+			// 
 			// cboLOTID
 			// 
 			this.cboLOTID.SelectedIndexChanged += new System.EventHandler(this.cboLOTID_SelectedIndexChanged);
