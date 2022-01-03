@@ -57,6 +57,16 @@ namespace MES_Team3
             csDataGridView1.DataSource = null;
             csDataGridView1.DataSource = dt;
             BSearchPanel = false;
+
+            OperationProperty vo = new OperationProperty();
+            OperationPropertySch svo = new OperationPropertySch();
+
+            pgProperty.SelectedObject = vo;
+            pgSearch.SelectedObject = svo;
+
+            pgProperty.PropertySort = PropertySort.NoSort;
+            pgSearch.PropertySort = PropertySort.NoSort;
+
             ResetCount();
         }
 

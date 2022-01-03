@@ -29,9 +29,9 @@ namespace DAC
             string sql = @"SELECT WORK_ORDER_ID
       ,ORDER_DATE
       ,w.CUSTOMER_CODE
-	  ,cd.DATA_1 CUSTOMER_NAME_JOIN
+	  ,cd.DATA_1 CUSTOMER_NAME
       ,w.PRODUCT_CODE
-	  ,pm.PRODUCT_NAME PRODUCT_CODE_JOIN
+	  ,pm.PRODUCT_NAME PRODUCT_NAME
       ,ORDER_QTY
       ,ORDER_STATUS
       ,PRODUCT_QTY
@@ -258,7 +258,7 @@ where WORK_ORDER_ID = @WORK_ORDER_ID";
             sb.Append(@"SELECT WORK_ORDER_ID
       ,ORDER_DATE
       ,w.CUSTOMER_CODE
-	  ,cd.DATA_1
+	  ,cd.DATA_1 CUSTOMER_NAME
       ,w.PRODUCT_CODE
 	  ,pm.PRODUCT_NAME
       ,ORDER_QTY
@@ -335,7 +335,16 @@ WHERE [CODE_TABLE_NAME] ='CM_CUSTOMER'";
 
             return productType;
         }
-
+        public DataTable GetProductCodeName()
+        {
+            string sql = @"SELECT [PRODUCT_CODE],[PRODUCT_NAME] FROM [PRODUCT_MST]";
+            DataTable dt = new DataTable();
+            using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
+            {
+                da.Fill(dt);
+                return dt;
+            }
+        }
         public List<string> GetProductCodeList()
         {
             string sql = @"SELECT [PRODUCT_CODE] FROM [PRODUCT_MST]";

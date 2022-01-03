@@ -21,6 +21,9 @@ namespace MES_Team3
 		string CreateID = frmLogin.userID;
 		string updateID = frmLogin.userID;
 
+		DataTable mOp_dt;
+
+
 		List<string> MstList = null;
 
 
@@ -93,9 +96,6 @@ namespace MES_Team3
 			ResetCount();
 
 		}
-
-
-
 		//조회조건
 		private void btnReadBottom_Click(object sender, EventArgs e)
 		{
@@ -151,30 +151,42 @@ namespace MES_Team3
 			//선택된 datagrid를 할당시켜줘야함
 			//insert 시켜야함
 			// 메뉴권한 
+			List<string> list = new List<string>();
 
 
-		
+			foreach (DataGridViewRow dr in csDataGridView2.SelectedRows)
+			{
+				DataRow[] drArray = mOp_dt.Select($"INSPECT_ITEM_CODE='{dr.Cells["INSPECT_ITEM_CODE"].Value.ToString()}'");
+				if (!(drArray.Length > 0))
+					list.Add(dr.Cells["INSPECT_ITEM_CODE"].Value.ToString());
+
+			}
+
 			if (string.IsNullOrWhiteSpace(inspec_op_Code) || string.IsNullOrWhiteSpace(inspect_Code))
 			{
 				MessageBox.Show("공정코드 혹은 검사 항목이 존재 하지 않습니다.");
 				return;
 			}
 
-			foreach (DataGridViewRow dr in csDataGridView3.SelectedRows)
+			if (list.Count > 0)
 			{
-				
-			}
 
-			bool result = serv.Op_Insert(inspec_op_Code, inspect_Code,CreateID,updateID);
-			if (result)
-			{
-				MessageBox.Show("등록되었습니다.");
-				Op_LoadData();
-				return;
+				bool result = serv.Op_Insert(inspec_op_Code, inspect_Code, CreateID, updateID);
+				if (result)
+				{
+					MessageBox.Show("등록되었습니다.");
+					Op_LoadData();
+					return;
+				}
+				else
+				{
+					MessageBox.Show("등록실패");
+					return;
+				}
 			}
 			else
 			{
-				MessageBox.Show("등록실패");
+				MessageBox.Show("이미 할당되었습니다.");
 				return;
 			}
 
