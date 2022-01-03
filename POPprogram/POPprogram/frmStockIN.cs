@@ -11,6 +11,8 @@ namespace POPprogram
     public partial class frmStockIN : POPprogram.Base2
     {
         StockServ serv;
+
+        List<string> MstList = null;
         public frmStockIN()
         {
             InitializeComponent();
@@ -51,6 +53,19 @@ namespace POPprogram
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "단위 수량", "REQUIRE_QTY");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "수량", "수량");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "자재LOTID", "STOCK_IN_LOT_ID");
+
+            LoadData();
+        }
+
+        private void LoadData()
+        { 
+            serv = new StockServ();
+            MstList = serv.GetStore_Code();
+            MstList.Insert(0, "");
+            comboBox1.ValueMember = "STORE_CODE";
+            comboBox1.DisplayMember = "STORE_CODE";
+            comboBox1.DataSource = MstList;
+
         }
     }
 }

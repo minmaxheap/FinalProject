@@ -25,6 +25,14 @@ namespace POPprogram
             dac.Dispose();
             return dt;
         }
+
+        public List<string> GetStore_Code()
+        {
+            StockDAC dac = new StockDAC();
+            List<string> List = dac.GetStore_Code();
+            dac.Dispose();
+            return List;
+        }
     }
 }
 
