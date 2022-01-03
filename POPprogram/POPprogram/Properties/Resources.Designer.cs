@@ -233,6 +233,16 @@ namespace POPprogram.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        public static System.Drawing.Bitmap facebook_cover_photo_1 {
+            get {
+                object obj = ResourceManager.GetObject("facebook_cover_photo_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         public static System.Drawing.Bitmap Folder_Find_01 {
             get {
                 object obj = ResourceManager.GetObject("Folder_Find_01", resourceCulture);

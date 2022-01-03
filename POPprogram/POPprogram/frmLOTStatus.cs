@@ -71,7 +71,7 @@ namespace POPprogram
             DataGridViewUtil.AddGridTextColumn(csDataGridView2, "공정", "OPERATION_CODE");
             DataGridViewUtil.AddGridTextColumn(csDataGridView2, "공정명", "OPERATION_NAME");
             DataGridViewUtil.AddGridTextColumn(csDataGridView2, "수량", "LOT_QTY");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView2, "작업 시작 여부", "START_FLAG");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView2, "작업 시작 여부", "START_FLAG",width:120);
 
 
         }
@@ -90,22 +90,49 @@ namespace POPprogram
         }
         private void btnSearchPnl_Click(object sender, EventArgs e)
         {
+            LOTProperty lot = new LOTProperty();
+            LOTSearchProperty ps = new LOTSearchProperty();
+
+            pgProperty.SelectedObject = lot;
+            pgSearch.SelectedObject = ps;
+
+            pgProperty.PropertySort = PropertySort.NoSort;
+            pgSearch.PropertySort = PropertySort.NoSort;
+            ResetCount();
             PanelVisible();
         }
 
         private void btnPanel_Click(object sender, EventArgs e)
         {
+            LOTProperty lot = new LOTProperty();
+            LOTSearchProperty ps = new LOTSearchProperty();
+
+            pgProperty.SelectedObject = lot;
+            pgSearch.SelectedObject = ps;
+
+            pgProperty.PropertySort = PropertySort.NoSort;
+            pgSearch.PropertySort = PropertySort.NoSort;
+            ResetCount();
             PanelVisible();
         }
 
         private void btnReadTop_Click(object sender, EventArgs e)
         {
-
+            btnReadBottom.PerformClick();
         }
 
         private void btnReadBottom_Click(object sender, EventArgs e)
         {
-
+            if (pgSearch.SelectedObject != null)
+            {
+                LOTSearchProperty search = (LOTSearchProperty)pgSearch.SelectedObject;
+                LOTServ serv = new LOTServ();
+                DataTable dt = serv.GetLOTSearch(search);
+                csDataGridView1.DataSource = null;
+                csDataGridView1.DataSource = dt;
+                ResetCount();
+            }
+          
         }
 
         private void LoadData()
@@ -182,7 +209,46 @@ namespace POPprogram
 
         private void btnTxtSearch_Click(object sender, EventArgs e)
         {
-
+            if (iSearchedList.Count == 0)
+            {
+                DataTable copy_dt = GetDataGridViewAsDataTable(csDataGridView1);
+                IEnumerable<DataRow> linq_row = null;
+                if (txtSearch.Text == "")
+                {
+                    csDataGridView1.DataSource = copy_dt;
+                }
+                else
+                {
+                    foreach (DataRow row in copy_dt.Rows)
+                    {
+                        linq_row = from item in row.ItemArray
+                                   where item.ToString().ToLower().Contains(txtSearch.Text.ToLower())
+                                   select row;
+                        foreach (DataRow dt in linq_row)
+                        {
+                            int iCntSearch = copy_dt.Rows.IndexOf(row);
+                            iSearchedList.Add(iCntSearch);
+                            break;
+                        }
+                    }
+                    iSelectedRow = iSearchedList.ToList();
+                }
+            }
+            if (iSearchedList.Count > 0)
+            {
+                int iTestNum = iSelectedRow.Count(n => n == -1);
+                if (iTestNum == iSearchedList.Count)
+                    iSelectedRow = iSearchedList.ToList();
+                for (int i = 0; i < iSearchedList.Count; i++)
+                {
+                    if (iSelectedRow[i] == iSearchedList[i])
+                    {
+                        csDataGridView1.CurrentCell = csDataGridView1.Rows[iSearchedList[i]].Cells[0];
+                        iSelectedRow[i] = -1;
+                        break;
+                    }
+                }
+            }
         }
 
         private void csDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -197,6 +263,11 @@ namespace POPprogram
             csDataGridView2.DataSource = dtHis;
             if(list.Count>0) pgProperty.SelectedObject = list[0];
        
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

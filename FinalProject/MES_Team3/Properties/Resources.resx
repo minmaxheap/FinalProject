@@ -139,23 +139,17 @@
   <data name="KEY0_CC_회사_제품_아이콘_블루_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\KEY0.CC-회사-제품-아이콘-블루-2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="그림5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\그림51.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="NanumSquareL" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NanumSquareL.otf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="Arrowhead-Right-01" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Arrowhead-Right-011.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Search-Find" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Search-Find.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Check-01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Check-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NanumSquareR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NanumSquareR.otf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Print - 01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Print - 01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Search_Find1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\search-find1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,11 +175,14 @@
   <data name="Delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Data-Find12" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Data-Find12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Print - 01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Print - 01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Data-Find41" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Data-Find41.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Data-Find12" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Data-Find12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Trash Can_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Trash Can_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,7 +196,10 @@
   <data name="Delete_03" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Delete_03.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Check-01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Check-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Search-Find" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Search-Find.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="facebook_cover_photo_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\facebook_cover_photo_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

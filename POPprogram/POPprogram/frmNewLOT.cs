@@ -69,7 +69,7 @@ namespace POPprogram
             bool bResult = serv.SetNewLOT(mLOT);
             if(bResult)
             {
-                MessageBox.Show("LOT 생성을 성공적으로 실행했습니다.");
+                MessageBox.Show("성공적으로 생산 LOT를 생성했습니다.");
             }
             else
             {
