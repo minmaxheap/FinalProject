@@ -274,6 +274,7 @@
     <None Include="Resources\Minus.png" />
     <None Include="Resources\Touch-Screen.png" />
     <None Include="Resources\Data-Import.png" />
+    <None Include="Resources\facebook_cover_photo_1.png" />
     <Content Include="Resources\그림1.png" />
     <Content Include="Resources\그림5.png" />
   </ItemGroup>

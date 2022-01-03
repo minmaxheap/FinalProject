@@ -211,6 +211,16 @@ namespace MES_Team3.Properties {
         }
         
         /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap facebook_cover_photo_1 {
+            get {
+                object obj = ResourceManager.GetObject("facebook_cover_photo_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
         internal static System.Drawing.Icon KEY0_CC_회사_제품_아이콘_블루_2 {
@@ -327,16 +337,6 @@ namespace MES_Team3.Properties {
             get {
                 object obj = ResourceManager.GetObject("yg_jalnan", resourceCulture);
                 return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
-        internal static System.Drawing.Bitmap 그림5 {
-            get {
-                object obj = ResourceManager.GetObject("그림5", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }
