@@ -220,53 +220,7 @@ namespace MES_Team3
 
 		private void csDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
-			//이거 안됨 
-			if (e.RowIndex < 0)
-			{
-				return;
-			}
-
-			//아이디
-			Code = csDataGridView1["USER_GROUP_CODE", e.RowIndex].Value.ToString();
-			MessageBox.Show($"{Code}를 선택하셨습니다.");
-
-
-			DataGridViewRow dr = csDataGridView1.Rows[e.RowIndex];
-			UserGroupVO vo = new UserGroupVO();
-			BIsSearchPanel = false;
-			vo.IsSearchPanel = false;
-			//lblPanel.Text = "▶ 속성";
-			//lblPanel.BackColor = Color.FromArgb(82, 152, 216);
-			//btnPanel.BackColor = lblPanel.BackColor;
-			//vo.IsSearchPanel = false;
-			if (dr.Cells["USER_GROUP_CODE"].Value != null && dr.Cells["USER_GROUP_CODE"].Value != DBNull.Value)
-				vo.USER_GROUP_CODE = dr.Cells["USER_GROUP_CODE"].Value.ToString();
-
-			if (dr.Cells["USER_GROUP_NAME"].Value != null && dr.Cells["USER_GROUP_NAME"].Value != DBNull.Value)
-				vo.USER_GROUP_NAME = dr.Cells["USER_GROUP_NAME"].Value.ToString();
-			vo.USER_GROUP_TYPE = dr.Cells["USER_GROUP_TYPE"].Value.ToString();
-
-			if (dr.Cells["CREATE_USER_ID"].Value != null && dr.Cells["CREATE_USER_ID"].Value != DBNull.Value)
-				vo.CREATE_USER_ID = dr.Cells["CREATE_USER_ID"].Value.ToString();
-
-			if (dr.Cells["UPDATE_USER_ID"].Value != null && dr.Cells["UPDATE_USER_ID"].Value != DBNull.Value)
-				vo.UPDATE_USER_ID = dr.Cells["UPDATE_USER_ID"].Value.ToString(); ;
-
-			if (dr.Cells["CREATE_TIME"].Value != null && dr.Cells["CREATE_TIME"].Value != DBNull.Value)
-				vo.CREATE_TIME = Convert.ToDateTime(dr.Cells["CREATE_TIME"].Value);
-
-
-			if (dr.Cells["UPDATE_TIME"].Value != null && dr.Cells["UPDATE_TIME"].Value != DBNull.Value)
-				vo.UPDATE_TIME = Convert.ToDateTime(dr.Cells["UPDATE_TIME"].Value);
-
-
-			pgProperty.SelectedObject = vo;
-
-			pgProperty.PropertySort = PropertySort.NoSort;
-
-
-			pnlProperty.Visible = true;
-			pnlSearch.Visible = false;
+		
 		}
 
 		private void btnTxtSearch_Click(object sender, EventArgs e)
@@ -365,6 +319,57 @@ namespace MES_Team3
 			{
 				ResetCount();
 			}
+		}
+
+		private void csDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			//이거 안됨 
+			if (e.RowIndex < 0)
+			{
+				return;
+			}
+
+			//아이디
+			Code = csDataGridView1["USER_GROUP_CODE", e.RowIndex].Value.ToString();
+			MessageBox.Show($"{Code}를 선택하셨습니다.");
+
+
+			DataGridViewRow dr = csDataGridView1.Rows[e.RowIndex];
+			UserGroupVO vo = new UserGroupVO();
+			BIsSearchPanel = false;
+			vo.IsSearchPanel = false;
+			//lblPanel.Text = "▶ 속성";
+			//lblPanel.BackColor = Color.FromArgb(82, 152, 216);
+			//btnPanel.BackColor = lblPanel.BackColor;
+			//vo.IsSearchPanel = false;
+			if (dr.Cells["USER_GROUP_CODE"].Value != null && dr.Cells["USER_GROUP_CODE"].Value != DBNull.Value)
+				vo.USER_GROUP_CODE = dr.Cells["USER_GROUP_CODE"].Value.ToString();
+
+			if (dr.Cells["USER_GROUP_NAME"].Value != null && dr.Cells["USER_GROUP_NAME"].Value != DBNull.Value)
+				vo.USER_GROUP_NAME = dr.Cells["USER_GROUP_NAME"].Value.ToString();
+			vo.USER_GROUP_TYPE = dr.Cells["USER_GROUP_TYPE"].Value.ToString();
+
+			if (dr.Cells["CREATE_USER_ID"].Value != null && dr.Cells["CREATE_USER_ID"].Value != DBNull.Value)
+				vo.CREATE_USER_ID = dr.Cells["CREATE_USER_ID"].Value.ToString();
+
+			if (dr.Cells["UPDATE_USER_ID"].Value != null && dr.Cells["UPDATE_USER_ID"].Value != DBNull.Value)
+				vo.UPDATE_USER_ID = dr.Cells["UPDATE_USER_ID"].Value.ToString(); ;
+
+			if (dr.Cells["CREATE_TIME"].Value != null && dr.Cells["CREATE_TIME"].Value != DBNull.Value)
+				vo.CREATE_TIME = Convert.ToDateTime(dr.Cells["CREATE_TIME"].Value);
+
+
+			if (dr.Cells["UPDATE_TIME"].Value != null && dr.Cells["UPDATE_TIME"].Value != DBNull.Value)
+				vo.UPDATE_TIME = Convert.ToDateTime(dr.Cells["UPDATE_TIME"].Value);
+
+
+			pgProperty.SelectedObject = vo;
+
+			pgProperty.PropertySort = PropertySort.NoSort;
+
+
+			pnlProperty.Visible = true;
+			pnlSearch.Visible = false;
 		}
 	}
 }
