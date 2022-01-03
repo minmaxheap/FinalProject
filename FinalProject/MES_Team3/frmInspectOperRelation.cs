@@ -292,14 +292,7 @@ namespace MES_Team3
 
 		private void csDataGridView2_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
 		{
-			if (e.RowIndex < 0)
-			{
-				return;
-			}
-
-			inspect_Code = csDataGridView2["INSPECT_ITEM_CODE", e.RowIndex].Value.ToString();
-			inspec_op_Code = csDataGridView2["OPERATION_CODE", e.RowIndex].Value.ToString();
-			MessageBox.Show($"{inspect_Code} , {inspec_op_Code}를 선택하셨습니다.");
+			
 		}
 
 		private void txtSearch_KeyDown(object sender, KeyEventArgs e)
@@ -391,6 +384,43 @@ namespace MES_Team3
 					}
 				}
 			}
+		}
+
+		private void csDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			if (e.RowIndex < 0)
+			{
+				return;
+			}
+
+			//공정 아이디
+			inspec_op_Code = csDataGridView1["OPERATION_CODE", e.RowIndex].Value.ToString();
+			MessageBox.Show($"{inspec_op_Code}를 선택하셨습니다.");
+
+			Op_LoadData();
+		}
+
+		private void csDataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			if (e.RowIndex < 0)
+			{
+				return;
+			}
+
+			inspect_Code = csDataGridView2["INSPECT_ITEM_CODE", e.RowIndex].Value.ToString();
+			inspec_op_Code = csDataGridView2["OPERATION_CODE", e.RowIndex].Value.ToString();
+			MessageBox.Show($"{inspect_Code} , {inspec_op_Code}를 선택하셨습니다.");
+		}
+
+		private void csDataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			if (e.RowIndex < 0)
+			{
+				return;
+			}
+
+			inspect_Code = csDataGridView3["INSPECT_ITEM_CODE", e.RowIndex].Value.ToString();
+			MessageBox.Show($"{inspect_Code}를 선택하셨습니다.");
 		}
 	}
 }

@@ -190,7 +190,7 @@ namespace MES_Team3
             csDataGridView1.DataSource = null;
             csDataGridView1.DataSource = list;
 
-            txtSearch.Text = save.INSPECT_ITEM_CODE;
+            //txtSearch.Text = save.INSPECT_ITEM_CODE;
 
             ResetCount();
 
@@ -504,6 +504,45 @@ namespace MES_Team3
 
 		private void csDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
+          
+
+        }
+
+        private void reset()
+
+        {
+
+            if (currentItem != null)
+
+            {
+
+                currentItem.Select();
+
+            }
+
+        }
+
+		private void btnReadTop_Click(object sender, EventArgs e)
+		{
+            //SearchVo vo = new SearchVo();
+            INSPECT_MSTVO save = (INSPECT_MSTVO)pgSearch.SelectedObject;
+            if (save == null)
+            {
+                MessageBox.Show("검색조건을 키시고 조회 클릭하세요");
+                return;
+            }
+
+            List<INSPECT_MSTVO> list = serv.GetINSPECT_MST_Search(save);
+            save.IsSearchPanel = false;
+
+            csDataGridView1.DataSource = null;
+            csDataGridView1.DataSource = list;
+
+            ResetCount();
+        }
+
+		private void csDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
             //이거 안됨 
             if (e.RowIndex < 0)
             {
@@ -555,40 +594,6 @@ namespace MES_Team3
 
             pnlProperty.Visible = true;
             pnlSearch.Visible = false;
-
-        }
-
-        private void reset()
-
-        {
-
-            if (currentItem != null)
-
-            {
-
-                currentItem.Select();
-
-            }
-
-        }
-
-		private void btnReadTop_Click(object sender, EventArgs e)
-		{
-            //SearchVo vo = new SearchVo();
-            INSPECT_MSTVO save = (INSPECT_MSTVO)pgSearch.SelectedObject;
-            if (save == null)
-            {
-                MessageBox.Show("검색조건을 키시고 조회 클릭하세요");
-                return;
-            }
-
-            List<INSPECT_MSTVO> list = serv.GetINSPECT_MST_Search(save);
-            save.IsSearchPanel = false;
-
-            csDataGridView1.DataSource = null;
-            csDataGridView1.DataSource = list;
-
-            ResetCount();
         }
 	}
 }

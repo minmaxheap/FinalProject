@@ -357,6 +357,23 @@ namespace MES_Team3
 
 		private void csDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
+			
+		}
+
+		private void txtSearch_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Enter)
+			{
+				btnTxtSearch.PerformClick();
+			}
+			else
+			{
+				ResetCount();
+			}
+		}
+
+		private void csDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
 			if (e.RowIndex < 0)
 			{
 				return;
@@ -408,18 +425,6 @@ namespace MES_Team3
 
 			pnlProperty.Visible = true;
 			pnlSearch.Visible = false;
-		}
-
-		private void txtSearch_KeyDown(object sender, KeyEventArgs e)
-		{
-			if (e.KeyCode == Keys.Enter)
-			{
-				btnTxtSearch.PerformClick();
-			}
-			else
-			{
-				ResetCount();
-			}
 		}
 	}
 }
