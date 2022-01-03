@@ -38,9 +38,19 @@ namespace POPprogram
             StarWorkProperty pr = new StarWorkProperty();
 
             Value = (cboLOTID.SelectedValue == null) ? "" : cboLOTID.SelectedValue.ToString();
-            
+
             swlist = serv.GetData(Value);
 
+
+            txtProdCode.Text = swlist[0].PRODUCT_CODE;
+            txtCustID.Text = swlist[0].CUSTOMER_CODE;
+            txtOperCode.Text = swlist[0].OPERATION_CODE;
+            txtOperName.Text = swlist[0].OPERATION_NAME;
+            txtProdName.Text = swlist[0].PRODUCT_NAME;
+            txtWorkOrder.Text = swlist[0].WORK_ORDER_ID;
+            lblOrderQty.Text = swlist[0].ORDER_QTY.ToString();
+            lblDefectQty.Text = swlist[0].DEFECT_QTY.ToString();
+            lblProdQty.Text = swlist[0].PRODUCT_QTY.ToString();
 
 
 

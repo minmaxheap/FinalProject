@@ -58,18 +58,29 @@ namespace DAC
 
 		public List<StarWorkProperty>  GetData(string Code)
 		{
-			string sql = @"   select lot.PRODUCT_CODE as PRODUCT_CODE,lot.OPERATION_CODE as OPERATION_CODE,p.PRODUCT_NAME as PRODUCT_NAME,o.OPERATION_NAME, lot.WORK_ORDER_ID, work.CUSTOMER_CODE,work.ORDER_STATUS,work.ORDER_QTY,work.PRODUCT_QTY,work.DEFECT_QTY 
+			string sql = @"select lot.PRODUCT_CODE as PRODUCT_CODE,lot.OPERATION_CODE as OPERATION_CODE,p.PRODUCT_NAME as PRODUCT_NAME,o.OPERATION_NAME, lot.WORK_ORDER_ID, work.CUSTOMER_CODE,work.ORDER_STATUS,work.ORDER_QTY,work.PRODUCT_QTY,work.DEFECT_QTY 
    from LOT_STS lot
    left join WORK_ORDER_MST work on lot.WORK_ORDER_ID = work.WORK_ORDER_ID
    left join PRODUCT_MST p on lot.PRODUCT_CODE = p.PRODUCT_CODE
    left join OPERATION_MST o on lot.OPERATION_CODE = o.OPERATION_CODE
    where LOT_ID = @LOT_ID";
-
-			using (SqlCommand cmd = new SqlCommand(sql, conn))
+			if (string.IsNullOrWhiteSpace(Code))
 			{
-				cmd.Parameters.AddWithValue("@LOT_ID", Code);
+				using (SqlCommand cmd = new SqlCommand(sql, conn))
+				{
+					cmd.Parameters.AddWithValue("@LOT_ID", "");
 
-				return Helper.DataReaderMapToList<StarWorkProperty>(cmd.ExecuteReader());
+					return Helper.DataReaderMapToList<StarWorkProperty>(cmd.ExecuteReader());
+				}
+			}
+			else
+			{
+				using (SqlCommand cmd = new SqlCommand(sql, conn))
+				{
+					cmd.Parameters.AddWithValue("@LOT_ID", Code);
+
+					return Helper.DataReaderMapToList<StarWorkProperty>(cmd.ExecuteReader());
+				}
 			}
 		}
 	}
