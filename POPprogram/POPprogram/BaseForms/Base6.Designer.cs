@@ -32,6 +32,7 @@ namespace POPprogram
             this.components = new System.ComponentModel.Container();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel7 = new System.Windows.Forms.Panel();
+            this.cboLOTID = new System.Windows.Forms.ComboBox();
             this.txtLOTDescription = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -65,7 +66,6 @@ namespace POPprogram
             this.pnlCrud = new System.Windows.Forms.Panel();
             this.btnExecute = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.cboLOTID = new System.Windows.Forms.ComboBox();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -91,6 +91,15 @@ namespace POPprogram
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1136, 30);
             this.panel7.TabIndex = 50;
+            // 
+            // cboLOTID
+            // 
+            this.cboLOTID.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
+            this.cboLOTID.FormattingEnabled = true;
+            this.cboLOTID.Location = new System.Drawing.Point(166, 0);
+            this.cboLOTID.Name = "cboLOTID";
+            this.cboLOTID.Size = new System.Drawing.Size(335, 29);
+            this.cboLOTID.TabIndex = 61;
             // 
             // txtLOTDescription
             // 
@@ -521,15 +530,6 @@ namespace POPprogram
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnClose.UseVisualStyleBackColor = false;
             // 
-            // cboLOTID
-            // 
-            this.cboLOTID.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
-            this.cboLOTID.FormattingEnabled = true;
-            this.cboLOTID.Location = new System.Drawing.Point(166, 0);
-            this.cboLOTID.Name = "cboLOTID";
-            this.cboLOTID.Size = new System.Drawing.Size(335, 29);
-            this.cboLOTID.TabIndex = 61;
-            // 
             // Base6
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -591,6 +591,6 @@ namespace POPprogram
         public System.Windows.Forms.Label label19;
         public System.Windows.Forms.Label label12;
         public NumTextBox txtQty;
-        private System.Windows.Forms.ComboBox cboLOTID;
+        public System.Windows.Forms.ComboBox cboLOTID;
     }
 }

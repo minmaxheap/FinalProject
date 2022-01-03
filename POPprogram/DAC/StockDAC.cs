@@ -58,6 +58,23 @@ WHERE  P.PRODUCT_CODE = O.MATERIAL_CODE AND V.CODE_TABLE_NAME ='CM_VENDOR' AND V
             }
 
         }
+
+        public List<string> GetStore_Code()
+        {
+            string sql = "select STORE_CODE FROM [dbo].STORE_MST";
+
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            List<string> List = new List<string>();
+            using (SqlDataReader da = cmd.ExecuteReader())
+            {
+                while (da.Read())
+                {
+                    List.Add(da["STORE_CODE"].ToString());
+
+                }
+            }
+            return List;
+        }
     }
 }
 
