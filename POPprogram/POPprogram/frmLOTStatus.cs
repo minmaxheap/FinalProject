@@ -71,7 +71,7 @@ namespace POPprogram
             DataGridViewUtil.AddGridTextColumn(csDataGridView2, "공정", "OPERATION_CODE");
             DataGridViewUtil.AddGridTextColumn(csDataGridView2, "공정명", "OPERATION_NAME");
             DataGridViewUtil.AddGridTextColumn(csDataGridView2, "수량", "LOT_QTY");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView2, "작업 시작 여부", "START_FLAG");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView2, "작업 시작 여부", "START_FLAG",width:120);
 
 
         }

@@ -478,5 +478,8 @@ namespace MES_Team3
         public System.Windows.Forms.Label lblPnlBottom;
         public System.Windows.Forms.Panel pnlProperty;
 
+        public System.Windows.Forms.Button btnTxtSearch;
+        public System.Windows.Forms.Button btnReadTop;
+
     }
 }
