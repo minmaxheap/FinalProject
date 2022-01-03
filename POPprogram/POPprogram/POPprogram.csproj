@@ -177,6 +177,7 @@
     </Compile>
     <Compile Include="Services\FunctionServ.cs" />
     <Compile Include="Services\LOTServ.cs" />
+    <Compile Include="Services\StockServ.cs" />
     <Compile Include="Util\DataGridViewUtil.cs" />
     <EmbeddedResource Include="BaseForms\Base2.resx">
       <DependentUpon>Base2.cs</DependentUpon>
