@@ -121,6 +121,10 @@ namespace POPprogram
             // 
             this.textBox1.Location = new System.Drawing.Point(974, 203);
             // 
+            // btnTxtSearch
+            // 
+            this.btnTxtSearch.Click += new System.EventHandler(this.btnReadTop_Click);
+            // 
             // btnReadTop
             // 
             this.btnReadTop.Click += new System.EventHandler(this.btnReadTop_Click);

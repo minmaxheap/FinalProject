@@ -38,7 +38,7 @@ namespace POPprogram
             iSearchedList = new List<int>();
             iSelectedRow = new List<int>();
 
-            LOTServ serv = new LOTServ();
+            StockServ serv = new StockServ();
             DataTable dt = serv.GetPurchaseList();
             dgvPurchase.DataSource = null;
             dgvPurchase.DataSource = dt;
