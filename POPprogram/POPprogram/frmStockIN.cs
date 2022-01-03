@@ -46,6 +46,7 @@ namespace POPprogram
 
         private void frmStockIN_Load(object sender, EventArgs e)
         {
+
             DataGridViewUtil.SetInitGridView(csDataGridView1);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "순번", "RowNum");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "자재 품번", "CHILD_PRODUCT_CODE");
@@ -53,6 +54,7 @@ namespace POPprogram
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "단위 수량", "REQUIRE_QTY");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "수량", "수량");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "자재LOTID", "STOCK_IN_LOT_ID");
+
 
             LoadData();
         }
@@ -67,5 +69,51 @@ namespace POPprogram
             comboBox1.DataSource = MstList;
 
         }
+
+        private void csDataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.ColumnIndex == 0 && e.RowIndex == -1)
+            {
+                e.PaintBackground(e.ClipBounds, false);
+
+                Point pt = e.CellBounds.Location;  // where you want the bitmap in the cell
+
+                int nChkBoxWidth = 15;
+                int nChkBoxHeight = 15;
+                int offsetx = (e.CellBounds.Width - nChkBoxWidth) / 2;
+                int offsety = (e.CellBounds.Height - nChkBoxHeight) / 2;
+
+                pt.X += offsetx;
+                pt.Y += offsety;
+
+                CheckBox cb = new CheckBox();
+                cb.Size = new Size(nChkBoxWidth, nChkBoxHeight);
+                cb.Location = pt;
+                cb.CheckedChanged += new EventHandler(csDataGridView1CheckBox_CheckedChanged);
+
+                ((DataGridView)sender).Controls.Add(cb);
+
+                e.Handled = true;
+            }
+
+        }
+        private void csDataGridView1CheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow r in csDataGridView1.Rows)
+            {
+                r.Cells["Column1"].Value = ((CheckBox)sender).Checked;
+            }
+        }
+
+        //private void DgvChk(DataGridView dgv)
+        //{
+        //    dgv.EndEdit();
+        //    dgvChk = new DataGridViewCheckBoxColumn();
+        //    dgvChk.HeaderText = " ";
+        //    dgvChk.Name = "chk";
+        //    dgvChk.Width = 40;
+
+        //    dgv.Columns.Add(dgvChk);
+        //}
     }
 }
