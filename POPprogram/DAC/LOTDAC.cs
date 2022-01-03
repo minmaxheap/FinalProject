@@ -28,9 +28,6 @@ namespace DAC
         }
 
 
-
-
-
         public DataTable GetWorkOrderList()
         {
             string sql = @"SELECT WORK_ORDER_ID
@@ -54,7 +51,9 @@ namespace DAC
       ,w.UPDATE_USER_ID
   FROM WORK_ORDER_MST w, PRODUCT_MST pm, CODE_DATA_MST cd, PRODUCT_OPERATION_REL r, OPERATION_MST o
 
-  WHERE w.PRODUCT_CODE=pm.PRODUCT_CODE AND w.CUSTOMER_CODE=cd.KEY_1 and w.PRODUCT_CODE = r.PRODUCT_CODE and r.FLOW_SEQ =1 and o.OPERATION_CODE = r.OPERATION_CODE
+  WHERE w.PRODUCT_CODE=pm.PRODUCT_CODE AND w.CUSTOMER_CODE=cd.KEY_1 and w.PRODUCT_CODE = r.PRODUCT_CODE and r.FLOW_SEQ =1 and o.OPERATION_CODE = r.OPERATION_CODE  AND CONVERT(DATE, W.CREATE_TIME) = CONVERT(DATE, GETDATE()) AND ORDER_STATUS <>'CLOSE'
+
+
 ";
             DataTable dt = new DataTable();
             using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
@@ -68,7 +67,12 @@ namespace DAC
         {
             try
             {
-                string sql = @"INSERT[dbo].[LOT_STS]
+                string sql = @"SET XACT_ABORT ON;  
+  
+BEGIN TRY  
+    BEGIN TRANSACTION;  
+
+INSERT[dbo].[LOT_STS]
 (LOT_ID, LOT_DESC, 
 PRODUCT_CODE, OPERATION_CODE, 
 LOT_QTY, CREATE_QTY,CREATE_TIME,
@@ -89,6 +93,16 @@ PRODUCT_CODE, OPERATION_CODE, LOT_QTY,
 CREATE_QTY,CREATE_TIME, WORK_ORDER_ID,LAST_TRAN_USER_ID, LAST_TRAN_COMMENT
 from [dbo].[LOT_STS] s
 where LOT_ID = @LOT_ID
+
+	COMMIT TRANSACTION;  
+END TRY  
+BEGIN CATCH  
+   IF (XACT_STATE()) = -1  
+    BEGIN  	    
+        PRINT  '에러발생 : ' + ERROR_MESSAGE()  
+        ROLLBACK TRANSACTION;  		
+    END;  
+END CATCH;  
 
 
 ";

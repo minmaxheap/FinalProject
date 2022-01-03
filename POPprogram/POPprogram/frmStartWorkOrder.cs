@@ -14,5 +14,10 @@ namespace POPprogram
         {
             InitializeComponent();
         }
-    }
+
+		private void frmStartWorkOrder_Load(object sender, EventArgs e)
+		{
+            
+		}
+	}
 }
