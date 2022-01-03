@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using DAC;
 using System.Data;
 
-namespace POPprogram.Services
+namespace POPprogram
 {
 	public class StarWorkServ
 	{
@@ -23,6 +23,14 @@ namespace POPprogram.Services
 			DataTable dt = dac.GetCode();
 			dac.Dispose();
 			return dt;
+		}
+
+		public List<string> GetLotCode()
+		{
+			StartWorkDAC dac = new StartWorkDAC();
+			List<string> List = dac.GetLotCode();
+			dac.Dispose();
+			return List;
 		}
 
 
