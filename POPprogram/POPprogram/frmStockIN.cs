@@ -105,6 +105,25 @@ namespace POPprogram
             }
         }
 
+        private void csDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            foreach (DataGridViewRow r in csDataGridView1.Rows)
+            {
+                DataGridViewCheckBoxCell chk = r.Cells["Column1"] as DataGridViewCheckBoxCell;
+
+
+                if (chk != null)
+                {
+                   
+                        if (Convert.ToBoolean(chk.Value))
+                        {
+                        MessageBox.Show("변환 성공");
+                        }
+                    
+                }
+            }
+        }
+
         //private void DgvChk(DataGridView dgv)
         //{
         //    dgv.EndEdit();

@@ -204,6 +204,7 @@ namespace POPprogram
             this.csDataGridView1.RowTemplate.Height = 23;
             this.csDataGridView1.Size = new System.Drawing.Size(830, 261);
             this.csDataGridView1.TabIndex = 65;
+            this.csDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellClick);
             this.csDataGridView1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.csDataGridView1_CellPainting);
             // 
             // Column1
