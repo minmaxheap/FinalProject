@@ -57,23 +57,11 @@
     <Compile Include="BaseForms\Base1_1.Designer.cs">
       <DependentUpon>Base1_1.cs</DependentUpon>
     </Compile>
-    <Compile Include="BaseForms\Base3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BaseForms\Base3.Designer.cs">
-      <DependentUpon>Base3.cs</DependentUpon>
-    </Compile>
     <Compile Include="BaseForms\Base3_1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BaseForms\Base3_1.Designer.cs">
       <DependentUpon>Base3_1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BaseForms\Base4.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BaseForms\Base4.Designer.cs">
-      <DependentUpon>Base4.cs</DependentUpon>
     </Compile>
     <Compile Include="BaseForms\Base2.cs">
       <SubType>Form</SubType>
@@ -183,12 +171,6 @@
     <Compile Include="frmUser_MST.Designer.cs">
       <DependentUpon>frmUser_MST.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_INSPECT_ITEM_OPERATION.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_INSPECT_ITEM_OPERATION.Designer.cs">
-      <DependentUpon>frm_INSPECT_ITEM_OPERATION.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -221,14 +203,8 @@
     <EmbeddedResource Include="BaseForms\Base2.resx">
       <DependentUpon>Base2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BaseForms\Base3.resx">
-      <DependentUpon>Base3.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="BaseForms\Base3_1.resx">
       <DependentUpon>Base3_1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BaseForms\Base4.resx">
-      <DependentUpon>Base4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaseForms\Base4_1.resx">
       <DependentUpon>Base4_1.cs</DependentUpon>
@@ -274,9 +250,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmUser_MST.resx">
       <DependentUpon>frmUser_MST.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_INSPECT_ITEM_OPERATION.resx">
-      <DependentUpon>frm_INSPECT_ITEM_OPERATION.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -332,6 +305,9 @@
     <None Include="Resources\Export.png" />
     <None Include="Resources\Check-01.png" />
     <None Include="Resources\facebook_cover_photo_1.png" />
+    <Content Include="Resources\facebook_cover_photo_3.png" />
+    <Content Include="Resources\logo.png" />
+    <Content Include="Resources\logo_transparent.png" />
     <Content Include="Resources\twocirclingarrows1_120592.png" />
   </ItemGroup>
   <ItemGroup>

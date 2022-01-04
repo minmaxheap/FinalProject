@@ -81,6 +81,10 @@ namespace MES_Team3
             // 
             this.btnSearchPnl.Click += new System.EventHandler(this.button3_Click);
             // 
+            // txtSearch
+            // 
+            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
+            // 
             // btnInsert
             // 
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
@@ -105,13 +109,8 @@ namespace MES_Team3
             // 
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // txtSearch
-            // 
-            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
-            // 
             // btnTxtSearch
             // 
-            this.btnTxtSearch.Location = new System.Drawing.Point(294, 0);
             this.btnTxtSearch.Click += new System.EventHandler(this.btnTxtSearch_Click);
             // 
             // btnReadTop
@@ -175,7 +174,7 @@ namespace MES_Team3
             this.csDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.csDataGridView1.RowHeadersWidth = 30;
             this.csDataGridView1.RowTemplate.Height = 23;
-            this.csDataGridView1.Size = new System.Drawing.Size(794, 597);
+            this.csDataGridView1.Size = new System.Drawing.Size(794, 593);
             this.csDataGridView1.TabIndex = 0;
             this.csDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellClick);
             // 

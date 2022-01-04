@@ -22,6 +22,9 @@ namespace POPprogram
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
             msUserID = ID;
+            lblID.Text = msUserID + " 님";
+
+
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -29,9 +32,9 @@ namespace POPprogram
             mServ = new FunctionServ();
             mdtFunc = mServ.GetUserFunctionList(this.msUserID);
 
-            DrawMenuStrip();
-
-            //tabMenu.Visible = false;
+            //DrawMenuStrip();
+            DrawMenuPanel();
+            tabMenu.Visible = false;
       
       
 
@@ -44,30 +47,33 @@ namespace POPprogram
 
         }
 
-        private void DrawMenuStrip()
-        {
-            DataView dv1 = new DataView(mdtFunc);
-            dv1.RowFilter = "FUNCTION_LEVEL = 1";
-            for (int i = 0; i < dv1.Count; i++)
-            {
-                ToolStripMenuItem p_menu = new ToolStripMenuItem();
-                p_menu.Name = $"p_menu{dv1[i]["FUNCTION_CODE"].ToString()}";
-                p_menu.Text = dv1[i]["FUNCTION_NAME"].ToString();
-                p_menu.TextAlign = ContentAlignment.MiddleCenter;
-                p_menu.AutoSize = false;
-                p_menu.Size = new Size(205, 90);
-                p_menu.Tag = dv1[i]["PROGRAM_NAME"].ToString();
-                //p_menu.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-                p_menu.Click += Menu_Click;
-                this.mnuMain.Items.Add(p_menu);
-            }
+        //private void DrawMenuStrip()
+        //{
+        //    DataView dv1 = new DataView(mdtFunc);
+        //    dv1.RowFilter = "FUNCTION_LEVEL = 1";
+        //    for (int i = 0; i < dv1.Count; i++)
+        //    {
+        //        ToolStripMenuItem p_menu = new ToolStripMenuItem();
+        //        p_menu.Name = $"p_menu{dv1[i]["FUNCTION_CODE"].ToString()}";
+        //        p_menu.Text = dv1[i]["FUNCTION_NAME"].ToString();
+        //        p_menu.TextAlign = ContentAlignment.MiddleCenter;
+        //        p_menu.AutoSize = false;
+        //        p_menu.Size = new Size(205, 90);
+        //        p_menu.Tag = dv1[i]["PROGRAM_NAME"].ToString();
+        //        p_menu.BackColor = Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+        //        p_menu.ForeColor = Color.White;
+        //        //p_menu.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+        //        p_menu.Click += Menu_Click;
+        //        this.mnuMain.Items.Add(p_menu);
+        //    }
 
 
-        }
+        //}
 
         private void Menu_Click(object sender, EventArgs e)
         {
-            ToolStripMenuItem menu = (ToolStripMenuItem)sender;
+            // ToolStripMenuItem menu = (ToolStripMenuItem)sender;
+            Button menu = (Button)sender;
             OpenCreateForm(menu.Tag.ToString(), menu.Text);
         }
 
@@ -95,11 +101,10 @@ namespace POPprogram
                 //frm.WindowState = FormWindowState.Maximized;
                 frm.FormBorderStyle = FormBorderStyle.FixedSingle;
                 frm.Dock = DockStyle.Fill;
-             
-              
       
                 frm.Text = formText;
                 frm.Show();
+                
             }
             catch
             {
@@ -112,29 +117,29 @@ namespace POPprogram
 
         private void frmMain_MdiChildActivate(object sender, EventArgs e)
         {
-            //if (this.ActiveMdiChild == null)
-            //{
-            //    tabMenu.Visible = false;
-            //}
-            //else
-            //{
-             //  this.ActiveMdiChild.WindowState = FormWindowState.Maximized;
+            if (this.ActiveMdiChild == null)
+            {
+                tabMenu.Visible = false;
+            }
+            else
+            {
+                this.ActiveMdiChild.WindowState = FormWindowState.Maximized;
 
-            //    if (this.ActiveMdiChild.Tag == null)
-            //    {
-            //        TabPage tp = new TabPage(this.ActiveMdiChild.Text + "    ");
-            //        tp.Parent = tabMenu;
-            //        tp.Tag = this.ActiveMdiChild;
-            //        tabMenu.SelectedTab = tp;
+                if (this.ActiveMdiChild.Tag == null)
+                {
+                    TabPage tp = new TabPage(this.ActiveMdiChild.Text + "    ");
+                    tp.Parent = tabMenu;
+                    tp.Tag = this.ActiveMdiChild;
+                    tabMenu.SelectedTab = tp;
 
-            //        this.ActiveMdiChild.FormClosed += ActiveMdiChild_FormClosed;
+                    this.ActiveMdiChild.FormClosed += ActiveMdiChild_FormClosed;
 
-            //        this.ActiveMdiChild.Tag = tp;
-            //    }
+                    this.ActiveMdiChild.Tag = tp;
+                }
 
-            //    if (!tabMenu.Visible)
-            //        tabMenu.Visible = true;
-            //}
+                if (!tabMenu.Visible)
+                    tabMenu.Visible = true;
+            }
         }
 
         private void ActiveMdiChild_FormClosed(object sender, FormClosedEventArgs e)
@@ -162,26 +167,60 @@ namespace POPprogram
 
         private void tabMain_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //if (tabMenu.SelectedTab != null)
-            //{
-            //    Form frm = (Form)tabMenu.SelectedTab.Tag;
-            //    frm.Select();
-            //}
+            if (tabMenu.SelectedTab != null)
+            {
+                Form frm = (Form)tabMenu.SelectedTab.Tag;
+                frm.Select();
+            }
         }
 
         private void tabMenu_MouseDown(object sender, MouseEventArgs e)
         {
-        //    for (int i = 0; i < tabMenu.TabPages.Count; i++)
-        //    {
-        //        var r = tabMenu.GetTabRect(i);
-        //        var closeImage = Properties.Resources.close;
-        //        var closeRect = new Rectangle((r.Right - closeImage.Width), r.Top + (r.Height - closeImage.Height) / 2, closeImage.Width, closeImage.Height);
-        //        if (closeRect.Contains(e.Location))
-        //        {
-        //            this.ActiveMdiChild.Close();
-        //            break;
-        //        }
-        //    }
+            for (int i = 0; i < tabMenu.TabPages.Count; i++)
+            {
+                var r = tabMenu.GetTabRect(i);
+                var closeImage = Properties.Resources.close;
+                var closeRect = new Rectangle((r.Right - closeImage.Width), r.Top + (r.Height - closeImage.Height) / 2, closeImage.Width, closeImage.Height);
+                if (closeRect.Contains(e.Location))
+                {
+                    this.ActiveMdiChild.Close();
+                    break;
+                }
+            }
+        }
+
+        private void DrawMenuPanel()
+        {
+            DataView dv1 = new DataView(mdtFunc);
+            dv1.RowFilter = "FUNCTION_LEVEL = 1";
+            for (int i = 0; i < dv1.Count; i++)
+            {
+                Button btnP_Menu = new Button();
+                btnP_Menu.Name = $"p_menu{dv1[i]["FUNCTION_CODE"].ToString()}";
+                btnP_Menu.Text = dv1[i]["FUNCTION_NAME"].ToString();
+                btnP_Menu.TextAlign = ContentAlignment.MiddleCenter;
+                btnP_Menu.AutoSize = false;
+                btnP_Menu.Margin = new Padding(3, 4, 3, 4);
+                btnP_Menu.Size = new Size(155, 41);
+                btnP_Menu.Tag = dv1[i]["PROGRAM_NAME"].ToString();
+                btnP_Menu.BackColor = Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+                btnP_Menu.ForeColor = Color.Black;
+                //p_menu.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+                btnP_Menu.FlatStyle = FlatStyle.Flat;
+                btnP_Menu.UseVisualStyleBackColor = false;
+                btnP_Menu.Click += Menu_Click;
+
+
+                flpMenu.Controls.Add(btnP_Menu);
+
+                if (i == 0)
+                {
+                    Button btn = btnP_Menu;
+                }
+            }
+
+
+
         }
     }
 }

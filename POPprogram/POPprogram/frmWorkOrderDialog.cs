@@ -5,12 +5,11 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace POPprogram
 {
-    public partial class frmWorkOrderDialog : Form
+    public partial class frmWorkOrderDialog : POPprogram.BaseDialog
     {
         List<int> iSearchedList;
         List<int> iSelectedRow;
@@ -20,7 +19,7 @@ namespace POPprogram
             InitializeComponent();
         }
 
-        private void frmWorkOrderDialog_Load(object sender, EventArgs e)
+        private void frmWorkOrderDialog1_Load(object sender, EventArgs e)
         {
             DataGridViewUtil.SetInitGridView(dgvWorkOrder);
             DataGridViewUtil.AddGridTextColumn(dgvWorkOrder, "작업일자", "ORDER_DATE");
@@ -55,15 +54,12 @@ namespace POPprogram
 
         private void btnSelect_Click(object sender, EventArgs e)
         {
-            if (true) //작업일자 등 유효성 검사 통과했을 때만. 아직 안 함(애초에 db에서 불러올 때 조건 만족하는 값을 가져와야겠다)
-            {
+            //애초에 db에서 불러올 때 조건 만족하는 값을 가져와야겠다
+            
                 this.DialogResult = DialogResult.OK;
                 this.Close();
-            }
-            else
-            {
-                MessageBox.Show("다른 작업지시를 선택해주시길 바랍니다.");
-            }
+
+   
         }
 
         private void btnTxtSearch_Click(object sender, EventArgs e)
@@ -109,6 +105,7 @@ namespace POPprogram
                 }
             }
         }
+
         public static DataTable GetDataGridViewAsDataTable(DataGridView _DataGridView)
         {
             try
