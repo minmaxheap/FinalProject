@@ -75,5 +75,10 @@ namespace MES_Team3
 			csDataGridView1.DataSource = null;
 			//csDataGridView1.DataSource = list;
 		}
+
+		private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
 	}
 }

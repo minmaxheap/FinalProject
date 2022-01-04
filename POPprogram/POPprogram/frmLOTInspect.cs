@@ -120,16 +120,24 @@ namespace POPprogram
                 {
                     MessageBox.Show("성공");
                     csDataGridView1.Rows[row].Cells[8].Value = "OK";
-                    csDataGridView1.Columns["유효값"].DefaultCellStyle.ForeColor = Color.Green;
-                    csDataGridView1.Rows[row].Selected = false;
+                    csDataGridView1.Rows[row].Cells[8].Style.ForeColor = Color.Green;
+                    //csDataGridView1.Rows[row].Cells[8].Style.Font = new Font(FontStyle
+                    //csDataGridView1.Columns["유효값"].DefaultCellStyle.ForeColor = Color.Green;
+                    //csDataGridView1.Rows[row].Selected = false;
                     return;
                 }
                 else
                 {
                     csDataGridView1.Rows[row].Cells[8].Value = "NG";
-                    csDataGridView1.Columns["유효값"].DefaultCellStyle.ForeColor = Color.Red;
-                    csDataGridView1.Columns["유효값"].DefaultCellStyle.BackColor = Color.DarkRed;
-                    csDataGridView1.Rows[row].Selected = false;
+                    csDataGridView1.Rows[row].Cells[8].Style.ForeColor = Color.Red;
+                    this.csDataGridView1.SelectionMode =
+                    DataGridViewSelectionMode.FullRowSelect;
+                    this.csDataGridView1.MultiSelect = false;
+                    //csDataGridView1.ClearSelection();
+                    //csDataGridView1.Rows[row].Selected = false;
+                    return;
+                
+                   
                     //csDataGridView1.Columns["유효값"].DefaultCellStyle
                     return;
                 }
