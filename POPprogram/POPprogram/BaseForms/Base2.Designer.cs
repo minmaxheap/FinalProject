@@ -29,7 +29,7 @@ namespace POPprogram
         /// </summary>
         private void InitializeComponent()
         {
-           
+       
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Base2));
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
@@ -80,13 +80,13 @@ namespace POPprogram
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnClose.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 21.75F, System.Drawing.FontStyle.Bold);
             this.btnClose.Image = global::POPprogram.Properties.Resources.Delete;
-            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnClose.Location = new System.Drawing.Point(573, 0);
+            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClose.Location = new System.Drawing.Point(557, 0);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(94, 70);
+            this.btnClose.Size = new System.Drawing.Size(110, 70);
             this.btnClose.TabIndex = 93;
             this.btnClose.Text = "닫기";
-            this.btnClose.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = false;
             // 
             // btnExport
@@ -95,16 +95,17 @@ namespace POPprogram
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            this.btnExport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnExport.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 21.75F, System.Drawing.FontStyle.Bold);
             this.btnExport.Image = global::POPprogram.Properties.Resources.Export;
-            this.btnExport.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnExport.Location = new System.Drawing.Point(292, 0);
+            this.btnExport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExport.Location = new System.Drawing.Point(295, 0);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(94, 70);
+            this.btnExport.Size = new System.Drawing.Size(110, 70);
             this.btnExport.TabIndex = 94;
             this.btnExport.Text = "출하";
-            this.btnExport.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnExport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExport.UseVisualStyleBackColor = false;
             // 
             // panel4

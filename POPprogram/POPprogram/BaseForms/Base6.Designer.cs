@@ -502,14 +502,14 @@ namespace POPprogram
             this.btnExecute.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnExecute.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnExecute.Image = global::POPprogram.Properties.Resources.Touch_Screen;
-            this.btnExecute.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnExecute.Location = new System.Drawing.Point(453, 0);
+            this.btnExecute.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExecute.Location = new System.Drawing.Point(436, 0);
             this.btnExecute.Margin = new System.Windows.Forms.Padding(0);
             this.btnExecute.Name = "btnExecute";
-            this.btnExecute.Size = new System.Drawing.Size(94, 70);
+            this.btnExecute.Size = new System.Drawing.Size(110, 70);
             this.btnExecute.TabIndex = 84;
             this.btnExecute.Text = "실행";
-            this.btnExecute.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnExecute.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExecute.UseVisualStyleBackColor = false;
             // 
             // btnClose
@@ -520,14 +520,14 @@ namespace POPprogram
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnClose.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnClose.Image = global::POPprogram.Properties.Resources.Delete;
-            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnClose.Location = new System.Drawing.Point(574, 0);
+            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClose.Location = new System.Drawing.Point(557, 0);
             this.btnClose.Margin = new System.Windows.Forms.Padding(0);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(94, 70);
+            this.btnClose.Size = new System.Drawing.Size(110, 70);
             this.btnClose.TabIndex = 83;
             this.btnClose.Text = "닫기";
-            this.btnClose.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = false;
             // 
             // Base6

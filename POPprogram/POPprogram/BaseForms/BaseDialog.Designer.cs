@@ -29,7 +29,7 @@ namespace POPprogram
         /// </summary>
         private void InitializeComponent()
         {
-           
+          
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaseDialog));
             this.btnSelect = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
@@ -37,22 +37,6 @@ namespace POPprogram
             this.lblPanel = new System.Windows.Forms.Label();
             btnTxtSearch = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnTxtSearch
-            // 
-            btnTxtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            btnTxtSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTxtSearch.BackgroundImage")));
-            btnTxtSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            btnTxtSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            btnTxtSearch.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            btnTxtSearch.ForeColor = System.Drawing.SystemColors.ControlText;
-            btnTxtSearch.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            btnTxtSearch.Location = new System.Drawing.Point(361, 60);
-            btnTxtSearch.Margin = new System.Windows.Forms.Padding(0);
-            btnTxtSearch.Name = "btnTxtSearch";
-            btnTxtSearch.Size = new System.Drawing.Size(32, 26);
-            btnTxtSearch.TabIndex = 93;
-            btnTxtSearch.UseVisualStyleBackColor = false;
             // 
             // btnSelect
             // 
@@ -62,13 +46,13 @@ namespace POPprogram
             this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSelect.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSelect.Image = global::POPprogram.Properties.Resources.Add_New;
-            this.btnSelect.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSelect.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSelect.Location = new System.Drawing.Point(12, 451);
             this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(94, 70);
+            this.btnSelect.Size = new System.Drawing.Size(110, 70);
             this.btnSelect.TabIndex = 94;
             this.btnSelect.Text = "선택";
-            this.btnSelect.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSelect.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSelect.UseVisualStyleBackColor = false;
             // 
             // btnClose
@@ -79,13 +63,13 @@ namespace POPprogram
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnClose.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnClose.Image = global::POPprogram.Properties.Resources.Delete;
-            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnClose.Location = new System.Drawing.Point(604, 451);
+            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClose.Location = new System.Drawing.Point(592, 451);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(94, 70);
+            this.btnClose.Size = new System.Drawing.Size(110, 70);
             this.btnClose.TabIndex = 95;
             this.btnClose.Text = "닫기";
-            this.btnClose.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = false;
             // 
             // txtSearch
@@ -108,6 +92,22 @@ namespace POPprogram
             this.lblPanel.TabIndex = 90;
             this.lblPanel.Text = "작업지시 선택";
             this.lblPanel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnTxtSearch
+            // 
+            btnTxtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            btnTxtSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTxtSearch.BackgroundImage")));
+            btnTxtSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            btnTxtSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            btnTxtSearch.Font = new System.Drawing.Font("나눔고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            btnTxtSearch.ForeColor = System.Drawing.SystemColors.ControlText;
+            btnTxtSearch.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            btnTxtSearch.Location = new System.Drawing.Point(361, 60);
+            btnTxtSearch.Margin = new System.Windows.Forms.Padding(0);
+            btnTxtSearch.Name = "btnTxtSearch";
+            btnTxtSearch.Size = new System.Drawing.Size(32, 26);
+            btnTxtSearch.TabIndex = 93;
+            btnTxtSearch.UseVisualStyleBackColor = false;
             // 
             // BaseDialog
             // 
