@@ -17,5 +17,12 @@ namespace POPprogram
 			return dt;
 				 
 		}
+		public List<string> GetCode()
+		{
+			LOTInspecDAC dac = new LOTInspecDAC();
+			List<string> list = dac.GetCode();
+			dac.Dispose();
+			return list;
+		}
 	}
 }

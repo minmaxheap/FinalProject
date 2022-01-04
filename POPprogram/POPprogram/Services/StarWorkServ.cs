@@ -32,7 +32,21 @@ namespace POPprogram
 			dac.Dispose();
 			return List;
 		}
+		public List<LOTProperty> GetLotProperty(string Code)
+		{
+			StartWorkDAC dac = new StartWorkDAC();
+			List<LOTProperty> List = dac.GetLotProperty(Code);
+			dac.Dispose();
+			return List;
+		}
 
+		public bool Insert(LOTProperty pr)
+		{
+			StartWorkDAC dac = new StartWorkDAC();
+			bool result = dac.Insert(pr);
+			dac.Dispose();
+			return result;
+		}
 
 	}
 }

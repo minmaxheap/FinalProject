@@ -42,5 +42,22 @@ namespace DAC
 
 			}
 		}
+		public List<string> GetCode()
+		{
+
+			string sql = "select EQUIPMENT_CODE from EQUIPMENT_MST";
+
+			SqlCommand cmd = new SqlCommand(sql, conn);
+			List<string> List = new List<string>();
+			using (SqlDataReader da = cmd.ExecuteReader())
+			{
+				while (da.Read())
+				{
+					List.Add(da["EQUIPMENT_CODE"].ToString());
+
+				}
+			}
+			return List;
+		}
 	}
 }

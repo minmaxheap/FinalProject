@@ -84,7 +84,7 @@ namespace DAC
 			}
 		}
 
-		public bool Insert()
+		public bool Insert(LOTProperty pr)
 		{
 			string sql = @" SET XACT_ABORT ON;
 
@@ -109,7 +109,12 @@ BEGIN CATCH
 END CATCH;";
 
 
-			return true;
+			using (SqlCommand cmd = new SqlCommand(sql, conn))
+			{
+				int row = cmd.ExecuteNonQuery();
+				return row > 0;
+			}
+
    
 
 		}

@@ -30,6 +30,9 @@ namespace POPprogram
             cboLOTID.DisplayMember = "LOT_ID";
             cboLOTID.DataSource = list;
 
+           
+            
+
             //ir.OPERATION_CODE,ir.INSPECT_ITEM_CODE,i.INSPECT_ITEM_NAME,i.VALUE_TYPE,i.SPEC_LSL,i.SPEC_TARGET,i.SPEC_USL
             DataGridViewUtil.SetInitGridView(csDataGridView1);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "공정코드", "OPERATION_CODE");
@@ -86,6 +89,8 @@ namespace POPprogram
             DataTable dt = lotserv.GetInspec(Code);
             csDataGridView1.DataSource = null;
             csDataGridView1.DataSource = dt;
+
+
 
         }
 
