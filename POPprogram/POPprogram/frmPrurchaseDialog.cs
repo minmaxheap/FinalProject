@@ -28,6 +28,7 @@ namespace POPprogram
             DataGridViewUtil.AddGridTextColumn(dgvPurchase, "납품처 코드", "VENDOR_CODE");
             DataGridViewUtil.AddGridTextColumn(dgvPurchase, "납품처명", "VENDOR_NAME");
             DataGridViewUtil.AddGridTextColumn(dgvPurchase, "자재 품번", "MATERIAL_CODE");
+            DataGridViewUtil.AddGridTextColumn(dgvPurchase, "품번", "PRODUCT_CODE");
             DataGridViewUtil.AddGridTextColumn(dgvPurchase, "품명", "PRODUCT_NAME");
             DataGridViewUtil.AddGridTextColumn(dgvPurchase, "발주 수량", "ORDER_QTY");
             DataGridViewUtil.AddGridTextColumn(dgvPurchase, "입하 여부", "STOCK_IN_FLAG");

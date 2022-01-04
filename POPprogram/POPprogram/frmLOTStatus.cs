@@ -33,6 +33,7 @@ namespace POPprogram
         public frmLOTStatus()
         {
             InitializeComponent();
+            
         }
 
         private void frmLOTStatus_Load(object sender, EventArgs e)
