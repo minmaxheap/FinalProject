@@ -230,49 +230,14 @@ namespace MES_Team3
 
         private void pgGrid_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)
         {
-            //double k;
-            //if (e.ChangedItem.Label == "C")
-            //{
-            //    INSPECT_MSTVO vo = new INSPECT_MSTVO();
-
-            //    if (!double.TryParse(e.ChangedItem.Value.ToString(), out k))
-            //    {
-            //        MessageBox.Show("문자 입력 할수없습니다.");
-
-            //        return;
-            //    }
-            //}
-            //else
-            //{
-            //    if (double.TryParse(e.ChangedItem.Value.ToString(), out k))
-            //    {
-            //        INSPECT_MSTVO vo = new INSPECT_MSTVO();
-            //        MessageBox.Show("문자 입력하세요.");
-            //        vo.SPEC_LSL = string.Empty;
-
-            //        return;
-            //    }
-            //}
-
-            ////int k;
-            ////    //if (e.ChangedItem.Label == "품번")
-            ////    //{
-            ////    //    if (!int.TryParse(e.ChangedItem.Value.ToString(), out k))
-            ////    //    {
-            ////    //        MessageBox.Show("문자 입력할 수 없습니다");
-            ////    //    }
-            ////    //}
-            //if (e.ChangedItem.Label == "LSL")
-            //{
-
-            //}
-            
 
             int k;
+            int k1;
             INSPECT_MSTVO vo = (INSPECT_MSTVO)pgGrid.SelectedObject;
-            if (e.ChangedItem.Label == "N")
+
+            if (vo.VALUE_TYPE == "N")
             {
-                if (e.ChangedItem.Label == "LSL" || e.ChangedItem.Label == "USL" || e.ChangedItem.Label == "Target")
+                if (e.ChangedItem.Label == "LSL" || (e.ChangedItem.Label == "USL") || (e.ChangedItem.Label == "Target"))
                 {
                     if (!int.TryParse(e.ChangedItem.Value.ToString(), out k))
                     {
@@ -285,14 +250,13 @@ namespace MES_Team3
                         this.BeginInvoke(new MethodInvoker(reset));//re-select the changed item.
 
                     }
-
                 }
             }
+            
+            
 
-            int k1;
-
-            if (e.ChangedItem.Label == "C")
-            {
+             if (vo.VALUE_TYPE == "C")
+             {   
                 if (e.ChangedItem.Label == "Target")
                 {
                     if (int.TryParse(e.ChangedItem.Value.ToString(), out k1))
@@ -308,6 +272,8 @@ namespace MES_Team3
 
                 }
             }
+
+         
 
         }
 
