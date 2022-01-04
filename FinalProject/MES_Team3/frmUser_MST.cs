@@ -45,7 +45,7 @@ namespace MES_Team3
 
 
 			DataGridViewUtil.SetInitGridView(csDataGridView1);
-			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "사용자 아이디", "USER_ID");
+			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "사용자 아이디", "USER_ID",width:120);
 			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "사용자 이름", "USER_NAME");
 			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "사용자 그룹", "USER_GROUP_CODE");
 

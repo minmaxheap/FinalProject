@@ -38,7 +38,7 @@ namespace MES_Team3
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "창고", "STORE_CODE");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "창고명", "STORE_NAME");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "창고 유형", "STORE_TYPE");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "선입선출 여부", "FIFO_FLAG");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "선입선출 여부", "FIFO_FLAG", width: 120);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성 시간", "CREATE_TIME");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성 사용자", "CREATE_USER_ID");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 시간", "UPDATE_TIME");
