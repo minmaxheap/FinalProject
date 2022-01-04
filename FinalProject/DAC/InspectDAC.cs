@@ -53,8 +53,8 @@ namespace DAC
 			{
 				if (vo.VALUE_TYPE == "N")
 				{
-					string sql = @"insert into [dbo].[INSPECT_ITEM_MST] (INSPECT_ITEM_CODE, INSPECT_ITEM_NAME, VALUE_TYPE, SPEC_LSL, SPEC_TARGET, SPEC_USL, CREATE_TIME, CREATE_USER_ID)
-values(@INSPECT_ITEM_CODE, @INSPECT_ITEM_NAME, @VALUE_TYPE, @SPEC_LSL, @SPEC_TARGET, @SPEC_USL,getdate(), @CREATE_USER_ID)";
+					string sql = @"insert into [dbo].[INSPECT_ITEM_MST] (INSPECT_ITEM_CODE, INSPECT_ITEM_NAME, VALUE_TYPE, SPEC_LSL,SPEC_USL, CREATE_TIME, CREATE_USER_ID)
+values(@INSPECT_ITEM_CODE, @INSPECT_ITEM_NAME, @VALUE_TYPE, @SPEC_LSL, @SPEC_USL,getdate(), @CREATE_USER_ID)";
 
 					using (SqlCommand cmd = new SqlCommand(sql, conn))
 					{
@@ -63,7 +63,7 @@ values(@INSPECT_ITEM_CODE, @INSPECT_ITEM_NAME, @VALUE_TYPE, @SPEC_LSL, @SPEC_TAR
 						cmd.Parameters.AddWithValue("INSPECT_ITEM_NAME", vo.INSPECT_ITEM_NAME);
 						cmd.Parameters.AddWithValue("VALUE_TYPE", vo.VALUE_TYPE);
 						cmd.Parameters.AddWithValue("SPEC_LSL", vo.SPEC_LSL);
-						cmd.Parameters.AddWithValue("SPEC_TARGET", vo.SPEC_TARGET);
+						//cmd.Parameters.AddWithValue("SPEC_TARGET", vo.SPEC_TARGET);
 						cmd.Parameters.AddWithValue("SPEC_USL", vo.SPEC_USL);
 						//cmd.Parameters.AddWithValue("CREATE_TIME", vo.CREATE_TIME);
 						cmd.Parameters.AddWithValue("CREATE_USER_ID", vo.CREATE_USER_ID);
@@ -80,8 +80,8 @@ values(@INSPECT_ITEM_CODE, @INSPECT_ITEM_NAME, @VALUE_TYPE, @SPEC_LSL, @SPEC_TAR
 
 				else
 				{
-					string sql = @"insert into [dbo].[INSPECT_ITEM_MST] (INSPECT_ITEM_CODE, INSPECT_ITEM_NAME, VALUE_TYPE,CREATE_TIME, CREATE_USER_ID)
-values(@INSPECT_ITEM_CODE, @INSPECT_ITEM_NAME, @VALUE_TYPE,getdate(), @CREATE_USER_ID)";
+					string sql = @"insert into [dbo].[INSPECT_ITEM_MST] (INSPECT_ITEM_CODE, INSPECT_ITEM_NAME,SPEC_TARGET, VALUE_TYPE,CREATE_TIME, CREATE_USER_ID)
+values(@INSPECT_ITEM_CODE, @INSPECT_ITEM_NAME, @VALUE_TYPE,getdate(),@SPEC_TARGET, @CREATE_USER_ID)";
 
 					using (SqlCommand cmd = new SqlCommand(sql, conn))
 					{
@@ -90,7 +90,7 @@ values(@INSPECT_ITEM_CODE, @INSPECT_ITEM_NAME, @VALUE_TYPE,getdate(), @CREATE_US
 						cmd.Parameters.AddWithValue("INSPECT_ITEM_NAME", vo.INSPECT_ITEM_NAME);
 						cmd.Parameters.AddWithValue("VALUE_TYPE", vo.VALUE_TYPE);
 						//cmd.Parameters.AddWithValue("SPEC_LSL", vo.SPEC_LSL);
-						//cmd.Parameters.AddWithValue("SPEC_TARGET", vo.SPEC_TARGET);
+						cmd.Parameters.AddWithValue("SPEC_TARGET", vo.SPEC_TARGET);
 						//cmd.Parameters.AddWithValue("SPEC_USL", vo.SPEC_USL);
 						//cmd.Parameters.AddWithValue("CREATE_TIME", vo.CREATE_TIME);
 						cmd.Parameters.AddWithValue("CREATE_USER_ID", vo.CREATE_USER_ID);
@@ -132,7 +132,7 @@ where INSPECT_ITEM_CODE = @INSPECT_ITEM_CODE";
 				{
 					string sql = @"Update [dbo].[INSPECT_ITEM_MST]
 set INSPECT_ITEM_CODE =@INSPECT_ITEM_CODE, INSPECT_ITEM_NAME = @INSPECT_ITEM_NAME, VALUE_TYPE = @VALUE_TYPE, SPEC_LSL = @SPEC_LSL,SPEC_USL=@SPEC_USL,
-UPDATE_TIME = getdate() , UPDATE_USER_ID = @UPDATE_USER_ID
+SPEC_TARGET =@SPEC_TARGET, UPDATE_TIME = getdate() , UPDATE_USER_ID = @UPDATE_USER_ID
 where  INSPECT_ITEM_CODE = @INSPECT_ITEM_CODE ";
 
 					using (SqlCommand cmd = new SqlCommand(sql, conn))
@@ -141,7 +141,7 @@ where  INSPECT_ITEM_CODE = @INSPECT_ITEM_CODE ";
 						cmd.Parameters.AddWithValue("@INSPECT_ITEM_NAME", vo.INSPECT_ITEM_NAME);
 						cmd.Parameters.AddWithValue("@VALUE_TYPE", vo.VALUE_TYPE);
 						cmd.Parameters.AddWithValue("@SPEC_LSL", vo.SPEC_LSL);
-						//cmd.Parameters.AddWithValue("@SPEC_TARGET", vo.SPEC_TARGET);
+						cmd.Parameters.AddWithValue("@SPEC_TARGET", vo.SPEC_TARGET);
 						cmd.Parameters.AddWithValue("@SPEC_USL", vo.SPEC_USL);
 
 						//cmd.Parameters.AddWithValue("@UPDATE_TIME", vo.UPDATE_TIME);

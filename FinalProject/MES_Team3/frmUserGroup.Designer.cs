@@ -86,6 +86,7 @@
 			// 
 			// btnInsert
 			// 
+			this.btnInsert.Location = new System.Drawing.Point(289, 6);
 			this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
 			// 
 			// btnDelete
@@ -98,11 +99,12 @@
 			// 
 			// btnReadBottom
 			// 
+			this.btnReadBottom.Location = new System.Drawing.Point(195, 6);
 			this.btnReadBottom.Click += new System.EventHandler(this.btnRead_Click);
 			// 
 			// btnUpdate
 			// 
-			this.btnUpdate.Location = new System.Drawing.Point(195, 8);
+			this.btnUpdate.Location = new System.Drawing.Point(383, 6);
 			this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
 			// 
 			// btnTxtSearch

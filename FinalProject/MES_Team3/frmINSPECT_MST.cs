@@ -287,7 +287,7 @@ namespace MES_Team3
             }
 
 
-            if (e.ChangedItem.Label == "Target")
+            if (e.ChangedItem.Label == "C"|| e.ChangedItem.Label == "Target")
             {
                 if (int.TryParse(e.ChangedItem.Value.ToString(), out k))
                 {
@@ -574,6 +574,10 @@ namespace MES_Team3
 
             if (dr.Cells["SPEC_USL"].Value != null && dr.Cells["SPEC_USL"].Value != DBNull.Value)
                 vo.SPEC_USL = dr.Cells["SPEC_USL"].Value.ToString();
+
+
+            if (dr.Cells["SPEC_TARGET"].Value != null && dr.Cells["SPEC_TARGET"].Value != DBNull.Value)
+                vo.SPEC_TARGET = dr.Cells["SPEC_TARGET"].Value.ToString();
 
             if (dr.Cells["CREATE_TIME"].Value != null && dr.Cells["CREATE_TIME"].Value != DBNull.Value)
                 vo.CREATE_TIME = Convert.ToDateTime(dr.Cells["CREATE_TIME"].Value);
