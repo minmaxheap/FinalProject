@@ -270,27 +270,32 @@ namespace MES_Team3
 
             int k;
             INSPECT_MSTVO vo = (INSPECT_MSTVO)pgGrid.SelectedObject;
-
-            if (e.ChangedItem.Label == "LSL" || (e.ChangedItem.Label =="USL"))
+            if (e.ChangedItem.Label == "N")
             {
-                if (!int.TryParse(e.ChangedItem.Value.ToString(), out k))
+                if (e.ChangedItem.Label == "LSL" || e.ChangedItem.Label == "USL" || e.ChangedItem.Label == "Target")
                 {
-                    MessageBox.Show("문자 입력할 수 없습니다");
-                    vo.SPEC_LSL = null;
+                    if (!int.TryParse(e.ChangedItem.Value.ToString(), out k))
+                    {
+                        MessageBox.Show("문자 입력할 수 없습니다");
+                        vo.SPEC_LSL = null;
+                        vo.SPEC_TARGET = null;
+                        vo.SPEC_USL = null;
+                        this.currentItem = e.ChangedItem;
 
-                    this.currentItem = e.ChangedItem;
+                        this.BeginInvoke(new MethodInvoker(reset));//re-select the changed item.
 
-                    this.BeginInvoke(new MethodInvoker(reset));//re-select the changed item.
+                    }
 
                 }
-
             }
+
+            int k1;
 
             if (e.ChangedItem.Label == "C")
             {
                 if (e.ChangedItem.Label == "Target")
                 {
-                    if (int.TryParse(e.ChangedItem.Value.ToString(), out k))
+                    if (int.TryParse(e.ChangedItem.Value.ToString(), out k1))
                     {
                         MessageBox.Show("숫자 입력할 수 없습니다");
                         vo.SPEC_TARGET = null;
@@ -571,11 +576,15 @@ namespace MES_Team3
             if (dr.Cells["VALUE_TYPE"].Value != null && dr.Cells["VALUE_TYPE"].Value != DBNull.Value)
                 vo.VALUE_TYPE = dr.Cells["VALUE_TYPE"].Value.ToString();
 
-            if (dr.Cells["SPEC_LSL"].Value != null && dr.Cells["SPEC_LSL"].Value != DBNull.Value)
+            if(dr.Cells["SPEC_LSL"].Value != null && dr.Cells["SPEC_LSL"].Value != DBNull.Value)
                 vo.SPEC_LSL = dr.Cells["SPEC_LSL"].Value.ToString();
+            if (vo.SPEC_LSL == "C")
+                vo.SPEC_LSL = null;
 
             if (dr.Cells["SPEC_USL"].Value != null && dr.Cells["SPEC_USL"].Value != DBNull.Value)
                 vo.SPEC_USL = dr.Cells["SPEC_USL"].Value.ToString();
+            if (vo.SPEC_USL == "C")
+                vo.SPEC_USL = null;
 
 
             if (dr.Cells["SPEC_TARGET"].Value != null && dr.Cells["SPEC_TARGET"].Value != DBNull.Value)
