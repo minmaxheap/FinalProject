@@ -13,6 +13,8 @@ namespace POPprogram
         StarWorkServ serv;
         List<string> list;
         List<StarWorkProperty> swlist;
+        List<string> CodeList;
+        LOTinspectServ lotserv;
         public frmStartWorkOrder()
         {
             InitializeComponent();
@@ -27,6 +29,14 @@ namespace POPprogram
             //cboLOTID.ValueMember = "LOT_ID";
             cboLOTID.DisplayMember = "LOT_ID";
             cboLOTID.DataSource = list;
+
+            lotserv = new LOTinspectServ();
+            CodeList = lotserv.GetCode();
+            CodeList.Insert(0, "");
+            comboBox1.ValueMember = "EQUIPMENT_CODE";
+            comboBox1.DisplayMember = "EQUIPMENT_CODE";
+            comboBox1.DataSource = CodeList
+                ;
 		}
 
 		private void cboLOTID_SelectedIndexChanged(object sender, EventArgs e)

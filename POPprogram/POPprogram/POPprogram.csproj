@@ -176,6 +176,7 @@
       <DependentUpon>frmLOTDefect.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\FunctionServ.cs" />
+    <Compile Include="Services\LOTinspectServ.cs" />
     <Compile Include="Services\LOTServ.cs" />
     <Compile Include="Services\StarWorkServ.cs" />
     <Compile Include="Services\StockServ.cs" />

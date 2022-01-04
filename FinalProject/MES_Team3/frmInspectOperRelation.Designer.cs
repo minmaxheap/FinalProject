@@ -104,6 +104,10 @@ namespace MES_Team3
 			this.pnlAdd.Controls.SetChildIndex(this.lblAdd, 0);
 			this.pnlAdd.Controls.SetChildIndex(this.csDataGridView2, 0);
 			// 
+			// panel1
+			// 
+			this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+			// 
 			// btnTxtSearch
 			// 
 			this.btnTxtSearch.Click += new System.EventHandler(this.btnTxtSearch_Click);
@@ -221,7 +225,7 @@ namespace MES_Team3
 			this.csDataGridView3.Size = new System.Drawing.Size(501, 240);
 			this.csDataGridView3.TabIndex = 20;
 			this.csDataGridView3.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView3_CellClick);
-			this.csDataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView3_CellContentClick);
+//			this.csDataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView3_CellContentClick);
 			// 
 			// pgSearch
 			// 
@@ -273,7 +277,7 @@ namespace MES_Team3
 			this.csDataGridView2.Size = new System.Drawing.Size(514, 284);
 			this.csDataGridView2.TabIndex = 20;
 			this.csDataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView2_CellClick);
-			this.csDataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView2_CellContentClick_1);
+	//		this.csDataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.//csDataGridView2_CellContentClick_1);
 			// 
 			// frmInspectOperRelation
 			// 
