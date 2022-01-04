@@ -24,7 +24,7 @@ namespace POPprogram
         private void btnReadTop_Click(object sender, EventArgs e)
         {
             serv = new StockServ();
-            DataTable dt = serv.Purchase_warehousing(txtSearch.Text);
+            DataTable dt = serv.Purchase_warehousing(txtSearch.Text, txtCode2.Text);
             csDataGridView1.DataSource = null;
             csDataGridView1.DataSource = dt;
         }
@@ -36,7 +36,7 @@ namespace POPprogram
             {
                 DataGridViewRow dr = dlg.SelectedRow;
                 txtSearch.Text = dr.Cells["PURCHASE_ORDER_ID"].Value.ToString();
-                txtCode1.Text = dr.Cells["MATERIAL_CODE"].Value.ToString();
+                txtCode1.Text = dr.Cells["PRODUCT_CODE"].Value.ToString();
                 txtName1.Text = dr.Cells["PRODUCT_NAME"].Value.ToString();
                 txtCode2.Text = dr.Cells["VENDOR_CODE"].Value.ToString();
                 txtName2.Text = dr.Cells["VENDOR_NAME"].Value.ToString();

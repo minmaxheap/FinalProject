@@ -56,6 +56,7 @@ namespace POPprogram
             // 
             // btnTxtSearch
             // 
+            this.btnTxtSearch.Location = new System.Drawing.Point(363, 52);
             this.btnTxtSearch.Click += new System.EventHandler(this.btnTxtSearch_Click);
             // 
             // dgvPurchase

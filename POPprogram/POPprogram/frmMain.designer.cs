@@ -96,6 +96,7 @@ namespace POPprogram
             this.tabMenu.Size = new System.Drawing.Size(1433, 22);
             this.tabMenu.TabIndex = 23;
             this.tabMenu.SelectedIndexChanged += new System.EventHandler(this.tabMain_SelectedIndexChanged);
+            this.tabMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabMenu_MouseDown);
             // 
             // frmMain
             // 
