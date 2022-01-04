@@ -223,7 +223,7 @@ namespace MES_Team3
 		private void Op_LoadData()
 		{
 			serv = new INSPECT_OPServ();
-			DataTable mOp_dt = serv.GetOp_Table(inspec_op_Code);
+			mOp_dt = serv.GetOp_Table(inspec_op_Code);
 			csDataGridView2.DataSource = null;
 			csDataGridView2.DataSource = mOp_dt;
 		}
@@ -422,6 +422,11 @@ namespace MES_Team3
 
 			inspect_Code = csDataGridView3["INSPECT_ITEM_CODE", e.RowIndex].Value.ToString();
 			MessageBox.Show($"{inspect_Code}를 선택하셨습니다.");
+		}
+
+		private void panel1_Paint(object sender, PaintEventArgs e)
+		{
+
 		}
 	}
 }

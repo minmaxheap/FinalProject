@@ -104,6 +104,10 @@ namespace MES_Team3
 			this.pnlAdd.Controls.SetChildIndex(this.lblAdd, 0);
 			this.pnlAdd.Controls.SetChildIndex(this.csDataGridView2, 0);
 			// 
+			// panel1
+			// 
+			this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+			// 
 			// btnTxtSearch
 			// 
 			this.btnTxtSearch.Click += new System.EventHandler(this.btnTxtSearch_Click);
