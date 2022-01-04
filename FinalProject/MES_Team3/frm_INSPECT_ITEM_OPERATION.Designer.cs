@@ -68,6 +68,10 @@ namespace MES_Team3
 			// splitContainer1
 			// 
 			// 
+			// splitContainer1.Panel1
+			// 
+			this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
+			// 
 			// splitContainer2
 			// 
 			// 

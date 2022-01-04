@@ -40,7 +40,7 @@ namespace DAC
 
 		public List<string> GetLotCode()
 		{
-			string sql = "select LOT_ID from LOT_STS WHERE  LEFT(PRODUCT_CODE,2) = 'pd'";
+			string sql = "select LOT_ID from LOT_STS WHERE  LEFT(PRODUCT_CODE,2) = 'pd' and AND ORDER_STATUS <>'CLOSE'";
 
 			SqlCommand cmd = new SqlCommand(sql, conn);
 			List<string> List = new List<string>();
