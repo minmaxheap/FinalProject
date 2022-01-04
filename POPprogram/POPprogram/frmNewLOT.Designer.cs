@@ -64,7 +64,7 @@ namespace POPprogram
             // 
             // lblQty
             // 
-            this.lblQty.ForeColor = System.Drawing.Color.Red;
+            this.lblQty.ForeColor = System.Drawing.Color.Tomato;
             // 
             // txtProdName
             // 
@@ -76,7 +76,7 @@ namespace POPprogram
             // 
             // lblLOT
             // 
-            this.lblLOT.ForeColor = System.Drawing.Color.Red;
+            this.lblLOT.ForeColor = System.Drawing.Color.Tomato;
             // 
             // txtOperName
             // 

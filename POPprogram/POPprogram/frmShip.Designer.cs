@@ -75,29 +75,33 @@ namespace POPprogram
             // 
             // label9
             // 
-            this.label9.Location = new System.Drawing.Point(84, 5);
+            this.label9.Location = new System.Drawing.Point(84, 12);
             this.label9.Size = new System.Drawing.Size(64, 21);
             this.label9.Text = "주문서";
             // 
             // label10
             // 
-            this.label10.Location = new System.Drawing.Point(61, 123);
-            this.label10.Size = new System.Drawing.Size(87, 21);
+            this.label10.Location = new System.Drawing.Point(80, 137);
+            this.label10.Size = new System.Drawing.Size(68, 17);
             this.label10.Text = "주문 수량";
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(84, 88);
-            this.label2.Size = new System.Drawing.Size(64, 21);
+            this.label2.Location = new System.Drawing.Point(98, 102);
+            this.label2.Size = new System.Drawing.Size(50, 17);
             this.label2.Text = "고객사";
+            // 
+            // label22
+            // 
+            this.label22.Location = new System.Drawing.Point(112, 66);
             // 
             // label6
             // 
             this.label6.Text = "제품 주문서 정보";
             // 
-            // btnReadTop
+            // btnExport
             // 
-            this.btnReadTop.Text = "재고 조회";
+            this.btnExport.Location = new System.Drawing.Point(252, 0);
             // 
             // btnPrint
             // 
@@ -106,15 +110,16 @@ namespace POPprogram
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
             this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnPrint.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 21.75F, System.Drawing.FontStyle.Bold);
+            this.btnPrint.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold);
+            this.btnPrint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btnPrint.Image = global::POPprogram.Properties.Resources.Print___01;
-            this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnPrint.Location = new System.Drawing.Point(412, 0);
+            this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPrint.Location = new System.Drawing.Point(388, 0);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(139, 70);
+            this.btnPrint.Size = new System.Drawing.Size(140, 45);
             this.btnPrint.TabIndex = 95;
             this.btnPrint.Text = "라벨 발행";
-            this.btnPrint.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPrint.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPrint.UseVisualStyleBackColor = false;
             // 
             // csDataGridView1
@@ -153,7 +158,7 @@ namespace POPprogram
             this.csDataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.csDataGridView1.Dock = System.Windows.Forms.DockStyle.Left;
             this.csDataGridView1.EnableHeadersVisualStyles = false;
-            this.csDataGridView1.Location = new System.Drawing.Point(0, 43);
+            this.csDataGridView1.Location = new System.Drawing.Point(0, 55);
             this.csDataGridView1.Name = "csDataGridView1";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
@@ -165,7 +170,7 @@ namespace POPprogram
             this.csDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.csDataGridView1.RowHeadersWidth = 30;
             this.csDataGridView1.RowTemplate.Height = 23;
-            this.csDataGridView1.Size = new System.Drawing.Size(830, 261);
+            this.csDataGridView1.Size = new System.Drawing.Size(830, 249);
             this.csDataGridView1.TabIndex = 58;
             // 
             // Column1

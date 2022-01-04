@@ -67,7 +67,12 @@ namespace DAC
         {
             try
             {
-                string sql = @"INSERT[dbo].[LOT_STS]
+                string sql = @"SET XACT_ABORT ON;  
+
+BEGIN TRY  
+    BEGIN TRANSACTION;  
+
+INSERT[dbo].[LOT_STS]
 (LOT_ID, LOT_DESC, 
 PRODUCT_CODE, OPERATION_CODE, 
 LOT_QTY, CREATE_QTY,OPER_IN_QTY,CREATE_TIME,OPER_IN_TIME,
