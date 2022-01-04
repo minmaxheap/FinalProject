@@ -155,7 +155,7 @@ namespace MES_Team3
 			List<string> list = new List<string>();
 
 
-			foreach (DataGridViewRow dr in csDataGridView2.SelectedRows)
+			foreach (DataGridViewRow dr in csDataGridView3.SelectedRows)
 			{
 				DataRow[] drArray = mOp_dt.Select($"INSPECT_ITEM_CODE='{dr.Cells["INSPECT_ITEM_CODE"].Value.ToString()}'");
 				if (!(drArray.Length > 0))
@@ -190,8 +190,6 @@ namespace MES_Team3
 				MessageBox.Show("이미 할당되었습니다.");
 				return;
 			}
-
-			
 		}
 
 		private void btnSubtract_Click(object sender, EventArgs e)
@@ -278,24 +276,7 @@ namespace MES_Team3
 
 		}
 
-		private void csDataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
-		{
-			if (e.RowIndex < 0)
-			{
-				return;
-			}
-
-			inspect_Code = csDataGridView3["INSPECT_ITEM_CODE", e.RowIndex].Value.ToString();
-			MessageBox.Show($"{inspect_Code}를 선택하셨습니다.");
-		}
-
 		
-
-		private void csDataGridView2_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-		{
-			
-		}
-
 		private void txtSearch_KeyDown(object sender, KeyEventArgs e)
 		{
 			if (e.KeyCode == Keys.Enter)
