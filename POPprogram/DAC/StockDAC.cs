@@ -70,19 +70,20 @@ AND  P.PRODUCT_CODE = O.MATERIAL_CODE AND V.CODE_TABLE_NAME ='CM_VENDOR' AND V.K
   //          }
 
   //      }
-        public DataTable Purchase_warehousing(string Code, string vendorCode)
+        public DataTable Purchase_warehousing(string Code, string vendorCode, string prodCode)
         {
-            string sql = @"  select PURCHASE_ORDER_ID, SALES_ORDER_ID, ORDER_DATE, O.VENDOR_CODE,V.DATA_1 VENDOR_NAME, MATERIAL_CODE, 
+            string sql = @" select ROW_NUMBER() over(order by(select 1)) as RowNum,PURCHASE_ORDER_ID, SALES_ORDER_ID, ORDER_DATE, O.MATERIAL_CODE, 
  P.PRODUCT_NAME PRODUCT_NAME,ORDER_QTY, STOCK_IN_FLAG, STOCK_IN_STORE_CODE, STOCK_IN_LOT_ID
-from [dbo].[PURCHASE_ORDER_MST] O, PRODUCT_MST P, CODE_DATA_MST V
-WHERE  P.PRODUCT_CODE = O.MATERIAL_CODE AND V.CODE_TABLE_NAME ='CM_VENDOR' AND V.KEY_1=O.VENDOR_CODE and o.VENDOR_CODE =@VENDOR_CODE
-and o.PURCHASE_ORDER_ID = @PURCHASE_ORDER_ID
+from [dbo].[PURCHASE_ORDER_MST] O, PRODUCT_MST P, CODE_DATA_MST V, BOM_MST B
+WHERE  P.PRODUCT_CODE = O.MATERIAL_CODE AND V.CODE_TABLE_NAME ='CM_VENDOR' AND V.KEY_1=O.VENDOR_CODE and o.VENDOR_CODE =@VENDOR_CODE and o.PURCHASE_ORDER_ID = @PURCHASE_ORDER_ID
+ AND B.CHILD_PRODUCT_CODE = O.MATERIAL_CODE and b.PRODUCT_CODE=@PRODUCT_CODE
 ";
 
             using (SqlCommand cmd = new SqlCommand(sql, conn))
             {
                 cmd.Parameters.AddWithValue("@PURCHASE_ORDER_ID", Code);
                 cmd.Parameters.AddWithValue("@VENDOR_CODE", vendorCode);
+                cmd.Parameters.AddWithValue("@PRODUCT_CODE", prodCode);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);

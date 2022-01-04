@@ -24,7 +24,7 @@ namespace POPprogram
         private void btnReadTop_Click(object sender, EventArgs e)
         {
             serv = new StockServ();
-            DataTable dt = serv.Purchase_warehousing(txtSearch.Text, txtCode2.Text);
+            DataTable dt = serv.Purchase_warehousing(txtSearch.Text, txtCode2.Text,txtCode1.Text);
             csDataGridView1.DataSource = null;
             csDataGridView1.DataSource = dt;
         }
@@ -51,11 +51,13 @@ namespace POPprogram
             DataGridViewUtil.SetInitGridView(csDataGridView1);
             DgvChk(csDataGridView1);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "순번", "RowNum");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "자재 품번", "CHILD_PRODUCT_CODE");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "자재 품명", "PRODUCT_NAME");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "자재 품번", "MATERIAL_CODE");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "자재 품명", "MATERIAL_NAME");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "단위 수량", "REQUIRE_QTY");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "수량", "수량");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "자재LOTID", "STOCK_IN_LOT_ID");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "수량", "QTY");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "입하 여부", "STOCK_IN_FLAG");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "입하 창고 코드", "STOCK_IN_STORE_CODE");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "자재LOT ID", "STOCK_IN_LOT_ID");
 
 
             LoadData();

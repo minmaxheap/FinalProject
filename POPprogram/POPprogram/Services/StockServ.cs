@@ -18,10 +18,10 @@ namespace POPprogram
             return dt;
         }
 
-        public DataTable Purchase_warehousing(string Code, string vendorCode)
+        public DataTable Purchase_warehousing(string Code, string vendorCode, string prodCode)
         {
             StockDAC dac = new StockDAC();
-            DataTable dt = dac.Purchase_warehousing(Code,vendorCode);
+            DataTable dt = dac.Purchase_warehousing(Code,vendorCode,prodCode);
             dac.Dispose();
             return dt;
         }
