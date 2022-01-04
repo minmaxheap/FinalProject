@@ -53,7 +53,6 @@ namespace POPprogram
             lblProdQty.Text = swlist[0].PRODUCT_QTY.ToString();
 
 
-
         }
 
 		private void btnExecute_Click(object sender, EventArgs e)

@@ -286,20 +286,22 @@ namespace MES_Team3
 
             }
 
-
-            if (e.ChangedItem.Label == "C"|| e.ChangedItem.Label == "Target")
+            if (e.ChangedItem.Label == "C")
             {
-                if (int.TryParse(e.ChangedItem.Value.ToString(), out k))
+                if (e.ChangedItem.Label == "Target")
                 {
-                    MessageBox.Show("숫자 입력할 수 없습니다");
-                    vo.SPEC_TARGET = null;
+                    if (int.TryParse(e.ChangedItem.Value.ToString(), out k))
+                    {
+                        MessageBox.Show("숫자 입력할 수 없습니다");
+                        vo.SPEC_TARGET = null;
 
-                    this.currentItem = e.ChangedItem;
+                        this.currentItem = e.ChangedItem;
 
-                    this.BeginInvoke(new MethodInvoker(reset));//re-select the changed item.
+                        this.BeginInvoke(new MethodInvoker(reset));//re-select the changed item.
+
+                    }
 
                 }
-
             }
 
         }

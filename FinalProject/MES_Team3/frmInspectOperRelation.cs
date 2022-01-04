@@ -104,6 +104,7 @@ namespace MES_Team3
 		private void btnReadBottom_Click_1(object sender, EventArgs e)
 		{
 
+			
 			INSPECT_OPERATIONProperty pr = (INSPECT_OPERATIONProperty)pgSearch.SelectedObject;
 
 			DataTable dt = serv.GetSearch(pr);

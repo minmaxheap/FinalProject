@@ -43,7 +43,7 @@ namespace DAC
 			using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
 			{
 				da.Fill(dt);
-				return dt; 
+				return dt;
 			}
 		}
 
@@ -63,7 +63,7 @@ values(@INSPECT_ITEM_CODE, @INSPECT_ITEM_NAME, @VALUE_TYPE, @SPEC_LSL, @SPEC_USL
 						cmd.Parameters.AddWithValue("INSPECT_ITEM_NAME", vo.INSPECT_ITEM_NAME);
 						cmd.Parameters.AddWithValue("VALUE_TYPE", vo.VALUE_TYPE);
 						cmd.Parameters.AddWithValue("SPEC_LSL", vo.SPEC_LSL);
-						//cmd.Parameters.AddWithValue("SPEC_TARGET", vo.SPEC_TARGET);
+						cmd.Parameters.AddWithValue("SPEC_TARGET", vo.SPEC_TARGET);
 						cmd.Parameters.AddWithValue("SPEC_USL", vo.SPEC_USL);
 						//cmd.Parameters.AddWithValue("CREATE_TIME", vo.CREATE_TIME);
 						cmd.Parameters.AddWithValue("CREATE_USER_ID", vo.CREATE_USER_ID);
@@ -80,8 +80,8 @@ values(@INSPECT_ITEM_CODE, @INSPECT_ITEM_NAME, @VALUE_TYPE, @SPEC_LSL, @SPEC_USL
 
 				else
 				{
-					string sql = @"insert into [dbo].[INSPECT_ITEM_MST] (INSPECT_ITEM_CODE, INSPECT_ITEM_NAME,SPEC_TARGET, VALUE_TYPE,CREATE_TIME, CREATE_USER_ID)
-values(@INSPECT_ITEM_CODE, @INSPECT_ITEM_NAME, @VALUE_TYPE,getdate(),@SPEC_TARGET, @CREATE_USER_ID)";
+					string sql = @"insert into [dbo].[INSPECT_ITEM_MST] (INSPECT_ITEM_CODE, INSPECT_ITEM_NAME,VALUE_TYPE, SPEC_TARGET,CREATE_TIME, CREATE_USER_ID)
+values(@INSPECT_ITEM_CODE, @INSPECT_ITEM_NAME, @VALUE_TYPE,@SPEC_TARGET,getdate(),@CREATE_USER_ID)";
 
 					using (SqlCommand cmd = new SqlCommand(sql, conn))
 					{
@@ -126,62 +126,113 @@ where INSPECT_ITEM_CODE = @INSPECT_ITEM_CODE";
 
 		public bool Update(INSPECT_MSTVO vo)
 		{
+
 			try
 			{
-				if (vo.VALUE_TYPE == "N")
-				{
-					string sql = @"Update [dbo].[INSPECT_ITEM_MST]
-set INSPECT_ITEM_CODE =@INSPECT_ITEM_CODE, INSPECT_ITEM_NAME = @INSPECT_ITEM_NAME, VALUE_TYPE = @VALUE_TYPE, SPEC_LSL = @SPEC_LSL,SPEC_USL=@SPEC_USL,
-SPEC_TARGET =@SPEC_TARGET, UPDATE_TIME = getdate() , UPDATE_USER_ID = @UPDATE_USER_ID
-where  INSPECT_ITEM_CODE = @INSPECT_ITEM_CODE ";
+				string sql = @"Update[dbo].[INSPECT_ITEM_MST]
+set INSPECT_ITEM_CODE = @INSPECT_ITEM_CODE, INSPECT_ITEM_NAME = @INSPECT_ITEM_NAME, VALUE_TYPE = @VALUE_TYPE, SPEC_LSL = @SPEC_LSL, SPEC_USL = @SPEC_USL,
+SPEC_TARGET = @SPEC_TARGET, UPDATE_TIME = getdate(), UPDATE_USER_ID = @UPDATE_USER_ID
+where INSPECT_ITEM_CODE = @INSPECT_ITEM_CODE ";
 
-					using (SqlCommand cmd = new SqlCommand(sql, conn))
+				using (SqlCommand cmd = new SqlCommand(sql, conn))
+				{
+					cmd.Parameters.AddWithValue("@INSPECT_ITEM_CODE", vo.INSPECT_ITEM_CODE);
+					cmd.Parameters.AddWithValue("@INSPECT_ITEM_NAME", vo.INSPECT_ITEM_NAME);
+					cmd.Parameters.AddWithValue("@VALUE_TYPE", vo.VALUE_TYPE);
+					if (vo.VALUE_TYPE == "N")
 					{
-						cmd.Parameters.AddWithValue("@INSPECT_ITEM_CODE", vo.INSPECT_ITEM_CODE);
-						cmd.Parameters.AddWithValue("@INSPECT_ITEM_NAME", vo.INSPECT_ITEM_NAME);
-						cmd.Parameters.AddWithValue("@VALUE_TYPE", vo.VALUE_TYPE);
 						cmd.Parameters.AddWithValue("@SPEC_LSL", vo.SPEC_LSL);
-						cmd.Parameters.AddWithValue("@SPEC_TARGET", vo.SPEC_TARGET);
-						cmd.Parameters.AddWithValue("@SPEC_USL", vo.SPEC_USL);
-
-						//cmd.Parameters.AddWithValue("@UPDATE_TIME", vo.UPDATE_TIME);
-						cmd.Parameters.AddWithValue("@UPDATE_USER_ID", vo.UPDATE_USER_ID);
-
-						int row = cmd.ExecuteNonQuery();
-						return row > 0;
 					}
-				}
-				else
-				{
-					string sql = @"Update [dbo].[INSPECT_ITEM_MST]
-set INSPECT_ITEM_CODE =@INSPECT_ITEM_CODE, INSPECT_ITEM_NAME = @INSPECT_ITEM_NAME, VALUE_TYPE = @VALUE_TYPE, SPEC_TARGET = @SPEC_TARGET,
-UPDATE_TIME =getdate(), UPDATE_USER_ID = @UPDATE_USER_ID
-where  INSPECT_ITEM_CODE = @INSPECT_ITEM_CODE ";
-
-					using (SqlCommand cmd = new SqlCommand(sql, conn))
+					else if (vo.VALUE_TYPE == "C")
 					{
-						cmd.Parameters.AddWithValue("@INSPECT_ITEM_CODE", vo.INSPECT_ITEM_CODE);
-						cmd.Parameters.AddWithValue("@INSPECT_ITEM_NAME", vo.INSPECT_ITEM_NAME);
-						cmd.Parameters.AddWithValue("@VALUE_TYPE", vo.VALUE_TYPE);
-						//cmd.Parameters.AddWithValue("@SPEC_LSL", vo.SPEC_LSL);
-						cmd.Parameters.AddWithValue("@SPEC_TARGET", vo.SPEC_TARGET);
-						//cmd.Parameters.AddWithValue("@SPEC_USL", vo.SPEC_USL);
+						cmd.Parameters.AddWithValue("@SPEC_LSL"," ");
 
-						//cmd.Parameters.AddWithValue("@UPDATE_TIME", vo.UPDATE_TIME);
-						cmd.Parameters.AddWithValue("@UPDATE_USER_ID", vo.UPDATE_USER_ID);
-
-						int row = cmd.ExecuteNonQuery();
-						return row > 0;
 					}
+					
+					cmd.Parameters.AddWithValue("@SPEC_TARGET", vo.SPEC_TARGET);
+
+					if (vo.VALUE_TYPE == "N")
+					{
+						cmd.Parameters.AddWithValue("@SPEC_USL", vo.SPEC_USL);
+					}
+					else if (vo.VALUE_TYPE == "C")
+					{
+						cmd.Parameters.AddWithValue("@SPEC_USL", "");
+					}
+							
+
+
+					//cmd.Parameters.AddWithValue("@UPDATE_TIME", vo.UPDATE_TIME);
+					cmd.Parameters.AddWithValue("@UPDATE_USER_ID", vo.UPDATE_USER_ID);
+
+					int row = cmd.ExecuteNonQuery();
+					return row > 0;
 				}
 			}
-
 			catch (Exception err)
 			{
 				Debug.WriteLine(err.Message);
 				return false;
 			}
 		}
+
+		//			try
+		//			{
+		//				if (vo.VALUE_TYPE == "N")
+		//				{
+		//					string sql = @"Update [dbo].[INSPECT_ITEM_MST]
+		//set INSPECT_ITEM_CODE =@INSPECT_ITEM_CODE, INSPECT_ITEM_NAME = @INSPECT_ITEM_NAME, VALUE_TYPE = @VALUE_TYPE, SPEC_LSL = @SPEC_LSL,SPEC_USL=@SPEC_USL,
+		//SPEC_TARGET =@SPEC_TARGET, UPDATE_TIME = getdate() , UPDATE_USER_ID = @UPDATE_USER_ID
+		//where  INSPECT_ITEM_CODE = @INSPECT_ITEM_CODE ";
+
+		//					using (SqlCommand cmd = new SqlCommand(sql, conn))
+		//					{
+		//						cmd.Parameters.AddWithValue("@INSPECT_ITEM_CODE", vo.INSPECT_ITEM_CODE);
+		//						cmd.Parameters.AddWithValue("@INSPECT_ITEM_NAME", vo.INSPECT_ITEM_NAME);
+		//						cmd.Parameters.AddWithValue("@VALUE_TYPE", vo.VALUE_TYPE);
+		//						cmd.Parameters.AddWithValue("@SPEC_LSL", vo.SPEC_LSL);
+		//						cmd.Parameters.AddWithValue("@SPEC_TARGET", vo.SPEC_TARGET);
+		//						cmd.Parameters.AddWithValue("@SPEC_USL", vo.SPEC_USL);
+
+		//						//cmd.Parameters.AddWithValue("@UPDATE_TIME", vo.UPDATE_TIME);
+		//						cmd.Parameters.AddWithValue("@UPDATE_USER_ID", vo.UPDATE_USER_ID);
+
+		//						int row = cmd.ExecuteNonQuery();
+		//						return row > 0;
+		//					}
+		//				}
+		//				else
+		//				{
+		//					string sql = @"Update [dbo].[INSPECT_ITEM_MST]
+		//set INSPECT_ITEM_CODE =@INSPECT_ITEM_CODE, INSPECT_ITEM_NAME = @INSPECT_ITEM_NAME, VALUE_TYPE = @VALUE_TYPE, SPEC_TARGET = @SPEC_TARGET,
+		//UPDATE_TIME =getdate(), UPDATE_USER_ID = @UPDATE_USER_ID
+		//where  INSPECT_ITEM_CODE = @INSPECT_ITEM_CODE ";
+
+		//					using (SqlCommand cmd = new SqlCommand(sql, conn))
+		//					{
+		//						cmd.Parameters.AddWithValue("@INSPECT_ITEM_CODE", vo.INSPECT_ITEM_CODE);
+		//						cmd.Parameters.AddWithValue("@INSPECT_ITEM_NAME", vo.INSPECT_ITEM_NAME);
+		//						cmd.Parameters.AddWithValue("@VALUE_TYPE", vo.VALUE_TYPE);
+		//						//cmd.Parameters.AddWithValue("@SPEC_LSL", vo.SPEC_LSL);
+		//						cmd.Parameters.AddWithValue("@SPEC_TARGET", vo.SPEC_TARGET);
+		//						//cmd.Parameters.AddWithValue("@SPEC_USL", vo.SPEC_USL);
+
+		//						//cmd.Parameters.AddWithValue("@UPDATE_TIME", vo.UPDATE_TIME);
+		//						cmd.Parameters.AddWithValue("@UPDATE_USER_ID", vo.UPDATE_USER_ID);
+
+		//						int row = cmd.ExecuteNonQuery();
+		//						return row > 0;
+		//					}
+		//				}
+
+
+		//catch (Exception err)
+		//{
+		//	Debug.WriteLine(err.Message);
+		//	return false;
+		//}
+
+
 
 		//조회조건
 		public List<INSPECT_MSTVO> GetINSPECT_MST_Search(INSPECT_MSTVO vo)
@@ -231,7 +282,7 @@ WHERE [CODE_TABLE_NAME] ='CM_VALUE_TYPE'";
 				while (reader.Read())
 				{
 					productType.Add(reader["PRODUCT_TYPE"].ToString());
-					
+
 				}
 			}
 			return productType;
@@ -254,6 +305,9 @@ WHERE [CODE_TABLE_NAME] ='CM_VALUE_TYPE'";
 			}
 			return List;
 		}
-
 	}
 }
+
+
+
+

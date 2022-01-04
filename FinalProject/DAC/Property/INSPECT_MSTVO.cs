@@ -65,6 +65,8 @@ namespace DAC
 					//PropertyDescriptorCollection propCollection = TypeDescriptor.GetProperties(this.GetType());
 					PropertyDescriptor descriptor = TypeDescriptor.GetProperties(this.GetType())["SPEC_LSL"];
 					PropertyDescriptor descriptor1 = TypeDescriptor.GetProperties(this.GetType())["SPEC_USL"];
+					PropertyDescriptor descriptor2 = TypeDescriptor.GetProperties(this.GetType())["SPEC_TARGET"];
+
 
 					//PropertyDescriptor descriptor1 = propCollection["SPEC_USL"];
 					ReadOnlyAttribute attrib = (ReadOnlyAttribute)descriptor.Attributes[typeof(ReadOnlyAttribute)];
@@ -73,14 +75,19 @@ namespace DAC
 					ReadOnlyAttribute attrib1 = (ReadOnlyAttribute)descriptor1.Attributes[typeof(ReadOnlyAttribute)];
 					FieldInfo isReadOnly1 = attrib1.GetType().GetField("isReadOnly", BindingFlags.NonPublic | BindingFlags.Instance);
 
+					ReadOnlyAttribute attrib2 = (ReadOnlyAttribute)descriptor2.Attributes[typeof(ReadOnlyAttribute)];
+					FieldInfo isReadOnly2 = attrib2.GetType().GetField("isReadOnly", BindingFlags.NonPublic | BindingFlags.Instance);
+
 					isReadOnly.SetValue(attrib, false);
 					isReadOnly1.SetValue(attrib1, false);
+					isReadOnly2.SetValue(attrib2, false);
 				}
 				else
 				{
 
 					PropertyDescriptor descriptor = TypeDescriptor.GetProperties(this.GetType())["SPEC_LSL"];
 					PropertyDescriptor descriptor1 = TypeDescriptor.GetProperties(this.GetType())["SPEC_USL"];
+					//PropertyDescriptor descriptor2 = TypeDescriptor.GetProperties(this.GetType())["SPEC_TARGET"];
 
 					ReadOnlyAttribute attrib = (ReadOnlyAttribute)descriptor.Attributes[typeof(ReadOnlyAttribute)];
 					FieldInfo isReadOnly = attrib.GetType().GetField("isReadOnly", BindingFlags.NonPublic | BindingFlags.Instance);
@@ -88,8 +95,13 @@ namespace DAC
 					ReadOnlyAttribute attrib1 = (ReadOnlyAttribute)descriptor1.Attributes[typeof(ReadOnlyAttribute)];
 					FieldInfo isReadOnly1 = attrib1.GetType().GetField("isReadOnly", BindingFlags.NonPublic | BindingFlags.Instance);
 
+					//ReadOnlyAttribute attrib2 = (ReadOnlyAttribute)descriptor2.Attributes[typeof(ReadOnlyAttribute)];
+					//FieldInfo isReadOnly2 = attrib2.GetType().GetField("isReadOnly", BindingFlags.NonPublic | BindingFlags.Instance);
+
 					isReadOnly.SetValue(attrib, true);
 					isReadOnly1.SetValue(attrib1, true);
+					//isReadOnly2.SetValue(attrib2, true);
+
 				}
 			}
 		}
@@ -102,7 +114,7 @@ namespace DAC
 		[DisplayName("Target")]
 		[Browsable(true)]
 
-		public string SPEC_TARGET {  get { if (value_type == "N") return null; else return spec_target; } set { spec_target = value; } }
+		public string SPEC_TARGET {  get { return spec_target; } set { spec_target = value; } }
 
 		[DisplayName("USL")]
 		[Browsable(true)]
