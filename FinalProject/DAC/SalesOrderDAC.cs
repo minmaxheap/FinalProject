@@ -175,11 +175,11 @@ where SALES_ORDER_ID = @SALES_ORDER_ID";
                         cmd.Parameters.AddWithValue("@ORDER_QTY", DBNull.Value);
                     else
                         cmd.Parameters.AddWithValue("@ORDER_QTY", vo.ORDER_QTY);
-                    if (vo.CONFIRM_FLAG == null)
+                    if (vo.CONFIRM_FLAG == "")
                         cmd.Parameters.AddWithValue("@CONFIRM_FLAG", DBNull.Value);
                     else
                         cmd.Parameters.AddWithValue("@CONFIRM_FLAG", vo.CONFIRM_FLAG);
-                    if (vo.SHIP_FLAG == null)
+                    if (vo.SHIP_FLAG == "")
                         cmd.Parameters.AddWithValue("@SHIP_FLAG", DBNull.Value);
                     else
                         cmd.Parameters.AddWithValue("@SHIP_FLAG", vo.SHIP_FLAG);
