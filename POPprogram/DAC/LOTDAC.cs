@@ -80,7 +80,7 @@ LOT_QTY, CREATE_QTY,OPER_IN_QTY,CREATE_TIME,OPER_IN_TIME,
 LAST_TRAN_CODE,LAST_TRAN_TIME, LAST_TRAN_USER_ID, LAST_TRAN_COMMENT, LAST_HIST_SEQ) 
 VALUES(@LOT_ID, @LOT_DESC, 
 @PRODUCT_CODE, @OPERATION_CODE, 
-@LOT_QTY, @CREATE_QTY,@OPER_IN_QTY GETDATE(),getdate()
+@LOT_QTY, @CREATE_QTY,@OPER_IN_QTY, GETDATE(),getdate(),
  @WORK_ORDER_ID,
 'CREATE',GETDATE(), @LAST_TRAN_USER_ID, @LAST_TRAN_COMMENT, 1  )
 
@@ -115,6 +115,7 @@ END CATCH;
                     cmd.Parameters.AddWithValue("@WORK_ORDER_ID", lot.WORK_ORDER_ID);
                     cmd.Parameters.AddWithValue("@LOT_QTY", lot.LOT_QTY);
                     cmd.Parameters.AddWithValue("@CREATE_QTY", lot.CREATE_QTY);
+                    cmd.Parameters.AddWithValue("@OPER_IN_QTY", lot.LOT_QTY);
                     cmd.Parameters.AddWithValue("@LAST_TRAN_USER_ID", lot.LAST_TRAN_USER_ID);
                     cmd.Parameters.AddWithValue("@LAST_TRAN_COMMENT", lot.LAST_TRAN_COMMENT);
 
