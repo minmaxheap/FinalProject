@@ -70,20 +70,20 @@ namespace POPprogram
             // label9
             // 
             this.label9.Location = new System.Drawing.Point(84, 12);
-            this.label9.Size = new System.Drawing.Size(55, 24);
+            this.label9.Size = new System.Drawing.Size(64, 21);
             this.label9.Text = "납품서";
             // 
             // label10
             // 
-            this.label10.Location = new System.Drawing.Point(61, 137);
-            this.label10.Size = new System.Drawing.Size(65, 18);
+            this.label10.Location = new System.Drawing.Point(70, 137);
+            this.label10.Size = new System.Drawing.Size(68, 17);
             this.label10.Text = "주문 수량";
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(84, 102);
-            this.label2.Size = new System.Drawing.Size(47, 18);
-            this.label2.Text = "납품처";
+            this.label2.Location = new System.Drawing.Point(88, 102);
+            this.label2.Size = new System.Drawing.Size(50, 17);
+            this.label2.Text = "구매처";
             // 
             // label22
             // 
@@ -182,7 +182,7 @@ namespace POPprogram
             this.csDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔고딕", 9F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
@@ -191,7 +191,7 @@ namespace POPprogram
             this.csDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("나눔고딕", 9F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(195)))), ((int)(((byte)(230)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -202,7 +202,7 @@ namespace POPprogram
             this.csDataGridView1.Name = "csDataGridView1";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("나눔고딕", 9F);
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;

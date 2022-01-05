@@ -27,7 +27,7 @@ namespace POPprogram
         private void btnReadTop_Click(object sender, EventArgs e)
         {
             serv = new StockServ();
-            DataTable dt = serv.Purchase_warehousing(txtSearch.Text, txtCode2.Text,txtCode1.Text);
+            DataTable dt = serv.Purchase_warehousing(txtCode1.Text);
             csDataGridView1.DataSource = null;
             csDataGridView1.DataSource = dt;
         }
@@ -41,8 +41,8 @@ namespace POPprogram
                 txtSearch.Text = dr.Cells["PURCHASE_ORDER_ID"].Value.ToString();
                 txtCode1.Text = dr.Cells["PRODUCT_CODE"].Value.ToString();
                 txtName1.Text = dr.Cells["PRODUCT_NAME"].Value.ToString();
-                txtCode2.Text = dr.Cells["VENDOR_CODE"].Value.ToString();
-                txtName2.Text = dr.Cells["VENDOR_NAME"].Value.ToString();
+                txtCode2.Text = dr.Cells["CUSTOMER_CODE"].Value.ToString();
+                txtName2.Text = dr.Cells["CUSTOMER_NAME"].Value.ToString();
                 txtCode3.Text = dr.Cells["ORDER_QTY"].Value.ToString();
 
             }
@@ -180,7 +180,7 @@ namespace POPprogram
             {
                 MessageBox.Show("성공적");
                 serv = new StockServ();
-                DataTable dt = serv.Purchase_warehousing(txtSearch.Text, txtCode2.Text, txtCode1.Text);
+                DataTable dt = serv.Purchase_warehousing(txtSearch.Text);
                 csDataGridView1.DataSource = null;
                 csDataGridView1.DataSource = dt;
             }
