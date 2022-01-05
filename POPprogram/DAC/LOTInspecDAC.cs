@@ -59,5 +59,27 @@ namespace DAC
 			}
 			return List;
 		}
+
+		public bool insert(LOTProperty pr, LotINSPECTProperty lopr)
+		{
+			string sql = @"SET XACT_ABORT ON;
+
+			BEGIN TRY
+
+	BEGIN TRANSACTION;
+
+
+ COMMIT TRANSACTION;  
+END TRY  
+BEGIN CATCH  
+   IF (XACT_STATE()) = -1  
+    BEGIN         
+        PRINT  '에러발생 : ' + ERROR_MESSAGE()  
+        ROLLBACK TRANSACTION;        
+    END;  
+END CATCH;";
+
+			return true;
+		}
 	}
 }

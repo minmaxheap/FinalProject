@@ -24,5 +24,13 @@ namespace POPprogram
 			dac.Dispose();
 			return list;
 		}
+
+		public bool insert(LOTProperty pr, LotINSPECTProperty lopr)
+		{
+			LOTInspecDAC dac = new LOTInspecDAC();
+			bool result = dac.insert(pr,lopr);
+			dac.Dispose();
+			return result;
+		}
 	}
 }
