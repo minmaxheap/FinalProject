@@ -56,8 +56,8 @@ namespace POPprogram
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "단위 수량", "REQUIRE_QTY");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "수량", "QTY");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "입하 여부", "STOCK_IN_FLAG");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "입하 창고 코드", "STOCK_IN_STORE_CODE");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "자재LOT ID", "STOCK_IN_LOT_ID");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "입하 창고 코드", "STOCK_IN_STORE_CODE", width :150);
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "자재LOT ID", "STOCK_IN_LOT_ID", width :120);
 
 
             LoadData();
@@ -135,7 +135,7 @@ namespace POPprogram
                 {
                     if (Convert.ToBoolean(chk.Value))
                     {
-                        countQty += Convert.ToInt32(row.Cells["수량"].Value);
+                        countQty += Convert.ToInt32(row.Cells["QTY"].Value);
                         countLOT += 1;
                     }
                 }
