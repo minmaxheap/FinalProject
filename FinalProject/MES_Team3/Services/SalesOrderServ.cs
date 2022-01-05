@@ -53,5 +53,19 @@ namespace MES_Team3
             return list;
         }
 
+        public bool InsertAutoPurchase(SalesOrderProperty vo)
+        {
+            SalesOrderDAC dac = new SalesOrderDAC();
+            bool bResult = dac.InsertAutoPurchase(vo);
+            dac.Dispose();
+            return bResult;
+        }
+        public bool InsertAutoWorkOrder(SalesOrderProperty vo)
+        {
+            SalesOrderDAC dac = new SalesOrderDAC();
+            bool bResult = dac.InsertAutoWorkOrder(vo);
+            dac.Dispose();
+            return bResult;
+        }
     }
 }

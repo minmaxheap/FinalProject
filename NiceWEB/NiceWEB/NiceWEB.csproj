@@ -1791,6 +1791,9 @@
     <Compile Include="Models\ComparePlan.cs" />
     <Compile Include="Models\DAC\ComparePlanDAC.cs" />
     <Compile Include="Models\DAC\Helper.cs" />
+    <Compile Include="Models\DAC\OrderStat.cs" />
+    <Compile Include="Models\DAC\ProductDAC.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

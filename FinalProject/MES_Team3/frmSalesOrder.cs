@@ -193,6 +193,12 @@ namespace MES_Team3
             save.ORDER_QTY = Convert.ToInt32(save.ORDER_QTY);
             SalesOrderServ serv = new SalesOrderServ();
             bool bResult = serv.Update(save);
+            if (SalesOrderDAC.ConfirmTrigger)
+            {
+                serv.InsertAutoPurchase(save);
+                serv.InsertAutoWorkOrder(save);
+                SalesOrderDAC.ConfirmTrigger = false;
+            }
             if (bResult)
             {
                 LoadData();
