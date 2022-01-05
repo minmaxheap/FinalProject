@@ -8,6 +8,13 @@ namespace DAC
 {
 	public class StarWorkProperty
 	{
+		//lot.LOT_QTY, lot.LOT_DESC
+		
+		public string DATA_1 { get; set; }
+		public decimal LOT_QTY { get; set; }
+
+		public string LOT_DESC { get; set; }
+
 		public string PRODUCT_CODE { get; set; } // 제품코드
 
 		public string OPERATION_CODE { get; set; } // 공정코드
@@ -22,11 +29,11 @@ namespace DAC
 
 		public string WORK_ORDER_ID { get; set; } // 작업시작
 												  		
-		public int ORDER_QTY { get; set; } // 지시수량
+		public decimal ORDER_QTY { get; set; } // 지시수량
 
-		public int PRODUCT_QTY { get; set; } // 생산수량
+		public decimal PRODUCT_QTY { get; set; } // 생산수량
 
-		public int DEFECT_QTY { get; set; } // 불량수량
+		public decimal DEFECT_QTY { get; set; } // 불량수량
 
 	}
 }

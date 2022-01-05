@@ -148,5 +148,12 @@ namespace POPprogram
 
             }
         }
+
+		private void btnExecute_Click(object sender, EventArgs e)
+		{
+            //foreach 문을써서 다 넣는지 아니면 다 넣지않고 하나의 셀만 넣는건지 궁금합니다.
+            
+
+		}
 	}
 }

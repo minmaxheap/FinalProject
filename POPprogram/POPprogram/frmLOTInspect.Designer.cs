@@ -49,6 +49,10 @@ namespace POPprogram
 			this.panel4.Controls.SetChildIndex(this.label1, 0);
 			this.panel4.Controls.SetChildIndex(this.csDataGridView1, 0);
 			// 
+			// btnExecute
+			// 
+			this.btnExecute.Click += new System.EventHandler(this.btnExecute_Click);
+			// 
 			// cboLOTID
 			// 
 			this.cboLOTID.SelectedIndexChanged += new System.EventHandler(this.cboLOTID_SelectedIndexChanged);

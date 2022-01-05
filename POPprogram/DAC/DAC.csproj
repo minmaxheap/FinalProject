@@ -46,6 +46,7 @@
     <Compile Include="FunctionDAC.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="LOTInspecDAC.cs" />
+    <Compile Include="LotINSPECTProperty.cs" />
     <Compile Include="LOTProperty.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="LOTDAC.cs" />
