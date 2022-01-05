@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NiceWEB.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,46 +13,46 @@ namespace NiceWEB.Controllers
         // GET: Chart
         public ActionResult Index()
         {
-            ProductDAC db = new ProductDAC();
-            List<OrderStat> list = db.GetChartData("1997-01-01", "1997-12-31");
+            //ProductDAC db = new ProductDAC();
+            //List<OrderStat> list = db.GetChartData("1997-01-01", "1997-12-31");
 
-            var statGroup = from stat in list
-                            orderby stat.mon
-                            group stat by stat.ProductName;
+            //var statGroup = from stat in list
+            //                orderby stat.mon
+            //                group stat by stat.ProductName;
 
-            int k = 1;
-            StringBuilder sb = new StringBuilder();
+            //int k = 1;
+            //StringBuilder sb = new StringBuilder();
 
-            foreach (var prodGroup in statGroup) //3번
-            {
-                List<int> amts = new List<int>();
-                foreach (var prodStat in prodGroup) //12번
-                {
-                    amts.Add((int)prodStat.Amt);
+            //foreach (var prodGroup in statGroup) //3번
+            //{
+            //    List<int> amts = new List<int>();
+            //    foreach (var prodStat in prodGroup) //12번
+            //    {
+            //        amts.Add((int)prodStat.Amt);
 
-                    if (k == 1)
-                        sb.Append(prodStat.mon + "월,");
-                }
+            //        if (k == 1)
+            //            sb.Append(prodStat.mon + "월,");
+            //    }
 
-                if (k == 1)
-                {
-                    ViewBag.Label1 = prodGroup.Key;
-                    ViewBag.data1 = "[" + string.Join(",", amts) + "]";
-                }
-                else if (k == 2)
-                {
-                    ViewBag.Label2 = prodGroup.Key;
-                    ViewBag.data2 = "[" + string.Join(",", amts) + "]";
-                }
-                else if (k == 3)
-                {
-                    ViewBag.Label3 = prodGroup.Key;
-                    ViewBag.data3 = "[" + string.Join(",", amts) + "]";
-                }
+            //    if (k == 1)
+            //    {
+            //        ViewBag.Label1 = prodGroup.Key;
+            //        ViewBag.data1 = "[" + string.Join(",", amts) + "]";
+            //    }
+            //    else if (k == 2)
+            //    {
+            //        ViewBag.Label2 = prodGroup.Key;
+            //        ViewBag.data2 = "[" + string.Join(",", amts) + "]";
+            //    }
+            //    else if (k == 3)
+            //    {
+            //        ViewBag.Label3 = prodGroup.Key;
+            //        ViewBag.data3 = "[" + string.Join(",", amts) + "]";
+            //    }
 
-                k++;
-            }
-            ViewBag.Labels = sb.ToString().TrimEnd(',');
+            //    k++;
+            //}
+           // ViewBag.Labels = sb.ToString().TrimEnd(',');
 
             ViewBag.Labels = "1월,2월,3월,4월,5월,6월,7월,8월,9월,10월,11월,12월";
 
