@@ -8,20 +8,35 @@ using System.Web;
 
 namespace NiceWEB.Models
 {
-    public class ComparePlanDAC
+    public class ComparePlanDAC :IDisposable
     {
-        public List<string> GetChartData(string from, string to)
+        SqlConnection conn;
+        public ComparePlanDAC()
+        {
+            conn = new SqlConnection(ConfigurationManager.ConnectionStrings["project"].ConnectionString);
+            conn.Open();
+        }
+
+        public void Dispose()
+        {
+            conn.Close();
+        }
+
+        public List<ComparePlan> GetChartData(string from, string to)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
-                cmd.Connection = new SqlConnection(ConfigurationManager.ConnectionStrings["order"].ConnectionString);
-                cmd.CommandText = "Best3ProductMonthAmt";
-                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Connection = new SqlConnection(ConfigurationManager.ConnectionStrings["project"].ConnectionString);
+                cmd.CommandText = @"SELECT ORDER_DATE,WORK_ORDER_ID,  W.PRODUCT_CODE, P.PRODUCT_NAME, 
+ORDER_QTY,  PRODUCT_QTY, DEFECT_QTY,
+cast((PRODUCT_QTY/(PRODUCT_QTY+DEFECT_QTY))*100.0 as decimal(4,2)) as QUALITY_RATE,cast( (DEFECT_QTY/(PRODUCT_QTY+DEFECT_QTY))*100 as decimal(4,2)) AS DEFECT_RATE, WORK_CLOSE_TIME, WORK_CLOSE_USER_ID
+FROM [dbo].[WORK_ORDER_MST] W, PRODUCT_MST P
+WHERE W.PRODUCT_CODE = P.PRODUCT_CODE AND W.ORDER_STATUS='CLOSE'";
                 cmd.Parameters.AddWithValue("@from", from);
                 cmd.Parameters.AddWithValue("@to", to);
 
                 cmd.Connection.Open();
-                List<string> list = Helper.DataReaderMapToList<string>(cmd.ExecuteReader());
+                List<ComparePlan> list = Helper.DataReaderMapToList<ComparePlan>(cmd.ExecuteReader());
                 cmd.Connection.Close();
 
                 return list;

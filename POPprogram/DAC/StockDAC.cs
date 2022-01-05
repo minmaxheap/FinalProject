@@ -93,6 +93,7 @@ WHERE  P.PRODUCT_CODE = O.MATERIAL_CODE AND V.CODE_TABLE_NAME ='CM_VENDOR' AND V
 
         }
 
+
         public List<string> GetStore_Code()
         {
             string sql = "select STORE_CODE FROM [dbo].STORE_MST";
@@ -108,6 +109,79 @@ WHERE  P.PRODUCT_CODE = O.MATERIAL_CODE AND V.CODE_TABLE_NAME ='CM_VENDOR' AND V
                 }
             }
             return List;
+        }
+
+        public bool SaveStockLot(List<string> lotlist, string storeID, string msUserID)
+        {
+            SqlTransaction trans = conn.BeginTransaction();
+            try
+            {
+                foreach(string lotId in lotlist)
+                {
+                    using (SqlCommand cmd = new SqlCommand())
+                    {
+                        cmd.Connection = conn;
+                        cmd.CommandText = @" UPDATE LOT_STS SET 
+                            STORE_CODE =@STORE_CODE, PRODUCTION_TIME = getdate(),
+                            CREATE_TIME=getdate(),OPER_IN_TIME=getdate(), 
+                            LAST_TRAN_CODE = 'move' , LAST_TRAN_TIME = getdate(),
+                            LAST_TRAN_USER_ID = @LAST_TRAN_USER_ID, 
+                            LAST_TRAN_COMMENT = @LAST_TRAN_COMMENT, 
+                            LAST_HIST_SEQ = LAST_HIST_SEQ+1
+                            where LOT_ID = @LOT_ID";
+
+                        cmd.Parameters.AddWithValue("@LOT_ID", lotId);
+                        cmd.Parameters.AddWithValue("@STORE_CODE", storeID);
+                        cmd.Parameters.AddWithValue("@LAST_TRAN_USER_ID", msUserID);
+                        cmd.Parameters.AddWithValue("@LAST_TRAN_COMMENT", "자재 LOT 창고 이동");
+
+                        cmd.Transaction = trans;
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    using (SqlCommand cmd = new SqlCommand())
+                    {
+                        cmd.Connection = conn;
+                        cmd.CommandText = @"insert LOT_HIS
+(LOT_ID, LOT_DESC, PRODUCT_CODE, STORE_CODE, LOT_QTY, CREATE_QTY, OPER_IN_QTY, 
+PRODUCTION_TIME, CREATE_TIME, OPER_IN_TIME, TRAN_CODE, TRAN_TIME, TRAN_USER_ID, TRAN_COMMENT,HIST_SEQ,
+OLD_PRODUCT_CODE,OLD_OPERATION_CODE,OLD_LOT_QTY)
+select 
+s.LOT_ID ,s.LOT_DESC ,s.PRODUCT_CODE, @STORE_CODE, s.LOT_QTY, s.CREATE_QTY, s.OPER_IN_QTY,
+s.PRODUCTION_TIME, s.CREATE_TIME,s.OPER_IN_TIME, s.LAST_TRAN_CODE, s.LAST_TRAN_TIME, s.LAST_TRAN_USER_ID, s.LAST_TRAN_COMMENT, s.LAST_HIST_SEQ,
+h.PRODUCT_CODE, h.OPERATION_CODE, h.LOT_QTY
+from LOT_STS S left join LOT_HIS h on s.LOT_ID = h.LOT_ID
+where s.LOT_ID =@LOT_ID and h.HIST_SEQ = s.LAST_HIST_SEQ-1";
+
+                        cmd.Parameters.AddWithValue("@LOT_ID", lotId);
+                        cmd.Parameters.AddWithValue("@STORE_CODE", storeID);
+                        cmd.Transaction = trans;
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    using (SqlCommand cmd = new SqlCommand())
+                    {
+                        cmd.Connection = conn;
+                        cmd.CommandText = "update PURCHASE_ORDER_MST set STOCK_IN_FLAG=@STOCK_IN_FLAG where STOCK_IN_LOT_ID = @STOCK_IN_LOT_ID";
+
+                        cmd.Parameters.AddWithValue("@STOCK_IN_FLAG", "Y");
+                        cmd.Parameters.AddWithValue("@STOCK_IN_LOT_ID", lotId);
+                        cmd.Transaction = trans;
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                trans.Commit();
+                return true;
+            }
+            catch(Exception err)
+            {
+                trans.Rollback();
+                return false;
+            }
         }
 
         public void Dispose()

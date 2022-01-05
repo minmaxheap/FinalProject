@@ -39,10 +39,12 @@ namespace POPprogram
             // 
             // btnSelect
             // 
+            this.btnSelect.Location = new System.Drawing.Point(12, 419);
             this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
             // btnClose
             // 
+            this.btnClose.Location = new System.Drawing.Point(902, 419);
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // txtSearch
@@ -77,7 +79,7 @@ namespace POPprogram
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvWorkOrder.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvWorkOrder.EnableHeadersVisualStyles = false;
-            this.dgvWorkOrder.Location = new System.Drawing.Point(0, 94);
+            this.dgvWorkOrder.Location = new System.Drawing.Point(0, 97);
             this.dgvWorkOrder.Name = "dgvWorkOrder";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
@@ -89,12 +91,12 @@ namespace POPprogram
             this.dgvWorkOrder.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvWorkOrder.RowHeadersWidth = 30;
             this.dgvWorkOrder.RowTemplate.Height = 23;
-            this.dgvWorkOrder.Size = new System.Drawing.Size(710, 339);
+            this.dgvWorkOrder.Size = new System.Drawing.Size(1024, 308);
             this.dgvWorkOrder.TabIndex = 97;
             // 
             // frmWorkOrderDialog
             // 
-            this.ClientSize = new System.Drawing.Size(710, 527);
+            this.ClientSize = new System.Drawing.Size(1024, 478);
             this.Controls.Add(this.dgvWorkOrder);
             this.Name = "frmWorkOrderDialog";
             this.Load += new System.EventHandler(this.frmWorkOrderDialog1_Load);
