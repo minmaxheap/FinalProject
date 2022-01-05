@@ -100,13 +100,56 @@ namespace MES_Team3
         private void csDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
-            DataGridViewRow dr = csDataGridView1.Rows[e.RowIndex];
-            DataRow row = (DataRow)((DataRowView)dr.DataBoundItem).Row;
-            DataTable dt = row.Table.Clone();
-            dt.ImportRow(row);
-            List<SalesOrderProperty> selectedRow = Helper.DataTableMapToList<SalesOrderProperty>(dt);
+            //DataGridViewRow dr = csDataGridView1.Rows[e.RowIndex];
+            //DataRow row = (DataRow)((DataRowView)dr.DataBoundItem).Row;
+            //DataTable dt = row.Table.Clone();
+            //dt.ImportRow(row);
+            //List<SalesOrderProperty> selectedRow = Helper.DataTableMapToList<SalesOrderProperty>(dt);
 
-            pgProperty.SelectedObject = selectedRow[0];
+            //pgProperty.SelectedObject = selectedRow[0];
+            //pgProperty.PropertySort = PropertySort.NoSort;
+
+            DataGridViewRow dr = csDataGridView1.Rows[e.RowIndex];
+            SalesOrderProperty vo = new SalesOrderProperty();
+            //vo.OPERATION_CODE = dr.Cells["OPERATION_CODE"].Value.ToString();
+            //vo.OPERATION_NAME = dr.Cells["OPERATION_NAME"].Value.ToString();
+            //vo.CHECK_DEFECT_FLAG = dr.Cells["CHECK_DEFECT_FLAG"].Value.ToString();
+            //vo.CHECK_INSPECT_FLAG = dr.Cells["CHECK_INSPECT_FLAG"].Value.ToString();
+            //vo.CHECK_MATERIAL_FLAG = dr.Cells["CHECK_MATERIAL_FLAG"].Value.ToString();
+            //if (csDataGridView1.Rows[e.RowIndex].Cells["CREATE_TIME"].Value != null && dr.Cells["CREATE_TIME"].Value != DBNull.Value)
+            //    vo.CREATE_TIME = Convert.ToDateTime(dr.Cells["CREATE_TIME"].Value);
+            //vo.CREATE_USER_ID = csDataGridView1.Rows[e.RowIndex].Cells["CREATE_USER_ID"].Value.ToString();
+            //if (dr.Cells["UPDATE_TIME"].Value != null && dr.Cells["UPDATE_TIME"].Value != DBNull.Value)
+            //    vo.UPDATE_TIME = Convert.ToDateTime(dr.Cells["UPDATE_TIME"].Value);
+            //vo.UPDATE_USER_ID = dr.Cells["UPDATE_USER_ID"].Value.ToString();
+
+            if (dr.Cells["ORDER_DATE"].Value != null && dr.Cells["ORDER_DATE"].Value != DBNull.Value)
+                vo.ORDER_DATE = Convert.ToDateTime(dr.Cells["ORDER_DATE"].Value);
+            if (dr.Cells["SALES_ORDER_ID"].Value != null && dr.Cells["SALES_ORDER_ID"].Value != DBNull.Value)
+                vo.SALES_ORDER_ID = dr.Cells["SALES_ORDER_ID"].Value.ToString();
+            if (dr.Cells["CUSTOMER_CODE"].Value != null && dr.Cells["CUSTOMER_CODE"].Value != DBNull.Value)
+                vo.CUSTOMER_CODE = dr.Cells["CUSTOMER_CODE"].Value.ToString();
+            if (dr.Cells["PRODUCT_CODE"].Value != null && dr.Cells["PRODUCT_CODE"].Value != DBNull.Value)
+                vo.PRODUCT_CODE = dr.Cells["PRODUCT_CODE"].Value.ToString();
+
+            if (dr.Cells["ORDER_QTY"].Value != null && dr.Cells["ORDER_QTY"].Value != DBNull.Value)
+                vo.ORDER_QTY = Convert.ToInt32(dr.Cells["ORDER_QTY"].Value);
+            if (dr.Cells["CONFIRM_FLAG"].Value != null && dr.Cells["CONFIRM_FLAG"].Value != DBNull.Value)
+                vo.CONFIRM_FLAG = dr.Cells["CONFIRM_FLAG"].Value.ToString();
+            if (dr.Cells["SHIP_FLAG"].Value != null && dr.Cells["SHIP_FLAG"].Value != DBNull.Value)
+                vo.SHIP_FLAG = dr.Cells["SHIP_FLAG"].Value.ToString();
+
+            if (dr.Cells["CREATE_TIME"].Value != null && dr.Cells["CREATE_TIME"].Value != DBNull.Value)
+                vo.CREATE_TIME = Convert.ToDateTime(dr.Cells["CREATE_TIME"].Value);
+            if (dr.Cells["CREATE_USER_ID"].Value != null && dr.Cells["CREATE_USER_ID"].Value != DBNull.Value)
+                vo.CREATE_USER_ID = csDataGridView1.Rows[e.RowIndex].Cells["CREATE_USER_ID"].Value.ToString();
+            if (dr.Cells["UPDATE_TIME"].Value != null && dr.Cells["UPDATE_TIME"].Value != DBNull.Value)
+                vo.UPDATE_TIME = Convert.ToDateTime(dr.Cells["UPDATE_TIME"].Value);
+            if (dr.Cells["UPDATE_USER_ID"].Value != null && dr.Cells["UPDATE_USER_ID"].Value != DBNull.Value)
+                vo.UPDATE_USER_ID = dr.Cells["UPDATE_USER_ID"].Value.ToString();
+
+            pgProperty.SelectedObject = vo;
+
             pgProperty.PropertySort = PropertySort.NoSort;
         }
 
@@ -167,8 +210,10 @@ namespace MES_Team3
             SalesOrderServ serv = new SalesOrderServ();
             List<SalesOrderProperty> list = serv.GetSalesOrderSearch(search);
 
+            DataTable convertedDT = ConvertToDataTable(list);
+
             csDataGridView1.DataSource = null;
-            csDataGridView1.DataSource = list;
+            csDataGridView1.DataSource = convertedDT;
             ResetCount();
         }
 
@@ -178,8 +223,10 @@ namespace MES_Team3
             SalesOrderServ serv = new SalesOrderServ();
             List<SalesOrderProperty> list = serv.GetSalesOrderSearch(search);
 
+            DataTable convertedDT = ConvertToDataTable(list);
+
             csDataGridView1.DataSource = null;
-            csDataGridView1.DataSource = list;
+            csDataGridView1.DataSource = convertedDT;
             ResetCount();
         }
 
@@ -264,62 +311,7 @@ namespace MES_Team3
             pgSearch.PropertySort = PropertySort.NoSort;
             ResetCount();
         }
-        //private void txtSearch_KeyDown(object sender, KeyEventArgs e)
-        //{
-        //    if (e.KeyCode == Keys.Enter)
-        //    {
-        //        if (iSearchedList.Count == 0)
-        //        {
-        //            DataTable copy_dt = dt;
-        //            IEnumerable<DataRow> linq_row = null;
-        //            if (txtSearch.Text == "")
-        //            {
-        //                csDataGridView1.DataSource = copy_dt;
-        //            }
-        //            else
-        //            {
-        //                foreach (DataRow row in copy_dt.Rows)
-        //                {
-        //                    linq_row = from item in row.ItemArray
-        //                               where item.ToString().ToLower().Contains(txtSearch.Text.ToLower())
-        //                               select row;
-        //                    foreach (DataRow dt in linq_row)
-        //                    {
-        //                        int iCntSearch = copy_dt.Rows.IndexOf(row);
-        //                        iSearchedList.Add(iCntSearch);
-        //                        DataRow dr = dtSearchedList.NewRow();
-        //                        dr["Count"] = iCntSearch;
-        //                        dtSearchedList.Rows.Add(dr);
-        //                        break;
-        //                    }
-        //                }
-        //                iSelectedRow = iSearchedList.ToList();
-        //                dtSearchedList.AsEnumerable().CopyToDataTable(dtSelectedRow, LoadOption.Upsert);
-
-        //            }
-        //        }
-        //        if (iSearchedList.Count > 0)
-        //        {
-        //            int iTestNum = iSelectedRow.Count(n => n == -1);
-        //            if (iTestNum == iSearchedList.Count)
-        //                iSelectedRow = iSearchedList.ToList();
-        //            for (int i = 0; i < iSearchedList.Count; i++)
-        //            {
-        //                if (iSelectedRow[i] == iSearchedList[i])
-        //                {
-        //                    csDataGridView1.CurrentCell = csDataGridView1.Rows[iSearchedList[i]].Cells[0];
-        //                    iSelectedRow[i] = -1;
-        //                    break;
-        //                }
-        //            }
-        //        }
-        //    }
-        //    else
-        //    {
-        //        iSearchedList.Clear();
-        //        iSelectedRow.Clear();
-        //    }
-        //}
+        
         private void ResetCount()
         {
             iSearchedList.Clear();
@@ -358,7 +350,23 @@ namespace MES_Team3
                 return null;
             }
         }
+        public DataTable ConvertToDataTable<T>(IList<T> data)
+        {
+            PropertyDescriptorCollection properties =
+               TypeDescriptor.GetProperties(typeof(T));
+            DataTable table = new DataTable();
+            foreach (PropertyDescriptor prop in properties)
+                table.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
+            foreach (T item in data)
+            {
+                DataRow row = table.NewRow();
+                foreach (PropertyDescriptor prop in properties)
+                    row[prop.Name] = prop.GetValue(item) ?? DBNull.Value;
+                table.Rows.Add(row);
+            }
+            return table;
 
+        }
     }
 }
 

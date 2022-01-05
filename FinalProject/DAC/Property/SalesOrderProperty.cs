@@ -19,6 +19,9 @@ namespace DAC
         private string confirm_flag;
         private string ship_flag;
 
+        private string customer_name;
+        private string product_name;
+
         private DateTime create_time;
         private string create_user_id;
         private DateTime update_time;
@@ -35,9 +38,17 @@ namespace DAC
         [TypeConverter(typeof(CustomerCodeConverter))]
         public string CUSTOMER_CODE { get { return customer_code; }set { customer_code = value; }}
 
+        [Browsable(false)]
+        [DisplayName("고객사명")]
+        public string CUSTOMER_NAME { get { return customer_name; } set { customer_name = value; } }
+
         [DisplayName("품번")]
         [TypeConverter(typeof(Get_Product_CodeList_Converter))]
         public string PRODUCT_CODE { get { return product_code; } set { product_code = value; } }
+
+        [Browsable(false)]
+        [DisplayName("품명")]
+        public string PRODUCT_NAME { get { return product_name; } set { product_name = value; } }
 
         [DisplayName("주문수량")]
         public int ORDER_QTY { get { return order_qty; } set { order_qty = value; } }
@@ -103,9 +114,6 @@ namespace DAC
         [DisplayName("확정여부")]
         [TypeConverter(typeof(Check_Confirm_Converter))]
         public string CONFIRM_CHECK { get { return confirm_check; } set { confirm_check = value; } }
-
-
-
 
         public SalesOrderPropertySch()
         {
