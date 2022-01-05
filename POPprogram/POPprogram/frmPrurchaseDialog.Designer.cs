@@ -39,10 +39,12 @@ namespace POPprogram
             // 
             // btnSelect
             // 
+            this.btnSelect.Location = new System.Drawing.Point(12, 419);
             this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
             // btnClose
             // 
+            this.btnClose.Location = new System.Drawing.Point(902, 419);
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // txtSearch
@@ -95,12 +97,12 @@ namespace POPprogram
             this.dgvPurchase.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPurchase.RowHeadersWidth = 30;
             this.dgvPurchase.RowTemplate.Height = 23;
-            this.dgvPurchase.Size = new System.Drawing.Size(710, 339);
-            this.dgvPurchase.TabIndex = 96;
+            this.dgvPurchase.Size = new System.Drawing.Size(1024, 308);
+            this.dgvPurchase.TabIndex = 97;
             // 
             // frmPrurchaseDialog
             // 
-            this.ClientSize = new System.Drawing.Size(710, 527);
+            this.ClientSize = new System.Drawing.Size(1024, 478);
             this.Controls.Add(this.dgvPurchase);
             this.Name = "frmPrurchaseDialog";
             this.Load += new System.EventHandler(this.frmPrurchaseDialog_Load);

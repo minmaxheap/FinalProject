@@ -45,7 +45,7 @@ namespace POPprogram
             this.btnSelect.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold);
             this.btnSelect.Image = global::POPprogram.Properties.Resources.Add_New;
             this.btnSelect.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSelect.Location = new System.Drawing.Point(12, 451);
+            this.btnSelect.Location = new System.Drawing.Point(12, 456);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(110, 45);
             this.btnSelect.TabIndex = 94;
@@ -62,7 +62,7 @@ namespace POPprogram
             this.btnClose.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold);
             this.btnClose.Image = global::POPprogram.Properties.Resources.Delete;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(592, 451);
+            this.btnClose.Location = new System.Drawing.Point(902, 456);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(110, 45);
             this.btnClose.TabIndex = 95;
@@ -86,7 +86,7 @@ namespace POPprogram
             this.lblPanel.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold);
             this.lblPanel.Location = new System.Drawing.Point(0, 0);
             this.lblPanel.Name = "lblPanel";
-            this.lblPanel.Size = new System.Drawing.Size(710, 43);
+            this.lblPanel.Size = new System.Drawing.Size(1024, 43);
             this.lblPanel.TabIndex = 90;
             this.lblPanel.Text = "작업지시 선택";
             this.lblPanel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -107,7 +107,7 @@ namespace POPprogram
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(710, 527);
+            this.ClientSize = new System.Drawing.Size(1024, 513);
             this.Controls.Add(this.btnTxtSearch);
             this.Controls.Add(this.btnSelect);
             this.Controls.Add(this.btnClose);

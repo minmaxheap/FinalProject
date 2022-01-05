@@ -91,6 +91,7 @@ namespace MES_Team3
 
         private void csDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0) return;
             DataGridViewRow dr = csDataGridView1.Rows[e.RowIndex];
             OperationProperty vo = new OperationProperty();
             //vo.OPERATION_CODE = dr.Cells["OPERATION_CODE"].Value.ToString();
