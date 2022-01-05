@@ -93,6 +93,10 @@ WHERE  P.PRODUCT_CODE = O.MATERIAL_CODE AND V.CODE_TABLE_NAME ='CM_VENDOR' AND V
 
         }
 
+
+
+
+
         public List<string> GetStore_Code()
         {
             string sql = "select STORE_CODE FROM [dbo].STORE_MST";
