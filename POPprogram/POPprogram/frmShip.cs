@@ -42,9 +42,32 @@ namespace POPprogram
                 List<ShipProperty> list = serv.GetSalesOrderSearch(vo);
                 if (list !=null)
                 {
-
+                    txtSearch.Text = list[0].SALES_ORDER_ID;
+                    txtCode1.Text = list[0].PRODUCT_CODE;
+                    txtCode2.Text = list[0].CUSTOMER_CODE;
+                    txtCode3.Text = list[0].ORDER_QTY.ToString();
+                    txtName1.Text = list[0].PRODUCT_NAME;
+                    txtName2.Text = list[0].CUSTOMER_NAME;
                 }
             }
+        }
+
+
+        public DataTable ConvertToDataTable<T>(IList<T> data)
+        {
+            PropertyDescriptorCollection properties =
+               TypeDescriptor.GetProperties(typeof(T));
+            DataTable table = new DataTable();
+            foreach (PropertyDescriptor prop in properties)
+                table.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
+            foreach (T item in data)
+            {
+                DataRow row = table.NewRow();
+                foreach (PropertyDescriptor prop in properties)
+                    row[prop.Name] = prop.GetValue(item) ?? DBNull.Value;
+                table.Rows.Add(row);
+            }
+            return table;
 
         }
     }

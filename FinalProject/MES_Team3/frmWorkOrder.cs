@@ -212,8 +212,10 @@ namespace MES_Team3
             WorkOrderServ serv = new WorkOrderServ();
             List<WorkOrderProperty> list = serv.GetWorkOrderSearch(search);
 
+            DataTable convertedDT = ConvertToDataTable(list);
+
             csDataGridView1.DataSource = null;
-            csDataGridView1.DataSource = list;
+            csDataGridView1.DataSource = convertedDT;
             ResetCount();
         }
 
@@ -223,8 +225,10 @@ namespace MES_Team3
             WorkOrderServ serv = new WorkOrderServ();
             List<WorkOrderProperty> list = serv.GetWorkOrderSearch(search);
 
+            DataTable convertedDT = ConvertToDataTable(list);
+
             csDataGridView1.DataSource = null;
-            csDataGridView1.DataSource = list;
+            csDataGridView1.DataSource = convertedDT;
             ResetCount();
         }
 
@@ -420,6 +424,24 @@ namespace MES_Team3
                 MessageBox.Show("마감 중 문제가 발생했습니다. 다시 확인하여 주시기 바랍니다.");
             }
         }
+        public DataTable ConvertToDataTable<T>(IList<T> data)
+        {
+            PropertyDescriptorCollection properties =
+               TypeDescriptor.GetProperties(typeof(T));
+            DataTable table = new DataTable();
+            foreach (PropertyDescriptor prop in properties)
+                table.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
+            foreach (T item in data)
+            {
+                DataRow row = table.NewRow();
+                foreach (PropertyDescriptor prop in properties)
+                    row[prop.Name] = prop.GetValue(item) ?? DBNull.Value;
+                table.Rows.Add(row);
+            }
+            return table;
+
+        }
+
     }
 }
 

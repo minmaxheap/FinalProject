@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Data.SqlClient;
-using System.Diagnostics;
+using System.ComponentModel;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,7 +16,7 @@ namespace DAC
 		public string CUSTOMER_NAME { get; set; }
 		public string PRODUCT_CODE { get; set; } 
 		public string PRODUCT_NAME { get; set; } 
-		public int ORDER_QTY { get; set; } 
+		public decimal ORDER_QTY { get; set; } 
 		public string CONFIRM_FLAG { get; set; } 
 		public string SHIP_FLAG { get; set; } 
 		public DateTime CREATE_TIME { get; set; } 
