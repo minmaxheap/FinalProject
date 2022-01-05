@@ -34,13 +34,29 @@ namespace DAC
         //                return dt;
         //            }
         //        }
+//        public DataTable GetPurchaseList()
+//        {
+//            string sql = @" select distinct  PURCHASE_ORDER_ID, O.SALES_ORDER_ID, SA.PRODUCT_CODE, PM.PRODUCT_NAME, O.ORDER_DATE, O.VENDOR_CODE,V.DATA_1 VENDOR_NAME, O.ORDER_QTY
+//from [dbo].[PURCHASE_ORDER_MST] O, SALES_ORDER_MST SA,PRODUCT_MST P, CODE_DATA_MST V, SALES_ORDER_MST S
+//LEFT OUTER JOIN PRODUCT_MST PM ON S.PRODUCT_CODE = PM.PRODUCT_CODE
+//WHERE O.SALES_ORDER_ID = SA.SALES_ORDER_ID 
+//AND  P.PRODUCT_CODE = O.MATERIAL_CODE AND V.CODE_TABLE_NAME ='CM_VENDOR' AND V.KEY_1=O.VENDOR_CODE
+//";
+//            DataTable dt = new DataTable();
+//            using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
+//            {
+//                da.Fill(dt);
+//                return dt;
+//            }
+//        }
+
         public DataTable GetPurchaseList()
         {
-            string sql = @" select distinct  PURCHASE_ORDER_ID, O.SALES_ORDER_ID, SA.PRODUCT_CODE, PM.PRODUCT_NAME, O.ORDER_DATE, O.VENDOR_CODE,V.DATA_1 VENDOR_NAME, O.ORDER_QTY
+            string sql = @" select distinct PURCHASE_ORDER_ID, SA.PRODUCT_CODE, PM.PRODUCT_NAME, V.KEY_1 CUSTOMER_CODE, V.DATA_1 CUSTOMER_NAME, sa.ORDER_QTY
 from [dbo].[PURCHASE_ORDER_MST] O, SALES_ORDER_MST SA,PRODUCT_MST P, CODE_DATA_MST V, SALES_ORDER_MST S
 LEFT OUTER JOIN PRODUCT_MST PM ON S.PRODUCT_CODE = PM.PRODUCT_CODE
 WHERE O.SALES_ORDER_ID = SA.SALES_ORDER_ID 
-AND  P.PRODUCT_CODE = O.MATERIAL_CODE AND V.CODE_TABLE_NAME ='CM_VENDOR' AND V.KEY_1=O.VENDOR_CODE
+AND  P.PRODUCT_CODE = O.MATERIAL_CODE AND V.CODE_TABLE_NAME ='CM_CUSTOMER' AND V.KEY_1=sa.CUSTOMER_CODE
 ";
             DataTable dt = new DataTable();
             using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
@@ -51,39 +67,69 @@ AND  P.PRODUCT_CODE = O.MATERIAL_CODE AND V.CODE_TABLE_NAME ='CM_VENDOR' AND V.K
         }
 
 
-  //      public DataTable Purchase_warehousing(string Code)
-  //      {
-  //          string sql = @" select ROW_NUMBER() over(order by(select 1)) as RowNum,b.CHILD_PRODUCT_CODE,p.PRODUCT_NAME, b.REQUIRE_QTY, (b.REQUIRE_QTY *po.ORDER_QTY) as 수량 ,po.STOCK_IN_LOT_ID
-  //from	[dbo].[PURCHASE_ORDER_MST] po 
-  //left join [dbo].[PRODUCT_MST] p on po.MATERIAL_CODE = p.PRODUCT_CODE
-  //left join [dbo].[BOM_MST] b on p.PRODUCT_CODE = b.PRODUCT_CODE
-  // where po.PURCHASE_ORDER_ID = @PURCHASE_ORDER_ID";
+        //      public DataTable Purchase_warehousing(string Code)
+        //      {
+        //          string sql = @" select ROW_NUMBER() over(order by(select 1)) as RowNum,b.CHILD_PRODUCT_CODE,p.PRODUCT_NAME, b.REQUIRE_QTY, (b.REQUIRE_QTY *po.ORDER_QTY) as 수량 ,po.STOCK_IN_LOT_ID
+        //from	[dbo].[PURCHASE_ORDER_MST] po 
+        //left join [dbo].[PRODUCT_MST] p on po.MATERIAL_CODE = p.PRODUCT_CODE
+        //left join [dbo].[BOM_MST] b on p.PRODUCT_CODE = b.PRODUCT_CODE
+        // where po.PURCHASE_ORDER_ID = @PURCHASE_ORDER_ID";
 
-  //          using (SqlCommand cmd = new SqlCommand(sql, conn))
-  //          {
-  //              cmd.Parameters.AddWithValue("@PURCHASE_ORDER_ID", Code);
-  //              SqlDataAdapter da = new SqlDataAdapter(cmd);
-  //              DataTable dt = new DataTable();
-  //              da.Fill(dt);
-  //              return dt;
+        //          using (SqlCommand cmd = new SqlCommand(sql, conn))
+        //          {
+        //              cmd.Parameters.AddWithValue("@PURCHASE_ORDER_ID", Code);
+        //              SqlDataAdapter da = new SqlDataAdapter(cmd);
+        //              DataTable dt = new DataTable();
+        //              da.Fill(dt);
+        //              return dt;
 
-  //          }
+        //          }
 
-  //      }
-        public DataTable Purchase_warehousing(string Code, string vendorCode, string prodCode)
+        //      }
+        //        public DataTable Purchase_warehousing(string Code, string vendorCode, string prodCode)
+        //        {
+        //            string sql = @" select ROW_NUMBER() over(order by(select 1)) as RowNum,PURCHASE_ORDER_ID, SALES_ORDER_ID, ORDER_DATE, O.MATERIAL_CODE, 
+        // P.PRODUCT_NAME AS MATERIAL_NAME,ORDER_QTY, B.REQUIRE_QTY,b.REQUIRE_QTY * o.ORDER_QTY QTY, STOCK_IN_FLAG, STOCK_IN_STORE_CODE, STOCK_IN_LOT_ID
+        //from [dbo].[PURCHASE_ORDER_MST] O, PRODUCT_MST P, CODE_DATA_MST V, BOM_MST B
+        //WHERE  P.PRODUCT_CODE = O.MATERIAL_CODE AND V.CODE_TABLE_NAME ='CM_VENDOR' AND V.KEY_1=O.VENDOR_CODE and o.VENDOR_CODE =@VENDOR_CODE and o.PURCHASE_ORDER_ID = @PURCHASE_ORDER_ID
+        // AND B.CHILD_PRODUCT_CODE = O.MATERIAL_CODE and b.PRODUCT_CODE=@PRODUCT_CODE
+        //";
+
+        //            using (SqlCommand cmd = new SqlCommand(sql, conn))
+        //            {
+        //                cmd.Parameters.AddWithValue("@PURCHASE_ORDER_ID", Code);
+        //                cmd.Parameters.AddWithValue("@VENDOR_CODE", vendorCode);
+        //                cmd.Parameters.AddWithValue("@PRODUCT_CODE", prodCode);
+        //                SqlDataAdapter da = new SqlDataAdapter(cmd);
+        //                DataTable dt = new DataTable();
+        //                da.Fill(dt);
+        //                return dt;
+
+        //            }
+
+        //        }
+
+        public DataTable Purchase_warehousing(string Code)
         {
-            string sql = @" select ROW_NUMBER() over(order by(select 1)) as RowNum,PURCHASE_ORDER_ID, SALES_ORDER_ID, ORDER_DATE, O.MATERIAL_CODE, 
- P.PRODUCT_NAME AS MATERIAL_NAME,ORDER_QTY, B.REQUIRE_QTY,b.REQUIRE_QTY * o.ORDER_QTY QTY, STOCK_IN_FLAG, STOCK_IN_STORE_CODE, STOCK_IN_LOT_ID
-from [dbo].[PURCHASE_ORDER_MST] O, PRODUCT_MST P, CODE_DATA_MST V, BOM_MST B
-WHERE  P.PRODUCT_CODE = O.MATERIAL_CODE AND V.CODE_TABLE_NAME ='CM_VENDOR' AND V.KEY_1=O.VENDOR_CODE and o.VENDOR_CODE =@VENDOR_CODE and o.PURCHASE_ORDER_ID = @PURCHASE_ORDER_ID
- AND B.CHILD_PRODUCT_CODE = O.MATERIAL_CODE and b.PRODUCT_CODE=@PRODUCT_CODE
+            string sql = @"with BOM as
+(
+    select CHILD_PRODUCT_CODE,[PRODUCT_CODE] , REQUIRE_QTY, 0 levels
+	from BOM_MST 
+	where PRODUCT_CODE = @PRODUCT_CODE
+       union all
+	select A.CHILD_PRODUCT_CODE, A.[PRODUCT_CODE], A.REQUIRE_QTY, (b.levels + 1) levels
+	from BOM_MST A join BOM B on A.[PRODUCT_CODE] = B.CHILD_PRODUCT_CODE
+)
+select ROW_NUMBER() over(order by(select 1)) as RowNum, b.CHILD_PRODUCT_CODE AS MATERIAL_CODE, P.PRODUCT_NAME AS MATERIAL_NAME, B.REQUIRE_QTY, m.ORDER_QTY QTY,STOCK_IN_FLAG, STOCK_IN_STORE_CODE, STOCK_IN_LOT_ID,  B.PRODUCT_CODE, levels
+from bom b 
+join PRODUCT_MST P on b.CHILD_PRODUCT_CODE = P.PRODUCT_CODE
+join PURCHASE_ORDER_MST M on m.MATERIAL_CODE = b.CHILD_PRODUCT_CODE
 ";
 
             using (SqlCommand cmd = new SqlCommand(sql, conn))
             {
-                cmd.Parameters.AddWithValue("@PURCHASE_ORDER_ID", Code);
-                cmd.Parameters.AddWithValue("@VENDOR_CODE", vendorCode);
-                cmd.Parameters.AddWithValue("@PRODUCT_CODE", prodCode);
+                cmd.Parameters.AddWithValue("@PRODUCT_CODE", Code);
+
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
