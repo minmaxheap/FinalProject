@@ -14,9 +14,12 @@ namespace POPprogram
         DataGridViewCheckBoxColumn dgvChk = null;
 
         List<string> MstList = null;
+
+        string msUserID;
         public frmStockIN()
         {
             InitializeComponent();
+            msUserID = frmLogin.userID;
         }
 
         public string name { get; set; }
@@ -56,7 +59,6 @@ namespace POPprogram
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "단위 수량", "REQUIRE_QTY");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "수량", "QTY");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "입하 여부", "STOCK_IN_FLAG");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "입하 창고 코드", "STOCK_IN_STORE_CODE", width :150);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "자재LOT ID", "STOCK_IN_LOT_ID", width :120);
 
 
@@ -143,6 +145,49 @@ namespace POPprogram
 
             textBox1.Text = countLOT.ToString();
             textBox2.Text = countQty.ToString();
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex < 0)
+            {
+                MessageBox.Show("창고선택");
+                return;
+            }
+            List<string> lotList = new List<string>();
+            foreach (DataGridViewRow row in csDataGridView1.Rows)
+            {
+                DataGridViewCheckBoxCell chk = row.Cells[0] as DataGridViewCheckBoxCell;
+
+
+                if (chk != null)
+                {
+                    if (Convert.ToBoolean(chk.Value))
+                    {
+                        lotList.Add(row.Cells["STOCK_IN_LOT_ID"].Value.ToString());
+                    }
+                }
+            }
+
+            if (lotList.Count < 1)
+            {
+                MessageBox.Show("LOTID 선택 ");
+                return;
+            }
+
+            bool bResult = serv.SaveStockLot(lotList, comboBox1.SelectedValue.ToString(), msUserID);
+            if (bResult)
+            {
+                MessageBox.Show("성공적");
+                serv = new StockServ();
+                DataTable dt = serv.Purchase_warehousing(txtSearch.Text, txtCode2.Text, txtCode1.Text);
+                csDataGridView1.DataSource = null;
+                csDataGridView1.DataSource = dt;
+            }
+            else
+            {
+                MessageBox.Show("재시도");
+            }
         }
 
         //private void DgvChk(DataGridView dgv)

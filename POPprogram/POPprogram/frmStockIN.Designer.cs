@@ -98,6 +98,7 @@ namespace POPprogram
             this.btnExport.Image = global::POPprogram.Properties.Resources.Data_Import;
             this.btnExport.Location = new System.Drawing.Point(420, 0);
             this.btnExport.Text = "입고";
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // label4
             // 

@@ -15,7 +15,8 @@ namespace DAC
     public class SalesOrderDAC : IDisposable
     {
         SqlConnection conn;
-
+        static bool confirmTrigger;
+        public static bool ConfirmTrigger { get {return confirmTrigger; } set {confirmTrigger=value; } }
         public SalesOrderDAC()
         {
             //conn = new SqlConnection(ConfigurationManager.ConnectionStrings["local"].ConnectionString);
@@ -95,7 +96,11 @@ namespace DAC
                     if (vo.CONFIRM_FLAG == null)
                         cmd.Parameters.AddWithValue("@CONFIRM_FLAG", DBNull.Value);
                     else
+                    {
                         cmd.Parameters.AddWithValue("@CONFIRM_FLAG", vo.CONFIRM_FLAG);
+                        if (vo.CONFIRM_FLAG == "Y")
+                            confirmTrigger = true;
+                    }
                     if (vo.SHIP_FLAG == null)
                         cmd.Parameters.AddWithValue("@SHIP_FLAG", DBNull.Value);
                     else
@@ -175,11 +180,15 @@ where SALES_ORDER_ID = @SALES_ORDER_ID";
                         cmd.Parameters.AddWithValue("@ORDER_QTY", DBNull.Value);
                     else
                         cmd.Parameters.AddWithValue("@ORDER_QTY", vo.ORDER_QTY);
-                    if (vo.CONFIRM_FLAG == "")
+                    if (vo.CONFIRM_FLAG == "" || vo.CONFIRM_FLAG == null)
                         cmd.Parameters.AddWithValue("@CONFIRM_FLAG", DBNull.Value);
                     else
+                    {
                         cmd.Parameters.AddWithValue("@CONFIRM_FLAG", vo.CONFIRM_FLAG);
-                    if (vo.SHIP_FLAG == "")
+                        if (vo.CONFIRM_FLAG=="Y")
+                            confirmTrigger = true;
+                    }
+                    if (vo.SHIP_FLAG == ""|| vo.SHIP_FLAG == null)
                         cmd.Parameters.AddWithValue("@SHIP_FLAG", DBNull.Value);
                     else
                         cmd.Parameters.AddWithValue("@SHIP_FLAG", vo.SHIP_FLAG);
@@ -200,7 +209,175 @@ where SALES_ORDER_ID = @SALES_ORDER_ID";
                 return false;
             }
         }
+        public bool InsertAutoPurchase(SalesOrderProperty vo)
+        {
+            try
+            {
+                string sql = @"INSERT INTO [dbo].[PURCHASE_ORDER_MST]
+           ([PURCHASE_ORDER_ID]
+           ,[SALES_ORDER_ID]
+           ,[ORDER_DATE]
+           ,[VENDOR_CODE]
+           ,[MATERIAL_CODE]
+           ,[ORDER_QTY]
+           ,[STOCK_IN_LOT_ID])
+     VALUES
+           (@PURCHASE_ORDER_ID
+           ,@SALES_ORDER_ID
+           ,getdate()
+           ,@VENDOR_CODE
+           ,@MATERIAL_CODE
+           ,@ORDER_QTY
+           ,@STOCK_IN_LOT_ID)";
 
+                string str = vo.SALES_ORDER_ID;
+                str = str.Substring(str.Length - 3);
+
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@PURCHASE_ORDER_ID", "PURCHASE_"+str);
+                    cmd.Parameters.AddWithValue("@SALES_ORDER_ID", vo.SALES_ORDER_ID);
+                    cmd.Parameters.AddWithValue("@VENDOR_CODE", "VD_Happy");
+                    cmd.Parameters.AddWithValue("@MATERIAL_CODE", "RM_Meat");
+                    cmd.Parameters.AddWithValue("@ORDER_QTY", vo.ORDER_QTY);
+                    cmd.Parameters.AddWithValue("@STOCK_IN_LOT_ID", "220105-RM-MT-" + str);
+
+                    //cmd.Parameters.AddWithValue("@CREATE_TIME",vo.CREATE_TIME);
+                    if (vo.CREATE_USER_ID == null)
+                        cmd.Parameters.AddWithValue("@CREATE_USER_ID", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@CREATE_USER_ID", vo.CREATE_USER_ID);
+                    //cmd.Parameters.AddWithValue("@CREATE_USER_ID", vo.CREATE_USER_ID);
+                    //cmd.Parameters.AddWithValue("@UPDATE_TIME", vo.UPDATE_TIME);
+                    //cmd.Parameters.AddWithValue("@UPDATE_USER_ID", vo.UPDATE_USER_ID);
+                    int row = cmd.ExecuteNonQuery();
+
+                    if (row <= 0)
+                        return false;
+
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@PURCHASE_ORDER_ID", "PURCHASE_" + str);
+                    cmd.Parameters.AddWithValue("@SALES_ORDER_ID", vo.SALES_ORDER_ID);
+                    cmd.Parameters.AddWithValue("@VENDOR_CODE", "VD_Miryo");
+                    cmd.Parameters.AddWithValue("@MATERIAL_CODE", "RM_Salt");
+                    cmd.Parameters.AddWithValue("@ORDER_QTY", vo.ORDER_QTY);
+                    cmd.Parameters.AddWithValue("@STOCK_IN_LOT_ID", "220105-RM-CD-" + str);
+
+                    //cmd.Parameters.AddWithValue("@CREATE_TIME",vo.CREATE_TIME);
+                    if (vo.CREATE_USER_ID == null)
+                        cmd.Parameters.AddWithValue("@CREATE_USER_ID", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@CREATE_USER_ID", vo.CREATE_USER_ID);
+                    //cmd.Parameters.AddWithValue("@CREATE_USER_ID", vo.CREATE_USER_ID);
+                    //cmd.Parameters.AddWithValue("@UPDATE_TIME", vo.UPDATE_TIME);
+                    //cmd.Parameters.AddWithValue("@UPDATE_USER_ID", vo.UPDATE_USER_ID);
+                    row = cmd.ExecuteNonQuery();
+
+                    if (row <= 0)
+                        return false;
+
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@PURCHASE_ORDER_ID", "PURCHASE_" + str);
+                    cmd.Parameters.AddWithValue("@SALES_ORDER_ID", vo.SALES_ORDER_ID);
+                    cmd.Parameters.AddWithValue("@VENDOR_CODE", "VD_Daejin");
+                    cmd.Parameters.AddWithValue("@MATERIAL_CODE", "RM_Cover");
+                    cmd.Parameters.AddWithValue("@ORDER_QTY", vo.ORDER_QTY);
+                    cmd.Parameters.AddWithValue("@STOCK_IN_LOT_ID", "220105-RM-CV-" + str);
+
+                    //cmd.Parameters.AddWithValue("@CREATE_TIME",vo.CREATE_TIME);
+                    if (vo.CREATE_USER_ID == null)
+                        cmd.Parameters.AddWithValue("@CREATE_USER_ID", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@CREATE_USER_ID", vo.CREATE_USER_ID);
+                    //cmd.Parameters.AddWithValue("@CREATE_USER_ID", vo.CREATE_USER_ID);
+                    //cmd.Parameters.AddWithValue("@UPDATE_TIME", vo.UPDATE_TIME);
+                    //cmd.Parameters.AddWithValue("@UPDATE_USER_ID", vo.UPDATE_USER_ID);
+                    row = cmd.ExecuteNonQuery();
+
+                    if (row <= 0)
+                        return false;
+
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@PURCHASE_ORDER_ID", "PURCHASE_" + str);
+                    cmd.Parameters.AddWithValue("@SALES_ORDER_ID", vo.SALES_ORDER_ID);
+                    cmd.Parameters.AddWithValue("@VENDOR_CODE", "VD_Icandoit");
+                    cmd.Parameters.AddWithValue("@MATERIAL_CODE", "RM_Can");
+                    cmd.Parameters.AddWithValue("@ORDER_QTY", vo.ORDER_QTY);
+                    cmd.Parameters.AddWithValue("@STOCK_IN_LOT_ID", "220105-RM-CN-" + str);
+
+                    //cmd.Parameters.AddWithValue("@CREATE_TIME",vo.CREATE_TIME);
+                    if (vo.CREATE_USER_ID == null)
+                        cmd.Parameters.AddWithValue("@CREATE_USER_ID", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@CREATE_USER_ID", vo.CREATE_USER_ID);
+                    //cmd.Parameters.AddWithValue("@CREATE_USER_ID", vo.CREATE_USER_ID);
+                    //cmd.Parameters.AddWithValue("@UPDATE_TIME", vo.UPDATE_TIME);
+                    //cmd.Parameters.AddWithValue("@UPDATE_USER_ID", vo.UPDATE_USER_ID);
+                    row = cmd.ExecuteNonQuery();
+
+                    return row > 0;
+
+                }
+            }
+            catch (Exception err)
+            {
+                Debug.WriteLine(err.Message); //log에 찍게 해야하나?
+                return false;
+            }
+        }
+        public bool InsertAutoWorkOrder(SalesOrderProperty vo)
+        {
+            try
+            {
+                string sql = @"INSERT INTO [dbo].[WORK_ORDER_MST]
+           ([WORK_ORDER_ID]
+           ,[ORDER_DATE]
+           ,[PRODUCT_CODE]
+           ,[CUSTOMER_CODE]
+           ,[ORDER_QTY]
+           ,[ORDER_STATUS]
+           ,[CREATE_TIME]
+           ,[CREATE_USER_ID])
+     VALUES
+           (@WORK_ORDER_ID
+           ,getdate()
+           ,@PRODUCT_CODE
+           ,@CUSTOMER_CODE
+           ,@ORDER_QTY
+           ,@ORDER_STATUS
+           ,getdate()
+           ,@CREATE_USER_ID)";
+
+                string str = vo.SALES_ORDER_ID;
+                str = str.Substring(str.Length - 3);
+
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@WORK_ORDER_ID", "WORK_" + str);
+                    cmd.Parameters.AddWithValue("@PRODUCT_CODE", vo.PRODUCT_CODE);
+                    cmd.Parameters.AddWithValue("@CUSTOMER_CODE", vo.CUSTOMER_CODE);
+                    cmd.Parameters.AddWithValue("@ORDER_QTY", vo.ORDER_QTY);
+                    cmd.Parameters.AddWithValue("@ORDER_STATUS", "OPEN");
+                    //cmd.Parameters.AddWithValue("@CREATE_TIME",vo.CREATE_TIME);
+                    if (vo.CREATE_USER_ID == null)
+                        cmd.Parameters.AddWithValue("@CREATE_USER_ID", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@CREATE_USER_ID", vo.CREATE_USER_ID);
+                    //cmd.Parameters.AddWithValue("@CREATE_USER_ID", vo.CREATE_USER_ID);
+                    //cmd.Parameters.AddWithValue("@UPDATE_TIME", vo.UPDATE_TIME);
+                    //cmd.Parameters.AddWithValue("@UPDATE_USER_ID", vo.UPDATE_USER_ID);
+                    int row = cmd.ExecuteNonQuery();
+
+                    return row > 0;
+
+                }
+            }
+            catch (Exception err)
+            {
+                Debug.WriteLine(err.Message); //log에 찍게 해야하나?
+                return false;
+            }
+        }
         public List<SalesOrderProperty> GetSalesOrderSearch(SalesOrderPropertySch vo)
         {
             StringBuilder sb = new StringBuilder();
