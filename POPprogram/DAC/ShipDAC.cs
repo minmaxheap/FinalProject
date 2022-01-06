@@ -68,12 +68,7 @@ namespace DAC
                 if (!string.IsNullOrWhiteSpace(vo.SALES_ORDER_ID))
                 {
                     sb.Append(" and SALES_ORDER_ID=@SALES_ORDER_ID");
-                    cmd.Parameters.AddWithValue("@SALES_ORDER_ID", "sales_001");
-                }
-                else
-                {
-                    sb.Append(" and SALES_ORDER_ID=@SALES_ORDER_ID");
-                    cmd.Parameters.AddWithValue("@SALES_ORDER_ID", "sales_001");
+                    cmd.Parameters.AddWithValue("@SALES_ORDER_ID", vo.SALES_ORDER_ID);
                 }
                 cmd.CommandText = sb.ToString();
                 cmd.Connection = conn;
