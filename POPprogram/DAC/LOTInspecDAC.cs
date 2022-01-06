@@ -68,7 +68,7 @@ namespace DAC
 				using (SqlCommand cmd = new SqlCommand())
 				{
 					cmd.CommandType = CommandType.StoredProcedure;
-					cmd.CommandText = "dbo.InsertOrderItems";
+					cmd.CommandText = "dbo.InsertOrderItems2";
 					cmd.Connection = conn;
 
 					cmd.Parameters.AddWithValue("@LAST_TRAN_USER_ID", LAST_TRAN_USER_ID);
@@ -78,7 +78,7 @@ namespace DAC
 
 					cmd.Parameters.Add(new SqlParameter("@ItemList", SqlDbType.Structured)
 					{
-						TypeName = "dbo.MyList",
+						TypeName = "dbo.MyList4",
 						Value = dt
 					});
 

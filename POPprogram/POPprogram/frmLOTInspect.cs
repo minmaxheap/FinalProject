@@ -158,6 +158,7 @@ namespace POPprogram
 			//datagridview 컬럼
 			//
 			DataTable dt = new DataTable();
+			dt.Columns.Add("ID", typeof(int));
 			dt.Columns.Add("INSPECT_ITEM_CODE", typeof(string));
 			dt.Columns.Add("INSPECT_ITEM_NAME", typeof(string));
 			dt.Columns.Add("VALUE_TYPE", typeof(string));
@@ -166,6 +167,7 @@ namespace POPprogram
 			dt.Columns.Add("SPEC_USL", typeof(string));
 			dt.Columns.Add("InspectValue", typeof(string));
 			dt.Columns.Add("InspectResult", typeof(string));
+		
 
 
 			//행을 추가 
@@ -181,8 +183,9 @@ namespace POPprogram
 					if (csDataGridView1.Rows[i].Cells["InspectResult"].Value.ToString() == "OK" || csDataGridView1.Rows[i].Cells["InspectResult"].Value.ToString() == "NG")
 					{
 						//여기서는 코드이름을 넣어야할까 아니면 그 부분을 넣어야할까?
+						dr["ID"] = Convert.ToInt32(i);
 						dr["INSPECT_ITEM_CODE"] = csDataGridView1.Rows[i].Cells["INSPECT_ITEM_CODE"].Value.ToString();
-						dr["INSPECT_ITEM_CODE"] = csDataGridView1.Rows[i].Cells["INSPECT_ITEM_NAME"].Value.ToString();
+						dr["INSPECT_ITEM_NAME"] = csDataGridView1.Rows[i].Cells["INSPECT_ITEM_NAME"].Value.ToString();
 						dr["VALUE_TYPE"] = csDataGridView1.Rows[i].Cells["VALUE_TYPE"].Value.ToString();
 						dr["SPEC_LSL"] = csDataGridView1.Rows[i].Cells["SPEC_LSL"].Value.ToString();
 						dr["SPEC_TARGET"] = csDataGridView1.Rows[i].Cells["SPEC_TARGET"].Value.ToString();
