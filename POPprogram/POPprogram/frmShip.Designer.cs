@@ -73,22 +73,27 @@ namespace POPprogram
             // 
             this.label1.Text = "완제품 창고 재고 목록";
             // 
+            // txtSearch
+            // 
+            this.txtSearch.BackColor = System.Drawing.Color.White;
+            this.txtSearch.ReadOnly = true;
+            // 
             // label9
             // 
             this.label9.Location = new System.Drawing.Point(84, 12);
-            this.label9.Size = new System.Drawing.Size(64, 21);
+            this.label9.Size = new System.Drawing.Size(70, 29);
             this.label9.Text = "주문서";
             // 
             // label10
             // 
             this.label10.Location = new System.Drawing.Point(80, 137);
-            this.label10.Size = new System.Drawing.Size(68, 17);
+            this.label10.Size = new System.Drawing.Size(76, 24);
             this.label10.Text = "주문 수량";
             // 
             // label2
             // 
             this.label2.Location = new System.Drawing.Point(98, 102);
-            this.label2.Size = new System.Drawing.Size(50, 17);
+            this.label2.Size = new System.Drawing.Size(55, 24);
             this.label2.Text = "고객사";
             // 
             // label22
@@ -103,6 +108,14 @@ namespace POPprogram
             // 
             this.btnExport.Location = new System.Drawing.Point(252, 0);
             // 
+            // btnReadTop
+            // 
+            this.btnReadTop.Click += new System.EventHandler(this.btnReadTop_Click);
+            // 
+            // btnTxtSearch
+            // 
+            this.btnTxtSearch.Click += new System.EventHandler(this.btnTxtSearch_Click);
+            // 
             // btnPrint
             // 
             this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -110,7 +123,7 @@ namespace POPprogram
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
             this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnPrint.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold);
+            this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.btnPrint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btnPrint.Image = global::POPprogram.Properties.Resources.Print___01;
             this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -176,52 +189,72 @@ namespace POPprogram
             // Column1
             // 
             this.Column1.HeaderText = "Column1";
+            this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
+            this.Column1.Width = 125;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Column2";
+            this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
+            this.Column2.Width = 125;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Column3";
+            this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
+            this.Column3.Width = 125;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "Column4";
+            this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
+            this.Column4.Width = 125;
             // 
             // Column5
             // 
             this.Column5.HeaderText = "Column5";
+            this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
+            this.Column5.Width = 125;
             // 
             // Column6
             // 
             this.Column6.HeaderText = "Column6";
+            this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
+            this.Column6.Width = 125;
             // 
             // Column7
             // 
             this.Column7.HeaderText = "Column7";
+            this.Column7.MinimumWidth = 6;
             this.Column7.Name = "Column7";
+            this.Column7.Width = 125;
             // 
             // Column8
             // 
             this.Column8.HeaderText = "Column8";
+            this.Column8.MinimumWidth = 6;
             this.Column8.Name = "Column8";
+            this.Column8.Width = 125;
             // 
             // Column9
             // 
             this.Column9.HeaderText = "Column9";
+            this.Column9.MinimumWidth = 6;
             this.Column9.Name = "Column9";
+            this.Column9.Width = 125;
             // 
             // Column10
             // 
             this.Column10.HeaderText = "Column10";
+            this.Column10.MinimumWidth = 6;
             this.Column10.Name = "Column10";
+            this.Column10.Width = 125;
             // 
             // frmShip
             // 

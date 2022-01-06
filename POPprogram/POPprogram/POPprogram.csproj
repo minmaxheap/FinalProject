@@ -137,6 +137,12 @@
     <Compile Include="frmNewLOT.Designer.cs">
       <DependentUpon>frmNewLOT.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmShipSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShipSearch.Designer.cs">
+      <DependentUpon>frmShipSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPrurchaseDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +185,7 @@
     <Compile Include="Services\LOTinspectServ.cs" />
     <Compile Include="Services\LOTServ.cs" />
     <Compile Include="Services\StarWorkServ.cs" />
+    <Compile Include="Services\ShipServ.cs" />
     <Compile Include="Services\StockServ.cs" />
     <Compile Include="Util\DataGridViewUtil.cs" />
     <EmbeddedResource Include="BaseForms\Base2.resx">
@@ -219,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNewLOT.resx">
       <DependentUpon>frmNewLOT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmShipSearch.resx">
+      <DependentUpon>frmShipSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrurchaseDialog.resx">
       <DependentUpon>frmPrurchaseDialog.cs</DependentUpon>

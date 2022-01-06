@@ -50,8 +50,10 @@
     <Compile Include="LOTProperty.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="LOTDAC.cs" />
+    <Compile Include="ShipProperty.cs" />
     <Compile Include="StartWorkDAC.cs" />
     <Compile Include="StarWorkProperty.cs" />
+    <Compile Include="ShipDAC.cs" />
     <Compile Include="StockDAC.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

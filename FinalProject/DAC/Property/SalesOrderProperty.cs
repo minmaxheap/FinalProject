@@ -15,7 +15,7 @@ namespace DAC
         private string sales_order_id;
         private string customer_code;
         private string product_code;
-        private int order_qty;
+        private decimal order_qty;
         private string confirm_flag;
         private string ship_flag;
 
@@ -51,7 +51,7 @@ namespace DAC
         public string PRODUCT_NAME { get { return product_name; } set { product_name = value; } }
 
         [DisplayName("주문수량")]
-        public int ORDER_QTY { get { return order_qty; } set { order_qty = value; } }
+        public decimal ORDER_QTY { get { return order_qty; } set { order_qty = value; } }
 
         [DisplayName("확정여부")]
         [TypeConverter(typeof(Check_Confirm_YN_Converter))]

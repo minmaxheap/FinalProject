@@ -15,13 +15,16 @@ namespace DAC
         private string work_order_id;
         private string customer_code;
         private string product_code;
-        private int order_qty;
+        private decimal order_qty;
         private string order_status;
-        private int product_qty;
-        private int defect_qty;
+        private decimal product_qty;
+        private decimal defect_qty;
         private DateTime work_start_time;
         private DateTime work_close_time;
         private string work_close_user_id;
+
+        private string customer_name;
+        private string product_name;
 
         private DateTime create_time;
         private string create_user_id;
@@ -39,22 +42,30 @@ namespace DAC
         [TypeConverter(typeof(CustomerCodeConverter))]
         public string CUSTOMER_CODE { get { return customer_code; }set { customer_code = value; }}
 
+        [Browsable(false)]
+        [DisplayName("고객사명")]
+        public string CUSTOMER_NAME { get { return customer_name; } set { customer_name = value; } }
+
         [DisplayName("품번")]
         [TypeConverter(typeof(Get_Product_CodeList_Converter))]
         public string PRODUCT_CODE { get { return product_code; } set { product_code = value; } }
 
+        [Browsable(false)]
+        [DisplayName("품명")]
+        public string PRODUCT_NAME { get { return product_name; } set { product_name = value; } }
+
         [DisplayName("지시수량")]
-        public int ORDER_QTY { get { return order_qty; } set { order_qty = value; } }
+        public decimal ORDER_QTY { get { return order_qty; } set { order_qty = value; } }
 
         [DisplayName("상태")]
         [TypeConverter(typeof(Check_Status_Converter))]
         public string ORDER_STATUS { get { return order_status; } set { order_status = value; } }
 
         [DisplayName("생산수량")]
-        public int PRODUCT_QTY { get { return product_qty; } set { product_qty = value; } }
+        public decimal PRODUCT_QTY { get { return product_qty; } set { product_qty = value; } }
 
         [DisplayName("불량수량")]
-        public int DEFECT_QTY { get { return defect_qty; } set { defect_qty = value; } }
+        public decimal DEFECT_QTY { get { return defect_qty; } set { defect_qty = value; } }
 
         [DisplayName("작업 시작시간")]
         public DateTime WORK_START_TIME { get { return work_start_time; } set { work_start_time = value; } }
