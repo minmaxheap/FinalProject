@@ -32,9 +32,11 @@ namespace POPprogram
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.mnuMain = new System.Windows.Forms.MenuStrip();
             this.flpMenu = new System.Windows.Forms.FlowLayoutPanel();
+            this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblID = new System.Windows.Forms.Label();
             this.tabMenu = new POPprogram.csTabControl();
+            this.flpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,6 +56,7 @@ namespace POPprogram
             // flpMenu
             // 
             this.flpMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
+            this.flpMenu.Controls.Add(this.button1);
             this.flpMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.flpMenu.Font = new System.Drawing.Font("나눔스퀘어OTF ExtraBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.flpMenu.Location = new System.Drawing.Point(0, 46);
@@ -61,6 +64,20 @@ namespace POPprogram
             this.flpMenu.Name = "flpMenu";
             this.flpMenu.Size = new System.Drawing.Size(162, 984);
             this.flpMenu.TabIndex = 3;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::POPprogram.Properties.Resources.Black_List;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(3, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(153, 58);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "LOT 조회";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
@@ -118,6 +135,7 @@ namespace POPprogram
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.MdiChildActivate += new System.EventHandler(this.frmMain_MdiChildActivate);
+            this.flpMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -130,5 +148,6 @@ namespace POPprogram
         private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.Label lblID;
         private csTabControl tabMenu;
+        private System.Windows.Forms.Button button1;
     }
 }
