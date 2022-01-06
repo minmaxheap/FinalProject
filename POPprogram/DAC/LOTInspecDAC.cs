@@ -60,26 +60,37 @@ namespace DAC
 			return List;
 		}
 
-		public bool insert(LOTProperty pr, LotINSPECTProperty lopr)
+		public bool insert(string LAST_TRAN_USER_ID,string LAST_TRAN_COMMENT, string LOT_ID, DataTable dt)
 		{
-			string sql = @"SET XACT_ABORT ON;
+			//for(int i=0;i<dt.Rows.Count;i++)
+			try
+			{
+				using (SqlCommand cmd = new SqlCommand())
+				{
+					cmd.CommandType = CommandType.StoredProcedure;
+					cmd.CommandText = "dbo.InsertOrderItems";
+					cmd.Connection = conn;
 
-			BEGIN TRY
+					cmd.Parameters.AddWithValue("@LAST_TRAN_USER_ID", LAST_TRAN_USER_ID);
+					cmd.Parameters.AddWithValue("@LAST_TRAN_COMMENT", LAST_TRAN_COMMENT);
+					cmd.Parameters.AddWithValue("@LOT_ID", LOT_ID);
+					cmd.Parameters.AddWithValue("@dtCnt", dt.Rows.Count);
 
-	BEGIN TRANSACTION;
+					cmd.Parameters.Add(new SqlParameter("@ItemList", SqlDbType.Structured)
+					{
+						TypeName = "dbo.MyList",
+						Value = dt
+					});
 
-
- COMMIT TRANSACTION;  
-END TRY  
-BEGIN CATCH  
-   IF (XACT_STATE()) = -1  
-    BEGIN         
-        PRINT  '에러발생 : ' + ERROR_MESSAGE()  
-        ROLLBACK TRANSACTION;        
-    END;  
-END CATCH;";
-
-			return true;
+					int row = cmd.ExecuteNonQuery();
+					return row > 0;
+				}
+			}
+			catch (Exception err)
+			{
+				Debug.WriteLine(err.Message);
+				return false;
+			}
 		}
 	}
 }

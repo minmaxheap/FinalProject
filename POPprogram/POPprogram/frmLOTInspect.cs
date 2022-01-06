@@ -8,152 +8,212 @@ using System.Windows.Forms;
 using DAC;
 namespace POPprogram
 {
-    public partial class frmLOTInspect : POPprogram.Base6
-    {
-        StarWorkServ serv;
-        List<string> list;
-        List<StarWorkProperty> swlist;
-        LOTinspectServ lotserv;
+	public partial class frmLOTInspect : POPprogram.Base6
+	{
+		StarWorkServ serv;
+		List<string> list;
+		List<StarWorkProperty> swlist;
+		LOTinspectServ lotserv;
 
-        public frmLOTInspect()
-        {
-            InitializeComponent();
-        }
-
-        private void frmLOTInspect_Load(object sender, EventArgs e)
-        {
-            serv = new StarWorkServ();
-            list = serv.GetLotCode();
-            list.Insert(0, "");
-            //cboLOTID.Items.Insert(0, " ");
-            //cboLOTID.ValueMember = "LOT_ID";
-            cboLOTID.DisplayMember = "LOT_ID";
-            cboLOTID.DataSource = list;
-
-           
-            
-
-            //ir.OPERATION_CODE,ir.INSPECT_ITEM_CODE,i.INSPECT_ITEM_NAME,i.VALUE_TYPE,i.SPEC_LSL,i.SPEC_TARGET,i.SPEC_USL
-            DataGridViewUtil.SetInitGridView(csDataGridView1);
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "공정코드", "OPERATION_CODE");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "검사항목", "INSPECT_ITEM_CODE");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "검사항목 명", "INSPECT_ITEM_NAME");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "값 타입", "VALUE_TYPE");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "LSL", "SPEC_LSL");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "TARGET", "SPEC_TARGET");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "USL", "SPEC_USL");
-           // DataGridViewUtil.AddGridTextColumn(csDataGridView1, "검사데이터", "검사데이터");
-            //DataGridViewUtil.AddGridTextColumn(csDataGridView1, "유효값", "유효값");
-
-
-      
-            LoadData();
-
-            this.csDataGridView1.Columns.Add("검사데이터", "검사데이터");
-            this.csDataGridView1.Columns.Add("유효값", "유효값");
-
-
-
-
-            // 컬럼의 폭을 지정할 수 있다.
-        }
-
-        private void cboLOTID_SelectedIndexChanged(object sender, EventArgs e)
+		public frmLOTInspect()
 		{
-            //textbox마다 보여주기 
-            if (cboLOTID.SelectedIndex < 1) return;
-            string Value = cboLOTID.SelectedValue.ToString();
+			InitializeComponent();
+		}
 
-            StarWorkProperty pr = new StarWorkProperty();
-
-            Value = (cboLOTID.SelectedValue == null) ? "" : cboLOTID.SelectedValue.ToString();
-
-            swlist = serv.GetData(Value);
-
-
-            txtProdCode.Text = swlist[0].PRODUCT_CODE;
-            txtCustID.Text = swlist[0].CUSTOMER_CODE;
-            txtOperCode.Text = swlist[0].OPERATION_CODE;
-            txtOperName.Text = swlist[0].OPERATION_NAME;
-            txtProdName.Text = swlist[0].PRODUCT_NAME;
-            txtWorkOrder.Text = swlist[0].WORK_ORDER_ID;
-            lblOrderQty.Text = swlist[0].ORDER_QTY.ToString();
-            lblDefectQty.Text = swlist[0].DEFECT_QTY.ToString();
-            lblProdQty.Text = swlist[0].PRODUCT_QTY.ToString();
-        }
-        private void LoadData()
-        {
-            //공정아이디로 보여주기
-            string Code = "1000";
-            lotserv = new LOTinspectServ();
-            DataTable dt = lotserv.GetInspec(Code);
-            csDataGridView1.DataSource = null;
-            csDataGridView1.DataSource = dt;
+		private void frmLOTInspect_Load(object sender, EventArgs e)
+		{
+			serv = new StarWorkServ();
+			list = serv.GetLotCode();
+			list.Insert(0, "");
+			//cboLOTID.Items.Insert(0, " ");
+			//cboLOTID.ValueMember = "LOT_ID";
+			cboLOTID.DisplayMember = "LOT_ID";
+			cboLOTID.DataSource = list;
 
 
 
-        }
+
+			//ir.OPERATION_CODE,ir.INSPECT_ITEM_CODE,i.INSPECT_ITEM_NAME,i.VALUE_TYPE,i.SPEC_LSL,i.SPEC_TARGET,i.SPEC_USL
+			DataGridViewUtil.SetInitGridView(csDataGridView1);
+			//DataGridViewUtil.AddGridTextColumn(csDataGridView1, "공정코드", "OPERATION_CODE");
+			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "검사항목", "INSPECT_ITEM_CODE");
+			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "검사항목 명", "INSPECT_ITEM_NAME");
+			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "값 타입", "VALUE_TYPE");
+			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "LSL", "SPEC_LSL");
+			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "TARGET", "SPEC_TARGET");
+			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "USL", "SPEC_USL");
+			// DataGridViewUtil.AddGridTextColumn(csDataGridView1, "검사데이터", "InspectValue");
+			//DataGridViewUtil.AddGridTextColumn(csDataGridView1, "유효값", "InspectResult");
+
+
+
+			LoadData();
+
+			this.csDataGridView1.Columns.Add("InspectValue", "검사데이터");
+			this.csDataGridView1.Columns.Add("InspectResult", "유효값");
+			// this.csDataGridView1.Columns.Add(
+
+
+
+			// 컬럼의 폭을 지정할 수 있다.
+		}
+
+		private void cboLOTID_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			//textbox마다 보여주기 
+			if (cboLOTID.SelectedIndex < 1) return;
+			string Value = cboLOTID.SelectedValue.ToString();
+
+			StarWorkProperty pr = new StarWorkProperty();
+
+			Value = (cboLOTID.SelectedValue == null) ? "" : cboLOTID.SelectedValue.ToString();
+
+			swlist = serv.GetData(Value);
+
+
+			txtProdCode.Text = swlist[0].PRODUCT_CODE;
+			txtCustID.Text = swlist[0].CUSTOMER_CODE;
+			txtOperCode.Text = swlist[0].OPERATION_CODE;
+			txtOperName.Text = swlist[0].OPERATION_NAME;
+			txtProdName.Text = swlist[0].PRODUCT_NAME;
+			txtWorkOrder.Text = swlist[0].WORK_ORDER_ID;
+			lblOrderQty.Text = swlist[0].ORDER_QTY.ToString();
+			lblDefectQty.Text = swlist[0].DEFECT_QTY.ToString();
+			lblProdQty.Text = swlist[0].PRODUCT_QTY.ToString();
+		}
+		private void LoadData()
+		{
+			//공정아이디로 보여주기
+			string Code = "1000";
+			lotserv = new LOTinspectServ();
+			DataTable dt = lotserv.GetInspec(Code);
+			csDataGridView1.DataSource = null;
+			csDataGridView1.DataSource = dt;
+
+
+
+		}
 
 		private void csDataGridView1_KeyDown(object sender, KeyEventArgs e)
 		{
-            
+
 		}
 
 		private void csDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
-          
+
 		}
 
 		private void csDataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
 		{
 
-            int rowindex = csDataGridView1.CurrentCell.ColumnIndex;
-            if (csDataGridView1.Columns[rowindex].HeaderText == "검사데이터")
-            {
+			int rowindex = csDataGridView1.CurrentCell.ColumnIndex;
+			if (csDataGridView1.Columns[rowindex].HeaderText == "검사데이터")
+			{
 
-                int row = csDataGridView1.CurrentRow.Index;
-                int LSL = Convert.ToInt32(csDataGridView1.Rows[row].Cells[4].Value.ToString());
-                int USL = Convert.ToInt32(csDataGridView1.Rows[row].Cells[6].Value.ToString());
-                int a = Convert.ToInt32(csDataGridView1.Rows[row].Cells[7].Value.ToString());
+				int row = csDataGridView1.CurrentRow.Index;
+				int LSL = Convert.ToInt32(csDataGridView1.Rows[row].Cells["SPEC_LSL"].Value.ToString());
+				int USL = Convert.ToInt32(csDataGridView1.Rows[row].Cells["SPEC_USL"].Value.ToString());
+				int a = Convert.ToInt32(csDataGridView1.Rows[row].Cells["InspectValue"].Value.ToString());
 
-                if (LSL < a && a < USL)
-                {
-                    MessageBox.Show("성공");
-                    csDataGridView1.Rows[row].Cells[8].Value = "OK";
-                    csDataGridView1.Rows[row].Cells[8].Style.ForeColor = Color.Green;
-                    //csDataGridView1.Rows[row].Cells[8].Style.Font = new Font(FontStyle
-                    //csDataGridView1.Columns["유효값"].DefaultCellStyle.ForeColor = Color.Green;
-                    //csDataGridView1.Rows[row].Selected = false;
-                    return;
-                }
-                else
-                {
-                    csDataGridView1.Rows[row].Cells[8].Value = "NG";
-                    csDataGridView1.Rows[row].Cells[8].Style.ForeColor = Color.Red;
-                    this.csDataGridView1.SelectionMode =
-                    DataGridViewSelectionMode.FullRowSelect;
-                    this.csDataGridView1.MultiSelect = false;
-                    //csDataGridView1.ClearSelection();
-                    //csDataGridView1.Rows[row].Selected = false;
-                    return;
-                
-                   
-                    //csDataGridView1.Columns["유효값"].DefaultCellStyle
-                    return;
-                }
-                
-
-                // if(
+				if (LSL < a && a < USL)
+				{
+					MessageBox.Show("성공");
+					csDataGridView1.Rows[row].Cells["InspectResult"].Value = "OK";
+					csDataGridView1.Rows[row].Cells["InspectResult"].Style.ForeColor = Color.Green;
+					//csDataGridView1.Rows[row].Cells[8].Style.Font = new Font(FontStyle
+					//csDataGridView1.Columns["유효값"].DefaultCellStyle.ForeColor = Color.Green;
+					//csDataGridView1.Rows[row].Selected = false;
+					return;
+				}
+				else
+				{
+					csDataGridView1.Rows[row].Cells["InspectResult"].Value = "NG";
+					csDataGridView1.Rows[row].Cells["InspectResult"].Style.ForeColor = Color.Red;
+					this.csDataGridView1.SelectionMode =
+					DataGridViewSelectionMode.FullRowSelect;
+					this.csDataGridView1.MultiSelect = false;
+					//csDataGridView1.ClearSelection();
+					//csDataGridView1.Rows[row].Selected = false;
+					return;
 
 
-            }
-        }
+					//csDataGridView1.Columns["유효값"].DefaultCellStyle
+					// return;
+				}
+
+
+				// if(
+
+
+			}
+		}
 
 		private void btnExecute_Click(object sender, EventArgs e)
 		{
-            //foreach 문을써서 다 넣는지 아니면 다 넣지않고 하나의 셀만 넣는건지 궁금합니다.
-            
+			//foreach 문을써서 다 넣는지 아니면 다 넣지않고 하나의 셀만 넣는건지 궁금합니다.
+			// 데이터그리드 안에잇는 유효값이     
 
+
+			//datagridview 컬럼
+			//
+			DataTable dt = new DataTable();
+			dt.Columns.Add("INSPECT_ITEM_CODE", typeof(string));
+			dt.Columns.Add("INSPECT_ITEM_NAME", typeof(string));
+			dt.Columns.Add("VALUE_TYPE", typeof(string));
+			dt.Columns.Add("SPEC_LSL", typeof(string));
+			dt.Columns.Add("SPEC_TARGET", typeof(string));
+			dt.Columns.Add("SPEC_USL", typeof(string));
+			dt.Columns.Add("InspectValue", typeof(string));
+			dt.Columns.Add("InspectResult", typeof(string));
+
+
+			//행을 추가 
+			for (int i = 0; i < csDataGridView1.Rows.Count; i++)
+			{
+
+				DataRow dr = dt.NewRow();
+				// OK NG 
+				// "" OR 이상한값 
+				
+				if (csDataGridView1.Rows[i].Cells["InspectResult"].Value != null)
+				{
+					if (csDataGridView1.Rows[i].Cells["InspectResult"].Value.ToString() == "OK" || csDataGridView1.Rows[i].Cells["InspectResult"].Value.ToString() == "NG")
+					{
+						//여기서는 코드이름을 넣어야할까 아니면 그 부분을 넣어야할까?
+						dr["INSPECT_ITEM_CODE"] = csDataGridView1.Rows[i].Cells["INSPECT_ITEM_CODE"].Value.ToString();
+						dr["INSPECT_ITEM_CODE"] = csDataGridView1.Rows[i].Cells["INSPECT_ITEM_NAME"].Value.ToString();
+						dr["VALUE_TYPE"] = csDataGridView1.Rows[i].Cells["VALUE_TYPE"].Value.ToString();
+						dr["SPEC_LSL"] = csDataGridView1.Rows[i].Cells["SPEC_LSL"].Value.ToString();
+						dr["SPEC_TARGET"] = csDataGridView1.Rows[i].Cells["SPEC_TARGET"].Value.ToString();
+						dr["SPEC_USL"] = csDataGridView1.Rows[i].Cells["SPEC_USL"].Value.ToString();
+						dr["InspectValue"] = csDataGridView1.Rows[i].Cells["InspectValue"].Value.ToString();
+						dr["InspectResult"] = csDataGridView1.Rows[i].Cells["InspectResult"].Value.ToString();
+
+						dt.Rows.Add(dr);
+					}
+
+				}
+				dt.AcceptChanges();
+
+				
+		
+				//bool dt 넘겨주기
+			}
+			//string msuerID = 
+			bool result = lotserv.insert(frmLogin.userID, txtComment.Text, cboLOTID.SelectedValue.ToString(), dt);
+			if (result)
+			{
+				MessageBox.Show("성공");
+				return;
+			}
+			else
+			{
+				MessageBox.Show("실패");
+				return;
+			}
 		}
 	}
 }
+	
+
