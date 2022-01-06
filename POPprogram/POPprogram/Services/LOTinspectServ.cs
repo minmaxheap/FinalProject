@@ -25,12 +25,14 @@ namespace POPprogram
 			return list;
 		}
 
-		public bool insert(LOTProperty pr, LotINSPECTProperty lopr)
+		public bool insert(string LAST_TRAN_USER_ID, string LAST_TRAN_COMMENT, string LOT_ID, DataTable dt)
 		{
 			LOTInspecDAC dac = new LOTInspecDAC();
-			bool result = dac.insert(pr,lopr);
+			bool result = dac.insert(LAST_TRAN_USER_ID,LAST_TRAN_COMMENT, LOT_ID, dt);
 			dac.Dispose();
 			return result;
 		}
+
+
 	}
 }
