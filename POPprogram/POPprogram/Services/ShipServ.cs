@@ -17,13 +17,7 @@ namespace POPprogram
             dac.Dispose();
             return dt;
         }
-        public List<ShipProperty> GetSalesOrderSearch(ShipProperty vo)
-        {
-            ShipDAC dac = new ShipDAC();
-            List<ShipProperty> list = dac.GetSalesOrderSearch(vo);
-            dac.Dispose();
-            return list;
-        }
+
     }
 }
 
