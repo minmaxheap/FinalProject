@@ -33,14 +33,14 @@ namespace POPprogram
 
         private void txtSearch_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter && txtSearch.Text!="")
             {
                 ShipProperty vo = new ShipProperty();
                 vo.SALES_ORDER_ID = txtSearch.Text;
 
                 ShipServ serv = new ShipServ();
                 List<ShipProperty> list = serv.GetSalesOrderSearch(vo);
-                if (list !=null)
+                if (list !=null && list.Count>0)
                 {
                     txtSearch.Text = list[0].SALES_ORDER_ID;
                     txtCode1.Text = list[0].PRODUCT_CODE;
