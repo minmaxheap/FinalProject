@@ -72,10 +72,10 @@ namespace POPprogram
             // 
             // txtSearch
             // 
-            this.txtSearch.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.txtSearch.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtSearch.Location = new System.Drawing.Point(12, 59);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(335, 25);
+            this.txtSearch.Size = new System.Drawing.Size(335, 26);
             this.txtSearch.TabIndex = 92;
             // 
             // lblPanel
