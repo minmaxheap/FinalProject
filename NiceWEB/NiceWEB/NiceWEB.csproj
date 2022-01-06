@@ -1888,6 +1888,7 @@
     <Content Include="plugins\summernote\summernote.min.js.map" />
     <Content Include="plugins\sweetalert2-theme-bootstrap-4\bootstrap-4.scss" />
     <Content Include="plugins\toastr\toastr.js.map" />
+    <None Include="Properties\PublishProfiles\qbalsl2 - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
