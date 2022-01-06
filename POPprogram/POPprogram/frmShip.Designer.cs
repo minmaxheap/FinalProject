@@ -75,7 +75,8 @@ namespace POPprogram
             // 
             // txtSearch
             // 
-            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
+            this.txtSearch.BackColor = System.Drawing.Color.White;
+            this.txtSearch.ReadOnly = true;
             // 
             // label9
             // 
@@ -106,6 +107,10 @@ namespace POPprogram
             // btnExport
             // 
             this.btnExport.Location = new System.Drawing.Point(252, 0);
+            // 
+            // btnReadTop
+            // 
+            this.btnReadTop.Click += new System.EventHandler(this.btnReadTop_Click);
             // 
             // btnTxtSearch
             // 

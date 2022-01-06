@@ -44,38 +44,6 @@ namespace DAC
             }
         }
 
-        public List<ShipProperty> GetSalesOrderSearch(ShipProperty vo)
-        {
-            StringBuilder sb = new StringBuilder();
-
-            sb.Append(@"SELECT SALES_ORDER_ID
-      ,ORDER_DATE
-      ,w.CUSTOMER_CODE
-	  ,cd.DATA_1 CUSTOMER_NAME
-      ,w.PRODUCT_CODE
-	  ,pm.PRODUCT_NAME PRODUCT_NAME
-      ,ORDER_QTY
-      ,CONFIRM_FLAG
-      ,SHIP_FLAG
-      ,w.CREATE_TIME
-      ,w.CREATE_USER_ID
-      ,w.UPDATE_TIME
-      ,w.UPDATE_USER_ID
-  FROM SALES_ORDER_MST w, PRODUCT_MST pm, CODE_DATA_MST cd
-  WHERE w.PRODUCT_CODE=pm.PRODUCT_CODE AND w.CUSTOMER_CODE=cd.KEY_1 AND 1=1");
-            using (SqlCommand cmd = new SqlCommand())
-            {
-                if (!string.IsNullOrWhiteSpace(vo.SALES_ORDER_ID))
-                {
-                    sb.Append(" and SALES_ORDER_ID=@SALES_ORDER_ID");
-                    cmd.Parameters.AddWithValue("@SALES_ORDER_ID", vo.SALES_ORDER_ID);
-                }
-                cmd.CommandText = sb.ToString();
-                cmd.Connection = conn;
-                return Helper.DataReaderMapToList<ShipProperty>(cmd.ExecuteReader());
-            }
-        }
-
         public void Dispose()
         {
             conn.Close();
