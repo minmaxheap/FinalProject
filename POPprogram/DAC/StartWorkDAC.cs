@@ -155,7 +155,7 @@ where s.LOT_ID = @LOT_ID and h.HIST_SEQ = s.LAST_HIST_SEQ-1
 
  COMMIT TRANSACTION;  
 END TRY  
-BEGIN CATCH  
+BEGIN CATCH  x
    IF (XACT_STATE()) = -1  
     BEGIN         
         PRINT  '에러발생 : ' + ERROR_MESSAGE()  

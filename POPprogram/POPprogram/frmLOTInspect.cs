@@ -175,7 +175,7 @@ namespace POPprogram
 				DataRow dr = dt.NewRow();
 				// OK NG 
 				// "" OR 이상한값 
-				
+
 				if (csDataGridView1.Rows[i].Cells["InspectResult"].Value != null)
 				{
 					if (csDataGridView1.Rows[i].Cells["InspectResult"].Value.ToString() == "OK" || csDataGridView1.Rows[i].Cells["InspectResult"].Value.ToString() == "NG")
@@ -194,12 +194,8 @@ namespace POPprogram
 					}
 
 				}
-				dt.AcceptChanges();
-
-				
-		
-				//bool dt 넘겨주기
 			}
+			dt.AcceptChanges();
 			//string msuerID = 
 			bool result = lotserv.insert(frmLogin.userID, txtComment.Text, cboLOTID.SelectedValue.ToString(), dt);
 			if (result)

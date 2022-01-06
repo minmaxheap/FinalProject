@@ -65,6 +65,7 @@ namespace DAC
 			//for(int i=0;i<dt.Rows.Count;i++)
 			try
 			{
+				//SqlTransaction trans = conn.BeginTransaction();
 				using (SqlCommand cmd = new SqlCommand())
 				{
 					cmd.CommandType = CommandType.StoredProcedure;
@@ -86,10 +87,14 @@ namespace DAC
 					return row > 0;
 				}
 			}
-			catch (Exception err)
+			catch (SqlException err)  // 에러 : Severity=11+ 인 경우
 			{
 				Debug.WriteLine(err.Message);
 				return false;
+			}
+			catch (Exception ex)
+			{
+				throw ex;
 			}
 		}
 	}
