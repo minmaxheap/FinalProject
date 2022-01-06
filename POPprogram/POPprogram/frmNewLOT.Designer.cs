@@ -58,10 +58,6 @@ namespace POPprogram
             // 
             this.txtOperCode.ReadOnly = true;
             // 
-            // lblOperation
-            // 
-            this.lblOperation.Text = "공장";
-            // 
             // lblQty
             // 
             this.lblQty.ForeColor = System.Drawing.Color.Tomato;

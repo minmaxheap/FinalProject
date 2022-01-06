@@ -119,7 +119,7 @@ namespace POPprogram
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label9.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label9.Location = new System.Drawing.Point(39, 12);
             this.label9.Margin = new System.Windows.Forms.Padding(0);
             this.label9.Name = "label9";
@@ -173,7 +173,7 @@ namespace POPprogram
             this.panel8.Controls.Add(this.label22);
             this.panel8.Controls.Add(this.label6);
             this.panel8.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.panel8.Location = new System.Drawing.Point(31, 62);
+            this.panel8.Location = new System.Drawing.Point(30, 72);
             this.panel8.Margin = new System.Windows.Forms.Padding(0);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1136, 284);
@@ -358,11 +358,11 @@ namespace POPprogram
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label11.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.label11.Location = new System.Drawing.Point(88, 158);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(50, 17);
+            this.label11.Size = new System.Drawing.Size(54, 19);
             this.label11.TabIndex = 68;
             this.label11.Text = "고객사";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -370,11 +370,11 @@ namespace POPprogram
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label10.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.label10.Location = new System.Drawing.Point(74, 123);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(64, 17);
+            this.label10.Size = new System.Drawing.Size(69, 19);
             this.label10.TabIndex = 70;
             this.label10.Text = "작업지시";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -416,11 +416,11 @@ namespace POPprogram
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.label2.Location = new System.Drawing.Point(102, 88);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 17);
+            this.label2.Size = new System.Drawing.Size(39, 19);
             this.label2.TabIndex = 65;
             this.label2.Text = "공정";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -440,27 +440,26 @@ namespace POPprogram
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label22.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.label22.Location = new System.Drawing.Point(102, 53);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(36, 17);
+            this.label22.Size = new System.Drawing.Size(39, 19);
             this.label22.TabIndex = 54;
             this.label22.Text = "품번";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel4
             // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.label13);
             this.panel4.Controls.Add(this.txtComment);
-            this.panel4.Location = new System.Drawing.Point(31, 349);
+            this.panel4.Location = new System.Drawing.Point(31, 374);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1136, 200);
+            this.panel4.Size = new System.Drawing.Size(1136, 175);
             this.panel4.TabIndex = 51;
             // 
             // label1
@@ -482,7 +481,7 @@ namespace POPprogram
             this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label13.Location = new System.Drawing.Point(102, 139);
+            this.label13.Location = new System.Drawing.Point(102, 114);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(36, 17);
             this.label13.TabIndex = 38;
@@ -494,7 +493,7 @@ namespace POPprogram
             this.txtComment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtComment.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.txtComment.Location = new System.Drawing.Point(165, 139);
+            this.txtComment.Location = new System.Drawing.Point(165, 114);
             this.txtComment.Multiline = true;
             this.txtComment.Name = "txtComment";
             this.txtComment.Size = new System.Drawing.Size(937, 46);

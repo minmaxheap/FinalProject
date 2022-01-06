@@ -35,6 +35,7 @@ namespace POPprogram
             this.label11 = new System.Windows.Forms.Label();
             this.txtOperName = new System.Windows.Forms.TextBox();
             this.lblComment = new System.Windows.Forms.Label();
+            this.txtComment = new System.Windows.Forms.TextBox();
             this.txtOperCode = new System.Windows.Forms.TextBox();
             this.lblOperation = new System.Windows.Forms.Label();
             this.lblQty = new System.Windows.Forms.Label();
@@ -69,7 +70,6 @@ namespace POPprogram
             this.pnlCrud = new System.Windows.Forms.Panel();
             this.btnExecute = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.txtComment = new System.Windows.Forms.TextBox();
             this.panel4.SuspendLayout();
             this.panel8.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -150,6 +150,18 @@ namespace POPprogram
             this.lblComment.TabIndex = 86;
             this.lblComment.Text = "주석";
             this.lblComment.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtComment
+            // 
+            this.txtComment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtComment.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.txtComment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtComment.Location = new System.Drawing.Point(149, 200);
+            this.txtComment.Multiline = true;
+            this.txtComment.Name = "txtComment";
+            this.txtComment.Size = new System.Drawing.Size(937, 26);
+            this.txtComment.TabIndex = 85;
             // 
             // txtOperCode
             // 
@@ -250,8 +262,7 @@ namespace POPprogram
             // 
             // panel8
             // 
-            this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel8.Controls.Add(this.btnTxtSearch);
@@ -571,18 +582,6 @@ namespace POPprogram
             this.btnClose.Text = "닫기";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = false;
-            // 
-            // txtComment
-            // 
-            this.txtComment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtComment.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.txtComment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.txtComment.Location = new System.Drawing.Point(149, 200);
-            this.txtComment.Multiline = true;
-            this.txtComment.Name = "txtComment";
-            this.txtComment.Size = new System.Drawing.Size(937, 26);
-            this.txtComment.TabIndex = 85;
             // 
             // Base5
             // 
