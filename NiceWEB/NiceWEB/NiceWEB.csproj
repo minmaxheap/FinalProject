@@ -1779,12 +1779,17 @@
     <Content Include="plugins\toastr\toastr.css" />
     <Content Include="plugins\toastr\toastr.min.css" />
     <Content Include="plugins\toastr\toastr.min.js" />
+    <Content Include="plugins\uplot\uPlot.cjs.js" />
+    <Content Include="plugins\uplot\uPlot.esm.js" />
+    <Content Include="plugins\uplot\uPlot.iife.js" />
+    <Content Include="plugins\uplot\uPlot.iife.min.js" />
+    <Content Include="plugins\uplot\uPlot.min.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\ChartController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\ComparePlanController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1816,7 +1821,7 @@
     <None Include="packages.config" />
     <Content Include="Views\_Layout.cshtml" />
     <Content Include="Views\ComparePlan\Index.cshtml" />
-    <Content Include="Views\Chart\Index.cshtml" />
+    <Content Include="Views\Test\Index.cshtml" />
     <Content Include="plugins\.npmignore" />
     <Content Include="plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.css.map" />
     <Content Include="plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.min.css.map" />

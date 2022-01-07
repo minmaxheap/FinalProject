@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace NiceWEB.Controllers
 {
-    public class ChartController : Controller
+    public class TestController : Controller
     {
         // GET: Chart
         public ActionResult Index()
