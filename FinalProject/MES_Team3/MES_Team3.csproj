@@ -305,8 +305,10 @@
     <None Include="Resources\Export.png" />
     <None Include="Resources\Check-01.png" />
     <None Include="Resources\facebook_cover_photo_1.png" />
+    <None Include="Resources\Blank-13.png" />
     <Content Include="Resources\facebook_cover_photo_3.png" />
     <Content Include="Resources\logo.png" />
+    <None Include="Resources\logo1.PNG" />
     <Content Include="Resources\logo_transparent.png" />
     <Content Include="Resources\twocirclingarrows1_120592.png" />
   </ItemGroup>

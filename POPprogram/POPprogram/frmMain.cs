@@ -73,7 +73,8 @@ namespace POPprogram
         private void Menu_Click(object sender, EventArgs e)
         {
             // ToolStripMenuItem menu = (ToolStripMenuItem)sender;
-            Button menu = (Button)sender;
+            Label menu = (Label)sender;
+           // Button menu = (Button)sender;
             OpenCreateForm(menu.Tag.ToString(), menu.Text);
         }
 
@@ -189,33 +190,66 @@ namespace POPprogram
             }
         }
 
+        //private void DrawMenuPanel()
+        //{
+        //    DataView dv1 = new DataView(mdtFunc);
+        //    dv1.RowFilter = "FUNCTION_LEVEL = 1";
+        //    for (int i = 0; i < dv1.Count; i++)
+        //    {
+        //        Button btnP_Menu = new Button();
+        //        btnP_Menu.Name = $"p_menu{dv1[i]["FUNCTION_CODE"].ToString()}";
+        //        btnP_Menu.Text = dv1[i]["FUNCTION_NAME"].ToString();
+        //        btnP_Menu.TextAlign = ContentAlignment.MiddleCenter;
+        //        btnP_Menu.AutoSize = false;
+        //        btnP_Menu.Margin = new Padding(3, 4, 3, 4);
+        //        btnP_Menu.Size = new Size(155, 41);
+        //        btnP_Menu.Tag = dv1[i]["PROGRAM_NAME"].ToString();
+        //        btnP_Menu.BackColor = Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+        //        btnP_Menu.ForeColor = Color.Black;
+        //        //p_menu.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+        //        btnP_Menu.FlatStyle = FlatStyle.Flat;
+        //        btnP_Menu.UseVisualStyleBackColor = false;
+        //        btnP_Menu.Click += Menu_Click;
+
+
+        //        flpMenu.Controls.Add(btnP_Menu);
+
+        //        if (i == 0)
+        //        {
+        //            Button btn = btnP_Menu;
+        //        }
+        //    }
+
+
+
+        //}
+
         private void DrawMenuPanel()
         {
             DataView dv1 = new DataView(mdtFunc);
             dv1.RowFilter = "FUNCTION_LEVEL = 1";
             for (int i = 0; i < dv1.Count; i++)
             {
-                Button btnP_Menu = new Button();
-                btnP_Menu.Name = $"p_menu{dv1[i]["FUNCTION_CODE"].ToString()}";
-                btnP_Menu.Text = dv1[i]["FUNCTION_NAME"].ToString();
-                btnP_Menu.TextAlign = ContentAlignment.MiddleCenter;
-                btnP_Menu.AutoSize = false;
-                btnP_Menu.Margin = new Padding(3, 4, 3, 4);
-                btnP_Menu.Size = new Size(155, 41);
-                btnP_Menu.Tag = dv1[i]["PROGRAM_NAME"].ToString();
-                btnP_Menu.BackColor = Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-                btnP_Menu.ForeColor = Color.Black;
-                //p_menu.Font = new System.Drawing.Font("여기어때 잘난체 OTF", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-                btnP_Menu.FlatStyle = FlatStyle.Flat;
-                btnP_Menu.UseVisualStyleBackColor = false;
-                btnP_Menu.Click += Menu_Click;
+               
+                Label lblMenu = new Label();
+                lblMenu.Name = $"p_menu{dv1[i]["FUNCTION_CODE"].ToString()}";
+                lblMenu.Text = dv1[i]["FUNCTION_NAME"].ToString();
+                lblMenu.TextAlign = ContentAlignment.MiddleCenter;
+                lblMenu.ForeColor = Color.FromArgb(176, 182, 190);
+                lblMenu.AutoSize = false;
+                lblMenu.Size = new Size(153, 58);
+                lblMenu.Tag = dv1[i]["PROGRAM_NAME"].ToString();              
+                lblMenu.FlatStyle = FlatStyle.Flat;
+                lblMenu.Image = global::POPprogram.Properties.Resources.Blank_13;
+                lblMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+                lblMenu.Click += Menu_Click;
 
 
-                flpMenu.Controls.Add(btnP_Menu);
+                flpMenu.Controls.Add(lblMenu);
 
                 if (i == 0)
                 {
-                    Button btn = btnP_Menu;
+                    Label lbl = lblMenu;
                 }
             }
 
