@@ -23,7 +23,7 @@ namespace POPprogram
 		private void frmLOTInspect_Load(object sender, EventArgs e)
 		{
 			serv = new StarWorkServ();
-			list = serv.GetLotCode();
+			list = serv.GetLotOpCode();
 			list.Insert(0, "");
 			//cboLOTID.Items.Insert(0, " ");
 			//cboLOTID.ValueMember = "LOT_ID";
@@ -47,7 +47,7 @@ namespace POPprogram
 
 
 
-			LoadData();
+		
 
 			this.csDataGridView1.Columns.Add("InspectValue", "검사데이터");
 			this.csDataGridView1.Columns.Add("InspectResult", "유효값");
@@ -85,11 +85,13 @@ namespace POPprogram
 			lblProdQty.Text = swlist[0].PRODUCT_QTY.ToString();
 			txtCustName.Text = swlist[0].DATA_1;
 			lblStatus.Text = swlist[0].ORDER_STATUS;
+
+			LoadData();
 		}
 		private void LoadData()
 		{
 			//공정아이디로 보여주기
-			string Code = "1000";
+			string Code = txtOperCode.Text;
 			lotserv = new LOTinspectServ();
 			DataTable dt = lotserv.GetInspec(Code);
 			csDataGridView1.DataSource = null;
