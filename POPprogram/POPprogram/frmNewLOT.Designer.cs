@@ -133,7 +133,7 @@ namespace POPprogram
             // 
             // frmNewLOT
             // 
-            this.ClientSize = new System.Drawing.Size(1292, 757);
+           // this.ClientSize = new System.Drawing.Size(1292, 757);
             this.Name = "frmNewLOT";
             this.Load += new System.EventHandler(this.frmNewLOT_Load);
             this.panel4.ResumeLayout(false);

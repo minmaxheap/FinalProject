@@ -48,7 +48,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-4">
 
                         <div class="form-group">
                             <label>조회날짜:</label>
@@ -65,7 +65,7 @@
                         </div>
                         <!-- /.form group -->
                     </div>
-                    <div class="col-3">
+                    <div class="col-4">
                         <div class="form-group">
                             <label>작업지시:</label>
                             <select class="select2" style="width: 100%;">
@@ -74,7 +74,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-3">
+                    <div class="col-4">
                         <div class="form-group">
                             <label>품번:</label>
                             <select class="select2" style="width: 100%;">
@@ -87,32 +87,32 @@
                 </div>
             </div>
         </div>
-
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
-
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">계획 대비 생산 실적</h3>
-                        </div>
-                        <!-- /.card-header -->
-                        <div class="card-body">
-                            <table id="compareplan" class="table table-bordered table-striped">
-                            </table>
-                        </div>
-                        <!-- /.card-body -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">계획 대비 생산 실적</h3>
                     </div>
-                    <!-- /.card -->
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table id="compareplan" class="table table-bordered table-striped">
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
                 </div>
-                <!-- /.col -->
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-11">
+                <canvas id="gauge" width="800" height="400">
+                </canvas>
             </div>
         </div>
-        <canvas id="gauge" width="500" height="500">
-        </canvas>
-        </div>
     </div>
-
+</div>
 
 
     @{
@@ -167,4 +167,4 @@
             gauge.set(900); // set actual value
         </script>
 
-    }
+}
