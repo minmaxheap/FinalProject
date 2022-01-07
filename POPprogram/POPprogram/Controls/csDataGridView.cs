@@ -18,7 +18,7 @@ namespace POPprogram
             this.RowHeadersWidth = 30;
             this.EnableHeadersVisualStyles = false;
             //this.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.ColumnHeadersHeight = 50;
+            this.ColumnHeadersHeight = 40;
             
            
 
@@ -26,7 +26,7 @@ namespace POPprogram
             this.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
            this.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(214, 220, 229);
             this.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.Black;
-            this.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("나눔고딕", 11F);
             this.BackgroundColor = Color.FromArgb(237, 243, 251);
 
 
@@ -34,9 +34,9 @@ namespace POPprogram
             this.DefaultCellStyle.ForeColor = Color.FromArgb(52, 52, 52);
             this.DefaultCellStyle.SelectionBackColor = Color.FromArgb(157, 195, 230);
             this.DefaultCellStyle.SelectionForeColor = SystemColors.HighlightText;
-            this.DefaultCellStyle.Font = this.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("나눔고딕", 10F);
+            this.DefaultCellStyle.Font = this.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("나눔고딕", 9F);
             this.BackgroundColor = Color.FromArgb(237, 243, 251);
-            this.RowTemplate.Height = 30;
+            this.RowTemplate.Height = 35;
 
 
             this.RowHeadersDefaultCellStyle.SelectionBackColor = SystemColors.ControlDark;
