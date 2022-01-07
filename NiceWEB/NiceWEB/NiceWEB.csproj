@@ -152,6 +152,7 @@
     <Content Include="dist\js\adminlte.js" />
     <Content Include="dist\js\adminlte.min.js" />
     <Content Include="dist\js\demo.js" />
+    <Content Include="dist\js\gauge.min.js" />
     <Content Include="dist\js\pages\dashboard.js" />
     <Content Include="dist\js\pages\dashboard2.js" />
     <Content Include="dist\js\pages\dashboard3.js" />
