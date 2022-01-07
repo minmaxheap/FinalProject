@@ -225,7 +225,6 @@ namespace MES_Team3
 			this.csDataGridView3.Size = new System.Drawing.Size(501, 240);
 			this.csDataGridView3.TabIndex = 20;
 			this.csDataGridView3.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView3_CellClick);
-//			this.csDataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView3_CellContentClick);
 			// 
 			// pgSearch
 			// 
@@ -277,7 +276,7 @@ namespace MES_Team3
 			this.csDataGridView2.Size = new System.Drawing.Size(514, 284);
 			this.csDataGridView2.TabIndex = 20;
 			this.csDataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView2_CellClick);
-	//		this.csDataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.//csDataGridView2_CellContentClick_1);
+			this.csDataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView2_CellContentClick);
 			// 
 			// frmInspectOperRelation
 			// 

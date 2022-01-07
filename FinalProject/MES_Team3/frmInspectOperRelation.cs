@@ -17,6 +17,7 @@ namespace MES_Team3
 		InspecServ inserv = null;
 
 		string inspec_op_Code = string.Empty; // 공정코드
+		string assigment_Code = string.Empty; // 할당코드 (선택햇을때)
 		string inspect_Code = string.Empty; // 검사 항목 코드
 		string CreateID = frmLogin.userID;
 		string updateID = frmLogin.userID;
@@ -177,6 +178,7 @@ namespace MES_Team3
 				{
 					MessageBox.Show("등록되었습니다.");
 					Op_LoadData();
+					inspect_Code = null;
 					return;
 				}
 				else
@@ -197,18 +199,18 @@ namespace MES_Team3
 			//delete 시켜야함 (관계 table)에서 
 			// 왜 false가 나올까
 
-			if (string.IsNullOrWhiteSpace(inspec_op_Code) || string.IsNullOrWhiteSpace(inspect_Code))
+			if (string.IsNullOrWhiteSpace(inspec_op_Code) || string.IsNullOrWhiteSpace(assigment_Code))
 			{
 				MessageBox.Show("공정코드가 없거나 검사항목이 존재하지 않습니다.");
 				return;
 			}
-			bool result = serv.Op_Delete(inspec_op_Code,inspect_Code);
+			bool result = serv.Op_Delete(inspec_op_Code,assigment_Code);
 			if (result)
 			{
 				MessageBox.Show("할당 제거");
 				Op_LoadData();
-				inspect_Code = string.Empty;
-				inspec_op_Code = string.Empty;
+				assigment_Code = string.Empty;
+				//inspec_op_Code = string.Empty;
 				return;
 			}
 			else
@@ -378,7 +380,12 @@ namespace MES_Team3
 			//공정 아이디
 			inspec_op_Code = csDataGridView1["OPERATION_CODE", e.RowIndex].Value.ToString();
 			MessageBox.Show($"{inspec_op_Code}를 선택하셨습니다.");
-
+			if (string.IsNullOrWhiteSpace(csDataGridView1["CHECK_INSPECT_FLAG", e.RowIndex].Value.ToString()))
+			{
+				MessageBox.Show("검사데이터 입력 유뮤가 존재하지 않습니다.");
+				return;
+			}
+			
 			Op_LoadData();
 		}
 
@@ -389,9 +396,12 @@ namespace MES_Team3
 				return;
 			}
 
-			inspect_Code = csDataGridView2["INSPECT_ITEM_CODE", e.RowIndex].Value.ToString();
+			assigment_Code = csDataGridView2["INSPECT_ITEM_CODE", e.RowIndex].Value.ToString();
 			inspec_op_Code = csDataGridView2["OPERATION_CODE", e.RowIndex].Value.ToString();
-			MessageBox.Show($"{inspect_Code} , {inspec_op_Code}를 선택하셨습니다.");
+			MessageBox.Show($"{assigment_Code} , {inspec_op_Code}를 선택하셨습니다.");
+			inspect_Code = null;
+			csDataGridView3.ClearSelection();
+
 		}
 
 		private void csDataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -403,9 +413,18 @@ namespace MES_Team3
 
 			inspect_Code = csDataGridView3["INSPECT_ITEM_CODE", e.RowIndex].Value.ToString();
 			MessageBox.Show($"{inspect_Code}를 선택하셨습니다.");
+			assigment_Code = null;
+			//csDataGridView3.Focus();
+			csDataGridView2.ClearSelection();
+
 		}
 
 		private void panel1_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
+
+		private void csDataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
 
 		}
