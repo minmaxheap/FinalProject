@@ -198,7 +198,45 @@ namespace POPprogram
                 vo.UPDATE_TIME = Convert.ToDateTime(dr.Cells["UPDATE_TIME"].Value);
             if (dr.Cells["UPDATE_USER_ID"].Value != null && dr.Cells["UPDATE_USER_ID"].Value != DBNull.Value)
                 vo.UPDATE_USER_ID = dr.Cells["UPDATE_USER_ID"].Value.ToString();
+            if (vo != null)
+            {
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
         }
-        
+
+        private void csDataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+            clickFlag = true;
+            DataGridViewRow dr = csDataGridView1.Rows[e.RowIndex];
+            vo = new ShipProperty();
+            if (dr.Cells["ORDER_DATE"].Value != null && dr.Cells["ORDER_DATE"].Value != DBNull.Value)
+                vo.ORDER_DATE = Convert.ToDateTime(dr.Cells["ORDER_DATE"].Value);
+            if (dr.Cells["SALES_ORDER_ID"].Value != null && dr.Cells["SALES_ORDER_ID"].Value != DBNull.Value)
+                vo.SALES_ORDER_ID = dr.Cells["SALES_ORDER_ID"].Value.ToString();
+            if (dr.Cells["CUSTOMER_CODE"].Value != null && dr.Cells["CUSTOMER_CODE"].Value != DBNull.Value)
+                vo.CUSTOMER_CODE = dr.Cells["CUSTOMER_CODE"].Value.ToString();
+            if (dr.Cells["CUSTOMER_NAME"].Value != null && dr.Cells["CUSTOMER_NAME"].Value != DBNull.Value)
+                vo.CUSTOMER_NAME = dr.Cells["CUSTOMER_NAME"].Value.ToString();
+            if (dr.Cells["PRODUCT_CODE"].Value != null && dr.Cells["PRODUCT_CODE"].Value != DBNull.Value)
+                vo.PRODUCT_CODE = dr.Cells["PRODUCT_CODE"].Value.ToString();
+            if (dr.Cells["PRODUCT_NAME"].Value != null && dr.Cells["PRODUCT_NAME"].Value != DBNull.Value)
+                vo.PRODUCT_NAME = dr.Cells["PRODUCT_NAME"].Value.ToString();
+            if (dr.Cells["ORDER_QTY"].Value != null && dr.Cells["ORDER_QTY"].Value != DBNull.Value)
+                vo.ORDER_QTY = Convert.ToInt32(dr.Cells["ORDER_QTY"].Value);
+            if (dr.Cells["CONFIRM_FLAG"].Value != null && dr.Cells["CONFIRM_FLAG"].Value != DBNull.Value)
+                vo.CONFIRM_FLAG = dr.Cells["CONFIRM_FLAG"].Value.ToString();
+            if (dr.Cells["SHIP_FLAG"].Value != null && dr.Cells["SHIP_FLAG"].Value != DBNull.Value)
+                vo.SHIP_FLAG = dr.Cells["SHIP_FLAG"].Value.ToString();
+            if (dr.Cells["CREATE_TIME"].Value != null && dr.Cells["CREATE_TIME"].Value != DBNull.Value)
+                vo.CREATE_TIME = Convert.ToDateTime(dr.Cells["CREATE_TIME"].Value);
+            if (dr.Cells["CREATE_USER_ID"].Value != null && dr.Cells["CREATE_USER_ID"].Value != DBNull.Value)
+                vo.CREATE_USER_ID = csDataGridView1.Rows[e.RowIndex].Cells["CREATE_USER_ID"].Value.ToString();
+            if (dr.Cells["UPDATE_TIME"].Value != null && dr.Cells["UPDATE_TIME"].Value != DBNull.Value)
+                vo.UPDATE_TIME = Convert.ToDateTime(dr.Cells["UPDATE_TIME"].Value);
+            if (dr.Cells["UPDATE_USER_ID"].Value != null && dr.Cells["UPDATE_USER_ID"].Value != DBNull.Value)
+                vo.UPDATE_USER_ID = dr.Cells["UPDATE_USER_ID"].Value.ToString();
+        }
     }
 }
