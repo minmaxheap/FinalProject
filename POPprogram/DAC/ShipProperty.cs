@@ -24,5 +24,13 @@ namespace DAC
 		public DateTime UPDATE_TIME { get; set; } 
 		public string UPDATE_USER_ID { get; set; } 
 	}
+
+	public class ShipPropertySch
+	{
+		public string LOT_ID { get; set; }
+		public decimal LOT_QTY { get; set; }
+		public DateTime OPER_IN_TIME { get; set; }
+
+	}
 }
 

@@ -44,6 +44,36 @@ namespace DAC
             }
         }
 
+        public List<ShipPropertySch> GetFSStoreList(ShipProperty vo)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append(@"SELECT LOT_ID
+      ,lot.LOT_QTY
+      ,OPER_IN_TIME
+  FROM (SELECT lot.PRODUCT_CODE 
+      ,sum(LOT_QTY) LOT_QTY
+  FROM LOT_STS lot, SALES_ORDER_MST s 
+  WHERE 1=1 AND STORE_CODE='FS_STORE' and lot.PRODUCT_CODE =@PRODUCT_CODE
+  group by lot.PRODUCT_CODE) as new, LOT_STS lot, SALES_ORDER_MST s
+  WHERE 1=1 AND STORE_CODE='FS_STORE' and lot.PRODUCT_CODE =@PRODUCT_CODE
+  and new.LOT_QTY>=s.ORDER_QTY");
+
+
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                if (!string.IsNullOrWhiteSpace(vo.PRODUCT_CODE))
+                {
+                    cmd.Parameters.AddWithValue("@PRODUCT_CODE", vo.PRODUCT_CODE);
+                }
+                
+                cmd.CommandText = sb.ToString();
+                cmd.Connection = conn;
+
+                return Helper.DataReaderMapToList<ShipPropertySch>(cmd.ExecuteReader());
+            }
+
+        }
         public void Dispose()
         {
             conn.Close();

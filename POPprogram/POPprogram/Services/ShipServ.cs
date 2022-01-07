@@ -17,7 +17,13 @@ namespace POPprogram
             dac.Dispose();
             return dt;
         }
-
+        public List<ShipPropertySch> GetFSStoreList(ShipProperty vo)
+        {
+            ShipDAC dac = new ShipDAC();
+            List<ShipPropertySch> list = dac.GetFSStoreList(vo);
+            dac.Dispose();
+            return list;
+        }
     }
 }
 
