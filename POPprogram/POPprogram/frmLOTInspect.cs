@@ -23,7 +23,7 @@ namespace POPprogram
 		private void frmLOTInspect_Load(object sender, EventArgs e)
 		{
 			serv = new StarWorkServ();
-			list = serv.GetLotCode();
+			list = serv.GetLotOpCode();
 			list.Insert(0, "");
 			//cboLOTID.Items.Insert(0, " ");
 			//cboLOTID.ValueMember = "LOT_ID";
@@ -47,7 +47,7 @@ namespace POPprogram
 
 
 
-			LoadData();
+		
 
 			this.csDataGridView1.Columns.Add("InspectValue", "검사데이터");
 			this.csDataGridView1.Columns.Add("InspectResult", "유효값");
@@ -70,7 +70,10 @@ namespace POPprogram
 
 			swlist = serv.GetData(Value);
 
+			swlist = serv.GetData(Value);
 
+			txtLOTDescription.Text = swlist[0].LOT_DESC;
+			txtQty.Text = swlist[0].LOT_QTY.ToString();
 			txtProdCode.Text = swlist[0].PRODUCT_CODE;
 			txtCustID.Text = swlist[0].CUSTOMER_CODE;
 			txtOperCode.Text = swlist[0].OPERATION_CODE;
@@ -80,11 +83,15 @@ namespace POPprogram
 			lblOrderQty.Text = swlist[0].ORDER_QTY.ToString();
 			lblDefectQty.Text = swlist[0].DEFECT_QTY.ToString();
 			lblProdQty.Text = swlist[0].PRODUCT_QTY.ToString();
+			txtCustName.Text = swlist[0].DATA_1;
+			lblStatus.Text = swlist[0].ORDER_STATUS;
+
+			LoadData();
 		}
 		private void LoadData()
 		{
 			//공정아이디로 보여주기
-			string Code = "1000";
+			string Code = txtOperCode.Text;
 			lotserv = new LOTinspectServ();
 			DataTable dt = lotserv.GetInspec(Code);
 			csDataGridView1.DataSource = null;
@@ -121,31 +128,16 @@ namespace POPprogram
 					MessageBox.Show("성공");
 					csDataGridView1.Rows[row].Cells["InspectResult"].Value = "OK";
 					csDataGridView1.Rows[row].Cells["InspectResult"].Style.ForeColor = Color.Green;
-					//csDataGridView1.Rows[row].Cells[8].Style.Font = new Font(FontStyle
-					//csDataGridView1.Columns["유효값"].DefaultCellStyle.ForeColor = Color.Green;
-					//csDataGridView1.Rows[row].Selected = false;
-					return;
 				}
 				else
 				{
 					csDataGridView1.Rows[row].Cells["InspectResult"].Value = "NG";
 					csDataGridView1.Rows[row].Cells["InspectResult"].Style.ForeColor = Color.Red;
-					this.csDataGridView1.SelectionMode =
-					DataGridViewSelectionMode.FullRowSelect;
-					this.csDataGridView1.MultiSelect = false;
-					//csDataGridView1.ClearSelection();
-					//csDataGridView1.Rows[row].Selected = false;
-					return;
-
-
 					//csDataGridView1.Columns["유효값"].DefaultCellStyle
 					// return;
 				}
-
-
-				// if(
-
-
+				this.csDataGridView1.ClearSelection();
+				btnExecute.Focus();
 			}
 		}
 
@@ -159,14 +151,14 @@ namespace POPprogram
 			//
 			DataTable dt = new DataTable();
 			dt.Columns.Add("ID", typeof(int));
-			dt.Columns.Add("INSPECT_ITEM_CODE", typeof(string));
-			dt.Columns.Add("INSPECT_ITEM_NAME", typeof(string));
-			dt.Columns.Add("VALUE_TYPE", typeof(string));
-			dt.Columns.Add("SPEC_LSL", typeof(string));
-			dt.Columns.Add("SPEC_TARGET", typeof(string));
-			dt.Columns.Add("SPEC_USL", typeof(string));
-			dt.Columns.Add("InspectValue", typeof(string));
-			dt.Columns.Add("InspectResult", typeof(string));
+			dt.Columns.Add("InspectCode", typeof(string));
+			dt.Columns.Add("InspectName", typeof(string));
+			dt.Columns.Add("ValueType", typeof(string));
+			dt.Columns.Add("LSL", typeof(string));
+			dt.Columns.Add("SPEC_Target", typeof(string));
+			dt.Columns.Add("USL", typeof(string));
+			dt.Columns.Add("INSPECT_DATA", typeof(string));
+			dt.Columns.Add("effectiveness", typeof(string));
 		
 
 
@@ -184,14 +176,14 @@ namespace POPprogram
 					{
 						//여기서는 코드이름을 넣어야할까 아니면 그 부분을 넣어야할까?
 						dr["ID"] = Convert.ToInt32(i);
-						dr["INSPECT_ITEM_CODE"] = csDataGridView1.Rows[i].Cells["INSPECT_ITEM_CODE"].Value.ToString();
-						dr["INSPECT_ITEM_NAME"] = csDataGridView1.Rows[i].Cells["INSPECT_ITEM_NAME"].Value.ToString();
-						dr["VALUE_TYPE"] = csDataGridView1.Rows[i].Cells["VALUE_TYPE"].Value.ToString();
-						dr["SPEC_LSL"] = csDataGridView1.Rows[i].Cells["SPEC_LSL"].Value.ToString();
-						dr["SPEC_TARGET"] = csDataGridView1.Rows[i].Cells["SPEC_TARGET"].Value.ToString();
-						dr["SPEC_USL"] = csDataGridView1.Rows[i].Cells["SPEC_USL"].Value.ToString();
-						dr["InspectValue"] = csDataGridView1.Rows[i].Cells["InspectValue"].Value.ToString();
-						dr["InspectResult"] = csDataGridView1.Rows[i].Cells["InspectResult"].Value.ToString();
+						dr["InspectCode"] = csDataGridView1.Rows[i].Cells["INSPECT_ITEM_CODE"].Value.ToString();
+						dr["InspectName"] = csDataGridView1.Rows[i].Cells["INSPECT_ITEM_NAME"].Value.ToString();
+						dr["ValueType"] = csDataGridView1.Rows[i].Cells["VALUE_TYPE"].Value.ToString();
+						dr["LSL"] = csDataGridView1.Rows[i].Cells["SPEC_LSL"].Value.ToString();
+						dr["SPEC_Target"] = csDataGridView1.Rows[i].Cells["SPEC_TARGET"].Value.ToString();
+						dr["USL"] = csDataGridView1.Rows[i].Cells["SPEC_USL"].Value.ToString();
+						dr["INSPECT_DATA"] = csDataGridView1.Rows[i].Cells["InspectValue"].Value.ToString();
+						dr["effectiveness"] = csDataGridView1.Rows[i].Cells["InspectResult"].Value.ToString();
 
 						dt.Rows.Add(dr);
 					}

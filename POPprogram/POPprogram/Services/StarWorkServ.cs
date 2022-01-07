@@ -48,5 +48,29 @@ namespace POPprogram
 			return result;
 		}
 
+		//내꺼(홍직)
+		public List<StarWorkProperty> GetOpData(string Code)
+		{
+			StartWorkDAC dac = new StartWorkDAC();
+			List<StarWorkProperty> List = dac.GetOpData(Code);
+			dac.Dispose();
+			return List;
+		}
+
+		public List<string> GetLotOpCode()
+		{
+			StartWorkDAC dac = new StartWorkDAC();
+			List<string> List = dac.GetLotOpCode();
+			dac.Dispose();
+			return List;
+		}
+		public List<string> GetDeffectCode()
+		{
+			StartWorkDAC dac = new StartWorkDAC();
+			List<string> List = dac.GetDeffectCode();
+			dac.Dispose();
+			return List;
+		}
+	
 	}
 }
