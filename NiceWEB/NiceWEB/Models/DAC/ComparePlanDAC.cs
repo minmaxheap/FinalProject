@@ -9,10 +9,7 @@ using System.Web.Services;
 
 namespace NiceWEB.Models
 {
-    [WebService(Namespace = "http://tempuri.org/")]
-    [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
-    [System.ComponentModel.ToolboxItem(false)]
-    [System.Web.Script.Services.ScriptService]
+    
     public class ComparePlanDAC :IDisposable
     {
         SqlConnection conn;
@@ -27,8 +24,7 @@ namespace NiceWEB.Models
             conn.Close();
         }
 
-        [WebMethod]
-        public List<ComparePlan> GetChartData(string from, string to)
+        public DataTable GetData(string from, string to)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -41,13 +37,15 @@ WHERE W.PRODUCT_CODE = P.PRODUCT_CODE AND W.ORDER_STATUS='CLOSE'";
                 cmd.Parameters.AddWithValue("@from", from);
                 cmd.Parameters.AddWithValue("@to", to);
 
+                DataTable dt = new DataTable();
                 cmd.Connection.Open();
-                List<ComparePlan> list = Helper.DataReaderMapToList<ComparePlan>(cmd.ExecuteReader());
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
                 cmd.Connection.Close();
 
 
 
-                return list;
+                return dt;
             }
         }
     }

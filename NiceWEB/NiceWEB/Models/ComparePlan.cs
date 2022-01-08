@@ -19,4 +19,17 @@ namespace NiceWEB.Models
         public string WORK_CLOSE_TIME { get; set; }
         public string WORK_CLOSE_USER_ID { get; set; }
     }
+
+    public class TestData
+    {
+        public string JsonData { get; set; }
+        public string Columns { get; set; }
+        public string Data { get; set; }
+    }
+
+    public class ColumnsInfo
+    {
+        public string Title { get; set; }
+        public string Data { get; set; }
+    }
 }
