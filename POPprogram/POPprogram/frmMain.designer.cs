@@ -123,7 +123,7 @@ namespace POPprogram
             this.MainMenuStrip = this.mnuMain;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmMain";
-            this.Text = "NicePOP";
+            this.Text = "NiceMES";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.MdiChildActivate += new System.EventHandler(this.frmMain_MdiChildActivate);

@@ -9,11 +9,10 @@ using System.Web.Services;
 
 namespace NiceWEB.Models
 {
-    
-    public class ComparePlanDAC :IDisposable
+    public class InspectDAC : IDisposable
     {
         SqlConnection conn;
-        public ComparePlanDAC()
+        public InspectDAC()
         {
             conn = new SqlConnection(ConfigurationManager.ConnectionStrings["project"].ConnectionString);
             conn.Open();
@@ -29,11 +28,11 @@ namespace NiceWEB.Models
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(ConfigurationManager.ConnectionStrings["project"].ConnectionString);
-                cmd.CommandText = @"SELECT ORDER_DATE,WORK_ORDER_ID,  W.PRODUCT_CODE, P.PRODUCT_NAME, 
-ORDER_QTY,  PRODUCT_QTY, DEFECT_QTY,
-cast((PRODUCT_QTY/(PRODUCT_QTY+DEFECT_QTY))*100.0 as decimal(4,2)) as QUALITY_RATE,cast( (DEFECT_QTY/(PRODUCT_QTY+DEFECT_QTY))*100 as decimal(4,2)) AS DEFECT_RATE, WORK_CLOSE_TIME
-FROM [dbo].[WORK_ORDER_MST] W, PRODUCT_MST P
-WHERE W.PRODUCT_CODE = P.PRODUCT_CODE ";
+                cmd.CommandText = @" SELECT TRAN_TIME,LOT_ID,  H.PRODUCT_CODE, PRODUCT_NAME, H.OPERATION_CODE, OPERATION_NAME, INSPECT_ITEM_CODE, INSPECT_ITEM_NAME, VALUE_TYPE, 
+ SPEC_LSL, SPEC_TARGET, SPEC_USL, INSPECT_VALUE,  TRAN_CODE,TRAN_USER_ID
+ FROM [dbo].[LOT_INSPECT_HIS] H, PRODUCT_MST P, OPERATION_MST O
+ WHERE H.PRODUCT_CODE = P.PRODUCT_CODE AND H.OPERATION_CODE = O.OPERATION_CODE
+ ORDER BY TRAN_TIME, LOT_ID";
                 cmd.Parameters.AddWithValue("@from", from);
                 cmd.Parameters.AddWithValue("@to", to);
 
@@ -48,5 +47,6 @@ WHERE W.PRODUCT_CODE = P.PRODUCT_CODE ";
                 return dt;
             }
         }
+    
     }
 }

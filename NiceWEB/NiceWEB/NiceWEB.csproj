@@ -1791,17 +1791,15 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\ComparePlanController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ComparePlan.cs" />
     <Compile Include="Models\DAC\ComparePlanDAC.cs" />
+    <Compile Include="Models\DAC\EfficiencyDAC.cs" />
     <Compile Include="Models\DAC\Helper.cs" />
-    <Compile Include="Models\DAC\OrderStat.cs" />
-    <Compile Include="Models\DAC\ProductDAC.cs" />
-    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\DAC\InspectDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1823,7 +1821,6 @@
     <None Include="packages.config" />
     <Content Include="Views\_Layout.cshtml" />
     <Content Include="Views\ComparePlan\Index.cshtml" />
-    <Content Include="Views\Test\Index.cshtml" />
     <Content Include="plugins\.npmignore" />
     <Content Include="plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.css.map" />
     <Content Include="plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.min.css.map" />

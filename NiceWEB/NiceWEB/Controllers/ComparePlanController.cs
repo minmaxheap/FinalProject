@@ -1,6 +1,7 @@
 ﻿using NiceWEB.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Web;
@@ -10,62 +11,60 @@ namespace NiceWEB.Controllers
 {
     public class ComparePlanController : Controller
     {
+        
         // GET: ComparePlan
         public ActionResult Index()
         {
-        //    ComparePlanDAC db = new ComparePlanDAC();
-        //    List<ComparePlan> list = db.GetChartData("1997-01-01", "1997-12-31");
+            var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+            TestData t = new TestData();
+            List<ColumnsInfo> _col = new List<ColumnsInfo>();
 
-        //    var statGroup = from stat in list
-        //                    orderby stat.PRODUCT_NAME
-        //                    group stat by stat.PRODUCT_NAME;
+            ComparePlanDAC dac = new ComparePlanDAC();
+            DataTable dt = dac.GetData("2020-01-01","2010-02-02");
 
-        //    int k = 1;
-        //    StringBuilder sb = new StringBuilder();
+            for (int i = 0; i <= dt.Columns.Count - 1; i++)
+            {
+                _col.Add(new ColumnsInfo { Title = dt.Columns[i].ColumnName, Data = dt.Columns[i].ColumnName });
+            }
 
-        //    foreach (var prodGroup in statGroup) //3번
-        //    {
-        //        List<int> amts = new List<int>();
-        //        foreach (var prodStat in prodGroup) //12번
-        //        {
-        //            amts.Add(Convert.ToInt32(prodStat.DEFECT_QTY));
+            string col = (string)serializer.Serialize(_col);
+            t.Columns = col;
 
-        //            if (k == 1)
-        //                sb.Append(prodStat.DEFECT_QTY + "월,");
-        //        }
 
-        //        if (k == 1)
-        //        {
-        //            ViewBag.Label1 = prodGroup.Key;
-        //            ViewBag.data1 = "[" + string.Join(",", amts) + "]";
-        //        }
-        //        else if (k == 2)
-        //        {
-        //            ViewBag.Label2 = prodGroup.Key;
-        //            ViewBag.data2 = "[" + string.Join(",", amts) + "]";
-        //        }
-        //        else if (k == 3)
-        //        {
-        //            ViewBag.Label3 = prodGroup.Key;
-        //            ViewBag.data3 = "[" + string.Join(",", amts) + "]";
-        //        }
+            var lst = dt.AsEnumerable()
+            .Select(r => r.Table.Columns.Cast<DataColumn>()
+                    .Select(c => new KeyValuePair<string, object>(c.ColumnName, r[c.Ordinal])
+                   ).ToDictionary(z => z.Key, z => z.Value)
+            ).ToList();
 
-        //        k++;
-        //    }
-        //    ViewBag.Labels = sb.ToString().TrimEnd(',');
+            string data = serializer.Serialize(lst);
+            t.Data = data;
 
-        //    ViewBag.Labels = "1월,2월,3월,4월,5월,6월,7월,8월,9월,10월,11월,12월";
 
-        //    ViewBag.Label1 = "제품1";
-        //    ViewBag.data1 = "[28, 48, 40, 19, 86, 27, 28, 48, 40, 19, 86, 27]";
-
-        //    ViewBag.Label2 = "제품2";
-        //    ViewBag.data2 = "[86, 27, 28, 48, 40, 19, 86, 27,28, 48, 40, 19]";
-
-        //    ViewBag.Label3 = "제품3";
-        //    ViewBag.data3 = "[40, 19, 86, 27, 28, 48, 40, 19, 86, 27,28, 48]";
-
-            return View();
+            return View(t);
         }
+
+        //public JsonResult EmpDetails()
+        //{
+        //    //Creating List
+        //    List<Employee> ObjEmp = new List<Employee>()
+        //    {
+        ////Adding records to list
+        //new Employee {Id=1,Name="Vithal Wadje",City="Latur",Address="Kabansangvi" },
+        //new Employee {Id=2,Name="Sudhir Wadje",City="Mumbai",Address="Kurla" }
+        //    };
+        //    //return list as Json
+        //    return Json(ObjEmp, JsonRequestBehavior.AllowGet);
+        //}
+
+        //public class Employee
+        //{
+        //    public int Id { get; set; }
+        //    public string Name { get; set; }
+        //    public string City { get; set; }
+        //    public string Address { get; set; }
+        //}
+
+     
     }
 }
