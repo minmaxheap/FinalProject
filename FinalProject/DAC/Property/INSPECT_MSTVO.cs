@@ -114,7 +114,12 @@ namespace DAC
 		[DisplayName("Target")]
 		[Browsable(true)]
 
-		public string SPEC_TARGET {  get { return spec_target; } set { spec_target = value; } }
+		public string SPEC_TARGET 
+		{  get
+			{
+				return spec_target;
+			}
+			set { spec_target = value; } }
 
 		[DisplayName("USL")]
 		[Browsable(true)]

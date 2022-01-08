@@ -251,11 +251,75 @@ namespace MES_Team3
 
                     }
                 }
+
+                if (vo.SPEC_LSL != null && vo.SPEC_TARGET != null && vo.SPEC_USL != null)
+                {
+                    int lsl = Convert.ToInt32(vo.SPEC_LSL);
+                    int tar = Convert.ToInt32(vo.SPEC_TARGET);
+                    int usl = Convert.ToInt32(vo.SPEC_USL);
+
+                   
+
+                    //if (Convert.ToInt32(vo.SPEC_TARGET) > Convert.ToInt32(vo.SPEC_USL) || Convert.ToInt32(vo.SPEC_TARGET) < Convert.ToInt32(vo.SPEC_LSL))
+                    //{
+                    //    MessageBox.Show("target 문제 ");
+                    //    vo.SPEC_TARGET = null;
+                    //}
+                    //if (Convert.ToInt32(vo.SPEC_LSL) > Convert.ToInt32(vo.SPEC_TARGET) || Convert.ToInt32(vo.SPEC_LSL) > Convert.ToInt32(vo.SPEC_USL))
+                    //{
+                    //    MessageBox.Show("vo문제");
+                    //}
+
+                   
+                }
             }
-            
+
+                //if (Convert.ToInt32(vo.SPEC_USL) < Convert.ToInt32(vo.SPEC_TARGET) || Convert.ToInt32(vo.SPEC_USL) < Convert.ToInt32(vo.SPEC_LSL))
+                //{
+                //    if (vo.SPEC_USL == null)
+                //    {
+
+                //    }
+                //    else
+                //    {
+                //        MessageBox.Show("target 혹은 LsL이 USL 보다 크면 안됩니다.");
+                //        vo.SPEC_TARGET = null;
+                //        vo.SPEC_LSL = null;
+                //    }
+                //}
+                //if (Convert.ToInt32(vo.SPEC_LSL) > Convert.ToInt32(vo.SPEC_TARGET) || Convert.ToInt32(vo.SPEC_LSL) > Convert.ToInt32(vo.SPEC_TARGET))
+                //{
+                //    if (vo.SPEC_USL == null || vo.SPEC_TARGET == null)
+                //    {
+                //    }
+                //    else
+                //    {
+                //        MessageBox.Show("LSL이 더크면 안돼요 제일작아야함");
+                //        vo.SPEC_LSL = null;
+                //    }
+                //}
+                //if (Convert.ToInt32(vo.SPEC_TARGET) < Convert.ToInt32(vo.SPEC_LSL) || Convert.ToInt32(vo.SPEC_TARGET) > Convert.ToInt32(vo.SPEC_USL))
+                //{
+                //    if (vo.SPEC_USL == null)
+                //    {
+
+                //    }
+                //    else
+                //    {
+                //        MessageBox.Show("Target이 Usl보다 큽니다.");
+                //        vo.SPEC_TARGET = null;
+                //    }
+                //}
+
+
+
             
 
-             if (vo.VALUE_TYPE == "C")
+
+
+
+
+            if (vo.VALUE_TYPE == "C")
              {   
                 if (e.ChangedItem.Label == "Target")
                 {
