@@ -17,7 +17,6 @@ namespace NiceWEB.Models
         public string QUALITY_RATE { get; set; }
         public string DEFECT_RATE { get; set; }
         public string WORK_CLOSE_TIME { get; set; }
-        public string WORK_CLOSE_USER_ID { get; set; }
     }
 
     public class TestData
