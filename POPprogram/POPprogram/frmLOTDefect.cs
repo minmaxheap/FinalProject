@@ -22,8 +22,8 @@ namespace POPprogram
             InitializeComponent();
         }
 
-		private void cboLOTID_SelectedIndexChanged(object sender, EventArgs e)
-		{
+        private void cboLOTID_SelectedIndexChanged(object sender, EventArgs e)
+        {
             if (cboLOTID.SelectedIndex < 1) return;
             string Value = cboLOTID.SelectedValue.ToString();
 
@@ -48,8 +48,8 @@ namespace POPprogram
             lblStatus.Text = swlist[0].ORDER_STATUS;
         }
 
-		private void frmLOTDefect_Load(object sender, EventArgs e)
-		{
+        private void frmLOTDefect_Load(object sender, EventArgs e)
+        {
             serv = new StarWorkServ();
             list = serv.GetDeffectCode();
             list.Insert(0, "");
@@ -58,15 +58,98 @@ namespace POPprogram
             cboLOTID.DisplayMember = "LOT_ID";
             cboLOTID.DataSource = list;
 
-            ser = new StarWorkServ();   
+            ser = new StarWorkServ();
             list1 = serv.GetDefect_Code();
             list1.Insert(0, "");
             comboBox1.DisplayMember = "KEY_1";
-            comboBox1.DataSource = list1;
+            //comboBox1.DataSource = list1;
             comboBox2.DisplayMember = "KEY_1";
-            comboBox2.DataSource = list1;
+            //comboBox2.DataSource = list1;
             comboBox3.DisplayMember = "KEY_1";
             comboBox3.DataSource = list1;
         }
-	}
+
+        private void btnExecute_Click(object sender, EventArgs e)
+        {
+           
+            DataTable dt = new DataTable();
+            dt.Columns.Add("ID", typeof(int));
+            dt.Columns.Add("DEFECT_CODE", typeof(string));
+            dt.Columns.Add("DEFECT_QTY", typeof(string));
+
+            //리플렉션 사용할 수 없나? type으로 변환해서 
+            //행을 추가 
+            for (int i = 1; i < 4; i++)
+            {
+                DataRow dr = dt.NewRow();
+
+                //여기서는 코드이름을 넣어야할까 아니면 그 부분을 넣어야할까?
+               switch(i)
+                {
+                    case 1:
+                        {
+                            if (string.IsNullOrWhiteSpace(numTextBox1.Text)) break;
+                            else
+                            {
+                                dr["ID"] = dt.Rows.Count + 1;
+                                dr["DEFECT_CODE"] = comboBox1.Text;
+
+                                dr["DEFECT_QTY"] = Convert.ToDecimal(numTextBox1.Text);
+
+                                dt.Rows.Add(dr);
+                            }
+                            break;
+                        } 
+                    case 2:
+                        {
+                            if (string.IsNullOrWhiteSpace(numTextBox2.Text)) break;
+                            else
+                            {
+                                dr["ID"] = dt.Rows.Count + 1;
+                                dr["DEFECT_CODE"] = comboBox2.Text;
+
+                                dr["DEFECT_QTY"] = Convert.ToDecimal(numTextBox2.Text);
+
+                                dt.Rows.Add(dr);
+                            }
+                            break;
+                        }
+                    case 3:
+                        {
+                            if (string.IsNullOrWhiteSpace(numTextBox3.Text)) break;
+                            else
+                            {
+                                dr["ID"] = dt.Rows.Count + 1;
+                                dr["DEFECT_CODE"] = comboBox3.Text;
+                                if (!string.IsNullOrWhiteSpace(numTextBox3.Text))
+                                    dr["DEFECT_QTY"] = Convert.ToDecimal(numTextBox3.Text);
+
+                                dt.Rows.Add(dr);
+                            }
+                            break;
+                        }
+
+                }
+
+         
+
+
+            }
+
+            dt.AcceptChanges();
+            //string msuerID = 
+            bool result = lotserv.insert(frmLogin.userID, txtComment.Text, cboLOTID.SelectedValue.ToString(), dt);
+            if (result)
+            {
+                MessageBox.Show("성공");
+                return;
+            }
+            else
+            {
+                MessageBox.Show("실패");
+                return;
+            }
+
+        }
+    }
 }

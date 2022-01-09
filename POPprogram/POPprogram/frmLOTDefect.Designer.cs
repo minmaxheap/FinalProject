@@ -97,6 +97,10 @@ namespace POPprogram
             // 
             this.txtComment.Location = new System.Drawing.Point(165, 145);
             // 
+            // btnExecute
+            // 
+            this.btnExecute.Click += new System.EventHandler(this.btnExecute_Click);
+            // 
             // cboLOTID
             // 
             this.cboLOTID.SelectedIndexChanged += new System.EventHandler(this.cboLOTID_SelectedIndexChanged);
