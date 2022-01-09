@@ -169,7 +169,6 @@ namespace POPprogram
 		{
 
 		}
-
         private void numtxt_keydown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
