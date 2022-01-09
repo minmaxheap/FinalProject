@@ -38,16 +38,8 @@ namespace POPprogram
 			this.pnlCrud.SuspendLayout();
 			this.SuspendLayout();
 			// 
-			// panel8
-			// 
-			//this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-   //         | System.Windows.Forms.AnchorStyles.Left) 
-   //         | System.Windows.Forms.AnchorStyles.Right)));
-			// 
 			// panel4
 			// 
-			//this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-   //         | System.Windows.Forms.AnchorStyles.Right)));
 			this.panel4.Controls.Add(this.comboBox1);
 			this.panel4.Controls.Add(this.textBox10);
 			this.panel4.Controls.Add(this.label12);
@@ -105,7 +97,7 @@ namespace POPprogram
 			// 
 			// frmStartWorkOrder
 			// 
-			//this.ClientSize = new System.Drawing.Size(1194, 634);
+			this.ClientSize = new System.Drawing.Size(1194, 721);
 			this.Name = "frmStartWorkOrder";
 			this.Load += new System.EventHandler(this.frmStartWorkOrder_Load);
 			this.panel7.ResumeLayout(false);

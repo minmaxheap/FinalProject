@@ -11,7 +11,9 @@ namespace POPprogram
     public partial class frmLOTDefect : POPprogram.Base6
     {
         StarWorkServ serv;
+        StarWorkServ ser;
         List<string> list;
+        List<string> list1;
         List<StarWorkProperty> swlist;
         List<string> CodeList;
         LOTinspectServ lotserv;
@@ -55,6 +57,16 @@ namespace POPprogram
             //cboLOTID.ValueMember = "LOT_ID";
             cboLOTID.DisplayMember = "LOT_ID";
             cboLOTID.DataSource = list;
+
+            ser = new StarWorkServ();   
+            list1 = serv.GetDefect_Code();
+            list1.Insert(0, "");
+            comboBox1.DisplayMember = "KEY_1";
+            comboBox1.DataSource = list1;
+            comboBox2.DisplayMember = "KEY_1";
+            comboBox2.DataSource = list1;
+            comboBox3.DisplayMember = "KEY_1";
+            comboBox3.DataSource = list1;
         }
 	}
 }
