@@ -190,7 +190,7 @@ WHERE O.SALES_ORDER_ID = SA.SALES_ORDER_ID AND V.CODE_TABLE_NAME ='CM_CUSTOMER' 
                     using (SqlCommand cmd = new SqlCommand())
                     {
                         cmd.Connection = conn;
-                        cmd.CommandText = @" UPDATE LOT_STS SET 
+                        cmd.CommandText = @"UPDATE LOT_STS SET 
                             STORE_CODE =@STORE_CODE, PRODUCTION_TIME = getdate(),
                             CREATE_TIME=getdate(),OPER_IN_TIME=getdate(), 
                             LAST_TRAN_CODE = 'move' , LAST_TRAN_TIME = getdate(),
@@ -228,7 +228,7 @@ where s.LOT_ID =@LOT_ID and h.HIST_SEQ = s.LAST_HIST_SEQ-1";
                         cmd.Transaction = trans;
 
                         cmd.ExecuteNonQuery();
-                    }
+                    }   
 
                     using (SqlCommand cmd = new SqlCommand())
                     {

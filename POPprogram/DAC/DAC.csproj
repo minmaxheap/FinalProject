@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DefectDAC.cs" />
     <Compile Include="FunctionDAC.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="LOTInspecDAC.cs" />
