@@ -29,11 +29,11 @@ namespace NiceWEB.Models
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(ConfigurationManager.ConnectionStrings["project"].ConnectionString);
-                cmd.CommandText = @"SELECT ORDER_DATE,WORK_ORDER_ID,  W.PRODUCT_CODE, P.PRODUCT_NAME, 
+                cmd.CommandText = @"SELECT CONVERT(varchar, CONVERT(DATE, ORDER_DATE)) ORDER_DATE,WORK_ORDER_ID,  W.PRODUCT_CODE, P.PRODUCT_NAME, 
 ORDER_QTY,  PRODUCT_QTY, DEFECT_QTY,
-cast((PRODUCT_QTY/(PRODUCT_QTY+DEFECT_QTY))*100.0 as decimal(4,2)) as QUALITY_RATE,cast( (DEFECT_QTY/(PRODUCT_QTY+DEFECT_QTY))*100 as decimal(4,2)) AS DEFECT_RATE, WORK_CLOSE_TIME
+cast((PRODUCT_QTY/(PRODUCT_QTY+DEFECT_QTY))*100.0 as decimal(4,2)) as QUALITY_RATE,cast( (DEFECT_QTY/(PRODUCT_QTY+DEFECT_QTY))*100 as decimal(4,2)) AS DEFECT_RATE, CONVERT(varchar, WORK_CLOSE_TIME) WORK_CLOSE_TIME
 FROM [dbo].[WORK_ORDER_MST] W, PRODUCT_MST P
-WHERE W.PRODUCT_CODE = P.PRODUCT_CODE ";
+WHERE W.PRODUCT_CODE = P.PRODUCT_CODE";
                 cmd.Parameters.AddWithValue("@from", from);
                 cmd.Parameters.AddWithValue("@to", to);
 
@@ -46,6 +46,39 @@ WHERE W.PRODUCT_CODE = P.PRODUCT_CODE ";
 
 
                 return dt;
+            }
+        }
+
+        public List<TableData> GetWorkOrder()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConfigurationManager.ConnectionStrings["project"].ConnectionString);
+                cmd.CommandText = @"SELECT WORK_ORDER_ID as Data
+FROM [dbo].[WORK_ORDER_MST]";
+                cmd.Connection.Open();
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<TableData> list = Helper.DataReaderMapToList<TableData>(reader);
+                reader.Close();
+                return list;
+            }
+        }
+
+        public List<TableData> GetProductCode()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConfigurationManager.ConnectionStrings["project"].ConnectionString);
+                cmd.CommandText = @"SELECT DISTINCT PRODUCT_CODE
+FROM [dbo].[WORK_ORDER_MST]";
+                DataTable dt = new DataTable();
+                cmd.Connection.Open();
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<TableData> list = Helper.DataReaderMapToList<TableData>(reader);
+                reader.Close();
+                return list;
             }
         }
     }

@@ -11,32 +11,35 @@ namespace NiceWEB.Controllers
 {
     public class ComparePlanController : Controller
     {
-        
+
         // GET: ComparePlan
         public ActionResult Index()
         {
             var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
-            TestData t = new TestData();
+            TableData t = new TableData();
             List<ColumnsInfo> _col = new List<ColumnsInfo>();
 
             ComparePlanDAC dac = new ComparePlanDAC();
-            //DataTable dt = dac.GetData("2020-01-01","2010-02-02");
+           DataTable dt = dac.GetData("2020-01-01","2010-02-02");
+            // string data =  DataTableToJson(dt);
 
-            DataTable dt = new DataTable();
-            dt.Columns.Add("ID", typeof(Int32));
-            dt.Columns.Add("Name", typeof(string));
+            //DataTable dt = new DataTable();
+            //dt.Columns.Add("ID", typeof(Int32));
+            //dt.Columns.Add("Name", typeof(string));
 
-            DataRow dr = dt.NewRow();
-            dr[0] = 1;
-            dr[1] = "Ajay";
-            dt.Rows.Add(dr);
+            //DataRow dr = dt.NewRow();
+            //dr[0] = 1;
+            //dr[1] = "Ajay";
+            //dt.Rows.Add(dr);
 
-            dr = dt.NewRow();
-            dr[0] = 2;
-            dr[1] = "Sanu";
+            //dr = dt.NewRow();
+            //dr[0] = 2;
+            //dr[1] = "Sanu";
+
+            
             for (int i = 0; i <= dt.Columns.Count - 1; i++)
             {
-                _col.Add(new ColumnsInfo { Title = dt.Columns[i].ColumnName, Data = dt.Columns[i].ColumnName });
+                _col.Add(new ColumnsInfo { data = dt.Columns[i].ColumnName });
             }
 
             string col = (string)serializer.Serialize(_col);
@@ -52,11 +55,38 @@ namespace NiceWEB.Controllers
             string data = serializer.Serialize(lst);
             t.Data = data;
 
+            //select box에 전달할 데이터
+            List<TableData> order = dac.GetWorkOrder();
+            List<TableData> product =  dac.GetProductCode();
+            //문제는 이걸 어떻게 전달하냐 => 전달해서 어떻게 바인딩시키냐
+            ViewBag.order = new SelectList(order, "Data", "Data");
+            ViewBag.product = new SelectList(product, "Data", "Data");
+
 
             return View(t);
+
+            //return View(data);
         }
 
-    
-     
+        //#region DataTable -> Json String 
+        //public static string DataTableToJson(DataTable ds)
+        //{ 
+        //    System.Web.Script.Serialization.JavaScriptSerializer serializer = new System.Web.Script.Serialization.JavaScriptSerializer(); 
+        //    serializer.MaxJsonLength = 2147483647; 
+        //    List<Dictionary<string, object>> listRows = new List<Dictionary<string, object>>(); 
+        //    Dictionary<string, object> row; 
+        //    foreach (DataRow dr in ds.Rows) 
+        //    {
+        //        row = new Dictionary<string, object>(); 
+        //        foreach (DataColumn col in ds.Columns) 
+        //        { 
+        //            row.Add(col.ColumnName, dr[col]); 
+        //        } 
+        //        listRows.Add(row); 
+        //    } 
+        //    return serializer.Serialize(listRows); 
+        //}
+        //#endregion
+
     }
 }

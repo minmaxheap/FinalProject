@@ -1797,6 +1797,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Common.cs" />
     <Compile Include="Models\ComparePlan.cs" />
     <Compile Include="Models\DAC\ComparePlanDAC.cs" />
     <Compile Include="Models\DAC\EfficiencyDAC.cs" />
@@ -1896,6 +1897,8 @@
     <Content Include="plugins\sweetalert2-theme-bootstrap-4\bootstrap-4.scss" />
     <Content Include="plugins\toastr\toastr.js.map" />
     <None Include="Properties\PublishProfiles\qbalsl2 - Web Deploy.pubxml" />
+    <Content Include="Views\Efficiency\Index.cshtml" />
+    <Content Include="Views\Inspect\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1905,8 +1908,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Efficiency\" />
-    <Folder Include="Views\Inspect\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="plugins\fullcalendar-bootstrap\main.d.ts" />

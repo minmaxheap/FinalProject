@@ -43,12 +43,10 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0">계획 대비 생산 실적 조회</h1>
+                <h1 class="m-0">제조 종합 효율</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#"></a></li>
-                    <li class="breadcrumb-item active"></li>
                 </ol>
             </div><!-- /.col -->
         </div><!-- /.row -->
@@ -104,7 +102,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">계획 대비 생산 실적</h3>
+                        <h3 class="card-title">제조 종합 효율</h3>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
@@ -119,18 +117,20 @@
                             <thead>
                                 <tr>
                                     <th scope="col">작업일자</th>
-                                    <th scope="col">작업지시</th>
-                                    <th scope="col">품번</th>
-                                    <th scope="col">품명</th>
-                                    <th scope="col">계획수량</th>
+                                    <th scope="col">지시수량</th>
                                     <th scope="col">양품수량</th>
                                     <th scope="col">불량수량</th>
                                     <th scope="col">양품률(%)</th>
                                     <th scope="col">불량률(%)</th>
-                                    <th scope="col">마감시간</th>
+                                    <th scope="col">작업시작</th>
+                                    <th scope="col">작업종료</th>
+                                    <th scope="col">작업시간</th>
+                                    <th scope="col">비가동시간</th>
+                                    <th scope="col">가동률(%)</th>
+                                    <th scope="col">비가동률(%)</th>
+                                    <th scope="col">시간당 생산수</th>
                                 </tr>
                             </thead>
-
 
                         </table>
                     </div>
@@ -166,20 +166,20 @@
     <script type="text/javascript">
         $(document).ready(function () {
             //debugger;
-           // alert($('#dataObjCol').val());
+            //alert($('#dataObjCol').val());
             var dataObjCol = JSON.parse($('#dataObjCol').val());
             var dataObjData = JSON.parse($('#dataObjData').val());
-           
+
 
 
             // Datatable settings.
             $('#TableId').DataTable(
                 {
-                   
+
                     "data": dataObjData,
                     "columns": dataObjCol,
-                        //[
-                    //    { "data": "ORDER_DATE" },
+                    //"columns": [
+                    //    { "data": "ORDER_DATE" ,"title":"주문날짜"},
                     //    { "data": "WORK_ORDER_ID" },
                     //    { "data": "PRODUCT_CODE" },
                     //    { "data": "PRODUCT_NAME" },
