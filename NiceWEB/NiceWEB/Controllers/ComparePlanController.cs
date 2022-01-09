@@ -16,7 +16,7 @@ namespace NiceWEB.Controllers
         public ActionResult Index()
         {
             var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
-            TestData t = new TestData();
+            TableData t = new TableData();
             List<ColumnsInfo> _col = new List<ColumnsInfo>();
 
             ComparePlanDAC dac = new ComparePlanDAC();
@@ -56,10 +56,11 @@ namespace NiceWEB.Controllers
             t.Data = data;
 
             //select box에 전달할 데이터
-            DataTable dtOrder = dac.GetWorkOrder();
-            DataTable dtProduct =  dac.GetProductCode();
+            List<TableData> order = dac.GetWorkOrder();
+            List<TableData> product =  dac.GetProductCode();
             //문제는 이걸 어떻게 전달하냐 => 전달해서 어떻게 바인딩시키냐
-
+            ViewBag.order = new SelectList(order, "Data", "Data");
+            ViewBag.product = new SelectList(product, "Data", "Data");
 
 
             return View(t);

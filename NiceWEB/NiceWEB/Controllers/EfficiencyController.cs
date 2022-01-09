@@ -14,7 +14,7 @@ namespace NiceWEB.Controllers
         public ActionResult Index()
         {
             var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
-            TestData t = new TestData();
+            TableData t = new TableData();
             List<ColumnsInfo> _col = new List<ColumnsInfo>();
 
             EfficiencyDAC dac = new EfficiencyDAC();
