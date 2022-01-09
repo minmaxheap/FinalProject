@@ -44,5 +44,45 @@ namespace DAC
 			}
 			return List;
 		}
+
+		public bool insert(decimal qty,string comment,string userid,string lotID,DataTable dt)
+		{
+			try
+			{
+				//SqlTransaction trans = conn.BeginTransaction();
+				using (SqlCommand cmd = new SqlCommand())
+				{
+					cmd.CommandType = CommandType.StoredProcedure;
+					cmd.CommandText = "[dbo].[DeffectList]";
+					cmd.Connection = conn;
+
+					cmd.Parameters.AddWithValue("@LOT_QTY", qty);
+					cmd.Parameters.AddWithValue("@LAST_TRAN_COMMENT",comment);
+					cmd.Parameters.AddWithValue("@LOT_ID", lotID);
+					cmd.Parameters.AddWithValue("@LAST_TRAN_USER_ID",userid);
+
+					cmd.Parameters.AddWithValue("@dtCnt", dt.Rows.Count);
+
+					cmd.Parameters.Add(new SqlParameter("@ItemList", SqlDbType.Structured)
+					{
+						TypeName = "dbo.MyList5",
+						Value = dt
+					});
+
+					int row = cmd.ExecuteNonQuery();
+					return row > 0;
+				}
+			}
+			catch (SqlException err)  // 에러 : Severity=11+ 인 경우
+			{
+				Debug.WriteLine(err.Message);
+				return false;
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+		}
+
 	}
 }

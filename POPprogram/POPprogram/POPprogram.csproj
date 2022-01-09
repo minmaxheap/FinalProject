@@ -189,6 +189,7 @@
     <Compile Include="frmLOTDefect.Designer.cs">
       <DependentUpon>frmLOTDefect.cs</DependentUpon>
     </Compile>
+    <Compile Include="Services\deffectServ.cs" />
     <Compile Include="Services\FunctionServ.cs" />
     <Compile Include="Services\LOTinspectServ.cs" />
     <Compile Include="Services\LOTServ.cs" />

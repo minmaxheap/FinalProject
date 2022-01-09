@@ -331,7 +331,7 @@ namespace MES_Team3
 
 			//아이디
 			Code = csDataGridView1["USER_GROUP_CODE", e.RowIndex].Value.ToString();
-			MessageBox.Show($"{Code}를 선택하셨습니다.");
+			//MessageBox.Show($"{Code}를 선택하셨습니다.");
 
 
 			DataGridViewRow dr = csDataGridView1.Rows[e.RowIndex];
