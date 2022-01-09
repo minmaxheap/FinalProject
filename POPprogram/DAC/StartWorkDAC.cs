@@ -236,10 +236,26 @@ END CATCH;";
 				cmd.Parameters.AddWithValue("@LOT_QTY", pr.LOT_QTY);
 				cmd.Parameters.AddWithValue("@CREATE_QTY", pr.CREATE_QTY);
 				cmd.Parameters.AddWithValue("@OPER_IN_QTY", pr.OPER_IN_QTY);
-				cmd.Parameters.AddWithValue("@START_EQUIPMENT_CODE", pr.START_EQUIPMENT_CODE);
+				if (pr.START_EQUIPMENT_CODE == null)
+				{
+					cmd.Parameters.AddWithValue("@START_EQUIPMENT_CODE", DBNull.Value);
+				}
+				else
+				{
+					cmd.Parameters.AddWithValue("@START_EQUIPMENT_CODE",pr.START_EQUIPMENT_CODE);
+
+				}
+
 				cmd.Parameters.AddWithValue("@WORK_ORDER_ID", pr.WORK_ORDER_ID);
+				
 				cmd.Parameters.AddWithValue("@LAST_TRAN_USER_ID", pr.LAST_TRAN_USER_ID);
-				cmd.Parameters.AddWithValue("@LAST_TRAN_COMMENT", pr.LAST_TRAN_COMMENT);
+				if (pr.LAST_TRAN_COMMENT == null)
+				{
+					cmd.Parameters.AddWithValue("@LAST_TRAN_COMMENT", DBNull.Value);
+
+				}
+				else
+					cmd.Parameters.AddWithValue("@LAST_TRAN_COMMENT", pr.LAST_TRAN_COMMENT);
 				cmd.Parameters.AddWithValue("@START_QTY", pr.START_QTY);
 
 				int row = cmd.ExecuteNonQuery();
