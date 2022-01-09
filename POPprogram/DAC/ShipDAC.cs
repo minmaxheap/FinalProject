@@ -35,7 +35,7 @@ namespace DAC
       ,w.UPDATE_TIME
       ,w.UPDATE_USER_ID
   FROM SALES_ORDER_MST w, PRODUCT_MST pm, CODE_DATA_MST cd
-  WHERE w.PRODUCT_CODE=pm.PRODUCT_CODE AND w.CUSTOMER_CODE=cd.KEY_1";
+  WHERE w.PRODUCT_CODE=pm.PRODUCT_CODE AND w.CUSTOMER_CODE=cd.KEY_1 AND SHIP_FLAG is null ORDER BY ORDER_DATE ";
             DataTable dt = new DataTable();
             using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
             {
@@ -89,10 +89,10 @@ namespace DAC
             StringBuilder sb = new StringBuilder();
 
             sb.Append(@"SELECT LOT_ID
-      ,lot.LOT_QTY
+      ,LOT_QTY
       ,OPER_IN_TIME
-  FROM LOT_STS lot, SALES_ORDER_MST s
-  WHERE 1=1 AND STORE_CODE='FS_STORE' and lot.PRODUCT_CODE=s.PRODUCT_CODE and lot.PRODUCT_CODE ='PD_Luncheon_120g'
+  FROM LOT_STS
+  WHERE 1=1 AND STORE_CODE='FS_STORE' and PRODUCT_CODE=@PRODUCT_CODE
   ");
 
 
@@ -102,7 +102,7 @@ namespace DAC
                 {
                     cmd.Parameters.AddWithValue("@PRODUCT_CODE", vo.PRODUCT_CODE);
                 }
-                
+
                 cmd.CommandText = sb.ToString();
                 cmd.Connection = conn;
 
@@ -155,7 +155,7 @@ INSERT [dbo].[SHIP_LOT_HIS]
            ,getdate()
            ,@PRODUCT_CODE
            ,@LOT_QTY
-           ,@LAST_TRAN_USER_ID)
+           ,@LAST_TRAN_USER_ID
 
 INSERT [dbo].[LOT_HIS]
            ([LOT_ID]
@@ -229,6 +229,13 @@ select s.[LOT_ID]
 from [dbo].[LOT_STS] s
 where s.LOT_ID = @LOT_ID
 
+insert [BARCODE]
+(Barcode_ID, PRODUCT_CODE, PRODUCT_NAME, PRODUCT_TIME, LOT_QTY)
+select 
+@SALES_ORDER_ID,@PRODUCT_CODE,@PRODUCT_NAME,SHIP_TIME,@LOT_QTY
+From LOT_STS
+where LOT_ID = @LOT_ID
+
 	COMMIT TRANSACTION;  
 END TRY  
 BEGIN CATCH  
@@ -247,8 +254,8 @@ END CATCH;
                     cmd.Parameters.AddWithValue("@SHIP_FLAG", updateVO.SHIP_FLAG);
                     cmd.Parameters.AddWithValue("@SHIP_CODE", updateVO.SHIP_CODE);
                     //cmd.Parameters.AddWithValue("@SHIP_TIME", updateVO.SHIP_TIME); getdate()
-                    cmd.Parameters.AddWithValue("@PRODUCTION_TIME", updateVO.PRODUCTION_TIME);
-                    cmd.Parameters.AddWithValue("@OPER_IN_TIME", updateVO.OPER_IN_TIME);
+                    //cmd.Parameters.AddWithValue("@PRODUCTION_TIME", updateVO.PRODUCTION_TIME);
+                    //cmd.Parameters.AddWithValue("@OPER_IN_TIME", updateVO.OPER_IN_TIME);
                     cmd.Parameters.AddWithValue("@LOT_DELETE_FLAG", updateVO.LOT_DELETE_FLAG);
                     cmd.Parameters.AddWithValue("@LOT_DELETE_CODE", updateVO.LOT_DELETE_CODE);
                     //cmd.Parameters.AddWithValue("@LOT_DELETE_TIME", updateVO.LAST_TRAN_USER_ID); getdate()
@@ -260,6 +267,17 @@ END CATCH;
                     cmd.Parameters.AddWithValue("@SALES_ORDER_ID", updateVO.SALES_ORDER_ID);
                     cmd.Parameters.AddWithValue("@LOT_QTY", updateVO.LOT_QTY);
                     cmd.Parameters.AddWithValue("@PRODUCT_CODE", updateVO.PRODUCT_CODE);
+                    cmd.Parameters.AddWithValue("@PRODUCT_NAME", updateVO.PRODUCT_NAME);
+
+                    if ((updateVO.PRODUCTION_TIME == default(DateTime)))
+                        cmd.Parameters.AddWithValue("@PRODUCTION_TIME", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@PRODUCTION_TIME", updateVO.PRODUCTION_TIME);
+                    if ((updateVO.OPER_IN_TIME == default(DateTime)))
+                        cmd.Parameters.AddWithValue("@OPER_IN_TIME", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@OPER_IN_TIME", updateVO.OPER_IN_TIME);
+
 
                     int row = cmd.ExecuteNonQuery();
                     return row > 0;
@@ -271,6 +289,23 @@ END CATCH;
                 return false;
             }
         }
+
+        public DataTable GetBarcodeList()
+        {
+            string sql = @"SELECT TOP (1000) [Barcode_ID]
+      ,[PRODUCT_CODE]
+      ,[PRODUCT_NAME]
+      ,[PRODUCT_TIME]
+      ,[LOT_QTY]
+  FROM [team3].[dbo].[BARCODE]";
+            DataTable dt = new DataTable();
+            using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
+            {
+                da.Fill(dt);
+                return dt;
+            }
+        }
+
         public void Dispose()
         {
             conn.Close();
