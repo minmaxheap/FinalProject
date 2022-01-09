@@ -71,6 +71,14 @@ namespace POPprogram
 			dac.Dispose();
 			return List;
 		}
-	
+
+		public List<string> GetDefect_Code()
+		{
+			DefectDAC dac = new DefectDAC();
+			List<string> List = dac.GetDefect_Code();
+			dac.Dispose();
+			return List;
+		}
+
 	}
 }
