@@ -1,7 +1,7 @@
 ﻿
 namespace POPprogram
 {
-    partial class frmShip
+    partial class frmShipBarcode
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -33,99 +33,34 @@ namespace POPprogram
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnPrint = new System.Windows.Forms.Button();
             this.csDataGridView1 = new POPprogram.csDataGridView();
-            this.panel6.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.csDataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel6
+            // btnSelect
             // 
-            this.panel6.Controls.Add(this.btnPrint);
-            this.panel6.Controls.SetChildIndex(this.btnExport, 0);
-            this.panel6.Controls.SetChildIndex(this.btnClose, 0);
-            this.panel6.Controls.SetChildIndex(this.btnPrint, 0);
+            this.btnSelect.Location = new System.Drawing.Point(12, 419);
+            this.btnSelect.Text = "출력";
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
-            // panel4
+            // btnClose
             // 
-            this.panel4.Controls.Add(this.csDataGridView1);
-            this.panel4.Controls.SetChildIndex(this.label1, 0);
-            this.panel4.Controls.SetChildIndex(this.textBox1, 0);
-            this.panel4.Controls.SetChildIndex(this.label3, 0);
-            this.panel4.Controls.SetChildIndex(this.textBox2, 0);
-            this.panel4.Controls.SetChildIndex(this.label4, 0);
-            this.panel4.Controls.SetChildIndex(this.csDataGridView1, 0);
-            // 
-            // label1
-            // 
-            this.label1.Text = "완제품 창고 재고 목록";
+            this.btnClose.Location = new System.Drawing.Point(902, 419);
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // txtSearch
             // 
-            this.txtSearch.BackColor = System.Drawing.Color.White;
-            this.txtSearch.ReadOnly = true;
+            this.txtSearch.Location = new System.Drawing.Point(12, 53);
+            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
             // 
-            // label9
+            // lblPanel
             // 
-            this.label9.Location = new System.Drawing.Point(84, 12);
-            this.label9.Size = new System.Drawing.Size(70, 29);
-            this.label9.Text = "주문서";
-            // 
-            // label10
-            // 
-            this.label10.Location = new System.Drawing.Point(80, 137);
-            this.label10.Size = new System.Drawing.Size(92, 23);
-            this.label10.Text = "주문 수량";
-            // 
-            // label2
-            // 
-            this.label2.Location = new System.Drawing.Point(98, 102);
-            this.label2.Size = new System.Drawing.Size(67, 23);
-            this.label2.Text = "고객사";
-            // 
-            // label22
-            // 
-            this.label22.Location = new System.Drawing.Point(112, 66);
-            // 
-            // label6
-            // 
-            this.label6.Text = "제품 주문서 정보";
-            // 
-            // btnExport
-            // 
-            this.btnExport.Location = new System.Drawing.Point(252, 0);
-            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
-            // 
-            // btnReadTop
-            // 
-            this.btnReadTop.Click += new System.EventHandler(this.btnReadTop_Click);
+            this.lblPanel.Text = "바코드 선택";
             // 
             // btnTxtSearch
             // 
+            this.btnTxtSearch.Location = new System.Drawing.Point(363, 52);
             this.btnTxtSearch.Click += new System.EventHandler(this.btnTxtSearch_Click);
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
-            this.btnPrint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnPrint.Image = global::POPprogram.Properties.Resources.Print___01;
-            this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPrint.Location = new System.Drawing.Point(388, 0);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(140, 45);
-            this.btnPrint.TabIndex = 95;
-            this.btnPrint.Text = "라벨 발행";
-            this.btnPrint.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPrint.UseVisualStyleBackColor = false;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // csDataGridView1
             // 
@@ -150,44 +85,45 @@ namespace POPprogram
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.csDataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.csDataGridView1.Dock = System.Windows.Forms.DockStyle.Left;
             this.csDataGridView1.EnableHeadersVisualStyles = false;
-            this.csDataGridView1.Location = new System.Drawing.Point(0, 55);
+            this.csDataGridView1.Location = new System.Drawing.Point(0, 94);
             this.csDataGridView1.Name = "csDataGridView1";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("나눔고딕", 9F);
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("나눔고딕", 14.25F);
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.csDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.csDataGridView1.RowHeadersWidth = 30;
-            this.csDataGridView1.Size = new System.Drawing.Size(830, 249);
-            this.csDataGridView1.TabIndex = 58;
+            this.csDataGridView1.Size = new System.Drawing.Size(1024, 308);
+            this.csDataGridView1.TabIndex = 97;
+            this.csDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellClick);
+            this.csDataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellDoubleClick);
             this.csDataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellValueChanged);
             this.csDataGridView1.CurrentCellDirtyStateChanged += new System.EventHandler(this.csDataGridView1_CurrentCellDirtyStateChanged);
             // 
-            // frmShip
+            // frmShipBarcode
             // 
-            this.ClientSize = new System.Drawing.Size(1194, 634);
-            this.Name = "frmShip";
-            this.Load += new System.EventHandler(this.frmShip_Load);
-            this.panel6.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
+            this.ClientSize = new System.Drawing.Size(1024, 478);
+            this.Controls.Add(this.csDataGridView1);
+            this.Name = "frmShipBarcode";
+            this.Load += new System.EventHandler(this.frmPrurchaseDialog_Load);
+            this.Controls.SetChildIndex(this.btnTxtSearch, 0);
+            this.Controls.SetChildIndex(this.lblPanel, 0);
+            this.Controls.SetChildIndex(this.txtSearch, 0);
+            this.Controls.SetChildIndex(this.btnClose, 0);
+            this.Controls.SetChildIndex(this.btnSelect, 0);
+            this.Controls.SetChildIndex(this.csDataGridView1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.csDataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        public System.Windows.Forms.Button btnPrint;
         private csDataGridView csDataGridView1;
     }
 }
