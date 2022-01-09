@@ -77,13 +77,13 @@ namespace POPprogram
             // label10
             // 
             this.label10.Location = new System.Drawing.Point(80, 137);
-            this.label10.Size = new System.Drawing.Size(76, 24);
+            this.label10.Size = new System.Drawing.Size(92, 23);
             this.label10.Text = "주문 수량";
             // 
             // label2
             // 
             this.label2.Location = new System.Drawing.Point(98, 102);
-            this.label2.Size = new System.Drawing.Size(55, 24);
+            this.label2.Size = new System.Drawing.Size(67, 23);
             this.label2.Text = "고객사";
             // 
             // label22
@@ -97,6 +97,7 @@ namespace POPprogram
             // btnExport
             // 
             this.btnExport.Location = new System.Drawing.Point(252, 0);
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // btnReadTop
             // 
