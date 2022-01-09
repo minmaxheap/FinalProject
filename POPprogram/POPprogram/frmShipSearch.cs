@@ -198,11 +198,7 @@ namespace POPprogram
                 vo.UPDATE_TIME = Convert.ToDateTime(dr.Cells["UPDATE_TIME"].Value);
             if (dr.Cells["UPDATE_USER_ID"].Value != null && dr.Cells["UPDATE_USER_ID"].Value != DBNull.Value)
                 vo.UPDATE_USER_ID = dr.Cells["UPDATE_USER_ID"].Value.ToString();
-            if (vo != null)
-            {
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
+
         }
 
         private void csDataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -237,6 +233,11 @@ namespace POPprogram
                 vo.UPDATE_TIME = Convert.ToDateTime(dr.Cells["UPDATE_TIME"].Value);
             if (dr.Cells["UPDATE_USER_ID"].Value != null && dr.Cells["UPDATE_USER_ID"].Value != DBNull.Value)
                 vo.UPDATE_USER_ID = dr.Cells["UPDATE_USER_ID"].Value.ToString();
+            if (vo != null)
+            {
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
         }
     }
 }

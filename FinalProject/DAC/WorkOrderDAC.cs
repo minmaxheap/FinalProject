@@ -44,7 +44,7 @@ namespace DAC
       ,w.UPDATE_TIME
       ,w.UPDATE_USER_ID
   FROM WORK_ORDER_MST w, PRODUCT_MST pm, CODE_DATA_MST cd
-  WHERE w.PRODUCT_CODE=pm.PRODUCT_CODE AND w.CUSTOMER_CODE=cd.KEY_1"; 
+  WHERE w.PRODUCT_CODE=pm.PRODUCT_CODE AND w.CUSTOMER_CODE=cd.KEY_1 ORDER BY ORDER_DATE"; 
             DataTable dt = new DataTable();
             using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
             {
@@ -369,6 +369,7 @@ WHERE [CODE_TABLE_NAME] ='CM_CUSTOMER'";
                 string sql = @"UPDATE [dbo].[WORK_ORDER_MST] SET
       WORK_CLOSE_TIME = getdate()
       ,WORK_CLOSE_USER_ID = @WORK_CLOSE_USER_ID
+      ,ORDER_STATUS = 'CLOSE'
       WHERE WORK_ORDER_ID = @WORK_ORDER_ID";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {

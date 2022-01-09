@@ -24,6 +24,22 @@ namespace POPprogram
             dac.Dispose();
             return list;
         }
+        
+        public DataTable GetLOT()
+        {
+            ShipDAC dac = new ShipDAC();
+            DataTable dt = dac.GetLOT();
+            dac.Dispose();
+            return dt;
+        }
+
+        public bool ShipLOT_Update(ShipPropertyUpdate updateVO)
+        {
+            ShipDAC dac = new ShipDAC();
+            bool bResult = dac.ShipLOT_Update(updateVO);
+            dac.Dispose();
+            return bResult;
+        }
     }
 }
 

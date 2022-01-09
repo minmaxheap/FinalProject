@@ -41,7 +41,7 @@ namespace DAC
       ,w.UPDATE_TIME
       ,w.UPDATE_USER_ID
   FROM SALES_ORDER_MST w, PRODUCT_MST pm, CODE_DATA_MST cd
-  WHERE w.PRODUCT_CODE=pm.PRODUCT_CODE AND w.CUSTOMER_CODE=cd.KEY_1";
+  WHERE w.PRODUCT_CODE=pm.PRODUCT_CODE AND w.CUSTOMER_CODE=cd.KEY_1 ORDER BY ORDER_DATE";
             DataTable dt = new DataTable();
             using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
             {
@@ -213,7 +213,22 @@ where SALES_ORDER_ID = @SALES_ORDER_ID";
         {
             try
             {
-                string sql = @"INSERT INTO [dbo].[PURCHASE_ORDER_MST]
+                string str = vo.SALES_ORDER_ID;
+                str = str.Substring(str.Length - 3);
+
+                string rmmtCode = "-RM-MT-";
+                string rmcdCode = "-RM-CD-";
+                string rmcvCode = "-RM-CV-";
+                string rmcnCode = "-RM-CN-";
+                string rmlbCode = "-RM-LB-";
+                string time = DateTime.Now.ToString("yyMMdd");
+                
+                string sql = @"SET XACT_ABORT ON;  
+
+BEGIN TRY  
+    BEGIN TRANSACTION;  
+                    
+INSERT INTO [dbo].[PURCHASE_ORDER_MST]
            ([PURCHASE_ORDER_ID]
            ,[SALES_ORDER_ID]
            ,[ORDER_DATE]
@@ -222,109 +237,137 @@ where SALES_ORDER_ID = @SALES_ORDER_ID";
            ,[ORDER_QTY]
            ,[STOCK_IN_LOT_ID])
      VALUES
-           (@PURCHASE_ORDER_ID
-           ,@SALES_ORDER_ID
+           (@PURCHASE_ORDER_ID1
+           ,@SALES_ORDER_ID1
            ,getdate()
-           ,@VENDOR_CODE
-           ,@MATERIAL_CODE
-           ,@ORDER_QTY
-           ,@STOCK_IN_LOT_ID)";
+           ,@VENDOR_CODE1
+           ,@MATERIAL_CODE1
+           ,@ORDER_QTY1
+           ,@STOCK_IN_LOT_ID1)
 
-                string str = vo.SALES_ORDER_ID;
-                str = str.Substring(str.Length - 3);
+INSERT INTO [dbo].[PURCHASE_ORDER_MST]
+           ([PURCHASE_ORDER_ID]
+           ,[SALES_ORDER_ID]
+           ,[ORDER_DATE]
+           ,[VENDOR_CODE]
+           ,[MATERIAL_CODE]
+           ,[ORDER_QTY]
+           ,[STOCK_IN_LOT_ID])
+     VALUES
+           (@PURCHASE_ORDER_ID2
+           ,@SALES_ORDER_ID2
+           ,getdate()
+           ,@VENDOR_CODE2
+           ,@MATERIAL_CODE2
+           ,@ORDER_QTY2
+           ,@STOCK_IN_LOT_ID2)
+
+INSERT INTO [dbo].[PURCHASE_ORDER_MST]
+           ([PURCHASE_ORDER_ID]
+           ,[SALES_ORDER_ID]
+           ,[ORDER_DATE]
+           ,[VENDOR_CODE]
+           ,[MATERIAL_CODE]
+           ,[ORDER_QTY]
+           ,[STOCK_IN_LOT_ID])
+     VALUES
+           (@PURCHASE_ORDER_ID3
+           ,@SALES_ORDER_ID3
+           ,getdate()
+           ,@VENDOR_CODE3
+           ,@MATERIAL_CODE3
+           ,@ORDER_QTY3
+           ,@STOCK_IN_LOT_ID3)
+
+INSERT INTO [dbo].[PURCHASE_ORDER_MST]
+           ([PURCHASE_ORDER_ID]
+           ,[SALES_ORDER_ID]
+           ,[ORDER_DATE]
+           ,[VENDOR_CODE]
+           ,[MATERIAL_CODE]
+           ,[ORDER_QTY]
+           ,[STOCK_IN_LOT_ID])
+     VALUES
+           (@PURCHASE_ORDER_ID4
+           ,@SALES_ORDER_ID4
+           ,getdate()
+           ,@VENDOR_CODE4
+           ,@MATERIAL_CODE4
+           ,@ORDER_QTY4
+           ,@STOCK_IN_LOT_ID4)
+
+INSERT INTO [dbo].[PURCHASE_ORDER_MST]
+           ([PURCHASE_ORDER_ID]
+           ,[SALES_ORDER_ID]
+           ,[ORDER_DATE]
+           ,[VENDOR_CODE]
+           ,[MATERIAL_CODE]
+           ,[ORDER_QTY]
+           ,[STOCK_IN_LOT_ID])
+     VALUES
+           (@PURCHASE_ORDER_ID5
+           ,@SALES_ORDER_ID5
+           ,getdate()
+           ,@VENDOR_CODE5
+           ,@MATERIAL_CODE5
+           ,@ORDER_QTY5
+           ,@STOCK_IN_LOT_ID5)
+
+	COMMIT TRANSACTION;  
+END TRY  
+BEGIN CATCH  
+   IF (XACT_STATE()) = -1  
+    BEGIN  	    
+        PRINT  '에러발생 : ' + ERROR_MESSAGE()  
+        ROLLBACK TRANSACTION;  		
+    END;  
+END CATCH;  
+";
 
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
-                    cmd.Parameters.AddWithValue("@PURCHASE_ORDER_ID", "PURCHASE_"+str);
-                    cmd.Parameters.AddWithValue("@SALES_ORDER_ID", vo.SALES_ORDER_ID);
-                    cmd.Parameters.AddWithValue("@VENDOR_CODE", "VD_Happy");
-                    cmd.Parameters.AddWithValue("@MATERIAL_CODE", "RM_Meat");
-                    cmd.Parameters.AddWithValue("@ORDER_QTY", vo.ORDER_QTY);
-                    cmd.Parameters.AddWithValue("@STOCK_IN_LOT_ID", "220105-RM-MT-" + str);
+                    cmd.Parameters.AddWithValue("@PURCHASE_ORDER_ID1", "PURCHASE_"+str);
+                    cmd.Parameters.AddWithValue("@SALES_ORDER_ID1", vo.SALES_ORDER_ID);
+                    cmd.Parameters.AddWithValue("@VENDOR_CODE1", "VD_Happy");
+                    cmd.Parameters.AddWithValue("@MATERIAL_CODE1", "RM_Meat");
+                    cmd.Parameters.AddWithValue("@ORDER_QTY1", vo.ORDER_QTY);
+                    cmd.Parameters.AddWithValue("@STOCK_IN_LOT_ID1", time+rmmtCode+str);
+                    cmd.Parameters.AddWithValue("@PURCHASE_ORDER_ID2", "PURCHASE_" + str);
+                    cmd.Parameters.AddWithValue("@SALES_ORDER_ID2", vo.SALES_ORDER_ID);
+                    cmd.Parameters.AddWithValue("@VENDOR_CODE2", "VD_Miryo");
+                    cmd.Parameters.AddWithValue("@MATERIAL_CODE2", "RM_Salt");
+                    cmd.Parameters.AddWithValue("@ORDER_QTY2", vo.ORDER_QTY);
+                    cmd.Parameters.AddWithValue("@STOCK_IN_LOT_ID2", time + rmcdCode + str);
+                    cmd.Parameters.AddWithValue("@PURCHASE_ORDER_ID3", "PURCHASE_" + str);
+                    cmd.Parameters.AddWithValue("@SALES_ORDER_ID3", vo.SALES_ORDER_ID);
+                    cmd.Parameters.AddWithValue("@VENDOR_CODE3", "VD_Daejin");
+                    cmd.Parameters.AddWithValue("@MATERIAL_CODE3", "RM_Cover");
+                    cmd.Parameters.AddWithValue("@ORDER_QTY3", vo.ORDER_QTY);
+                    cmd.Parameters.AddWithValue("@STOCK_IN_LOT_ID3", time + rmcvCode + str);
+                    cmd.Parameters.AddWithValue("@PURCHASE_ORDER_ID4", "PURCHASE_" + str);
+                    cmd.Parameters.AddWithValue("@SALES_ORDER_ID4", vo.SALES_ORDER_ID);
+                    cmd.Parameters.AddWithValue("@VENDOR_CODE4", "VD_Icandoit");
+                    cmd.Parameters.AddWithValue("@MATERIAL_CODE4", "RM_Can");
+                    cmd.Parameters.AddWithValue("@ORDER_QTY4", vo.ORDER_QTY);
+                    cmd.Parameters.AddWithValue("@STOCK_IN_LOT_ID4", time + rmcnCode + str);
+                    cmd.Parameters.AddWithValue("@PURCHASE_ORDER_ID5", "PURCHASE_" + str);
+                    cmd.Parameters.AddWithValue("@SALES_ORDER_ID5", vo.SALES_ORDER_ID);
+                    cmd.Parameters.AddWithValue("@VENDOR_CODE5", "VD_Label");
+                    cmd.Parameters.AddWithValue("@MATERIAL_CODE5", "RM_Label");
+                    cmd.Parameters.AddWithValue("@ORDER_QTY5", vo.ORDER_QTY);
+                    cmd.Parameters.AddWithValue("@STOCK_IN_LOT_ID5", time + rmlbCode + str);
 
-                    //cmd.Parameters.AddWithValue("@CREATE_TIME",vo.CREATE_TIME);
-                    if (vo.CREATE_USER_ID == null)
-                        cmd.Parameters.AddWithValue("@CREATE_USER_ID", DBNull.Value);
-                    else
-                        cmd.Parameters.AddWithValue("@CREATE_USER_ID", vo.CREATE_USER_ID);
-                    //cmd.Parameters.AddWithValue("@CREATE_USER_ID", vo.CREATE_USER_ID);
-                    //cmd.Parameters.AddWithValue("@UPDATE_TIME", vo.UPDATE_TIME);
-                    //cmd.Parameters.AddWithValue("@UPDATE_USER_ID", vo.UPDATE_USER_ID);
                     int row = cmd.ExecuteNonQuery();
-
-                    if (row <= 0)
-                        return false;
-
-                    cmd.Parameters.Clear();
-                    cmd.Parameters.AddWithValue("@PURCHASE_ORDER_ID", "PURCHASE_" + str);
-                    cmd.Parameters.AddWithValue("@SALES_ORDER_ID", vo.SALES_ORDER_ID);
-                    cmd.Parameters.AddWithValue("@VENDOR_CODE", "VD_Miryo");
-                    cmd.Parameters.AddWithValue("@MATERIAL_CODE", "RM_Salt");
-                    cmd.Parameters.AddWithValue("@ORDER_QTY", vo.ORDER_QTY);
-                    cmd.Parameters.AddWithValue("@STOCK_IN_LOT_ID", "220105-RM-CD-" + str);
-
-                    //cmd.Parameters.AddWithValue("@CREATE_TIME",vo.CREATE_TIME);
-                    if (vo.CREATE_USER_ID == null)
-                        cmd.Parameters.AddWithValue("@CREATE_USER_ID", DBNull.Value);
-                    else
-                        cmd.Parameters.AddWithValue("@CREATE_USER_ID", vo.CREATE_USER_ID);
-                    //cmd.Parameters.AddWithValue("@CREATE_USER_ID", vo.CREATE_USER_ID);
-                    //cmd.Parameters.AddWithValue("@UPDATE_TIME", vo.UPDATE_TIME);
-                    //cmd.Parameters.AddWithValue("@UPDATE_USER_ID", vo.UPDATE_USER_ID);
-                    row = cmd.ExecuteNonQuery();
-
-                    if (row <= 0)
-                        return false;
-
-                    cmd.Parameters.Clear();
-                    cmd.Parameters.AddWithValue("@PURCHASE_ORDER_ID", "PURCHASE_" + str);
-                    cmd.Parameters.AddWithValue("@SALES_ORDER_ID", vo.SALES_ORDER_ID);
-                    cmd.Parameters.AddWithValue("@VENDOR_CODE", "VD_Daejin");
-                    cmd.Parameters.AddWithValue("@MATERIAL_CODE", "RM_Cover");
-                    cmd.Parameters.AddWithValue("@ORDER_QTY", vo.ORDER_QTY);
-                    cmd.Parameters.AddWithValue("@STOCK_IN_LOT_ID", "220105-RM-CV-" + str);
-
-                    //cmd.Parameters.AddWithValue("@CREATE_TIME",vo.CREATE_TIME);
-                    if (vo.CREATE_USER_ID == null)
-                        cmd.Parameters.AddWithValue("@CREATE_USER_ID", DBNull.Value);
-                    else
-                        cmd.Parameters.AddWithValue("@CREATE_USER_ID", vo.CREATE_USER_ID);
-                    //cmd.Parameters.AddWithValue("@CREATE_USER_ID", vo.CREATE_USER_ID);
-                    //cmd.Parameters.AddWithValue("@UPDATE_TIME", vo.UPDATE_TIME);
-                    //cmd.Parameters.AddWithValue("@UPDATE_USER_ID", vo.UPDATE_USER_ID);
-                    row = cmd.ExecuteNonQuery();
-
-                    if (row <= 0)
-                        return false;
-
-                    cmd.Parameters.Clear();
-                    cmd.Parameters.AddWithValue("@PURCHASE_ORDER_ID", "PURCHASE_" + str);
-                    cmd.Parameters.AddWithValue("@SALES_ORDER_ID", vo.SALES_ORDER_ID);
-                    cmd.Parameters.AddWithValue("@VENDOR_CODE", "VD_Icandoit");
-                    cmd.Parameters.AddWithValue("@MATERIAL_CODE", "RM_Can");
-                    cmd.Parameters.AddWithValue("@ORDER_QTY", vo.ORDER_QTY);
-                    cmd.Parameters.AddWithValue("@STOCK_IN_LOT_ID", "220105-RM-CN-" + str);
-
-                    //cmd.Parameters.AddWithValue("@CREATE_TIME",vo.CREATE_TIME);
-                    if (vo.CREATE_USER_ID == null)
-                        cmd.Parameters.AddWithValue("@CREATE_USER_ID", DBNull.Value);
-                    else
-                        cmd.Parameters.AddWithValue("@CREATE_USER_ID", vo.CREATE_USER_ID);
-                    //cmd.Parameters.AddWithValue("@CREATE_USER_ID", vo.CREATE_USER_ID);
-                    //cmd.Parameters.AddWithValue("@UPDATE_TIME", vo.UPDATE_TIME);
-                    //cmd.Parameters.AddWithValue("@UPDATE_USER_ID", vo.UPDATE_USER_ID);
-                    row = cmd.ExecuteNonQuery();
-
                     return row > 0;
-
                 }
             }
             catch (Exception err)
             {
-                Debug.WriteLine(err.Message); //log에 찍게 해야하나?
+                Debug.WriteLine(err.Message);
                 return false;
             }
         }
+
         public bool InsertAutoWorkOrder(SalesOrderProperty vo)
         {
             try
