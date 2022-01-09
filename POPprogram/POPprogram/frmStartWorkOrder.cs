@@ -84,10 +84,13 @@ namespace POPprogram
                 CREATE_QTY = Convert.ToDecimal(txtQty.Text),
                 OPER_IN_QTY = Convert.ToDecimal(txtQty.Text),
                 START_QTY = Convert.ToDecimal(txtQty.Text),
-                START_EQUIPMENT_CODE = comboBox1.SelectedValue.ToString(),
-                 
-
+                START_EQUIPMENT_CODE =(comboBox1.SelectedValue.ToString() == null) ? " ":comboBox1.SelectedValue.ToString()
             };
+
+            if (mLOT.START_EQUIPMENT_CODE == null)
+            {
+                mLOT.START_EQUIPMENT_CODE = "";
+            }
 
             if (mLOT == null)
             {
@@ -95,11 +98,11 @@ namespace POPprogram
                 return;
             }
 
-            if (lblStatus.Text == "PROC")
-            {
-                MessageBox.Show("proc상태여서 실행을 할수없습니다.");
-                return;
-            }
+            //if (lblStatus.Text == "PROC")
+            //{
+            //    MessageBox.Show("proc상태여서 실행을 할수없습니다.");
+            //    return;
+            //}
             bool result = serv.Insert(mLOT);
             if (result)
             {

@@ -117,17 +117,35 @@ namespace MES_Team3
                     return;
                 }
             }
+            Convert.ToInt32(save.SPEC_LSL);
+            //if(Convert.ToInt32(save.SPEC_LSL)  < Convert.ToInt32(save.SPEC_TARGET))
+            int LSL = Convert.ToInt32(save.SPEC_LSL);
+            int Target = Convert.ToInt32(save.SPEC_TARGET);
+            int USL = Convert.ToInt32(save.SPEC_USL);
 
-            bool bResult = serv.insert(save);
-            if (bResult)
+            // a<b<c
+
+            if (LSL < Target && LSL < USL && Target<USL)
             {
-                MessageBox.Show("등록되었습니다.");
-                LoadData();
-                return;
+
+
+
+                bool bResult = serv.insert(save);
+                if (bResult)
+                {
+                    MessageBox.Show("등록되었습니다.");
+                    LoadData();
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("등록중 실패");
+                    return;
+                }
             }
             else
             {
-                MessageBox.Show("등록중 실패");
+                MessageBox.Show("LSL,Target,USL 값이 맞지가 않습니다.");
                 return;
             }
         }
@@ -588,7 +606,7 @@ namespace MES_Team3
 
             //아이디
             Inspect_id = csDataGridView1["INSPECT_ITEM_CODE", e.RowIndex].Value.ToString();
-            MessageBox.Show($"{Inspect_id}를 선택하셨습니다.");
+           // MessageBox.Show($"{Inspect_id}를 선택하셨습니다.");
 
             //유효값 처리
 

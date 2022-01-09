@@ -379,7 +379,7 @@ namespace MES_Team3
 
 			//공정 아이디
 			inspec_op_Code = csDataGridView1["OPERATION_CODE", e.RowIndex].Value.ToString();
-			MessageBox.Show($"{inspec_op_Code}를 선택하셨습니다.");
+			//MessageBox.Show($"{inspec_op_Code}를 선택하셨습니다.");
 			if (string.IsNullOrWhiteSpace(csDataGridView1["CHECK_INSPECT_FLAG", e.RowIndex].Value.ToString()))
 			{
 				MessageBox.Show("검사데이터 입력 유뮤가 존재하지 않습니다.");
@@ -398,7 +398,7 @@ namespace MES_Team3
 
 			assigment_Code = csDataGridView2["INSPECT_ITEM_CODE", e.RowIndex].Value.ToString();
 			inspec_op_Code = csDataGridView2["OPERATION_CODE", e.RowIndex].Value.ToString();
-			MessageBox.Show($"{assigment_Code} , {inspec_op_Code}를 선택하셨습니다.");
+			//MessageBox.Show($"{assigment_Code} , {inspec_op_Code}를 선택하셨습니다.");
 			inspect_Code = null;
 			csDataGridView3.ClearSelection();
 
@@ -412,7 +412,7 @@ namespace MES_Team3
 			}
 
 			inspect_Code = csDataGridView3["INSPECT_ITEM_CODE", e.RowIndex].Value.ToString();
-			MessageBox.Show($"{inspect_Code}를 선택하셨습니다.");
+			//MessageBox.Show($"{inspect_Code}를 선택하셨습니다.");
 			assigment_Code = null;
 			//csDataGridView3.Focus();
 			csDataGridView2.ClearSelection();

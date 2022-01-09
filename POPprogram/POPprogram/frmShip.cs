@@ -258,10 +258,13 @@ namespace POPprogram
                 updateVO.OLD_LOT_QTY = updateVO.LOT_QTY;
 
                 updateVO.SALES_ORDER_ID = txtSearch.Text;
-                
+                updateVO.PRODUCT_NAME = txtName1.Text;
+
                 int temp = Convert.ToInt32(updateVO.LAST_HIST_SEQ);
                 temp = temp + 1;
                 updateVO.LAST_HIST_SEQ = Convert.ToString(temp);
+
+                //updateVO.PRODUCT_NAME = 
 
                 bool bResult = serv.ShipLOT_Update(updateVO);
                 if (bResult)
@@ -277,6 +280,16 @@ namespace POPprogram
             else
             {
                 MessageBox.Show("재고가 출하량보다 적습니다. 다시 선택해 주세요.");
+                return;
+            }
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+
+            frmShipBarcode frm = new frmShipBarcode();
+            if (frm.ShowDialog() != DialogResult.OK)
+            {
                 return;
             }
         }
