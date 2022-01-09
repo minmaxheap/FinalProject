@@ -81,19 +81,27 @@
                     <div class="col-4">
                         <div class="form-group">
                             <label>작업지시:</label>
-                            <select class="select2" style="width: 100%;">
-                                <option selected>ASC</option>
-                                <option>DESC</option>
-                            </select>
+                            @*<select class="select2" style="width: 100%;">
+                                    <option selected>ASC</option>
+                                    <option>DESC</option>
+                                </select>*@
+                            @if (ViewBag.order != null)
+                            {
+                                @Html.DropDownListFor(model => model.Data, ViewBag.order as SelectList, "--Select--", new { @class = "form-control" })
+                            }
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="form-group">
                             <label>품번:</label>
-                            <select class="select2" style="width: 100%;">
-                                <option selected>ASC</option>
-                                <option>DESC</option>
-                            </select>
+                            @*<select class="select2" style="width: 100%;">
+                                    <option selected>ASC</option>
+                                    <option>DESC</option>
+                                </select>*@
+                            @if (ViewBag.product != null)
+                            {
+                                @Html.DropDownListFor(model => model.Data, ViewBag.product as SelectList, "--Select--", new { @class = "form-control" })
+                            }
                         </div>
                     </div>
 
@@ -163,22 +171,42 @@
         })
     </script>
 
+    <script>
+        $(document).ready(function () {
+
+            $.each(data, function (index, row) {
+                $("#data").append("<option value='" + row.data + "'>" + row.data + "</option>")
+            });
+
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+
+            $.each(data, function (index, row) {
+                $("#data").append("<option value='" + row.data + "'>" + row.data + "</option>")
+            });
+
+        });
+    </script>
+
     <script type="text/javascript">
         $(document).ready(function () {
             //debugger;
-           // alert($('#dataObjCol').val());
+            // alert($('#dataObjCol').val());
             var dataObjCol = JSON.parse($('#dataObjCol').val());
             var dataObjData = JSON.parse($('#dataObjData').val());
-           
+
 
 
             // Datatable settings.
             $('#TableId').DataTable(
                 {
-                   
+
                     "data": dataObjData,
                     "columns": dataObjCol,
-                        //[
+                    //[
                     //    { "data": "ORDER_DATE" },
                     //    { "data": "WORK_ORDER_ID" },
                     //    { "data": "PRODUCT_CODE" },
