@@ -1792,6 +1792,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ComparePlanController.cs" />
+    <Compile Include="Controllers\EfficiencyController.cs" />
+    <Compile Include="Controllers\InspectController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1903,6 +1905,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Efficiency\" />
+    <Folder Include="Views\Inspect\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="plugins\fullcalendar-bootstrap\main.d.ts" />

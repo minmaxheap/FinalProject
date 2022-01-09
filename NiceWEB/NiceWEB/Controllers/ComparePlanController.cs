@@ -20,8 +20,20 @@ namespace NiceWEB.Controllers
             List<ColumnsInfo> _col = new List<ColumnsInfo>();
 
             ComparePlanDAC dac = new ComparePlanDAC();
-            DataTable dt = dac.GetData("2020-01-01","2010-02-02");
+            //DataTable dt = dac.GetData("2020-01-01","2010-02-02");
 
+            DataTable dt = new DataTable();
+            dt.Columns.Add("ID", typeof(Int32));
+            dt.Columns.Add("Name", typeof(string));
+
+            DataRow dr = dt.NewRow();
+            dr[0] = 1;
+            dr[1] = "Ajay";
+            dt.Rows.Add(dr);
+
+            dr = dt.NewRow();
+            dr[0] = 2;
+            dr[1] = "Sanu";
             for (int i = 0; i <= dt.Columns.Count - 1; i++)
             {
                 _col.Add(new ColumnsInfo { Title = dt.Columns[i].ColumnName, Data = dt.Columns[i].ColumnName });
@@ -44,27 +56,7 @@ namespace NiceWEB.Controllers
             return View(t);
         }
 
-        //public JsonResult EmpDetails()
-        //{
-        //    //Creating List
-        //    List<Employee> ObjEmp = new List<Employee>()
-        //    {
-        ////Adding records to list
-        //new Employee {Id=1,Name="Vithal Wadje",City="Latur",Address="Kabansangvi" },
-        //new Employee {Id=2,Name="Sudhir Wadje",City="Mumbai",Address="Kurla" }
-        //    };
-        //    //return list as Json
-        //    return Json(ObjEmp, JsonRequestBehavior.AllowGet);
-        //}
-
-        //public class Employee
-        //{
-        //    public int Id { get; set; }
-        //    public string Name { get; set; }
-        //    public string City { get; set; }
-        //    public string Address { get; set; }
-        //}
-
+    
      
     }
 }
