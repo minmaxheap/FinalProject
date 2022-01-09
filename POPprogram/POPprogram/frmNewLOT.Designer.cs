@@ -34,66 +34,20 @@ namespace POPprogram
             this.pnlCrud.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel4
-            // 
-            this.panel4.Location = new System.Drawing.Point(30, 411);
-            this.panel4.Size = new System.Drawing.Size(1234, 243);
-            // 
-            // panel8
-            // 
-            this.panel8.Size = new System.Drawing.Size(1234, 350);
-            // 
             // txtCustName
             // 
+            this.txtCustName.BackColor = System.Drawing.SystemColors.Window;
             this.txtCustName.ReadOnly = true;
             // 
             // txtCustID
             // 
+            this.txtCustID.BackColor = System.Drawing.SystemColors.Window;
             this.txtCustID.ReadOnly = true;
             // 
             // txtWorkOrderID
             // 
+            this.txtWorkOrderID.BackColor = System.Drawing.SystemColors.Window;
             this.txtWorkOrderID.ReadOnly = true;
-            // 
-            // label6
-            // 
-            this.label6.Size = new System.Drawing.Size(1232, 55);
-            // 
-            // label8
-            // 
-            this.label8.Size = new System.Drawing.Size(253, 41);
-            // 
-            // label7
-            // 
-            this.label7.Size = new System.Drawing.Size(250, 41);
-            // 
-            // label5
-            // 
-            this.label5.Size = new System.Drawing.Size(250, 41);
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.Location = new System.Drawing.Point(0, 41);
-            this.lblStatus.Size = new System.Drawing.Size(250, 55);
-            // 
-            // lblDefectQty
-            // 
-            this.lblDefectQty.Location = new System.Drawing.Point(0, 41);
-            this.lblDefectQty.Size = new System.Drawing.Size(253, 55);
-            // 
-            // lblProdQty
-            // 
-            this.lblProdQty.Location = new System.Drawing.Point(0, 41);
-            this.lblProdQty.Size = new System.Drawing.Size(250, 55);
-            // 
-            // lblOrderQty
-            // 
-            this.lblOrderQty.Location = new System.Drawing.Point(0, 41);
-            this.lblOrderQty.Size = new System.Drawing.Size(250, 55);
-            // 
-            // label4
-            // 
-            this.label4.Size = new System.Drawing.Size(250, 41);
             // 
             // btnExecute
             // 
@@ -105,6 +59,7 @@ namespace POPprogram
             // 
             // txtOperCode
             // 
+            this.txtOperCode.BackColor = System.Drawing.SystemColors.Window;
             this.txtOperCode.ReadOnly = true;
             // 
             // lblQty
@@ -113,10 +68,12 @@ namespace POPprogram
             // 
             // txtProdName
             // 
+            this.txtProdName.BackColor = System.Drawing.SystemColors.Window;
             this.txtProdName.ReadOnly = true;
             // 
             // txtProdCode
             // 
+            this.txtProdCode.BackColor = System.Drawing.SystemColors.Window;
             this.txtProdCode.ReadOnly = true;
             // 
             // lblLOT
@@ -125,6 +82,7 @@ namespace POPprogram
             // 
             // txtOperName
             // 
+            this.txtOperName.BackColor = System.Drawing.SystemColors.Window;
             this.txtOperName.ReadOnly = true;
             // 
             // btnTxtSearch
@@ -133,7 +91,7 @@ namespace POPprogram
             // 
             // frmNewLOT
             // 
-            this.ClientSize = new System.Drawing.Size(1292, 757);
+            this.ClientSize = new System.Drawing.Size(1194, 634);
             this.Name = "frmNewLOT";
             this.Load += new System.EventHandler(this.frmNewLOT_Load);
             this.panel4.ResumeLayout(false);

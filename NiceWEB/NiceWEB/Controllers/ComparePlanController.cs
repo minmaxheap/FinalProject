@@ -1,6 +1,7 @@
 ﻿using NiceWEB.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Web;
@@ -10,62 +11,52 @@ namespace NiceWEB.Controllers
 {
     public class ComparePlanController : Controller
     {
+        
         // GET: ComparePlan
         public ActionResult Index()
         {
-        //    ComparePlanDAC db = new ComparePlanDAC();
-        //    List<ComparePlan> list = db.GetChartData("1997-01-01", "1997-12-31");
+            var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+            TestData t = new TestData();
+            List<ColumnsInfo> _col = new List<ColumnsInfo>();
 
-        //    var statGroup = from stat in list
-        //                    orderby stat.PRODUCT_NAME
-        //                    group stat by stat.PRODUCT_NAME;
+            ComparePlanDAC dac = new ComparePlanDAC();
+            //DataTable dt = dac.GetData("2020-01-01","2010-02-02");
 
-        //    int k = 1;
-        //    StringBuilder sb = new StringBuilder();
+            DataTable dt = new DataTable();
+            dt.Columns.Add("ID", typeof(Int32));
+            dt.Columns.Add("Name", typeof(string));
 
-        //    foreach (var prodGroup in statGroup) //3번
-        //    {
-        //        List<int> amts = new List<int>();
-        //        foreach (var prodStat in prodGroup) //12번
-        //        {
-        //            amts.Add(Convert.ToInt32(prodStat.DEFECT_QTY));
+            DataRow dr = dt.NewRow();
+            dr[0] = 1;
+            dr[1] = "Ajay";
+            dt.Rows.Add(dr);
 
-        //            if (k == 1)
-        //                sb.Append(prodStat.DEFECT_QTY + "월,");
-        //        }
+            dr = dt.NewRow();
+            dr[0] = 2;
+            dr[1] = "Sanu";
+            for (int i = 0; i <= dt.Columns.Count - 1; i++)
+            {
+                _col.Add(new ColumnsInfo { Title = dt.Columns[i].ColumnName, Data = dt.Columns[i].ColumnName });
+            }
 
-        //        if (k == 1)
-        //        {
-        //            ViewBag.Label1 = prodGroup.Key;
-        //            ViewBag.data1 = "[" + string.Join(",", amts) + "]";
-        //        }
-        //        else if (k == 2)
-        //        {
-        //            ViewBag.Label2 = prodGroup.Key;
-        //            ViewBag.data2 = "[" + string.Join(",", amts) + "]";
-        //        }
-        //        else if (k == 3)
-        //        {
-        //            ViewBag.Label3 = prodGroup.Key;
-        //            ViewBag.data3 = "[" + string.Join(",", amts) + "]";
-        //        }
+            string col = (string)serializer.Serialize(_col);
+            t.Columns = col;
 
-        //        k++;
-        //    }
-        //    ViewBag.Labels = sb.ToString().TrimEnd(',');
 
-        //    ViewBag.Labels = "1월,2월,3월,4월,5월,6월,7월,8월,9월,10월,11월,12월";
+            var lst = dt.AsEnumerable()
+            .Select(r => r.Table.Columns.Cast<DataColumn>()
+                    .Select(c => new KeyValuePair<string, object>(c.ColumnName, r[c.Ordinal])
+                   ).ToDictionary(z => z.Key, z => z.Value)
+            ).ToList();
 
-        //    ViewBag.Label1 = "제품1";
-        //    ViewBag.data1 = "[28, 48, 40, 19, 86, 27, 28, 48, 40, 19, 86, 27]";
+            string data = serializer.Serialize(lst);
+            t.Data = data;
 
-        //    ViewBag.Label2 = "제품2";
-        //    ViewBag.data2 = "[86, 27, 28, 48, 40, 19, 86, 27,28, 48, 40, 19]";
 
-        //    ViewBag.Label3 = "제품3";
-        //    ViewBag.data3 = "[40, 19, 86, 27, 28, 48, 40, 19, 86, 27,28, 48]";
-
-            return View();
+            return View(t);
         }
+
+    
+     
     }
 }

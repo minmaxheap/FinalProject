@@ -176,7 +176,7 @@ namespace POPprogram
             this.panel8.Location = new System.Drawing.Point(30, 72);
             this.panel8.Margin = new System.Windows.Forms.Padding(0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1136, 284);
+            this.panel8.Size = new System.Drawing.Size(1136, 352);
             this.panel8.TabIndex = 49;
             // 
             // txtQty
@@ -214,9 +214,9 @@ namespace POPprogram
             this.tableLayoutPanel2.Location = new System.Drawing.Point(163, 190);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(940, 64);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(940, 107);
             this.tableLayoutPanel2.TabIndex = 49;
             // 
             // label4
@@ -228,7 +228,7 @@ namespace POPprogram
             this.label4.Location = new System.Drawing.Point(1, 1);
             this.label4.Margin = new System.Windows.Forms.Padding(0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(233, 30);
+            this.label4.Size = new System.Drawing.Size(233, 50);
             this.label4.TabIndex = 53;
             this.label4.Text = "지시 상태";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -237,10 +237,10 @@ namespace POPprogram
             // 
             this.lblDefectQty.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblDefectQty.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lblDefectQty.Location = new System.Drawing.Point(703, 32);
+            this.lblDefectQty.Location = new System.Drawing.Point(703, 52);
             this.lblDefectQty.Margin = new System.Windows.Forms.Padding(0);
             this.lblDefectQty.Name = "lblDefectQty";
-            this.lblDefectQty.Size = new System.Drawing.Size(236, 31);
+            this.lblDefectQty.Size = new System.Drawing.Size(236, 54);
             this.lblDefectQty.TabIndex = 52;
             this.lblDefectQty.Text = "1000";
             this.lblDefectQty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -249,10 +249,10 @@ namespace POPprogram
             // 
             this.lblProdQty.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblProdQty.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lblProdQty.Location = new System.Drawing.Point(469, 32);
+            this.lblProdQty.Location = new System.Drawing.Point(469, 52);
             this.lblProdQty.Margin = new System.Windows.Forms.Padding(0);
             this.lblProdQty.Name = "lblProdQty";
-            this.lblProdQty.Size = new System.Drawing.Size(233, 31);
+            this.lblProdQty.Size = new System.Drawing.Size(233, 54);
             this.lblProdQty.TabIndex = 51;
             this.lblProdQty.Text = "1000";
             this.lblProdQty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -261,10 +261,10 @@ namespace POPprogram
             // 
             this.lblOrderQty.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblOrderQty.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lblOrderQty.Location = new System.Drawing.Point(235, 32);
+            this.lblOrderQty.Location = new System.Drawing.Point(235, 52);
             this.lblOrderQty.Margin = new System.Windows.Forms.Padding(0);
             this.lblOrderQty.Name = "lblOrderQty";
-            this.lblOrderQty.Size = new System.Drawing.Size(233, 31);
+            this.lblOrderQty.Size = new System.Drawing.Size(233, 54);
             this.lblOrderQty.TabIndex = 50;
             this.lblOrderQty.Text = "1000";
             this.lblOrderQty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -278,7 +278,7 @@ namespace POPprogram
             this.label21.Location = new System.Drawing.Point(703, 1);
             this.label21.Margin = new System.Windows.Forms.Padding(0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(236, 30);
+            this.label21.Size = new System.Drawing.Size(236, 50);
             this.label21.TabIndex = 49;
             this.label21.Text = "불량 수량";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -292,7 +292,7 @@ namespace POPprogram
             this.label20.Location = new System.Drawing.Point(469, 1);
             this.label20.Margin = new System.Windows.Forms.Padding(0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(233, 30);
+            this.label20.Size = new System.Drawing.Size(233, 50);
             this.label20.TabIndex = 48;
             this.label20.Text = "생산 수량";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -306,7 +306,7 @@ namespace POPprogram
             this.label19.Location = new System.Drawing.Point(235, 1);
             this.label19.Margin = new System.Windows.Forms.Padding(0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(233, 30);
+            this.label19.Size = new System.Drawing.Size(233, 50);
             this.label19.TabIndex = 47;
             this.label19.Text = "지시 수량";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -315,10 +315,10 @@ namespace POPprogram
             // 
             this.lblStatus.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblStatus.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lblStatus.Location = new System.Drawing.Point(1, 32);
+            this.lblStatus.Location = new System.Drawing.Point(1, 52);
             this.lblStatus.Margin = new System.Windows.Forms.Padding(0);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(233, 31);
+            this.lblStatus.Size = new System.Drawing.Size(233, 54);
             this.lblStatus.TabIndex = 18;
             this.lblStatus.Text = "Closed";
             this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -451,13 +451,14 @@ namespace POPprogram
             // 
             // panel4
             // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.label13);
             this.panel4.Controls.Add(this.txtComment);
-            this.panel4.Location = new System.Drawing.Point(31, 374);
+            this.panel4.Location = new System.Drawing.Point(30, 440);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1136, 175);
             this.panel4.TabIndex = 51;
@@ -504,7 +505,7 @@ namespace POPprogram
             this.pnlCrud.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlCrud.Controls.Add(this.btnExecute);
             this.pnlCrud.Controls.Add(this.btnClose);
-            this.pnlCrud.Location = new System.Drawing.Point(500, 555);
+            this.pnlCrud.Location = new System.Drawing.Point(500, 642);
             this.pnlCrud.Margin = new System.Windows.Forms.Padding(0);
             this.pnlCrud.Name = "pnlCrud";
             this.pnlCrud.Size = new System.Drawing.Size(668, 45);
@@ -552,7 +553,7 @@ namespace POPprogram
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
-            this.ClientSize = new System.Drawing.Size(1194, 634);
+            this.ClientSize = new System.Drawing.Size(1194, 721);
             this.Controls.Add(this.pnlCrud);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel7);

@@ -27,7 +27,7 @@ namespace POPprogram
         private void btnReadTop_Click(object sender, EventArgs e)
         {
             serv = new StockServ();
-            DataTable dt = serv.Purchase_warehousing(txtCode1.Text);
+            DataTable dt = serv.Purchase_warehousing(txtCode1.Text, txtSearch.Text);
             csDataGridView1.DataSource = null;
             csDataGridView1.DataSource = dt;
         }
@@ -180,7 +180,7 @@ namespace POPprogram
             {
                 MessageBox.Show("성공적");
                 serv = new StockServ();
-                DataTable dt = serv.Purchase_warehousing(txtSearch.Text);
+                DataTable dt = serv.Purchase_warehousing(txtSearch.Text, txtSearch.Text);
                 csDataGridView1.DataSource = null;
                 csDataGridView1.DataSource = dt;
             }

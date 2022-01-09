@@ -132,6 +132,7 @@
     <Content Include="dist\img\credit\visa.png" />
     <Content Include="dist\img\default-150x150.png" />
     <Content Include="dist\img\icons.png" />
+    <Content Include="dist\img\Industry - 01.png" />
     <Content Include="dist\img\photo1.png" />
     <Content Include="dist\img\photo2.png" />
     <Content Include="dist\img\photo3.jpg" />
@@ -141,6 +142,7 @@
     <Content Include="dist\img\prod-3.jpg" />
     <Content Include="dist\img\prod-4.jpg" />
     <Content Include="dist\img\prod-5.jpg" />
+    <Content Include="dist\img\User-Profile.png" />
     <Content Include="dist\img\user1-128x128.jpg" />
     <Content Include="dist\img\user2-160x160.jpg" />
     <Content Include="dist\img\user3-128x128.jpg" />
@@ -152,6 +154,7 @@
     <Content Include="dist\js\adminlte.js" />
     <Content Include="dist\js\adminlte.min.js" />
     <Content Include="dist\js\demo.js" />
+    <Content Include="dist\js\gauge.min.js" />
     <Content Include="dist\js\pages\dashboard.js" />
     <Content Include="dist\js\pages\dashboard2.js" />
     <Content Include="dist\js\pages\dashboard3.js" />
@@ -1778,22 +1781,27 @@
     <Content Include="plugins\toastr\toastr.css" />
     <Content Include="plugins\toastr\toastr.min.css" />
     <Content Include="plugins\toastr\toastr.min.js" />
+    <Content Include="plugins\uplot\uPlot.cjs.js" />
+    <Content Include="plugins\uplot\uPlot.esm.js" />
+    <Content Include="plugins\uplot\uPlot.iife.js" />
+    <Content Include="plugins\uplot\uPlot.iife.min.js" />
+    <Content Include="plugins\uplot\uPlot.min.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\ChartController.cs" />
     <Compile Include="Controllers\ComparePlanController.cs" />
+    <Compile Include="Controllers\EfficiencyController.cs" />
+    <Compile Include="Controllers\InspectController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ComparePlan.cs" />
     <Compile Include="Models\DAC\ComparePlanDAC.cs" />
+    <Compile Include="Models\DAC\EfficiencyDAC.cs" />
     <Compile Include="Models\DAC\Helper.cs" />
-    <Compile Include="Models\DAC\OrderStat.cs" />
-    <Compile Include="Models\DAC\ProductDAC.cs" />
-    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\DAC\InspectDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1815,7 +1823,6 @@
     <None Include="packages.config" />
     <Content Include="Views\_Layout.cshtml" />
     <Content Include="Views\ComparePlan\Index.cshtml" />
-    <Content Include="Views\Chart\Index.cshtml" />
     <Content Include="plugins\.npmignore" />
     <Content Include="plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.css.map" />
     <Content Include="plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.min.css.map" />
@@ -1898,6 +1905,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Efficiency\" />
+    <Folder Include="Views\Inspect\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="plugins\fullcalendar-bootstrap\main.d.ts" />

@@ -49,7 +49,7 @@ namespace POPprogram
 		private void frmLOTDefect_Load(object sender, EventArgs e)
 		{
             serv = new StarWorkServ();
-            list = serv.GetLotCode();
+            list = serv.GetDeffectCode();
             list.Insert(0, "");
             //cboLOTID.Items.Insert(0, " ");
             //cboLOTID.ValueMember = "LOT_ID";

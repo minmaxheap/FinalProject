@@ -316,6 +316,11 @@
     <None Include="Resources\Data-Import.png" />
     <None Include="Resources\facebook_cover_photo_1.png" />
     <None Include="Resources\Black List.png" />
+    <None Include="Resources\Arrowhead-Right-012.png" />
+    <None Include="Resources\Arrowhead-Right-013.png" />
+    <None Include="Resources\Blank-13.png" />
+    <None Include="Resources\Industry - 01.png" />
+    <None Include="Resources\logo.PNG" />
     <Content Include="Resources\그림1.png" />
     <Content Include="Resources\그림5.png" />
   </ItemGroup>

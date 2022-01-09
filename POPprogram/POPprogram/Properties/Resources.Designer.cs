@@ -93,16 +93,6 @@ namespace POPprogram.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        public static System.Drawing.Bitmap Arrowhead_Right_01 {
-            get {
-                object obj = ResourceManager.GetObject("Arrowhead_Right_01", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
         public static System.Drawing.Bitmap Arrowhead_Right_011 {
             get {
                 object obj = ResourceManager.GetObject("Arrowhead_Right_011", resourceCulture);
@@ -116,6 +106,16 @@ namespace POPprogram.Properties {
         public static System.Drawing.Bitmap Black_List {
             get {
                 object obj = ResourceManager.GetObject("Black List", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        public static System.Drawing.Bitmap Blank_13 {
+            get {
+                object obj = ResourceManager.GetObject("Blank-13", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -261,12 +261,32 @@ namespace POPprogram.Properties {
         }
         
         /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        public static System.Drawing.Bitmap Industry___01 {
+            get {
+                object obj = ResourceManager.GetObject("Industry - 01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
         public static System.Drawing.Icon KEY0_CC_회사_제품_아이콘_블루_2 {
             get {
                 object obj = ResourceManager.GetObject("KEY0_CC_회사_제품_아이콘_블루_2", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        public static System.Drawing.Bitmap logo {
+            get {
+                object obj = ResourceManager.GetObject("logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
