@@ -77,6 +77,17 @@ namespace DAC
 		public decimal OLD_LOT_QTY { get; set; }
 
         public string SALES_ORDER_ID { get; set; }
-    }
+		public string PRODUCT_NAME { get; set; }
+
+	}
+	public class ShipPropertyBarcode
+	{
+		public string BARCODE_ID { get; set; }
+		public string PRODUCT_CODE { get; set; }
+		public string PRODUCT_NAME { get; set; }
+		public DateTime PRODUCT_TIME { get; set; }
+		public decimal LOT_QTY { get; set; }
+	}
+
 }
 

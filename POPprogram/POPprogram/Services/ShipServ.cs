@@ -40,6 +40,14 @@ namespace POPprogram
             dac.Dispose();
             return bResult;
         }
+
+        public DataTable GetBarcodeList()
+        {
+            ShipDAC dac = new ShipDAC();
+            DataTable dt = dac.GetBarcodeList();
+            dac.Dispose();
+            return dt;
+        }
     }
 }
 

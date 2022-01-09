@@ -14,9 +14,12 @@ namespace POPprogram
         StarWorkServ ser;
         List<string> list;
         List<string> list1;
+        List<string> list2;
+        List<string> list3;
         List<StarWorkProperty> swlist;
         List<string> CodeList;
         LOTinspectServ lotserv;
+        deffectServ deserv;
         public frmLOTDefect()
         {
             InitializeComponent();
@@ -61,12 +64,17 @@ namespace POPprogram
             ser = new StarWorkServ();
             list1 = serv.GetDefect_Code();
             list1.Insert(0, "");
+            list2 = serv.GetDefect_Code();
+            list2.Insert(0, "");
+            list3 = serv.GetDefect_Code();
+            list3.Insert(0, "");
+
             comboBox1.DisplayMember = "KEY_1";
-            //comboBox1.DataSource = list1;
+            comboBox1.DataSource = list1;
             comboBox2.DisplayMember = "KEY_1";
-            //comboBox2.DataSource = list1;
+            comboBox2.DataSource = list2;
             comboBox3.DisplayMember = "KEY_1";
-            comboBox3.DataSource = list1;
+            comboBox3.DataSource = list3;
         }
 
         private void btnExecute_Click(object sender, EventArgs e)
@@ -91,7 +99,7 @@ namespace POPprogram
                             if (string.IsNullOrWhiteSpace(numTextBox1.Text)) break;
                             else
                             {
-                                dr["ID"] = dt.Rows.Count + 1;
+                                dr["ID"] = dt.Rows.Count+1;
                                 dr["DEFECT_CODE"] = comboBox1.Text;
 
                                 dr["DEFECT_QTY"] = Convert.ToDecimal(numTextBox1.Text);
@@ -137,8 +145,11 @@ namespace POPprogram
             }
 
             dt.AcceptChanges();
-            //string msuerID = 
-            bool result = lotserv.insert(frmLogin.userID, txtComment.Text, cboLOTID.SelectedValue.ToString(), dt);
+
+          
+
+            deserv = new deffectServ();
+            bool result = deserv.insert(Convert.ToDecimal(numTextBox5.Text), txtComment.Text, frmLogin.userID, cboLOTID.SelectedValue.ToString(), dt);
             if (result)
             {
                 MessageBox.Show("성공");
@@ -149,7 +160,38 @@ namespace POPprogram
                 MessageBox.Show("실패");
                 return;
             }
+            //string msuerID = 
+           
 
         }
-    }
+
+		private void panel4_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
+
+        private void numtxt_keydown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                decimal a1 = string.IsNullOrWhiteSpace(numTextBox1.Text) ? 0 : Convert.ToDecimal(numTextBox1.Text);
+                decimal a2 = string.IsNullOrWhiteSpace(numTextBox2.Text) ? 0 : Convert.ToDecimal(numTextBox2.Text);
+                decimal a3 = string.IsNullOrWhiteSpace(numTextBox3.Text) ? 0 : Convert.ToDecimal(numTextBox3.Text);
+
+
+                decimal a4 = a1 + a2 + a3;
+                numTextBox4.Text = a4.ToString();
+
+                decimal a5 = Convert.ToDecimal(txtQty.Text) - a4;
+
+                numTextBox5.Text = a5.ToString();
+
+            }
+        }
+
+		private void numTextBox2_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+	}
 }
