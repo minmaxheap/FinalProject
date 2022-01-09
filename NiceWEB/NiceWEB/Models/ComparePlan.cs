@@ -29,6 +29,6 @@ namespace NiceWEB.Models
     public class ColumnsInfo
     {
         public string Title { get; set; }
-        public string Data { get; set; }
+        public string data { get; set; }
     }
 }

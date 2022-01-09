@@ -6,7 +6,6 @@
 }
 
 
-
 <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
@@ -104,7 +103,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">계획 대비 생산 실적</h3>
+                        <h3 class="card-title">검사 데이터 조회</h3>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
@@ -118,19 +117,21 @@
 
                             <thead>
                                 <tr>
-                                    <th scope="col">작업일자</th>
-                                    <th scope="col">작업지시</th>
+                                    <th scope="col">검사일시</th>
+                                    <th scope="col">LOT ID</th>
                                     <th scope="col">품번</th>
                                     <th scope="col">품명</th>
-                                    <th scope="col">계획수량</th>
-                                    <th scope="col">양품수량</th>
-                                    <th scope="col">불량수량</th>
-                                    <th scope="col">양품률(%)</th>
-                                    <th scope="col">불량률(%)</th>
-                                    <th scope="col">마감시간</th>
+                                    <th scope="col">공정명</th>
+                                    <th scope="col">검사항목</th>
+                                    <th scope="col">검사항목명</th>
+                                    <th scope="col">값 유형</th>
+                                    <th scope="col">LSL</th>
+                                    <th scope="col">Target</th>
+                                    <th scope="col">USL</th>
+                                    <th scope="col">검사 데이터</th>
+                                    <th scope="col">검사자</th>
                                 </tr>
                             </thead>
-
 
                         </table>
                     </div>
@@ -139,13 +140,6 @@
                 <!-- /.card -->
             </div>
             <!-- /.col -->
-        </div>
-        <div class="row">
-            <div class="col-1"></div>
-            <div class="col-11">
-                <canvas id="gauge" width="800" height="400">
-                </canvas>
-            </div>
         </div>
     </div>
 </div>
@@ -166,31 +160,30 @@
     <script type="text/javascript">
         $(document).ready(function () {
             //debugger;
-           // alert($('#dataObjCol').val());
+            //alert($('#dataObjCol').val());
             var dataObjCol = JSON.parse($('#dataObjCol').val());
             var dataObjData = JSON.parse($('#dataObjData').val());
-           
+
 
 
             // Datatable settings.
             $('#TableId').DataTable(
                 {
-                   
-                    "data": dataObjData,
-                    "columns": dataObjCol,
-                        //[
-                    //    { "data": "ORDER_DATE" },
-                    //    { "data": "WORK_ORDER_ID" },
-                    //    { "data": "PRODUCT_CODE" },
-                    //    { "data": "PRODUCT_NAME" },
-                    //    { "data": "ORDER_QTY" },
-                    //    { "data": "PRODUCT_QTY" },
-                    //    { "data": "DEFECT_QTY" },
-                    //    { "data": "QUALITY_RATE" },
-                    //    { "data": "DEFECT_RATE" },
-                    //    { "data": "WORK_CLOSE_TIME" } //데이터가 이렇게 넘어오게 하면 되는 거잖아? 근데 지금은 타이틀도 같이 넘어오는 상태고..그 타이틀은 보여주는 컬럼인가?
 
-                    //],
+                    "data": dataObjData,
+                    "columns": [
+                        { "data": "ORDER_DATE" },
+                        { "data": "WORK_ORDER_ID" },
+                        { "data": "PRODUCT_CODE" },
+                        { "data": "PRODUCT_NAME" },
+                        { "data": "ORDER_QTY" },
+                        { "data": "PRODUCT_QTY" },
+                        { "data": "DEFECT_QTY" },
+                        { "data": "QUALITY_RATE" },
+                        { "data": "DEFECT_RATE" },
+                        { "data": "WORK_CLOSE_TIME" } //데이터가 이렇게 넘어오게 하면 되는 거잖아? 근데 지금은 타이틀도 같이 넘어오는 상태고..그 타이틀은 보여주는 컬럼인가?
+
+                    ],
                     "bPaginate": false,
                     "bFilter": false,
                     "bInfo": false,
