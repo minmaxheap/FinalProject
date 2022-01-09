@@ -421,6 +421,38 @@ END CATCH;
                 return false;
             }
         }
+
+        public bool InsertLOTStatus(SalesOrderProperty vo)
+        {
+            try
+            {
+               
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "NewMaterialLOT";
+                    cmd.Connection = conn;
+                    if (vo.CREATE_USER_ID == null)
+                        cmd.Parameters.AddWithValue("@LAST_TRAN_USER_ID", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@LAST_TRAN_USER_ID", vo.CREATE_USER_ID);
+                    cmd.Parameters.AddWithValue("@PRODUCT_CODE", vo.PRODUCT_CODE);
+                    cmd.Parameters.AddWithValue("@LOT_QTY", vo.ORDER_QTY);
+                    cmd.Parameters.AddWithValue("@SALES_ORDER_ID", vo.SALES_ORDER_ID);
+
+                    int row = cmd.ExecuteNonQuery();
+
+                    return row > 0;
+
+                }
+            }
+            catch (Exception err)
+            {
+                Debug.WriteLine(err.Message); //log에 찍게 해야하나?
+                return false;
+            }
+        }
         public List<SalesOrderProperty> GetSalesOrderSearch(SalesOrderPropertySch vo)
         {
             StringBuilder sb = new StringBuilder();
