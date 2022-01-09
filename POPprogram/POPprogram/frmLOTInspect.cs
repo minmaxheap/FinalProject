@@ -119,6 +119,7 @@ namespace POPprogram
 			{
 
 				int row = csDataGridView1.CurrentRow.Index;
+				
 				int LSL = Convert.ToInt32(csDataGridView1.Rows[row].Cells["SPEC_LSL"].Value.ToString());
 				int USL = Convert.ToInt32(csDataGridView1.Rows[row].Cells["SPEC_USL"].Value.ToString());
 				int a = Convert.ToInt32(csDataGridView1.Rows[row].Cells["InspectValue"].Value.ToString());
@@ -137,7 +138,7 @@ namespace POPprogram
 					// return;
 				}
 				this.csDataGridView1.ClearSelection();
-				btnExecute.Focus();
+				txtComment.Focus();
 			}
 		}
 
