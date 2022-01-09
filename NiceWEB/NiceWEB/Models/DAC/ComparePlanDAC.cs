@@ -70,7 +70,7 @@ FROM [dbo].[WORK_ORDER_MST]";
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(ConfigurationManager.ConnectionStrings["project"].ConnectionString);
-                cmd.CommandText = @"SELECT DISTINCT PRODUCT_CODE
+                cmd.CommandText = @"SELECT DISTINCT PRODUCT_CODE as Data
 FROM [dbo].[WORK_ORDER_MST]";
                 DataTable dt = new DataTable();
                 cmd.Connection.Open();
