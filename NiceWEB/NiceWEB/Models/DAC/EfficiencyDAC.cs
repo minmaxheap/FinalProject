@@ -23,7 +23,7 @@ namespace NiceWEB.Models
             conn.Close();
         }
 
-        public DataTable GetData(string from, string to)
+        public DataTable GetData(string from, string to) // 
         {
             using (SqlCommand cmd = new SqlCommand())
             {
