@@ -133,6 +133,7 @@ namespace DAC
 
 		[DisplayName("생성사용자")]
 		[Browsable(true)]
+		[ReadOnly(true)]
 
 		public string CREATE_USER_ID { get { return create_userid; } set { create_userid = value; } }
 
