@@ -258,11 +258,29 @@ namespace POPprogram
             string lotID = csDataGridView1["LOT_ID", e.RowIndex].Value.ToString();
 
             LOTServ serv = new LOTServ();
-            DataTable dtHis = serv.GetLOTHistory(lotID);
-           List<LOTProperty> list = serv.GetLOTStatus(lotID);
+            if (csDataGridView1["OPERATION_CODE", e.RowIndex].Value != null)
+            {
 
-            csDataGridView2.DataSource = dtHis;
-            if(list.Count>0) pgProperty.SelectedObject = list[0];
+                if (!string.IsNullOrWhiteSpace(csDataGridView1["OPERATION_CODE", e.RowIndex].Value.ToString()))
+                {
+                    DataTable dtHis = serv.GetLOTHistory(lotID);
+                    List<LOTProperty> list = serv.GetLOTStatus(lotID);
+
+                    csDataGridView2.DataSource = null;
+                    csDataGridView2.DataSource = dtHis;
+                    if (list.Count > 0) pgProperty.SelectedObject = list[0];
+                }
+                else 
+                {
+                    DataTable dtHis = serv.GetMaterialLOTHistory(lotID);
+                    List<LOTProperty> list = serv.GetLOTStatus(lotID);
+
+                    csDataGridView2.DataSource = null;
+                    csDataGridView2.DataSource = dtHis;
+                    if (list.Count > 0) pgProperty.SelectedObject = list[0];
+                }
+            }
+          
        
         }
 
