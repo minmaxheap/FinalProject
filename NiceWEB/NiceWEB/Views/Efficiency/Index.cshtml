@@ -43,7 +43,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0">제조 종합 효율</h1>
+                <h1 class="m-0">제조 종합 효율 조회</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
@@ -140,12 +140,25 @@
             </div>
             <!-- /.col -->
         </div>
-        <div class="row">
-            <div class="col-1"></div>
-            <div class="col-11">
-                <canvas id="gauge" width="800" height="400">
-                </canvas>
+        <div class="card card-primary">
+            <div class="card-header">
+                <h3 class="card-title">Area Chart</h3>
+
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
             </div>
+            <div class="card-body">
+                <div class="chart">
+                    <div id="areaChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></div>
+                </div>
+            </div>
+            <!-- /.card-body -->
         </div>
     </div>
 </div>
@@ -212,31 +225,63 @@
         });
     </script>
 
-    <script>
-        var opts = {
-            angle: -0.2, // The span of the gauge arc
-            lineWidth: 0.2, // The line thickness
-            radiusScale: 1, // Relative radius
-            pointer: {
-                length: 0.6, // // Relative to gauge radius
-                strokeWidth: 0.035, // The thickness
-                color: '#000000' // Fill color
-            },
-            limitMax: false,     // If false, max value increases automatically if value > maxValue
-            limitMin: false,     // If true, the min value of the gauge will be fixed
-            colorStart: '#6F6EA0',   // Colors
-            colorStop: '#C0C0DB',    // just experiment with them
-            strokeColor: '#EEEEEE',  // to see which ones work best for you
-            generateGradient: true,
-            highDpiSupport: true,     // High resolution support
+    @{
+        string labels = ViewBag.Labels; //x축
 
-        };
-        var target = document.getElementById('gauge'); // your canvas element
-        var gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
-        gauge.maxValue = 3000; // set max gauge value
-        gauge.setMinValue(0);  // Prefer setter over gauge.minValue = 0
-        gauge.animationSpeed = 32; // set animation speed (32 is default value)
-        gauge.set(900); // set actual value
+        string label1 = ViewBag.Label1;
+        string data1 = ViewBag.data1;
+
+        string label2 = ViewBag.Label2;
+        string data2 = ViewBag.data2;
+
+        string label3 = ViewBag.Label3;
+        string data3 = ViewBag.data3;
+    }
+
+    <script>
+           var chartCanvas = $('#areaChart').get(0).getContext('2d')
+
+           /var temp = "@labels"; //"1월,2월,3월...12월"
+            var arrTemp = temp.split(','); // ['1월', '2월'..]
+
+            var areaChartData = {
+                labels: arrTemp,
+                datasets: [
+                    {
+                        label: '@label1',
+                        backgroundColor: 'rgba(60,141,188,0.9)',
+                        borderColor: 'rgba(60,141,188,0.8)',
+                        pointRadius: false,
+                        pointColor: '#3b8bba',
+                        pointStrokeColor: 'rgba(60,141,188,1)',
+                        pointHighlightFill: '#fff',
+                        pointHighlightStroke: 'rgba(60,141,188,1)',
+                        data: @data1
+                    },
+                    {
+                        label: '@label2',
+                        backgroundColor: 'rgba(210, 214, 222, 1)',
+                        borderColor: 'rgba(210, 214, 222, 1)',
+                        pointRadius: false,
+                        pointColor: 'rgba(210, 214, 222, 1)',
+                        pointStrokeColor: '#c1c7d1',
+                        pointHighlightFill: '#fff',
+                        pointHighlightStroke: 'rgba(220,220,220,1)',
+                        data: @data2
+                    },
+                    {
+                        label: '@label3',
+                        backgroundColor: 'rgba(210, 105, 84, 1)',
+                        borderColor: 'rgba(210, 105, 84, 1)',
+                        pointRadius: false,
+                        pointColor: 'rgba(210, 105, 84, 1)',
+                        pointStrokeColor: '#c1c7d1',
+                        pointHighlightFill: '#fff',
+                        pointHighlightStroke: 'rgba(220,220,220,1)',
+                        data: @data3
+                    }
+                ]
+            }
     </script>
 
 }

@@ -42,7 +42,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0">계획 대비 생산 실적 조회</h1>
+                <h1 class="m-0">검사 데이터 조회</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
@@ -171,19 +171,19 @@
                 {
 
                     "data": dataObjData,
-                    "columns": [
-                        { "data": "ORDER_DATE" },
-                        { "data": "WORK_ORDER_ID" },
-                        { "data": "PRODUCT_CODE" },
-                        { "data": "PRODUCT_NAME" },
-                        { "data": "ORDER_QTY" },
-                        { "data": "PRODUCT_QTY" },
-                        { "data": "DEFECT_QTY" },
-                        { "data": "QUALITY_RATE" },
-                        { "data": "DEFECT_RATE" },
-                        { "data": "WORK_CLOSE_TIME" } //데이터가 이렇게 넘어오게 하면 되는 거잖아? 근데 지금은 타이틀도 같이 넘어오는 상태고..그 타이틀은 보여주는 컬럼인가?
+                    "columns": dataObjCol,
+                    //    { "data": "ORDER_DATE" },
+                    //    { "data": "WORK_ORDER_ID" },
+                    //    { "data": "PRODUCT_CODE" },
+                    //    { "data": "PRODUCT_NAME" },
+                    //    { "data": "ORDER_QTY" },
+                    //    { "data": "PRODUCT_QTY" },
+                    //    { "data": "DEFECT_QTY" },
+                    //    { "data": "QUALITY_RATE" },
+                    //    { "data": "DEFECT_RATE" },
+                    //    { "data": "WORK_CLOSE_TIME" } //데이터가 이렇게 넘어오게 하면 되는 거잖아? 근데 지금은 타이틀도 같이 넘어오는 상태고..그 타이틀은 보여주는 컬럼인가?
 
-                    ],
+                    //],
                     "bPaginate": false,
                     "bFilter": false,
                     "bInfo": false,
