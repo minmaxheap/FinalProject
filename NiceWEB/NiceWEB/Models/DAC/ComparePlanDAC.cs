@@ -49,6 +49,28 @@ WHERE W.PRODUCT_CODE = P.PRODUCT_CODE";
             }
         }
 
+        public List<ComparePlan> GetChartData(string from, string to)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConfigurationManager.ConnectionStrings["project"].ConnectionString);
+                cmd.CommandText = @"SELECT CONVERT(varchar, count(WORK_ORDER_ID)) WORK_ORDER_ID, sum(ORDER_QTY) ORDER_QTY,  sum(PRODUCT_QTY) PRODUCT_QTY , sum(DEFECT_QTY) DEFECT_QTY
+FROM [dbo].[WORK_ORDER_MST] W";
+                cmd.Parameters.AddWithValue("@from", from);
+                cmd.Parameters.AddWithValue("@to", to);
+
+
+                cmd.Connection.Open();
+                List<ComparePlan> list = Helper.DataReaderMapToList<ComparePlan>(cmd.ExecuteReader());
+                cmd.Connection.Close();
+
+
+
+                return list;
+            }
+
+        }
+
 
     }
 }
