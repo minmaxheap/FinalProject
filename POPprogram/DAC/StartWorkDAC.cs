@@ -43,7 +43,7 @@ namespace DAC
 			string sql = @"select LOT_ID,s.PRODUCT_CODE
 from LOT_STS s inner
 join WORK_ORDER_MST w on s.WORK_ORDER_ID = w.WORK_ORDER_ID
-WHERE  LEFT(s.PRODUCT_CODE, 2) = 'pd' AND ORDER_STATUS<>'CLOSE'";
+WHERE  LEFT(s.PRODUCT_CODE, 2) = 'pd' AND ORDER_STATUS ='OPEN'";
 
 			SqlCommand cmd = new SqlCommand(sql, conn);
 			List<string> List = new List<string>();
@@ -65,7 +65,7 @@ WHERE  LEFT(s.PRODUCT_CODE, 2) = 'pd' AND ORDER_STATUS<>'CLOSE'";
 from LOT_STS s inner
 join WORK_ORDER_MST w on s.WORK_ORDER_ID = w.WORK_ORDER_ID
 left join OPERATION_MST o  on s.OPERATION_CODE = o.OPERATION_CODE
-WHERE  LEFT(s.PRODUCT_CODE, 2) = 'pd' AND ORDER_STATUS<>'CLOSE' and o.CHECK_INSPECT_FLAG ='Y'";
+WHERE  LEFT(s.PRODUCT_CODE, 2) = 'pd' AND ORDER_STATUS = 'PROC' and o.CHECK_INSPECT_FLAG ='Y'";
 
 			SqlCommand cmd = new SqlCommand(sql, conn);
 			List<string> List = new List<string>();
@@ -86,7 +86,7 @@ WHERE  LEFT(s.PRODUCT_CODE, 2) = 'pd' AND ORDER_STATUS<>'CLOSE' and o.CHECK_INSP
 from LOT_STS s inner
 join WORK_ORDER_MST w on s.WORK_ORDER_ID = w.WORK_ORDER_ID
 left join OPERATION_MST o  on s.OPERATION_CODE = o.OPERATION_CODE
-WHERE  LEFT(s.PRODUCT_CODE, 2) = 'pd' AND ORDER_STATUS<>'CLOSE' and o.CHECK_DEFECT_FLAG ='Y' ";
+WHERE  LEFT(s.PRODUCT_CODE, 2) = 'pd' AND ORDER_STATUS = 'PROC' and o.CHECK_DEFECT_FLAG ='Y' ";
 
 			SqlCommand cmd = new SqlCommand(sql, conn);
 			List<string> List = new List<string>();

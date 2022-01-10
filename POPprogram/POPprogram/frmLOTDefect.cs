@@ -14,9 +14,15 @@ namespace POPprogram
         StarWorkServ ser;
         List<string> list;
         List<string> list1;
+        List<string> list2;
+        List<string> list3;
         List<StarWorkProperty> swlist;
         List<string> CodeList;
         LOTinspectServ lotserv;
+        deffectServ deserv;
+
+
+        decimal lot_qty = 0;
         public frmLOTDefect()
         {
             InitializeComponent();
@@ -25,6 +31,13 @@ namespace POPprogram
         private void cboLOTID_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cboLOTID.SelectedIndex < 1) return;
+
+            LoadData();
+
+        }
+
+        private void LoadData()
+        {
             string Value = cboLOTID.SelectedValue.ToString();
 
 
@@ -61,12 +74,17 @@ namespace POPprogram
             ser = new StarWorkServ();
             list1 = serv.GetDefect_Code();
             list1.Insert(0, "");
+            list2 = serv.GetDefect_Code();
+            list2.Insert(0, "");
+            list3 = serv.GetDefect_Code();
+            list3.Insert(0, "");
+
             comboBox1.DisplayMember = "KEY_1";
-            //comboBox1.DataSource = list1;
+            comboBox1.DataSource = list1;
             comboBox2.DisplayMember = "KEY_1";
-            //comboBox2.DataSource = list1;
+            comboBox2.DataSource = list2;
             comboBox3.DisplayMember = "KEY_1";
-            comboBox3.DataSource = list1;
+            comboBox3.DataSource = list3;
         }
 
         private void btnExecute_Click(object sender, EventArgs e)
@@ -84,11 +102,11 @@ namespace POPprogram
                 DataRow dr = dt.NewRow();
 
                 //여기서는 코드이름을 넣어야할까 아니면 그 부분을 넣어야할까?
-               switch(i)
+                switch (i)
                 {
                     case 1:
                         {
-                            if (string.IsNullOrWhiteSpace(numTextBox1.Text)) break;
+                            if (string.IsNullOrWhiteSpace(numTextBox1.Text) || string.IsNullOrWhiteSpace(comboBox1.SelectedValue.ToString())) break;
                             else
                             {
                                 dr["ID"] = dt.Rows.Count + 1;
@@ -99,10 +117,10 @@ namespace POPprogram
                                 dt.Rows.Add(dr);
                             }
                             break;
-                        } 
+                        }
                     case 2:
                         {
-                            if (string.IsNullOrWhiteSpace(numTextBox2.Text)) break;
+                            if (string.IsNullOrWhiteSpace(numTextBox2.Text) || string.IsNullOrWhiteSpace(comboBox2.SelectedValue.ToString())) break;
                             else
                             {
                                 dr["ID"] = dt.Rows.Count + 1;
@@ -116,12 +134,15 @@ namespace POPprogram
                         }
                     case 3:
                         {
-                            if (string.IsNullOrWhiteSpace(numTextBox3.Text)) break;
+                            if (string.IsNullOrWhiteSpace(numTextBox3.Text) || string.IsNullOrWhiteSpace(comboBox3.SelectedValue.ToString()))  break;
                             else
                             {
                                 dr["ID"] = dt.Rows.Count + 1;
-                                dr["DEFECT_CODE"] = comboBox3.Text;
-                                if (!string.IsNullOrWhiteSpace(numTextBox3.Text))
+                                if (!string.IsNullOrWhiteSpace(comboBox3.SelectedValue.ToString()))
+                                {
+                                    dr["DEFECT_CODE"] = comboBox3.Text;
+                                }
+                                if (!string.IsNullOrWhiteSpace(numTextBox3.Text) && !string.IsNullOrWhiteSpace(comboBox3.SelectedValue.ToString()))
                                     dr["DEFECT_QTY"] = Convert.ToDecimal(numTextBox3.Text);
 
                                 dt.Rows.Add(dr);
@@ -130,18 +151,36 @@ namespace POPprogram
                         }
 
                 }
+            }
+            dt.AcceptChanges();
 
+            if (cboLOTID.SelectedValue.ToString() == "")
+            {
+                MessageBox.Show("lot 상태가 없습니다.");
+                return;
+            }
+            
          
 
+            //if(String.IsNullOrWhiteSpace(
+            
+            decimal a1 = string.IsNullOrWhiteSpace(numTextBox1.Text) ? 0 : Convert.ToDecimal(numTextBox1.Text);
+            decimal a2 = string.IsNullOrWhiteSpace(numTextBox2.Text) ? 0 : Convert.ToDecimal(numTextBox2.Text);
+            decimal a3 = string.IsNullOrWhiteSpace(numTextBox3.Text) ? 0 : Convert.ToDecimal(numTextBox3.Text);
+      
+            lot_qty = string.IsNullOrWhiteSpace(numTextBox5.Text) ? 0: Convert.ToDecimal(numTextBox5.Text);
 
+            if (dt.Rows.Count < 1)
+            {
+                MessageBox.Show("입력값을 제대로 입력해주세요");
+                return;
             }
-
-            dt.AcceptChanges();
-            //string msuerID = 
-            bool result = lotserv.insert(frmLogin.userID, txtComment.Text, cboLOTID.SelectedValue.ToString(), dt);
+            deserv = new deffectServ();
+            bool result = deserv.insert(lot_qty, txtComment.Text, frmLogin.userID, cboLOTID.SelectedValue.ToString(), dt);
             if (result)
             {
                 MessageBox.Show("성공");
+                LoadData();
                 return;
             }
             else
@@ -149,7 +188,39 @@ namespace POPprogram
                 MessageBox.Show("실패");
                 return;
             }
+            //string msuerID = 
+           
 
         }
-    }
+
+		private void panel4_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
+        private void numtxt_keydown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                decimal a1 = string.IsNullOrWhiteSpace(numTextBox1.Text) ? 0 : Convert.ToDecimal(numTextBox1.Text);
+                decimal a2 = string.IsNullOrWhiteSpace(numTextBox2.Text) ? 0 : Convert.ToDecimal(numTextBox2.Text);
+                decimal a3 = string.IsNullOrWhiteSpace(numTextBox3.Text) ? 0 : Convert.ToDecimal(numTextBox3.Text);
+
+
+                decimal a4 = a1 + a2 + a3;
+                numTextBox4.Text = a4.ToString();
+
+                decimal a5 = Convert.ToDecimal(txtQty.Text) - a4;
+
+                numTextBox5.Text = a5.ToString();
+
+                
+
+            }
+        }
+
+		private void numTextBox2_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

@@ -15,27 +15,19 @@ namespace NiceWEB.Controllers
         // GET: ComparePlan
         public ActionResult Index()
         {
+            CommonDAC comDAC = new CommonDAC();
+            //select box에 전달할 데이터
+            List<TableData> order = comDAC.GetWorkOrder();
+            List<TableData> product = comDAC.GetProductCode();
+            ViewBag.order = new SelectList(order, "Data", "Data");
+            ViewBag.product = new SelectList(product, "Data", "Data");
+
             var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
             TableData t = new TableData();
             List<ColumnsInfo> _col = new List<ColumnsInfo>();
 
             ComparePlanDAC dac = new ComparePlanDAC();
            DataTable dt = dac.GetData("2020-01-01","2010-02-02");
-            // string data =  DataTableToJson(dt);
-
-            //DataTable dt = new DataTable();
-            //dt.Columns.Add("ID", typeof(Int32));
-            //dt.Columns.Add("Name", typeof(string));
-
-            //DataRow dr = dt.NewRow();
-            //dr[0] = 1;
-            //dr[1] = "Ajay";
-            //dt.Rows.Add(dr);
-
-            //dr = dt.NewRow();
-            //dr[0] = 2;
-            //dr[1] = "Sanu";
-
             
             for (int i = 0; i <= dt.Columns.Count - 1; i++)
             {
@@ -55,13 +47,17 @@ namespace NiceWEB.Controllers
             string data = serializer.Serialize(lst);
             t.Data = data;
 
-            //select box에 전달할 데이터
-            List<TableData> order = dac.GetWorkOrder();
-            List<TableData> product =  dac.GetProductCode();
-            //문제는 이걸 어떻게 전달하냐 => 전달해서 어떻게 바인딩시키냐
-            ViewBag.order = new SelectList(order, "Data", "Data");
-            ViewBag.product = new SelectList(product, "Data", "Data");
 
+
+           List <ComparePlan> list = dac.GetChartData("3", "3");
+            ViewBag.chart = list;
+            ViewBag.work = list[0].WORK_ORDER_ID;
+            ViewBag.ordQty = list[0].ORDER_QTY;
+            ViewBag.prdQty = list[0].PRODUCT_QTY;
+            ViewBag.defQty = list[0].DEFECT_QTY;
+
+            ViewBag.qualityRate = (list[0].PRODUCT_QTY / (list[0].PRODUCT_QTY + list[0].DEFECT_QTY)) * Convert.ToDecimal(100);
+            ViewBag.defectRate = (list[0].DEFECT_QTY / (list[0].PRODUCT_QTY + list[0].DEFECT_QTY))* Convert.ToDecimal(100);
 
             return View(t);
 

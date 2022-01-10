@@ -190,8 +190,21 @@ namespace POPprogram
 					}
 				}	
 			}
+
+			if (cboLOTID.SelectedValue.ToString() == "")
+			{
+				MessageBox.Show("lot 상태가 없습니다.");
+				return;
+			}
+
+			if (dt == null)
+			{
+				MessageBox.Show("검사를 하지않아 검사데이터가 없습니다.");
+				return;
+			}
 			dt.AcceptChanges();
 			//string msuerID = 
+			
 			bool result = lotserv.insert(frmLogin.userID, txtComment.Text, cboLOTID.SelectedValue.ToString(), dt);
 			if (result)
 			{
