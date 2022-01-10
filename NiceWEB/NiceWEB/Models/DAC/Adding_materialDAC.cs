@@ -7,7 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Services;
 
-namespace NiceWEB.Models.DAC
+namespace NiceWEB.Models
 {
 	public class Adding_materialDAC : IDisposable
 	{
