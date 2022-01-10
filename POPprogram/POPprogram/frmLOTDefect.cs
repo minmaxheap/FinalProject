@@ -20,6 +20,9 @@ namespace POPprogram
         List<string> CodeList;
         LOTinspectServ lotserv;
         deffectServ deserv;
+
+
+        decimal lot_qty = 0;
         public frmLOTDefect()
         {
             InitializeComponent();
@@ -28,6 +31,13 @@ namespace POPprogram
         private void cboLOTID_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cboLOTID.SelectedIndex < 1) return;
+
+            LoadData();
+
+        }
+
+        private void LoadData()
+        {
             string Value = cboLOTID.SelectedValue.ToString();
 
 
@@ -92,14 +102,14 @@ namespace POPprogram
                 DataRow dr = dt.NewRow();
 
                 //여기서는 코드이름을 넣어야할까 아니면 그 부분을 넣어야할까?
-               switch(i)
+                switch (i)
                 {
                     case 1:
                         {
-                            if (string.IsNullOrWhiteSpace(numTextBox1.Text)) break;
+                            if (string.IsNullOrWhiteSpace(numTextBox1.Text) || string.IsNullOrWhiteSpace(comboBox1.SelectedValue.ToString())) break;
                             else
                             {
-                                dr["ID"] = dt.Rows.Count+1;
+                                dr["ID"] = dt.Rows.Count + 1;
                                 dr["DEFECT_CODE"] = comboBox1.Text;
 
                                 dr["DEFECT_QTY"] = Convert.ToDecimal(numTextBox1.Text);
@@ -107,10 +117,10 @@ namespace POPprogram
                                 dt.Rows.Add(dr);
                             }
                             break;
-                        } 
+                        }
                     case 2:
                         {
-                            if (string.IsNullOrWhiteSpace(numTextBox2.Text)) break;
+                            if (string.IsNullOrWhiteSpace(numTextBox2.Text) || string.IsNullOrWhiteSpace(comboBox2.SelectedValue.ToString())) break;
                             else
                             {
                                 dr["ID"] = dt.Rows.Count + 1;
@@ -124,12 +134,15 @@ namespace POPprogram
                         }
                     case 3:
                         {
-                            if (string.IsNullOrWhiteSpace(numTextBox3.Text)) break;
+                            if (string.IsNullOrWhiteSpace(numTextBox3.Text) || string.IsNullOrWhiteSpace(comboBox3.SelectedValue.ToString()))  break;
                             else
                             {
                                 dr["ID"] = dt.Rows.Count + 1;
-                                dr["DEFECT_CODE"] = comboBox3.Text;
-                                if (!string.IsNullOrWhiteSpace(numTextBox3.Text))
+                                if (!string.IsNullOrWhiteSpace(comboBox3.SelectedValue.ToString()))
+                                {
+                                    dr["DEFECT_CODE"] = comboBox3.Text;
+                                }
+                                if (!string.IsNullOrWhiteSpace(numTextBox3.Text) && !string.IsNullOrWhiteSpace(comboBox3.SelectedValue.ToString()))
                                     dr["DEFECT_QTY"] = Convert.ToDecimal(numTextBox3.Text);
 
                                 dt.Rows.Add(dr);
@@ -138,21 +151,36 @@ namespace POPprogram
                         }
 
                 }
-
-         
-
-
             }
-
             dt.AcceptChanges();
 
-          
+            if (cboLOTID.SelectedValue.ToString() == "")
+            {
+                MessageBox.Show("lot 상태가 없습니다.");
+                return;
+            }
+            
+         
 
+            //if(String.IsNullOrWhiteSpace(
+            
+            decimal a1 = string.IsNullOrWhiteSpace(numTextBox1.Text) ? 0 : Convert.ToDecimal(numTextBox1.Text);
+            decimal a2 = string.IsNullOrWhiteSpace(numTextBox2.Text) ? 0 : Convert.ToDecimal(numTextBox2.Text);
+            decimal a3 = string.IsNullOrWhiteSpace(numTextBox3.Text) ? 0 : Convert.ToDecimal(numTextBox3.Text);
+      
+            lot_qty = string.IsNullOrWhiteSpace(numTextBox5.Text) ? 0: Convert.ToDecimal(numTextBox5.Text);
+
+            if (dt.Rows.Count < 1)
+            {
+                MessageBox.Show("입력값을 제대로 입력해주세요");
+                return;
+            }
             deserv = new deffectServ();
-            bool result = deserv.insert(Convert.ToDecimal(numTextBox5.Text), txtComment.Text, frmLogin.userID, cboLOTID.SelectedValue.ToString(), dt);
+            bool result = deserv.insert(lot_qty, txtComment.Text, frmLogin.userID, cboLOTID.SelectedValue.ToString(), dt);
             if (result)
             {
                 MessageBox.Show("성공");
+                LoadData();
                 return;
             }
             else
@@ -184,6 +212,8 @@ namespace POPprogram
                 decimal a5 = Convert.ToDecimal(txtQty.Text) - a4;
 
                 numTextBox5.Text = a5.ToString();
+
+                
 
             }
         }

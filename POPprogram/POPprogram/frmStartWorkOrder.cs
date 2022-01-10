@@ -43,16 +43,43 @@ namespace POPprogram
 		{
             //textbox마다 보여주기 
             if (cboLOTID.SelectedIndex < 1) return;
-			string Value = cboLOTID.SelectedValue.ToString();
+
+			//string Value = cboLOTID.SelectedValue.ToString();
 
          
 
+   //         Value = (cboLOTID.SelectedValue == null) ? "" : cboLOTID.SelectedValue.ToString();
+
+   //         swlist = serv.GetData(Value);
+
+   //          txtLOTDescription.Text = swlist[0].LOT_DESC;
+   //           txtQty.Text = swlist[0].LOT_QTY.ToString();
+   //         txtProdCode.Text = swlist[0].PRODUCT_CODE;
+   //         txtCustID.Text = swlist[0].CUSTOMER_CODE;
+   //         txtOperCode.Text = swlist[0].OPERATION_CODE;
+   //         txtOperName.Text = swlist[0].OPERATION_NAME;
+   //         txtProdName.Text = swlist[0].PRODUCT_NAME;
+   //         txtWorkOrder.Text = swlist[0].WORK_ORDER_ID;
+   //         lblOrderQty.Text = swlist[0].ORDER_QTY.ToString();
+   //         lblDefectQty.Text = swlist[0].DEFECT_QTY.ToString();
+   //         lblProdQty.Text = swlist[0].PRODUCT_QTY.ToString();
+   //         txtCustName.Text = swlist[0].DATA_1;
+   //         lblStatus.Text = swlist[0].ORDER_STATUS;
+
+            LoadData();
+
+        }
+
+		private void LoadData()
+		{
+            string Value = cboLOTID.SelectedValue.ToString();
+            
             Value = (cboLOTID.SelectedValue == null) ? "" : cboLOTID.SelectedValue.ToString();
 
             swlist = serv.GetData(Value);
 
-             txtLOTDescription.Text = swlist[0].LOT_DESC;
-              txtQty.Text = swlist[0].LOT_QTY.ToString();
+            txtLOTDescription.Text = swlist[0].LOT_DESC;
+            txtQty.Text = swlist[0].LOT_QTY.ToString();
             txtProdCode.Text = swlist[0].PRODUCT_CODE;
             txtCustID.Text = swlist[0].CUSTOMER_CODE;
             txtOperCode.Text = swlist[0].OPERATION_CODE;
@@ -64,7 +91,6 @@ namespace POPprogram
             lblProdQty.Text = swlist[0].PRODUCT_QTY.ToString();
             txtCustName.Text = swlist[0].DATA_1;
             lblStatus.Text = swlist[0].ORDER_STATUS;
-
         }
 
 		private void btnExecute_Click(object sender, EventArgs e)
@@ -87,11 +113,6 @@ namespace POPprogram
                 START_EQUIPMENT_CODE =(comboBox1.SelectedValue.ToString() == null) ? " ":comboBox1.SelectedValue.ToString()
             };
 
-            if (mLOT.START_EQUIPMENT_CODE == null)
-            {
-                mLOT.START_EQUIPMENT_CODE = "";
-            }
-
             if (mLOT == null)
             {
                 MessageBox.Show("해당되는 값이 없습니다.");
@@ -103,11 +124,13 @@ namespace POPprogram
             //    MessageBox.Show("proc상태여서 실행을 할수없습니다.");
             //    return;
             //}
+
             bool result = serv.Insert(mLOT);
             if (result)
             {
                 MessageBox.Show("성공");
-                lblStatus.Text = "PROC";
+                LoadData();
+                //lblStatus.Text = "PROC";
                 return;
             }
             else
