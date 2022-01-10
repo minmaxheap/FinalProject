@@ -37,7 +37,7 @@
 					<div class="col-4">
 						<div class="form-group input-group">
 							<label for="LotID" class="col-form-label">LOT ID:&nbsp;</label>
-							@Html.TextBox("LotID", null, null, new { @class = "form-control" })
+							@Html.DropDownList("LotID", (IEnumerable<SelectListItem>)ViewBag.categories, null, new { @class = "form-control", @id = "LotID" })
 						</div>
 					</div>
 					<div class="col-1">
