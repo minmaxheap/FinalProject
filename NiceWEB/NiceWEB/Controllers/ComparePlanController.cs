@@ -22,6 +22,7 @@ namespace NiceWEB.Controllers
             ViewBag.order = new SelectList(order, "Data", "Data");
             ViewBag.product = new SelectList(product, "Data", "Data");
 
+            //datatable 
             var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
             TableData t = new TableData();
             List<ColumnsInfo> _col = new List<ColumnsInfo>();

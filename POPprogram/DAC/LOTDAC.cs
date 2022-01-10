@@ -176,6 +176,22 @@ WHERE LOT_ID=@LOT_ID
             }
         }
 
+        public DataTable GetMaterialLOTHistory(string lotID)
+        {
+            string sql = @"SELECT  HIST_SEQ, TRAN_TIME, TRAN_CODE,LOT_QTY, START_FLAG
+from [dbo].[LOT_HIS] L
+where LOT_ID=@LOT_ID
+order by HIST_SEQ desc";
+            DataTable dt = new DataTable();
+            using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
+            {
+                da.SelectCommand.Parameters.AddWithValue("@LOT_ID", lotID);
+                da.Fill(dt);
+                return dt;
+            }
+        }
+
+
         //        public DataTable GetLOTStatus(string lotID)
         //        {
         //            string sql = @"select LOT_ID, LOT_DESC, PRODUCT_CODE, OPERATION_CODE, STORE_CODE, LOT_QTY, CREATE_QTY, OPER_IN_QTY, START_FLAG, START_QTY, 

@@ -493,7 +493,7 @@ DECLARE @NewLot  TABLE
 
                     int row = cmd.ExecuteNonQuery();
 
-                    return true;
+                    return row>0;
 
                 }
             }
