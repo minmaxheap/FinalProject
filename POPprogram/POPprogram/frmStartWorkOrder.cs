@@ -110,7 +110,7 @@ namespace POPprogram
                 CREATE_QTY = Convert.ToDecimal(txtQty.Text),
                 OPER_IN_QTY = Convert.ToDecimal(txtQty.Text),
                 START_QTY = Convert.ToDecimal(txtQty.Text),
-                START_EQUIPMENT_CODE =(comboBox1.SelectedValue.ToString() == null) ? " ":comboBox1.SelectedValue.ToString()
+                START_EQUIPMENT_CODE = (comboBox1.SelectedValue.ToString() == "") ? "":comboBox1.SelectedValue.ToString()
             };
 
             if (mLOT == null)
