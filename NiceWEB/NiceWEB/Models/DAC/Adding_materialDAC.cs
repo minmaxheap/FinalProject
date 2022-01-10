@@ -28,14 +28,13 @@ namespace NiceWEB.Models
 			using (SqlCommand cmd = new SqlCommand())
 			{
 				cmd.Connection = new SqlConnection(ConfigurationManager.ConnectionStrings["project"].ConnectionString);
-				cmd.CommandText = @"select LOT_ID, HIST_SEQ, MATERIAL_LOT_ID, MATERIAL_LOT_HIST_SEQ, INPUT_QTY, CHILD_PRODUCT_CODE, MATERIAL_STORE_CODE, TRAN_TIME, 
-TRAN_CODE, PRODUCT_CODE, OPERATION_CODE, EQUIPMENT_CODE, TRAN_USER_ID, TRAN_COMMENT 
-from LOT_MATERIAL_HIS
--- 조회조건 where 
-group by PRODUCT_CODE,OPERATION_CODE,CHILD_PRODUCT_CODE
-order by TRAN_TIME desc,PRODUCT_CODE,OPERATION_CODE,CHILD_PRODUCT_CODE";
+				cmd.CommandText = @"select TRAN_TIME,PRODUCT_CODE,OPERATION_CODE,CHILD_PRODUCT_CODE,sum(convert(int,INPUT_QTY)) from LOT_MATERIAL_HIS
+group by TRAN_TIME,PRODUCT_CODE,OPERATION_CODE,CHILD_PRODUCT_CODE";
 
+				cmd.Connection.Open();
+				cmd.Connection.Close();
 				return Helper.DataReaderMapToList<Adding_materialProperty>(cmd.ExecuteReader());
+
 			}
 		}
 			//조회조건을 달아서 
@@ -43,6 +42,7 @@ order by TRAN_TIME desc,PRODUCT_CODE,OPERATION_CODE,CHILD_PRODUCT_CODE";
 			{
 			using (SqlCommand cmd = new SqlCommand())
 			{
+				conn.Open();
 				cmd.Connection = new SqlConnection(ConfigurationManager.ConnectionStrings["project"].ConnectionString);
 				cmd.CommandText = @"select LOT_ID, HIST_SEQ, MATERIAL_LOT_ID, MATERIAL_LOT_HIST_SEQ, INPUT_QTY, CHILD_PRODUCT_CODE, MATERIAL_STORE_CODE, TRAN_TIME, 
 TRAN_CODE, PRODUCT_CODE, OPERATION_CODE, EQUIPMENT_CODE, TRAN_USER_ID, TRAN_COMMENT 
