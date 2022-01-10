@@ -38,6 +38,12 @@ namespace NiceWEB.Controllers
             string data = serializer.Serialize(lst);
             t.Data = data;
 
+            CommonDAC comDAC = new CommonDAC();
+            //select box에 전달할 데이터
+            List<TableData> order = comDAC.GetWorkOrder();
+            List<TableData> product = comDAC.GetProductCode();
+            ViewBag.order = new SelectList(order, "Data", "Data");
+            ViewBag.product = new SelectList(product, "Data", "Data");
 
             return View(t);
         }

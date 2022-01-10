@@ -79,21 +79,24 @@
                     <div class="col-4">
                         <div class="form-group">
                             <label>작업지시:</label>
-                            <select class="select2" style="width: 100%;">
-                                <option selected>ASC</option>
-                                <option>DESC</option>
-                            </select>
+
+                            @if (ViewBag.order != null)
+                            {
+                                @Html.DropDownListFor(model => model.Data, ViewBag.order as SelectList, "--Select--", new { @class = "form-control" })
+                            }
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="form-group">
                             <label>품번:</label>
-                            <select class="select2" style="width: 100%;">
-                                <option selected>ASC</option>
-                                <option>DESC</option>
-                            </select>
+ 
+                            @if (ViewBag.product != null)
+                            {
+                                @Html.DropDownListFor(model => model.Data, ViewBag.product as SelectList, "--Select--", new { @class = "form-control" })
+                            }
                         </div>
                     </div>
+
 
                 </div>
             </div>
@@ -163,6 +166,18 @@
     </div>
 </div>
 
+@{
+    string labels = ViewBag.Labels; //x축
+
+    string label1 = ViewBag.Label1;
+    string data1 = ViewBag.data1;
+
+    string label2 = ViewBag.Label2;
+    string data2 = ViewBag.data2;
+
+    string label3 = ViewBag.Label3;
+    string data3 = ViewBag.data3;
+}
 
 @section Scripts
 {
@@ -174,6 +189,17 @@
             $('#reservation').daterangepicker()
 
         })
+    </script>
+
+
+    <script>
+        $(document).ready(function () {
+
+            $.each(data, function (index, row) {
+                $("#data").append("<option value='" + row.data + "'>" + row.data + "</option>")
+            });
+
+        });
     </script>
 
     <script type="text/javascript">
@@ -225,18 +251,7 @@
         });
     </script>
 
-    @{
-        string labels = ViewBag.Labels; //x축
 
-        string label1 = ViewBag.Label1;
-        string data1 = ViewBag.data1;
-
-        string label2 = ViewBag.Label2;
-        string data2 = ViewBag.data2;
-
-        string label3 = ViewBag.Label3;
-        string data3 = ViewBag.data3;
-    }
 
     <script>
            var chartCanvas = $('#areaChart').get(0).getContext('2d')
