@@ -197,6 +197,7 @@ namespace MES_Team3
             {
                 serv.InsertAutoPurchase(save);
                 serv.InsertAutoWorkOrder(save);
+                serv.InsertLOTStatus(save);
                 SalesOrderDAC.ConfirmTrigger = false;
             }
             if (bResult)

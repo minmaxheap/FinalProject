@@ -108,6 +108,16 @@ namespace MES_Team3
                     MessageBox.Show("LSL,USL을 입력해주세요");
                     return;
                 }
+
+                int LSL = Convert.ToInt32(save.SPEC_LSL);
+                int Target = Convert.ToInt32(save.SPEC_TARGET);
+                int USL = Convert.ToInt32(save.SPEC_USL);
+
+                if (!(LSL < Target && LSL < USL && Target < USL))
+                {
+                    MessageBox.Show("LSL,TARGET,USL 입력을 제대로 해주세요");
+                    return;
+                }
             }
             if (save.VALUE_TYPE == "C")
             {
@@ -116,20 +126,17 @@ namespace MES_Team3
                     MessageBox.Show("Target 입력하세요");
                     return;
                 }
+                int k;
+                if (int.TryParse(save.SPEC_TARGET, out k))
+                {
+                    MessageBox.Show("target 숫자값입니다");
+                    return;
+                }
+
+
             }
-            Convert.ToInt32(save.SPEC_LSL);
-            //if(Convert.ToInt32(save.SPEC_LSL)  < Convert.ToInt32(save.SPEC_TARGET))
-            int LSL = Convert.ToInt32(save.SPEC_LSL);
-            int Target = Convert.ToInt32(save.SPEC_TARGET);
-            int USL = Convert.ToInt32(save.SPEC_USL);
-
-            // a<b<c
-
-            if (LSL < Target && LSL < USL && Target<USL)
-            {
-
-
-
+            
+           
                 bool bResult = serv.insert(save);
                 if (bResult)
                 {
@@ -142,12 +149,7 @@ namespace MES_Team3
                     MessageBox.Show("등록중 실패");
                     return;
                 }
-            }
-            else
-            {
-                MessageBox.Show("LSL,Target,USL 값이 맞지가 않습니다.");
-                return;
-            }
+           
         }
 
         private void LoadData()
@@ -227,6 +229,41 @@ namespace MES_Team3
                 MessageBox.Show("필요한 값을 입력해주세요");
                 return;
             }
+
+            if (save.VALUE_TYPE == "N")
+            {
+                if (string.IsNullOrWhiteSpace(save.SPEC_LSL) || string.IsNullOrWhiteSpace(save.SPEC_USL))
+                {
+                    MessageBox.Show("LSL,USL을 입력해주세요");
+                    return;
+                }
+                int LSL = Convert.ToInt32(save.SPEC_LSL);
+                int Target = Convert.ToInt32(save.SPEC_TARGET);
+                int USL = Convert.ToInt32(save.SPEC_USL);
+
+                if (!(LSL < Target && LSL < USL && Target < USL))
+                {
+					MessageBox.Show("LSL,TARGET,USL 입력을 제대로 해주세요");
+					return;
+				}
+
+			}
+            if (save.VALUE_TYPE == "C")
+            {
+                if (string.IsNullOrWhiteSpace(save.SPEC_TARGET))
+                {
+                    MessageBox.Show("Target 입력하세요");
+                    return;
+                }
+                int k;
+                if (int.TryParse(save.SPEC_TARGET, out k))
+                {
+                    MessageBox.Show("target 숫자값입니다");
+                    return;
+                }
+            }
+
+            //이거질문 
             bool bResult = serv.Update(save);
             if (bResult)
             {
@@ -269,73 +306,7 @@ namespace MES_Team3
 
                     }
                 }
-
-                if (vo.SPEC_LSL != null && vo.SPEC_TARGET != null && vo.SPEC_USL != null)
-                {
-                    int lsl = Convert.ToInt32(vo.SPEC_LSL);
-                    int tar = Convert.ToInt32(vo.SPEC_TARGET);
-                    int usl = Convert.ToInt32(vo.SPEC_USL);
-
-                   
-
-                    //if (Convert.ToInt32(vo.SPEC_TARGET) > Convert.ToInt32(vo.SPEC_USL) || Convert.ToInt32(vo.SPEC_TARGET) < Convert.ToInt32(vo.SPEC_LSL))
-                    //{
-                    //    MessageBox.Show("target 문제 ");
-                    //    vo.SPEC_TARGET = null;
-                    //}
-                    //if (Convert.ToInt32(vo.SPEC_LSL) > Convert.ToInt32(vo.SPEC_TARGET) || Convert.ToInt32(vo.SPEC_LSL) > Convert.ToInt32(vo.SPEC_USL))
-                    //{
-                    //    MessageBox.Show("vo문제");
-                    //}
-
-                   
-                }
             }
-
-                //if (Convert.ToInt32(vo.SPEC_USL) < Convert.ToInt32(vo.SPEC_TARGET) || Convert.ToInt32(vo.SPEC_USL) < Convert.ToInt32(vo.SPEC_LSL))
-                //{
-                //    if (vo.SPEC_USL == null)
-                //    {
-
-                //    }
-                //    else
-                //    {
-                //        MessageBox.Show("target 혹은 LsL이 USL 보다 크면 안됩니다.");
-                //        vo.SPEC_TARGET = null;
-                //        vo.SPEC_LSL = null;
-                //    }
-                //}
-                //if (Convert.ToInt32(vo.SPEC_LSL) > Convert.ToInt32(vo.SPEC_TARGET) || Convert.ToInt32(vo.SPEC_LSL) > Convert.ToInt32(vo.SPEC_TARGET))
-                //{
-                //    if (vo.SPEC_USL == null || vo.SPEC_TARGET == null)
-                //    {
-                //    }
-                //    else
-                //    {
-                //        MessageBox.Show("LSL이 더크면 안돼요 제일작아야함");
-                //        vo.SPEC_LSL = null;
-                //    }
-                //}
-                //if (Convert.ToInt32(vo.SPEC_TARGET) < Convert.ToInt32(vo.SPEC_LSL) || Convert.ToInt32(vo.SPEC_TARGET) > Convert.ToInt32(vo.SPEC_USL))
-                //{
-                //    if (vo.SPEC_USL == null)
-                //    {
-
-                //    }
-                //    else
-                //    {
-                //        MessageBox.Show("Target이 Usl보다 큽니다.");
-                //        vo.SPEC_TARGET = null;
-                //    }
-                //}
-
-
-
-            
-
-
-
-
 
             if (vo.VALUE_TYPE == "C")
              {   

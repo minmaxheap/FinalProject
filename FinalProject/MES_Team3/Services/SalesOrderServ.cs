@@ -67,5 +67,13 @@ namespace MES_Team3
             dac.Dispose();
             return bResult;
         }
+
+        public bool InsertLOTStatus(SalesOrderProperty vo)
+        {
+            SalesOrderDAC dac = new SalesOrderDAC();
+            bool bResult = dac.InsertLOTStatus(vo);
+            dac.Dispose();
+            return bResult;
+        }
     }
 }

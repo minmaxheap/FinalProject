@@ -100,6 +100,7 @@ namespace POPprogram
 			// 
 			// btnExecute
 			// 
+			this.btnExecute.Location = new System.Drawing.Point(370, 0);
 			this.btnExecute.Click += new System.EventHandler(this.btnExecute_Click);
 			// 
 			// cboLOTID
@@ -268,20 +269,24 @@ namespace POPprogram
 			// numTextBox4
 			// 
 			this.numTextBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.numTextBox4.BackColor = System.Drawing.SystemColors.Window;
 			this.numTextBox4.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 11.25F, System.Drawing.FontStyle.Bold);
 			this.numTextBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
 			this.numTextBox4.Location = new System.Drawing.Point(984, 49);
 			this.numTextBox4.Name = "numTextBox4";
+			this.numTextBox4.ReadOnly = true;
 			this.numTextBox4.Size = new System.Drawing.Size(119, 25);
 			this.numTextBox4.TabIndex = 84;
 			// 
 			// numTextBox5
 			// 
 			this.numTextBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.numTextBox5.BackColor = System.Drawing.SystemColors.Window;
 			this.numTextBox5.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 11.25F, System.Drawing.FontStyle.Bold);
 			this.numTextBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
 			this.numTextBox5.Location = new System.Drawing.Point(984, 82);
 			this.numTextBox5.Name = "numTextBox5";
+			this.numTextBox5.ReadOnly = true;
 			this.numTextBox5.Size = new System.Drawing.Size(119, 25);
 			this.numTextBox5.TabIndex = 85;
 			// 
