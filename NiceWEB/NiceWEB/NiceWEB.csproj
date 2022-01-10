@@ -103,6 +103,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Site.css" />
     <Content Include="dist\css\adminlte.css" />
     <Content Include="dist\css\adminlte.min.css" />
     <Content Include="dist\css\alt\adminlte.components.css" />
@@ -1791,6 +1792,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\Adding_materialController.cs" />
     <Compile Include="Controllers\ComparePlanController.cs" />
     <Compile Include="Controllers\EfficiencyController.cs" />
     <Compile Include="Controllers\InspectController.cs" />
@@ -1799,6 +1801,8 @@
     </Compile>
     <Compile Include="Models\Common.cs" />
     <Compile Include="Models\ComparePlan.cs" />
+    <Compile Include="Models\DAC\Adding_materialDAC.cs" />
+    <Compile Include="Models\Adding_materialProperty.cs" />
     <Compile Include="Models\DAC\CommonDAC.cs" />
     <Compile Include="Models\DAC\ComparePlanDAC.cs" />
     <Compile Include="Models\DAC\EfficiencyDAC.cs" />
@@ -1900,6 +1904,9 @@
     <None Include="Properties\PublishProfiles\qbalsl2 - Web Deploy.pubxml" />
     <Content Include="Views\Efficiency\Index.cshtml" />
     <Content Include="Views\Inspect\Index.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Adding_material\Adding_material.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
