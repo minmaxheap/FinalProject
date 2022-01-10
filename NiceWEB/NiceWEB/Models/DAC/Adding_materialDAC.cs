@@ -62,4 +62,3 @@ order by TRAN_TIME desc,PRODUCT_CODE,OPERATION_CODE,CHILD_PRODUCT_CODE"; //ì¿¼ë¦
 		}
 
 	}
-}
