@@ -181,13 +181,13 @@
 
             </div>
             <div class="col-4">
-                <div id="preview-textfield" class="preview-textfield reset" style="font-size: 41px;">900</div>
+                <div id="preview-textfield" class="preview-textfield reset" style="font-size: 41px;">@ViewBag.qualityRate%</div>
                 <canvas id="gauge1" width="550" height="275">
                 </canvas>
 
             </div>
             <div class="col-4">
-                <div id="preview-textfield" class="preview-textfield reset" style="font-size: 41px;">900</div>
+                <div id="preview-textfield" class="preview-textfield reset" style="font-size: 41px;">@ViewBag.defectRate%</div>
                 <canvas id="gauge2" width="550" height="275">
                 </canvas>
             </div>
@@ -200,7 +200,8 @@
     decimal ordQty = ViewBag.ordQty;
     decimal prdQty = ViewBag.prdQty;
     decimal defQty = ViewBag.defQty;
-
+decimal qualityRate =  ViewBag.qualityRate;
+decimal defectRate =   ViewBag.defectRate ;
 }
 
 @section Scripts
@@ -224,16 +225,6 @@
 
         });
     </script>
-
-    @*<script>
-            $(document).ready(function () {
-
-                $.each(data, function (index, row) {
-                    $("#data").append("<option value='" + row.data + "'>" + row.data + "</option>")
-                });
-
-            });
-        </script>*@
 
     <script type="text/javascript">
         $(document).ready(function () {
@@ -268,6 +259,7 @@
     </script>
 
     <script>
+                var a = parseInt(@qualityRate);
         var opts = {
             angle: -0.2, // The span of the gauge arc
             lineWidth: 0.2, // The line thickness
@@ -288,13 +280,15 @@
         };
         var target = document.getElementById('gauge1'); // your canvas element
         var gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
-        gauge.maxValue = 3000; // set max gauge value
+        gauge.maxValue = 100; // set max gauge value
         gauge.setMinValue(0);  // Prefer setter over gauge.minValue = 0
         gauge.animationSpeed = 32; // set animation speed (32 is default value)
-        gauge.set(900); // set actual value
+        gauge.set(a); // set actual value
     </script>
 
     <script>
+
+        var b = parseInt(@defectRate);
         var opts = {
             angle: -0.2, // The span of the gauge arc
             lineWidth: 0.2, // The line thickness
@@ -313,12 +307,14 @@
             highDpiSupport: true,     // High resolution support
 
         };
+      
         var target = document.getElementById('gauge2'); // your canvas element
         var gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
         gauge.maxValue = 100; // set max gauge value
         gauge.setMinValue(0);  // Prefer setter over gauge.minValue = 0
         gauge.animationSpeed = 32; // set animation speed (32 is default value)
-        gauge.set(900); // set actual value
+        gauge.set(b); // set actual value
+        
     </script>
 
 }
