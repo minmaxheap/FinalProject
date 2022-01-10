@@ -132,7 +132,7 @@ namespace POPprogram
 					if (!int.TryParse(csDataGridView1.Rows[row].Cells["InspectValue"].Value.ToString(), out k))
 					{
 						MessageBox.Show("숫자를 입력하세요");
-
+						return;
 					}
 					else
 					{
