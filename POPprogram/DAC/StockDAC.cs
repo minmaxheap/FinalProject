@@ -193,7 +193,7 @@ WHERE O.SALES_ORDER_ID = SA.SALES_ORDER_ID AND V.CODE_TABLE_NAME ='CM_CUSTOMER' 
                         cmd.CommandText = @"UPDATE LOT_STS SET 
                             STORE_CODE =@STORE_CODE, PRODUCTION_TIME = getdate(),
                             CREATE_TIME=getdate(),OPER_IN_TIME=getdate(), 
-                            LAST_TRAN_CODE = 'move' , LAST_TRAN_TIME = getdate(),
+                            LAST_TRAN_CODE = 'MOVE' , LAST_TRAN_TIME = getdate(),
                             LAST_TRAN_USER_ID = @LAST_TRAN_USER_ID, 
                             LAST_TRAN_COMMENT = @LAST_TRAN_COMMENT, 
                             LAST_HIST_SEQ = LAST_HIST_SEQ+1
