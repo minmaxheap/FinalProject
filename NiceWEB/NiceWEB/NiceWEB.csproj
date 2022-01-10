@@ -160,6 +160,7 @@
     <Content Include="dist\js\pages\dashboard2.js" />
     <Content Include="dist\js\pages\dashboard3.js" />
     <Content Include="Global.asax" />
+    <Content Include="plugins\bootstrap\js\bootstrap.bundle.min.js" />
     <Content Include="plugins\bs-custom-file-input\bs-custom-file-input.js" />
     <Content Include="plugins\bs-custom-file-input\bs-custom-file-input.min.js" />
     <Content Include="plugins\chart.js\Chart.bundle.js" />
@@ -1728,6 +1729,7 @@
     <Content Include="plugins\summernote\summernote.min.js.map" />
     <Content Include="plugins\sweetalert2-theme-bootstrap-4\bootstrap-4.scss" />
     <Content Include="plugins\toastr\toastr.js.map" />
+    <Content Include="plugins\bootstrap\js\bootstrap.bundle.min.js.map" />
     <None Include="Properties\PublishProfiles\qbalsl2 - Web Deploy.pubxml" />
     <Content Include="Views\Efficiency\Index.cshtml" />
     <Content Include="Views\Inspect\Index.cshtml" />
@@ -1755,7 +1757,6 @@
     <Folder Include="plugins\bootstrap-switch\css\bootstrap3\" />
     <Folder Include="plugins\bootstrap-switch\js\" />
     <Folder Include="plugins\bootstrap4-duallistbox\" />
-    <Folder Include="plugins\bootstrap\js\" />
     <Folder Include="plugins\jquery-knob\" />
     <Folder Include="plugins\jquery-mapael\maps\" />
     <Folder Include="plugins\jquery-mousewheel\" />

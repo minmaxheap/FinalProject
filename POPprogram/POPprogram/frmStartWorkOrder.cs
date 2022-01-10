@@ -10,6 +10,7 @@ namespace POPprogram
 {
     public partial class frmStartWorkOrder : POPprogram.Base6
     {
+        bool firstFlag = false;
         StarWorkServ serv;
         List<string> list;
         List<StarWorkProperty> swlist;
@@ -30,8 +31,12 @@ namespace POPprogram
             serv = new StarWorkServ();
             list  = serv.GetLotCode();
             list.Insert(0, "");
-            titleName = frmMain.TitleName;
-            lblUpTitle.Text = "   " + titleName;
+            if (!firstFlag)
+            {
+                titleName = frmMain.TitleName;
+                lblUpTitle.Text = "   " + titleName;
+                firstFlag = true;
+            }
             //cboLOTID.ValueMember = "LOT_ID";
             cboLOTID.DisplayMember = "LOT_ID";
             cboLOTID.DataSource = list;

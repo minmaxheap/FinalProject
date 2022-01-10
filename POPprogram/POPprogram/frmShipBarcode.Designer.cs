@@ -56,6 +56,7 @@ namespace POPprogram
             // lblPanel
             // 
             this.lblPanel.Font = new System.Drawing.Font("나눔고딕", 18F);
+            this.lblPanel.Size = new System.Drawing.Size(1024, 43);
             this.lblPanel.Text = "바코드 선택";
             // 
             // btnTxtSearch
