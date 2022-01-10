@@ -57,8 +57,8 @@ namespace NiceWEB.Controllers
             ViewBag.prdQty = list[0].PRODUCT_QTY;
             ViewBag.defQty = list[0].DEFECT_QTY;
 
-            ViewBag.qualityRate = (list[0].PRODUCT_QTY / (list[0].PRODUCT_QTY + list[0].DEFECT_QTY)) * Convert.ToDecimal(100);
-            ViewBag.defectRate = (list[0].DEFECT_QTY / (list[0].PRODUCT_QTY + list[0].DEFECT_QTY))* Convert.ToDecimal(100);
+            ViewBag.qualityRate = Math.Round( (list[0].PRODUCT_QTY / (list[0].PRODUCT_QTY + list[0].DEFECT_QTY)) * Convert.ToDecimal(100),2);
+            ViewBag.defectRate = Math.Round((list[0].DEFECT_QTY / (list[0].PRODUCT_QTY + list[0].DEFECT_QTY))* Convert.ToDecimal(100),2);
 
             return View(t);
 
