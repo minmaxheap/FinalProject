@@ -63,7 +63,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-3">
 
                         <div class="form-group">
                             <label>조회날짜:</label>
@@ -80,20 +80,19 @@
                         </div>
                         <!-- /.form group -->
                     </div>
-                    <div class="col-4">
+                    <div class="col-3">
                         <div class="form-group">
                             <label>작업지시:</label>
-                            @*<select class="select2" style="width: 100%;">
-                                    <option selected>ASC</option>
-                                    <option>DESC</option>
-                                </select>*@
+
+                          
                             @if (ViewBag.order != null)
                             {
                                 @Html.DropDownListFor(model => model.Data, ViewBag.order as SelectList, "--Select--", new { @class = "form-control" })
                             }
+                       
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-3">
                         <div class="form-group">
                             <label>품번:</label>
                             @*<select class="select2" style="width: 100%;">
@@ -106,7 +105,12 @@
                             }
                         </div>
                     </div>
-
+                    <div class="col-3">
+                        <div class="form-group">
+                            <label>  </label>
+                            <button type="button" class="btn btn-block btn-secondary">조회</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -181,15 +185,19 @@
 
             </div>
             <div class="col-4">
-                <div id="preview-textfield" class="preview-textfield reset" style="font-size: 41px;">@ViewBag.qualityRate%</div>
+                <div id="preview-textfield" class="preview-textfield reset" style="font-size: 25px;">@ViewBag.qualityRate%</div>
+
                 <canvas id="gauge1" width="550" height="275">
                 </canvas>
+                <div id="preview-textfield" class="preview-textfield reset" style="font-size: 25px;">총 양품률</div>
 
             </div>
             <div class="col-4">
-                <div id="preview-textfield" class="preview-textfield reset" style="font-size: 41px;">@ViewBag.defectRate%</div>
+                <div id="preview-textfield" class="preview-textfield reset" style="font-size: 25px;">@ViewBag.defectRate%</div>
                 <canvas id="gauge2" width="550" height="275">
                 </canvas>
+                <div id="preview-textfield" class="preview-textfield reset" style="font-size: 25px;">총 불량률</div>
+
             </div>
         </div>
     </div>

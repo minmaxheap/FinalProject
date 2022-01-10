@@ -1905,7 +1905,6 @@
     <Content Include="Views\Efficiency\Index.cshtml" />
     <Content Include="Views\Inspect\Index.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Adding_material\Adding_material.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
