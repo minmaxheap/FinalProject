@@ -32,9 +32,11 @@ namespace NiceWEB.Models
 group by TRAN_TIME,PRODUCT_CODE,OPERATION_CODE,CHILD_PRODUCT_CODE";
 
 				cmd.Connection.Open();
+			
+				List<Adding_materialProperty> list =  Helper.DataReaderMapToList<Adding_materialProperty>(cmd.ExecuteReader());
 				cmd.Connection.Close();
-				return Helper.DataReaderMapToList<Adding_materialProperty>(cmd.ExecuteReader());
-
+				return list;
+				
 			}
 		}
 			//조회조건을 달아서 
@@ -53,9 +55,9 @@ group by PRODUCT_CODE,OPERATION_CODE,CHILD_PRODUCT_CODE
 order by TRAN_TIME desc,PRODUCT_CODE,OPERATION_CODE,CHILD_PRODUCT_CODE"; //쿼리 다시 짜기=>이거물어보기 
 
 				//cmd.Parameters.AddWithValue
-
-
-				return Helper.DataReaderMapToList<Adding_materialProperty>(cmd.ExecuteReader());
+				List<Adding_materialProperty> list = Helper.DataReaderMapToList<Adding_materialProperty>(cmd.ExecuteReader());
+				cmd.Connection.Close();
+				return list;
 			}
 
 			}

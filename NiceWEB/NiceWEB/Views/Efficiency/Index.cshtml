@@ -317,14 +317,32 @@
 
                 // The data for our dataset
                 data: {
-                    labels: ['1월', '2월', '3월', '4월', '5월', '6월'],
-                    datasets: [{
-                        label: '바 그래프',
+                    labels: ['1월', '2월', '3월', '4월', '5월', '6월'], //날짜별로 받아와야한다.
+                    datasets:
+                        [{
+                        label: '바 그래프1',
                         type: 'bar', // 'bar' type, 전체 타입과 같다면 생략가능
                         backgroundColor: 'rgb(255, 204, 102)',
                         borderColor: 'rgb(255, 204, 102)',
                         data: [10, 20, 30, 40, 50, 60]
-                    }, {
+                    },
+                        {
+                            label: '바 그래프2',
+                            type: 'bar', // 'bar' type, 전체 타입과 같다면 생략가능
+                            backgroundColor: 'rgb(255, 204, 102)',
+                            borderColor: 'rgb(255, 204, 102)',
+                            data: [10, 20, 30, 40, 50, 60]
+                        },
+
+                        {
+                            label: '바 그래프3',
+                            type: 'bar', // 'bar' type, 전체 타입과 같다면 생략가능
+                            backgroundColor: 'rgb(255, 204, 102)',
+                            borderColor: 'rgb(255, 204, 102)',
+                            data: [10, 20, 30, 40, 50, 60]
+                        },
+
+                        {
                         label: '라인 그래프1',
                         type: 'line',         // 'line' type
                         fill: false,         // 채우기 없음
@@ -333,7 +351,8 @@
                         backgroundColor: 'rgb(255, 153, 0)',
                         borderColor: 'rgb(255, 153, 0)',
                         data: [40, 50, 60, 70, 80, 90]
-                    }, {
+                    }, 
+                        {
                         label: '라인 그래프2',
                         type: 'line',
                         fill: false,
@@ -342,7 +361,10 @@
                         backgroundColor: 'rgb(255, 204, 0)',
                         borderColor: 'rgb(255, 204, 0)',
                         data: [100, 120, 150, 100, 180, 200]
-                    }]
+                        }
+
+
+                    ]
                 },
 
                 // Configuration options
