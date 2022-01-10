@@ -77,24 +77,41 @@
                         </div>
                         <!-- /.form group -->
                     </div>
-                    <div class="col-4">
-                        <div class="form-group">
-                            <label>작업지시:</label>
-                            <select class="select2" style="width: 100%;">
-                                <option selected>ASC</option>
-                                <option>DESC</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-4">
+                    <div class="col-2">
                         <div class="form-group">
                             <label>품번:</label>
-                            <select class="select2" style="width: 100%;">
-                                <option selected>ASC</option>
-                                <option>DESC</option>
-                            </select>
+
+                            @if (ViewBag.product != null)
+                            {
+                                @Html.DropDownListFor(model => model.Data, ViewBag.product as SelectList, "--Select--", new { @class = "form-control" })
+                            }
                         </div>
                     </div>
+                    <div class="col-2">
+                        <div class="form-group">
+                            <label>공정:</label>
+                            @if (ViewBag.product != null)
+                            {
+                                @Html.DropDownListFor(model => model.Data, ViewBag.product as SelectList, "--Select--", new { @class = "form-control" })
+                            }
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="form-group">
+                            <label>LOT ID:</label>
+                            @if (ViewBag.product != null)
+                            {
+                                @Html.DropDownListFor(model => model.Data, ViewBag.product as SelectList, "--Select--", new { @class = "form-control" })
+                            }
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="form-group">
+                            <label>  </label>
+                            <button type="button" class="btn btn-block btn-secondary">조회</button>
+                        </div>
+                    </div>
+
 
                 </div>
             </div>
