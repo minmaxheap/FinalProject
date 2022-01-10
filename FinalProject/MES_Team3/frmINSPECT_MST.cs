@@ -325,9 +325,6 @@ namespace MES_Team3
 
                 }
             }
-
-         
-
         }
 
         private GridItem currentItem;
