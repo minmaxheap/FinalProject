@@ -34,7 +34,7 @@ namespace POPprogram
             DateTime EndDate = dateTimePicker2.Value;
             DateTime StartDate = dateTimePicker1.Value;
             TimeSpan dateDiff = EndDate - StartDate;
-            int diffMinute = dateDiff.Minutes;
+            int diffMinute = (int)(Math.Round(dateDiff.TotalMinutes, 0));
 
             textBox4.Text = diffMinute.ToString();
         }
@@ -60,7 +60,7 @@ namespace POPprogram
 
             //textBox4.Text = diffMinute.ToString();
 
-
+            textBox3.Text = "10";
             LoadData();
 
             DownProperty vo = new DownProperty();
@@ -103,6 +103,25 @@ namespace POPprogram
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
+            LoadData();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int interval = Convert.ToInt32(textBox3.Text);
+            dateTimePicker2.Value = dateTimePicker2.Value.AddMinutes(interval);
+
+            LoadData();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int interval = -1 * Convert.ToInt32(textBox3.Text);
+            if (dateTimePicker2.Value.AddMinutes(interval) < dateTimePicker1.Value)
+                return;
+
+            dateTimePicker2.Value = dateTimePicker2.Value.AddMinutes(interval);
+
             LoadData();
         }
     }
