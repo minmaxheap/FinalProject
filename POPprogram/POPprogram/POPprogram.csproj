@@ -219,9 +219,11 @@
     <Compile Include="Services\FunctionServ.cs" />
     <Compile Include="Services\LOTinspectServ.cs" />
     <Compile Include="Services\LOTServ.cs" />
+    <Compile Include="Services\MatServ.cs" />
     <Compile Include="Services\StarWorkServ.cs" />
     <Compile Include="Services\ShipServ.cs" />
     <Compile Include="Services\StockServ.cs" />
+    <Compile Include="Util\DataGridViewUtilCombo.cs" />
     <Compile Include="Util\DataGridViewUtil.cs" />
     <Compile Include="XtraReport1.cs">
       <SubType>Component</SubType>
