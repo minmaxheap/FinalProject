@@ -40,10 +40,10 @@ namespace POPprogram
         {
 
             DataGridViewUtil.SetInitGridView(csDataGridView1);
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "LOT ID", "LOT_ID");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "LOT 설명", "LOT_DESC");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "품번", "PRODUCT_CODE");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "품명", "PRODUCT_NAME");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "LOT ID", "LOT_ID",width:150);
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "LOT 설명", "LOT_DESC", width: 150);
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "품번", "PRODUCT_CODE", width: 150);
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "품명", "PRODUCT_NAME", width: 150);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "수량", "LOT_QTY");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "공정", "OPERATION_CODE");
 
