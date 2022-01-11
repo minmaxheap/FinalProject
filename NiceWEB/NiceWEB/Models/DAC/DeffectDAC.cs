@@ -65,7 +65,7 @@ from LOT_DEFECT_HIS");
 				{
 					sb.Append("");
 					cmd.Parameters.AddWithValue("@from", from);
-					cmd.Parameters.AddWithValue("@to", );
+					cmd.Parameters.AddWithValue("@to",to);
 
 				}
 				//if (from != null & to != null)
