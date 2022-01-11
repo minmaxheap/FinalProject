@@ -166,7 +166,7 @@
             <div class="card-body">
                 <div class="chart">
                     @*<div id="areaChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></div>*@
-                    <canvas id="chart"></canvas>
+                    <canvas id="chart""></canvas>
                 </div>
             </div>
             <!-- /.card-body -->
@@ -185,6 +185,12 @@
 
     string label3 = ViewBag.Label3;
     string data3 = ViewBag.data3;
+
+    string label4 = ViewBag.Label4;
+    string data4 = ViewBag.data4;
+
+    string label5 = ViewBag.Label5;
+    string data5 = ViewBag.data5;
 }
 
 @section Scripts
@@ -225,19 +231,6 @@
 
                     "data": dataObjData,
                     "columns": dataObjCol,
-                    //"columns": [
-                    //    { "data": "ORDER_DATE" ,"title":"주문날짜"},
-                    //    { "data": "WORK_ORDER_ID" },
-                    //    { "data": "PRODUCT_CODE" },
-                    //    { "data": "PRODUCT_NAME" },
-                    //    { "data": "ORDER_QTY" },
-                    //    { "data": "PRODUCT_QTY" },
-                    //    { "data": "DEFECT_QTY" },
-                    //    { "data": "QUALITY_RATE" },
-                    //    { "data": "DEFECT_RATE" },
-                    //    { "data": "WORK_CLOSE_TIME" } //데이터가 이렇게 넘어오게 하면 되는 거잖아? 근데 지금은 타이틀도 같이 넘어오는 상태고..그 타이틀은 보여주는 컬럼인가?
-
-                    //],
                     "bPaginate": false,
                     "bFilter": false,
                     "bInfo": false,
@@ -260,100 +253,56 @@
     </script>
 
 
-
-    <script>
-           var chartCanvas = $('#areaChart').get(0).getContext('2d')
-
-           var temp = "@labels"; //"1월,2월,3월...12월"
-            var arrTemp = temp.split(','); // ['1월', '2월'..]
-
-            var areaChartData = {
-                labels: arrTemp,
-                datasets: [
-                    {
-                        label: '@label1',
-                        backgroundColor: 'rgba(60,141,188,0.9)',
-                        borderColor: 'rgba(60,141,188,0.8)',
-                        pointRadius: false,
-                        pointColor: '#3b8bba',
-                        pointStrokeColor: 'rgba(60,141,188,1)',
-                        pointHighlightFill: '#fff',
-                        pointHighlightStroke: 'rgba(60,141,188,1)',
-                        data: @data1
-                    },
-                    {
-                        label: '@label2',
-                        backgroundColor: 'rgba(210, 214, 222, 1)',
-                        borderColor: 'rgba(210, 214, 222, 1)',
-                        pointRadius: false,
-                        pointColor: 'rgba(210, 214, 222, 1)',
-                        pointStrokeColor: '#c1c7d1',
-                        pointHighlightFill: '#fff',
-                        pointHighlightStroke: 'rgba(220,220,220,1)',
-                        data: @data2
-                    },
-                    {
-                        label: '@label3',
-                        backgroundColor: 'rgba(210, 105, 84, 1)',
-                        borderColor: 'rgba(210, 105, 84, 1)',
-                        pointRadius: false,
-                        pointColor: 'rgba(210, 105, 84, 1)',
-                        pointStrokeColor: '#c1c7d1',
-                        pointHighlightFill: '#fff',
-                        pointHighlightStroke: 'rgba(220,220,220,1)',
-                        data: @data3
-                    }
-                ]
-            }
-    </script>
     <script th:inline="javascript">
+ 
 
         $(function () {
             var ctx = document.getElementById('chart').getContext('2d');
             var chart = new Chart(ctx, {
 
                 // The type of chart we want to create
-                type: 'bar',
+              //  type: 'bar',
 
                 // The data for our dataset
                 data: {
-                    labels: ['1월', '2월', '3월', '4월', '5월', '6월'], //날짜별로 받아와야한다.
+                    labels: ['1월', '2월', '3월', '4월', '5월', '6월'], //조회 조건 날짜별로 받아와야한다.흠 근데 사용자가 조회 조건을 1년을 받아오면 x축을 365개로 해야하는 건가? 일정 개수가 넘어가면 일별, 주별, 월별로 하고 싶은데..그건 넘 어렵겠다.
                     datasets:
-                        [{
-                        label: '바 그래프1',
+                        [
+                            {
+                        label: '지시수량',
                         type: 'bar', // 'bar' type, 전체 타입과 같다면 생략가능
-                        backgroundColor: 'rgb(255, 204, 102)',
+                        backgroundColor: 'rgb(0, 204, 102)',
                         borderColor: 'rgb(255, 204, 102)',
-                        data: [10, 20, 30, 40, 50, 60]
+                        data: [10, 23, 30, 34, 50, 63]
                     },
                         {
-                            label: '바 그래프2',
+                            label: '양품수',
                             type: 'bar', // 'bar' type, 전체 타입과 같다면 생략가능
-                            backgroundColor: 'rgb(255, 204, 102)',
+                            backgroundColor: 'rgb(255, 0, 102)',
                             borderColor: 'rgb(255, 204, 102)',
-                            data: [10, 20, 30, 40, 50, 60]
+                            data: [2, 24, 45, 40, 23, 67]
                         },
 
                         {
-                            label: '바 그래프3',
+                            label: '불량수',
                             type: 'bar', // 'bar' type, 전체 타입과 같다면 생략가능
-                            backgroundColor: 'rgb(255, 204, 102)',
+                            backgroundColor: 'rgb(255, 204, 0)',
                             borderColor: 'rgb(255, 204, 102)',
-                            data: [10, 20, 30, 40, 50, 60]
+                            data: [5, 3, 23, 30, 65, 6]
                         },
 
                         {
-                        label: '라인 그래프1',
+                        label: '가동률',
                         type: 'line',         // 'line' type
                         fill: false,         // 채우기 없음
                         lineTension: 0.2,  // 0이면 꺾은선 그래프, 숫자가 높을수록 둥글해짐
-                        pointRadius: 0,    // 각 지점에 포인트 주지 않음
+                        pointRadius: 0.1,    // 각 지점에 포인트 주지 않음
                         backgroundColor: 'rgb(255, 153, 0)',
                         borderColor: 'rgb(255, 153, 0)',
-                        data: [40, 50, 60, 70, 80, 90]
+                        data: [40, 23, 6, 7, 2, 45]
                     }, 
                         {
-                        label: '라인 그래프2',
+                        label: '비가동률',
                         type: 'line',
                         fill: false,
                         lineTension: 0.2,
@@ -371,22 +320,22 @@
                 options: {
                     legend: {
                         labels: {
-                            fontColor: 'white' // label color
+                            fontColor: 'black' // label color
                         }
                     },
                     scales: {
                         // y축
                         yAxes: [{
-                            stacked: true,
+                            stacked: false,
                             ticks: {
-                                fontColor: 'white' // y축 폰트 color
+                                fontColor: 'black' // y축 폰트 color
                             }
                         }],
                         // x축
                         xAxes: [{
-                            stacked: true,
+                            stacked: false,
                             ticks: {
-                                fontColor: 'white' // x축 폰트 color
+                                fontColor: 'black'// x축 폰트 color
                             }
                         }]
                     }

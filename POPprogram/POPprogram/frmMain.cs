@@ -256,5 +256,47 @@ namespace POPprogram
 
 
         }
+
+        private void DefaultButton(Button btn)
+        {
+            btn = new Button();
+            btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btn.Font = new System.Drawing.Font("나눔고딕", 10.5F, System.Drawing.FontStyle.Bold);
+            btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btn.ImageIndex = 0;
+            btn.ImageList = this.menuImageList;
+            btn.Location = new System.Drawing.Point(0, 0);
+            btn.Margin = new System.Windows.Forms.Padding(0);
+            btn.Name = "button1";
+            btn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            btn.Size = new System.Drawing.Size(200, 40);
+            btn.TabIndex = 0;
+            btn.Text = "제품출하";
+            btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            btn.UseVisualStyleBackColor = true;
+        }
+
+        private void SelectedButton(Button btn)
+        {
+            btn = new Button();
+            btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            btn.Dock = System.Windows.Forms.DockStyle.Top;
+            btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btn.Font = new System.Drawing.Font("나눔고딕", 10.5F, System.Drawing.FontStyle.Bold);
+            btn.ForeColor = System.Drawing.Color.White;
+            btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btn.ImageIndex = 0;
+            btn.ImageList = this.selmenuImageList;
+            btn.Location = new System.Drawing.Point(0, 40);
+            btn.Margin = new System.Windows.Forms.Padding(0);
+            btn.Name = "button2";
+            btn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            btn.Size = new System.Drawing.Size(200, 40);
+            btn.TabIndex = 1;
+            btn.Text = "제품출하";
+            btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            btn.UseVisualStyleBackColor = false;
+        }
     }
 }
