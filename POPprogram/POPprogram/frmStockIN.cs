@@ -190,6 +190,16 @@ namespace POPprogram
             }
         }
 
+        private void csDataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textBox7.Text = csDataGridView1[7, csDataGridView1.CurrentRow.Index].Value.ToString();
+        }
+
+        private void textBox7_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
         //private void DgvChk(DataGridView dgv)
         //{
         //    dgv.EndEdit();
