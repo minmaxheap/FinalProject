@@ -1,4 +1,4 @@
-﻿@model NiceWEB.Models.MixModels
+﻿@model IEnumerable<NiceWEB.Models.Adding_materialProperty>
 @{
 	ViewBag.Title = "Index";
 	Layout = "~/Views/_Layout.cshtml";
@@ -31,8 +31,7 @@
 
 <div style="display:none;" class="row">
 	<div class="form-group">
-		@Html.HiddenFor(m => m.tableData.Columns, new { @id = "dataObjCol", placeholder = Html.DisplayNameFor(m => m.tableData.Columns), @class = "form-control" })
-		@Html.HiddenFor(m => m.tableData.Data, new { @id = "dataObjData", placeholder = Html.DisplayNameFor(m => m.tableData.Data), @class = "form-control" })
+		
 	</div>
 </div>
 
@@ -82,26 +81,21 @@
 
 							@if (ViewBag.product != null)
 							{
-								@Html.DropDownListFor(model => model.tableData.Data, ViewBag.product as SelectList, "--Select--", new { @class = "form-control" })
+								@*@Html.DropDownList("productid", new SelectList(ViewBag.product, "Data", "Data"))*@
+								@Html.DropDownList("productid", (IEnumerable<SelectListItem>)ViewBag.product, null, new { @class = "form-control" })
 							}
 						</div>
 					</div>
 					<div class="col-2">
 						<div class="form-group">
 							<label>공정:</label>
-							@if (ViewBag.product != null)
-							{
-								@Html.DropDownListFor(model => model.tableData.Data, ViewBag.product as SelectList, "--Select--", new { @class = "form-control" })
-							}
+							
 						</div>
 					</div>
 					<div class="col-2">
 						<div class="form-group">
 							<label>자재품번:</label>
-							@if (ViewBag.product != null)
-							{
-								@Html.DropDownListFor(model => model.tableData.Data, ViewBag.product as SelectList, "--Select--", new { @class = "form-control" })
-							}
+							
 						</div>
 					</div>
 					<div class="col-2">
@@ -141,11 +135,16 @@
 								</tr>
 							</thead>
 							<tbody>
-								@{
-									//for (int i = 0; i < length; i++)
-									//{
+								@foreach (var p in Model)
+								{
+								<tr>
+									<td>@p.TRAN_TIME</td>
+									<td>@p.PRODUCT_CODE</td>
+									<td>@p.OPERATION_CODE</td>
+									<td>@p.CHILD_PRODUCT_CODE</td>
+									<td>@p.INPUT_QTY</td>
 
-									//}
+								</tr>
 								}
 							</tbody>
 						</table>
