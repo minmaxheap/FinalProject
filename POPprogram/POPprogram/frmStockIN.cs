@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAC;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -174,6 +175,20 @@ namespace POPprogram
                 MessageBox.Show("LOTID 선택 ");
                 return;
             }
+
+            List<LOTProperty> list = new List<LOTProperty>();
+            foreach (DataGridViewRow row in csDataGridView1.Rows)
+            {
+                LOTProperty pr = new LOTProperty()
+                {
+                    LOT_ID = row.Cells["STOCK_IN_LOT_ID"].Value.ToString(),
+                    LOT_QTY = Convert.ToDecimal(row.Cells["QTY"].Value)
+
+                };
+                list.Add(pr);
+            }
+            string salesID = "SALES_" + txtSearch.Text.Split('_')[1];
+            serv.InsertLOTStatus(msUserID, list, salesID);
 
             bool bResult = serv.SaveStockLot(lotList, comboBox1.SelectedValue.ToString(), msUserID);
             if (bResult)

@@ -10,10 +10,10 @@ using System.Text;
 
 namespace NiceWEB.Models.DAC
 {
-	public class DeffectDAC
+	public class DefectDAC
 	{
 		SqlConnection conn;
-		public DeffectDAC()
+		public DefectDAC()
 		{
 			conn = new SqlConnection(ConfigurationManager.ConnectionStrings["project"].ConnectionString);
 			conn.Open();
@@ -23,7 +23,7 @@ namespace NiceWEB.Models.DAC
 			conn.Dispose();
 		}
 
-		public List<DeffectProperty> GetData()
+		public List<DefectProperty> GetData()
 		{
 			using (SqlCommand cmd = new SqlCommand())
 			{
@@ -36,13 +36,13 @@ group by  CONVERT(varchar,TRAN_TIME,23),PRODUCT_CODE,OPERATION_CODE, DEFECT_CODE
 
 				cmd.Connection.Open();
 
-				List<DeffectProperty> list = Helper.DataReaderMapToList<DeffectProperty>(cmd.ExecuteReader());
+				List<DefectProperty> list = Helper.DataReaderMapToList<DefectProperty>(cmd.ExecuteReader());
 				cmd.Connection.Close();
 				return list;
 			}
 		}
 
-		public List<DeffectProperty> GetSearch(string from ,string to,string product,string op_code)
+		public List<DefectProperty> GetSearch(string from ,string to,string product,string op_code)
 		{
 			using (SqlCommand cmd = new SqlCommand())
 			{
@@ -75,7 +75,7 @@ from LOT_DEFECT_HIS");
 				sb.Append(" group by  CONVERT(varchar,TRAN_TIME,23),PRODUCT_CODE,OPERATION_CODE, DEFECT_CODE");
 				cmd.CommandText = sb.ToString();
 
-				List<DeffectProperty> list = Helper.DataReaderMapToList<DeffectProperty>(cmd.ExecuteReader());
+				List<DefectProperty> list = Helper.DataReaderMapToList<DefectProperty>(cmd.ExecuteReader());
 				cmd.Connection.Close();
 				return list;
 

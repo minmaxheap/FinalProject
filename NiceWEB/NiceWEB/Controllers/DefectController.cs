@@ -9,13 +9,13 @@ using System.Web.Script.Serialization;
 using NiceWEB.Models.DAC;
 namespace NiceWEB.Controllers
 {
-    public class DeffectController : Controller
+    public class DefectController : Controller
     {
         // GET: Deffect
         public ActionResult Index()
         {
-            DeffectDAC dac = new DeffectDAC();
-            List<DeffectProperty> list = dac.GetData();
+            DefectDAC dac = new DefectDAC();
+            List<DefectProperty> list = dac.GetData();
             return View(list);
         }
     }

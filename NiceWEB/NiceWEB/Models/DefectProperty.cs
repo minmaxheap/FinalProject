@@ -5,7 +5,7 @@ using System.Web;
 
 namespace NiceWEB.Models
 {
-	public class DeffectProperty
+	public class DefectProperty
 	{
 		//TRAN_DATE,PRODUCT_CODE,OPERATION_CODE, DEFECT_CODE, sum(DEFECT_QTY) as DEFECT_QTY
 		public string TRAN_DATE { get; set; }
