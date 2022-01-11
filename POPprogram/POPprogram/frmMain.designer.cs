@@ -33,15 +33,12 @@ namespace POPprogram
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.mnuMain = new System.Windows.Forms.MenuStrip();
             this.flpMenu = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
             this.menuImageList = new System.Windows.Forms.ImageList(this.components);
-            this.button2 = new System.Windows.Forms.Button();
             this.selmenuImageList = new System.Windows.Forms.ImageList(this.components);
             this.lblID = new System.Windows.Forms.Label();
             this.tabMenu = new POPprogram.csTabControl();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.flpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,8 +58,6 @@ namespace POPprogram
             // flpMenu
             // 
             this.flpMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.flpMenu.Controls.Add(this.button1);
-            this.flpMenu.Controls.Add(this.button2);
             this.flpMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.flpMenu.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.flpMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(182)))), ((int)(((byte)(190)))));
@@ -72,56 +67,35 @@ namespace POPprogram
             this.flpMenu.Size = new System.Drawing.Size(200, 985);
             this.flpMenu.TabIndex = 3;
             // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("나눔고딕", 10.5F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.ImageIndex = 0;
-            this.button1.ImageList = this.menuImageList;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(200, 40);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "제품출하";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // menuImageList
             // 
             this.menuImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("menuImageList.ImageStream")));
             this.menuImageList.TransparentColor = System.Drawing.Color.Transparent;
-            this.menuImageList.Images.SetKeyName(0, "Folder  Zoom Out- WF.png");
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("나눔고딕", 10.5F, System.Drawing.FontStyle.Bold);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.ImageIndex = 0;
-            this.button2.ImageList = this.selmenuImageList;
-            this.button2.Location = new System.Drawing.Point(0, 40);
-            this.button2.Margin = new System.Windows.Forms.Padding(0);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(200, 40);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "제품출하";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = false;
+            this.menuImageList.Images.SetKeyName(0, "Data-Export.png");
+            this.menuImageList.Images.SetKeyName(1, "Calendar -01 .png");
+            this.menuImageList.Images.SetKeyName(2, "Chart-Type.png");
+            this.menuImageList.Images.SetKeyName(3, "Computer-Desktop.png");
+            this.menuImageList.Images.SetKeyName(4, "Cube.png");
+            this.menuImageList.Images.SetKeyName(5, "Cupboard - 04.png");
+            this.menuImageList.Images.SetKeyName(6, "Despeckle.png");
+            this.menuImageList.Images.SetKeyName(7, "Drop box.png");
+            this.menuImageList.Images.SetKeyName(8, "Equalizer.png");
+            this.menuImageList.Images.SetKeyName(9, "Flow-Cart.png");
             // 
             // selmenuImageList
             // 
             this.selmenuImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("selmenuImageList.ImageStream")));
             this.selmenuImageList.TransparentColor = System.Drawing.Color.Transparent;
-            this.selmenuImageList.Images.SetKeyName(0, "Folder  Zoom Out- W.png");
+            this.selmenuImageList.Images.SetKeyName(0, "Data-Export.png");
+            this.selmenuImageList.Images.SetKeyName(1, "Calendar_01.png");
+            this.selmenuImageList.Images.SetKeyName(2, "Chart-Type.png");
+            this.selmenuImageList.Images.SetKeyName(3, "Computer-Desktop.png");
+            this.selmenuImageList.Images.SetKeyName(4, "Cube.png");
+            this.selmenuImageList.Images.SetKeyName(5, "Cupboard - 04.png");
+            this.selmenuImageList.Images.SetKeyName(6, "Despeckle.png");
+            this.selmenuImageList.Images.SetKeyName(7, "Drop box.png");
+            this.selmenuImageList.Images.SetKeyName(8, "Equalizer.png");
+            this.selmenuImageList.Images.SetKeyName(9, "Flow-Cart.png");
             // 
             // lblID
             // 
@@ -129,7 +103,7 @@ namespace POPprogram
             this.lblID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(182)))), ((int)(((byte)(190)))));
-            this.lblID.Location = new System.Drawing.Point(220, 9);
+            this.lblID.Location = new System.Drawing.Point(218, 14);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(23, 16);
             this.lblID.TabIndex = 21;
@@ -188,7 +162,6 @@ namespace POPprogram
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.MdiChildActivate += new System.EventHandler(this.frmMain_MdiChildActivate);
-            this.flpMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -202,9 +175,7 @@ namespace POPprogram
         private csTabControl tabMenu;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ImageList menuImageList;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ImageList selmenuImageList;
     }
 }

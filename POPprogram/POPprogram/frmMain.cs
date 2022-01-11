@@ -35,15 +35,15 @@ namespace POPprogram
             //DrawMenuStrip();
             DrawMenuPanel();
             tabMenu.Visible = false;
-      
-      
+
+
 
         }
         private void MenuItem_Click(object sender, EventArgs e)
         {
             ToolStripMenuItem menu = (ToolStripMenuItem)sender;
 
-            OpenCreateForm(menu.Tag.ToString(), menu.Text.ToString() );
+            OpenCreateForm(menu.Tag.ToString(), menu.Text.ToString());
 
         }
 
@@ -73,8 +73,14 @@ namespace POPprogram
         private void Menu_Click(object sender, EventArgs e)
         {
             // ToolStripMenuItem menu = (ToolStripMenuItem)sender;
-            Label menu = (Label)sender;
-           // Button menu = (Button)sender;
+            //Label menu = (Label)sender;
+            for (int i = 0; i < flpMenu.Controls.Count; i++)
+            { 
+                DefaultButton((Button)flpMenu.Controls[i], i); 
+            }
+
+            Button menu = (Button)sender;
+            SelectedButton(menu);
             OpenCreateForm(menu.Tag.ToString(), menu.Text);
         }
 
@@ -102,10 +108,10 @@ namespace POPprogram
                 //frm.WindowState = FormWindowState.Maximized;
                 frm.FormBorderStyle = FormBorderStyle.FixedSingle;
                 frm.Dock = DockStyle.Fill;
-      
+
                 frm.Text = formText;
                 frm.Show();
-                
+
             }
             catch
             {
@@ -128,7 +134,7 @@ namespace POPprogram
 
                 if (this.ActiveMdiChild.Tag == null)
                 {
-                    TabPage tp = new TabPage(this.ActiveMdiChild.Text + "    ");
+                    TabPage tp = new TabPage("  "+this.ActiveMdiChild.Text + "      ");
                     tp.Parent = tabMenu;
                     tp.Tag = this.ActiveMdiChild;
                     tabMenu.SelectedTab = tp;
@@ -190,6 +196,62 @@ namespace POPprogram
             }
         }
 
+        private void DrawMenuPanel()
+        {
+            DataView dv1 = new DataView(mdtFunc);
+            dv1.RowFilter = "FUNCTION_LEVEL = 1";
+            for (int i = 0; i < dv1.Count; i++)
+            {
+                Button btnMenu = new Button();
+                DefaultButton(btnMenu, dv1, i);
+
+
+                flpMenu.Controls.Add(btnMenu);
+
+                if (i == 0)
+                {
+                    Button btn = btnMenu;
+                }
+            }
+
+
+
+        }
+
+        private void DefaultButton(Button btn, DataView dv1, int i)
+        {
+            btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btn.Font = new System.Drawing.Font("나눔고딕", 10.5F, System.Drawing.FontStyle.Bold);
+            btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            btn.Tag = dv1[i]["PROGRAM_NAME"].ToString();
+            btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btn.ImageIndex = i;
+            btn.ImageList = this.menuImageList;
+            btn.Margin = new System.Windows.Forms.Padding(0);
+            btn.Name = $"p_menu{dv1[i]["FUNCTION_CODE"].ToString()}";
+            btn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            btn.Size = new System.Drawing.Size(200, 40);
+            btn.TabIndex = 0;
+            btn.Text = dv1[i]["FUNCTION_NAME"].ToString();
+            btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            btn.UseVisualStyleBackColor = true;
+            btn.Click += Menu_Click;
+        }
+
+        private void DefaultButton(Button btn, int i)
+        {
+            btn.BackColor = Color.FromArgb(250, 250, 250);
+            btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            btn.ImageList = this.menuImageList;
+            btn.UseVisualStyleBackColor = true;
+        }
+        private void SelectedButton(Button btn)
+        {
+            btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            btn.ForeColor = System.Drawing.Color.White;
+            btn.ImageList = this.selmenuImageList;
+        }
+
         //private void DrawMenuPanel()
         //{
         //    DataView dv1 = new DataView(mdtFunc);
@@ -224,79 +286,39 @@ namespace POPprogram
 
         //}
 
-        private void DrawMenuPanel()
-        {
-            DataView dv1 = new DataView(mdtFunc);
-            dv1.RowFilter = "FUNCTION_LEVEL = 1";
-            for (int i = 0; i < dv1.Count; i++)
-            {
-               
-                Label lblMenu = new Label();
-                lblMenu.Name = $"p_menu{dv1[i]["FUNCTION_CODE"].ToString()}";
-                lblMenu.Text = dv1[i]["FUNCTION_NAME"].ToString();
-                lblMenu.TextAlign = ContentAlignment.MiddleCenter;
-                lblMenu.ForeColor = Color.FromArgb(176, 182, 190);
-                lblMenu.AutoSize = false;
-                lblMenu.Size = new Size(153, 58);
-                lblMenu.Tag = dv1[i]["PROGRAM_NAME"].ToString();              
-                lblMenu.FlatStyle = FlatStyle.Flat;
-                lblMenu.Image = global::POPprogram.Properties.Resources.Blank_13;
-                lblMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-                lblMenu.Click += Menu_Click;
+        //private void DrawMenuPanel()
+        //{
+        //    DataView dv1 = new DataView(mdtFunc);
+        //    dv1.RowFilter = "FUNCTION_LEVEL = 1";
+        //    for (int i = 0; i < dv1.Count; i++)
+        //    {
+
+        //        Label lblMenu = new Label();
+        //        lblMenu.Name = $"p_menu{dv1[i]["FUNCTION_CODE"].ToString()}";
+        //        lblMenu.Text = dv1[i]["FUNCTION_NAME"].ToString();
+        //        lblMenu.TextAlign = ContentAlignment.MiddleCenter;
+        //        lblMenu.ForeColor = Color.FromArgb(176, 182, 190);
+        //        lblMenu.AutoSize = false;
+        //        lblMenu.Size = new Size(153, 58);
+        //        lblMenu.Tag = dv1[i]["PROGRAM_NAME"].ToString();              
+        //        lblMenu.FlatStyle = FlatStyle.Flat;
+        //        lblMenu.Image = global::POPprogram.Properties.Resources.Blank_13;
+        //        lblMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+        //        lblMenu.Click += Menu_Click;
 
 
-                flpMenu.Controls.Add(lblMenu);
+        //        flpMenu.Controls.Add(lblMenu);
 
-                if (i == 0)
-                {
-                    Label lbl = lblMenu;
-                }
-            }
+        //        if (i == 0)
+        //        {
+        //            Label lbl = lblMenu;
+        //        }
+        //    }
 
 
 
-        }
+        //}
 
-        private void DefaultButton(Button btn)
-        {
-            btn = new Button();
-            btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btn.Font = new System.Drawing.Font("나눔고딕", 10.5F, System.Drawing.FontStyle.Bold);
-            btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            btn.ImageIndex = 0;
-            btn.ImageList = this.menuImageList;
-            btn.Location = new System.Drawing.Point(0, 0);
-            btn.Margin = new System.Windows.Forms.Padding(0);
-            btn.Name = "button1";
-            btn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            btn.Size = new System.Drawing.Size(200, 40);
-            btn.TabIndex = 0;
-            btn.Text = "제품출하";
-            btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            btn.UseVisualStyleBackColor = true;
-        }
 
-        private void SelectedButton(Button btn)
-        {
-            btn = new Button();
-            btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            btn.Dock = System.Windows.Forms.DockStyle.Top;
-            btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btn.Font = new System.Drawing.Font("나눔고딕", 10.5F, System.Drawing.FontStyle.Bold);
-            btn.ForeColor = System.Drawing.Color.White;
-            btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            btn.ImageIndex = 0;
-            btn.ImageList = this.selmenuImageList;
-            btn.Location = new System.Drawing.Point(0, 40);
-            btn.Margin = new System.Windows.Forms.Padding(0);
-            btn.Name = "button2";
-            btn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            btn.Size = new System.Drawing.Size(200, 40);
-            btn.TabIndex = 1;
-            btn.Text = "제품출하";
-            btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            btn.UseVisualStyleBackColor = false;
-        }
     }
 }

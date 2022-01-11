@@ -33,7 +33,7 @@ namespace POPprogram
 
                 if (this.SelectedIndex == e.Index)
                 {
-                    e.Graphics.FillRectangle(new SolidBrush(Color.White), e.Bounds);
+                    e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(208, 208, 208)), e.Bounds);
                 }
 
                 SolidBrush titleBrush = new SolidBrush(Color.Black);
@@ -44,11 +44,12 @@ namespace POPprogram
 
                 Image img;
                 if (this.SelectedIndex == e.Index)
-                    img = Properties.Resources.close;
+                    img = Properties.Resources.Circle_Close___2;
+               
                 else
-                    img = Properties.Resources.close_white;
+                    img = Properties.Resources.Circle_Close___01;
 
-                Point imgLocation = new Point(18, 2);
+                Point imgLocation = new Point(20, 6);
 
                 e.Graphics.DrawImage(img, new Point(r.X + this.GetTabRect(e.Index).Width - imgLocation.X, imgLocation.Y));
 

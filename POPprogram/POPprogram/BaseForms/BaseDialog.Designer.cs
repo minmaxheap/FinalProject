@@ -40,7 +40,7 @@ namespace POPprogram
             // 
             this.btnSelect.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnSelect.AutoSize = true;
-            this.btnSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            this.btnSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSelect.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold);
             this.btnSelect.Image = global::POPprogram.Properties.Resources.Add_New;
@@ -57,7 +57,7 @@ namespace POPprogram
             // 
             this.btnClose.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnClose.AutoSize = true;
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnClose.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold);
             this.btnClose.Image = global::POPprogram.Properties.Resources.Delete;
@@ -80,10 +80,10 @@ namespace POPprogram
             // 
             // lblPanel
             // 
-            this.lblPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(152)))), ((int)(((byte)(216)))));
+            this.lblPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.lblPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblPanel.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold);
+            this.lblPanel.Font = new System.Drawing.Font("나눔고딕", 20.25F);
             this.lblPanel.Location = new System.Drawing.Point(0, 0);
             this.lblPanel.Name = "lblPanel";
             this.lblPanel.Size = new System.Drawing.Size(1024, 43);
@@ -93,7 +93,7 @@ namespace POPprogram
             // 
             // btnTxtSearch
             // 
-            this.btnTxtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            this.btnTxtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.btnTxtSearch.BackgroundImage = global::POPprogram.Properties.Resources.Search_Find;
             this.btnTxtSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnTxtSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
