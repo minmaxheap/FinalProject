@@ -1,8 +1,11 @@
-﻿using System;
+﻿using DAC;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 
@@ -12,6 +15,8 @@ namespace POPprogram
     {
         StockServ serv;
         DataGridViewCheckBoxColumn dgvChk = null;
+        List<int> iSearchedList = new List<int>();
+        List<int> iSelectedRow = new List<int>();
 
         List<string> MstList = null;
 
@@ -197,9 +202,84 @@ namespace POPprogram
 
         private void textBox7_KeyDown(object sender, KeyEventArgs e)
         {
-
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (iSearchedList.Count == 0)
+                {
+                    DataTable copy_dt = GetDataGridViewAsDataTable(csDataGridView1);
+                    IEnumerable<DataRow> linq_row = null;
+                    if (textBox7.Text == "")
+                    {
+                        csDataGridView1.DataSource = copy_dt;
+                    }
+                    else
+                    {
+                        foreach (DataRow row in copy_dt.Rows)
+                        {
+                            linq_row = from item in row.ItemArray
+                                       where item.ToString().ToLower().Contains(textBox7.Text.ToLower())
+                                       select row;
+                            foreach (DataRow dt in linq_row)
+                            {
+                                int iCntSearch = copy_dt.Rows.IndexOf(row);
+                                iSearchedList.Add(iCntSearch);
+                                break;
+                            }
+                        }
+                        iSelectedRow = iSearchedList.ToList();
+                    }
+                }
+                if (iSearchedList.Count > 0)
+                {
+                    int iTestNum = iSelectedRow.Count(n => n == -1);
+                    if (iTestNum == iSearchedList.Count)
+                        iSelectedRow = iSearchedList.ToList();
+                    for (int i = 0; i < iSearchedList.Count; i++)
+                    {
+                        if (iSelectedRow[i] == iSearchedList[i])
+                        {
+                            csDataGridView1.CurrentCell = csDataGridView1.Rows[iSearchedList[i]].Cells[0];
+                            iSelectedRow[i] = -1;
+                            break;
+                        }
+                    }
+                }
+            }
+           
         }
-
+        public static DataTable GetDataGridViewAsDataTable(DataGridView _DataGridView)
+        {
+            try
+            {
+                if (_DataGridView.ColumnCount == 0)
+                    return null;
+                DataTable dtSource = new DataTable();
+                //////create columns
+                foreach (DataGridViewColumn col in _DataGridView.Columns)
+                {
+                    if (col.ValueType == null)
+                        dtSource.Columns.Add(col.Name, typeof(string));
+                    else
+                        dtSource.Columns.Add(col.Name, col.ValueType);
+                    dtSource.Columns[col.Name].Caption = col.HeaderText;
+                }
+                ///////insert row data
+                foreach (DataGridViewRow row in _DataGridView.Rows)
+                {
+                    DataRow drNewRow = dtSource.NewRow();
+                    foreach (DataColumn col in dtSource.Columns)
+                    {
+                        drNewRow[col.ColumnName] = row.Cells[col.ColumnName].Value;
+                    }
+                    dtSource.Rows.Add(drNewRow);
+                }
+                return dtSource;
+            }
+            catch
+            {
+                return null;
+            }
+        }
         //private void DgvChk(DataGridView dgv)
         //{
         //    dgv.EndEdit();
