@@ -1,8 +1,10 @@
-﻿@model IEnumerable<NiceWEB.Models.Adding_materialProperty>
+﻿@model IEnumerable<NiceWEB.Models.StoreProperty>
+
 @{
 	ViewBag.Title = "Index";
 	Layout = "~/Views/_Layout.cshtml";
 }
+
 
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
@@ -31,7 +33,7 @@
 
 <div style="display:none;" class="row">
 	<div class="form-group">
-		
+
 	</div>
 </div>
 
@@ -58,26 +60,10 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="row">
-					<div class="col-4">
-
+					
+					<div class="col-5">
 						<div class="form-group">
-							<label>조회날짜:</label>
-
-							<div class="input-group">
-								<div class="input-group-prepend">
-									<span class="input-group-text">
-										<i class="far fa-calendar-alt"></i>
-									</span>
-								</div>
-								<input type="text" class="form-control float-right" id="reservation">
-							</div>
-							<!-- /.input group -->
-						</div>
-						<!-- /.form group -->
-					</div>
-					<div class="col-2">
-						<div class="form-group">
-							<label>품번:</label>
+							<label>창고:</label>
 
 							@if (ViewBag.product != null)
 							{
@@ -86,18 +72,13 @@
 							}
 						</div>
 					</div>
-					<div class="col-2">
-						<div class="form-group">
-							<label>공정:</label>
-							
-						</div>
-					</div>
-					<div class="col-2">
+					<div class="col-5">
 						<div class="form-group">
 							<label>자재품번:</label>
-							
+
 						</div>
 					</div>
+				
 					<div class="col-2">
 						<div class="form-group">
 							<a class="btn btn-primary" href="@Url.Action("YourAction","YourController")">Click</a>
@@ -113,7 +94,7 @@
 			<div class="col-12">
 				<div class="card">
 					<div class="card-header">
-						<h3 class="card-title">자재 투입 이력 조회</h3>
+						<h3 class="card-title">창고 재고 조회</h3>
 					</div>
 					<!-- /.card-header -->
 					<div class="card-body">
@@ -127,24 +108,24 @@
 
 							<thead>
 								<tr>
-									<th scope="col">작업일자</th>
+									<th scope="col">oper_in_time</th>
+									<th scope="col">LotID</th>
 									<th scope="col">품번</th>
-									<th scope="col">공정</th>
-									<th scope="col">자재 품번</th>
-									<th scope="col">투입수량</th>								
+									<th scope="col">창고</th>
+									<th scope="col">수량</th>
 								</tr>
 							</thead>
 							<tbody>
 								@foreach (var p in Model)
 								{
-								<tr>
-									<td>@p.TRAN_TIME</td>
-									<td>@p.PRODUCT_CODE</td>
-									<td>@p.OPERATION_CODE</td>
-									<td>@p.CHILD_PRODUCT_CODE</td>
-									<td>@p.INPUT_QTY</td>
+									<tr>
+										<td>@p.OPER_IN_TIME</td>
+										<td>@p.LOT_ID</td>
+										<td>@p.PRODUCT_CODE</td>
+										<td>@p.STORE_CODE</td>
+										<td>@p.LOT_QTY</td>
 
-								</tr>
+									</tr>
 								}
 							</tbody>
 						</table>
@@ -220,3 +201,7 @@
 	</script>
 
 }
+
+
+<h2>Index</h2>
+
