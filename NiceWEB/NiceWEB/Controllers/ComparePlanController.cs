@@ -57,6 +57,7 @@ namespace NiceWEB.Controllers
             ViewBag.prdQty = list[0].PRODUCT_QTY;
             ViewBag.defQty = list[0].DEFECT_QTY;
 
+            //산술 오버플로우가 일어나서 DECIMAL 반올림함
             ViewBag.qualityRate = Math.Round( (list[0].PRODUCT_QTY / (list[0].PRODUCT_QTY + list[0].DEFECT_QTY)) * Convert.ToDecimal(100),2);
             ViewBag.defectRate = Math.Round((list[0].DEFECT_QTY / (list[0].PRODUCT_QTY + list[0].DEFECT_QTY))* Convert.ToDecimal(100),2);
 
