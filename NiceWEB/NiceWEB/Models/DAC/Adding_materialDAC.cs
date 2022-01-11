@@ -28,8 +28,8 @@ namespace NiceWEB.Models
 			using (SqlCommand cmd = new SqlCommand())
 			{
 				cmd.Connection = new SqlConnection(ConfigurationManager.ConnectionStrings["project"].ConnectionString);
-				cmd.CommandText = @"select TRAN_TIME,PRODUCT_CODE,OPERATION_CODE,CHILD_PRODUCT_CODE,sum(convert(int,INPUT_QTY)) from LOT_MATERIAL_HIS
-group by TRAN_TIME,PRODUCT_CODE,OPERATION_CODE,CHILD_PRODUCT_CODE";
+				cmd.CommandText = @"select convert(varchar,TRAN_TIME,120) as TRAN_TIME,PRODUCT_CODE,OPERATION_CODE,CHILD_PRODUCT_CODE,sum(convert(int,INPUT_QTY)) from LOT_MATERIAL_HIS
+group by convert(varchar,TRAN_TIME,120),PRODUCT_CODE,OPERATION_CODE,CHILD_PRODUCT_CODE";
 
 				cmd.Connection.Open();
 
@@ -72,7 +72,7 @@ group by TRAN_TIME,PRODUCT_CODE,OPERATION_CODE,CHILD_PRODUCT_CODE";
 					cmd.Parameters.AddWithValue("@from", from);
 					cmd.Parameters.AddWithValue("@to", to);
 				}
-				sb.Append(" group by TRAN_TIME,PRODUCT_CODE,OPERATION_CODE,CHILD_PRODUCT_CODE");
+				sb.Append(" group by convert(varchar,TRAN_TIME,120) as TRAN_TIME,PRODUCT_CODE,OPERATION_CODE,CHILD_PRODUCT_CODE");
 				cmd.CommandText = sb.ToString();
 				//cmd.Connection = conn;
 
@@ -83,21 +83,20 @@ group by TRAN_TIME,PRODUCT_CODE,OPERATION_CODE,CHILD_PRODUCT_CODE";
 		}
 
 		//바인딩해줄데이터들 품번,자재품번,공정 => 전부 콤보박스로 
-		public List<string> GetProduct()
+		public List<TableData> GetProduct()
 		{
-			string sql = " select PRODUCT_CODE from LOT_MATERIAL_HIS";
-			SqlCommand cmd = new SqlCommand(sql, conn);
-
-			List<string> List = new List<string>();
-			using (SqlDataReader da = cmd.ExecuteReader())
+			using (SqlCommand cmd = new SqlCommand())
 			{
-				while (da.Read())
-				{
-					List.Add(da["PRODUCT_CODE"].ToString());
+				cmd.Connection = new SqlConnection(ConfigurationManager.ConnectionStrings["project"].ConnectionString);
+				cmd.CommandText = @"select PRODUCT_CODE as Data from PRODUCT_MST";
+				DataTable dt = new DataTable();
+				cmd.Connection.Open();
 
-				}
+				SqlDataReader reader = cmd.ExecuteReader();
+				List<TableData> list = Helper.DataReaderMapToList<TableData>(reader);
+				reader.Close();
+				return list;
 			}
-			return List;
 		}
 
 		public List<string> GetChildProduct()
