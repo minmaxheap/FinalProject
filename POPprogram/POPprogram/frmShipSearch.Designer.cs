@@ -104,7 +104,7 @@ namespace POPprogram
             // 
             // frmShipSearch
             // 
-            this.ClientSize = new System.Drawing.Size(1024, 478);
+            //this.ClientSize = new System.Drawing.Size(1024, 478);
             this.Controls.Add(this.csDataGridView1);
             this.Name = "frmShipSearch";
             this.Load += new System.EventHandler(this.frmPrurchaseDialog_Load);

@@ -292,7 +292,7 @@ namespace POPprogram
             // 
             // frmLOTDefect
             // 
-            this.ClientSize = new System.Drawing.Size(1194, 721);
+            //this.ClientSize = new System.Drawing.Size(1194, 721);
             this.Name = "frmLOTDefect";
             this.Load += new System.EventHandler(this.frmLOTDefect_Load);
             this.panel7.ResumeLayout(false);

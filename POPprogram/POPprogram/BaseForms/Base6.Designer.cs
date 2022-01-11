@@ -115,7 +115,7 @@ namespace POPprogram
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("나눔고딕", 14.25F);
+            this.label9.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
             this.label9.Location = new System.Drawing.Point(39, 13);
             this.label9.Margin = new System.Windows.Forms.Padding(0);
             this.label9.Name = "label9";
@@ -170,7 +170,7 @@ namespace POPprogram
             this.panel8.Controls.Add(this.label22);
             this.panel8.Controls.Add(this.label6);
             this.panel8.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.panel8.Location = new System.Drawing.Point(31, 85);
+            this.panel8.Location = new System.Drawing.Point(31, 100);
             this.panel8.Margin = new System.Windows.Forms.Padding(0);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1136, 362);
@@ -462,9 +462,9 @@ namespace POPprogram
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.label13);
             this.panel4.Controls.Add(this.txtComment);
-            this.panel4.Location = new System.Drawing.Point(31, 464);
+            this.panel4.Location = new System.Drawing.Point(31, 488);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1136, 175);
+            this.panel4.Size = new System.Drawing.Size(1136, 199);
             this.panel4.TabIndex = 51;
             // 
             // label1
@@ -486,7 +486,7 @@ namespace POPprogram
             this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.label13.Location = new System.Drawing.Point(102, 115);
+            this.label13.Location = new System.Drawing.Point(102, 133);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(39, 19);
             this.label13.TabIndex = 38;
@@ -498,7 +498,7 @@ namespace POPprogram
             this.txtComment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtComment.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.txtComment.Location = new System.Drawing.Point(165, 114);
+            this.txtComment.Location = new System.Drawing.Point(165, 132);
             this.txtComment.Multiline = true;
             this.txtComment.Name = "txtComment";
             this.txtComment.Size = new System.Drawing.Size(937, 46);
@@ -509,7 +509,7 @@ namespace POPprogram
             this.pnlCrud.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlCrud.Controls.Add(this.btnExecute);
             this.pnlCrud.Controls.Add(this.btnClose);
-            this.pnlCrud.Location = new System.Drawing.Point(499, 655);
+            this.pnlCrud.Location = new System.Drawing.Point(499, 707);
             this.pnlCrud.Margin = new System.Windows.Forms.Padding(0);
             this.pnlCrud.Name = "pnlCrud";
             this.pnlCrud.Size = new System.Drawing.Size(668, 45);
@@ -583,7 +583,7 @@ namespace POPprogram
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1194, 721);
+            this.ClientSize = new System.Drawing.Size(1194, 773);
             this.Controls.Add(this.pnlCrud);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel7);

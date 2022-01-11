@@ -144,6 +144,10 @@ namespace POPprogram
 
                     this.ActiveMdiChild.Tag = tp;
                 }
+                else
+                {
+                    tabMenu.SelectedTab = (TabPage)this.ActiveMdiChild.Tag;
+                }
 
                 if (!tabMenu.Visible)
                     tabMenu.Visible = true;

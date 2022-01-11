@@ -104,7 +104,7 @@ namespace POPprogram
             this.lblID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblID.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(182)))), ((int)(((byte)(190)))));
-            this.lblID.Location = new System.Drawing.Point(1508, 13);
+            this.lblID.Location = new System.Drawing.Point(1508, 19);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(25, 19);
             this.lblID.TabIndex = 21;

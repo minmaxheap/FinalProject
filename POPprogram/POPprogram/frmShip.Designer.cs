@@ -99,7 +99,7 @@ namespace POPprogram
             // 
             // btnExport
             // 
-            this.btnExport.Location = new System.Drawing.Point(252, 0);
+            this.btnExport.Location = new System.Drawing.Point(143, 0);
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // btnReadTop
@@ -122,7 +122,7 @@ namespace POPprogram
             this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPrint.ImageIndex = 5;
             this.btnPrint.ImageList = this.imageList1;
-            this.btnPrint.Location = new System.Drawing.Point(388, 0);
+            this.btnPrint.Location = new System.Drawing.Point(341, 0);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(140, 45);
             this.btnPrint.TabIndex = 95;
@@ -178,7 +178,7 @@ namespace POPprogram
             this.csDataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.csDataGridView1.Dock = System.Windows.Forms.DockStyle.Left;
             this.csDataGridView1.EnableHeadersVisualStyles = false;
-            this.csDataGridView1.Location = new System.Drawing.Point(0, 55);
+            this.csDataGridView1.Location = new System.Drawing.Point(0, 45);
             this.csDataGridView1.Name = "csDataGridView1";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
@@ -189,7 +189,7 @@ namespace POPprogram
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.csDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.csDataGridView1.RowHeadersWidth = 30;
-            this.csDataGridView1.Size = new System.Drawing.Size(830, 141);
+            this.csDataGridView1.Size = new System.Drawing.Size(830, 151);
             this.csDataGridView1.TabIndex = 58;
             this.csDataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellValueChanged);
             this.csDataGridView1.CurrentCellDirtyStateChanged += new System.EventHandler(this.csDataGridView1_CurrentCellDirtyStateChanged);

@@ -220,7 +220,7 @@ namespace POPprogram
             // 
             // frmStockIN
             // 
-            this.ClientSize = new System.Drawing.Size(1194, 634);
+            //this.ClientSize = new System.Drawing.Size(1194, 634);
             this.Name = "frmStockIN";
             this.Load += new System.EventHandler(this.frmStockIN_Load);
             this.panel6.ResumeLayout(false);
