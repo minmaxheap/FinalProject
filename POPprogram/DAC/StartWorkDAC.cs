@@ -43,7 +43,7 @@ namespace DAC
 			string sql = @"select LOT_ID,s.PRODUCT_CODE
 from LOT_STS s inner
 join WORK_ORDER_MST w on s.WORK_ORDER_ID = w.WORK_ORDER_ID
-WHERE  LEFT(s.PRODUCT_CODE, 2) = 'pd' AND ORDER_STATUS ='OPEN'";
+WHERE LEFT(s.PRODUCT_CODE, 2) = 'pd' AND ORDER_STATUS<>'close'";
 
 			SqlCommand cmd = new SqlCommand(sql, conn);
 			List<string> List = new List<string>();

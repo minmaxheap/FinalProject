@@ -1792,10 +1792,10 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\Adding_materialController.cs" />
     <Compile Include="Controllers\ComparePlanController.cs" />
     <Compile Include="Controllers\EfficiencyController.cs" />
     <Compile Include="Controllers\InspectController.cs" />
+    <Compile Include="Controllers\MaterialController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1905,7 +1905,7 @@
     <Content Include="Views\Efficiency\Index.cshtml" />
     <Content Include="Views\Inspect\Index.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Adding_material\Adding_material.cshtml" />
+    <Content Include="Views\Material\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

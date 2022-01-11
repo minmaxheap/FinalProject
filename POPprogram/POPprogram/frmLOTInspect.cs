@@ -44,13 +44,13 @@ namespace POPprogram
 			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "USL", "SPEC_USL");
 			// DataGridViewUtil.AddGridTextColumn(csDataGridView1, "검사데이터", "InspectValue");
 			//DataGridViewUtil.AddGridTextColumn(csDataGridView1, "유효값", "InspectResult");
-
-
-
-		
-
+			//
 			this.csDataGridView1.Columns.Add("InspectValue", "검사데이터");
 			this.csDataGridView1.Columns.Add("InspectResult", "유효값");
+			this.csDataGridView1.Columns["InspectResult"].ReadOnly = true;
+
+			this.csDataGridView1.RowTemplate.Height = 20;
+			this.csDataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 			// this.csDataGridView1.Columns.Add(
 
 
@@ -68,7 +68,7 @@ namespace POPprogram
 
 			Value = (cboLOTID.SelectedValue == null) ? "" : cboLOTID.SelectedValue.ToString();
 
-			swlist = serv.GetData(Value);
+			//swlist = serv.GetData(Value);
 
 			swlist = serv.GetData(Value);
 
@@ -113,7 +113,7 @@ namespace POPprogram
 
 		private void csDataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
 		{
-
+			//this.csDataGridView1.ClearSelection();
 			int rowindex = csDataGridView1.CurrentCell.ColumnIndex;
 			if (csDataGridView1.Columns[rowindex].HeaderText == "검사데이터")
 			{
@@ -126,7 +126,7 @@ namespace POPprogram
 
 				if (LSL < a && a < USL)
 				{
-					MessageBox.Show("성공");
+					//MessageBox.Show("성공");
 					csDataGridView1.Rows[row].Cells["InspectResult"].Value = "OK";
 					csDataGridView1.Rows[row].Cells["InspectResult"].Style.ForeColor = Color.Green;
 				}
@@ -137,8 +137,10 @@ namespace POPprogram
 					//csDataGridView1.Columns["유효값"].DefaultCellStyle
 					// return;
 				}
-				this.csDataGridView1.ClearSelection();
-				txtComment.Focus();
+				//엔터치면 됨 tab은 안됨 왜일까?
+
+				csDataGridView1.ClearSelection();
+				btnExecute.Focus();
 			}
 		}
 
