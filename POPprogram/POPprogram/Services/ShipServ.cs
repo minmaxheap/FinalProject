@@ -48,6 +48,14 @@ namespace POPprogram
             dac.Dispose();
             return dt;
         }
+
+        public DataTable ExportBarcode(string strChkBarCodes)
+        {
+            ShipDAC dac = new ShipDAC();
+            DataTable dt = dac.ExportBarcode(strChkBarCodes);
+            dac.Dispose();
+            return dt;
+        }
     }
 }
 

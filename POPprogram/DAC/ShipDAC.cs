@@ -76,7 +76,7 @@ namespace DAC
       ,[LAST_TRAN_COMMENT]
       ,[LAST_HIST_SEQ]
   FROM [dbo].[LOT_STS]
-  WHERE STORE_CODE='FS_STORE'";
+  WHERE STORE_CODE='FS_STORE' ";
             DataTable dt = new DataTable();
             using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
             {
@@ -292,7 +292,7 @@ END CATCH;
 
         public DataTable GetBarcodeList()
         {
-            string sql = @"SELECT TOP (1000) [Barcode_ID]
+            string sql = @"SELECT [Barcode_ID]
       ,[PRODUCT_CODE]
       ,[PRODUCT_NAME]
       ,[PRODUCT_TIME]
@@ -305,7 +305,22 @@ END CATCH;
                 return dt;
             }
         }
-
+        public DataTable ExportBarcode(string strChkBarCodes)
+        {
+            string sql = @"SELECT [Barcode_ID]
+      ,[PRODUCT_CODE]
+      ,[PRODUCT_NAME]
+      ,[PRODUCT_TIME]
+      ,[LOT_QTY]
+  FROM [team3].[dbo].[BARCODE]
+  where Barcode_ID in ('" + strChkBarCodes + "')";
+            DataTable dt = new DataTable();
+            using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
+            {
+                da.Fill(dt);
+                return dt;
+            }
+        }
         public void Dispose()
         {
             conn.Close();

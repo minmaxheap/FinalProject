@@ -122,11 +122,11 @@ namespace POPprogram
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.label12.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.label12.Location = new System.Drawing.Point(102, 53);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(36, 17);
+            this.label12.Size = new System.Drawing.Size(39, 19);
             this.label12.TabIndex = 60;
             this.label12.Text = "설비";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -303,7 +303,7 @@ namespace POPprogram
             // 
             // frmEndWorkOrder
             // 
-            //this.ClientSize = new System.Drawing.Size(1194, 634);
+            this.ClientSize = new System.Drawing.Size(1194, 721);
             this.Name = "frmEndWorkOrder";
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
