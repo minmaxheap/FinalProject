@@ -65,17 +65,17 @@ from LOT_DEFECT_HIS");
 				{
 					sb.Append("");
 					cmd.Parameters.AddWithValue("@from", from);
-					cmd.Parameters.AddWithValue("@to", to);
+					cmd.Parameters.AddWithValue("@to", );
 
 				}
-				//if (from != null && to != null)
+				//if (from != null & to != null)
 				//{
 				//	sb.Append(" 
 				//}
 				sb.Append(" group by  CONVERT(varchar,TRAN_TIME,23),PRODUCT_CODE,OPERATION_CODE, DEFECT_CODE");
 				cmd.CommandText = sb.ToString();
 
-				List<StoreProperty> list = Helper.DataReaderMapToList<StoreProperty>(cmd.ExecuteReader());
+				List<DeffectProperty> list = Helper.DataReaderMapToList<DeffectProperty>(cmd.ExecuteReader());
 				cmd.Connection.Close();
 				return list;
 

@@ -19,7 +19,7 @@ namespace NiceWEB.Controllers
             List<string> product = dac.GetProductCode();
 
 
-            ViewBag.product = new SelectList(product, "Data", "Data");
+           // ViewBag.product = new SelectList(product, "Data", "Data");
 
             return View(list);
         }
