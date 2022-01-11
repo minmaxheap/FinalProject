@@ -99,13 +99,14 @@ namespace POPprogram
             // 
             // lblID
             // 
+            this.lblID.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblID.AutoSize = true;
             this.lblID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblID.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(182)))), ((int)(((byte)(190)))));
-            this.lblID.Location = new System.Drawing.Point(218, 14);
+            this.lblID.Location = new System.Drawing.Point(1508, 19);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(23, 16);
+            this.lblID.Size = new System.Drawing.Size(25, 19);
             this.lblID.TabIndex = 21;
             this.lblID.Text = "ID";
             this.lblID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -138,7 +139,7 @@ namespace POPprogram
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(198, 45);
+            this.pictureBox2.Size = new System.Drawing.Size(133, 45);
             this.pictureBox2.TabIndex = 25;
             this.pictureBox2.TabStop = false;
             // 

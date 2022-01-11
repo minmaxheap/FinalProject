@@ -31,6 +31,7 @@ namespace POPprogram
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Button btnReadTop;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLOTStatus));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -39,7 +40,7 @@ namespace POPprogram
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLOTStatus));
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.pnlTop = new System.Windows.Forms.Panel();
             this.btnTxtSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -60,7 +61,6 @@ namespace POPprogram
             this.pnlCrud = new System.Windows.Forms.Panel();
             this.btnReadBottom = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             btnReadTop = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -87,7 +87,7 @@ namespace POPprogram
             btnReadTop.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             btnReadTop.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold);
             btnReadTop.ForeColor = System.Drawing.SystemColors.ControlText;
-            btnReadTop.ImageIndex = 0;
+            btnReadTop.ImageIndex = 13;
             btnReadTop.ImageList = this.imageList1;
             btnReadTop.Location = new System.Drawing.Point(13, 0);
             btnReadTop.Margin = new System.Windows.Forms.Padding(0);
@@ -96,6 +96,28 @@ namespace POPprogram
             btnReadTop.TabIndex = 47;
             btnReadTop.UseVisualStyleBackColor = false;
             btnReadTop.Click += new System.EventHandler(this.btnReadTop_Click);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "Blank-13.png");
+            this.imageList1.Images.SetKeyName(1, "Data-Import.png");
+            this.imageList1.Images.SetKeyName(2, "Touch-Screen.png");
+            this.imageList1.Images.SetKeyName(3, "Check-01.png");
+            this.imageList1.Images.SetKeyName(4, "Minus.png");
+            this.imageList1.Images.SetKeyName(5, "Export.png");
+            this.imageList1.Images.SetKeyName(6, "Print - 01.png");
+            this.imageList1.Images.SetKeyName(7, "Trash Can_02.png");
+            this.imageList1.Images.SetKeyName(8, "Command-Refresh-01.png");
+            this.imageList1.Images.SetKeyName(9, "Add-New.png");
+            this.imageList1.Images.SetKeyName(10, "Close.png");
+            this.imageList1.Images.SetKeyName(11, "Delete_03.png");
+            this.imageList1.Images.SetKeyName(12, "Save_02.png");
+            this.imageList1.Images.SetKeyName(13, "Data-Find.png");
+            this.imageList1.Images.SetKeyName(14, "Black List.png");
+            this.imageList1.Images.SetKeyName(15, "Arrowhead-Right-01.png");
+            this.imageList1.Images.SetKeyName(16, "Search-Find.png");
             // 
             // pnlTop
             // 
@@ -115,7 +137,7 @@ namespace POPprogram
             this.btnTxtSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnTxtSearch.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold);
             this.btnTxtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnTxtSearch.ImageIndex = 1;
+            this.btnTxtSearch.ImageIndex = 16;
             this.btnTxtSearch.ImageList = this.imageList1;
             this.btnTxtSearch.Location = new System.Drawing.Point(303, 0);
             this.btnTxtSearch.Name = "btnTxtSearch";
@@ -202,13 +224,13 @@ namespace POPprogram
             this.csDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔고딕", 11.5F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔고딕", 10F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.csDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.csDataGridView1.ColumnHeadersHeight = 55;
+            this.csDataGridView1.ColumnHeadersHeight = 35;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("나눔고딕", 9F);
@@ -256,13 +278,13 @@ namespace POPprogram
             this.csDataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("나눔고딕", 11.5F);
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("나눔고딕", 10F);
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.csDataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.csDataGridView2.ColumnHeadersHeight = 55;
+            this.csDataGridView2.ColumnHeadersHeight = 35;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("나눔고딕", 9F);
@@ -347,7 +369,7 @@ namespace POPprogram
             // 
             // pnlTopLbl
             // 
-            this.pnlTopLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.pnlTopLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
             this.pnlTopLbl.Controls.Add(this.btnPanel);
             this.pnlTopLbl.Controls.Add(this.lblPanel);
             this.pnlTopLbl.Dock = System.Windows.Forms.DockStyle.Top;
@@ -379,7 +401,7 @@ namespace POPprogram
             // 
             // lblPanel
             // 
-            this.lblPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.lblPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
             this.lblPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblPanel.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold);
@@ -411,14 +433,16 @@ namespace POPprogram
             this.btnReadBottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.btnReadBottom.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnReadBottom.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold);
-            this.btnReadBottom.Image = global::POPprogram.Properties.Resources.Data_Find12;
             this.btnReadBottom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReadBottom.Location = new System.Drawing.Point(423, 0);
+            this.btnReadBottom.ImageIndex = 13;
+            this.btnReadBottom.ImageList = this.imageList1;
+            this.btnReadBottom.Location = new System.Drawing.Point(328, 0);
             this.btnReadBottom.Margin = new System.Windows.Forms.Padding(0);
             this.btnReadBottom.Name = "btnReadBottom";
-            this.btnReadBottom.Size = new System.Drawing.Size(110, 45);
+            this.btnReadBottom.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnReadBottom.Size = new System.Drawing.Size(140, 45);
             this.btnReadBottom.TabIndex = 79;
-            this.btnReadBottom.Text = "조회";
+            this.btnReadBottom.Text = "조회  ";
             this.btnReadBottom.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReadBottom.UseVisualStyleBackColor = false;
             this.btnReadBottom.Click += new System.EventHandler(this.btnReadBottom_Click);
@@ -432,24 +456,19 @@ namespace POPprogram
             this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnClose.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold);
-            this.btnClose.Image = global::POPprogram.Properties.Resources.Delete;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(558, 0);
+            this.btnClose.ImageIndex = 10;
+            this.btnClose.ImageList = this.imageList1;
+            this.btnClose.Location = new System.Drawing.Point(528, 0);
             this.btnClose.Margin = new System.Windows.Forms.Padding(0);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(110, 45);
+            this.btnClose.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnClose.Size = new System.Drawing.Size(140, 45);
             this.btnClose.TabIndex = 83;
-            this.btnClose.Text = "닫기";
+            this.btnClose.Text = "닫기  ";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "Data-Find.png");
-            this.imageList1.Images.SetKeyName(1, "Search-Find.png");
             // 
             // frmLOTStatus
             // 
