@@ -29,86 +29,86 @@ namespace POPprogram
         /// </summary>
         private void InitializeComponent()
         {
-			this.textBox10 = new System.Windows.Forms.TextBox();
-			this.label12 = new System.Windows.Forms.Label();
-			this.comboBox1 = new System.Windows.Forms.ComboBox();
-			this.panel7.SuspendLayout();
-			this.panel8.SuspendLayout();
-			this.panel4.SuspendLayout();
-			this.pnlCrud.SuspendLayout();
-			this.SuspendLayout();
-			// 
-			// panel4
-			// 
-			this.panel4.Controls.Add(this.comboBox1);
-			this.panel4.Controls.Add(this.textBox10);
-			this.panel4.Controls.Add(this.label12);
-			this.panel4.Controls.SetChildIndex(this.label12, 0);
-			this.panel4.Controls.SetChildIndex(this.textBox10, 0);
-			this.panel4.Controls.SetChildIndex(this.comboBox1, 0);
-			this.panel4.Controls.SetChildIndex(this.txtComment, 0);
-			this.panel4.Controls.SetChildIndex(this.label13, 0);
-			this.panel4.Controls.SetChildIndex(this.label1, 0);
-			// 
-			// label1
-			// 
-			this.label1.Text = "작업 시작 정보";
-			// 
-			// btnExecute
-			// 
-			this.btnExecute.Click += new System.EventHandler(this.btnExecute_Click);
-			// 
-			// cboLOTID
-			// 
-			this.cboLOTID.SelectedIndexChanged += new System.EventHandler(this.cboLOTID_SelectedIndexChanged);
-			// 
-			// textBox10
-			// 
-			this.textBox10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.pnlCrud.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.comboBox1);
+            this.panel4.Controls.Add(this.textBox10);
+            this.panel4.Controls.Add(this.label12);
+            this.panel4.Controls.SetChildIndex(this.label12, 0);
+            this.panel4.Controls.SetChildIndex(this.textBox10, 0);
+            this.panel4.Controls.SetChildIndex(this.comboBox1, 0);
+            this.panel4.Controls.SetChildIndex(this.txtComment, 0);
+            this.panel4.Controls.SetChildIndex(this.label13, 0);
+            this.panel4.Controls.SetChildIndex(this.label1, 0);
+            // 
+            // label1
+            // 
+            this.label1.Text = "작업 시작 정보";
+            // 
+            // btnExecute
+            // 
+            this.btnExecute.Click += new System.EventHandler(this.btnExecute_Click);
+            // 
+            // cboLOTID
+            // 
+            this.cboLOTID.SelectedIndexChanged += new System.EventHandler(this.cboLOTID_SelectedIndexChanged);
+            // 
+            // textBox10
+            // 
+            this.textBox10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBox10.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
-			this.textBox10.Location = new System.Drawing.Point(521, 71);
-			this.textBox10.Name = "textBox10";
-			this.textBox10.Size = new System.Drawing.Size(581, 29);
-			this.textBox10.TabIndex = 58;
-			// 
-			// label12
-			// 
-			this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBox10.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.textBox10.Location = new System.Drawing.Point(521, 71);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(581, 26);
+            this.textBox10.TabIndex = 58;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.label12.AutoSize = true;
-			this.label12.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
-			this.label12.Location = new System.Drawing.Point(102, 75);
-			this.label12.Name = "label12";
-			this.label12.Size = new System.Drawing.Size(46, 21);
-			this.label12.TabIndex = 57;
-			this.label12.Text = "설비";
-			this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// comboBox1
-			// 
-			this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.comboBox1.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
-			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Location = new System.Drawing.Point(166, 71);
-			this.comboBox1.Name = "comboBox1";
-			this.comboBox1.Size = new System.Drawing.Size(335, 29);
-			this.comboBox1.TabIndex = 59;
-			// 
-			// frmStartWorkOrder
-			// 
-			this.ClientSize = new System.Drawing.Size(1194, 721);
-			this.Name = "frmStartWorkOrder";
-			this.Load += new System.EventHandler(this.frmStartWorkOrder_Load);
-			this.panel7.ResumeLayout(false);
-			this.panel7.PerformLayout();
-			this.panel8.ResumeLayout(false);
-			this.panel8.PerformLayout();
-			this.panel4.ResumeLayout(false);
-			this.panel4.PerformLayout();
-			this.pnlCrud.ResumeLayout(false);
-			this.pnlCrud.PerformLayout();
-			this.ResumeLayout(false);
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.label12.Location = new System.Drawing.Point(102, 75);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(39, 19);
+            this.label12.TabIndex = 57;
+            this.label12.Text = "설비";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.comboBox1.Font = new System.Drawing.Font("나눔고딕", 12F);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(166, 71);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(335, 27);
+            this.comboBox1.TabIndex = 59;
+            // 
+            // frmStartWorkOrder
+            // 
+            this.ClientSize = new System.Drawing.Size(1194, 721);
+            this.Name = "frmStartWorkOrder";
+            this.Load += new System.EventHandler(this.frmStartWorkOrder_Load);
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.pnlCrud.ResumeLayout(false);
+            this.pnlCrud.PerformLayout();
+            this.ResumeLayout(false);
 
         }
 

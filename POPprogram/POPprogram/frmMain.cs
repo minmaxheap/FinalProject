@@ -22,7 +22,7 @@ namespace POPprogram
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
             msUserID = ID;
-            lblID.Text = msUserID + " 님";
+       
 
 
         }
@@ -35,6 +35,7 @@ namespace POPprogram
             //DrawMenuStrip();
             DrawMenuPanel();
             tabMenu.Visible = false;
+            lblID.Text = mdtFunc.Rows[0]["USER_NAME"].ToString() + "님";
 
 
 

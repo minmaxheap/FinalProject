@@ -191,7 +191,7 @@ namespace POPprogram
             // 
             this.label26.BackColor = System.Drawing.Color.Yellow;
             this.label26.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label26.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label26.Font = new System.Drawing.Font("나눔고딕", 12.75F);
             this.label26.Location = new System.Drawing.Point(2, 50);
             this.label26.Margin = new System.Windows.Forms.Padding(0);
             this.label26.Name = "label26";
@@ -204,7 +204,7 @@ namespace POPprogram
             // 
             this.label18.BackColor = System.Drawing.Color.Red;
             this.label18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label18.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label18.Font = new System.Drawing.Font("나눔고딕", 12.75F);
             this.label18.Location = new System.Drawing.Point(314, 50);
             this.label18.Margin = new System.Windows.Forms.Padding(0);
             this.label18.Name = "label18";
@@ -217,7 +217,7 @@ namespace POPprogram
             // 
             this.label17.BackColor = System.Drawing.Color.Green;
             this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label17.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label17.Font = new System.Drawing.Font("나눔고딕", 12.75F);
             this.label17.Location = new System.Drawing.Point(626, 50);
             this.label17.Margin = new System.Windows.Forms.Padding(0);
             this.label17.Name = "label17";
@@ -230,7 +230,7 @@ namespace POPprogram
             // 
             this.label5.BackColor = System.Drawing.Color.Gainsboro;
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label5.Font = new System.Drawing.Font("나눔고딕", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label5.Location = new System.Drawing.Point(2, 2);
             this.label5.Margin = new System.Windows.Forms.Padding(0);
             this.label5.Name = "label5";
@@ -243,7 +243,7 @@ namespace POPprogram
             // 
             this.label7.BackColor = System.Drawing.Color.Gainsboro;
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label7.Font = new System.Drawing.Font("나눔고딕", 12.75F);
             this.label7.Location = new System.Drawing.Point(314, 2);
             this.label7.Margin = new System.Windows.Forms.Padding(0);
             this.label7.Name = "label7";
@@ -256,7 +256,7 @@ namespace POPprogram
             // 
             this.label8.BackColor = System.Drawing.Color.Gainsboro;
             this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label8.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label8.Font = new System.Drawing.Font("나눔고딕", 12.75F);
             this.label8.Location = new System.Drawing.Point(626, 2);
             this.label8.Margin = new System.Windows.Forms.Padding(0);
             this.label8.Name = "label8";
@@ -268,7 +268,7 @@ namespace POPprogram
             // label14
             // 
             this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label14.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label14.Font = new System.Drawing.Font("나눔고딕", 12.75F);
             this.label14.Location = new System.Drawing.Point(2, 24);
             this.label14.Margin = new System.Windows.Forms.Padding(0);
             this.label14.Name = "label14";
@@ -280,7 +280,7 @@ namespace POPprogram
             // label15
             // 
             this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label15.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label15.Font = new System.Drawing.Font("나눔고딕", 12.75F);
             this.label15.Location = new System.Drawing.Point(314, 24);
             this.label15.Margin = new System.Windows.Forms.Padding(0);
             this.label15.Name = "label15";
@@ -292,7 +292,7 @@ namespace POPprogram
             // label16
             // 
             this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label16.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label16.Font = new System.Drawing.Font("나눔고딕", 12.75F);
             this.label16.Location = new System.Drawing.Point(626, 24);
             this.label16.Margin = new System.Windows.Forms.Padding(0);
             this.label16.Name = "label16";
