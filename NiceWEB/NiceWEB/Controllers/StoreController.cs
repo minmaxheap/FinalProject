@@ -6,27 +6,22 @@ using System.Web.Mvc;
 using Newtonsoft.Json;
 using NiceWEB.Models;
 using System.Web.Script.Serialization;
-
 namespace NiceWEB.Controllers
 {
-    public class MaterialController : Controller
+    public class StoreController : Controller
     {
-        // GET: Material
+        // GET: Store
         public ActionResult Index()
         {
-            Adding_materialDAC dac = new Adding_materialDAC();
-            List<Adding_materialProperty> list = dac.GetData();
+            StoreDAC dac = new StoreDAC();
+            List<StoreProperty> list = dac.GetData();
 
-            CommonDAC comDAC = new CommonDAC();
-            //select box에 전달할 데이터
-            List<TableData> product = dac.GetProduct();
-          
+            List<string> product = dac.GetProductCode();
+
 
             ViewBag.product = new SelectList(product, "Data", "Data");
 
             return View(list);
         }
-
-       
     }
 }
