@@ -51,7 +51,7 @@ namespace POPprogram
             // 
             // btnExecute
             // 
-            this.btnExecute.Location = new System.Drawing.Point(401, 0);
+            //this.btnExecute.Location = new System.Drawing.Point(401, 0);
             this.btnExecute.Click += new System.EventHandler(this.btnExecute_Click);
             // 
             // cboLOTID
@@ -104,7 +104,7 @@ namespace POPprogram
             // 
             // frmLOTInspect
             // 
-            this.ClientSize = new System.Drawing.Size(1194, 721);
+            //this.ClientSize = new System.Drawing.Size(1194, 721);
             this.Name = "frmLOTInspect";
             this.Load += new System.EventHandler(this.frmLOTInspect_Load);
             this.panel7.ResumeLayout(false);

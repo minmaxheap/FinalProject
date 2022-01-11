@@ -33,12 +33,16 @@ namespace POPprogram
 
                 if (this.SelectedIndex == e.Index)
                 {
-                    e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(208, 208, 208)), e.Bounds);
+                    e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(125, 125, 125)), e.Bounds);
                 }
 
                 SolidBrush titleBrush = new SolidBrush(Color.Black);
                 string title = this.TabPages[e.Index].Text;
                 Font f = this.Font;
+                if (this.SelectedIndex == e.Index)
+                {
+                    titleBrush.Color = Color.White;
+                }
                 e.Graphics.DrawString(title, f, titleBrush, new Point(r.X, r.Y));
 
 

@@ -34,18 +34,18 @@ namespace POPprogram
             //System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             //System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.csDataGridView1 = new POPprogram.csDataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            //this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            //this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            //this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            //this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            //this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            //this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            //this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            //this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            //this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            //this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            //this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            //this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -55,13 +55,13 @@ namespace POPprogram
             // 
             // panel8
             // 
-            this.panel8.Size = new System.Drawing.Size(1136, 307);
+            //this.panel8.Size = new System.Drawing.Size(1136, 307);
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.csDataGridView1);
-            this.panel4.Location = new System.Drawing.Point(30, 382);
-            this.panel4.Size = new System.Drawing.Size(1136, 246);
+           // this.panel4.Location = new System.Drawing.Point(30, 382);
+           // this.panel4.Size = new System.Drawing.Size(1136, 246);
             this.panel4.Controls.SetChildIndex(this.txtComment, 0);
             this.panel4.Controls.SetChildIndex(this.label13, 0);
             this.panel4.Controls.SetChildIndex(this.label1, 0);
@@ -128,91 +128,91 @@ namespace POPprogram
             // 
             // Column1
             // 
-            this.Column1.HeaderText = "Column1";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Column2";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Column3";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Column4";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 125;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Column5";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 125;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Column6";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 125;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Column7";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 125;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Column8";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 125;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Column9";
-            this.Column9.MinimumWidth = 6;
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 125;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Column10";
-            this.Column10.MinimumWidth = 6;
-            this.Column10.Name = "Column10";
-            this.Column10.Width = 125;
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "Column11";
-            this.Column11.MinimumWidth = 6;
-            this.Column11.Name = "Column11";
-            this.Column11.Width = 125;
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "Column12";
-            this.Column12.MinimumWidth = 6;
-            this.Column12.Name = "Column12";
-            this.Column12.Width = 125;
+            //this.Column1.HeaderText = "Column1";
+            //this.Column1.MinimumWidth = 6;
+            //this.Column1.Name = "Column1";
+            //this.Column1.Width = 125;
+            //// 
+            //// Column2
+            //// 
+            //this.Column2.HeaderText = "Column2";
+            //this.Column2.MinimumWidth = 6;
+            //this.Column2.Name = "Column2";
+            //this.Column2.Width = 125;
+            //// 
+            //// Column3
+            //// 
+            //this.Column3.HeaderText = "Column3";
+            //this.Column3.MinimumWidth = 6;
+            //this.Column3.Name = "Column3";
+            //this.Column3.Width = 125;
+            //// 
+            //// Column4
+            //// 
+            //this.Column4.HeaderText = "Column4";
+            //this.Column4.MinimumWidth = 6;
+            //this.Column4.Name = "Column4";
+            //this.Column4.Width = 125;
+            //// 
+            //// Column5
+            //// 
+            //this.Column5.HeaderText = "Column5";
+            //this.Column5.MinimumWidth = 6;
+            //this.Column5.Name = "Column5";
+            //this.Column5.Width = 125;
+            //// 
+            //// Column6
+            //// 
+            //this.Column6.HeaderText = "Column6";
+            //this.Column6.MinimumWidth = 6;
+            //this.Column6.Name = "Column6";
+            //this.Column6.Width = 125;
+            //// 
+            //// Column7
+            //// 
+            //this.Column7.HeaderText = "Column7";
+            //this.Column7.MinimumWidth = 6;
+            //this.Column7.Name = "Column7";
+            //this.Column7.Width = 125;
+            //// 
+            //// Column8
+            //// 
+            //this.Column8.HeaderText = "Column8";
+            //this.Column8.MinimumWidth = 6;
+            //this.Column8.Name = "Column8";
+            //this.Column8.Width = 125;
+            //// 
+            //// Column9
+            //// 
+            //this.Column9.HeaderText = "Column9";
+            //this.Column9.MinimumWidth = 6;
+            //this.Column9.Name = "Column9";
+            //this.Column9.Width = 125;
+            //// 
+            //// Column10
+            //// 
+            //this.Column10.HeaderText = "Column10";
+            //this.Column10.MinimumWidth = 6;
+            //this.Column10.Name = "Column10";
+            //this.Column10.Width = 125;
+            //// 
+            //// Column11
+            //// 
+            //this.Column11.HeaderText = "Column11";
+            //this.Column11.MinimumWidth = 6;
+            //this.Column11.Name = "Column11";
+            //this.Column11.Width = 125;
+            //// 
+            //// Column12
+            //// 
+            //this.Column12.HeaderText = "Column12";
+            //this.Column12.MinimumWidth = 6;
+            //this.Column12.Name = "Column12";
+            //this.Column12.Width = 125;
             // 
             // frmLOTMaterial
             // 
-            this.ClientSize = new System.Drawing.Size(1194, 721);
+           // this.ClientSize = new System.Drawing.Size(1194, 721);
             this.Name = "frmLOTMaterial";
             this.Load += new System.EventHandler(this.frmLOTMaterial_Load);
             this.panel7.ResumeLayout(false);
