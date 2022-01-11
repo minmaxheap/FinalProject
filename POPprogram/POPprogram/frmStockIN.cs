@@ -180,12 +180,26 @@ namespace POPprogram
                 return;
             }
 
+            List<LOTProperty> list = new List<LOTProperty>();
+            foreach (DataGridViewRow row in csDataGridView1.Rows)
+            {
+                LOTProperty pr = new LOTProperty()
+                {
+                    LOT_ID = row.Cells["STOCK_IN_LOT_ID"].Value.ToString(),
+                    LOT_QTY = Convert.ToDecimal(row.Cells["QTY"].Value)
+
+                };
+                list.Add(pr);
+            }
+            string salesID = "SALES_" + txtSearch.Text.Split('_')[1];
+            serv.InsertLOTStatus(msUserID, list, salesID);
+
             bool bResult = serv.SaveStockLot(lotList, comboBox1.SelectedValue.ToString(), msUserID);
             if (bResult)
             {
                 MessageBox.Show("성공적");
                 serv = new StockServ();
-                DataTable dt = serv.Purchase_warehousing(txtSearch.Text, txtSearch.Text);
+                DataTable dt = serv.Purchase_warehousing(txtCode1.Text, txtSearch.Text);
                 csDataGridView1.DataSource = null;
                 csDataGridView1.DataSource = dt;
             }

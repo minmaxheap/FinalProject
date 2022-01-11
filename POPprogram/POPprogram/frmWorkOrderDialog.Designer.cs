@@ -96,7 +96,7 @@ namespace POPprogram
             // 
             // frmWorkOrderDialog
             // 
-            this.ClientSize = new System.Drawing.Size(1024, 478);
+            //this.ClientSize = new System.Drawing.Size(1024, 478);
             this.Controls.Add(this.dgvWorkOrder);
             this.Name = "frmWorkOrderDialog";
             this.Load += new System.EventHandler(this.frmWorkOrderDialog1_Load);

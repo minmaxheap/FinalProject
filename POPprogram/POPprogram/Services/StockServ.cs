@@ -34,6 +34,16 @@ namespace POPprogram
             return List;
         }
 
+        public bool InsertLOTStatus(string CREATE_USER_ID, List<LOTProperty> list,string SALES_ORDER_ID)
+        {
+
+
+            StockDAC dac = new StockDAC();
+            bool bResult = dac.InsertLOTStatus(CREATE_USER_ID, list, SALES_ORDER_ID);
+            dac.Dispose();
+            return bResult;
+        }
+
         public bool SaveStockLot(List<string> lotlist, string storeID, string msUserID)
         {
             StockDAC dac = new StockDAC();
