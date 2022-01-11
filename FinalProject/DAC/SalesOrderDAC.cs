@@ -335,7 +335,7 @@ END CATCH;
                     cmd.Parameters.AddWithValue("@PURCHASE_ORDER_ID2", "PURCHASE_" + str);
                     cmd.Parameters.AddWithValue("@SALES_ORDER_ID2", vo.SALES_ORDER_ID);
                     cmd.Parameters.AddWithValue("@VENDOR_CODE2", "VD_Miryo");
-                    cmd.Parameters.AddWithValue("@MATERIAL_CODE2", "RM_Salt");
+                    cmd.Parameters.AddWithValue("@MATERIAL_CODE2", "RM_Condiment");
                     cmd.Parameters.AddWithValue("@ORDER_QTY2", vo.ORDER_QTY);
                     cmd.Parameters.AddWithValue("@STOCK_IN_LOT_ID2", time + rmcdCode + str);
                     cmd.Parameters.AddWithValue("@PURCHASE_ORDER_ID3", "PURCHASE_" + str);
