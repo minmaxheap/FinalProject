@@ -83,6 +83,7 @@ namespace POPprogram
             List<ShipPropertySch> list =  serv.GetFSStoreList(vo);
             DataTable dt = ConvertToDataTable(list);
             dt.Columns.Add("RowNum").SetOrdinal(0);
+
             foreach (DataRow dr in dt.Rows)
             {
                 if (dr["RowNum"].ToString() == "")
@@ -166,11 +167,18 @@ namespace POPprogram
         {
             if (list == null)
                 return -1;
-            for (int i = 0; i < list.Count; ++i)
+            for (int i = 0; i < list.Count; ++i)         
             {
-                if (list[i].LOT_ID == val[i].LOT_ID)
-                    return i;
-            }
+                if (i > val.Count-1)
+                {
+                    if (list[i].LOT_ID == val[val.Count-1].LOT_ID)
+                        return i;
+                }
+                if (list[i].LOT_ID == val[i].LOT_ID)          
+                    return i;   
+       }
+            
+
             return -1;
         }
         private void csDataGridView1_CurrentCellDirtyStateChanged(object sender, EventArgs e)
@@ -229,8 +237,7 @@ namespace POPprogram
 
         private void btnExport_Click(object sender, EventArgs e)
         {
-            if (shipvolist[0].LOT_QTY>= Convert.ToInt32(txtCode3.Text))
-            {
+
                 List<ShipPropertyUpdate> lotList = Helper.DataTableMapToList<ShipPropertyUpdate>(lotTable);
                 int result = FindIntListIndex(lotList, shipvolist);
                 ShipPropertyUpdate updateVO = new ShipPropertyUpdate();
@@ -275,13 +282,6 @@ namespace POPprogram
                 {
                     MessageBox.Show("제품 출하 중 오류가 발생했습니다.");
                 }
-
-            }
-            else
-            {
-                MessageBox.Show("재고가 출하량보다 적습니다. 다시 선택해 주세요.");
-                return;
-            }
         }
 
         private void btnPrint_Click(object sender, EventArgs e)

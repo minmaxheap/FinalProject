@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace POPprogram
         List<int> iSearchedList = new List<int>();
         List<int> iSelectedRow = new List<int>();
         List<ShipPropertyBarcode> spb;
+        List<string> chkList = new List<string>();
         public int MyProperty { get; set; }
         public frmShipBarcode()
         {
@@ -64,11 +66,13 @@ namespace POPprogram
                 MessageBox.Show("출력할 바코드 데이터를 선택하세요.");
                 return;
             }
-            DataTable dt = ConvertToDataTable(spb);
+            string strChkBarCodes = string.Join("','", chkList);
+
+            ShipServ serv = new ShipServ();
+            DataTable dt =serv.ExportBarcode(strChkBarCodes);
 
             XtraReport1 rpt = new XtraReport1();
             rpt.DataSource = dt;
-
             frmReportPreview frm = new frmReportPreview(rpt);
         }
 
@@ -93,6 +97,7 @@ namespace POPprogram
                     barcodevo.PRODUCT_TIME = Convert.ToDateTime(dr.Cells["PRODUCT_TIME"].Value);
 
                 spb.Add(barcodevo);
+                chkList.Add(barcodevo.BARCODE_ID.ToString());
             }
             else
             {
@@ -114,6 +119,7 @@ namespace POPprogram
 
                 int result = FindIntListVOIndex(spb, barcodevo);
                 spb.RemoveAt(result);
+                chkList.Remove(barcodevo.BARCODE_ID.ToString());
             }
         }
         static int FindIntListVOIndex(List<ShipPropertyBarcode> list, ShipPropertyBarcode val)
