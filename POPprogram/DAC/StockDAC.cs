@@ -229,12 +229,12 @@ DECLARE @NewLot  TABLE
  
 				INSERT INTO @NewLot
 				SELECT STOCK_IN_LOT_ID, MATERIAL_CODE, STOCK_IN_LOT_QTY FROM PURCHASE_ORDER_MST
-				WHERE SALES_ORDER_ID = @SALES_ORDER_ID
+				WHERE SALES_ORDER_ID = @SALES_ORDER_ID;
 
 				WHILE @COUNT <6
 				BEGIN
 					select @STOCK_IN_LOT_ID = STOCK_IN_LOT_ID, @MATERIAL_CODE =MATERIAL_CODE, @STOCK_IN_LOT_QTY=STOCK_IN_LOT_QTY
-                        FROM @NewLot WHERE ID=@COUNT
+                        FROM @NewLot WHERE ID=@COUNT;
 
 						INSERT[dbo].[LOT_STS]
 						(LOT_ID, LOT_DESC, PRODUCT_CODE, STORE_CODE, 
@@ -246,6 +246,17 @@ DECLARE @NewLot  TABLE
 						GETDATE(), GETDATE(), 'CREATE', GETDATE(),
 						@LAST_TRAN_USER_ID, '자재 LOT 생성', 1);
 
+                        INSERT [dbo].[LOT_HIS]
+                        (LOT_ID, LOT_DESC, PRODUCT_CODE, STORE_CODE, 
+                        LOT_QTY, CREATE_QTY, OPER_IN_QTY, PRODUCTION_TIME, 
+                        CREATE_TIME, OPER_IN_TIME, TRAN_CODE, TRAN_TIME,
+                        TRAN_USER_ID,TRAN_COMMENT, HIST_SEQ)
+                        SELECT LOT_ID, LOT_DESC, PRODUCT_CODE, STORE_CODE, 
+                        LOT_QTY, CREATE_QTY, OPER_IN_QTY, PRODUCTION_TIME, 
+                        CREATE_TIME, OPER_IN_TIME, LAST_TRAN_CODE, LAST_TRAN_TIME,
+                        LAST_TRAN_USER_ID, LAST_TRAN_COMMENT, LAST_HIST_SEQ
+                        FROM LOT_STS
+                        WHERE LOT_ID = @STOCK_IN_LOT_ID AND PRODUCT_CODE = @MATERIAL_CODE;
 
 						SET @COUNT = @COUNT +1
 
@@ -274,17 +285,7 @@ DECLARE @NewLot  TABLE
         }
 
 
-        //INSERT [dbo].[LOT_HIS]
-        //(LOT_ID, LOT_DESC, PRODUCT_CODE, STORE_CODE, 
-        //LOT_QTY, CREATE_QTY, OPER_IN_QTY, PRODUCTION_TIME, 
-        //CREATE_TIME, OPER_IN_TIME, TRAN_CODE, TRAN_TIME,
-        //TRAN_USER_ID,TRAN_COMMENT, HIST_SEQ)
-        //SELECT LOT_ID, LOT_DESC, PRODUCT_CODE, STORE_CODE, 
-        //LOT_QTY, CREATE_QTY, OPER_IN_QTY, PRODUCTION_TIME, 
-        //CREATE_TIME, OPER_IN_TIME, LAST_TRAN_CODE, LAST_TRAN_TIME,
-        //LAST_TRAN_USER_ID, LAST_TRAN_COMMENT, LAST_HIST_SEQ
-        //FROM LOT_STS
-        //WHERE LOT_ID = @STOCK_IN_LOT_ID AND PRODUCT_CODE = @MATERIAL_CODE
+
         public bool SaveStockLot(List<string> lotlist, string storeID, string msUserID)
         {
             SqlTransaction trans = conn.BeginTransaction();
