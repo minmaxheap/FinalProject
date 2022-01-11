@@ -17,4 +17,12 @@ namespace NiceWEB.Models
         public string Title { get; set; }
         public string data { get; set; }
     }
+
+    public class MixModels
+    {
+        public Adding_materialProperty mat { get; set; }
+        public TableData tableData { get; set; }
+
+        public string td { get; set; }
+    }
 }
