@@ -68,6 +68,16 @@ namespace POPprogram
 
         }
 
+        public DataTable GetMaterialLOTHistory(string lotID)
+        {
+            LOTDAC dac = new LOTDAC();
+            DataTable dt = dac.GetMaterialLOTHistory(lotID);
+            dac.Dispose();
+            return dt;
+        }
+
+
+
 
     }
 }

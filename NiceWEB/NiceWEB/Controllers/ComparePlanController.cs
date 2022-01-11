@@ -22,6 +22,7 @@ namespace NiceWEB.Controllers
             ViewBag.order = new SelectList(order, "Data", "Data");
             ViewBag.product = new SelectList(product, "Data", "Data");
 
+            //datatable을 JSON으로 바꾸는 코드
             var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
             TableData t = new TableData();
             List<ColumnsInfo> _col = new List<ColumnsInfo>();
@@ -48,7 +49,7 @@ namespace NiceWEB.Controllers
             t.Data = data;
 
 
-
+            // GAUGE CHART 데이터 받고 보내기
            List <ComparePlan> list = dac.GetChartData("3", "3");
             ViewBag.chart = list;
             ViewBag.work = list[0].WORK_ORDER_ID;
@@ -56,8 +57,9 @@ namespace NiceWEB.Controllers
             ViewBag.prdQty = list[0].PRODUCT_QTY;
             ViewBag.defQty = list[0].DEFECT_QTY;
 
-            ViewBag.qualityRate = (list[0].PRODUCT_QTY / (list[0].PRODUCT_QTY + list[0].DEFECT_QTY)) * Convert.ToDecimal(100);
-            ViewBag.defectRate = (list[0].DEFECT_QTY / (list[0].PRODUCT_QTY + list[0].DEFECT_QTY))* Convert.ToDecimal(100);
+            //산술 오버플로우가 일어나서 DECIMAL 반올림함
+            ViewBag.qualityRate = Math.Round( (list[0].PRODUCT_QTY / (list[0].PRODUCT_QTY + list[0].DEFECT_QTY)) * Convert.ToDecimal(100),2);
+            ViewBag.defectRate = Math.Round((list[0].DEFECT_QTY / (list[0].PRODUCT_QTY + list[0].DEFECT_QTY))* Convert.ToDecimal(100),2);
 
             return View(t);
 
