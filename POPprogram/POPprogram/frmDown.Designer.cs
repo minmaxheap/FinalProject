@@ -34,19 +34,20 @@ namespace POPprogram
             //System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             //System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             //System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDown));
             this.panel8 = new System.Windows.Forms.Panel();
             this.csDataGridView1 = new POPprogram.csDataGridView();
             this.label6 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            //this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            //this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            //this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            //this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            //this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            //this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            //this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            //this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            //this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            //this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -65,13 +66,13 @@ namespace POPprogram
             this.label13 = new System.Windows.Forms.Label();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.pnlCrud = new System.Windows.Forms.Panel();
-            this.btnExecute = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel7 = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnExecute = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.csDataGridView1)).BeginInit();
             this.panel4.SuspendLayout();
@@ -96,13 +97,13 @@ namespace POPprogram
             // 
             // csDataGridView1
             // 
-            //dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
+            //dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             //this.csDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            //this.csDataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
+            //this.csDataGridView1.BackgroundColor = System.Drawing.Color.White;
             //this.csDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             //dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             //dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
-            //dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            //dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔고딕", 11F);
             //dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             //dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
             //dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
@@ -111,7 +112,7 @@ namespace POPprogram
             //this.csDataGridView1.ColumnHeadersHeight = 40;
             //dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             //dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            //dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            //dataGridViewCellStyle3.Font = new System.Drawing.Font("나눔고딕", 9F);
             //dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             //dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(195)))), ((int)(((byte)(230)))));
             //dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -277,6 +278,7 @@ namespace POPprogram
             this.button2.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button2.ImageList = this.imageList1;
             this.button2.Location = new System.Drawing.Point(774, 51);
             this.button2.Margin = new System.Windows.Forms.Padding(0);
             this.button2.Name = "button2";
@@ -295,6 +297,7 @@ namespace POPprogram
             this.button1.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.ImageList = this.imageList1;
             this.button1.Location = new System.Drawing.Point(735, 51);
             this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
@@ -334,7 +337,7 @@ namespace POPprogram
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker2.Location = new System.Drawing.Point(419, 51);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 26);
+            this.dateTimePicker2.Size = new System.Drawing.Size(209, 26);
             this.dateTimePicker2.TabIndex = 64;
             this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
@@ -346,7 +349,7 @@ namespace POPprogram
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(165, 51);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 26);
+            this.dateTimePicker1.Size = new System.Drawing.Size(213, 26);
             this.dateTimePicker1.TabIndex = 63;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
@@ -438,55 +441,6 @@ namespace POPprogram
             this.pnlCrud.Size = new System.Drawing.Size(668, 70);
             this.pnlCrud.TabIndex = 56;
             // 
-            // btnExecute
-            // 
-            this.btnExecute.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExecute.AutoSize = true;
-            this.btnExecute.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.btnExecute.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnExecute.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnExecute.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnExecute.Image = global::POPprogram.Properties.Resources.Touch_Screen;
-            this.btnExecute.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExecute.Location = new System.Drawing.Point(422, 13);
-            this.btnExecute.Margin = new System.Windows.Forms.Padding(0);
-            this.btnExecute.Name = "btnExecute";
-            this.btnExecute.Size = new System.Drawing.Size(110, 45);
-            this.btnExecute.TabIndex = 84;
-            this.btnExecute.Text = "실행";
-            this.btnExecute.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnExecute.UseVisualStyleBackColor = false;
-            this.btnExecute.Click += new System.EventHandler(this.btnExecute_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.AutoSize = true;
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnClose.Image = global::POPprogram.Properties.Resources.Delete;
-            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(557, 13);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(110, 45);
-            this.btnClose.TabIndex = 85;
-            this.btnClose.Text = "닫기";
-            this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnClose.UseVisualStyleBackColor = false;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
             // panel7
             // 
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -532,6 +486,73 @@ namespace POPprogram
             this.label9.Text = "생산 LOT ID";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.AutoSize = true;
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnClose.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold);
+            this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClose.ImageIndex = 9;
+            this.btnClose.ImageList = this.imageList1;
+            this.btnClose.Location = new System.Drawing.Point(557, 13);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(110, 45);
+            this.btnClose.TabIndex = 85;
+            this.btnClose.Text = "닫기";
+            this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnClose.UseVisualStyleBackColor = false;
+            // 
+            // btnExecute
+            // 
+            this.btnExecute.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExecute.AutoSize = true;
+            this.btnExecute.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.btnExecute.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnExecute.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold);
+            this.btnExecute.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnExecute.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExecute.ImageIndex = 16;
+            this.btnExecute.ImageList = this.imageList1;
+            this.btnExecute.Location = new System.Drawing.Point(422, 13);
+            this.btnExecute.Margin = new System.Windows.Forms.Padding(0);
+            this.btnExecute.Name = "btnExecute";
+            this.btnExecute.Size = new System.Drawing.Size(110, 45);
+            this.btnExecute.TabIndex = 84;
+            this.btnExecute.Text = "실행";
+            this.btnExecute.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExecute.UseVisualStyleBackColor = false;
+            this.btnExecute.Click += new System.EventHandler(this.btnExecute_Click);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "Blank-13.png");
+            this.imageList1.Images.SetKeyName(1, "Data-Import.png");
+            this.imageList1.Images.SetKeyName(2, "Check-01.png");
+            this.imageList1.Images.SetKeyName(3, "Minus.png");
+            this.imageList1.Images.SetKeyName(4, "Export.png");
+            this.imageList1.Images.SetKeyName(5, "Print - 01.png");
+            this.imageList1.Images.SetKeyName(6, "Trash Can_02.png");
+            this.imageList1.Images.SetKeyName(7, "Command-Refresh-01.png");
+            this.imageList1.Images.SetKeyName(8, "Add-New.png");
+            this.imageList1.Images.SetKeyName(9, "Close.png");
+            this.imageList1.Images.SetKeyName(10, "Delete_03.png");
+            this.imageList1.Images.SetKeyName(11, "Save_02.png");
+            this.imageList1.Images.SetKeyName(12, "Data-Find.png");
+            this.imageList1.Images.SetKeyName(13, "Black List.png");
+            this.imageList1.Images.SetKeyName(14, "Arrowhead-Right-01.png");
+            this.imageList1.Images.SetKeyName(15, "Search-Find.png");
+            this.imageList1.Images.SetKeyName(16, "Touch-Screen.png");
+            // 
             // frmDown
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -565,7 +586,6 @@ namespace POPprogram
         public System.Windows.Forms.Label label13;
         public System.Windows.Forms.TextBox textBox13;
         public System.Windows.Forms.Panel pnlCrud;
-        public System.Windows.Forms.ImageList imageList1;
         public System.Windows.Forms.Panel panel7;
         public System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.Label label9;
@@ -594,6 +614,7 @@ namespace POPprogram
         public System.Windows.Forms.Label label3;
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ImageList imageList1;
         public System.Windows.Forms.Button btnExecute;
         public System.Windows.Forms.Button btnClose;
     }

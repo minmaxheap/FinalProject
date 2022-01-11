@@ -31,14 +31,14 @@ namespace POPprogram
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Button btnReadTop;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            //System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            //System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            //System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            //System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            //System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            //System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            //System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            //System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLOTStatus));
             this.pnlTop = new System.Windows.Forms.Panel();
             this.btnTxtSearch = new System.Windows.Forms.Button();
@@ -87,7 +87,7 @@ namespace POPprogram
             btnReadTop.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             btnReadTop.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold);
             btnReadTop.ForeColor = System.Drawing.SystemColors.ControlText;
-            btnReadTop.ImageIndex = 0;
+            btnReadTop.ImageIndex = 13;
             btnReadTop.ImageList = this.imageList1;
             btnReadTop.Location = new System.Drawing.Point(13, 0);
             btnReadTop.Margin = new System.Windows.Forms.Padding(0);
@@ -115,7 +115,7 @@ namespace POPprogram
             this.btnTxtSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnTxtSearch.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold);
             this.btnTxtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnTxtSearch.ImageIndex = 1;
+            this.btnTxtSearch.ImageIndex = 16;
             this.btnTxtSearch.ImageList = this.imageList1;
             this.btnTxtSearch.Location = new System.Drawing.Point(303, 0);
             this.btnTxtSearch.Name = "btnTxtSearch";
@@ -196,40 +196,40 @@ namespace POPprogram
             // 
             // csDataGridView1
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.csDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.csDataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.csDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔고딕", 11.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.csDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.csDataGridView1.ColumnHeadersHeight = 55;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("나눔고딕", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(195)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.csDataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            //dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            //this.csDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            //this.csDataGridView1.BackgroundColor = System.Drawing.Color.White;
+            //this.csDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            //dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            //dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
+            //dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔고딕", 11.5F);
+            //dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            //dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
+            //dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            //dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            //this.csDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            //this.csDataGridView1.ColumnHeadersHeight = 55;
+            //dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            //dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            //dataGridViewCellStyle3.Font = new System.Drawing.Font("나눔고딕", 9F);
+            //dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            //dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(195)))), ((int)(((byte)(230)))));
+            //dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            //dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            //this.csDataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.csDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.csDataGridView1.EnableHeadersVisualStyles = false;
             this.csDataGridView1.Location = new System.Drawing.Point(0, 55);
             this.csDataGridView1.Name = "csDataGridView1";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.csDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.csDataGridView1.RowHeadersWidth = 30;
+            //dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            //dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            //dataGridViewCellStyle4.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            //dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            //dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
+            //dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            //dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            //this.csDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            //this.csDataGridView1.RowHeadersWidth = 30;
             this.csDataGridView1.Size = new System.Drawing.Size(830, 212);
             this.csDataGridView1.TabIndex = 19;
             this.csDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellClick);
@@ -250,40 +250,40 @@ namespace POPprogram
             // 
             // csDataGridView2
             // 
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.csDataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.csDataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.csDataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("나눔고딕", 11.5F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.csDataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.csDataGridView2.ColumnHeadersHeight = 55;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("나눔고딕", 9F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(195)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.csDataGridView2.DefaultCellStyle = dataGridViewCellStyle7;
+            //dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            //this.csDataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            //this.csDataGridView2.BackgroundColor = System.Drawing.Color.White;
+            //this.csDataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            //dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            //dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
+            //dataGridViewCellStyle6.Font = new System.Drawing.Font("나눔고딕", 11.5F);
+            //dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            //dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
+            //dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            //dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            //this.csDataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            //this.csDataGridView2.ColumnHeadersHeight = 55;
+            //dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            //dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            //dataGridViewCellStyle7.Font = new System.Drawing.Font("나눔고딕", 9F);
+            //dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            //dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(195)))), ((int)(((byte)(230)))));
+            //dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            //dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            //this.csDataGridView2.DefaultCellStyle = dataGridViewCellStyle7;
             this.csDataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.csDataGridView2.EnableHeadersVisualStyles = false;
             this.csDataGridView2.Location = new System.Drawing.Point(0, 55);
             this.csDataGridView2.Name = "csDataGridView2";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.csDataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.csDataGridView2.RowHeadersWidth = 30;
+            //dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            //dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            //dataGridViewCellStyle8.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            //dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            //dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
+            //dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            //dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            //this.csDataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            //this.csDataGridView2.RowHeadersWidth = 30;
             this.csDataGridView2.Size = new System.Drawing.Size(830, 141);
             this.csDataGridView2.TabIndex = 19;
             // 
@@ -347,7 +347,7 @@ namespace POPprogram
             // 
             // pnlTopLbl
             // 
-            this.pnlTopLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.pnlTopLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
             this.pnlTopLbl.Controls.Add(this.btnPanel);
             this.pnlTopLbl.Controls.Add(this.lblPanel);
             this.pnlTopLbl.Dock = System.Windows.Forms.DockStyle.Top;
@@ -379,7 +379,7 @@ namespace POPprogram
             // 
             // lblPanel
             // 
-            this.lblPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.lblPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
             this.lblPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblPanel.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold);
@@ -411,8 +411,9 @@ namespace POPprogram
             this.btnReadBottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.btnReadBottom.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnReadBottom.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold);
-            this.btnReadBottom.Image = global::POPprogram.Properties.Resources.Data_Find12;
             this.btnReadBottom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReadBottom.ImageIndex = 13;
+            this.btnReadBottom.ImageList = this.imageList1;
             this.btnReadBottom.Location = new System.Drawing.Point(423, 0);
             this.btnReadBottom.Margin = new System.Windows.Forms.Padding(0);
             this.btnReadBottom.Name = "btnReadBottom";
@@ -432,8 +433,9 @@ namespace POPprogram
             this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnClose.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold);
-            this.btnClose.Image = global::POPprogram.Properties.Resources.Delete;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClose.ImageIndex = 10;
+            this.btnClose.ImageList = this.imageList1;
             this.btnClose.Location = new System.Drawing.Point(558, 0);
             this.btnClose.Margin = new System.Windows.Forms.Padding(0);
             this.btnClose.Name = "btnClose";
@@ -448,8 +450,23 @@ namespace POPprogram
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "Data-Find.png");
-            this.imageList1.Images.SetKeyName(1, "Search-Find.png");
+            this.imageList1.Images.SetKeyName(0, "Blank-13.png");
+            this.imageList1.Images.SetKeyName(1, "Data-Import.png");
+            this.imageList1.Images.SetKeyName(2, "Touch-Screen.png");
+            this.imageList1.Images.SetKeyName(3, "Check-01.png");
+            this.imageList1.Images.SetKeyName(4, "Minus.png");
+            this.imageList1.Images.SetKeyName(5, "Export.png");
+            this.imageList1.Images.SetKeyName(6, "Print - 01.png");
+            this.imageList1.Images.SetKeyName(7, "Trash Can_02.png");
+            this.imageList1.Images.SetKeyName(8, "Command-Refresh-01.png");
+            this.imageList1.Images.SetKeyName(9, "Add-New.png");
+            this.imageList1.Images.SetKeyName(10, "Close.png");
+            this.imageList1.Images.SetKeyName(11, "Delete_03.png");
+            this.imageList1.Images.SetKeyName(12, "Save_02.png");
+            this.imageList1.Images.SetKeyName(13, "Data-Find.png");
+            this.imageList1.Images.SetKeyName(14, "Black List.png");
+            this.imageList1.Images.SetKeyName(15, "Arrowhead-Right-01.png");
+            this.imageList1.Images.SetKeyName(16, "Search-Find.png");
             // 
             // frmLOTStatus
             // 

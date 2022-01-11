@@ -30,8 +30,8 @@ namespace POPprogram
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Base5));
             this.panel4 = new System.Windows.Forms.Panel();
-            this.txtQty = new POPprogram.NumTextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtOperName = new System.Windows.Forms.TextBox();
             this.lblComment = new System.Windows.Forms.Label();
@@ -66,10 +66,11 @@ namespace POPprogram
             this.txtCustID = new System.Windows.Forms.TextBox();
             this.txtWorkOrderID = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.pnlCrud = new System.Windows.Forms.Panel();
             this.btnExecute = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.txtQty = new POPprogram.NumTextBox();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel4.SuspendLayout();
             this.panel8.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -103,15 +104,6 @@ namespace POPprogram
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1136, 243);
             this.panel4.TabIndex = 45;
-            // 
-            // txtQty
-            // 
-            this.txtQty.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtQty.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.txtQty.Location = new System.Drawing.Point(149, 165);
-            this.txtQty.Name = "txtQty";
-            this.txtQty.Size = new System.Drawing.Size(335, 26);
-            this.txtQty.TabIndex = 89;
             // 
             // label11
             // 
@@ -287,6 +279,7 @@ namespace POPprogram
             this.btnTxtSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnTxtSearch.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnTxtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnTxtSearch.ImageList = this.imageList1;
             this.btnTxtSearch.Location = new System.Drawing.Point(505, 63);
             this.btnTxtSearch.Name = "btnTxtSearch";
             this.btnTxtSearch.Size = new System.Drawing.Size(32, 26);
@@ -524,12 +517,6 @@ namespace POPprogram
             this.label6.Text = "작업지시 정보";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // imageList1
-            // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
             // pnlCrud
             // 
             this.pnlCrud.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -551,8 +538,9 @@ namespace POPprogram
             this.btnExecute.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnExecute.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnExecute.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnExecute.Image = global::POPprogram.Properties.Resources.Touch_Screen;
             this.btnExecute.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExecute.ImageIndex = 16;
+            this.btnExecute.ImageList = this.imageList1;
             this.btnExecute.Location = new System.Drawing.Point(423, 0);
             this.btnExecute.Margin = new System.Windows.Forms.Padding(0);
             this.btnExecute.Name = "btnExecute";
@@ -572,8 +560,9 @@ namespace POPprogram
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnClose.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnClose.Image = global::POPprogram.Properties.Resources.Delete;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClose.ImageIndex = 9;
+            this.btnClose.ImageList = this.imageList1;
             this.btnClose.Location = new System.Drawing.Point(558, 0);
             this.btnClose.Margin = new System.Windows.Forms.Padding(0);
             this.btnClose.Name = "btnClose";
@@ -582,6 +571,37 @@ namespace POPprogram
             this.btnClose.Text = "닫기";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = false;
+            // 
+            // txtQty
+            // 
+            this.txtQty.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtQty.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtQty.Location = new System.Drawing.Point(149, 165);
+            this.txtQty.Name = "txtQty";
+            this.txtQty.Size = new System.Drawing.Size(335, 26);
+            this.txtQty.TabIndex = 89;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "Blank-13.png");
+            this.imageList1.Images.SetKeyName(1, "Data-Import.png");
+            this.imageList1.Images.SetKeyName(2, "Check-01.png");
+            this.imageList1.Images.SetKeyName(3, "Minus.png");
+            this.imageList1.Images.SetKeyName(4, "Export.png");
+            this.imageList1.Images.SetKeyName(5, "Print - 01.png");
+            this.imageList1.Images.SetKeyName(6, "Trash Can_02.png");
+            this.imageList1.Images.SetKeyName(7, "Command-Refresh-01.png");
+            this.imageList1.Images.SetKeyName(8, "Add-New.png");
+            this.imageList1.Images.SetKeyName(9, "Close.png");
+            this.imageList1.Images.SetKeyName(10, "Delete_03.png");
+            this.imageList1.Images.SetKeyName(11, "Save_02.png");
+            this.imageList1.Images.SetKeyName(12, "Data-Find.png");
+            this.imageList1.Images.SetKeyName(13, "Black List.png");
+            this.imageList1.Images.SetKeyName(14, "Arrowhead-Right-01.png");
+            this.imageList1.Images.SetKeyName(15, "Search-Find.png");
+            this.imageList1.Images.SetKeyName(16, "Touch-Screen.png");
             // 
             // Base5
             // 
@@ -631,7 +651,6 @@ namespace POPprogram
         public System.Windows.Forms.Label lblOrderQty;
         public System.Windows.Forms.Label label4;
         public System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        public System.Windows.Forms.ImageList imageList1;
         public System.Windows.Forms.Panel pnlCrud;
         public System.Windows.Forms.Button btnExecute;
         public System.Windows.Forms.Button btnClose;
@@ -652,5 +671,6 @@ namespace POPprogram
         public NumTextBox txtQty;
         public System.Windows.Forms.Button btnTxtSearch;
         public System.Windows.Forms.TextBox txtComment;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }

@@ -29,11 +29,14 @@ namespace POPprogram
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaseDialog));
             this.btnSelect = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.lblPanel = new System.Windows.Forms.Label();
             this.btnTxtSearch = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.SuspendLayout();
             // 
             // btnSelect
@@ -43,8 +46,9 @@ namespace POPprogram
             this.btnSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSelect.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold);
-            this.btnSelect.Image = global::POPprogram.Properties.Resources.Add_New;
             this.btnSelect.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSelect.ImageIndex = 8;
+            this.btnSelect.ImageList = this.imageList1;
             this.btnSelect.Location = new System.Drawing.Point(12, 456);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(110, 45);
@@ -60,8 +64,9 @@ namespace POPprogram
             this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnClose.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold);
-            this.btnClose.Image = global::POPprogram.Properties.Resources.Delete;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClose.ImageIndex = 9;
+            this.btnClose.ImageList = this.imageList1;
             this.btnClose.Location = new System.Drawing.Point(902, 456);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(110, 45);
@@ -94,14 +99,37 @@ namespace POPprogram
             // btnTxtSearch
             // 
             this.btnTxtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.btnTxtSearch.BackgroundImage = global::POPprogram.Properties.Resources.Search_Find;
             this.btnTxtSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnTxtSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnTxtSearch.ImageIndex = 15;
+            this.btnTxtSearch.ImageList = this.imageList1;
             this.btnTxtSearch.Location = new System.Drawing.Point(363, 58);
             this.btnTxtSearch.Name = "btnTxtSearch";
             this.btnTxtSearch.Size = new System.Drawing.Size(26, 26);
             this.btnTxtSearch.TabIndex = 96;
             this.btnTxtSearch.UseVisualStyleBackColor = false;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "Blank-13.png");
+            this.imageList1.Images.SetKeyName(1, "Data-Import.png");
+            this.imageList1.Images.SetKeyName(2, "Check-01.png");
+            this.imageList1.Images.SetKeyName(3, "Minus.png");
+            this.imageList1.Images.SetKeyName(4, "Export.png");
+            this.imageList1.Images.SetKeyName(5, "Print - 01.png");
+            this.imageList1.Images.SetKeyName(6, "Trash Can_02.png");
+            this.imageList1.Images.SetKeyName(7, "Command-Refresh-01.png");
+            this.imageList1.Images.SetKeyName(8, "Addition .png");
+            this.imageList1.Images.SetKeyName(9, "Close.png");
+            this.imageList1.Images.SetKeyName(10, "Delete_03.png");
+            this.imageList1.Images.SetKeyName(11, "Save_02.png");
+            this.imageList1.Images.SetKeyName(12, "Data-Find.png");
+            this.imageList1.Images.SetKeyName(13, "Black List.png");
+            this.imageList1.Images.SetKeyName(14, "Arrowhead-Right-01.png");
+            this.imageList1.Images.SetKeyName(15, "Search-Find.png");
+            this.imageList1.Images.SetKeyName(16, "Touch-Screen.png");
             // 
             // BaseDialog
             // 
@@ -129,5 +157,6 @@ namespace POPprogram
         public System.Windows.Forms.TextBox txtSearch;
         public System.Windows.Forms.Label lblPanel;
         public System.Windows.Forms.Button btnTxtSearch;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }

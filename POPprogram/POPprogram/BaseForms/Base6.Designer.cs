@@ -30,7 +30,7 @@ namespace POPprogram
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Base6));
             this.panel7 = new System.Windows.Forms.Panel();
             this.cboLOTID = new System.Windows.Forms.ComboBox();
             this.txtLOTDescription = new System.Windows.Forms.TextBox();
@@ -66,18 +66,13 @@ namespace POPprogram
             this.pnlCrud = new System.Windows.Forms.Panel();
             this.btnExecute = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.pnlCrud.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // imageList1
-            // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // panel7
             // 
@@ -529,8 +524,9 @@ namespace POPprogram
             this.btnExecute.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.btnExecute.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnExecute.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold);
-            this.btnExecute.Image = global::POPprogram.Properties.Resources.Touch_Screen;
             this.btnExecute.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExecute.ImageKey = "Touch-Screen.png";
+            this.btnExecute.ImageList = this.imageList1;
             this.btnExecute.Location = new System.Drawing.Point(388, 0);
             this.btnExecute.Margin = new System.Windows.Forms.Padding(0);
             this.btnExecute.Name = "btnExecute";
@@ -547,8 +543,9 @@ namespace POPprogram
             this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnClose.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold);
-            this.btnClose.Image = global::POPprogram.Properties.Resources.Delete;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClose.ImageKey = "Close.png";
+            this.btnClose.ImageList = this.imageList1;
             this.btnClose.Location = new System.Drawing.Point(548, 0);
             this.btnClose.Margin = new System.Windows.Forms.Padding(0);
             this.btnClose.Name = "btnClose";
@@ -557,6 +554,28 @@ namespace POPprogram
             this.btnClose.Text = "닫기";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = false;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "Blank-13.png");
+            this.imageList1.Images.SetKeyName(1, "Data-Import.png");
+            this.imageList1.Images.SetKeyName(2, "Check-01.png");
+            this.imageList1.Images.SetKeyName(3, "Minus.png");
+            this.imageList1.Images.SetKeyName(4, "Export.png");
+            this.imageList1.Images.SetKeyName(5, "Print - 01.png");
+            this.imageList1.Images.SetKeyName(6, "Trash Can_02.png");
+            this.imageList1.Images.SetKeyName(7, "Command-Refresh-01.png");
+            this.imageList1.Images.SetKeyName(8, "Add-New.png");
+            this.imageList1.Images.SetKeyName(9, "Close.png");
+            this.imageList1.Images.SetKeyName(10, "Delete_03.png");
+            this.imageList1.Images.SetKeyName(11, "Save_02.png");
+            this.imageList1.Images.SetKeyName(12, "Data-Find.png");
+            this.imageList1.Images.SetKeyName(13, "Black List.png");
+            this.imageList1.Images.SetKeyName(14, "Arrowhead-Right-01.png");
+            this.imageList1.Images.SetKeyName(15, "Search-Find.png");
+            this.imageList1.Images.SetKeyName(16, "Touch-Screen.png");
             // 
             // Base6
             // 
@@ -585,7 +604,6 @@ namespace POPprogram
         }
 
         #endregion
-        public System.Windows.Forms.ImageList imageList1;
         public System.Windows.Forms.Panel panel7;
         public System.Windows.Forms.Label label9;
         public System.Windows.Forms.Label label6;
@@ -621,5 +639,6 @@ namespace POPprogram
         public System.Windows.Forms.Label lblStatus;
         public NumTextBox txtQty;
         public System.Windows.Forms.ComboBox cboLOTID;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }
