@@ -40,24 +40,24 @@ cast((PRODUCT_QTY/(PRODUCT_QTY+DEFECT_QTY))*100.0 as decimal(4,0)) as QUALITY_RA
 FROM [dbo].[WORK_ORDER_MST] W, PRODUCT_MST P
 WHERE W.PRODUCT_CODE = P.PRODUCT_CODE");
 
-                if(!(string.IsNullOrWhiteSpace(from)) && !(string.IsNullOrWhiteSpace(to)))
-                {
-                    sb.Append(" and ");
-                    cmd.Parameters.AddWithValue("@from", from);
-                    cmd.Parameters.AddWithValue("@to", to);
-                }
+                //if(!(string.IsNullOrWhiteSpace(from)) && !(string.IsNullOrWhiteSpace(to)))
+                //{
+                //    sb.Append(" and ");
+                //    cmd.Parameters.AddWithValue("@from", from);
+                //    cmd.Parameters.AddWithValue("@to", to);
+                //}
 
-                if (!(string.IsNullOrWhiteSpace(workID)))
-                {
-                    sb.Append(" and ");
-                    cmd.Parameters.AddWithValue("@WORK_ORDER_ID", workID);
-                }
+                //if (!(string.IsNullOrWhiteSpace(workID)))
+                //{
+                //    sb.Append(" and ");
+                //    cmd.Parameters.AddWithValue("@WORK_ORDER_ID", workID);
+                //}
 
-                if (!(string.IsNullOrWhiteSpace(prdCode)))
-                {
-                    sb.Append(" and ");
-                    cmd.Parameters.AddWithValue("@PRODUCT_CODE", prdCode);
-                }
+                //if (!(string.IsNullOrWhiteSpace(prdCode)))
+                //{
+                //    sb.Append(" and ");
+                //    cmd.Parameters.AddWithValue("@PRODUCT_CODE", prdCode);
+                //}
                 cmd.CommandText = sb.ToString();
             
                 DataTable dt = new DataTable();

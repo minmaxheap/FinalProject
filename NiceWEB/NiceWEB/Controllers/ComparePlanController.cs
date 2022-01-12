@@ -13,14 +13,14 @@ namespace NiceWEB.Controllers
     {
 
         // GET: ComparePlan
-        public ActionResult Index()
+        public ActionResult Index(string order, string product)
         {
             CommonDAC comDAC = new CommonDAC();
             //select box에 전달할 데이터
-            List<TableData> order = comDAC.GetWorkOrder();
-            List<TableData> product = comDAC.GetProductCode();
-            ViewBag.order = new SelectList(order, "Data", "Data");
-            ViewBag.product = new SelectList(product, "Data", "Data");
+            List<TableData> orderList = comDAC.GetWorkOrder();
+            List<TableData> prodList = comDAC.GetProductCode();
+            ViewBag.order = new SelectList(orderList, "Data", "Data");
+            ViewBag.product = new SelectList(prodList, "Data", "Data");
 
             //datatable을 JSON으로 바꾸는 코드
             var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
