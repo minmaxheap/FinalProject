@@ -66,14 +66,54 @@ namespace NiceWEB.Models
                 da.Fill(dt);
                 cmd.Connection.Close();
 
-                //List<StoreProperty> list = Helper.DataReaderMapToList<StoreProperty>(cmd.ExecuteReader());
-                //return list;
-
-
-
                 return dt;
             }
         }
-    
+
+ //       public List<Inspect> GetData(string from, string to, string prdCode, string operCode, string lotID)
+ //       {
+ //           using (SqlCommand cmd = new SqlCommand())
+ //           {
+ //               cmd.Connection = new SqlConnection(ConfigurationManager.ConnectionStrings["project"].ConnectionString);
+ //               StringBuilder sb = new StringBuilder();
+
+ //               sb.Append(@" SELECT TRAN_TIME,LOT_ID,  H.PRODUCT_CODE, PRODUCT_NAME, H.OPERATION_CODE, OPERATION_NAME, INSPECT_ITEM_CODE, INSPECT_ITEM_NAME, VALUE_TYPE, 
+ //SPEC_LSL, SPEC_TARGET, SPEC_USL, INSPECT_VALUE,  TRAN_CODE,TRAN_USER_ID
+ //FROM [dbo].[LOT_INSPECT_HIS] H, PRODUCT_MST P, OPERATION_MST O
+ //WHERE H.PRODUCT_CODE = P.PRODUCT_CODE AND H.OPERATION_CODE = O.OPERATION_CODE
+ //ORDER BY TRAN_TIME, LOT_ID");
+
+ //               if (!(string.IsNullOrWhiteSpace(from)) && !(string.IsNullOrWhiteSpace(to)))
+ //               {
+ //                   sb.Append(" and ");
+ //                   cmd.Parameters.AddWithValue("@from", from);
+ //                   cmd.Parameters.AddWithValue("@to", to);
+ //               }
+
+ //               if (!(string.IsNullOrWhiteSpace(operCode)))
+ //               {
+ //                   sb.Append(" and ");
+ //                   cmd.Parameters.AddWithValue("@operCode", operCode);
+ //               }
+
+ //               if (!(string.IsNullOrWhiteSpace(lotID)))
+ //               {
+ //                   sb.Append(" and ");
+ //                   cmd.Parameters.AddWithValue("@lotID", lotID);
+ //               }
+
+
+ //               cmd.CommandText = sb.ToString();
+
+ //               cmd.Connection.Open();
+
+ //               List<Inspect> list = Helper.DataReaderMapToList<Inspect>(cmd.ExecuteReader());
+ //               cmd.Connection.Close();
+ //               return list;
+
+
+ //           }
+ //       }
+
     }
 }
