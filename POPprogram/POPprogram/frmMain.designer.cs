@@ -46,13 +46,12 @@ namespace POPprogram
             // 
             this.mnuMain.AutoSize = false;
             this.mnuMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.mnuMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.mnuMain.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.mnuMain.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.mnuMain.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.mnuMain.Location = new System.Drawing.Point(0, 0);
             this.mnuMain.Name = "mnuMain";
             this.mnuMain.Padding = new System.Windows.Forms.Padding(0);
-            this.mnuMain.Size = new System.Drawing.Size(1595, 70);
+            this.mnuMain.Size = new System.Drawing.Size(1595, 45);
             this.mnuMain.TabIndex = 1;
             this.mnuMain.Text = "menuStrip1";
             // 
@@ -62,10 +61,10 @@ namespace POPprogram
             this.flpMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.flpMenu.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.flpMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(182)))), ((int)(((byte)(190)))));
-            this.flpMenu.Location = new System.Drawing.Point(0, 70);
+            this.flpMenu.Location = new System.Drawing.Point(0, 45);
             this.flpMenu.Margin = new System.Windows.Forms.Padding(0);
             this.flpMenu.Name = "flpMenu";
-            this.flpMenu.Size = new System.Drawing.Size(313, 960);
+            this.flpMenu.Size = new System.Drawing.Size(200, 985);
             this.flpMenu.TabIndex = 3;
             // 
             // menuImageList
@@ -107,7 +106,7 @@ namespace POPprogram
             this.lblID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(182)))), ((int)(((byte)(190)))));
             this.lblID.Location = new System.Drawing.Point(1508, 19);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(30, 23);
+            this.lblID.Size = new System.Drawing.Size(25, 19);
             this.lblID.TabIndex = 21;
             this.lblID.Text = "ID";
             this.lblID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -117,11 +116,11 @@ namespace POPprogram
             this.tabMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabMenu.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.tabMenu.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tabMenu.Location = new System.Drawing.Point(313, 70);
+            this.tabMenu.Location = new System.Drawing.Point(200, 45);
             this.tabMenu.Margin = new System.Windows.Forms.Padding(0);
             this.tabMenu.Name = "tabMenu";
             this.tabMenu.SelectedIndex = 0;
-            this.tabMenu.Size = new System.Drawing.Size(1282, 48);
+            this.tabMenu.Size = new System.Drawing.Size(1395, 30);
             this.tabMenu.TabIndex = 23;
             this.tabMenu.SelectedIndexChanged += new System.EventHandler(this.tabMain_SelectedIndexChanged);
             this.tabMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabMenu_MouseDown);
@@ -146,7 +145,7 @@ namespace POPprogram
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1595, 1030);
             this.Controls.Add(this.pictureBox2);
