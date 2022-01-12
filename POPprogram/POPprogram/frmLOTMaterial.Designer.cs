@@ -60,6 +60,10 @@ namespace POPprogram
             this.txtComment.Location = new System.Drawing.Point(165, 243);
             this.txtComment.Size = new System.Drawing.Size(937, 34);
             // 
+            // pnlCrud
+            // 
+            //this.pnlCrud.Location = new System.Drawing.Point(499, 761);
+            // 
             // btnClose
             // 
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
