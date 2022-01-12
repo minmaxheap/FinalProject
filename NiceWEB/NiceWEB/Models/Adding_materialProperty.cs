@@ -23,5 +23,6 @@ namespace NiceWEB.Models
 
 	public string TRAN_COMMENT { get; set; }
 
+
 	}
 }

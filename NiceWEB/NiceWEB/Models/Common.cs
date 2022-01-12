@@ -18,9 +18,5 @@ namespace NiceWEB.Models
         public string data { get; set; }
     }
 
-    public class ComboItem
-    {
-        public string Code { get; set; }
-        public string CodeName { get; set; }
-    }
+  
 }
