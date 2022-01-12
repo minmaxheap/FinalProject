@@ -44,29 +44,29 @@ FROM [dbo].[WORK_ORDER_MST] W, EQUIP_DOWN_HIS H,
 WHERE W.ORDER_STATUS = 'CLOSE' AND CONVERT(DATE,W.ORDER_DATE) = CONVERT(DATE,H.DT_DATE) AND CONVERT(DATE,T.ORDER_DATE) = CONVERT(DATE,W.ORDER_DATE)
 AND H2.DT_DATE = H.DT_DATE");
 
-                if (!(string.IsNullOrWhiteSpace(from)) && !(string.IsNullOrWhiteSpace(to)))
-                {
-                    sb.Append(" and ");
-                    cmd.Parameters.AddWithValue("@from", from);
-                    cmd.Parameters.AddWithValue("@to", to);
-                }
+                //if (!(string.IsNullOrWhiteSpace(from)) && !(string.IsNullOrWhiteSpace(to)))
+                //{
+                //    sb.Append(" and ");
+                //    cmd.Parameters.AddWithValue("@from", from);
+                //    cmd.Parameters.AddWithValue("@to", to);
+                //}
 
-                if (!(string.IsNullOrWhiteSpace(prdCode)))
-                {
-                    sb.Append(" and ");
-                    cmd.Parameters.AddWithValue("@PRODUCT_CODE", prdCode);
-                }
-                if (!(string.IsNullOrWhiteSpace(workID)))
-                {
-                    sb.Append(" and ");
-                    cmd.Parameters.AddWithValue("@WORK_ORDER_ID", workID);
-                }
+                //if (!(string.IsNullOrWhiteSpace(prdCode)))
+                //{
+                //    sb.Append(" and ");
+                //    cmd.Parameters.AddWithValue("@PRODUCT_CODE", prdCode);
+                //}
+                //if (!(string.IsNullOrWhiteSpace(workID)))
+                //{
+                //    sb.Append(" and ");
+                //    cmd.Parameters.AddWithValue("@WORK_ORDER_ID", workID);
+                //}
 
-                if (!(string.IsNullOrWhiteSpace(prdCode)))
-                {
-                    sb.Append(" and ");
-                    cmd.Parameters.AddWithValue("@PRODUCT_CODE", prdCode);
-                }
+                //if (!(string.IsNullOrWhiteSpace(prdCode)))
+                //{
+                //    sb.Append(" and ");
+                //    cmd.Parameters.AddWithValue("@PRODUCT_CODE", prdCode);
+                //}
 
                 cmd.CommandText = sb.ToString();
 

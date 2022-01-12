@@ -114,7 +114,7 @@ WHERE W.PRODUCT_CODE = P.PRODUCT_CODE");
 //            }
 //        }
 
-        public List<ComparePlan> GetChartData(string from, string to)
+        public List<ComparePlan> GetChartData(string from, string to, string workID, string prdCode)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -136,6 +136,34 @@ FROM [dbo].[WORK_ORDER_MST] W";
 
         }
 
+        public int GetProductTotalCount(string storeCode, string producCode)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+
+                cmd.Connection = conn;
+                StringBuilder sb = new StringBuilder();
+                sb.Append(@"select count(*) from LOT_STS
+where LOT_DELETE_FLAG <> 'Y' OR LOT_DELETE_FLAG IS NULL  and STORE_CODE is not  null ");
+                if (!string.IsNullOrWhiteSpace(storeCode))
+                {
+                    sb.Append(" and STORE_CODE = @STORE_CODE ");
+                    cmd.Parameters.AddWithValue("@STORE_CODE", storeCode);
+                }
+                if (!string.IsNullOrWhiteSpace(producCode))
+                {
+                    sb.Append(" and PRODUCT_CODE = @PRODUCT_CODE ");
+                    cmd.Parameters.AddWithValue("@PRODUCT_CODE", producCode);
+                }
+                //sb.Append(" order by STORE_CODE,OPER_IN_TIME,LOT_ID ");
+                cmd.CommandText = sb.ToString();
+
+
+                cmd.CommandText = sb.ToString();
+
+                return Convert.ToInt32(cmd.ExecuteScalar());
+            }
+        }
 
     }
 }

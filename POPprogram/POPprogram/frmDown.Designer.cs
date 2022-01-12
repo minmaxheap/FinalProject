@@ -526,7 +526,7 @@ namespace POPprogram
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(205, 11);
+            this.label8.Location = new System.Drawing.Point(223, 11);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(14, 12);
             this.label8.TabIndex = 29;
@@ -535,9 +535,9 @@ namespace POPprogram
             // dateTimePicker4
             // 
             this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker4.Location = new System.Drawing.Point(225, 5);
+            this.dateTimePicker4.Location = new System.Drawing.Point(241, 6);
             this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(81, 21);
+            this.dateTimePicker4.Size = new System.Drawing.Size(108, 21);
             this.dateTimePicker4.TabIndex = 28;
             // 
             // dateTimePicker3
@@ -545,7 +545,7 @@ namespace POPprogram
             this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker3.Location = new System.Drawing.Point(118, 5);
             this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(81, 21);
+            this.dateTimePicker3.Size = new System.Drawing.Size(99, 21);
             this.dateTimePicker3.TabIndex = 27;
             // 
             // label9

@@ -108,7 +108,7 @@ namespace POPprogram
             // 
             // btnExecute
             // 
-            this.btnExecute.Size = new System.Drawing.Size(92, 41);
+            //this.btnExecute.Size = new System.Drawing.Size(92, 41);
             this.btnExecute.Click += new System.EventHandler(this.btnExecute_Click);
             // 
             // cboLOTID
