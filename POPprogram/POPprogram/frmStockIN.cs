@@ -241,6 +241,8 @@ namespace POPprogram
                             }
                         }
                         iSelectedRow = iSearchedList.ToList();
+
+
                     }
                 }
                 if (iSearchedList.Count > 0)
@@ -258,6 +260,7 @@ namespace POPprogram
                         }
                     }
                 }
+
             }
            
         }
