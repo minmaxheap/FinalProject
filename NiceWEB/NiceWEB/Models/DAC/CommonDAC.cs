@@ -20,7 +20,8 @@ namespace NiceWEB.Models
 
         public void Dispose()
         {
-            conn.Close();
+            if (conn != null && conn.State == ConnectionState.Open)
+                conn.Close();
         }
     
 

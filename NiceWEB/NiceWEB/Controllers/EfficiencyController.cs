@@ -18,7 +18,9 @@ namespace NiceWEB.Controllers
             List<ColumnsInfo> _col = new List<ColumnsInfo>();
 
             EfficiencyDAC dac = new EfficiencyDAC();
-            DataTable dt = dac.GetData("2020-01-01", "2010-02-02");
+            DataTable dt = dac.GetData("2020-01-01", "2010-02-02","","");
+           // dac.Dispose();
+
 
             for (int i = 0; i <= dt.Columns.Count - 1; i++)
             {

@@ -82,7 +82,7 @@ namespace POPprogram
             this.panel4.Controls.Add(this.textBox10);
             this.panel4.Controls.Add(this.label12);
             this.panel4.Location = new System.Drawing.Point(30, 666);
-            this.panel4.Size = new System.Drawing.Size(1136, 146);
+            this.panel4.Size = new System.Drawing.Size(1136, 162);
             this.panel4.Controls.SetChildIndex(this.txtComment, 0);
             this.panel4.Controls.SetChildIndex(this.label13, 0);
             this.panel4.Controls.SetChildIndex(this.label1, 0);
@@ -92,11 +92,11 @@ namespace POPprogram
             // 
             // label13
             // 
-            this.label13.Location = new System.Drawing.Point(102, 87);
+            this.label13.Location = new System.Drawing.Point(102, 103);
             // 
             // txtComment
             // 
-            this.txtComment.Location = new System.Drawing.Point(165, 87);
+            this.txtComment.Location = new System.Drawing.Point(165, 103);
             // 
             // pnlCrud
             // 
@@ -107,7 +107,7 @@ namespace POPprogram
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(165, 49);
+            this.comboBox1.Location = new System.Drawing.Point(165, 62);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(335, 32);
             this.comboBox1.TabIndex = 62;
@@ -118,7 +118,7 @@ namespace POPprogram
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.textBox10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.textBox10.Location = new System.Drawing.Point(520, 49);
+            this.textBox10.Location = new System.Drawing.Point(520, 62);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(581, 29);
             this.textBox10.TabIndex = 61;
@@ -128,7 +128,7 @@ namespace POPprogram
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.label12.Location = new System.Drawing.Point(102, 53);
+            this.label12.Location = new System.Drawing.Point(102, 66);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(39, 19);
             this.label12.TabIndex = 60;
@@ -195,7 +195,7 @@ namespace POPprogram
             this.label26.BackColor = System.Drawing.Color.LemonChiffon;
             this.label26.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label26.Font = new System.Drawing.Font("나눔고딕", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label26.Location = new System.Drawing.Point(2, 96);
+            this.label26.Location = new System.Drawing.Point(2, 106);
             this.label26.Margin = new System.Windows.Forms.Padding(0);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(310, 36);
@@ -208,7 +208,7 @@ namespace POPprogram
             this.label18.BackColor = System.Drawing.Color.Tomato;
             this.label18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label18.Font = new System.Drawing.Font("나눔고딕", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label18.Location = new System.Drawing.Point(313, 96);
+            this.label18.Location = new System.Drawing.Point(313, 106);
             this.label18.Margin = new System.Windows.Forms.Padding(0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(310, 36);
@@ -221,7 +221,7 @@ namespace POPprogram
             this.label17.BackColor = System.Drawing.Color.MediumAquamarine;
             this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label17.Font = new System.Drawing.Font("나눔고딕", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label17.Location = new System.Drawing.Point(624, 96);
+            this.label17.Location = new System.Drawing.Point(624, 106);
             this.label17.Margin = new System.Windows.Forms.Padding(0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(312, 36);
