@@ -282,5 +282,24 @@ END CATCH;";
 				return Helper.DataReaderMapToList<LOTProperty>(cmd.ExecuteReader());
 			}
 		}
+
+		public List<string> GetEqList(string EqCode)
+		{
+			string sql = @"
+SELECT DATA_1 
+FROM CODE_DATA_MST
+WHERE CODE_TABLE_NAME=@CODE_TABLE_NAME";
+			SqlCommand cmd = new SqlCommand(sql, conn);
+			List<string> List = new List<string>();
+			using (SqlDataReader da = cmd.ExecuteReader())
+			{
+				while (da.Read())
+				{
+					List.Add(da["DATA_1"].ToString());
+
+				}
+			}
+			return List;
+		}
 	}
 }
