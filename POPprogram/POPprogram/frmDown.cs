@@ -42,14 +42,14 @@ namespace POPprogram
         private void frmDown_Load(object sender, EventArgs e)
         {
             DataGridViewUtil.SetInitGridView(csDataGridView1);
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "비가동 일자", "DT_DATE");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "비가동 시작", "DT_START_TIME");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "비가동 종료", "DT_END_TIME");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "비가동 일자", "DT_DATE",width:150);
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "비가동 시작", "DT_START_TIME", width: 150);
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "비가동 종료", "DT_END_TIME", width: 150);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "시간(분)", "DT_TIME");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "비가동 코드", "DT_CODE");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "비가동 주석", "DT_COMMENT");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "비가동 코드", "DT_CODE", width: 150);
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "비가동 주석", "DT_COMMENT", width: 150);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "등록자", "DT_USER_ID");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "조치 내역", "ACTION_COMMENT");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "조치 내역", "ACTION_COMMENT", width: 150);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "확인자", "CONFIRM_USER_ID");
             List<DownProperty> list = new List<DownProperty>();
 

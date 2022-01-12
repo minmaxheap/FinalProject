@@ -60,6 +60,7 @@
 
 <div class="content">
     <div class="container-fluid">
+
         <div class="row">
             <div class="col-md-12">
                 <div class="row">
@@ -144,7 +145,22 @@
                                     <th scope="col">마감시간</th>
                                 </tr>
                             </thead>
-
+                            @*<tbody>
+                                @foreach (var p in Model)
+                                {<tr>
+                                    <td> scope="col">@p.WorkDate 작업일자</td>
+                                    <td> scope="col">@p.workorder 작업지시</td>
+                                    <td> scope="col">@p.productcode 품번</td>
+                                    <td> scope="col">품명</td>
+                                    <td> scope="col">계획수량</td>
+                                    <td> scope="col">양품수량</td>
+                                    <td> scope="col">불량수량</td>
+                                    <td> scope="col">양품률(%)</td>
+                                    <td> scope="col">불량률(%)</td>
+                                    <td> scope="col">마감시간</thd>
+                                </tr>
+                                }
+                            </tbody>*@
 
                         </table>
                     </div>
@@ -220,6 +236,9 @@ decimal defectRate =   ViewBag.defectRate ;
         $(function () {
             //Date range picker
             $('#reservation').daterangepicker()
+            {
+                format : 'YYYY/MM/DD' //왜 이 FORMAT 안 먹히지
+            }
 
         })
     </script>

@@ -22,12 +22,12 @@ namespace POPprogram
         private void frmWorkOrderDialog1_Load(object sender, EventArgs e)
         {
             DataGridViewUtil.SetInitGridView(dgvWorkOrder);
-            DataGridViewUtil.AddGridTextColumn(dgvWorkOrder, "작업일자", "ORDER_DATE");
+            DataGridViewUtil.AddGridTextColumn(dgvWorkOrder, "작업일자", "ORDER_DATE",width: 150);
             DataGridViewUtil.AddGridTextColumn(dgvWorkOrder, "작업지시", "WORK_ORDER_ID");
-            DataGridViewUtil.AddGridTextColumn(dgvWorkOrder, "고객사", "CUSTOMER_CODE");
-            DataGridViewUtil.AddGridTextColumn(dgvWorkOrder, "고객사명", "CUSTOMER_NAME");
-            DataGridViewUtil.AddGridTextColumn(dgvWorkOrder, "품번", "PRODUCT_CODE");
-            DataGridViewUtil.AddGridTextColumn(dgvWorkOrder, "품명", "PRODUCT_NAME");
+            DataGridViewUtil.AddGridTextColumn(dgvWorkOrder, "고객사", "CUSTOMER_CODE", width: 150);
+            DataGridViewUtil.AddGridTextColumn(dgvWorkOrder, "고객사명", "CUSTOMER_NAME", width: 150);
+            DataGridViewUtil.AddGridTextColumn(dgvWorkOrder, "품번", "PRODUCT_CODE", width: 150);
+            DataGridViewUtil.AddGridTextColumn(dgvWorkOrder, "품명", "PRODUCT_NAME", width: 150);
             DataGridViewUtil.AddGridTextColumn(dgvWorkOrder, "공정코드", "OPERATION_CODE");
             DataGridViewUtil.AddGridTextColumn(dgvWorkOrder, "공정명", "OPERATION_NAME");
             DataGridViewUtil.AddGridTextColumn(dgvWorkOrder, "지시수량", "ORDER_QTY");

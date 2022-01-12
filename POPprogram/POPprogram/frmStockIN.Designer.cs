@@ -70,19 +70,19 @@ namespace POPprogram
             // label9
             // 
             this.label9.Location = new System.Drawing.Point(84, 12);
-            this.label9.Size = new System.Drawing.Size(55, 24);
+            this.label9.Size = new System.Drawing.Size(64, 21);
             this.label9.Text = "납품서";
             // 
             // label10
             // 
             this.label10.Location = new System.Drawing.Point(70, 166);
-            this.label10.Size = new System.Drawing.Size(61, 20);
+            this.label10.Size = new System.Drawing.Size(73, 19);
             this.label10.Text = "주문 수량";
             // 
             // label2
             // 
             this.label2.Location = new System.Drawing.Point(88, 122);
-            this.label2.Size = new System.Drawing.Size(45, 20);
+            this.label2.Size = new System.Drawing.Size(54, 19);
             this.label2.Text = "구매처";
             // 
             // label22
@@ -183,6 +183,9 @@ namespace POPprogram
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.csDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.csDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.csDataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.csDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -202,13 +205,12 @@ namespace POPprogram
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.csDataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.csDataGridView1.Dock = System.Windows.Forms.DockStyle.Left;
             this.csDataGridView1.EnableHeadersVisualStyles = false;
             this.csDataGridView1.Location = new System.Drawing.Point(0, 45);
             this.csDataGridView1.Name = "csDataGridView1";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("나눔고딕", 9F);
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;

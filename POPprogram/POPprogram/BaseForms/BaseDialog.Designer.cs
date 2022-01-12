@@ -114,7 +114,7 @@ namespace POPprogram
             this.lblPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.lblPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblPanel.Font = new System.Drawing.Font("나눔고딕", 18F);
+            this.lblPanel.Font = new System.Drawing.Font("나눔고딕", 15.75F);
             this.lblPanel.Location = new System.Drawing.Point(0, 0);
             this.lblPanel.Name = "lblPanel";
             this.lblPanel.Size = new System.Drawing.Size(1024, 43);
