@@ -1796,6 +1796,7 @@
     <Compile Include="Controllers\DefectController.cs" />
     <Compile Include="Controllers\EfficiencyController.cs" />
     <Compile Include="Controllers\InspectController.cs" />
+    <Compile Include="Controllers\LOTHController.cs" />
     <Compile Include="Controllers\MaterialController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="Global.asax.cs">
@@ -1813,10 +1814,12 @@
     <Compile Include="Models\DAC\EfficiencyDAC.cs" />
     <Compile Include="Models\DAC\Helper.cs" />
     <Compile Include="Models\DAC\InspectDAC.cs" />
+    <Compile Include="Models\DAC\LOT_HISDAC.cs" />
     <Compile Include="Models\DAC\StoreDAC.cs" />
     <Compile Include="Models\DefectProperty.cs" />
     <Compile Include="Models\Efficiency.cs" />
     <Compile Include="Models\Inspect.cs" />
+    <Compile Include="Models\LOT_HIS.cs" />
     <Compile Include="Models\PagingInfo.cs" />
     <Compile Include="Models\StoreProperty.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1839,6 +1842,7 @@
     <Content Include="dist\js\adminlte.min.js.map" />
     <None Include="packages.config" />
     <Content Include="Views\_Layout.cshtml" />
+    <Content Include="Views\ComparePlan\Index.cshtml" />
     <Content Include="plugins\.npmignore" />
     <Content Include="plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.css.map" />
     <Content Include="plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.min.css.map" />
@@ -1918,7 +1922,7 @@
     <Content Include="Views\Material\Index.cshtml" />
     <Content Include="Views\Defect\Index.cshtml" />
     <Content Include="Views\Store\Index.cshtml" />
-    <Content Include="Views\ComparePlan\Index.cshtml" />
+    <Content Include="Views\LOTH\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
