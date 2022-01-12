@@ -80,5 +80,13 @@ namespace POPprogram
 			return List;
 		}
 
+		public List<string> GetDown_Code()
+		{
+			DownDAC dac = new DownDAC();
+			List<string> List = dac.GetDown_Code();
+			dac.Dispose();
+			return List;
+		}
+
 	}
 }
