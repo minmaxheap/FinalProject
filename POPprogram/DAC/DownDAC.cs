@@ -37,7 +37,7 @@ from [dbo].[EQUIP_DOWN_HIS]";
 			return Helper.DataReaderMapToList<DownProperty>(cmd.ExecuteReader());
 		}
 
-        public bool Insert(string DT_DATE, DateTime DT_START_TIME, DateTime DT_END_TIME, int DT_TIME, string DT_CODE, string DT_COMMENT, string DT_USER_ID, string ACTION_COMMENT)
+        public bool Insert(DateTime DT_DATE, DateTime DT_START_TIME, DateTime DT_END_TIME, int DT_TIME, string DT_CODE, string DT_COMMENT, string DT_USER_ID, string ACTION_COMMENT)
         {
             try
             {

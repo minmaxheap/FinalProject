@@ -43,7 +43,7 @@ namespace POPprogram
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "자 품번 재고", "SUM_QTY", DataGridViewContentAlignment.MiddleCenter, 100);
             csDataGridView1.Columns["CHILD_LOT_ID"].ReadOnly = false;
             csDataGridView1.Columns["CHILD_LOT_QTY"].ReadOnly = false;
-            csDataGridView1.RowTemplate.Height = 20;
+            csDataGridView1.RowTemplate.Height = 40;
             csDataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
         }

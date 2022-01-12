@@ -29,21 +29,21 @@ namespace POPprogram
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.cboEQList = new System.Windows.Forms.ComboBox();
+            this.txtEQ_NAME = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.lblDefectColor = new System.Windows.Forms.Label();
+            this.lblInspectColor = new System.Windows.Forms.Label();
+            this.lblMaterialColor = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
+            this.lblDefect = new System.Windows.Forms.Label();
+            this.lblInspect = new System.Windows.Forms.Label();
+            this.lblMaterial = new System.Windows.Forms.Label();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -57,7 +57,7 @@ namespace POPprogram
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel8.Controls.Add(this.tableLayoutPanel1);
-            this.panel8.Size = new System.Drawing.Size(1136, 545);
+            this.panel8.Size = new System.Drawing.Size(1136, 530);
             this.panel8.Controls.SetChildIndex(this.label6, 0);
             this.panel8.Controls.SetChildIndex(this.label22, 0);
             this.panel8.Controls.SetChildIndex(this.txtProdCode, 0);
@@ -78,50 +78,64 @@ namespace POPprogram
             // 
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.Controls.Add(this.comboBox1);
-            this.panel4.Controls.Add(this.textBox10);
+            this.panel4.Controls.Add(this.cboEQList);
+            this.panel4.Controls.Add(this.txtEQ_NAME);
             this.panel4.Controls.Add(this.label12);
-            this.panel4.Location = new System.Drawing.Point(30, 666);
-            this.panel4.Size = new System.Drawing.Size(1136, 162);
+            this.panel4.Location = new System.Drawing.Point(30, 633);
+            this.panel4.Size = new System.Drawing.Size(1136, 195);
             this.panel4.Controls.SetChildIndex(this.txtComment, 0);
             this.panel4.Controls.SetChildIndex(this.label13, 0);
             this.panel4.Controls.SetChildIndex(this.label1, 0);
             this.panel4.Controls.SetChildIndex(this.label12, 0);
-            this.panel4.Controls.SetChildIndex(this.textBox10, 0);
-            this.panel4.Controls.SetChildIndex(this.comboBox1, 0);
+            this.panel4.Controls.SetChildIndex(this.txtEQ_NAME, 0);
+            this.panel4.Controls.SetChildIndex(this.cboEQList, 0);
             // 
             // label13
             // 
-            this.label13.Location = new System.Drawing.Point(102, 103);
+            this.label13.Location = new System.Drawing.Point(102, 136);
             // 
             // txtComment
             // 
-            this.txtComment.Location = new System.Drawing.Point(165, 103);
+            this.txtComment.Location = new System.Drawing.Point(165, 136);
             // 
             // pnlCrud
             // 
             this.pnlCrud.Location = new System.Drawing.Point(499, 845);
             // 
-            // comboBox1
+            // btnClose
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
-            this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(165, 62);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(335, 26);
-            this.comboBox1.TabIndex = 62;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // textBox10
+            // btnExecute
             // 
-            this.textBox10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnExecute.Size = new System.Drawing.Size(92, 41);
+            this.btnExecute.Click += new System.EventHandler(this.btnExecute_Click);
+            // 
+            // cboLOTID
+            // 
+            this.cboLOTID.SelectedIndexChanged += new System.EventHandler(this.cboLOTID_SelectedIndexChanged);
+            // 
+            // cboEQList
+            // 
+            this.cboEQList.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.cboEQList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.cboEQList.FormattingEnabled = true;
+            this.cboEQList.Location = new System.Drawing.Point(165, 62);
+            this.cboEQList.Name = "cboEQList";
+            this.cboEQList.Size = new System.Drawing.Size(335, 32);
+            this.cboEQList.TabIndex = 62;
+            this.cboEQList.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // txtEQ_NAME
+            // 
+            this.txtEQ_NAME.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
-            this.textBox10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.textBox10.Location = new System.Drawing.Point(520, 62);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(581, 24);
-            this.textBox10.TabIndex = 61;
+            this.txtEQ_NAME.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.txtEQ_NAME.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtEQ_NAME.Location = new System.Drawing.Point(520, 62);
+            this.txtEQ_NAME.Name = "txtEQ_NAME";
+            this.txtEQ_NAME.Size = new System.Drawing.Size(581, 29);
+            this.txtEQ_NAME.TabIndex = 61;
             // 
             // label12
             // 
@@ -130,7 +144,7 @@ namespace POPprogram
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.label12.Location = new System.Drawing.Point(102, 66);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(39, 19);
+            this.label12.Size = new System.Drawing.Size(48, 23);
             this.label12.TabIndex = 60;
             this.label12.Text = "설비";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -170,17 +184,17 @@ namespace POPprogram
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33444F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33111F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33445F));
-            this.tableLayoutPanel1.Controls.Add(this.label26, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label18, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label17, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lblDefectColor, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lblInspectColor, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lblMaterialColor, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label7, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label8, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label14, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label15, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label16, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lblDefect, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lblInspect, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lblMaterial, 2, 1);
             this.tableLayoutPanel1.Font = new System.Drawing.Font("나눔고딕", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(167, 372);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(167, 364);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
@@ -190,44 +204,44 @@ namespace POPprogram
             this.tableLayoutPanel1.Size = new System.Drawing.Size(936, 157);
             this.tableLayoutPanel1.TabIndex = 71;
             // 
-            // label26
+            // lblDefectColor
             // 
-            this.label26.BackColor = System.Drawing.Color.LemonChiffon;
-            this.label26.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label26.Font = new System.Drawing.Font("나눔고딕", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label26.Location = new System.Drawing.Point(1, 103);
-            this.label26.Margin = new System.Windows.Forms.Padding(0);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(310, 53);
-            this.label26.TabIndex = 27;
-            this.label26.Text = "입력 없음";
-            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDefectColor.BackColor = System.Drawing.Color.LemonChiffon;
+            this.lblDefectColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblDefectColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblDefectColor.Font = new System.Drawing.Font("나눔고딕", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblDefectColor.Location = new System.Drawing.Point(2, 106);
+            this.lblDefectColor.Margin = new System.Windows.Forms.Padding(0);
+            this.lblDefectColor.Name = "lblDefectColor";
+            this.lblDefectColor.Size = new System.Drawing.Size(309, 50);
+            this.lblDefectColor.TabIndex = 27;
+            this.lblDefectColor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label18
+            // lblInspectColor
             // 
-            this.label18.BackColor = System.Drawing.Color.Tomato;
-            this.label18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label18.Font = new System.Drawing.Font("나눔고딕", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label18.Location = new System.Drawing.Point(312, 103);
-            this.label18.Margin = new System.Windows.Forms.Padding(0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(310, 53);
-            this.label18.TabIndex = 26;
-            this.label18.Text = "입력 안 됨";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblInspectColor.BackColor = System.Drawing.Color.Tomato;
+            this.lblInspectColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblInspectColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblInspectColor.Font = new System.Drawing.Font("나눔고딕", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblInspectColor.Location = new System.Drawing.Point(313, 106);
+            this.lblInspectColor.Margin = new System.Windows.Forms.Padding(0);
+            this.lblInspectColor.Name = "lblInspectColor";
+            this.lblInspectColor.Size = new System.Drawing.Size(309, 50);
+            this.lblInspectColor.TabIndex = 26;
+            this.lblInspectColor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label17
+            // lblMaterialColor
             // 
-            this.label17.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label17.Font = new System.Drawing.Font("나눔고딕", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label17.Location = new System.Drawing.Point(623, 103);
-            this.label17.Margin = new System.Windows.Forms.Padding(0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(312, 53);
-            this.label17.TabIndex = 25;
-            this.label17.Text = "입력 완료";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMaterialColor.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.lblMaterialColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblMaterialColor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblMaterialColor.Font = new System.Drawing.Font("나눔고딕", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblMaterialColor.Location = new System.Drawing.Point(624, 106);
+            this.lblMaterialColor.Margin = new System.Windows.Forms.Padding(0);
+            this.lblMaterialColor.Name = "lblMaterialColor";
+            this.lblMaterialColor.Size = new System.Drawing.Size(310, 50);
+            this.lblMaterialColor.TabIndex = 25;
+            this.lblMaterialColor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
@@ -237,7 +251,7 @@ namespace POPprogram
             this.label5.Location = new System.Drawing.Point(1, 1);
             this.label5.Margin = new System.Windows.Forms.Padding(0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(310, 50);
+            this.label5.Size = new System.Drawing.Size(309, 50);
             this.label5.TabIndex = 19;
             this.label5.Text = "불량 입력 체크";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -250,7 +264,7 @@ namespace POPprogram
             this.label7.Location = new System.Drawing.Point(312, 1);
             this.label7.Margin = new System.Windows.Forms.Padding(0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(310, 50);
+            this.label7.Size = new System.Drawing.Size(309, 50);
             this.label7.TabIndex = 20;
             this.label7.Text = "검사 데이터 체크";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -263,51 +277,53 @@ namespace POPprogram
             this.label8.Location = new System.Drawing.Point(623, 1);
             this.label8.Margin = new System.Windows.Forms.Padding(0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(312, 50);
+            this.label8.Size = new System.Drawing.Size(310, 50);
             this.label8.TabIndex = 21;
             this.label8.Text = "자재 사용 체크";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label14
+            // lblDefect
             // 
-            this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label14.Font = new System.Drawing.Font("나눔고딕", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label14.Location = new System.Drawing.Point(1, 52);
-            this.label14.Margin = new System.Windows.Forms.Padding(0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(310, 50);
-            this.label14.TabIndex = 22;
-            this.label14.Text = "V";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDefect.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblDefect.Font = new System.Drawing.Font("나눔고딕", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblDefect.Location = new System.Drawing.Point(2, 54);
+            this.lblDefect.Margin = new System.Windows.Forms.Padding(0);
+            this.lblDefect.Name = "lblDefect";
+            this.lblDefect.Size = new System.Drawing.Size(309, 50);
+            this.lblDefect.TabIndex = 22;
+            this.lblDefect.Text = "V";
+            this.lblDefect.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label15
+            // lblInspect
             // 
-            this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label15.Font = new System.Drawing.Font("나눔고딕", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label15.Location = new System.Drawing.Point(312, 52);
-            this.label15.Margin = new System.Windows.Forms.Padding(0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(310, 50);
-            this.label15.TabIndex = 23;
-            this.label15.Text = "V";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblInspect.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblInspect.Font = new System.Drawing.Font("나눔고딕", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblInspect.Location = new System.Drawing.Point(313, 54);
+            this.lblInspect.Margin = new System.Windows.Forms.Padding(0);
+            this.lblInspect.Name = "lblInspect";
+            this.lblInspect.Size = new System.Drawing.Size(309, 50);
+            this.lblInspect.TabIndex = 23;
+            this.lblInspect.Text = "V";
+            this.lblInspect.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label16
+            // lblMaterial
             // 
-            this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label16.Font = new System.Drawing.Font("나눔고딕", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label16.Location = new System.Drawing.Point(623, 52);
-            this.label16.Margin = new System.Windows.Forms.Padding(0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(312, 50);
-            this.label16.TabIndex = 24;
-            this.label16.Text = "V";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMaterial.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblMaterial.Font = new System.Drawing.Font("나눔고딕", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblMaterial.Location = new System.Drawing.Point(624, 54);
+            this.lblMaterial.Margin = new System.Windows.Forms.Padding(0);
+            this.lblMaterial.Name = "lblMaterial";
+            this.lblMaterial.Size = new System.Drawing.Size(310, 50);
+            this.lblMaterial.TabIndex = 24;
+            this.lblMaterial.Text = "V";
+            this.lblMaterial.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmEndWorkOrder
             // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1194, 911);
             this.Name = "frmEndWorkOrder";
+            this.Activated += new System.EventHandler(this.frmEndWorkOrder_Activated);
             this.Load += new System.EventHandler(this.frmEndWorkOrder_Load);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
@@ -324,20 +340,20 @@ namespace POPprogram
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
-        public System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.ComboBox cboEQList;
+        public System.Windows.Forms.TextBox txtEQ_NAME;
         public System.Windows.Forms.Label label12;
         public System.Windows.Forms.Label label20;
         public System.Windows.Forms.Label label21;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        public System.Windows.Forms.Label label26;
-        public System.Windows.Forms.Label label18;
-        public System.Windows.Forms.Label label17;
+        public System.Windows.Forms.Label lblDefectColor;
+        public System.Windows.Forms.Label lblInspectColor;
+        public System.Windows.Forms.Label lblMaterialColor;
         public System.Windows.Forms.Label label5;
         public System.Windows.Forms.Label label7;
         public System.Windows.Forms.Label label8;
-        public System.Windows.Forms.Label label14;
-        public System.Windows.Forms.Label label15;
-        public System.Windows.Forms.Label label16;
+        public System.Windows.Forms.Label lblDefect;
+        public System.Windows.Forms.Label lblInspect;
+        public System.Windows.Forms.Label lblMaterial;
     }
 }

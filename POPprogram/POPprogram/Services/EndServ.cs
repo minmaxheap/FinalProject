@@ -39,6 +39,29 @@ namespace POPprogram
 			dac.Dispose();
 			return list;
 		}
+
+		public List<EndPropertyLOTHis> GetOperCheckList(EndPropertyLOTHis vo)
+		{
+			EndDAC dac = new EndDAC();
+			List<EndPropertyLOTHis> list = dac.GetOperCheckList(vo);
+			dac.Dispose();
+			return list;
+		}
+		public DataTable GetEQList()
+		{
+			EndDAC dac = new EndDAC();
+			DataTable  dt = dac.GetEQList();
+			dac.Dispose();
+			return dt;
+		}
+		public bool EndLOT_Update(EndPropertyUpdate updateVO)
+		{
+			EndDAC dac = new EndDAC();
+			bool bResult = dac.EndLOT_Update(updateVO);
+			dac.Dispose();
+			return bResult;
+		}
+
 	}
 }
 
