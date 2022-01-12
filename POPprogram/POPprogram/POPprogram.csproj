@@ -365,6 +365,9 @@
     <None Include="Resources\Blank-13.png" />
     <None Include="Resources\Industry - 01.png" />
     <None Include="Resources\logo.PNG" />
+    <None Include="Resources\Circle Close - 2.png" />
+    <None Include="Resources\Circle Close - 02.png" />
+    <None Include="Resources\Circle Close - 01.png" />
     <Content Include="Resources\그림1.png" />
     <Content Include="Resources\그림5.png" />
   </ItemGroup>

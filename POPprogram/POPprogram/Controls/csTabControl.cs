@@ -33,22 +33,27 @@ namespace POPprogram
 
                 if (this.SelectedIndex == e.Index)
                 {
-                    e.Graphics.FillRectangle(new SolidBrush(Color.White), e.Bounds);
+                    e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(125, 125, 125)), e.Bounds);
                 }
 
                 SolidBrush titleBrush = new SolidBrush(Color.Black);
                 string title = this.TabPages[e.Index].Text;
                 Font f = this.Font;
+                if (this.SelectedIndex == e.Index)
+                {
+                    titleBrush.Color = Color.White;
+                }
                 e.Graphics.DrawString(title, f, titleBrush, new Point(r.X, r.Y));
 
 
                 Image img;
                 if (this.SelectedIndex == e.Index)
-                    img = Properties.Resources.close;
+                    img = Properties.Resources.Circle_Close___2;
+               
                 else
-                    img = Properties.Resources.close_white;
+                    img = Properties.Resources.Circle_Close___01;
 
-                Point imgLocation = new Point(18, 2);
+                Point imgLocation = new Point(20, 6);
 
                 e.Graphics.DrawImage(img, new Point(r.X + this.GetTabRect(e.Index).Width - imgLocation.X, imgLocation.Y));
 

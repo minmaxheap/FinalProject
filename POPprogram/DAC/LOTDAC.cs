@@ -24,6 +24,7 @@ namespace DAC
 
         public void Dispose()
         {
+            if(conn!=null && conn.State == ConnectionState.Open)
             conn.Close();
         }
 
@@ -132,8 +133,9 @@ END CATCH;
 
         public DataTable GetLOTAllList()
         {
-            string sql = @"select LOT_ID, LOT_DESC, L.PRODUCT_CODE, P.PRODUCT_NAME PRODUCT_NAME, OPERATION_CODE,LOT_QTY
+            string sql = @"  select LOT_ID, LOT_DESC, L.PRODUCT_CODE, P.PRODUCT_NAME PRODUCT_NAME, OPERATION_CODE,LOT_QTY
 from [dbo].[LOT_STS] L inner join PRODUCT_MST P ON L.PRODUCT_CODE = P.PRODUCT_CODE
+ORDER BY LAST_TRAN_TIME DESC
 ";
             DataTable dt = new DataTable();
             using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))

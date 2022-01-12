@@ -26,7 +26,7 @@ namespace POPprogram
                 pnlProperty.Visible = true;
                 pnlSearch.Visible = false;
                 lblPanel.Text = "▶ LOT 상태";
-                lblPanel.BackColor = Color.FromArgb(82, 152, 216);
+                lblPanel.BackColor = Color.FromArgb(125, 125, 125);
                 btnPanel.BackColor = lblPanel.BackColor;
             }
         }
@@ -40,10 +40,10 @@ namespace POPprogram
         {
 
             DataGridViewUtil.SetInitGridView(csDataGridView1);
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "LOT ID", "LOT_ID");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "LOT 설명", "LOT_DESC");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "품번", "PRODUCT_CODE");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "품명", "PRODUCT_NAME");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "LOT ID", "LOT_ID",width:150);
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "LOT 설명", "LOT_DESC", width: 150);
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "품번", "PRODUCT_CODE", width: 150);
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "품명", "PRODUCT_NAME", width: 150);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "수량", "LOT_QTY");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "공정", "OPERATION_CODE");
 
@@ -159,7 +159,7 @@ namespace POPprogram
                 pnlProperty.Visible = false;
                 pnlSearch.Visible = true;
                 lblPanel.Text = "▶ 검색 조건";
-                lblPanel.BackColor = Color.FromArgb(164, 194, 229);
+                lblPanel.BackColor = Color.FromArgb(187, 187, 187);
                 btnPanel.BackColor = lblPanel.BackColor;
 
             }
@@ -168,7 +168,7 @@ namespace POPprogram
                 pnlProperty.Visible = true;
                 pnlSearch.Visible = false;
                 lblPanel.Text = "▶ LOT 상태";
-                lblPanel.BackColor = Color.FromArgb(82, 152, 216);
+                lblPanel.BackColor = Color.FromArgb(125, 125, 125);
                 btnPanel.BackColor = lblPanel.BackColor;
 
             }

@@ -1,8 +1,11 @@
-﻿using System;
+﻿using DAC;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 
@@ -12,6 +15,8 @@ namespace POPprogram
     {
         StockServ serv;
         DataGridViewCheckBoxColumn dgvChk = null;
+        List<int> iSearchedList = new List<int>();
+        List<int> iSelectedRow = new List<int>();
 
         List<string> MstList = null;
 
@@ -54,12 +59,12 @@ namespace POPprogram
             DataGridViewUtil.SetInitGridView(csDataGridView1);
             DgvChk(csDataGridView1);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "순번", "RowNum");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "자재 품번", "MATERIAL_CODE");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "자재 품명", "MATERIAL_NAME");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "자재 품번", "MATERIAL_CODE",width: 150);
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "자재 품명", "MATERIAL_NAME",width: 150);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "단위 수량", "REQUIRE_QTY");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "수량", "QTY");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "입하 여부", "STOCK_IN_FLAG");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "자재LOT ID", "STOCK_IN_LOT_ID", width :120);
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "자재LOT ID", "STOCK_IN_LOT_ID", width :150);
 
 
             LoadData();
@@ -175,12 +180,26 @@ namespace POPprogram
                 return;
             }
 
+            List<LOTProperty> list = new List<LOTProperty>();
+            foreach (DataGridViewRow row in csDataGridView1.Rows)
+            {
+                LOTProperty pr = new LOTProperty()
+                {
+                    LOT_ID = row.Cells["STOCK_IN_LOT_ID"].Value.ToString(),
+                    LOT_QTY = Convert.ToDecimal(row.Cells["QTY"].Value)
+
+                };
+                list.Add(pr);
+            }
+            string salesID = "SALES_" + txtSearch.Text.Split('_')[1];
+            serv.InsertLOTStatus(msUserID, list, salesID);
+
             bool bResult = serv.SaveStockLot(lotList, comboBox1.SelectedValue.ToString(), msUserID);
             if (bResult)
             {
                 MessageBox.Show("성공적");
                 serv = new StockServ();
-                DataTable dt = serv.Purchase_warehousing(txtSearch.Text, txtSearch.Text);
+                DataTable dt = serv.Purchase_warehousing(txtCode1.Text, txtSearch.Text);
                 csDataGridView1.DataSource = null;
                 csDataGridView1.DataSource = dt;
             }
@@ -190,6 +209,94 @@ namespace POPprogram
             }
         }
 
+        private void csDataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textBox7.Text = csDataGridView1[7, csDataGridView1.CurrentRow.Index].Value.ToString();
+        }
+
+        private void textBox7_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (iSearchedList.Count == 0)
+                {
+                    DataTable copy_dt = GetDataGridViewAsDataTable(csDataGridView1);
+                    IEnumerable<DataRow> linq_row = null;
+                    if (textBox7.Text == "")
+                    {
+                        csDataGridView1.DataSource = copy_dt;
+                    }
+                    else
+                    {
+                        foreach (DataRow row in copy_dt.Rows)
+                        {
+                            linq_row = from item in row.ItemArray
+                                       where item.ToString().ToLower().Contains(textBox7.Text.ToLower())
+                                       select row;
+                            foreach (DataRow dt in linq_row)
+                            {
+                                int iCntSearch = copy_dt.Rows.IndexOf(row);
+                                iSearchedList.Add(iCntSearch);
+                                break;
+                            }
+                        }
+                        iSelectedRow = iSearchedList.ToList();
+
+
+                    }
+                }
+                if (iSearchedList.Count > 0)
+                {
+                    int iTestNum = iSelectedRow.Count(n => n == -1);
+                    if (iTestNum == iSearchedList.Count)
+                        iSelectedRow = iSearchedList.ToList();
+                    for (int i = 0; i < iSearchedList.Count; i++)
+                    {
+                        if (iSelectedRow[i] == iSearchedList[i])
+                        {
+                            csDataGridView1.CurrentCell = csDataGridView1.Rows[iSearchedList[i]].Cells[0];
+                            iSelectedRow[i] = -1;
+                            break;
+                        }
+                    }
+                }
+
+            }
+           
+        }
+        public static DataTable GetDataGridViewAsDataTable(DataGridView _DataGridView)
+        {
+            try
+            {
+                if (_DataGridView.ColumnCount == 0)
+                    return null;
+                DataTable dtSource = new DataTable();
+                //////create columns
+                foreach (DataGridViewColumn col in _DataGridView.Columns)
+                {
+                    if (col.ValueType == null)
+                        dtSource.Columns.Add(col.Name, typeof(string));
+                    else
+                        dtSource.Columns.Add(col.Name, col.ValueType);
+                    dtSource.Columns[col.Name].Caption = col.HeaderText;
+                }
+                ///////insert row data
+                foreach (DataGridViewRow row in _DataGridView.Rows)
+                {
+                    DataRow drNewRow = dtSource.NewRow();
+                    foreach (DataColumn col in dtSource.Columns)
+                    {
+                        drNewRow[col.ColumnName] = row.Cells[col.ColumnName].Value;
+                    }
+                    dtSource.Rows.Add(drNewRow);
+                }
+                return dtSource;
+            }
+            catch
+            {
+                return null;
+            }
+        }
         //private void DgvChk(DataGridView dgv)
         //{
         //    dgv.EndEdit();

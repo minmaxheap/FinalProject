@@ -31,8 +31,8 @@ namespace DAC
 
 		public List<DownProperty> GetDownList()
 		{
-			string sql = @"select DT_DATE, DT_START_TIME, DT_END_TIME, DT_TIME, DT_CODE, DT_COMMENT, DT_USER_ID, ACTION_COMMENT, CONFIRM_TIME, CONFIRM_USER_ID
-from EQUIP_DOWN_HIS";
+			string sql = @"select DT_DATE, substring(convert(varchar(10), DT_START_TIME, 108), 1, 5) DT_START_TIME, substring(convert(varchar(10), DT_END_TIME, 108), 1, 5) DT_END_TIME, DT_TIME, DT_CODE, DT_COMMENT, DT_USER_ID, ACTION_COMMENT, CONFIRM_TIME, CONFIRM_USER_ID
+from [dbo].[EQUIP_DOWN_HIS]";
 			SqlCommand cmd = new SqlCommand(sql, conn);
 			return Helper.DataReaderMapToList<DownProperty>(cmd.ExecuteReader());
 		}

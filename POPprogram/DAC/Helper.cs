@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -40,7 +41,7 @@ namespace DAC
             {
                 //select 한 컬럼의 타입과 VO클래스의 속성타입이 맞지 않을경우
                 //select 한 컬러명과 VO클래스의 속성명이 다른 경우
-                string msg = err.Message;
+                Debug.WriteLine(err.Message);
                 return null;
             }
         }
