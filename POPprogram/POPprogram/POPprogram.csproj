@@ -221,6 +221,7 @@
     <Compile Include="Services\FunctionServ.cs" />
     <Compile Include="Services\LOTinspectServ.cs" />
     <Compile Include="Services\LOTServ.cs" />
+    <Compile Include="Services\EndServ.cs" />
     <Compile Include="Services\MatServ.cs" />
     <Compile Include="Services\StarWorkServ.cs" />
     <Compile Include="Services\ShipServ.cs" />

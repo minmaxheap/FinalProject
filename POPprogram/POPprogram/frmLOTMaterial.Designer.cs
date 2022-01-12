@@ -80,6 +80,10 @@ namespace POPprogram
             // 
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // btnExecute
+            // 
+            this.btnExecute.Click += new System.EventHandler(this.btnExecute_Click);
+            // 
             // cboLOTID
             // 
             this.cboLOTID.SelectedIndexChanged += new System.EventHandler(this.cboLOTID_SelectedIndexChanged);
@@ -120,11 +124,11 @@ namespace POPprogram
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.csDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.csDataGridView1.RowHeadersWidth = 30;
+            this.csDataGridView1.RowTemplate.Height = 20;
             this.csDataGridView1.Size = new System.Drawing.Size(1134, 148);
             this.csDataGridView1.TabIndex = 41;
-            this.csDataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellEnter);
             this.csDataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellValueChanged);
-            this.csDataGridView1.CurrentCellDirtyStateChanged += new System.EventHandler(this.csDataGridView1_CurrentCellDirtyStateChanged);
+            this.csDataGridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.csDataGridView1_EditingControlShowing);
             // 
             // Column1
             // 
