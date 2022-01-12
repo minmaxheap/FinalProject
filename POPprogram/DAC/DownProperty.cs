@@ -13,7 +13,7 @@ namespace DAC
 
 		public DateTime DT_END_TIME { get; set; }
 
-		public string DT_TIME { get; set; } // 비가동 시간(분)
+		public decimal DT_TIME { get; set; } // 비가동 시간(분)
 
 		public string DT_CODE { get; set; } // 비가동 코드
 
