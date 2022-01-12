@@ -40,6 +40,8 @@ namespace POPprogram
             // 
             // panel4
             // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.Controls.Add(this.comboBox1);
             this.panel4.Controls.Add(this.textBox10);
             this.panel4.Controls.Add(this.label12);
@@ -74,8 +76,7 @@ namespace POPprogram
             // 
             // label12
             // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.label12.Location = new System.Drawing.Point(102, 75);
@@ -97,7 +98,7 @@ namespace POPprogram
             // 
             // frmStartWorkOrder
             // 
-           // this.ClientSize = new System.Drawing.Size(1194, 721);
+            this.ClientSize = new System.Drawing.Size(1194, 788);
             this.Name = "frmStartWorkOrder";
             this.Load += new System.EventHandler(this.frmStartWorkOrder_Load);
             this.panel7.ResumeLayout(false);

@@ -221,6 +221,7 @@ where SALES_ORDER_ID = @SALES_ORDER_ID";
                 string rmcvCode = "-RM-CV-";
                 string rmcnCode = "-RM-CN-";
                 string rmlbCode = "-RM-LB-";
+                string hbmxCode = "-HB-MX-";
                 string time = DateTime.Now.ToString("yyMMdd");
                 
                 string sql = @"SET XACT_ABORT ON;  
@@ -356,7 +357,12 @@ END CATCH;
                     cmd.Parameters.AddWithValue("@MATERIAL_CODE5", "RM_Label");
                     cmd.Parameters.AddWithValue("@ORDER_QTY5", vo.ORDER_QTY);
                     cmd.Parameters.AddWithValue("@STOCK_IN_LOT_ID5", time + rmlbCode + str);
-
+                    cmd.Parameters.AddWithValue("@PURCHASE_ORDER_ID6", "PURCHASE_" + str);
+                    cmd.Parameters.AddWithValue("@SALES_ORDER_ID6", vo.SALES_ORDER_ID);
+                    cmd.Parameters.AddWithValue("@VENDOR_CODE6", "");
+                    cmd.Parameters.AddWithValue("@MATERIAL_CODE6", "HB_Mixed");
+                    cmd.Parameters.AddWithValue("@ORDER_QTY6", 0);
+                    cmd.Parameters.AddWithValue("@STOCK_IN_LOT_ID6", time + hbmxCode + str);
                     int row = cmd.ExecuteNonQuery();
                     return row > 0;
                 }

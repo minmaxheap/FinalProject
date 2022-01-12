@@ -39,6 +39,14 @@ namespace POPprogram
 			dac.Dispose();
 			return list;
 		}
+
+		public bool SetUseLOT(MatPropertyUpdate lot)
+		{
+			MatDAC dac = new MatDAC();
+			bool bResult = dac.SetUseLOT(lot);
+			dac.Dispose();
+			return bResult;
+		}
 	}
 }
 

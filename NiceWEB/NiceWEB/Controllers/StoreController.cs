@@ -11,15 +11,21 @@ namespace NiceWEB.Controllers
     public class StoreController : Controller
     {
         // GET: Store
-        public ActionResult Index()
+        public ActionResult Index(string storeCode, string ProductCode)
         {
             StoreDAC dac = new StoreDAC();
-            List<StoreProperty> list = dac.GetData();
+            List<StoreProperty> list = dac.GetSearch(storeCode, ProductCode);
+            List<ComboItem> categories = dac.GetCode();
+            List<ComboItem> categories2 = dac.GetProductCode();
 
-            List<string> product = dac.GetProductCode();
+            dac.Dispose();
+            categories.Insert(0, new ComboItem { Code = ""});
+            categories2.Insert(0, new ComboItem { Code = "" });
+
+            ViewBag.Categories = new SelectList(categories,"Code","Code");
+            ViewBag.Categories2 = new SelectList(categories2, "Code", "Code");
 
 
-           // ViewBag.product = new SelectList(product, "Data", "Data");
 
             return View(list);
         }
