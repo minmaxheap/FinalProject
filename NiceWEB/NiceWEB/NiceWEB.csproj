@@ -1813,6 +1813,8 @@
     <Compile Include="Models\DAC\InspectDAC.cs" />
     <Compile Include="Models\DAC\StoreDAC.cs" />
     <Compile Include="Models\DefectProperty.cs" />
+    <Compile Include="Models\Efficiency.cs" />
+    <Compile Include="Models\Inspect.cs" />
     <Compile Include="Models\StoreProperty.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
