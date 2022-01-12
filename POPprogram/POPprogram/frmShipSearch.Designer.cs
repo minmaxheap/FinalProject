@@ -39,27 +39,22 @@ namespace POPprogram
             // 
             // btnSelect
             // 
-            this.btnSelect.Location = new System.Drawing.Point(12, 419);
             this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(902, 419);
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(12, 53);
             this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
             // 
             // lblPanel
             // 
-            this.lblPanel.Font = new System.Drawing.Font("나눔고딕", 18F);
-            this.lblPanel.Text = "납품서 선택";
+            this.lblPanel.Text = "주문서 선택";
             // 
             // btnTxtSearch
             // 
-            this.btnTxtSearch.Location = new System.Drawing.Point(363, 52);
             this.btnTxtSearch.Click += new System.EventHandler(this.btnTxtSearch_Click);
             // 
             // csDataGridView1
@@ -104,9 +99,10 @@ namespace POPprogram
             // 
             // frmShipSearch
             // 
-            //this.ClientSize = new System.Drawing.Size(1024, 478);
+            this.ClientSize = new System.Drawing.Size(1024, 513);
             this.Controls.Add(this.csDataGridView1);
             this.Name = "frmShipSearch";
+            this.Text = "주문서 선택";
             this.Load += new System.EventHandler(this.frmPrurchaseDialog_Load);
             this.Controls.SetChildIndex(this.btnTxtSearch, 0);
             this.Controls.SetChildIndex(this.lblPanel, 0);

@@ -23,14 +23,14 @@ namespace POPprogram
         {
             
             DataGridViewUtil.SetInitGridView(dgvPurchase);
-            DataGridViewUtil.AddGridTextColumn(dgvPurchase, "구매 납품서 코드", "PURCHASE_ORDER_ID");
+            DataGridViewUtil.AddGridTextColumn(dgvPurchase, "구매 납품서 코드", "PURCHASE_ORDER_ID",width:150);
             //DataGridViewUtil.AddGridTextColumn(dgvPurchase, "고객 주문서 코드", "SALES_ORDER_ID");
             //DataGridViewUtil.AddGridTextColumn(dgvPurchase, "구매 발주 일자", "ORDER_DATE");
-            DataGridViewUtil.AddGridTextColumn(dgvPurchase, "고객 코드", "CUSTOMER_CODE");
-            DataGridViewUtil.AddGridTextColumn(dgvPurchase, "고객명", "CUSTOMER_NAME");
+            DataGridViewUtil.AddGridTextColumn(dgvPurchase, "고객 코드", "CUSTOMER_CODE", width: 150);
+            DataGridViewUtil.AddGridTextColumn(dgvPurchase, "고객명", "CUSTOMER_NAME", width: 150);
             //DataGridViewUtil.AddGridTextColumn(dgvPurchase, "자재 품번", "MATERIAL_CODE");
-            DataGridViewUtil.AddGridTextColumn(dgvPurchase, "품번", "PRODUCT_CODE");
-            DataGridViewUtil.AddGridTextColumn(dgvPurchase, "품명", "PRODUCT_NAME");
+            DataGridViewUtil.AddGridTextColumn(dgvPurchase, "품번", "PRODUCT_CODE", width: 150);
+            DataGridViewUtil.AddGridTextColumn(dgvPurchase, "품명", "PRODUCT_NAME", width: 150);
             DataGridViewUtil.AddGridTextColumn(dgvPurchase, "발주 수량", "ORDER_QTY");
             //DataGridViewUtil.AddGridTextColumn(dgvPurchase, "입하 여부", "STOCK_IN_FLAG");
             //DataGridViewUtil.AddGridTextColumn(dgvPurchase, "입하 창고 코드", "STOCK_IN_STORE_CODE");

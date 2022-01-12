@@ -1793,7 +1793,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ComparePlanController.cs" />
-    <Compile Include="Controllers\DeffectController.cs" />
+    <Compile Include="Controllers\DefectController.cs" />
     <Compile Include="Controllers\EfficiencyController.cs" />
     <Compile Include="Controllers\InspectController.cs" />
     <Compile Include="Controllers\MaterialController.cs" />
@@ -1807,12 +1807,12 @@
     <Compile Include="Models\Adding_materialProperty.cs" />
     <Compile Include="Models\DAC\CommonDAC.cs" />
     <Compile Include="Models\DAC\ComparePlanDAC.cs" />
-    <Compile Include="Models\DAC\DeffectDAC.cs" />
+    <Compile Include="Models\DAC\DefectDAC.cs" />
     <Compile Include="Models\DAC\EfficiencyDAC.cs" />
     <Compile Include="Models\DAC\Helper.cs" />
     <Compile Include="Models\DAC\InspectDAC.cs" />
     <Compile Include="Models\DAC\StoreDAC.cs" />
-    <Compile Include="Models\DeffectProperty.cs" />
+    <Compile Include="Models\DefectProperty.cs" />
     <Compile Include="Models\StoreProperty.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -1912,7 +1912,7 @@
     <Content Include="Views\Inspect\Index.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Material\Index.cshtml" />
-    <Content Include="Views\Deffect\Index.cshtml" />
+    <Content Include="Views\Defect\Index.cshtml" />
     <Content Include="Views\Store\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
