@@ -14,6 +14,9 @@ namespace POPprogram
         List<string> list;
         List<StarWorkProperty> swlist;
         List<string> CodeList;
+
+        bool searchflag = false;
+        List<EndPropertyEQ> listEQ;
         LOTinspectServ lotserv;
         public frmStartWorkOrder()
         {
@@ -31,12 +34,11 @@ namespace POPprogram
             cboLOTID.DataSource = list;
 
             lotserv = new LOTinspectServ();
-            CodeList = lotserv.GetCode();
-            CodeList.Insert(0, "");
-            comboBox1.ValueMember = "EQUIPMENT_CODE";
-            comboBox1.DisplayMember = "EQUIPMENT_CODE";
-            comboBox1.DataSource = CodeList
-                ;
+            DataTable dt  = lotserv.GetCode();
+            //CodeList.Insert(0, "");
+            comboBox1.ValueMember = "EQ_CODE";
+            comboBox1.DisplayMember = "EQ_CODE";
+            comboBox1.DataSource = dt;
 		}
 
 		private void cboLOTID_SelectedIndexChanged(object sender, EventArgs e)
@@ -139,5 +141,21 @@ namespace POPprogram
                 return;
             }
 		}
+
+		private void comboBox1_RightToLeftChanged(object sender, EventArgs e)
+		{
+
+		}
+
+        // 나중구현 
+
+		private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+		{
+            if (cboLOTID.SelectedIndex < 1) return;
+
+            List<string> list = new List<string>();
+            list =  serv.GetEqList(comboBox1.SelectedValue.ToString());
+            textBox10.Text = list[0];
+        }
 	}
 }
