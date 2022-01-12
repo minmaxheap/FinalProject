@@ -17,10 +17,10 @@ namespace NiceWEB.Controllers
         {
             CommonDAC comDAC = new CommonDAC();
             //select box에 전달할 데이터
-            List<TableData> orderList = comDAC.GetWorkOrder();
-            List<TableData> prodList = comDAC.GetProductCode();
-            ViewBag.order = new SelectList(orderList, "Data", "Data");
-            ViewBag.product = new SelectList(prodList, "Data", "Data");
+            List<ComboItem> orderList = comDAC.GetWorkOrder();
+            List<ComboItem> prodList = comDAC.GetProductCode();
+            ViewBag.Order = new SelectList(orderList, "Code", "Code");
+            ViewBag.Product = new SelectList(prodList, "Code", "Code");
 
             //datatable을 JSON으로 바꾸는 코드
             var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
