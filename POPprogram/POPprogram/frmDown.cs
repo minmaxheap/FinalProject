@@ -15,7 +15,7 @@ namespace POPprogram
     {
         List<DownProperty> allList;
         string msUserID;
-        DownServ downSer = null;
+        DownServ downSer;
 
 
         public frmDown()
@@ -70,7 +70,8 @@ namespace POPprogram
 
         private void btnExecute_Click(object sender, EventArgs e)
         {
-            DateTime dt_date = dateTimePicker1.Value;
+
+            string dt_date = dateTimePicker1.Value.ToString("yyyy/MM/dd");
             DateTime dt_start_time = dateTimePicker1.Value;
             DateTime dt_end_time = dateTimePicker2.Value;
             //int dt_time = int.Parse(textBox4.Text);
