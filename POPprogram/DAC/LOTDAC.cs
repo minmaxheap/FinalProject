@@ -24,6 +24,7 @@ namespace DAC
 
         public void Dispose()
         {
+            if(conn!=null && conn.State == ConnectionState.Open)
             conn.Close();
         }
 

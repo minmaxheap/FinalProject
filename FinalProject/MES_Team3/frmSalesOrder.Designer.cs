@@ -51,7 +51,7 @@ namespace MES_Team3
             // 
             // lblTitle
             // 
-            this.lblTitle.Text = "작업지시 목록";
+            this.lblTitle.Text = "주문서 목록";
             // 
             // pnlProperty
             // 
@@ -179,7 +179,7 @@ namespace MES_Team3
             this.csDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.csDataGridView1.RowHeadersWidth = 30;
             this.csDataGridView1.RowTemplate.Height = 23;
-            this.csDataGridView1.Size = new System.Drawing.Size(794, 597);
+            this.csDataGridView1.Size = new System.Drawing.Size(794, 593);
             this.csDataGridView1.TabIndex = 0;
             this.csDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellClick);
             // 

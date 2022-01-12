@@ -53,6 +53,8 @@ namespace POPprogram
             // 
             // panel4
             // 
+           // this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            //| System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.Controls.Add(this.numTextBox5);
             this.panel4.Controls.Add(this.numTextBox4);
             this.panel4.Controls.Add(this.numTextBox3);
@@ -292,7 +294,7 @@ namespace POPprogram
             // 
             // frmLOTDefect
             // 
-            //this.ClientSize = new System.Drawing.Size(1194, 721);
+            this.ClientSize = new System.Drawing.Size(1194, 788);
             this.Name = "frmLOTDefect";
             this.Load += new System.EventHandler(this.frmLOTDefect_Load);
             this.panel7.ResumeLayout(false);
