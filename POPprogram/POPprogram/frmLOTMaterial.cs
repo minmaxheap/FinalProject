@@ -16,7 +16,7 @@ namespace POPprogram
         List<string> list;
         bool searchflag = false;
         AutoCompleteStringCollection auto;
-
+        bool flag = false;
         public frmLOTMaterial()
         {
             InitializeComponent();
@@ -85,7 +85,7 @@ namespace POPprogram
                 {
                     if (dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Can" || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Condiment"
                          || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Cover" || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Label"
-                          || dr["CHILD_PRODUCT_CODE"].ToString() == "HB_Mixed" || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Salt") 
+                          || dr["CHILD_PRODUCT_CODE"].ToString() == "HB_Mixed") 
                         dr.Delete();
                 }
                 dt.AcceptChanges();
@@ -94,7 +94,7 @@ namespace POPprogram
             {
                 foreach (DataRow dr in dt.Select())
                 {
-                    if (dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Can" || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Salt"
+                    if (dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Can"
                          || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Cover" || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Label"
                          || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Meat")
                         dr.Delete();
@@ -106,8 +106,7 @@ namespace POPprogram
                 foreach (DataRow dr in dt.Select())
                 {
                     if (dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Condiment" || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Meat"
-                         || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Cover" || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Label"
-                          || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Salt")
+                         || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Cover" || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Label")
                         dr.Delete();
                 }
                 dt.AcceptChanges();
@@ -118,8 +117,7 @@ namespace POPprogram
                 {
                     if (dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Can" || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Condiment"
                          || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Cover" || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Label"
-                          || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Salt" || dr["CHILD_PRODUCT_CODE"].ToString() == "HB_Mixed"
-                          || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Meat")
+                        || dr["CHILD_PRODUCT_CODE"].ToString() == "HB_Mixed" || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Meat")
                         dr.Delete();
                 }
                 dt.AcceptChanges();
@@ -130,8 +128,7 @@ namespace POPprogram
                 {
                     if (dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Can" || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Condiment"
                          || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Cover" || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Label"
-                          || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Salt" || dr["CHILD_PRODUCT_CODE"].ToString() == "HB_Mixed"
-                          || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Meat")
+                         || dr["CHILD_PRODUCT_CODE"].ToString() == "HB_Mixed" || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Meat")
                         dr.Delete();
                 }
                 dt.AcceptChanges();
@@ -142,7 +139,7 @@ namespace POPprogram
                 {
                     if (dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Can" || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Condiment"
                          || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Cover" || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Meat"
-                          || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Salt" || dr["CHILD_PRODUCT_CODE"].ToString() == "HB_Mixed")
+                         || dr["CHILD_PRODUCT_CODE"].ToString() == "HB_Mixed")
                         dr.Delete();
                 }
                 dt.AcceptChanges();
@@ -153,7 +150,7 @@ namespace POPprogram
                 {
                     if (dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Can" || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Condiment"
                          || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Label" || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Meat"
-                          || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Salt" || dr["CHILD_PRODUCT_CODE"].ToString() == "HB_Mixed")
+                         || dr["CHILD_PRODUCT_CODE"].ToString() == "HB_Mixed")
                         dr.Delete();
                 }
                 dt.AcceptChanges();
@@ -267,21 +264,33 @@ namespace POPprogram
                 item2.BOM_CHILD_ID = (string)rw.Cells[1].Value;
                 item2.BOM_LOT_ID=(string)rw.Cells[4].Value;
                 item2.BOM_LOT_QTY=(decimal)rw.Cells[5].Value;
+                item2.BOM_SUM_QTY = (decimal)rw.Cells[6].Value;
                 export.Add(item2);
                 if(rw.Index==0)
                 {
                     vo.BOM_CHILD_ID_1 = export[rw.Index].BOM_CHILD_ID;
                     vo.BOM_LOT_ID_1 = export[rw.Index].BOM_LOT_ID;
-                    vo.BOM_LOT_QTY_1 = export[rw.Index].BOM_LOT_QTY- export[rw.Index].BOM_LOT_QTY;
+                    vo.BOM_LOT_QTY_1 = export[rw.Index].BOM_LOT_QTY;
+                    vo.BOM_SUM_QTY_1 = export[rw.Index].BOM_SUM_QTY;
                 }
                 if (rw.Index == 1)
                 {
                     vo.BOM_CHILD_ID_2 = export[rw.Index].BOM_CHILD_ID;
                     vo.BOM_LOT_ID_2 = export[rw.Index].BOM_LOT_ID;
-                    vo.BOM_LOT_QTY_2 = export[rw.Index].BOM_LOT_QTY- export[rw.Index].BOM_LOT_QTY;
+                    vo.BOM_LOT_QTY_2 = export[rw.Index].BOM_LOT_QTY;
+                    vo.BOM_SUM_QTY_2 = export[rw.Index].BOM_SUM_QTY;
                 }
             }
-
+            if ((vo.BOM_LOT_ID_1!=null && vo.BOM_LOT_QTY_1==0) || (vo.BOM_LOT_ID_2 != null && vo.BOM_LOT_QTY_2 == 0))
+            {
+                MessageBox.Show("0이 아닌 숫자를 입력하세요.");
+                return;
+            }
+            if ((vo.BOM_LOT_ID_1 != null &&vo.BOM_LOT_QTY_1 > vo.BOM_SUM_QTY_1) || (vo.BOM_LOT_ID_2 != null && vo.BOM_LOT_QTY_2 == vo.BOM_SUM_QTY_2))
+            {
+                MessageBox.Show("재고보다 낮은 숫자를 입력하세요.");
+                return;
+            }
 
             MatServ serv = new MatServ();
             vo.LOT_ID = cboLOTID.Text;
@@ -292,6 +301,13 @@ namespace POPprogram
             vo.LAST_TRAN_USER_ID = msUserID;
             vo.LOT_QTY = Convert.ToDecimal(txtQty.Text);
             vo.OPERATION_CODE = txtOperCode.Text;
+
+            vo.BOM_LOT_QTY_1 = vo.BOM_LOT_QTY_1 - vo.BOM_LOT_QTY_1;
+            vo.BOM_LOT_QTY_2 = vo.BOM_LOT_QTY_2 - vo.BOM_LOT_QTY_2;
+
+            //vo.BOM_LOT_QTY_1 = export[rw.Index].BOM_LOT_QTY - export[rw.Index].BOM_LOT_QTY;
+            //vo.BOM_LOT_QTY_2 = export[rw.Index].BOM_LOT_QTY - export[rw.Index].BOM_LOT_QTY;
+
             bool bResult = serv.SetUseLOT(vo);
             if (bResult)
             {
@@ -328,8 +344,25 @@ namespace POPprogram
 
         private void csDataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            //if (e.RowIndex < 0) return;
-            //if (csDataGridView1.CurrentRow.Cells["CHILD_LOT_QTY"])
+
+
+            if (e.RowIndex < 0) return;
+
+            if (csDataGridView1.CurrentRow.Cells["CHILD_LOT_QTY"].Value == null || csDataGridView1.CurrentRow.Cells["CHILD_LOT_QTY"].Value == DBNull.Value)
+            {
+                return;
+            }
+            if (Convert.ToDecimal(csDataGridView1.CurrentRow.Cells["CHILD_LOT_QTY"].Value) ==0)
+            {
+                return;
+            }
+            if (!flag)
+            {
+                flag = true;
+                decimal totalQTY = Convert.ToDecimal(csDataGridView1.CurrentRow.Cells["CHILD_LOT_QTY"].Value) * Convert.ToDecimal(csDataGridView1.CurrentRow.Cells["REQUIRE_QTY"].Value);
+                csDataGridView1.CurrentRow.Cells["CHILD_LOT_QTY"].Value = totalQTY;
+            }
+            flag = false;
         }
 
 

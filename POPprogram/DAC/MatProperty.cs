@@ -89,12 +89,15 @@ namespace DAC
 		public decimal BOM_LOT_QTY_2 { get; set; }
 		public string BOM_CHILD_ID_1 { get; set; }
 		public string BOM_CHILD_ID_2 { get; set; }
+		public decimal BOM_SUM_QTY_1 { get; set; }
+		public decimal BOM_SUM_QTY_2 { get; set; }
 	}
 	public class MatPropertyExport
 	{
 		public string BOM_LOT_ID { get; set; }
 		public decimal BOM_LOT_QTY { get; set; }
 		public string BOM_CHILD_ID { get; set; }
+		public decimal BOM_SUM_QTY { get; set; }
 	}
 	public class MatPropertyHist
 	{
