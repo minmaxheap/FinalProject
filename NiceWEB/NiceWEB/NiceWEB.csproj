@@ -1839,7 +1839,6 @@
     <Content Include="dist\js\adminlte.min.js.map" />
     <None Include="packages.config" />
     <Content Include="Views\_Layout.cshtml" />
-    <Content Include="Views\ComparePlan\Index.cshtml" />
     <Content Include="plugins\.npmignore" />
     <Content Include="plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.css.map" />
     <Content Include="plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.min.css.map" />
@@ -1919,6 +1918,7 @@
     <Content Include="Views\Material\Index.cshtml" />
     <Content Include="Views\Defect\Index.cshtml" />
     <Content Include="Views\Store\Index.cshtml" />
+    <Content Include="Views\ComparePlan\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
