@@ -44,7 +44,8 @@ namespace POPprogram
             // panel4
             // 
             this.panel4.Controls.Add(this.csDataGridView1);
-            //this.panel4.Size = new System.Drawing.Size(1136, 235);
+            this.panel4.Location = new System.Drawing.Point(31, 477);
+            this.panel4.Size = new System.Drawing.Size(1136, 246);
             this.panel4.Controls.SetChildIndex(this.txtComment, 0);
             this.panel4.Controls.SetChildIndex(this.label13, 0);
             this.panel4.Controls.SetChildIndex(this.label1, 0);
@@ -52,11 +53,12 @@ namespace POPprogram
             // 
             // label13
             // 
-           //this.label13.Location = new System.Drawing.Point(104, 136);
+            this.label13.Location = new System.Drawing.Point(102, 246);
             // 
             // txtComment
             // 
-            //this.txtComment.Margin = new System.Windows.Forms.Padding(0);
+            this.txtComment.Location = new System.Drawing.Point(165, 243);
+            this.txtComment.Size = new System.Drawing.Size(937, 34);
             // 
             // pnlCrud
             // 
@@ -66,6 +68,10 @@ namespace POPprogram
             // 
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // btnExecute
+            // 
+            this.btnExecute.Click += new System.EventHandler(this.btnExecute_Click);
+            // 
             // cboLOTID
             // 
             this.cboLOTID.SelectedIndexChanged += new System.EventHandler(this.cboLOTID_SelectedIndexChanged);
@@ -74,9 +80,6 @@ namespace POPprogram
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.csDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.csDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.csDataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.csDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -91,13 +94,14 @@ namespace POPprogram
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("나눔고딕", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(195)))), ((int)(((byte)(230)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.csDataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.csDataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
             this.csDataGridView1.EnableHeadersVisualStyles = false;
-            this.csDataGridView1.Location = new System.Drawing.Point(0, 43);
+            this.csDataGridView1.Location = new System.Drawing.Point(0, 45);
             this.csDataGridView1.Name = "csDataGridView1";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
@@ -108,15 +112,15 @@ namespace POPprogram
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.csDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.csDataGridView1.RowHeadersWidth = 30;
-            this.csDataGridView1.Size = new System.Drawing.Size(1134, 74);
+            this.csDataGridView1.RowTemplate.Height = 20;
+            this.csDataGridView1.Size = new System.Drawing.Size(1134, 148);
             this.csDataGridView1.TabIndex = 41;
-            this.csDataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellEnter);
             this.csDataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellValueChanged);
-            this.csDataGridView1.CurrentCellDirtyStateChanged += new System.EventHandler(this.csDataGridView1_CurrentCellDirtyStateChanged);
+            this.csDataGridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.csDataGridView1_EditingControlShowing);
             // 
             // frmLOTMaterial
             // 
-            //this.ClientSize = new System.Drawing.Size(1194, 823);
+            this.ClientSize = new System.Drawing.Size(1194, 788);
             this.Name = "frmLOTMaterial";
             this.Load += new System.EventHandler(this.frmLOTMaterial_Load);
             this.panel7.ResumeLayout(false);
