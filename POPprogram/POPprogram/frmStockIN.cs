@@ -59,12 +59,12 @@ namespace POPprogram
             DataGridViewUtil.SetInitGridView(csDataGridView1);
             DgvChk(csDataGridView1);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "순번", "RowNum");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "자재 품번", "MATERIAL_CODE");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "자재 품명", "MATERIAL_NAME");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "자재 품번", "MATERIAL_CODE",width: 150);
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "자재 품명", "MATERIAL_NAME",width: 150);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "단위 수량", "REQUIRE_QTY");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "수량", "QTY");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "입하 여부", "STOCK_IN_FLAG");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "자재LOT ID", "STOCK_IN_LOT_ID", width :120);
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "자재LOT ID", "STOCK_IN_LOT_ID", width :150);
 
 
             LoadData();
@@ -218,48 +218,46 @@ namespace POPprogram
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if (iSearchedList.Count == 0)
+
+                int iCntSearch = -1;
+                // if (iSearchedList.Count == 0)
+                //{
+                DataTable copy_dt = GetDataGridViewAsDataTable(csDataGridView1);
+                IEnumerable<DataRow> linq_row = null;
+                if (textBox7.Text == "")
                 {
-                    DataTable copy_dt = GetDataGridViewAsDataTable(csDataGridView1);
-                    IEnumerable<DataRow> linq_row = null;
-                    if (textBox7.Text == "")
-                    {
-                        csDataGridView1.DataSource = copy_dt;
-                    }
-                    else
-                    {
-                        foreach (DataRow row in copy_dt.Rows)
-                        {
-                            linq_row = from item in row.ItemArray
-                                       where item.ToString().ToLower().Contains(textBox7.Text.ToLower())
-                                       select row;
-                            foreach (DataRow dt in linq_row)
-                            {
-                                int iCntSearch = copy_dt.Rows.IndexOf(row);
-                                iSearchedList.Add(iCntSearch);
-                                break;
-                            }
-                        }
-                        iSelectedRow = iSearchedList.ToList();
-                    }
+                    csDataGridView1.DataSource = copy_dt;
                 }
-                if (iSearchedList.Count > 0)
+                else
                 {
-                    int iTestNum = iSelectedRow.Count(n => n == -1);
-                    if (iTestNum == iSearchedList.Count)
-                        iSelectedRow = iSearchedList.ToList();
-                    for (int i = 0; i < iSearchedList.Count; i++)
+                    foreach (DataRow row in copy_dt.Rows)
                     {
-                        if (iSelectedRow[i] == iSearchedList[i])
+                        linq_row = from item in row.ItemArray
+                                   where item.ToString().ToLower().Contains(textBox7.Text.ToLower())
+                                   select row;
+                        foreach (DataRow dt in linq_row)
                         {
-                            csDataGridView1.CurrentCell = csDataGridView1.Rows[iSearchedList[i]].Cells[0];
-                            iSelectedRow[i] = -1;
+                            iCntSearch = copy_dt.Rows.IndexOf(row);
+                            iSearchedList.Add(iCntSearch);
                             break;
                         }
+
+                        if (iCntSearch > -1)
+                        {
+                            csDataGridView1[0, iCntSearch].Value = true;
+                            break;
+                        }
+
+
+
                     }
+
                 }
+
             }
+
            
+
         }
         public static DataTable GetDataGridViewAsDataTable(DataGridView _DataGridView)
         {
