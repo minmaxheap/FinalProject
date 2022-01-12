@@ -32,8 +32,8 @@
 
 <div style="display:none;" class="row">
     <div class="form-group">
-        @Html.HiddenFor(m => m.Columns, new { @id = "dataObjCol", placeholder = Html.DisplayNameFor(m => m.Columns), @class = "form-control" })
-        @Html.HiddenFor(m => m.Data, new { @id = "dataObjData", placeholder = Html.DisplayNameFor(m => m.Data), @class = "form-control" })
+        @*@Html.HiddenFor(m => m.Columns, new { @id = "dataObjCol", placeholder = Html.DisplayNameFor(m => m.Columns), @class = "form-control" })
+        @Html.HiddenFor(m => m.Data, new { @id = "dataObjData", placeholder = Html.DisplayNameFor(m => m.Data), @class = "form-control" })*@
     </div>
 </div>
 
@@ -108,7 +108,7 @@
                     <div class="col-2">
                         <div class="form-group">
                             <label>  </label>
-                            <button type="button" class="btn btn-block btn-secondary">조회</button>
+                            <button type="submit" class="btn btn-block btn-secondary">조회</button>
                         </div>
                     </div>
 

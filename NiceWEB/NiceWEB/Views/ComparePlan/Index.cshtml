@@ -92,10 +92,13 @@
 
 
                                 @*@if (ViewBag.order != null)
-                                    {
-                                    @Html.DropDownListFor(model => model.Data, ViewBag.order as SelectList, "--Select--", new { @class = "form-control" })
-                                    }*@
-
+        {
+        @Html.DropDownListFor(model => model.Data, ViewBag.order as SelectList, "--Select--", new { @class = "form-control" })
+        }*@
+             
+                                    @Html.DropDownList("Order",
+                                              (IEnumerable<SelectListItem>)ViewBag.Order, null, null)
+                                
                             </div>
                         </div>
                         <div class="col-3">
@@ -109,11 +112,10 @@
                                     {
                                     @Html.DropDownListFor(model => model.Data, ViewBag.product as SelectList, "--Select--", new { @class = "form-control" })
                                     }*@
-                                @if (ViewBag.Product != null)
-                                {
+                   
                                     @Html.DropDownList("Product",
                                               (IEnumerable<SelectListItem>)ViewBag.Product, null, null)
-                                }
+                                
                             </div>
                         </div>
                         <div class="col-3">

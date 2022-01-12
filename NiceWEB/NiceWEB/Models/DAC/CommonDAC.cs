@@ -57,5 +57,22 @@ FROM [dbo].[WORK_ORDER_MST]";
                 return list;
             }
         }
+
+        public List<ComboItem> GetOperation()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(ConfigurationManager.ConnectionStrings["project"].ConnectionString);
+                cmd.CommandText = @"SELECT DISTINCT OPERATION_CODE as Code
+FROM [dbo].[OPERATION_MST]";
+                DataTable dt = new DataTable();
+                cmd.Connection.Open();
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<ComboItem> list = Helper.DataReaderMapToList<ComboItem>(reader);
+                reader.Close();
+                return list;
+            }
+        }
     }
 }
