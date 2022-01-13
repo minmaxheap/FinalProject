@@ -99,10 +99,7 @@
                     <div class="col-2">
                         <div class="form-group">
                             <label>LOT ID:</label>
-                            @if (ViewBag.product != null)
-                            {
-                                @Html.DropDownListFor(model => model.Data, ViewBag.product as SelectList, "--Select--", new { @class = "form-control" })
-                            }
+                            @Html.TextBox("LotID", null, null, null)
                         </div>
                     </div>
                     <div class="col-2">

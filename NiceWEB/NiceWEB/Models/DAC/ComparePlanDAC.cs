@@ -10,8 +10,8 @@ using System.Web.Services;
 
 namespace NiceWEB.Models
 {
-    
-    public class ComparePlanDAC :IDisposable
+
+    public class ComparePlanDAC : IDisposable
     {
         SqlConnection conn;
         public ComparePlanDAC()
@@ -26,7 +26,7 @@ namespace NiceWEB.Models
                 conn.Close();
         }
 
-        public DataTable GetData(string from, string to, string workID, string prdCode )
+        public DataTable GetData(string from, string to, string workID, string prdCode)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -59,7 +59,7 @@ WHERE W.PRODUCT_CODE = P.PRODUCT_CODE");
                 //    cmd.Parameters.AddWithValue("@PRODUCT_CODE", prdCode);
                 //}
                 cmd.CommandText = sb.ToString();
-            
+
                 DataTable dt = new DataTable();
                 cmd.Connection.Open();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -70,50 +70,88 @@ WHERE W.PRODUCT_CODE = P.PRODUCT_CODE");
             }
         }
 
-//        public List<ComparePlan> GetData(string from, string to, string workID, string prdCode)
-//        {
-//            using (SqlCommand cmd = new SqlCommand())
-//            {
-//                cmd.Connection = new SqlConnection(ConfigurationManager.ConnectionStrings["project"].ConnectionString);
+        //        public List<ComparePlan> GetData(string from, string to, string workID, string prdCode)
+        //        {
+        //            using (SqlCommand cmd = new SqlCommand())
+        //            {
+        //                cmd.Connection = new SqlConnection(ConfigurationManager.ConnectionStrings["project"].ConnectionString);
 
-//                StringBuilder sb = new StringBuilder();
+        //                StringBuilder sb = new StringBuilder();
 
-//                sb.Append(@"  SELECT CONVERT(varchar, CONVERT(DATE, ORDER_DATE)) ORDER_DATE,WORK_ORDER_ID,  W.PRODUCT_CODE, P.PRODUCT_NAME, 
-//ORDER_QTY,  PRODUCT_QTY, DEFECT_QTY,
-//cast((PRODUCT_QTY/(PRODUCT_QTY+DEFECT_QTY))*100.0 as decimal(4,0)) as QUALITY_RATE,cast( (DEFECT_QTY/(PRODUCT_QTY+DEFECT_QTY))*100 as decimal(4,0)) AS DEFECT_RATE, CONVERT(varchar, WORK_CLOSE_TIME)WORK_CLOSE_TIME
-//FROM [dbo].[WORK_ORDER_MST] W, PRODUCT_MST P
-//WHERE W.PRODUCT_CODE = P.PRODUCT_CODE");
+        //                sb.Append(@"  SELECT CONVERT(varchar, CONVERT(DATE, ORDER_DATE)) ORDER_DATE,WORK_ORDER_ID,  W.PRODUCT_CODE, P.PRODUCT_NAME, 
+        //ORDER_QTY,  PRODUCT_QTY, DEFECT_QTY,
+        //cast((PRODUCT_QTY/(PRODUCT_QTY+DEFECT_QTY))*100.0 as decimal(4,0)) as QUALITY_RATE,cast( (DEFECT_QTY/(PRODUCT_QTY+DEFECT_QTY))*100 as decimal(4,0)) AS DEFECT_RATE, CONVERT(varchar, WORK_CLOSE_TIME)WORK_CLOSE_TIME
+        //FROM [dbo].[WORK_ORDER_MST] W, PRODUCT_MST P
+        //WHERE W.PRODUCT_CODE = P.PRODUCT_CODE");
 
-//                if (!(string.IsNullOrWhiteSpace(from)) && !(string.IsNullOrWhiteSpace(to)))
-//                {
-//                    sb.Append(" and ");
-//                    cmd.Parameters.AddWithValue("@from", from);
-//                    cmd.Parameters.AddWithValue("@to", to);
-//                }
+        //                if (!(string.IsNullOrWhiteSpace(from)) && !(string.IsNullOrWhiteSpace(to)))
+        //                {
+        //                    sb.Append(" and ");
+        //                    cmd.Parameters.AddWithValue("@from", from);
+        //                    cmd.Parameters.AddWithValue("@to", to);
+        //                }
 
-//                if (!(string.IsNullOrWhiteSpace(workID)))
-//                {
-//                    sb.Append(" and ");
-//                    cmd.Parameters.AddWithValue("@WORK_ORDER_ID", workID);
-//                }
+        //                if (!(string.IsNullOrWhiteSpace(workID)))
+        //                {
+        //                    sb.Append(" and ");
+        //                    cmd.Parameters.AddWithValue("@WORK_ORDER_ID", workID);
+        //                }
 
-//                if (!(string.IsNullOrWhiteSpace(prdCode)))
-//                {
-//                    sb.Append(" and ");
-//                    cmd.Parameters.AddWithValue("@PRODUCT_CODE", prdCode);
-//                }
-//                cmd.CommandText = sb.ToString();
+        //                if (!(string.IsNullOrWhiteSpace(prdCode)))
+        //                {
+        //                    sb.Append(" and ");
+        //                    cmd.Parameters.AddWithValue("@PRODUCT_CODE", prdCode);
+        //                }
+        //                cmd.CommandText = sb.ToString();
 
-//                cmd.Connection.Open();
+        //                cmd.Connection.Open();
 
-//                List<StoreProperty> list = Helper.DataReaderMapToList<StoreProperty>(cmd.ExecuteReader());
-//                cmd.Connection.Close();
+        //                List<StoreProperty> list = Helper.DataReaderMapToList<StoreProperty>(cmd.ExecuteReader());
+        //                cmd.Connection.Close();
 
 
-//                return list;
-//            }
-//        }
+        //                return list;
+        //            }
+        //        }
+        public List<ComparePlan> GetPageList(string workID, string prdCode, int page, int pagesize)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = conn;
+                cmd.CommandText = @"
+	 SELECT  ORDER_DATE,WORK_ORDER_ID,  A.PRODUCT_CODE, A.PRODUCT_NAME, 
+	ORDER_QTY,  PRODUCT_QTY, DEFECT_QTY,
+	cast((PRODUCT_QTY/(PRODUCT_QTY+DEFECT_QTY))*100.0 as decimal(4,0)) as QUALITY_RATE,cast( (DEFECT_QTY/(PRODUCT_QTY+DEFECT_QTY))*100 as decimal(4,0)) AS DEFECT_RATE, 
+	 WORK_CLOSE_TIME
+	FROM (
+	select ORDER_DATE, WORK_ORDER_ID,  W.PRODUCT_CODE, P.PRODUCT_NAME, 
+	ORDER_QTY,  PRODUCT_QTY, DEFECT_QTY,
+	cast((PRODUCT_QTY/(PRODUCT_QTY+DEFECT_QTY))*100.0 as decimal(4,0)) as QUALITY_RATE,cast( (DEFECT_QTY/(PRODUCT_QTY+DEFECT_QTY))*100 as decimal(4,0)) AS DEFECT_RATE, 
+	WORK_CLOSE_TIME,   row_number() over(order by WORK_ORDER_ID) as RowNum
+	FROM [dbo].[WORK_ORDER_MST] W, PRODUCT_MST P
+	WHERE W.PRODUCT_CODE = P.PRODUCT_CODE 	
+	and w.PRODUCT_CODE  like @ProductCode
+	and WORK_ORDER_ID like @WORK_ORDER_ID
 
+	)A
+		where RowNum between ((@PAGE_NO - 1) * @PAGE_SIZE) + 1 and (@PAGE_NO * @PAGE_SIZE)";
+               // cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@WORK_ORDER_ID", $"%{workID}%");
+
+                cmd.Parameters.AddWithValue("@ProductCode", $"%{prdCode}%");
+
+                cmd.Parameters.AddWithValue("@PAGE_NO", page);
+                cmd.Parameters.AddWithValue("@PAGE_SIZE", pagesize);
+
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<ComparePlan> list = Helper.DataReaderMapToList<ComparePlan>(reader);
+                reader.Close();
+                return list;
+
+            }
+        }
         public List<ComparePlan> GetChartData(string from, string to, string workID, string prdCode)
         {
             using (SqlCommand cmd = new SqlCommand())

@@ -96,8 +96,8 @@
         @Html.DropDownListFor(model => model.Data, ViewBag.order as SelectList, "--Select--", new { @class = "form-control" })
         }*@
              
-                                    @Html.DropDownList("Order",
-                                              (IEnumerable<SelectListItem>)ViewBag.Order, null, null)
+                                    @Html.DropDownList("workID",
+                                              (IEnumerable<SelectListItem>)ViewBag.workIDs, null, null)
                                 
                             </div>
                         </div>
@@ -113,8 +113,8 @@
                                     @Html.DropDownListFor(model => model.Data, ViewBag.product as SelectList, "--Select--", new { @class = "form-control" })
                                     }*@
                    
-                                    @Html.DropDownList("Product",
-                                              (IEnumerable<SelectListItem>)ViewBag.Product, null, null)
+                                    @Html.DropDownList("prdCode",
+                                              (IEnumerable<SelectListItem>)ViewBag.prdCodes, null, null)
                                 
                             </div>
                         </div>
@@ -158,22 +158,24 @@
                                     <th scope="col">마감시간</th>
                                 </tr>
                             </thead>
-                            @*<tbody>
+                            <tbody>
                                     @foreach (var p in Model)
-                                    {<tr>
-                                        <td> scope="col">@p.WorkDate 작업일자</td>
-                                        <td> scope="col">@p.workorder 작업지시</td>
-                                        <td> scope="col">@p.productcode 품번</td>
-                                        <td> scope="col">품명</td>
-                                        <td> scope="col">계획수량</td>
-                                        <td> scope="col">양품수량</td>
-                                        <td> scope="col">불량수량</td>
-                                        <td> scope="col">양품률(%)</td>
-                                        <td> scope="col">불량률(%)</td>
-                                        <td> scope="col">마감시간</thd>
-                                    </tr>
+                                    {
+                                        <tr>
+                                            <td>@p.ORDER_DATE</td>
+                                            <td>@p.WORK_ORDER_ID</td>
+                                            <td>@p.PRODUCT_CODE</td>
+                                            <td>@p.PRODUCT_NAME</td>
+                                            <td>@p.ORDER_QTY</td>
+                                            <td>@p.PRODUCT_QTY</td>
+                                            <td>@p.DEFECT_QTY</td>
+                                            <td>@p.QUALITY_RATE</td>
+                                            <td>@p.DEFECT_RATE</td>
+                                            <td>@p.WORK_CLOSE_TIME</td>
+                                        </tr>
+                                
                                     }
-                                </tbody>*@
+                                </tbody>
 
                         </table>
                     </div>

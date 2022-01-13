@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Web;
+using System.Web.Configuration;
 using System.Web.Mvc;
 
 namespace NiceWEB.Controllers
@@ -11,7 +12,7 @@ namespace NiceWEB.Controllers
     public class InspectController : Controller
     {
         // GET: Inspect
-        public ActionResult Index(string product, string operation, string lotID)
+        public ActionResult Index(string product, string operation, string lotID, int page = 1)
         {
             //select box에 전달할 데이터
             CommonDAC comDAC = new CommonDAC();
@@ -21,8 +22,19 @@ namespace NiceWEB.Controllers
 
             ViewBag.Product = new SelectList(prodList, "Code", "Code");
             ViewBag.Operation = new SelectList(operList, "Code", "Code");
-            // lot id 입력 테스트 건희 폼에서 가져와서 추가
+            int pagesize = Convert.ToInt32(WebConfigurationManager.AppSettings["pagesize"]);
+            int totalCount = 0;/* = dac.GetProductTotalCount(storeCode, ProductCode);
+*/
+            PagingInfo pageInfo = new PagingInfo
+            {
+                TotalItems = totalCount,
+                ItemsPerPage = pagesize,
+                CurrentPage = page
+            };
 
+
+            ViewBag.LotID = lotID;
+            ViewBag.PagingInfo = pageInfo;
 
             //datatable을 JSON으로 바꾸는 코드 => list로 바꾸기
             var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
