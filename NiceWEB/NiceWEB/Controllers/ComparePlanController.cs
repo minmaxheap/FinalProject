@@ -25,8 +25,9 @@ namespace NiceWEB.Controllers
 
             orderList.Insert(0, new ComboItem { Code = ""});
             prodList.Insert(0, new ComboItem { Code = "" });
-            ViewBag.workIDs = new SelectList(orderList, "Code", "Code");
-              ViewBag.prdCodes = new SelectList(prodList, "Code", "Code");
+            ViewBag.orderList = new SelectList(orderList, "Code", "Code");
+            ViewBag.prodList = new SelectList(prodList, "Code", "Code");
+
 
             //datatable을 JSON으로 바꾸는 코드 => list로 바꾸기
 

@@ -1,4 +1,4 @@
-﻿using NiceWEB.Models;
+﻿ using NiceWEB.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,16 +12,20 @@ namespace NiceWEB.Controllers
     public class InspectController : Controller
     {
         // GET: Inspect
-        public ActionResult Index(string product, string operation, string lotID, int page = 1)
+        public ActionResult Index(string prdCode, string operation, string lotID, int page = 1)
         {
             //select box에 전달할 데이터
             CommonDAC comDAC = new CommonDAC();
 
+            List<ComboItem> orderList = comDAC.GetWorkOrder();
             List<ComboItem> prodList = comDAC.GetProductCode();
-            List<ComboItem> operList = comDAC.GetOperation();
 
-            ViewBag.Product = new SelectList(prodList, "Code", "Code");
-            ViewBag.Operation = new SelectList(operList, "Code", "Code");
+
+            orderList.Insert(0, new ComboItem { Code = "" });
+            prodList.Insert(0, new ComboItem { Code = "" });
+            ViewBag.orderList = new SelectList(orderList, "Code", "Code");
+            ViewBag.prodList = new SelectList(prodList, "Code", "Code");
+
             int pagesize = Convert.ToInt32(WebConfigurationManager.AppSettings["pagesize"]);
             int totalCount = 0;/* = dac.GetProductTotalCount(storeCode, ProductCode);
 */
