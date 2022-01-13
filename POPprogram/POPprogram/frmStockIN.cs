@@ -13,6 +13,7 @@ namespace POPprogram
 {
     public partial class frmStockIN : POPprogram.Base2
     {
+        bool bFlag;
         StockServ serv;
         DataGridViewCheckBoxColumn dgvChk = null;
         List<int> iSearchedList = new List<int>();
@@ -68,6 +69,8 @@ namespace POPprogram
 
 
             LoadData();
+
+            bFlag = true;
         }
 
         private void DgvChk(DataGridView dgv)
@@ -192,21 +195,49 @@ namespace POPprogram
                 list.Add(pr);
             }
             string salesID = "SALES_" + txtSearch.Text.Split('_')[1];
-            serv.InsertLOTStatus(msUserID, list, salesID);
 
-            bool bResult = serv.SaveStockLot(lotList, comboBox1.SelectedValue.ToString(), msUserID);
-            if (bResult)
+
+
+            if (bFlag)
             {
-                MessageBox.Show("성공적");
-                serv = new StockServ();
-                DataTable dt = serv.Purchase_warehousing(txtCode1.Text, txtSearch.Text);
-                csDataGridView1.DataSource = null;
-                csDataGridView1.DataSource = dt;
+                serv.InsertLOTStatus(msUserID, list, salesID); //한꺼번에 생성하도록 되어있음
+
+                bool bResult = serv.SaveStockLot(lotList, comboBox1.SelectedValue.ToString(), msUserID);
+                if (bResult)
+                {
+                    MessageBox.Show("성공적");
+                    serv = new StockServ();
+                    DataTable dt = serv.Purchase_warehousing(txtCode1.Text, txtSearch.Text);
+                    csDataGridView1.DataSource = null;
+                    csDataGridView1.DataSource = dt;
+                    bFlag = false;
+                }
+                else
+                {
+                    MessageBox.Show("재시도");
+                }
             }
-            else
+            else 
             {
-                MessageBox.Show("재시도");
+
+                bool bResult = serv.SaveStockLot(lotList, comboBox1.SelectedValue.ToString(), msUserID);
+                if (bResult)
+                {
+                    MessageBox.Show("성공적");
+                    serv = new StockServ();
+                    DataTable dt = serv.Purchase_warehousing(txtCode1.Text, txtSearch.Text);
+                    csDataGridView1.DataSource = null;
+                    csDataGridView1.DataSource = dt;
+                    bFlag = false;
+                }
+                else
+                {
+                    MessageBox.Show("재시도");
+                }
+
             }
+
+            
         }
 
         private void csDataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

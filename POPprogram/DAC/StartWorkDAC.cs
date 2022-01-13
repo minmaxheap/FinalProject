@@ -157,7 +157,7 @@ WHERE  LEFT(s.PRODUCT_CODE, 2) = 'pd' AND ORDER_STATUS = 'PROC' and o.CHECK_DEFE
 SET LOT_ID =@LOT_ID, LOT_DESC=@LOT_DESC,PRODUCT_CODE=@PRODUCT_CODE,OPERATION_CODE=@OPERATION_CODE,LOT_QTY=@LOT_QTY,CREATE_QTY=@CREATE_QTY,OPER_IN_QTY=@OPER_IN_QTY,START_FLAG='Y',   
 START_QTY=@START_QTY,START_TIME=getdate(),START_EQUIPMENT_CODE=@START_EQUIPMENT_CODE,
 CREATE_TIME=getdate(),OPER_IN_TIME=getdate(),WORK_ORDER_ID =@WORK_ORDER_ID,
-LAST_TRAN_CODE = 'START' , LAST_TRAN_TIME = getdate(),LAST_TRAN_USER_ID = @LAST_TRAN_USER_ID, LAST_TRAN_COMMENT = @LAST_TRAN_COMMENT,LAST_HIST_SEQ = LAST_HIST_SEQ+1
+LAST_TRAN_CODE = 'START' , LAST_TRAN_TIME = getdate(),LAST_TRAN_USER_ID = @LAST_TRAN_USER_ID, LAST_TRAN_COMMENT = @LAST_TRAN_COMMENT,LAST_HIST_SEQ = LAST_HIST_SEQ+1,END_FLAG = NULL
 where LOT_ID = @LOT_ID
 
 
@@ -281,6 +281,25 @@ END CATCH;";
 
 				return Helper.DataReaderMapToList<LOTProperty>(cmd.ExecuteReader());
 			}
+		}
+
+		public List<string> GetEqList(string EqCode)
+		{
+			string sql = @"
+SELECT DATA_1 
+FROM CODE_DATA_MST
+WHERE CODE_TABLE_NAME=@CODE_TABLE_NAME";
+			SqlCommand cmd = new SqlCommand(sql, conn);
+			List<string> List = new List<string>();
+			using (SqlDataReader da = cmd.ExecuteReader())
+			{
+				while (da.Read())
+				{
+					List.Add(da["DATA_1"].ToString());
+
+				}
+			}
+			return List;
 		}
 	}
 }

@@ -16,6 +16,9 @@ namespace POPprogram
         List<DownProperty> allList;
         string msUserID;
         DownServ downSer = null;
+        List<string> list;
+        StarWorkServ ser;
+
 
 
         public frmDown()
@@ -30,6 +33,14 @@ namespace POPprogram
             allList = downSer.GetDownList();
             csDataGridView1.DataSource = null;
             csDataGridView1.DataSource = allList;
+
+            ser = new StarWorkServ();
+            list = ser.GetDown_Code();
+            list.Insert(0, "");
+
+            comboBox2.DisplayMember = "KEY_1";
+            comboBox2.DataSource = list;
+
 
             DateTime EndDate = dateTimePicker2.Value;
             DateTime StartDate = dateTimePicker1.Value;

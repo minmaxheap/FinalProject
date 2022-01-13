@@ -38,24 +38,24 @@ namespace NiceWEB.Models
  WHERE H.PRODUCT_CODE = P.PRODUCT_CODE AND H.OPERATION_CODE = O.OPERATION_CODE
  ORDER BY TRAN_TIME, LOT_ID");
 
-                if (!(string.IsNullOrWhiteSpace(from)) && !(string.IsNullOrWhiteSpace(to)))
-                {
-                    sb.Append(" and ");
-                    cmd.Parameters.AddWithValue("@from", from);
-                    cmd.Parameters.AddWithValue("@to", to);
-                }
+                //if (!(string.IsNullOrWhiteSpace(from)) && !(string.IsNullOrWhiteSpace(to)))
+                //{
+                //    sb.Append(" and ");
+                //    cmd.Parameters.AddWithValue("@from", from);
+                //    cmd.Parameters.AddWithValue("@to", to);
+                //}
 
-                if (!(string.IsNullOrWhiteSpace(operCode)))
-                {
-                    sb.Append(" and ");
-                    cmd.Parameters.AddWithValue("@operCode", operCode);
-                }
+                //if (!(string.IsNullOrWhiteSpace(operCode)))
+                //{
+                //    sb.Append(" and ");
+                //    cmd.Parameters.AddWithValue("@operCode", operCode);
+                //}
 
-                if (!(string.IsNullOrWhiteSpace(lotID)))
-                {
-                    sb.Append(" and ");
-                    cmd.Parameters.AddWithValue("@lotID", lotID);
-                }
+                //if (!(string.IsNullOrWhiteSpace(lotID)))
+                //{
+                //    sb.Append(" and ");
+                //    cmd.Parameters.AddWithValue("@lotID", lotID);
+                //}
 
 
                 cmd.CommandText = sb.ToString();
