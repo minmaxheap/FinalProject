@@ -214,7 +214,10 @@ where SALES_ORDER_ID = @SALES_ORDER_ID";
             try
             {
                 string str = vo.SALES_ORDER_ID;
+                string strHB = vo.PRODUCT_CODE;
                 str = str.Substring(str.Length - 3);
+                strHB = strHB.Substring(strHB.Length - 4);
+                strHB = strHB.Substring(0, 3);
 
                 string rmmtCode = "-RM-MT-";
                 string rmcdCode = "-RM-CD-";
@@ -331,6 +334,25 @@ INSERT INTO [dbo].[PURCHASE_ORDER_MST]
            ,@ORDER_QTY6
            ,@STOCK_IN_LOT_ID6)
 
+INSERT INTO [dbo].[WORK_ORDER_MST]
+           ([WORK_ORDER_ID]
+           ,[ORDER_DATE]
+           ,[PRODUCT_CODE]
+           ,[CUSTOMER_CODE]
+           ,[ORDER_QTY]
+           ,[ORDER_STATUS]
+           ,[CREATE_TIME]
+           ,[CREATE_USER_ID])
+     VALUES
+           (@WORK_ORDER_ID
+           ,getdate()
+           ,@PRODUCT_CODE
+           ,@CUSTOMER_CODE
+           ,@ORDER_QTY
+           ,@ORDER_STATUS
+           ,getdate()
+           ,@CREATE_USER_ID)
+
 	COMMIT TRANSACTION;  
 END TRY  
 BEGIN CATCH  
@@ -340,6 +362,7 @@ BEGIN CATCH
         ROLLBACK TRANSACTION;  		
     END;  
 END CATCH;  
+
 ";
 
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
@@ -377,9 +400,21 @@ END CATCH;
                     cmd.Parameters.AddWithValue("@PURCHASE_ORDER_ID6", "PURCHASE_" + str);
                     cmd.Parameters.AddWithValue("@SALES_ORDER_ID6", vo.SALES_ORDER_ID);
                     cmd.Parameters.AddWithValue("@VENDOR_CODE6", "");
-                    cmd.Parameters.AddWithValue("@MATERIAL_CODE6", "HB_Mixed");
+                    cmd.Parameters.AddWithValue("@MATERIAL_CODE6", "HB_Mixed"+ strHB);
                     cmd.Parameters.AddWithValue("@ORDER_QTY6", 0);
                     cmd.Parameters.AddWithValue("@STOCK_IN_LOT_ID6", time + hbmxCode + str);
+
+                    cmd.Parameters.AddWithValue("@WORK_ORDER_ID", "WORK_" + str);
+                    cmd.Parameters.AddWithValue("@PRODUCT_CODE", vo.PRODUCT_CODE);
+                    cmd.Parameters.AddWithValue("@CUSTOMER_CODE", vo.CUSTOMER_CODE);
+                    cmd.Parameters.AddWithValue("@ORDER_QTY", vo.ORDER_QTY);
+                    cmd.Parameters.AddWithValue("@ORDER_STATUS", "OPEN");
+                    //cmd.Parameters.AddWithValue("@CREATE_TIME",vo.CREATE_TIME);
+                    if (vo.CREATE_USER_ID == null)
+                        cmd.Parameters.AddWithValue("@CREATE_USER_ID", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@CREATE_USER_ID", vo.CREATE_USER_ID);
+
                     int row = cmd.ExecuteNonQuery();
                     return row > 0;
                 }

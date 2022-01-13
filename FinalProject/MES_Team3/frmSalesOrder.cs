@@ -193,22 +193,32 @@ namespace MES_Team3
             save.ORDER_QTY = Convert.ToInt32(save.ORDER_QTY);
             SalesOrderServ serv = new SalesOrderServ();
             bool bResult = serv.Update(save);
-            if (SalesOrderDAC.ConfirmTrigger)
-            {
-                serv.InsertAutoPurchase(save);
-                serv.InsertAutoWorkOrder(save);
-                //serv.InsertLOTStatus(save);
-                SalesOrderDAC.ConfirmTrigger = false;
-            }
             if (bResult)
             {
                 LoadData();
                 MessageBox.Show("변경이 성공적으로 작업되었습니다.");
+
+
+                if (SalesOrderDAC.ConfirmTrigger)
+                {
+                    bool bResult2 = serv.InsertAutoPurchase(save);
+                    if (!bResult2)
+                    {
+                        LoadData();
+                        MessageBox.Show("변경 중 문제가 발생했습니다. 다시 확인하여 주시기 바랍니다.");
+                    }
+                    // serv.InsertAutoWorkOrder(save);
+                    //serv.InsertLOTStatus(save);
+                    SalesOrderDAC.ConfirmTrigger = false;
+                }
+
+
             }
             else
             {
                 MessageBox.Show("변경 중 문제가 발생했습니다. 다시 확인하여 주시기 바랍니다.");
             }
+
         }
 
         private void btnRead_Click(object sender, EventArgs e)
