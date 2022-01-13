@@ -314,6 +314,23 @@ INSERT INTO [dbo].[PURCHASE_ORDER_MST]
            ,@ORDER_QTY5
            ,@STOCK_IN_LOT_ID5)
 
+INSERT INTO [dbo].[PURCHASE_ORDER_MST]
+           ([PURCHASE_ORDER_ID]
+           ,[SALES_ORDER_ID]
+           ,[ORDER_DATE]
+           ,[VENDOR_CODE]
+           ,[MATERIAL_CODE]
+           ,[ORDER_QTY]
+           ,[STOCK_IN_LOT_ID])
+     VALUES
+           (@PURCHASE_ORDER_ID6
+           ,@SALES_ORDER_ID6
+           ,getdate()
+           ,@VENDOR_CODE6
+           ,@MATERIAL_CODE6
+           ,@ORDER_QTY6
+           ,@STOCK_IN_LOT_ID6)
+
 	COMMIT TRANSACTION;  
 END TRY  
 BEGIN CATCH  

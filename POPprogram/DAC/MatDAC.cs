@@ -1064,6 +1064,7 @@ END CATCH;
                     cmd.Parameters.AddWithValue("@BOM_CHILD_ID_1", updateVO.BOM_CHILD_ID_1);
                     cmd.Parameters.AddWithValue("@BOM_LOT_ID_2", updateVO.BOM_LOT_ID_2);
                     cmd.Parameters.AddWithValue("@BOM_CHILD_ID_2", updateVO.BOM_CHILD_ID_2);
+                    cmd.Parameters.AddWithValue("@BOM_LOT_QTY_2", updateVO.BOM_LOT_QTY_2);
 
                     if ((updateVO.PRODUCTION_TIME == default(DateTime)))
                         cmd.Parameters.AddWithValue("@PRODUCTION_TIME", DBNull.Value);
