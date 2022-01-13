@@ -22,31 +22,30 @@ namespace NiceWEB.Controllers
               List<ComboItem> orderList = comDAC.GetWorkOrder();
               List<ComboItem> prodList = comDAC.GetProductCode();
 
-
+            comDAC.Dispose();
             orderList.Insert(0, new ComboItem { Code = ""});
             prodList.Insert(0, new ComboItem { Code = "" });
             ViewBag.orderList = new SelectList(orderList, "Code", "Code");
             ViewBag.prodList = new SelectList(prodList, "Code", "Code");
 
-
-            //datatable을 JSON으로 바꾸는 코드 => list로 바꾸기
+            //list 보내기
 
             ComparePlanDAC dac = new ComparePlanDAC();
-            var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
     
-
-
             int pagesize = Convert.ToInt32(WebConfigurationManager.AppSettings["pagesize"]);
-            DataTable dt = dac.GetData("2020-01-01","2010-02-02", "D","");
+            int totalCount = dac.GetTotalCount(workID, prdCode);
+            PagingInfo pageInfo = new PagingInfo
+            {
+                TotalItems = totalCount,
+                ItemsPerPage = pagesize,
+                CurrentPage = page
+            };
+            ViewBag.PagingInfo = pageInfo;
 
-            //workID = "1";
-            //prdCode = "1";
             List<ComparePlan> list = dac.GetPageList( workID, prdCode, page, pagesize);
-
-            TableData t = new TableData();
-            List<ColumnsInfo> _col = new List<ColumnsInfo>();
             // GAUGE CHART 데이터 받고 보내기
             List <ComparePlan> gauge = dac.GetChartData("3", "3",workID,prdCode);
+            dac.Dispose();
             ViewBag.chart = gauge;
             ViewBag.work = gauge[0].WORK_ORDER_ID;
             ViewBag.ordQty = gauge[0].ORDER_QTY;
@@ -56,9 +55,7 @@ namespace NiceWEB.Controllers
              //산술 오버플로우가 일어나서 DECIMAL 반올림함
             ViewBag.qualityRate = Math.Round( (gauge[0].PRODUCT_QTY / (gauge[0].PRODUCT_QTY + gauge[0].DEFECT_QTY)) * Convert.ToDecimal(100),2);
             ViewBag.defectRate = Math.Round((gauge[0].DEFECT_QTY / (gauge[0].PRODUCT_QTY + gauge[0].DEFECT_QTY))* Convert.ToDecimal(100),2);
-
-
-            //  dac.Dispose();
+   
             return View(list);
         }
 

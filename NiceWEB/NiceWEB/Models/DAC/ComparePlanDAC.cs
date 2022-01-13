@@ -26,93 +26,9 @@ namespace NiceWEB.Models
                 conn.Close();
         }
 
-        public DataTable GetData(string from, string to, string workID, string prdCode)
-        {
-            using (SqlCommand cmd = new SqlCommand())
-            {
-                cmd.Connection = new SqlConnection(ConfigurationManager.ConnectionStrings["project"].ConnectionString);
-
-                StringBuilder sb = new StringBuilder();
-
-                sb.Append(@"  SELECT CONVERT(varchar, CONVERT(DATE, ORDER_DATE)) ORDER_DATE,WORK_ORDER_ID,  W.PRODUCT_CODE, P.PRODUCT_NAME, 
-ORDER_QTY,  PRODUCT_QTY, DEFECT_QTY,
-cast((PRODUCT_QTY/(PRODUCT_QTY+DEFECT_QTY))*100.0 as decimal(4,0)) as QUALITY_RATE,cast( (DEFECT_QTY/(PRODUCT_QTY+DEFECT_QTY))*100 as decimal(4,0)) AS DEFECT_RATE, CONVERT(varchar, WORK_CLOSE_TIME)WORK_CLOSE_TIME
-FROM [dbo].[WORK_ORDER_MST] W, PRODUCT_MST P
-WHERE W.PRODUCT_CODE = P.PRODUCT_CODE");
-
-                //if(!(string.IsNullOrWhiteSpace(from)) && !(string.IsNullOrWhiteSpace(to)))
-                //{
-                //    sb.Append(" and ");
-                //    cmd.Parameters.AddWithValue("@from", from);
-                //    cmd.Parameters.AddWithValue("@to", to);
-                //}
-
-                //if (!(string.IsNullOrWhiteSpace(workID)))
-                //{
-                //    sb.Append(" and ");
-                //    cmd.Parameters.AddWithValue("@WORK_ORDER_ID", workID);
-                //}
-
-                //if (!(string.IsNullOrWhiteSpace(prdCode)))
-                //{
-                //    sb.Append(" and ");
-                //    cmd.Parameters.AddWithValue("@PRODUCT_CODE", prdCode);
-                //}
-                cmd.CommandText = sb.ToString();
-
-                DataTable dt = new DataTable();
-                cmd.Connection.Open();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dt);
-                cmd.Connection.Close();
-
-                return dt;
-            }
-        }
-
-        //        public List<ComparePlan> GetData(string from, string to, string workID, string prdCode)
-        //        {
-        //            using (SqlCommand cmd = new SqlCommand())
-        //            {
-        //                cmd.Connection = new SqlConnection(ConfigurationManager.ConnectionStrings["project"].ConnectionString);
-
-        //                StringBuilder sb = new StringBuilder();
-
-        //                sb.Append(@"  SELECT CONVERT(varchar, CONVERT(DATE, ORDER_DATE)) ORDER_DATE,WORK_ORDER_ID,  W.PRODUCT_CODE, P.PRODUCT_NAME, 
-        //ORDER_QTY,  PRODUCT_QTY, DEFECT_QTY,
-        //cast((PRODUCT_QTY/(PRODUCT_QTY+DEFECT_QTY))*100.0 as decimal(4,0)) as QUALITY_RATE,cast( (DEFECT_QTY/(PRODUCT_QTY+DEFECT_QTY))*100 as decimal(4,0)) AS DEFECT_RATE, CONVERT(varchar, WORK_CLOSE_TIME)WORK_CLOSE_TIME
-        //FROM [dbo].[WORK_ORDER_MST] W, PRODUCT_MST P
-        //WHERE W.PRODUCT_CODE = P.PRODUCT_CODE");
-
-        //                if (!(string.IsNullOrWhiteSpace(from)) && !(string.IsNullOrWhiteSpace(to)))
-        //                {
-        //                    sb.Append(" and ");
-        //                    cmd.Parameters.AddWithValue("@from", from);
-        //                    cmd.Parameters.AddWithValue("@to", to);
-        //                }
-
-        //                if (!(string.IsNullOrWhiteSpace(workID)))
-        //                {
-        //                    sb.Append(" and ");
-        //                    cmd.Parameters.AddWithValue("@WORK_ORDER_ID", workID);
-        //                }
-
-        //                if (!(string.IsNullOrWhiteSpace(prdCode)))
-        //                {
-        //                    sb.Append(" and ");
-        //                    cmd.Parameters.AddWithValue("@PRODUCT_CODE", prdCode);
-        //                }
-        //                cmd.CommandText = sb.ToString();
-
-        //                cmd.Connection.Open();
-
-        //                List<StoreProperty> list = Helper.DataReaderMapToList<StoreProperty>(cmd.ExecuteReader());
-        //                cmd.Connection.Close();
 
 
-        //                return list;
-        //            }
-        //        }
+       
         public List<ComparePlan> GetPageList(string workID, string prdCode, int page, int pagesize)
         {
             using (SqlCommand cmd = new SqlCommand())
@@ -174,7 +90,7 @@ FROM [dbo].[WORK_ORDER_MST] W";
 
         }
 
-        public int GetProductTotalCount(string storeCode, string producCode)
+        public int GetTotalCount(string workID, string prdCode )
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -183,15 +99,15 @@ FROM [dbo].[WORK_ORDER_MST] W";
                 StringBuilder sb = new StringBuilder();
                 sb.Append(@"select count(*) from LOT_STS
 where LOT_DELETE_FLAG <> 'Y' OR LOT_DELETE_FLAG IS NULL  and STORE_CODE is not  null ");
-                if (!string.IsNullOrWhiteSpace(storeCode))
+                if (!string.IsNullOrWhiteSpace(workID))
                 {
                     sb.Append(" and STORE_CODE = @STORE_CODE ");
-                    cmd.Parameters.AddWithValue("@STORE_CODE", storeCode);
+                    cmd.Parameters.AddWithValue("@STORE_CODE", workID);
                 }
-                if (!string.IsNullOrWhiteSpace(producCode))
+                if (!string.IsNullOrWhiteSpace(prdCode))
                 {
                     sb.Append(" and PRODUCT_CODE = @PRODUCT_CODE ");
-                    cmd.Parameters.AddWithValue("@PRODUCT_CODE", producCode);
+                    cmd.Parameters.AddWithValue("@PRODUCT_CODE", prdCode);
                 }
                 //sb.Append(" order by STORE_CODE,OPER_IN_TIME,LOT_ID ");
                 cmd.CommandText = sb.ToString();
