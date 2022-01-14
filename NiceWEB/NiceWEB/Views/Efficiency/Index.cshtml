@@ -37,8 +37,8 @@
     <div class="container-fluid">
         @using (Html.BeginForm("Index", "Efficiency", FormMethod.Get, null))
         {
-            <div class="row">
-                <div class="col-md-12">
+            
+            
                     <div class="row">
                         <div class="col-3">
 
@@ -59,46 +59,29 @@
                         </div>
                         <div class="col-3">
                             <div class="form-group">
-                                <label>작업지시:</label>
-
-
-                                @*@if (ViewBag.order != null)
-                                {
-                                    @Html.DropDownListFor(model => model.Data, ViewBag.order as SelectList, "--Select--", new { @class = "form-control" })
-                                }*@
-
-
+                                <label for="Order" class="col-form-label">작업지시:</label>
                                 @Html.DropDownList("Order",
-                           (IEnumerable<SelectListItem>)ViewBag.Order, null, null)
+                           (IEnumerable<SelectListItem>)ViewBag.Order, null, new { @class = "form-control" })
 
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="form-group">
                                 <label>품번:</label>
-                                @*<select class="select2" style="width: 100%;">
-                                    <option selected>ASC</option>
-                                    <option>DESC</option>
-                                </select>*@
-                                @*@if (ViewBag.product != null)
-                                {
-                                    @Html.DropDownListFor(model => model.Data, ViewBag.product as SelectList, "--Select--", new { @class = "form-control" })
-                                }*@
-
-                                @Html.DropDownList("Product",
-(IEnumerable<SelectListItem>)ViewBag.Product, null, null)
+                      
+                                @Html.DropDownList("Product",(IEnumerable<SelectListItem>)ViewBag.Product, null, new { @class = "form-control" })
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="form-group">
-                                <label>  </label>
+                                <label>&nbsp;  </label>
                                 <button type="submit" class="btn btn-block btn-secondary">조회</button>
                             </div>
                         </div>
 
                     </div>
-                </div>
-            </div>
+                
+       
 
         }
         <div class="row">
@@ -110,7 +93,7 @@
                     <!-- /.card-header -->
                     <div class="card-body">
                         @*<table id="compareplan" class="table table-bordered table-striped">
-                        </table>*@
+            </table>*@
                         <table class="table table-striped table-bordered table-hover"
                                id="TableId"
                                cellspacing="0"
@@ -138,19 +121,18 @@
                         </table>
                     </div>
                     <!-- /.card-body -->
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center">
+                            @Html.PageLinks((PagingInfo)ViewBag.PagingInfo, (x) => Url.Action("Index",
+                                new { page = x, LotID = ViewBag.LotID }))
+                        </ul>
+                    </nav>
                 </div>
                 <!-- /.card -->
             </div>
             <!-- /.col -->
         </div>
-        <div class="row">
-            <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
-                    @Html.PageLinks((PagingInfo)ViewBag.PagingInfo, (x) => Url.Action("Index",
-                        new { page = x, LotID = ViewBag.LotID }))
-                </ul>
-            </nav>
-        </div>
+
         <div class="card card-primary">
             <div class="card-header">
                 <h3 class="card-title">제조 종합 효율 차트</h3>

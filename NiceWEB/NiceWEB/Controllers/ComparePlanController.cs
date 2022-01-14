@@ -16,6 +16,7 @@ namespace NiceWEB.Controllers
         // GET: ComparePlan
         public ActionResult Index(string workID, string prdCode, int page = 1)
         {
+            
             //select box에 전달할 데이터
             CommonDAC comDAC = new CommonDAC();
            
@@ -55,6 +56,8 @@ namespace NiceWEB.Controllers
              //산술 오버플로우가 일어나서 DECIMAL 반올림함
             ViewBag.qualityRate = Math.Round( (gauge[0].PRODUCT_QTY / (gauge[0].PRODUCT_QTY + gauge[0].DEFECT_QTY)) * Convert.ToDecimal(100),2);
             ViewBag.defectRate = Math.Round((gauge[0].DEFECT_QTY / (gauge[0].PRODUCT_QTY + gauge[0].DEFECT_QTY))* Convert.ToDecimal(100),2);
+
+           // RedirectToAction("Index", "ComparePlan");
    
             return View(list);
         }

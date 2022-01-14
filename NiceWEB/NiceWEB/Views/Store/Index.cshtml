@@ -20,7 +20,7 @@
 	<div class="container-fluid">
 		<div class="row mb-2">
 			<div class="col-sm-6">
-				<h1 class="m-0">자재 투입 이력 </h1>
+				<h1 class="m-0">창고 이력 조회 </h1>
 			</div><!-- /.col -->
 			<div class="col-sm-6">
 				<ol class="breadcrumb float-sm-right">
@@ -47,24 +47,24 @@
 								<label>창고:</label>
 
 								@Html.DropDownList("storeCode",
-							(IEnumerable<SelectListItem>)ViewBag.Categories, null, null)
+							(IEnumerable<SelectListItem>)ViewBag.Categories, null, new { @class = "form-control" })
 							</div>
 						</div>
 						<div class="col-4">
 							<div class="form-group">
 								<label>자재품번:</label>
 								@Html.DropDownList("ProductCode",
-											   (IEnumerable<SelectListItem>)ViewBag.Categories2, null, null)
+											   (IEnumerable<SelectListItem>)ViewBag.Categories2, null, new { @class = "form-control" })
 								
 							</div>
 						</div>
 
 						<div class="col-4">
-							<div class="form-group">
-							
-								<button type="submit" class="btn btn-block btn-secondary">조회</button>
+                            <div class="form-group">
+                                <label>&nbsp;  </label>
+                                <button type="submit" class="btn btn-block btn-secondary">조회</button>
 
-							</div>
+                            </div>
 						</div>
 
 					</div>
@@ -73,60 +73,62 @@
 		}
 		<div class="row">
 			<div class="col-12">
-				<div class="card">
-					<div class="card-header">
-						<h3 class="card-title">창고 재고 조회</h3>
-					</div>
-					<!-- /.card-header -->
-					<div class="card-body">
-						@*<table id="compareplan" class="table table-bordered table-striped">
-						</table>*@
-						<table class="table table-striped table-bordered table-hover"
-							   id="TableId"
-							   cellspacing="0"
-							   align="center"
-							   width="100%" border="1">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">창고 재고 조회</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        @*<table id="compareplan" class="table table-bordered table-striped">
+            </table>*@
+                        <table class="table table-striped table-bordered table-hover"
+                               id="TableId"
+                               cellspacing="0"
+                               align="center"
+                               width="100%" border="1">
 
-							<thead>
-								<tr>
-									<th scope="col">oper_in_time</th>
-									<th scope="col">LotID</th>
-									<th scope="col">품번</th>
-									<th scope="col">창고</th>
-									<th scope="col">수량</th>
-								</tr>
-							</thead>
-							<tbody>
-								@foreach (var p in Model)
-								{
-									<tr>
-										<td>@p.OPER_IN_TIME</td>
-										<td>@p.LOT_ID</td>
-										<td>@p.PRODUCT_CODE</td>
-										<td>@p.STORE_CODE</td>
-										<td>@p.LOT_QTY</td>
+                            <thead>
+                                <tr>
+                                    <th scope="col">oper_in_time</th>
+                                    <th scope="col">LotID</th>
+                                    <th scope="col">품번</th>
+                                    <th scope="col">창고</th>
+                                    <th scope="col">수량</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var p in Model)
+                                {
 
-									</tr>
-								}
-							</tbody>
-						</table>
-					</div>
-					<!-- /.card-body -->
-				</div>
+                                    <tr>
+                                        <td>@p.OPER_IN_TIME</td>
+                                        <td>@p.LOT_ID</td>
+                                        <td>@p.PRODUCT_CODE</td>
+                                        <td>@p.STORE_CODE</td>
+                                        <td>@p.LOT_QTY</td>
+
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+           
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-center">
+                                @Html.PageLinks((PagingInfo)ViewBag.PagingInfo, (x) => Url.Action("Index",
+                                    new { page = x, storeCode = ViewBag.storeCode, ProductCode = ViewBag.ProductCode }))
+                            </ul>
+                        </nav>
+               
+                </div>
 				<!-- /.card -->
 			</div>
 			<!-- /.col -->
 		</div>
 
 
-		<div class="row">
-			<nav aria-label="Page navigation example">
-				<ul class="pagination justify-content-center">
-					@Html.PageLinks((PagingInfo)ViewBag.PagingInfo, (x) => Url.Action("Index",
-						new { page = x, storeCode = ViewBag.storeCode, ProductCode = ViewBag.ProductCode}))
-				</ul>
-			</nav>
-		</div>
+	
 	</div>
 
 	

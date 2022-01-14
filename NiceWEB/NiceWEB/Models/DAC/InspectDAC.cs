@@ -66,29 +66,18 @@ where RowNum between ((@PAGE_NO - 1) * @PAGE_SIZE) + 1 and (@PAGE_NO * @PAGE_SIZ
             {
 
                 cmd.Connection = conn;
-                StringBuilder sb = new StringBuilder();
-                sb.Append(@"select count(*) from LOT_STS
-where LOT_DELETE_FLAG <> 'Y' OR LOT_DELETE_FLAG IS NULL  and STORE_CODE is not  null ");
-                if (!string.IsNullOrWhiteSpace(prdCode))
-                {
-                    sb.Append(" and STORE_CODE = @STORE_CODE ");
-                    cmd.Parameters.AddWithValue("@STORE_CODE", operCode);
-                }
-                if (!string.IsNullOrWhiteSpace(prdCode))
-                {
-                    sb.Append(" and PRODUCT_CODE = @PRODUCT_CODE ");
-                    cmd.Parameters.AddWithValue("@PRODUCT_CODE", prdCode);
-                }
-                if (!string.IsNullOrWhiteSpace(lotID))
-                {
-                    sb.Append(" and PRODUCT_CODE = @PRODUCT_CODE ");
-                    cmd.Parameters.AddWithValue("@PRODUCT_CODE", lotID);
-                }
-                //sb.Append(" order by STORE_CODE,OPER_IN_TIME,LOT_ID ");
-                cmd.CommandText = sb.ToString();
+                cmd.CommandText = @" SELECT count(*) 
+ FROM [dbo].[LOT_INSPECT_HIS] H, PRODUCT_MST P, OPERATION_MST O
+ WHERE H.PRODUCT_CODE = P.PRODUCT_CODE AND H.OPERATION_CODE = O.OPERATION_CODE
+ AND H.PRODUCT_CODE like @PRODUCT_CODE
+ AND H.OPERATION_CODE like @OPERATION_CODE
+ AND LOT_ID like @LOT_ID";
 
-
-                cmd.CommandText = sb.ToString();
+                if (conn.State != ConnectionState.Open)
+                    cmd.Connection.Open();
+                cmd.Parameters.AddWithValue("@PRODUCT_CODE", $"%{prdCode}%");
+                cmd.Parameters.AddWithValue("@OPERATION_CODE", $"%{operCode}%");
+                cmd.Parameters.AddWithValue("@LOT_ID", $"%{lotID}%");
 
                 return Convert.ToInt32(cmd.ExecuteScalar());
             }

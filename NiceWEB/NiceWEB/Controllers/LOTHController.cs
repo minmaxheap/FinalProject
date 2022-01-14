@@ -12,26 +12,28 @@ namespace NiceWEB.Controllers
     public class LOTHController : Controller
     {
         // GET: LOTH
-        public ActionResult Index(string LotID,int page=1)
+        public ActionResult Index(string LotID, int page = 1)
         {
-            int pagesize = Convert.ToInt32(WebConfigurationManager.AppSettings["pagesize"]);
+            
+                int pagesize = Convert.ToInt32(WebConfigurationManager.AppSettings["pagesize"]);
 
-            LOT_HISDAC dac = new LOT_HISDAC();
-            List<LOT_HIS> List = dac.GetData(LotID, page, pagesize);
-            int totalCount = dac.GetProductTotalCount(LotID);
-            dac.Dispose();
+                LOT_HISDAC dac = new LOT_HISDAC();
+                List<LOT_HIS> List = dac.GetData(LotID, page, pagesize);
+                int totalCount = dac.GetProductTotalCount(LotID);
+                dac.Dispose();
 
-            PagingInfo pageInfo = new PagingInfo
-            {
-                TotalItems = totalCount,
-                ItemsPerPage = pagesize,
-                CurrentPage = page
-            };
+                PagingInfo pageInfo = new PagingInfo
+                {
+                    TotalItems = totalCount,
+                    ItemsPerPage = pagesize,
+                    CurrentPage = page
+                };
 
-            ViewBag.LotID = LotID;
-            ViewBag.PagingInfo = pageInfo;
+                ViewBag.LotID = LotID;
+                ViewBag.PagingInfo = pageInfo;
 
-            return View(List);
+                return View(List);
+            
         }
     }
 }

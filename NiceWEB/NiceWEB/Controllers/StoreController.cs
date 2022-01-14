@@ -49,7 +49,7 @@ namespace NiceWEB.Controllers
 				ItemsPerPage = pagesize,
 				CurrentPage = page
 			};
-			//categories.Insert(0, new ComboItem { Code = "" });
+            //categories.Insert();
             categories2.Insert(0, new ComboItem { Code = "" });
 
             ViewBag.Categories = new SelectList(categories, "Code", "Code");
