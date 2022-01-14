@@ -158,7 +158,7 @@ namespace POPprogram
 		private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
 		{
             if (cboLOTID.SelectedIndex < 1) return;
-            txtEQ_NAME.Text = listEQ[cboEQList.SelectedIndex].EQ_NAME;
+            if (cboEQList.Text != "") txtEQ_NAME.Text = listEQ[cboEQList.SelectedIndex].EQ_NAME;
         }
 
         private void btnClose_Click(object sender, EventArgs e)

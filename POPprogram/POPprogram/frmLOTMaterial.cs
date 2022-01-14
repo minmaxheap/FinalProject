@@ -85,7 +85,7 @@ namespace POPprogram
                 {
                     if (dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Can" || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Condiment"
                          || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Cover" || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Label"
-                          || dr["CHILD_PRODUCT_CODE"].ToString() == "HB_Mixed340") 
+                         || dr["CHILD_PRODUCT_CODE"].ToString() == "HB_Mixed120" || dr["CHILD_PRODUCT_CODE"].ToString() == "HB_Mixed200" || dr["CHILD_PRODUCT_CODE"].ToString() == "HB_Mixed340") 
                         dr.Delete();
                 }
                 dt.AcceptChanges();
@@ -94,9 +94,10 @@ namespace POPprogram
             {
                 foreach (DataRow dr in dt.Select())
                 {
-                    if (dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Can" || dr["CHILD_PRODUCT_CODE"].ToString() == "HB_Mixed340"
+                    if (dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Can"
                          || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Cover" || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Label"
-                         || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Meat")
+                         || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Meat"
+                         || dr["CHILD_PRODUCT_CODE"].ToString() == "HB_Mixed120" || dr["CHILD_PRODUCT_CODE"].ToString() == "HB_Mixed200" || dr["CHILD_PRODUCT_CODE"].ToString() == "HB_Mixed340")
                         dr.Delete();
                 }
                 dt.AcceptChanges();
@@ -117,7 +118,8 @@ namespace POPprogram
                 {
                     if (dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Can" || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Condiment"
                          || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Cover" || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Label"
-                        || dr["CHILD_PRODUCT_CODE"].ToString() == "HB_Mixed340" || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Meat")
+                         || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Meat"
+                         || dr["CHILD_PRODUCT_CODE"].ToString() == "HB_Mixed120" || dr["CHILD_PRODUCT_CODE"].ToString() == "HB_Mixed200" || dr["CHILD_PRODUCT_CODE"].ToString() == "HB_Mixed340")
                         dr.Delete();
                 }
                 dt.AcceptChanges();
@@ -128,7 +130,8 @@ namespace POPprogram
                 {
                     if (dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Can" || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Condiment"
                          || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Cover" || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Label"
-                         || dr["CHILD_PRODUCT_CODE"].ToString() == "HB_Mixed340" || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Meat")
+                         || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Meat"
+                         || dr["CHILD_PRODUCT_CODE"].ToString() == "HB_Mixed120" || dr["CHILD_PRODUCT_CODE"].ToString() == "HB_Mixed200" || dr["CHILD_PRODUCT_CODE"].ToString() == "HB_Mixed340")
                         dr.Delete();
                 }
                 dt.AcceptChanges();
@@ -139,7 +142,7 @@ namespace POPprogram
                 {
                     if (dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Can" || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Condiment"
                          || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Cover" || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Meat"
-                         || dr["CHILD_PRODUCT_CODE"].ToString() == "HB_Mixed340")
+                         || dr["CHILD_PRODUCT_CODE"].ToString() == "HB_Mixed120" || dr["CHILD_PRODUCT_CODE"].ToString() == "HB_Mixed200" || dr["CHILD_PRODUCT_CODE"].ToString() == "HB_Mixed340")
                         dr.Delete();
                 }
                 dt.AcceptChanges();
@@ -150,7 +153,7 @@ namespace POPprogram
                 {
                     if (dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Can" || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Condiment"
                          || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Label" || dr["CHILD_PRODUCT_CODE"].ToString() == "RM_Meat"
-                         || dr["CHILD_PRODUCT_CODE"].ToString() == "HB_Mixed340")
+                         || dr["CHILD_PRODUCT_CODE"].ToString() == "HB_Mixed120" || dr["CHILD_PRODUCT_CODE"].ToString() == "HB_Mixed200" || dr["CHILD_PRODUCT_CODE"].ToString() == "HB_Mixed340")
                         dr.Delete();
                 }
                 dt.AcceptChanges();

@@ -34,7 +34,7 @@ namespace POPprogram
             cboLOTID.DisplayMember = "LOT_ID";
             cboLOTID.DataSource = list;
             cboLOTID.Text = null;
-
+  
             //EndDAC serv = new EndDAC();
             DataTable dt = serv.GetEQList();
 
@@ -42,6 +42,7 @@ namespace POPprogram
             cboEQList.DisplayMember = "EQ_CODE";
             cboEQList.DataSource = listEQ;
             cboEQList.Text = null;
+            txtEQ_NAME.Text = null;
         }
 
         private void cboLOTID_SelectedIndexChanged(object sender, EventArgs e)
@@ -363,7 +364,7 @@ namespace POPprogram
                 searchflag = false;
                 return;
             }
-            txtEQ_NAME.Text = listEQ[cboEQList.SelectedIndex].EQ_NAME;
+            if (cboEQList.Text!="") txtEQ_NAME.Text = listEQ[cboEQList.SelectedIndex].EQ_NAME;
         }
     }
 }
