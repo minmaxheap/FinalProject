@@ -93,64 +93,64 @@
                 </div>
             </div>
         }
-    <div class="row">
-        <div class="col-12">
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">검사 데이터 조회</h3>
-                </div>
-                <!-- /.card-header -->
-                <div class="card-body">
-                    @*<table id="compareplan" class="table table-bordered table-striped">
-            </table>*@
-                    <table class="table table-striped table-bordered table-hover"
-                           id="TableId"
-                           cellspacing="0"
-                           align="center"
-                           width="100%" border="1">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">검사 데이터 조회</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        @*<table id="compareplan" class="table table-bordered table-striped">
+                            </table>*@
+                        <table class="table table-striped table-bordered table-hover"
+                               id="TableId"
+                               cellspacing="0"
+                               align="center"
+                               width="100%" border="1">
 
-                        <thead>
-                            <tr>
-                                <th scope="col">검사일시</th>
-                                <th scope="col">LOT ID</th>
-                                <th scope="col">품번</th>
-                                <th scope="col">품명</th>
-                                <th scope="col">공정명</th>
-                                <th scope="col">검사항목</th>
-                                <th scope="col">검사항목명</th>
-                                <th scope="col">값 유형</th>
-                                <th scope="col">LSL</th>
-                                <th scope="col">Target</th>
-                                <th scope="col">USL</th>
-                                <th scope="col">검사 데이터</th>
-                                <th scope="col">검사자</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var p in Model)
-                            {
-                            <tr>
-                                <td>@p.TRAN_TIME</td>
-                                <td>@p.LOT_ID</td>
-                                <td>@p.PRODUCT_CODE</td>
-                                <td>@p.PRODUCT_NAME</td>
-                                <td>@p.OPERATION_NAME</td>
-                                <td>@p.INSPECT_ITEM_CODE</td>
-                                <td>@p.INSPECT_ITEM_NAME</td>
-                                <td>@p.VALUE_TYPE</td>
-                                <td>@p.SPEC_LSL</td>
-                                <td>@p.SPEC_TARGET</td>
-                                <td>@p.SPEC_USL</td>
-                                <td>@p.INSPECT_VALUE</td>
-                                <td>@p.TRAN_USER_ID</td>
-                            </tr>
+                            <thead>
+                                <tr>
+                                    <th scope="col">검사일시</th>
+                                    <th scope="col">LOT ID</th>
+                                    <th scope="col">품번</th>
+                                    <th scope="col">품명</th>
+                                    <th scope="col">공정명</th>
+                                    <th scope="col">검사항목</th>
+                                    <th scope="col">검사항목명</th>
+                                    <th scope="col">값 유형</th>
+                                    <th scope="col">LSL</th>
+                                    <th scope="col">Target</th>
+                                    <th scope="col">USL</th>
+                                    <th scope="col">검사 데이터</th>
+                                    <th scope="col">검사자</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var p in Model)
+                                {
+                                    <tr>
+                                        <td>@p.TRAN_TIME</td>
+                                        <td>@p.LOT_ID</td>
+                                        <td>@p.PRODUCT_CODE</td>
+                                        <td>@p.PRODUCT_NAME</td>
+                                        <td>@p.OPERATION_NAME</td>
+                                        <td>@p.INSPECT_ITEM_CODE</td>
+                                        <td>@p.INSPECT_ITEM_NAME</td>
+                                        <td>@p.VALUE_TYPE</td>
+                                        <td>@p.SPEC_LSL</td>
+                                        <td>@p.SPEC_TARGET</td>
+                                        <td>@p.SPEC_USL</td>
+                                        <td>@p.INSPECT_VALUE</td>
+                                        <td>@p.TRAN_USER_ID</td>
+                                    </tr>
 
-                            }
-                        </tbody>
+                                }
+                            </tbody>
 
-                    </table>
-                </div>
-                <!-- /.card-body -->
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
 
                     <nav aria-label="Page navigation example">
                         <ul class="pagination justify-content-center">
@@ -158,14 +158,14 @@
                                 new { page = x, LotID = ViewBag.LotID }))
                         </ul>
                     </nav>
-        
-            </div>
-            <!-- /.card -->
-    
-        </div>
-        <!-- /.col -->
 
-    </div>
+                </div>
+                <!-- /.card -->
+
+            </div>
+            <!-- /.col -->
+
+        </div>
 
     </div>
 
@@ -175,13 +175,44 @@
 @section Scripts
 {
 
-    <script>
+    <script type="text/javascript">
         jQuery.noConflict()
-        $(function () {
-            //Date range picker
-            $('#reservation').daterangepicker()
+        var startDate;
+        var endDate;
 
-        })
+        $(document).ready(function () {
+            $('#reservation').daterangepicker(
+                {
+                    showDropdowns: true,
+                    showWeekNumbers: true,
+                    timePicker: false,
+                    timePickerIncrement: 1,
+                    timePicker12Hour: true,
+                    opens: 'left',
+                    format: 'YYYY-MM-DD',
+                    separator: ' to ',
+                },
+                function (start, end) {
+                    console.log("Callback has been called!");
+                    $('#reservation span').html(start.format('YYYY-MM-DD') + ' - ' + end.format('YYYY-MM-DD'));
+                    startDate = start;
+                    endDate = end;
+
+                }
+            );
+
+            $('#saveBtn').click(function () {
+                console.log(startDate.format('YYYY-MM-DD') + ' - ' + endDate.format('YYYY-MM-DD'));
+                $('#startDate').val(startDate.format('YYYY-MM-DD'));
+                $('#endDate').val(endDate.format('YYYY-MM-DD'));
+                $('#form4')[0].submit();
+            });
+
+
+
+
+
+        });
     </script>
 
     <script type="text/javascript">
