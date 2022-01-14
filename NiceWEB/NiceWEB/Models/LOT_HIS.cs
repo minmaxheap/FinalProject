@@ -25,7 +25,7 @@ namespace NiceWEB.Models
 		public DateTime START_TIME { get; set; }
 		public string START_EQUIPMENT_CODE { get; set; }
 		public string END_FLAG { get; set; }
-		public DateTime END_TIME { get; set; }
+		public DateTime END_TIME{ get; set; }
 		public string END_EQUIPMENT_CODE { get; set; }
 		public string SHIP_FLAG { get; set; }
 		public string SHIP_CODE { get; set; }

@@ -93,7 +93,7 @@ namespace POPprogram
 			this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.comboBox1.Font = new System.Drawing.Font("나눔고딕", 12F);
 			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Location = new System.Drawing.Point(166, 71);
+			this.comboBox1.Location = new System.Drawing.Point(165, 72);
 			this.comboBox1.Name = "comboBox1";
 			this.comboBox1.Size = new System.Drawing.Size(335, 27);
 			this.comboBox1.TabIndex = 59;
