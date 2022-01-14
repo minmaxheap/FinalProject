@@ -46,6 +46,7 @@ namespace POPprogram
                 txtOperCode.Text = dr.Cells["OPERATION_CODE"].Value.ToString();
                 txtOperName.Text = dr.Cells["OPERATION_NAME"].Value.ToString();
 
+                
             }
         }
 
@@ -78,6 +79,44 @@ namespace POPprogram
             }
         }
 
-      
+        private void txtLOTID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtLOTID_Click(object sender, EventArgs e)
+        {
+            StringBuilder strb = new StringBuilder();
+            //LOT 제조일자
+            string time = DateTime.Now.ToString("yyMMdd");
+            strb.Append(time);
+            //LOT 제품별 품목 구분
+            string lotMiddle = txtProdCode.Text;
+            lotMiddle = lotMiddle.Substring(3, 1);
+            if (lotMiddle == "L") strb.Append("-PD-LC");
+            if (lotMiddle == "R") strb.Append("-PD-RC");
+            if (lotMiddle == "S") strb.Append("-PD-SP");
+            //LOT품목별 용량
+            string prdNum = txtProdCode.Text;
+            prdNum = prdNum.Substring(prdNum.Length - 4, 3);
+            strb.Append(prdNum);
+            strb.Append("-");
+            string preLot = strb.ToString();
+
+            LOTServ serv = new LOTServ();
+            string getLotMax = serv.GetLotMax(preLot);
+            string numLot = null; ;
+            if (getLotMax == "" || getLotMax==null) numLot = "001";
+            else
+            {
+                int temp = Convert.ToInt32(getLotMax);
+                temp = temp + 1;
+                getLotMax = Convert.ToString(temp);
+                numLot = "00" + getLotMax;
+            }
+            strb.Append(numLot);
+            txtLOTID.Text = strb.ToString();
+
+        }
     }
 }
