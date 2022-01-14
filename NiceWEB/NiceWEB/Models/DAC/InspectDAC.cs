@@ -25,12 +25,12 @@ namespace NiceWEB.Models
                 conn.Close();
         }
 
-        public List<Inspect> GetPageList(string prdCode, string operCode, string lotID, int page, int pagesize)
+        public List<Inspect> GetPageList(string startDate, string endDate, string prdCode, string operCode, string lotID, int page, int pagesize)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(ConfigurationManager.ConnectionStrings["project"].ConnectionString);
-                cmd.CommandText = @"	SELECT TRAN_TIME,LOT_ID,  A.PRODUCT_CODE, PRODUCT_NAME, A.OPERATION_CODE, OPERATION_NAME, INSPECT_ITEM_CODE, INSPECT_ITEM_NAME, VALUE_TYPE, 
+                cmd.CommandText = @"	 SELECT TRAN_TIME,LOT_ID,  A.PRODUCT_CODE, PRODUCT_NAME, A.OPERATION_CODE, OPERATION_NAME, INSPECT_ITEM_CODE, INSPECT_ITEM_NAME, VALUE_TYPE, 
  SPEC_LSL, SPEC_TARGET, SPEC_USL, INSPECT_VALUE,  TRAN_CODE,TRAN_USER_ID
  FROM (	
  SELECT TRAN_TIME,LOT_ID,  H.PRODUCT_CODE, PRODUCT_NAME, H.OPERATION_CODE, OPERATION_NAME, INSPECT_ITEM_CODE, INSPECT_ITEM_NAME, VALUE_TYPE, 
@@ -40,6 +40,7 @@ namespace NiceWEB.Models
  AND H.PRODUCT_CODE like @PRODUCT_CODE
  AND H.OPERATION_CODE like @OPERATION_CODE
  AND LOT_ID like @LOT_ID
+ AND TRAN_TIME 
  )A
 where RowNum between ((@PAGE_NO - 1) * @PAGE_SIZE) + 1 and (@PAGE_NO * @PAGE_SIZE)";
 
@@ -47,6 +48,11 @@ where RowNum between ((@PAGE_NO - 1) * @PAGE_SIZE) + 1 and (@PAGE_NO * @PAGE_SIZ
                 cmd.Parameters.AddWithValue("@PRODUCT_CODE", $"%{prdCode}%");
                 cmd.Parameters.AddWithValue("@OPERATION_CODE", $"%{operCode}%");
                 cmd.Parameters.AddWithValue("@LOT_ID", $"%{lotID}%");
+
+                cmd.Parameters.AddWithValue("@startDate", startDate);
+
+                cmd.Parameters.AddWithValue("@endDate", endDate);
+
                 cmd.Parameters.AddWithValue("@PAGE_NO", page);
                 cmd.Parameters.AddWithValue("@PAGE_SIZE", pagesize);
 

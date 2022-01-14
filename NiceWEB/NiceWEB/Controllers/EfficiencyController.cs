@@ -28,7 +28,7 @@ namespace NiceWEB.Controllers
             int pagesize = Convert.ToInt32(WebConfigurationManager.AppSettings["pagesize"]);
             EfficiencyDAC dac = new EfficiencyDAC();
             int totalCount = dac.GetTotalCount(workID, prdCode);
-            List<Efficiency> list = dac.GetData("2020-01-01", "2010-02-02", "", "");
+            List<Efficiency> list = dac.GetData(startDate, endDate, "", "");
             //차트
             dac.Dispose();
 

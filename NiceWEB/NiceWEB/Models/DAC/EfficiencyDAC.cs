@@ -26,7 +26,7 @@ namespace NiceWEB.Models
         }
 
 
-        public List<Efficiency> GetData(string from, string to, string workID, string prdCode)
+        public List<Efficiency> GetData(string startDate, string endDate, string workID, string prdCode)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
