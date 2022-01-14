@@ -13,7 +13,7 @@ namespace NiceWEB.Controllers
     public class MaterialController : Controller
     {
         // GET: Material
-        public ActionResult Index(string productCode,string op_code,string childCode,int page=1)
+        public ActionResult Index(string startDate, string endDate, string productCode,string op_code,string childCode,int page=1)
         {
             DateTime from = Convert.ToDateTime("2021-10-10");
             DateTime to = Convert.ToDateTime("2022-10-10");

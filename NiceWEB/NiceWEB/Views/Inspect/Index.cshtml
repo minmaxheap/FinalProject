@@ -36,7 +36,7 @@
 
 <div class="content">
     <div class="container-fluid">
-        @using (Html.BeginForm("Index", "Inspect", FormMethod.Get, null))
+        @using (Html.BeginForm("Index", "Inspect", FormMethod.Post, new { @id = "form4" }))
         {
             <div class="row">
                 <div class="col-md-12">
