@@ -225,6 +225,7 @@ namespace POPprogram
 
         private void DefaultButton(Button btn, DataView dv1, int i)
         {
+            btn.BackColor = Color.FromArgb(250, 250, 250);
             btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btn.Font = new System.Drawing.Font("나눔고딕", 10.5F, System.Drawing.FontStyle.Bold);
             btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));

@@ -8,29 +8,6 @@
 
 
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-<script src="https://unpkg.com/chart.js@2.8.0/dist/Chart.bundle.js"></script>
-<script src="https://unpkg.com/chartjs-gauge@0.3.0/dist/chartjs-gauge.js"></script>
-<script src="https://unpkg.com/chartjs-plugin-datalabels@0.7.0/dist/chartjs-plugin-datalabels.js"></script>
-<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
-<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
-<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
-<script type="text/javascript" src="~/dist/js/gauge.min.js"></script>
-
-<!-- jQuery -->
-<script src="~/plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="~/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- uPlot -->
-<script src="~/plugins/uplot/uPlot.iife.min.js"></script>
-<!-- AdminLTE App -->
-<script src="~/dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="~/dist/js/demo.js"></script>
 
 <div style="display:none;" class="row">
 	<div class="form-group">
@@ -93,98 +70,106 @@
 						<h3 class="card-title">LOT 이력 조회</h3>
 					</div>
 					<!-- /.card-header -->
-					<div class="card-body">
-						@*<table id="compareplan" class="table table-bordered table-striped">
-							</table>*@
-						<table class="table table-striped table-bordered table-hover"
-							   id="TableId"
-							   cellspacing="0"
-							   align="center"
-							   width="50%" border="1">
+                    <div class="card-body">
+                        @*<table id="compareplan" class="table table-bordered table-striped">
+        </table>*@
+                        <div style="width:100%; height:200px; overflow:auto">
 
-							<thead>
-								<tr>
-									<th scope="col">처리시간</th>
-									<th scope="col">순번</th>
-									<th scope="col">트랜코드</th>
-									<th scope="col">설명란</th>
-									<th scope="col">품번</th>
-									<th scope="col">공정</th>
-									<th scope="col">창고</th>
-									<th scope="col">LOT_QTY</th>
-									<th scope="col">CREATE_QTY</th>
-									<th scope="col">OPER_IN_QTY</th>
-									<th scope="col">START_Flag</th>
-									<th scope="col">START_QTY</th>
-									<th scope="col">시작시간</th>
-									<th scope="col">설비</th>
-									<th scope="col">END_FLAG</th>
-									<th scope="col">END_TIME</th>
-									<th scope="col">설비 끝</th>
-									<th scope="col">쉽 플래그</th>
-									<th scope="col">쉽 코드</th>
-									<th scope="col">쉽 타임</th>
-									<th scope="col">프로덕션 타임</th>
-									<th scope="col">생성시간</th>
-									<th scope="col">공정시간</th>
-									<th scope="col">WORK_ORDER_ID</th>
-									<th scope="col">LOT_DELETE_FLAG</th>
-									<th scope="col">LOT_DELETE_TIME</th>
-									<th scope="col">TRAN_USER_ID</th>
-									<th scope="col">TRAN_COMMENT</th>
-									<th scope="col">OLD_PRODUCT_CODE</th>
-									<th scope="col">OLD_OPERATION_CODE</th>
-									<th scope="col">OLD_STORE_CODE</th>
-									<th scope="col">OLD_LOT_QTY</th>
-								</tr>
-							</thead>
-							<tbody>
-								
-								
+       
+                            <table class="table table-striped table-bordered table-hover"
+                                   id="TableId"
+                                   cellspacing="0"
+                                   align="center"
+                                   width="10%" border="1">
+                                    
+                                <thead>
+                                    <tr>
+                                        <th scope="col">처리시간</th>
+                                        <th scope="col">순번</th>
+                                        <th scope="col">트랜코드</th>
+                                        <th scope="col">설명란</th>
+                                        <th scope="col">품번</th>
+                                        <th scope="col">공정</th>
+                                        <th scope="col">창고</th>
+                                        <th scope="col">LOT_QTY</th>
+                                        <th scope="col">CREATE_QTY</th>
+                                        <th scope="col">OPER_IN_QTY</th>
+                                        <th scope="col">START_Flag</th>
+                                        <th scope="col">START_QTY</th>
+                                        <th scope="col">시작시간</th>
+                                        <th scope="col">설비</th>
+                                        <th scope="col">END_FLAG</th>
+                                        <th scope="col">END_TIME</th>
+                                        <th scope="col">설비 끝</th>
+                                        <th scope="col">쉽 플래그</th>
+                                        <th scope="col">쉽 코드</th>
+                                        <th scope="col">쉽 타임</th>
+                                        <th scope="col">프로덕션 타임</th>
+                                        <th scope="col">생성시간</th>
+                                        <th scope="col">공정시간</th>
+                                        <th scope="col">WORK_ORDER_ID</th>
+                                        <th scope="col">LOT_DELETE_FLAG</th>
+                                        <th scope="col">LOT_DELETE_TIME</th>
+                                        <th scope="col">TRAN_USER_ID</th>
+                                        <th scope="col">TRAN_COMMENT</th>
+                                        <th scope="col">OLD_PRODUCT_CODE</th>
+                                        <th scope="col">OLD_OPERATION_CODE</th>
+                                        <th scope="col">OLD_STORE_CODE</th>
+                                        <th scope="col">OLD_LOT_QTY</th>
 
-								@foreach (var p in Model)
-								{
-								<tr>
-									<td>@p.TRAN_TIME</td>
-									<td>@p.HIST_SEQ</td>
-									<td>@p.TRAN_CODE</td>
-									<td>@p.LOT_DESC</td>
-									<td>@p.PRODUCT_CODE</td>
-									<td>@p.OPERATION_CODE</td>
-									<td>@p.STORE_CODE</td>
-									<td>@p.LOT_QTY</td>
-									<td>@p.CREATE_QTY</td>
-									<td>@p.OPER_IN_QTY</td>
-									<td>@p.START_FLAG</td>
-									<td>@p.START_QTY</td>
-									<td>@p.START_TIME</td>
-									<td>@p.START_EQUIPMENT_CODE</td>
-									<td>@p.END_FLAG</td>'
-									<td>@p.END_TIME</td>
-									<td>@p.END_EQUIPMENT_CODE</td>
-									<td>@p.SHIP_FLAG</td>
-									<td>@p.SHIP_CODE</td>
-									<td>@p.SHIP_TIME</td>
-									<td>@p.PRODUCTION_TIME</td>
-									<td>@p.CREATE_TIME</td>
-									<td>@p.OPER_IN_TIME</td>
-									<td>@p.WORK_ORDER_ID</td>
-									<td>@p.LOT_DELETE_FLAG</td>
-									<td>@p.LOT_DELETE_CODE</td>
-									<td>@p.LOT_DELETE_TIME</td>
-									<td>@p.TRAN_USER_ID</td>
-									<td>@p.TRAN_COMMENT</td>
-									<td>@p.OLD_PRODUCT_CODE</td>
-									<td>@p.OLD_OPERATION_CODE</td>
-									<td>@p.OLD_STORE_CODE</td>
-									<td>@p.OLD_LOT_QTY</td>
-								</tr>
-							}
-								</tbody>
-							</table>
-					</div>
-					<!-- /.card-body -->
-				</div>
+
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var p in Model)
+                                    {
+                                        <tr>
+                                            <td>@p.TRAN_TIME</td>
+                                            <td>@p.HIST_SEQ</td>
+                                            <td>@p.TRAN_CODE</td>
+                                            <td>@p.LOT_DESC</td>
+                                            <td>@p.PRODUCT_CODE</td>
+                                            <td>@p.OPERATION_CODE</td>
+                                            <td>@p.STORE_CODE</td>
+                                            <td>@p.LOT_QTY</td>
+                                            <td>@p.CREATE_QTY</td>
+                                            <td>@p.OPER_IN_QTY</td>
+                                            <td>@p.START_FLAG</td>
+                                            <td>@p.START_QTY</td>
+                                            <td>@p.START_TIME</td>
+                                            <td>@p.START_EQUIPMENT_CODE</td>
+                                            <td>@p.END_FLAG</td>
+                                            <td>@p.END_TIME</td>
+                                            <td>@p.END_EQUIPMENT_CODE</td>
+                                            <td>@p.SHIP_FLAG</td>
+                                            <td>@p.SHIP_CODE</td>
+                                            <td>@p.SHIP_TIME</td>
+                                            <td>@p.PRODUCTION_TIME</td>
+                                            <td>@p.CREATE_TIME</td>
+                                            <td>@p.OPER_IN_TIME</td>
+                                            <td>@p.WORK_ORDER_ID</td>
+                                            <td>@p.LOT_DELETE_FLAG</td>
+                                            <td>@p.LOT_DELETE_CODE</td>
+                                            <td>@p.LOT_DELETE_TIME</td>
+                                            <td>@p.TRAN_USER_ID</td>
+                                            <td>@p.TRAN_COMMENT</td>
+                                            <td>@p.OLD_PRODUCT_CODE</td>
+                                            <td>@p.OLD_OPERATION_CODE</td>
+                                            <td>@p.OLD_STORE_CODE</td>
+                                            <td>@p.OLD_LOT_QTY</td>
+
+                                            
+
+
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
 				<!-- /.card -->
 			</div>
 			<!-- /.col -->
@@ -199,5 +184,6 @@
 			</nav>
 		</div>
 	</div>
+ </div>
 
 

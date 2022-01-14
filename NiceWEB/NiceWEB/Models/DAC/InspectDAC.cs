@@ -25,95 +25,73 @@ namespace NiceWEB.Models
                 conn.Close();
         }
 
-        public DataTable GetData(string from, string to,  string prdCode, string operCode, string lotID)
+        public List<Inspect> GetPageList(string prdCode, string operCode, string lotID, int page, int pagesize)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(ConfigurationManager.ConnectionStrings["project"].ConnectionString);
-                StringBuilder sb = new StringBuilder();
-
-                sb.Append(@" SELECT TRAN_TIME,LOT_ID,  H.PRODUCT_CODE, PRODUCT_NAME, H.OPERATION_CODE, OPERATION_NAME, INSPECT_ITEM_CODE, INSPECT_ITEM_NAME, VALUE_TYPE, 
+                cmd.CommandText = @"	SELECT TRAN_TIME,LOT_ID,  A.PRODUCT_CODE, PRODUCT_NAME, A.OPERATION_CODE, OPERATION_NAME, INSPECT_ITEM_CODE, INSPECT_ITEM_NAME, VALUE_TYPE, 
  SPEC_LSL, SPEC_TARGET, SPEC_USL, INSPECT_VALUE,  TRAN_CODE,TRAN_USER_ID
+ FROM (	
+ SELECT TRAN_TIME,LOT_ID,  H.PRODUCT_CODE, PRODUCT_NAME, H.OPERATION_CODE, OPERATION_NAME, INSPECT_ITEM_CODE, INSPECT_ITEM_NAME, VALUE_TYPE, 
+ SPEC_LSL, SPEC_TARGET, SPEC_USL, INSPECT_VALUE,  TRAN_CODE,TRAN_USER_ID, row_number() over(order by  LOT_ID) as RowNum
  FROM [dbo].[LOT_INSPECT_HIS] H, PRODUCT_MST P, OPERATION_MST O
  WHERE H.PRODUCT_CODE = P.PRODUCT_CODE AND H.OPERATION_CODE = O.OPERATION_CODE
- ORDER BY TRAN_TIME, LOT_ID");
+ AND H.PRODUCT_CODE like @PRODUCT_CODE
+ AND H.OPERATION_CODE like @OPERATION_CODE
+ AND LOT_ID like @LOT_ID
+ )A
+where RowNum between ((@PAGE_NO - 1) * @PAGE_SIZE) + 1 and (@PAGE_NO * @PAGE_SIZE)";
 
-                //if (!(string.IsNullOrWhiteSpace(from)) && !(string.IsNullOrWhiteSpace(to)))
-                //{
-                //    sb.Append(" and ");
-                //    cmd.Parameters.AddWithValue("@from", from);
-                //    cmd.Parameters.AddWithValue("@to", to);
-                //}
+                cmd.Connection.Open();
+                cmd.Parameters.AddWithValue("@PRODUCT_CODE", $"%{prdCode}%");
+                cmd.Parameters.AddWithValue("@OPERATION_CODE", $"%{operCode}%");
+                cmd.Parameters.AddWithValue("@LOT_ID", $"%{lotID}%");
+                cmd.Parameters.AddWithValue("@PAGE_NO", page);
+                cmd.Parameters.AddWithValue("@PAGE_SIZE", pagesize);
 
-                //if (!(string.IsNullOrWhiteSpace(operCode)))
-                //{
-                //    sb.Append(" and ");
-                //    cmd.Parameters.AddWithValue("@operCode", operCode);
-                //}
 
-                //if (!(string.IsNullOrWhiteSpace(lotID)))
-                //{
-                //    sb.Append(" and ");
-                //    cmd.Parameters.AddWithValue("@lotID", lotID);
-                //}
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<Inspect> list = Helper.DataReaderMapToList<Inspect>(reader);
+                cmd.Connection.Close();
+                return list;
+
+
+            }
+        }
+
+        public int GetTotalCount(string prdCode, string operCode, string lotID)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+
+                cmd.Connection = conn;
+                StringBuilder sb = new StringBuilder();
+                sb.Append(@"select count(*) from LOT_STS
+where LOT_DELETE_FLAG <> 'Y' OR LOT_DELETE_FLAG IS NULL  and STORE_CODE is not  null ");
+                if (!string.IsNullOrWhiteSpace(prdCode))
+                {
+                    sb.Append(" and STORE_CODE = @STORE_CODE ");
+                    cmd.Parameters.AddWithValue("@STORE_CODE", operCode);
+                }
+                if (!string.IsNullOrWhiteSpace(prdCode))
+                {
+                    sb.Append(" and PRODUCT_CODE = @PRODUCT_CODE ");
+                    cmd.Parameters.AddWithValue("@PRODUCT_CODE", prdCode);
+                }
+                if (!string.IsNullOrWhiteSpace(lotID))
+                {
+                    sb.Append(" and PRODUCT_CODE = @PRODUCT_CODE ");
+                    cmd.Parameters.AddWithValue("@PRODUCT_CODE", lotID);
+                }
+                //sb.Append(" order by STORE_CODE,OPER_IN_TIME,LOT_ID ");
+                cmd.CommandText = sb.ToString();
 
 
                 cmd.CommandText = sb.ToString();
 
-                DataTable dt = new DataTable();
-                cmd.Connection.Open();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dt);
-                cmd.Connection.Close();
-
-                return dt;
+                return Convert.ToInt32(cmd.ExecuteScalar());
             }
         }
-
- //       public List<Inspect> GetData(string from, string to, string prdCode, string operCode, string lotID)
- //       {
- //           using (SqlCommand cmd = new SqlCommand())
- //           {
- //               cmd.Connection = new SqlConnection(ConfigurationManager.ConnectionStrings["project"].ConnectionString);
- //               StringBuilder sb = new StringBuilder();
-
- //               sb.Append(@" SELECT TRAN_TIME,LOT_ID,  H.PRODUCT_CODE, PRODUCT_NAME, H.OPERATION_CODE, OPERATION_NAME, INSPECT_ITEM_CODE, INSPECT_ITEM_NAME, VALUE_TYPE, 
- //SPEC_LSL, SPEC_TARGET, SPEC_USL, INSPECT_VALUE,  TRAN_CODE,TRAN_USER_ID
- //FROM [dbo].[LOT_INSPECT_HIS] H, PRODUCT_MST P, OPERATION_MST O
- //WHERE H.PRODUCT_CODE = P.PRODUCT_CODE AND H.OPERATION_CODE = O.OPERATION_CODE
- //ORDER BY TRAN_TIME, LOT_ID");
-
- //               if (!(string.IsNullOrWhiteSpace(from)) && !(string.IsNullOrWhiteSpace(to)))
- //               {
- //                   sb.Append(" and ");
- //                   cmd.Parameters.AddWithValue("@from", from);
- //                   cmd.Parameters.AddWithValue("@to", to);
- //               }
-
- //               if (!(string.IsNullOrWhiteSpace(operCode)))
- //               {
- //                   sb.Append(" and ");
- //                   cmd.Parameters.AddWithValue("@operCode", operCode);
- //               }
-
- //               if (!(string.IsNullOrWhiteSpace(lotID)))
- //               {
- //                   sb.Append(" and ");
- //                   cmd.Parameters.AddWithValue("@lotID", lotID);
- //               }
-
-
- //               cmd.CommandText = sb.ToString();
-
- //               cmd.Connection.Open();
-
- //               List<Inspect> list = Helper.DataReaderMapToList<Inspect>(cmd.ExecuteReader());
- //               cmd.Connection.Close();
- //               return list;
-
-
- //           }
- //       }
-
     }
 }
