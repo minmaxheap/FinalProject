@@ -14,7 +14,24 @@ namespace NiceWEB.Controllers
         // GET: LOTH
         public ActionResult Index(string LotID, int page = 1)
         {
-            
+            if (string.IsNullOrWhiteSpace(LotID))
+            {
+                List<LOT_HIS> list = null;
+                ViewBag.LotID = LotID;
+
+                PagingInfo pageInfo = new PagingInfo
+                {
+                    TotalItems = 0,
+                    ItemsPerPage = 10,
+                    CurrentPage = page
+                };
+                ViewBag.PagingInfo = pageInfo;
+
+                return View(list);
+            }
+            else
+            {
+
                 int pagesize = Convert.ToInt32(WebConfigurationManager.AppSettings["pagesize"]);
 
                 LOT_HISDAC dac = new LOT_HISDAC();
@@ -33,7 +50,7 @@ namespace NiceWEB.Controllers
                 ViewBag.PagingInfo = pageInfo;
 
                 return View(List);
-            
+            }
         }
     }
 }

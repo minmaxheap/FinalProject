@@ -23,64 +23,105 @@ namespace NiceWEB.Models.DAC
 			conn.Dispose();
 		}
 
-		public List<DefectProperty> GetData()
-		{
-			using (SqlCommand cmd = new SqlCommand())
-			{
-				cmd.Connection = new SqlConnection(ConfigurationManager.ConnectionStrings["project"].ConnectionString);
-				
-
-				cmd.CommandText = @"select CONVERT(varchar,TRAN_TIME,23) TRAN_DATE,PRODUCT_CODE,OPERATION_CODE, DEFECT_CODE, sum(DEFECT_QTY) as DEFECT_QTY
-from LOT_DEFECT_HIS
-group by  CONVERT(varchar,TRAN_TIME,23),PRODUCT_CODE,OPERATION_CODE, DEFECT_CODE";
-
-				cmd.Connection.Open();
-
-				List<DefectProperty> list = Helper.DataReaderMapToList<DefectProperty>(cmd.ExecuteReader());
-				cmd.Connection.Close();
-				return list;
-			}
-		}
-
-		public List<DefectProperty> GetSearch(string from ,string to,string product,string op_code)
+		public List<DefectProperty> GetData(DateTime from,DateTime to,string productCode,string op_code, int page, int pagesize)
 		{
 			using (SqlCommand cmd = new SqlCommand())
 			{
 				cmd.Connection = conn;
-				StringBuilder sb = new StringBuilder();
-				sb.Append(@"select CONVERT(varchar,TRAN_TIME,23) TRAN_DATE,PRODUCT_CODE,OPERATION_CODE, DEFECT_CODE, sum(DEFECT_QTY) as DEFECT_QTY
-from LOT_DEFECT_HIS");
+				cmd.CommandText = "SP_DEFFECT";
+				cmd.CommandType = CommandType.StoredProcedure;
 
-				if (!string.IsNullOrWhiteSpace(product))
+				if (!string.IsNullOrWhiteSpace(productCode))
 				{
-					sb.Append(" and PRODUCT_CODE = @PRODUCT_CODE");
-					cmd.Parameters.AddWithValue("@PRODUCT_CODE", product);
+					cmd.Parameters.AddWithValue("@PRODUCT_CODE", productCode);
 				}
+				else
+					cmd.Parameters.AddWithValue("@PRODUCT_CODE", DBNull.Value);
 				if (!string.IsNullOrWhiteSpace(op_code))
 				{
-					sb.Append(" and OPERATION_CODE and @PRODOPERATION_CODEUCT_CODE");
 					cmd.Parameters.AddWithValue("@OPERATION_CODE", op_code);
 				}
-				if (!string.IsNullOrWhiteSpace(from) && !string.IsNullOrWhiteSpace(to))
-				{
-					sb.Append("");
-					cmd.Parameters.AddWithValue("@from", from);
-					cmd.Parameters.AddWithValue("@to",to);
+				else
+				cmd.Parameters.AddWithValue("@OPERATION_CODE", DBNull.Value);
 
+				cmd.Parameters.AddWithValue("@from", from);
+				cmd.Parameters.AddWithValue("@to", to);
+				cmd.Parameters.AddWithValue("@PAGE_NO", page);
+				cmd.Parameters.AddWithValue("@PAGE_SIZE", pagesize);
+
+				SqlDataReader reader = cmd.ExecuteReader();
+
+				List<DefectProperty> list = Helper.DataReaderMapToList<DefectProperty>(reader);
+				reader.Close();
+				return list;
+			}
+		}
+
+
+		public int GetProductTotalCount(DateTime from, DateTime to, string productCode, string op_code)
+		{
+			using (SqlCommand cmd = new SqlCommand())
+			{
+
+				cmd.Connection = conn;
+				StringBuilder sb = new StringBuilder();
+				sb.Append(@"SELECT COUNT(*) FROM LOT_DEFECT_HIS where 1=1 ");
+				if (!string.IsNullOrWhiteSpace(productCode))
+				{
+					sb.Append(" and PRODUCT_CODE = @PRODUCT_CODE ");
+					cmd.Parameters.AddWithValue("@PRODUCT_CODE", productCode);
 				}
-				//if (from != null & to != null)  
-				//{
-				//	sb.Append(" 
-				//}
-				sb.Append(" group by  CONVERT(varchar,TRAN_TIME,23),PRODUCT_CODE,OPERATION_CODE, DEFECT_CODE");
+				if (!string.IsNullOrWhiteSpace(productCode))
+				{
+					sb.Append(" and OPERATION_CODE = @OPERATION_CODE");
+					cmd.Parameters.AddWithValue("@OPERATION_CODE", op_code);
+				}
+				//datetime을 어떻게 두면좋을까?
+				if (from != null && to != null)
+				{
+					sb.Append(" and TRAN_TIME between @from and @to ");
+					cmd.Parameters.AddWithValue("@from", from);
+					cmd.Parameters.AddWithValue("@to", to);
+				}
 				cmd.CommandText = sb.ToString();
 
-				List<DefectProperty> list = Helper.DataReaderMapToList<DefectProperty>(cmd.ExecuteReader());
-				cmd.Connection.Close();
-				return list;
+				return Convert.ToInt32(cmd.ExecuteScalar());
+			}
+		}
 
+		public List<ComboItem> GetProduct()
+		{
+			using (SqlCommand cmd = new SqlCommand())
+			{
+				cmd.Connection = conn;
+				cmd.CommandText = @"select distinct PRODUCT_CODE as Code from PRODUCT_MST";
+
+				SqlDataReader reader = cmd.ExecuteReader();
+				List<ComboItem> list = Helper.DataReaderMapToList<ComboItem>(reader);
+				reader.Close();
+
+				return list;
 
 			}
 		}
+
+		public List<ComboItem> GetOperation()
+		{
+			using (SqlCommand cmd = new SqlCommand())
+			{
+				cmd.Connection = conn;
+				cmd.CommandText = @"select distinct OPERATION_CODE as Code from OPERATION_MST";
+
+				SqlDataReader reader = cmd.ExecuteReader();
+				List<ComboItem> list = Helper.DataReaderMapToList<ComboItem>(reader);
+				reader.Close();
+
+				return list;
+
+			}
+		}
+
+
+
 	}
 }
