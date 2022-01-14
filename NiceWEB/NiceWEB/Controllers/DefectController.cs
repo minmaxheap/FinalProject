@@ -9,7 +9,7 @@ namespace NiceWEB.Controllers
 	public class DefectController : Controller
     {
         // GET: Deffect
-        public ActionResult Index(string productCode, string op_code, int page=1)
+        public ActionResult Index(string startDate, string endDate, string productCode, string op_code, int page=1)
         {
             DateTime from = Convert.ToDateTime("2021-10-10");
             DateTime to = Convert.ToDateTime("2022-10-10");

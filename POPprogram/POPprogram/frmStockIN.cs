@@ -60,12 +60,12 @@ namespace POPprogram
             DataGridViewUtil.SetInitGridView(csDataGridView1);
             DgvChk(csDataGridView1);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "순번", "RowNum");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "자재 품번", "MATERIAL_CODE",width: 150);
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "자재 품명", "MATERIAL_NAME",width: 150);
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "자재 품번", "MATERIAL_CODE", width: 150);
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "자재 품명", "MATERIAL_NAME", width: 150);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "단위 수량", "REQUIRE_QTY");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "수량", "QTY");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "입하 여부", "STOCK_IN_FLAG");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "자재LOT ID", "STOCK_IN_LOT_ID", width :150);
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "자재LOT ID", "STOCK_IN_LOT_ID", width: 150);
 
 
             LoadData();
@@ -183,20 +183,25 @@ namespace POPprogram
                 return;
             }
 
-            List<LOTProperty> list = new List<LOTProperty>();
+            List<StockProperty> list = new List<StockProperty>();
+            string salesID = "SALES_" + txtSearch.Text.Split('_')[1];
             foreach (DataGridViewRow row in csDataGridView1.Rows)
             {
-                LOTProperty pr = new LOTProperty()
+                StockProperty pr = new StockProperty
                 {
-                    LOT_ID = row.Cells["STOCK_IN_LOT_ID"].Value.ToString(),
-                    LOT_QTY = Convert.ToDecimal(row.Cells["QTY"].Value)
-
+                    STOCK_IN_LOT_ID = row.Cells["STOCK_IN_LOT_ID"].Value.ToString(),
+                    STOCK_IN_LOT_QTY = Convert.ToDecimal(row.Cells["QTY"].Value),
+                    SALES_ORDER_ID = salesID,
+                    CREATE_USER_ID = msUserID,
+                    MATERIAL_CODE = row.Cells["MATERIAL_CODE"].Value.ToString()
                 };
                 list.Add(pr);
             }
-            string salesID = "SALES_" + txtSearch.Text.Split('_')[1];
 
 
+          
+            List<StockProperty> mixed = serv.GetMixedInfo(salesID);
+            list.Add(mixed[0]);
 
             if (bFlag)
             {
@@ -217,7 +222,7 @@ namespace POPprogram
                     MessageBox.Show("입고 처리 중 문제가 발생했습니다.");
                 }
             }
-            else 
+            else
             {
 
                 bool bResult = serv.SaveStockLot(lotList, comboBox1.SelectedValue.ToString(), msUserID);
@@ -237,7 +242,7 @@ namespace POPprogram
 
             }
 
-            
+
         }
 
         private void csDataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -287,7 +292,7 @@ namespace POPprogram
 
             }
 
-           
+
 
         }
         public static DataTable GetDataGridViewAsDataTable(DataGridView _DataGridView)

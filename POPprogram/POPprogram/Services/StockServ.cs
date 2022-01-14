@@ -34,7 +34,7 @@ namespace POPprogram
             return List;
         }
 
-        public bool InsertLOTStatus(string CREATE_USER_ID, List<LOTProperty> list,string SALES_ORDER_ID)
+        public bool InsertLOTStatus(string CREATE_USER_ID, List<StockProperty> list,string SALES_ORDER_ID)
         {
 
 
@@ -50,6 +50,14 @@ namespace POPprogram
             bool bResult = dac.SaveStockLot(lotlist, storeID, msUserID);
             dac.Dispose();
             return bResult;
+        }
+
+        public List<StockProperty> GetMixedInfo(string salesID)
+        {
+            StockDAC dac = new StockDAC();
+            List<StockProperty> list = dac.GetMixedInfo(salesID);
+            dac.Dispose();
+            return list;
         }
     }
 }
