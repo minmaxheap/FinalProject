@@ -14,13 +14,7 @@ namespace NiceWEB.Controllers
         // GET: LOTH
         public ActionResult Index(string LotID, int page = 1)
         {
-            if (LotID == null)
-            {
-                return View();
-
-            }
-            else
-            {
+            
                 int pagesize = Convert.ToInt32(WebConfigurationManager.AppSettings["pagesize"]);
 
                 LOT_HISDAC dac = new LOT_HISDAC();
@@ -39,7 +33,7 @@ namespace NiceWEB.Controllers
                 ViewBag.PagingInfo = pageInfo;
 
                 return View(List);
-            }
+            
         }
     }
 }
