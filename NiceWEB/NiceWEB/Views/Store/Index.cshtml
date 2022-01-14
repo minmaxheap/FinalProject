@@ -44,7 +44,7 @@
 	<div class="container-fluid">
 		<div class="row mb-2">
 			<div class="col-sm-6">
-				<h1 class="m-0">자재 투입 이력 </h1>
+				<h1 class="m-0">창고 이력 조회 </h1>
 			</div><!-- /.col -->
 			<div class="col-sm-6">
 				<ol class="breadcrumb float-sm-right">
@@ -71,7 +71,7 @@
 								<label>창고:</label>
 
 								@Html.DropDownList("storeCode",
-							(IEnumerable<SelectListItem>)ViewBag.Categories, null, null)
+							(IEnumerable<SelectListItem>)ViewBag.Categories)
 							</div>
 						</div>
 						<div class="col-4">
@@ -123,6 +123,7 @@
 							<tbody>
 								@foreach (var p in Model)
 								{
+									
 									<tr>
 										<td>@p.OPER_IN_TIME</td>
 										<td>@p.LOT_ID</td>

@@ -147,15 +147,15 @@ namespace POPprogram
 
 		}
 
-        // 나중구현 
-
+        // 나중구현
+        //어찌하면 좋을까 
 		private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
 		{
             if (cboLOTID.SelectedIndex < 1) return;
 
-            List<string> list = new List<string>();
-            list =  serv.GetEqList(comboBox1.SelectedValue.ToString());
-            textBox10.Text = list[0];
+            //List<string> list = new List<string>();
+            //list =  serv.GetEqList(comboBox1.SelectedValue.ToString());
+            //textBox10.Text = list[0];
         }
 	}
 }

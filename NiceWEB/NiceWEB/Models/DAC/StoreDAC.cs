@@ -109,7 +109,7 @@ where LOT_DELETE_FLAG <> 'Y' OR LOT_DELETE_FLAG IS NULL  and STORE_CODE is not  
 		public List<StoreProperty> GetPageList(string storeCode, string producCode, int page, int pagesize)
 		{
 			using (SqlCommand cmd = new SqlCommand())
-			{
+			  {
 				cmd.Connection = conn;
 				cmd.CommandText = "SP_GetProductListPage";
 				cmd.CommandType = CommandType.StoredProcedure;
