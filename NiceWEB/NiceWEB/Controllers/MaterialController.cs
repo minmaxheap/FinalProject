@@ -12,7 +12,7 @@ namespace NiceWEB.Controllers
     public class MaterialController : Controller
     {
         // GET: Material
-        public ActionResult Index()
+        public ActionResult Index(string startDate, string endDate)
         {
             Adding_materialDAC dac = new Adding_materialDAC();
             List<Adding_materialProperty> list = dac.GetData();

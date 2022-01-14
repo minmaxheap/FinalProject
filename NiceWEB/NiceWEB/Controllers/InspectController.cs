@@ -12,7 +12,7 @@ namespace NiceWEB.Controllers
     public class InspectController : Controller
     {
         // GET: Inspect
-        public ActionResult Index(string prdCode, string operCode, string lotID, int page = 1)
+        public ActionResult Index(string startDate, string endDate, string prdCode, string operCode, string lotID, int page = 1)
         {
             //select box에 전달할 데이터
             CommonDAC comDAC = new CommonDAC();

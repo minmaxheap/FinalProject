@@ -12,7 +12,7 @@ namespace NiceWEB.Controllers
     public class EfficiencyController : Controller
     {
         // GET: Efficiency
-        public ActionResult Index(string workID, string prdCode, int page = 1)
+        public ActionResult Index(string startDate, string endDate, string workID, string prdCode, int page = 1)
         {
             CommonDAC comDAC = new CommonDAC();
             //select box에 전달할 데이터

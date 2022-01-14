@@ -34,7 +34,7 @@ namespace POPprogram
             return List;
         }
 
-        public bool InsertLOTStatus(string CREATE_USER_ID, List<LOTProperty> list,string SALES_ORDER_ID)
+        public bool InsertLOTStatus(string CREATE_USER_ID, List<StockProperty> list,string SALES_ORDER_ID)
         {
 
 
