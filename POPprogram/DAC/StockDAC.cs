@@ -346,7 +346,6 @@ WHERE O.SALES_ORDER_ID = SA.SALES_ORDER_ID AND V.CODE_TABLE_NAME ='CM_CUSTOMER' 
                     {
 
                         cmd.CommandText = @"
-        				
 
                                 INSERT [dbo].[LOT_HIS]
                                 (LOT_ID, LOT_DESC, PRODUCT_CODE, STORE_CODE, 
@@ -461,6 +460,29 @@ where s.LOT_ID =@LOT_ID and h.HIST_SEQ = s.LAST_HIST_SEQ-1";
             {
                 trans.Rollback();
                 return false;
+            }
+        }
+
+        public List<StockProperty> GetMixedInfo(string salesID)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"SELECT * FROM  PURCHASE_ORDER_MST WHERE SALES_ORDER_ID=@salesID AND SUBSTRING(MATERIAL_CODE,0,2) ='H'";
+
+                    cmd.Parameters.AddWithValue("@SALES_ORDER_ID", salesID);
+           
+
+                    List<StockProperty> list = Helper.DataReaderMapToList<StockProperty>(cmd.ExecuteReader());
+                    return list;
+                }
+            }
+            catch(Exception err)
+            {
+                Debug.WriteLine(err.Message);
+                return null;
             }
         }
 

@@ -51,6 +51,14 @@ namespace POPprogram
             dac.Dispose();
             return bResult;
         }
+
+        public List<StockProperty> GetMixedInfo(string salesID)
+        {
+            StockDAC dac = new StockDAC();
+            List<StockProperty> list = dac.GetMixedInfo(salesID);
+            dac.Dispose();
+            return list;
+        }
     }
 }
 

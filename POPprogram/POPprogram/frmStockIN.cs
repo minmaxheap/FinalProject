@@ -199,7 +199,9 @@ namespace POPprogram
             }
 
 
-
+          
+            List<StockProperty> mixed = serv.GetMixedInfo(salesID);
+            list.Add(mixed[0]);
 
             if (bFlag)
             {
