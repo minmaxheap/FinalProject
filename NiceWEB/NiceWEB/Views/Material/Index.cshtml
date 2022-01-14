@@ -54,26 +54,22 @@
 					</div>
 					<div class="col-2">
 						<div class="form-group">
-							<label>품번:</label>
-
-							@if (ViewBag.product != null)
-							{
-								@*@Html.DropDownList("productid", new SelectList(ViewBag.product, "Data", "Data"))*@
+							<label>품번:</label>	
 								@Html.DropDownList("productid", (IEnumerable<SelectListItem>)ViewBag.product, null, new { @class = "form-control" })
-							}
 						</div>
 					</div>
 					<div class="col-2">
-						<div class="form-group">
-							<label>공정:</label>
-							
-						</div>
+                        <div class="form-group">
+                            <label>공정:</label>
+                            @Html.DropDownList("productid", (IEnumerable<SelectListItem>)ViewBag.product, null, new { @class = "form-control" })
+                        </div>
 					</div>
 					<div class="col-2">
-						<div class="form-group">
-							<label>자재품번:</label>
-							
-						</div>
+                        <div class="form-group">
+                            <label>자재품번:</label>
+                            @Html.DropDownList("productid", (IEnumerable<SelectListItem>)ViewBag.product, null, new { @class = "form-control" })
+
+                        </div>
 					</div>
 					<div class="col-2">
 						<div class="form-group">

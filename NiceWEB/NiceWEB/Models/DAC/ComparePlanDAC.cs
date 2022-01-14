@@ -96,24 +96,14 @@ FROM [dbo].[WORK_ORDER_MST] W";
             {
 
                 cmd.Connection = conn;
-                StringBuilder sb = new StringBuilder();
-                sb.Append(@"select count(*) from LOT_STS
-where LOT_DELETE_FLAG <> 'Y' OR LOT_DELETE_FLAG IS NULL  and STORE_CODE is not  null ");
-                if (!string.IsNullOrWhiteSpace(workID))
-                {
-                    sb.Append(" and STORE_CODE = @STORE_CODE ");
-                    cmd.Parameters.AddWithValue("@STORE_CODE", workID);
-                }
-                if (!string.IsNullOrWhiteSpace(prdCode))
-                {
-                    sb.Append(" and PRODUCT_CODE = @PRODUCT_CODE ");
-                    cmd.Parameters.AddWithValue("@PRODUCT_CODE", prdCode);
-                }
-                //sb.Append(" order by STORE_CODE,OPER_IN_TIME,LOT_ID ");
-                cmd.CommandText = sb.ToString();
+                cmd.CommandText = @"select count(*) 
+	FROM [dbo].[WORK_ORDER_MST] W, PRODUCT_MST P
+	WHERE W.PRODUCT_CODE = P.PRODUCT_CODE 	
+	and w.PRODUCT_CODE  like @ProductCode
+	and WORK_ORDER_ID like @WORK_ORDER_ID";
+                cmd.Parameters.AddWithValue("@WORK_ORDER_ID", $"%{workID}%");
 
-
-                cmd.CommandText = sb.ToString();
+                cmd.Parameters.AddWithValue("@ProductCode", $"%{prdCode}%");
 
                 return Convert.ToInt32(cmd.ExecuteScalar());
             }

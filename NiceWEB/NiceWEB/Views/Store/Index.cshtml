@@ -47,14 +47,14 @@
 								<label>창고:</label>
 
 								@Html.DropDownList("storeCode",
-							(IEnumerable<SelectListItem>)ViewBag.Categories, null, null)
+							(IEnumerable<SelectListItem>)ViewBag.Categories, null, new { @class = "form-control" })
 							</div>
 						</div>
 						<div class="col-4">
 							<div class="form-group">
 								<label>자재품번:</label>
 								@Html.DropDownList("ProductCode",
-											   (IEnumerable<SelectListItem>)ViewBag.Categories2, null, null)
+											   (IEnumerable<SelectListItem>)ViewBag.Categories2, null, new { @class = "form-control" })
 								
 							</div>
 						</div>
