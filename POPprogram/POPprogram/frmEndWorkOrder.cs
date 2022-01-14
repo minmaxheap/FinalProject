@@ -39,7 +39,6 @@ namespace POPprogram
             DataTable dt = serv.GetEQList();
 
             listEQ= Helper.DataTableMapToList<EndPropertyEQ>(dt);
-
             cboEQList.DisplayMember = "EQ_CODE";
             cboEQList.DataSource = listEQ;
             cboEQList.Text = null;
@@ -109,18 +108,18 @@ namespace POPprogram
 
             if (defectFlag && lblDefect.Text == "Y")
             {
-                lblDefectColor.BackColor = Color.Green;
+                lblDefectColor.BackColor = Color.MediumAquamarine;
                 lblDefectColor.Text = "입력 완료";
                 defectCompleate = true;
             }
             else if (!defectFlag && lblDefect.Text == "Y")
             {
-                lblDefectColor.BackColor = Color.Red;
+                lblDefectColor.BackColor = Color.Tomato;
                 lblDefectColor.Text = "입력 안 됨";
             }
-            else if (!defectFlag && lblDefect.Text == null)
+            else if (!defectFlag && lblDefect.Text == "")
             {
-                lblDefectColor.BackColor = Color.Yellow;
+                lblDefectColor.BackColor = Color.LemonChiffon;
                 lblDefectColor.Text = "입력 없음";
                 defectCompleate = true;
             }
@@ -133,18 +132,18 @@ namespace POPprogram
 
             if (inspectFlag && lblInspect.Text == "Y")
             {
-                lblInspectColor.BackColor = Color.Green;
+                lblInspectColor.BackColor = Color.MediumAquamarine;
                 lblInspectColor.Text = "입력 완료";
                 inspectCompleate = true;
             }
             else if (!inspectFlag && lblInspect.Text == "Y")
             {
-                lblInspectColor.BackColor = Color.Red;
+                lblInspectColor.BackColor = Color.Tomato;
                 lblInspectColor.Text = "입력 안 됨";
             }
-            else if (!inspectFlag && lblInspect.Text == null)
+            else if (!inspectFlag && lblInspect.Text == "")
             {
-                lblInspectColor.BackColor = Color.Yellow;
+                lblInspectColor.BackColor = Color.LemonChiffon;
                 lblInspectColor.Text = "입력 없음";
                 inspectCompleate = true;
             }
@@ -156,18 +155,18 @@ namespace POPprogram
 
             if (inputFlag && lblMaterial.Text == "Y")
             {
-                lblMaterialColor.BackColor = Color.Green;
+                lblMaterialColor.BackColor = Color.MediumAquamarine;
                 lblMaterialColor.Text = "입력 완료";
                 inputCompleate = true;
             }
             else if (!inputFlag && lblMaterial.Text == "Y")
             {
-                lblMaterialColor.BackColor = Color.Red;
+                lblMaterialColor.BackColor = Color.Tomato;
                 lblMaterialColor.Text = "입력 안 됨";
             }
-            else if (!inputFlag && lblMaterial.Text == null)
+            else if (!inputFlag && lblMaterial.Text == "")
             {
-                lblMaterialColor.BackColor = Color.Yellow;
+                lblMaterialColor.BackColor = Color.LemonChiffon;
                 lblMaterialColor.Text = "입력 없음";
                 inputCompleate = true;
             }
@@ -192,7 +191,7 @@ namespace POPprogram
             updateVO.OPER_IN_QTY= Convert.ToDecimal(txtQty.Text);
             updateVO.LAST_TRAN_USER_ID = userID;
             updateVO.END_EQUIPMENT_CODE = cboEQList.Text;
-
+            updateVO.OLD_OPERATION_CODE = Convert.ToString(operConvert-100);
 
             bool bResult = serv.EndLOT_Update(updateVO);
             if (bResult)
@@ -287,18 +286,18 @@ namespace POPprogram
 
             if (defectFlag && lblDefect.Text == "Y")
             {
-                lblDefectColor.BackColor = Color.Green;
+                lblDefectColor.BackColor = Color.MediumAquamarine;
                 lblDefectColor.Text = "입력 완료";
                 defectCompleate = true;
             }
             else if (!defectFlag && lblDefect.Text == "Y")
             {
-                lblDefectColor.BackColor = Color.Red;
+                lblDefectColor.BackColor = Color.Tomato;
                 lblDefectColor.Text = "입력 안 됨";
             }
-            else if (!defectFlag && lblDefect.Text == null)
+            else if (!defectFlag && lblDefect.Text == "")
             {
-                lblDefectColor.BackColor = Color.Yellow;
+                lblDefectColor.BackColor = Color.LemonChiffon;
                 lblDefectColor.Text = "입력 없음";
                 defectCompleate = true;
             }
@@ -311,18 +310,18 @@ namespace POPprogram
 
             if (inspectFlag && lblInspect.Text == "Y")
             {
-                lblInspectColor.BackColor = Color.Green;
+                lblInspectColor.BackColor = Color.MediumAquamarine;
                 lblInspectColor.Text = "입력 완료";
                 inspectCompleate = true;
             }
             else if (!inspectFlag && lblInspect.Text == "Y")
             {
-                lblInspectColor.BackColor = Color.Red;
+                lblInspectColor.BackColor = Color.Tomato;
                 lblInspectColor.Text = "입력 안 됨";
             }
-            else if (!inspectFlag && lblInspect.Text == null)
+            else if (!inspectFlag && lblInspect.Text == "")
             {
-                lblInspectColor.BackColor = Color.Yellow;
+                lblInspectColor.BackColor = Color.LemonChiffon;
                 lblInspectColor.Text = "입력 없음";
                 inspectCompleate = true;
             }
@@ -334,18 +333,18 @@ namespace POPprogram
 
             if (inputFlag && lblMaterial.Text == "Y")
             {
-                lblMaterialColor.BackColor = Color.Green;
+                lblMaterialColor.BackColor = Color.MediumAquamarine;
                 lblMaterialColor.Text = "입력 완료";
                 inputCompleate = true;
             }
             else if (!inputFlag && lblMaterial.Text == "Y")
             {
-                lblMaterialColor.BackColor = Color.Red;
+                lblMaterialColor.BackColor = Color.Tomato;
                 lblMaterialColor.Text = "입력 안 됨";
             }
-            else if (!inputFlag && lblMaterial.Text == null)
+            else if (!inputFlag && lblMaterial.Text == "")
             {
-                lblMaterialColor.BackColor = Color.Yellow;
+                lblMaterialColor.BackColor = Color.LemonChiffon;
                 lblMaterialColor.Text = "입력 없음";
                 inputCompleate = true;
             }
@@ -359,7 +358,7 @@ namespace POPprogram
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboLOTID.SelectedIndex < 0 || cboLOTID.Text == "" || searchflag)
+            if (cboEQList.SelectedIndex < 0 || cboEQList.Text == "" || searchflag)
             {
                 searchflag = false;
                 return;

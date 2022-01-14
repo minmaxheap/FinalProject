@@ -116,7 +116,7 @@ namespace POPprogram
             }
             strb.Append(numLot);
             txtLOTID.Text = strb.ToString();
-
+            txtLOTDescription.Text =txtCustName.Text +' '+txtProdName.Text;
         }
     }
 }

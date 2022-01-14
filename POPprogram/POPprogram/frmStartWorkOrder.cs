@@ -36,10 +36,16 @@ namespace POPprogram
             lotserv = new LOTinspectServ();
             DataTable dt  = lotserv.GetCode();
             //CodeList.Insert(0, "");
-            comboBox1.ValueMember = "EQ_CODE";
-            comboBox1.DisplayMember = "EQ_CODE";
-            comboBox1.DataSource = dt;
-		}
+            cboEQList.ValueMember = "EQ_CODE";
+            cboEQList.DisplayMember = "EQ_CODE";
+            cboEQList.DataSource = dt;
+
+            listEQ = Helper.DataTableMapToList<EndPropertyEQ>(dt);
+
+            cboEQList.DisplayMember = "EQ_CODE";
+            cboEQList.DataSource = listEQ;
+            cboEQList.Text = null;
+        }
 
 		private void cboLOTID_SelectedIndexChanged(object sender, EventArgs e)
 		{
@@ -112,7 +118,7 @@ namespace POPprogram
                 CREATE_QTY = Convert.ToDecimal(txtQty.Text),
                 OPER_IN_QTY = Convert.ToDecimal(txtQty.Text),
                 START_QTY = Convert.ToDecimal(txtQty.Text),
-                START_EQUIPMENT_CODE = (comboBox1.SelectedValue.ToString() == "") ? "":comboBox1.SelectedValue.ToString()
+                START_EQUIPMENT_CODE = (cboEQList.SelectedValue.ToString() == "") ? "":cboEQList.SelectedValue.ToString()
             };
 
             if (mLOT == null)
@@ -130,14 +136,14 @@ namespace POPprogram
             bool result = serv.Insert(mLOT);
             if (result)
             {
-                MessageBox.Show("성공");
+                MessageBox.Show("작업이 정상적으로 시작되었습니다.");
                 LoadData();
                 //lblStatus.Text = "PROC";
                 return;
             }
             else
             {
-                MessageBox.Show("실패");
+                MessageBox.Show("작업 시작 중 문제가 발생했습니다.");
                 return;
             }
 		}
@@ -152,10 +158,12 @@ namespace POPprogram
 		private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
 		{
             if (cboLOTID.SelectedIndex < 1) return;
-
-            //List<string> list = new List<string>();
-            //list =  serv.GetEqList(comboBox1.SelectedValue.ToString());
-            //textBox10.Text = list[0];
+            txtEQ_NAME.Text = listEQ[cboEQList.SelectedIndex].EQ_NAME;
         }
-	}
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    }
 }

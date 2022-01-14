@@ -105,6 +105,10 @@ namespace POPprogram
             // 
             this.pnlCrud.Location = new System.Drawing.Point(499, 788);
             // 
+            // btnClose
+            // 
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // btnExecute
             // 
             this.btnExecute.Location = new System.Drawing.Point(370, 0);
@@ -116,12 +120,12 @@ namespace POPprogram
             // 
             // comboBox1
             // 
-            this.comboBox1.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(166, 62);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(334, 25);
+            this.comboBox1.Size = new System.Drawing.Size(334, 26);
             this.comboBox1.TabIndex = 62;
             // 
             // label12
@@ -175,12 +179,12 @@ namespace POPprogram
             // 
             // comboBox2
             // 
-            this.comboBox2.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.comboBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(165, 110);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(334, 25);
+            this.comboBox2.Size = new System.Drawing.Size(334, 26);
             this.comboBox2.TabIndex = 72;
             // 
             // label24
@@ -197,12 +201,12 @@ namespace POPprogram
             // 
             // comboBox3
             // 
-            this.comboBox3.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.comboBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(165, 163);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(334, 25);
+            this.comboBox3.Size = new System.Drawing.Size(334, 26);
             this.comboBox3.TabIndex = 74;
             // 
             // label19
@@ -244,32 +248,32 @@ namespace POPprogram
             // 
             // numTextBox1
             // 
-            this.numTextBox1.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.numTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.numTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.numTextBox1.Location = new System.Drawing.Point(686, 61);
             this.numTextBox1.Name = "numTextBox1";
-            this.numTextBox1.Size = new System.Drawing.Size(119, 25);
+            this.numTextBox1.Size = new System.Drawing.Size(119, 24);
             this.numTextBox1.TabIndex = 81;
             this.numTextBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.numtxt_keydown);
             // 
             // numTextBox2
             // 
-            this.numTextBox2.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.numTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.numTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.numTextBox2.Location = new System.Drawing.Point(686, 110);
             this.numTextBox2.Name = "numTextBox2";
-            this.numTextBox2.Size = new System.Drawing.Size(119, 25);
+            this.numTextBox2.Size = new System.Drawing.Size(119, 24);
             this.numTextBox2.TabIndex = 82;
             this.numTextBox2.TextChanged += new System.EventHandler(this.numTextBox2_TextChanged);
             this.numTextBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.numtxt_keydown);
             // 
             // numTextBox3
             // 
-            this.numTextBox3.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.numTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.numTextBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.numTextBox3.Location = new System.Drawing.Point(686, 163);
             this.numTextBox3.Name = "numTextBox3";
-            this.numTextBox3.Size = new System.Drawing.Size(119, 25);
+            this.numTextBox3.Size = new System.Drawing.Size(119, 24);
             this.numTextBox3.TabIndex = 83;
             this.numTextBox3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.numtxt_keydown);
             // 
@@ -277,24 +281,24 @@ namespace POPprogram
             // 
             this.numTextBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.numTextBox4.BackColor = System.Drawing.SystemColors.Window;
-            this.numTextBox4.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.numTextBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.numTextBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.numTextBox4.Location = new System.Drawing.Point(984, 61);
             this.numTextBox4.Name = "numTextBox4";
             this.numTextBox4.ReadOnly = true;
-            this.numTextBox4.Size = new System.Drawing.Size(119, 25);
+            this.numTextBox4.Size = new System.Drawing.Size(119, 24);
             this.numTextBox4.TabIndex = 84;
             // 
             // numTextBox5
             // 
             this.numTextBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.numTextBox5.BackColor = System.Drawing.SystemColors.Window;
-            this.numTextBox5.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.numTextBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.numTextBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.numTextBox5.Location = new System.Drawing.Point(984, 110);
             this.numTextBox5.Name = "numTextBox5";
             this.numTextBox5.ReadOnly = true;
-            this.numTextBox5.Size = new System.Drawing.Size(119, 25);
+            this.numTextBox5.Size = new System.Drawing.Size(119, 24);
             this.numTextBox5.TabIndex = 85;
             // 
             // frmLOTDefect

@@ -323,6 +323,11 @@ namespace POPprogram
                 return null;
             }
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         //private void DgvChk(DataGridView dgv)
         //{
         //    dgv.EndEdit();

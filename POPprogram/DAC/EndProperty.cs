@@ -66,6 +66,7 @@ namespace DAC
 		public string LAST_TRAN_USER_ID { get; set; }
 		public string LOT_ID { get; set; }
 		public string OPERATION_CODE { get; set; }
+		public string OLD_OPERATION_CODE { get; set; }
 	}
 }
 

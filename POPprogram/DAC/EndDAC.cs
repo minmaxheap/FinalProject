@@ -227,7 +227,7 @@ select s.[LOT_ID]
       ,s.[LAST_TRAN_CODE]
       ,s.[LOT_DESC]
       ,s.[PRODUCT_CODE]
-      ,s.[OPERATION_CODE]
+      ,@OLD_OPERATION_CODE
       ,s.[STORE_CODE]
       ,s.[LOT_QTY]
       ,s.[CREATE_QTY]
@@ -277,7 +277,7 @@ END CATCH;
                     cmd.Parameters.AddWithValue("@OPER_IN_QTY", updateVO.OPER_IN_QTY);
                     cmd.Parameters.AddWithValue("@LAST_TRAN_USER_ID", updateVO.LAST_TRAN_USER_ID);
                     cmd.Parameters.AddWithValue("@END_EQUIPMENT_CODE", updateVO.END_EQUIPMENT_CODE);
-
+                    cmd.Parameters.AddWithValue("@OLD_OPERATION_CODE", updateVO.OLD_OPERATION_CODE);
                     int row = cmd.ExecuteNonQuery();
                     return row > 0;
                 }
