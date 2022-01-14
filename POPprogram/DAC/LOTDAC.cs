@@ -329,6 +329,34 @@ where PRODUCT_TYPE in('FERT','HALB')";
 
             return productType;
         }
-    }
 
+        public string GetLotMax(string str)
+        {
+
+                string sql = @"  SELECT Max(RIGHT(LOT_ID,3)) NUM
+  FROM LOT_STS
+  WHERE LOT_ID LIKE '%'+@string+'%'";
+            
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                if (!string.IsNullOrWhiteSpace(str))
+                {
+                    cmd.Parameters.AddWithValue("@string", str);
+                }
+
+                cmd.CommandText = sql;
+                cmd.Connection = conn;
+                SqlDataReader dr =cmd.ExecuteReader();
+                string result = null;
+                while (dr.Read())
+                {
+                    result = dr["NUM"].ToString();
+                }
+
+                return result;
+            }
+                
+        }
+    }
+    
 }

@@ -77,7 +77,13 @@ namespace POPprogram
         }
 
 
-
+        public string GetLotMax(string str)
+        {
+            LOTDAC dac = new LOTDAC();
+            string returnStr = dac.GetLotMax(str);
+            dac.Dispose();
+            return returnStr;
+        }
 
     }
 }
