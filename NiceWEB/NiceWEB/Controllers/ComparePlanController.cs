@@ -16,7 +16,6 @@ namespace NiceWEB.Controllers
         // GET: ComparePlan
         public ActionResult Index(string startDate, string endDate, string workID, string prdCode, int page = 1)
         {
-            
             //select box에 전달할 데이터
             CommonDAC comDAC = new CommonDAC();
            
