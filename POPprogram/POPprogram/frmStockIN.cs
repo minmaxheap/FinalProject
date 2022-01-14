@@ -193,7 +193,8 @@ namespace POPprogram
                     STOCK_IN_LOT_QTY = Convert.ToDecimal(row.Cells["QTY"].Value),
                     SALES_ORDER_ID = salesID,
                     CREATE_USER_ID = msUserID,
-                    MATERIAL_CODE = row.Cells["MATERIAL_CODE"].Value.ToString()
+                    MATERIAL_CODE = row.Cells["MATERIAL_CODE"].Value.ToString(),
+                    LOT_QTY = Convert.ToDecimal(row.Cells["QTY"].Value)
                 };
                 list.Add(pr);
             }
@@ -201,6 +202,7 @@ namespace POPprogram
 
           
             List<StockProperty> mixed = serv.GetMixedInfo(salesID);
+            mixed[0].STOCK_IN_LOT_QTY = list[4].STOCK_IN_LOT_QTY;
             list.Add(mixed[0]);
 
             if (bFlag)

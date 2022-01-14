@@ -60,9 +60,9 @@ namespace POPprogram
             this.txtComment.Location = new System.Drawing.Point(165, 243);
             this.txtComment.Size = new System.Drawing.Size(937, 34);
             // 
-            // pnlCrud
+            // label1
             // 
-            //this.pnlCrud.Location = new System.Drawing.Point(499, 761);
+            this.label1.Text = "자재 사용 정보";
             // 
             // btnClose
             // 

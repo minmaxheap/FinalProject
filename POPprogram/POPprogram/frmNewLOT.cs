@@ -91,6 +91,8 @@ namespace POPprogram
             string time = DateTime.Now.ToString("yyMMdd");
             strb.Append(time);
             //LOT 제품별 품목 구분
+            if (txtProdCode.Text == "")
+                return;
             string lotMiddle = txtProdCode.Text;
             lotMiddle = lotMiddle.Substring(3, 1);
             if (lotMiddle == "L") strb.Append("-PD-LC");
@@ -105,16 +107,18 @@ namespace POPprogram
 
             LOTServ serv = new LOTServ();
             string getLotMax = serv.GetLotMax(preLot);
-            string numLot = null; ;
-            if (getLotMax == "" || getLotMax==null) numLot = "001";
-            else
-            {
-                int temp = Convert.ToInt32(getLotMax);
-                temp = temp + 1;
-                getLotMax = Convert.ToString(temp);
-                numLot = "00" + getLotMax;
-            }
-            strb.Append(numLot);
+            string numLot = null;
+            //if (getLotMax == "" || getLotMax==null) numLot = "001";
+            //else
+            //{
+            //    int temp = Convert.ToInt32(getLotMax);
+            //    temp = temp + 1;
+            //    getLotMax = Convert.ToString(temp);
+            //    numLot = "00" + getLotMax;
+            //}
+            string worknum = txtWorkOrderID.Text;
+            worknum = worknum.Substring(worknum.Length - 3, 3); 
+            strb.Append(worknum);
             txtLOTID.Text = strb.ToString();
             txtLOTDescription.Text =txtCustName.Text +' '+txtProdName.Text;
         }

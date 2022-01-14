@@ -13,5 +13,6 @@ namespace DAC
         public string STOCK_IN_LOT_ID { get; set; }
         public string MATERIAL_CODE { get; set; }
         public decimal STOCK_IN_LOT_QTY { get; set; }
+        public decimal LOT_QTY { get; set; }
     }
 }

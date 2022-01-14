@@ -136,7 +136,7 @@ group by lot.PRODUCT_CODE,LOT_ID
             try
             {
                 string sql;
-                string sql_oper_1100 = @"SET XACT_ABORT ON;  
+                string sql_oper_1000 = @"SET XACT_ABORT ON;  
 
 BEGIN TRY  
     BEGIN TRANSACTION;  
@@ -166,9 +166,14 @@ UPDATE[dbo].[LOT_STS]
 ,LAST_TRAN_TIME=GETDATE()
 ,LAST_TRAN_USER_ID=@LAST_TRAN_USER_ID
 ,LAST_TRAN_COMMENT='자재 사용'
-,LAST_HIST_SEQ	 = LAST_HIST_SEQ+1
+,LAST_HIST_SEQ = LAST_HIST_SEQ+1
 ,LOT_QTY=@BOM_LOT_QTY_1
-WHERE PRODUCT_CODE='HB_Mixed' AND LOT_QTY=0
+WHERE LOT_ID=(SELECT lot.LOT_ID
+FROM LOT_STS lot, SALES_ORDER_MST sales
+WHERE
+SUBSTRING(LOT_ID,0,7)= SUBSTRING(@LOT_ID,0,7) AND
+right(sales.SALES_ORDER_ID,3)=right(@LOT_ID,3) AND
+SUBSTRING(LOT_ID,8,1)='H')
 
 INSERT [dbo].[LOT_HIS]
            ([LOT_ID]
@@ -312,78 +317,6 @@ select s.[LOT_ID]
       ,s.[STORE_CODE]
       ,s.[LOT_QTY]
 from [dbo].[LOT_STS] s
-where s.LOT_ID = @BOM_LOT_ID_2
-
-INSERT [dbo].[LOT_HIS]
-           ([LOT_ID]
-           ,[HIST_SEQ]
-           ,[TRAN_TIME]
-           ,[TRAN_CODE]
-           ,[LOT_DESC]
-           ,[PRODUCT_CODE]
-           ,[OPERATION_CODE]
-           ,[STORE_CODE]
-           ,[LOT_QTY]
-           ,[CREATE_QTY]
-           ,[OPER_IN_QTY]
-           ,[START_FLAG]
-           ,[START_QTY]
-           ,[START_TIME]
-           ,[START_EQUIPMENT_CODE]
-           ,[END_FLAG]
-           ,[END_TIME]
-           ,[END_EQUIPMENT_CODE]
-           ,[SHIP_FLAG]
-           ,[SHIP_CODE]
-           ,[SHIP_TIME]
-           ,[PRODUCTION_TIME]
-           ,[CREATE_TIME]
-           ,[OPER_IN_TIME]
-           ,[WORK_ORDER_ID]
-           ,[LOT_DELETE_FLAG]
-           ,[LOT_DELETE_CODE]
-           ,[LOT_DELETE_TIME]
-           ,[TRAN_USER_ID]
-           ,[TRAN_COMMENT]
-           ,[OLD_PRODUCT_CODE]
-           ,[OLD_OPERATION_CODE]
-           ,[OLD_STORE_CODE]
-           ,[OLD_LOT_QTY])
-select s.[LOT_ID]		
-	  ,s.[LAST_HIST_SEQ]
-      ,s.[LAST_TRAN_TIME]
-      ,s.[LAST_TRAN_CODE]
-      ,s.[LOT_DESC]
-      ,s.[PRODUCT_CODE]
-      ,s.[OPERATION_CODE]
-      ,s.[STORE_CODE]
-      ,s.[LOT_QTY]
-      ,s.[CREATE_QTY]
-      ,s.[OPER_IN_QTY]
-      ,s.[START_FLAG]
-      ,s.[START_QTY]
-      ,s.[START_TIME]
-      ,s.[START_EQUIPMENT_CODE]
-      ,s.[END_FLAG]
-      ,s.[END_TIME]
-      ,s.[END_EQUIPMENT_CODE]
-      ,s.[SHIP_FLAG]
-      ,s.[SHIP_CODE]
-      ,s.[SHIP_TIME]
-      ,s.[PRODUCTION_TIME]
-      ,s.[CREATE_TIME]
-      ,s.[OPER_IN_TIME]
-      ,s.[WORK_ORDER_ID]
-      ,s.[LOT_DELETE_FLAG]
-      ,s.[LOT_DELETE_CODE]
-      ,s.[LOT_DELETE_TIME]
-      ,s.[LAST_TRAN_USER_ID]
-      ,s.[LAST_TRAN_COMMENT]
-	  ,s.[PRODUCT_CODE]
-      ,s.[OPERATION_CODE]
-      ,s.[STORE_CODE]
-      ,s.[LOT_QTY]
-from [dbo].[LOT_STS] s
 where s.LOT_ID = @LOT_ID
 
 INSERT [dbo].[LOT_MATERIAL_HIS]
@@ -422,42 +355,6 @@ INSERT [dbo].[LOT_MATERIAL_HIS]
 	  WHERE lot.LOT_ID=@BOM_LOT_ID_1) new
 	  WHERE s.LOT_ID=@LOT_ID
 
-INSERT [dbo].[LOT_MATERIAL_HIS]
-           ([MATERIAL_LOT_ID]
-      ,[MATERIAL_LOT_HIST_SEQ]
-	  ,[LOT_ID]
-      ,[HIST_SEQ]
-      ,[INPUT_QTY]
-      ,[MATERIAL_STORE_CODE]
-      ,[TRAN_TIME]
-      ,[TRAN_CODE]
-      ,[PRODUCT_CODE]
-      ,[OPERATION_CODE]
-      ,[EQUIPMENT_CODE]
-      ,[TRAN_USER_ID]
-      ,[TRAN_COMMENT])
-     SELECT
-	   new.PRODUCT_CODE
-      ,new.LAST_HIST_SEQ
-      ,s.LOT_ID
-      ,s.LAST_HIST_SEQ
-      ,s.LOT_QTY
-      ,s.STORE_CODE
-      ,s.LAST_TRAN_TIME
-      ,s.LAST_TRAN_CODE
-      ,s.PRODUCT_CODE
-      ,s.OPERATION_CODE
-      ,s.END_EQUIPMENT_CODE
-      ,s.LAST_TRAN_USER_ID
-      ,s.LAST_TRAN_COMMENT
-	  FROM LOT_STS s, (SELECT
-	   lot.PRODUCT_CODE
-      ,lot.LAST_HIST_SEQ
-	  FROM LOT_STS lot
-	  left join BOM_MST bom on bom.PRODUCT_CODE = lot.PRODUCT_CODE
-	  WHERE lot.LOT_ID=@BOM_LOT_ID_2) new
-	  WHERE s.LOT_ID=@LOT_ID
-
 	COMMIT TRANSACTION;  
 END TRY  
 BEGIN CATCH  
@@ -470,6 +367,7 @@ END CATCH;
 
 
 ";
+
                 string sql_item_1 = @"SET XACT_ABORT ON;  
 
 BEGIN TRY  
@@ -1024,9 +922,9 @@ END CATCH;
 
 
 ";
-                if (updateVO.OPERATION_CODE=="1100")
+                if (updateVO.OPERATION_CODE=="1000")
                 {
-                    sql = sql_oper_1100;
+                    sql = sql_oper_1000;
                 }
                 else
                 {
