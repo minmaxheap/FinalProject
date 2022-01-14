@@ -320,7 +320,7 @@ WHERE O.SALES_ORDER_ID = SA.SALES_ORDER_ID AND V.CODE_TABLE_NAME ='CM_CUSTOMER' 
         						CREATE_TIME, OPER_IN_TIME, LAST_TRAN_CODE, LAST_TRAN_TIME,
         						LAST_TRAN_USER_ID, LAST_TRAN_COMMENT, LAST_HIST_SEQ)
         						VALUES(@STOCK_IN_LOT_ID, '자재 LOT', @MATERIAL_CODE, 'RS_STOCK', 
-        						@STOCK_IN_LOT_QTY, @STOCK_IN_LOT_QTY, @STOCK_IN_LOT_QTY, GETDATE(), 
+        						@LOT_QTY, @STOCK_IN_LOT_QTY, @STOCK_IN_LOT_QTY, GETDATE(), 
         						GETDATE(), GETDATE(), 'CREATE', GETDATE(),
         						@LAST_TRAN_USER_ID, '자재 LOT 생성', 1);";
 
@@ -331,6 +331,7 @@ WHERE O.SALES_ORDER_ID = SA.SALES_ORDER_ID AND V.CODE_TABLE_NAME ='CM_CUSTOMER' 
                             cmd.Parameters.AddWithValue("@LAST_TRAN_USER_ID", CREATE_USER_ID);
                         cmd.Parameters.AddWithValue("@SALES_ORDER_ID", SALES_ORDER_ID);
 
+                        cmd.Parameters.AddWithValue("@LOT_QTY", pr.LOT_QTY);
                         cmd.Parameters.AddWithValue("@STOCK_IN_LOT_QTY", pr.STOCK_IN_LOT_QTY);
                         cmd.Parameters.AddWithValue("@STOCK_IN_LOT_ID", pr.STOCK_IN_LOT_ID);
                         cmd.Parameters.AddWithValue("@MATERIAL_CODE", pr.MATERIAL_CODE);
