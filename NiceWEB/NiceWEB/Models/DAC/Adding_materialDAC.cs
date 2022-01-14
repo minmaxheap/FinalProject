@@ -28,10 +28,10 @@ namespace NiceWEB.Models
 			{
 				StringBuilder sb = new StringBuilder();
 				cmd.Connection = conn;
-				cmd.CommandText = @"select  CONVERT(varchar,TRAN_TIME ,120) TRAN_TIME,PRODUCT_CODE,OPERATION_CODE,CHILD_PRODUCT_CODE,sum(INPUT_QTY) AS INPUT_QTY
+				cmd.CommandText = @"select  CONVERT(varchar,TRAN_TIME ,120) TRAN_TIME,PRODUCT_CODE,OPERATION_CODE,CHILD_PRODUCT_CODE,SUM(isnull(cast(INPUT_QTY as int),0)) AS INPUT_QTY
 from
 (
-select CONVERT(varchar,TRAN_TIME ,120) TRAN_TIME,PRODUCT_CODE,OPERATION_CODE,CHILD_PRODUCT_CODE,sum(INPUT_QTY) AS INPUT_QTY,
+select CONVERT(varchar,TRAN_TIME ,120) TRAN_TIME,PRODUCT_CODE,OPERATION_CODE,CHILD_PRODUCT_CODE,SUM(isnull(cast(INPUT_QTY as int),0)) AS INPUT_QTY,
 row_number() over(order by CONVERT(varchar,TRAN_TIME ,120)) as RowNum
 from LOT_MATERIAL_HIS
 where CONVERT(varchar,TRAN_TIME ,120) between @from and @to and PRODUCT_CODE=ISNULL(@PRODUCT_CODE,PRODUCT_CODE) and OPERATION_CODE =  isnull(@OPERATION_CODE,OPERATION_CODE) 
@@ -148,7 +148,7 @@ order by CONVERT(varchar,TRAN_TIME ,120) desc ,PRODUCT_CODE,OPERATION_CODE,CHILD
 			using (SqlCommand cmd = new SqlCommand())
 			{
 				cmd.Connection = conn;
-				cmd.CommandText = @"select distinct CHILD_PRODUCT_CODE  from BOM_MST";
+				cmd.CommandText = @"select distinct CHILD_PRODUCT_CODE AS Code  from BOM_MST";
 
 				SqlDataReader reader = cmd.ExecuteReader();
 				List<ComboItem> list = Helper.DataReaderMapToList<ComboItem>(reader);

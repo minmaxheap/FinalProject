@@ -58,19 +58,19 @@
 					<div class="col-2">
 						<div class="form-group">
 							<label>품번:</label>
-							@Html.DropDownList("productCode", (IEnumerable<SelectListItem>)ViewBag.product, null, new { @class = "form-control" })
+							@Html.DropDownList("productCode", (IEnumerable<SelectListItem>)ViewBag.categories, null, new { @class = "form-control" })
 						</div>
 					</div>
 					<div class="col-2">
 						<div class="form-group">
 							<label>공정:</label>
-							@Html.DropDownList("op_code", (IEnumerable<SelectListItem>)ViewBag.product, null, new { @class = "form-control" })
+							@Html.DropDownList("op_code", (IEnumerable<SelectListItem>)ViewBag.categories2, null, new { @class = "form-control" })
 						</div>
 					</div>
 					<div class="col-2">
 						<div class="form-group">
 							<label>자재품번:</label>
-							@Html.DropDownList("childCode", (IEnumerable<SelectListItem>)ViewBag.product, null, new { @class = "form-control" })
+							@Html.DropDownList("childCode", (IEnumerable<SelectListItem>)ViewBag.categories3, null, new { @class = "form-control" })
 
 						</div>
 					</div>
