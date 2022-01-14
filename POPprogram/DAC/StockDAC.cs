@@ -472,7 +472,7 @@ where s.LOT_ID =@LOT_ID and h.HIST_SEQ = s.LAST_HIST_SEQ-1";
                     cmd.Connection = conn;
                     cmd.CommandText = @"SELECT * FROM  PURCHASE_ORDER_MST WHERE SALES_ORDER_ID=@salesID AND SUBSTRING(MATERIAL_CODE,0,2) ='H'";
 
-                    cmd.Parameters.AddWithValue("@SALES_ORDER_ID", salesID);
+                    cmd.Parameters.AddWithValue("@salesID", salesID);
            
 
                     List<StockProperty> list = Helper.DataReaderMapToList<StockProperty>(cmd.ExecuteReader());
