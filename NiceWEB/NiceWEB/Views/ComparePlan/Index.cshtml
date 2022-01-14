@@ -231,6 +231,8 @@
                     opens: 'left',
                     format: 'YYYY-MM-DD',
                     separator: ' to ',
+                    timePicker: true,
+                    timePicker24Hour: true,
                 },
                 function (start, end) {
                     console.log("Callback has been called!");
@@ -243,8 +245,8 @@
 
             $('#saveBtn').click(function () {
                 console.log(startDate.format('YYYY-MM-DD') + ' - ' + endDate.format('YYYY-MM-DD'));
-                $('#startDate').val(startDate.format('YYYY-MM-DD'));
-                $('#endDate').val(endDate.format('YYYY-MM-DD'));
+                $('#startDate').val(startDate.format('YYYY-MM-dd'));
+                $('#endDate').val(endDate.format('YYYY-MM-dd HH:mm:ss'));
                 $('#form1')[0].submit();
             });
 
@@ -256,47 +258,6 @@
     </script>
 
 
-    @*<script>
-            $(document).ready(function () {
-
-                $.each(data, function (index, row) {
-                    $("#data").append("<option value='" + row.data + "'>" + row.data + "</option>")
-                });
-
-            });
-        </script>*@
-
-    @*<script type="text/javascript">
-            $(document).ready(function () {
-                //debugger;
-                // alert($('#dataObjCol').val());
-                var dataObjCol = JSON.parse($('#dataObjCol').val());
-                var dataObjData = JSON.parse($('#dataObjData').val());
-                // Datatable settings.
-                $('#TableId').DataTable(
-                    {
-                        "data": dataObjData,
-                        "columns": dataObjCol,
-                        "bPaginate": false,
-                        "bFilter": false,
-                        "bInfo": false,
-                        "autoWidth": false,
-                        "bSort": false,
-                        "columnDefs": [
-                            {
-                                "width": "28px",
-                                "targets": "0",
-                                "className": "text-right"
-                            },
-                            {
-                                "width": "2px",
-                                "targets": "1",
-                                "className": "text-right"
-                            }
-                        ]
-                    });
-            });
-        </script>*@
 
     <script>
                 var a = parseInt(@qualityRate);

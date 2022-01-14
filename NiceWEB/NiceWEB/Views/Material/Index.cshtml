@@ -35,7 +35,7 @@
 
 <div class="content">
     <div class="container-fluid">
-        @using (Html.BeginForm("Index", "LOTH", FormMethod.Post, new { @id = "form5" }))
+        @using (Html.BeginForm("Index", "Material", FormMethod.Post, new { @id = "form5" }))
         {
             <div class="row">
                 <div class="col-12">
@@ -83,7 +83,7 @@
                             <div class="form-group">
                                 <label>&nbsp;  </label>
 
-                                <button type="button" class="btn btn-block btn-secondary">조회</button>
+                                <button type="button" id="saveBtn" class="btn btn-block btn-secondary">조회</button>
                             </div>
                         </div>
 
