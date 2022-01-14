@@ -80,10 +80,10 @@ namespace POPprogram
 			return List;
 		}
 
-		public List<string> GetEqList(string eqCode)
+		public List<EndPropertyEQ> GetEqList(string eqCode)
 		{
 			StartWorkDAC dac = new StartWorkDAC();
-			List<string> List = dac.GetEqList(eqCode);
+			List<EndPropertyEQ> List = dac.GetEqList(eqCode);
 			dac.Dispose();
 			return List;
 		}

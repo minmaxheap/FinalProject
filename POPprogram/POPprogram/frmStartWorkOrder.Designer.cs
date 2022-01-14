@@ -29,9 +29,9 @@ namespace POPprogram
         /// </summary>
         private void InitializeComponent()
         {
-			this.textBox10 = new System.Windows.Forms.TextBox();
+			this.txtEQ_NAME = new System.Windows.Forms.TextBox();
 			this.label12 = new System.Windows.Forms.Label();
-			this.comboBox1 = new System.Windows.Forms.ComboBox();
+			this.cboEQList = new System.Windows.Forms.ComboBox();
 			this.panel7.SuspendLayout();
 			this.panel8.SuspendLayout();
 			this.panel4.SuspendLayout();
@@ -42,12 +42,12 @@ namespace POPprogram
 			// 
 			this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.panel4.Controls.Add(this.comboBox1);
-			this.panel4.Controls.Add(this.textBox10);
+			this.panel4.Controls.Add(this.cboEQList);
+			this.panel4.Controls.Add(this.txtEQ_NAME);
 			this.panel4.Controls.Add(this.label12);
 			this.panel4.Controls.SetChildIndex(this.label12, 0);
-			this.panel4.Controls.SetChildIndex(this.textBox10, 0);
-			this.panel4.Controls.SetChildIndex(this.comboBox1, 0);
+			this.panel4.Controls.SetChildIndex(this.txtEQ_NAME, 0);
+			this.panel4.Controls.SetChildIndex(this.cboEQList, 0);
 			this.panel4.Controls.SetChildIndex(this.txtComment, 0);
 			this.panel4.Controls.SetChildIndex(this.label13, 0);
 			this.panel4.Controls.SetChildIndex(this.label1, 0);
@@ -55,6 +55,10 @@ namespace POPprogram
 			// label1
 			// 
 			this.label1.Text = "작업 시작 정보";
+			// 
+			// btnClose
+			// 
+			this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
 			// 
 			// btnExecute
 			// 
@@ -64,17 +68,17 @@ namespace POPprogram
 			// 
 			this.cboLOTID.SelectedIndexChanged += new System.EventHandler(this.cboLOTID_SelectedIndexChanged);
 			// 
-			// textBox10
+			// txtEQ_NAME
 			// 
-			this.textBox10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+			this.txtEQ_NAME.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBox10.BackColor = System.Drawing.SystemColors.Window;
-			this.textBox10.Font = new System.Drawing.Font("나눔고딕", 12F);
-			this.textBox10.Location = new System.Drawing.Point(521, 71);
-			this.textBox10.Name = "textBox10";
-			this.textBox10.ReadOnly = true;
-			this.textBox10.Size = new System.Drawing.Size(581, 26);
-			this.textBox10.TabIndex = 58;
+			this.txtEQ_NAME.BackColor = System.Drawing.SystemColors.Window;
+			this.txtEQ_NAME.Font = new System.Drawing.Font("나눔고딕", 12F);
+			this.txtEQ_NAME.Location = new System.Drawing.Point(521, 71);
+			this.txtEQ_NAME.Name = "txtEQ_NAME";
+			this.txtEQ_NAME.ReadOnly = true;
+			this.txtEQ_NAME.Size = new System.Drawing.Size(581, 26);
+			this.txtEQ_NAME.TabIndex = 58;
 			// 
 			// label12
 			// 
@@ -88,17 +92,17 @@ namespace POPprogram
 			this.label12.Text = "설비";
 			this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// comboBox1
+			// cboEQList
 			// 
-			this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.comboBox1.Font = new System.Drawing.Font("나눔고딕", 12F);
-			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Location = new System.Drawing.Point(165, 72);
-			this.comboBox1.Name = "comboBox1";
-			this.comboBox1.Size = new System.Drawing.Size(335, 27);
-			this.comboBox1.TabIndex = 59;
-			this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-			this.comboBox1.RightToLeftChanged += new System.EventHandler(this.comboBox1_RightToLeftChanged);
+			this.cboEQList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.cboEQList.Font = new System.Drawing.Font("나눔고딕", 12F);
+			this.cboEQList.FormattingEnabled = true;
+			this.cboEQList.Location = new System.Drawing.Point(165, 67);
+			this.cboEQList.Name = "cboEQList";
+			this.cboEQList.Size = new System.Drawing.Size(335, 27);
+			this.cboEQList.TabIndex = 59;
+			this.cboEQList.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+			this.cboEQList.RightToLeftChanged += new System.EventHandler(this.comboBox1_RightToLeftChanged);
 			// 
 			// frmStartWorkOrder
 			// 
@@ -119,8 +123,8 @@ namespace POPprogram
 
         #endregion
 
-        public System.Windows.Forms.TextBox textBox10;
+        public System.Windows.Forms.TextBox txtEQ_NAME;
         public System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboEQList;
     }
 }

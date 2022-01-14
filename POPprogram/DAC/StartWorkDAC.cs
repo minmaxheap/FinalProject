@@ -283,23 +283,20 @@ END CATCH;";
 			}
 		}
 
-		public List<string> GetEqList(string EqCode)
+		public List<EndPropertyEQ> GetEqList(string EqCode)
 		{
 			string sql = @"
-SELECT DATA_1 
+SELECT DATA_1 as EQ_NAME
 FROM CODE_DATA_MST
-WHERE CODE_TABLE_NAME=@CODE_TABLE_NAME";
-			SqlCommand cmd = new SqlCommand(sql, conn);
-			List<string> List = new List<string>();
-			using (SqlDataReader da = cmd.ExecuteReader())
-			{
-				while (da.Read())
-				{
-					List.Add(da["DATA_1"].ToString());
+WHERE KEY_1=@KEY_1";
 
-				}
+			using (SqlCommand cmd = new SqlCommand(sql, conn))
+			{
+				List<EndPropertyEQ> List = new List<EndPropertyEQ>();
+
+				cmd.Parameters.AddWithValue("@KEY_1", EqCode);
+				return Helper.DataReaderMapToList<EndPropertyEQ>(cmd.ExecuteReader());
 			}
-			return List;
 		}
 	}
 }
