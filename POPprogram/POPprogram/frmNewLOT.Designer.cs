@@ -76,6 +76,11 @@ namespace POPprogram
             this.txtProdCode.BackColor = System.Drawing.SystemColors.Window;
             this.txtProdCode.ReadOnly = true;
             // 
+            // txtLOTID
+            // 
+            this.txtLOTID.Click += new System.EventHandler(this.txtLOTID_Click);
+            this.txtLOTID.TextChanged += new System.EventHandler(this.txtLOTID_TextChanged);
+            // 
             // lblLOT
             // 
             this.lblLOT.ForeColor = System.Drawing.Color.Tomato;
@@ -91,7 +96,7 @@ namespace POPprogram
             // 
             // frmNewLOT
             // 
-           // this.ClientSize = new System.Drawing.Size(1194, 634);
+            this.ClientSize = new System.Drawing.Size(1194, 823);
             this.Name = "frmNewLOT";
             this.Load += new System.EventHandler(this.frmNewLOT_Load);
             this.panel4.ResumeLayout(false);

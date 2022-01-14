@@ -1,13 +1,11 @@
 ﻿@model IEnumerable<NiceWEB.Models.LOT_HIS>
 @using NiceWEB.Html
 @using NiceWEB.Models
+
 @{
 	ViewBag.Title = "Index";
 	Layout = "~/Views/_Layout.cshtml";
 }
-
-
-
 
 <div style="display:none;" class="row">
 	<div class="form-group">
@@ -35,150 +33,128 @@
 
 <div class="content">
 	<div class="container-fluid">
-		@using (Html.BeginForm("Index", "LOTH", FormMethod.Get, null))
-		{
-			<div class="row">
-				<div class="col-md-12">
-					<div class="row">
-
-						<div class="col-4">
-							<div class="form-group">
-
-								<label>LOT ID:</label>
-								@Html.TextBox("LotID", null, null, new { @class = "form-control" })
-							</div>
+		<div class="col-12">
+			@using (Html.BeginForm("Index", "LOTH", FormMethod.Get, null))
+			{
+				<div class="row">
+					<div class="col-4">
+						<div class="form-group input-group">
+							<label for="LotID" class="col-form-label">LOT ID:&nbsp;</label>
+							@Html.TextBox("LotID", null, null, new { @class = "form-control" })
 						</div>
-						<div class="col-4">
-                            <div class="form-group">
-                                <label>&nbsp;  </label>
-                                <button type="submit" class="btn btn-block btn-secondary">조회</button>
-
-                            </div>
+					</div>
+					<div class="col-1">
+						<div class="form-group">
+							<button type="submit" class="btn btn-block btn-secondary">조회</button>
 						</div>
-
 					</div>
 				</div>
-			</div>
-		}
+			}
+		</div>
 		<div class="row">
 			<div class="col-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">LOT 이력 조회</h3>
-                    </div>
-                    <!-- /.card-header -->
-                    <div class="card-body">
-                        @*<table id="compareplan" class="table table-bordered table-striped">
-            </table>*@
-                        <div style="width:100%; height:200px; overflow:auto;">
+				<div class="card">
+					<div class="card-header">
+						<h3 class="card-title">LOT 이력 조회</h3>
+					</div>
+					<div class="card-body table-responsive p-0" style="height: 500px;">
+						<table class="table table-striped table-bordered table-hover table-head-fixed" style="width: auto !important;
+    table-layout: auto !important;">
+							<thead>
+								<tr>
+									<th style="width: auto !important;">처리시간</th>
+									<th>순번</th>
+									<th>트랜코드</th>
+									<th>설명란</th>
+									<th>품번</th>
+									<th>공정</th>
+									<th>창고</th>
+									<th>LOT_QTY</th>
+									<th>CREATE_QTY</th>
+									<th>OPER_IN_QTY</th>
+									<th>START_Flag</th>
+									<th>START_QTY</th>
+									<th>시작시간</th>
+									<th>설비</th>
+									<th>END_FLAG</th>
+									<th>END_TIME</th>
+									<th>설비끝</th>
+									<th>쉽플래그</th>
+									<th>쉽코드</th>
+									<th>쉽타임</th>
+									<th>프로덕션타임</th>
+									<th>생성시간</th>
+									<th>공정시간</th>
+									<th>WORK_ORDER_ID</th>
+									<th>LOT_DELETE_FLAG</th>
+									<th>LOT_DELETE_TIME</th>
+									<th>TRAN_USER_ID</th>
+									<th>TRAN_COMMENT</th>
+									<th>OLD_PRODUCT_CODE</th>
+									<th>OLD_OPERATION_CODE</th>
+									<th>OLD_STORE_CODE</th>
+									<th>OLD_LOT_QTY</th>
+									<th>OLD_LOT_QTY</th>
+								</tr>
+							</thead>
+							<tbody>
+								@if (Model != null)
+								{
+								foreach (var p in Model)
+								{
+									<tr>
+										<td>@p.TRAN_TIME</td>
+										<td>@p.HIST_SEQ</td>
+										<td>@p.TRAN_CODE</td>
+										<td>@p.LOT_DESC</td>
+										<td>@p.PRODUCT_CODE</td>
+										<td>@p.OPERATION_CODE</td>
+										<td>@p.STORE_CODE</td>
+										<td>@p.LOT_QTY</td>
+										<td>@p.CREATE_QTY</td>
+										<td>@p.OPER_IN_QTY</td>
+										<td>@p.START_FLAG</td>
+										<td>@p.START_QTY</td>
+										<td>@p.START_TIME</td>
+										<td>@p.START_EQUIPMENT_CODE</td>
+										<td>@p.END_FLAG</td>
+										<td>@p.END_TIME</td>
+										<td>@p.END_EQUIPMENT_CODE</td>
+										<td>@p.SHIP_FLAG</td>
+										<td>@p.SHIP_CODE</td>
+										<td>@p.SHIP_TIME</td>
+										<td>@p.PRODUCTION_TIME</td>
+										<td>@p.CREATE_TIME</td>
+										<td>@p.OPER_IN_TIME</td>
+										<td>@p.WORK_ORDER_ID</td>
+										<td>@p.LOT_DELETE_FLAG</td>
+										<td>@p.LOT_DELETE_CODE</td>
+										<td>@p.LOT_DELETE_TIME</td>
+										<td>@p.TRAN_USER_ID</td>
+										<td>@p.TRAN_COMMENT</td>
+										<td>@p.OLD_PRODUCT_CODE</td>
+										<td>@p.OLD_OPERATION_CODE</td>
+										<td>@p.OLD_STORE_CODE</td>
+										<td>@p.OLD_LOT_QTY</td>
+									</tr>
+								}
+								}
+							</tbody>
+						</table>
+					</div>
 
-
-                            <table class="table table-striped table-bordered table-hover"
-                                   id="TableId"
-                                   cellspacing="0"
-                                   align="center"
-                                   width="10%" border="1">
-
-                                <thead>
-                                    <tr>
-                                        <th scope="col">처리시간</th>
-                                        <th scope="col">순번</th>
-                                        <th scope="col">트랜코드</th>
-                                        <th scope="col">설명란</th>
-                                        <th scope="col">품번</th>
-                                        <th scope="col">공정</th>
-                                        <th scope="col">창고</th>
-                                        <th scope="col">LOT_QTY</th>
-                                        <th scope="col">CREATE_QTY</th>
-                                        <th scope="col">OPER_IN_QTY</th>
-                                        <th scope="col">START_Flag</th>
-                                        <th scope="col">START_QTY</th>
-                                        <th scope="col">시작시간</th>
-                                        <th scope="col">설비</th>
-                                        <th scope="col">END_FLAG</th>
-                                        <th scope="col">END_TIME</th>
-                                        <th scope="col">설비 끝</th>
-                                        <th scope="col">쉽 플래그</th>
-                                        <th scope="col">쉽 코드</th>
-                                        <th scope="col">쉽 타임</th>
-                                        <th scope="col">프로덕션 타임</th>
-                                        <th scope="col">생성시간</th>
-                                        <th scope="col">공정시간</th>
-                                        <th scope="col">WORK_ORDER_ID</th>
-                                        <th scope="col">LOT_DELETE_FLAG</th>
-                                        <th scope="col">LOT_DELETE_TIME</th>
-                                        <th scope="col">TRAN_USER_ID</th>
-                                        <th scope="col">TRAN_COMMENT</th>
-                                        <th scope="col">OLD_PRODUCT_CODE</th>
-                                        <th scope="col">OLD_OPERATION_CODE</th>
-                                        <th scope="col">OLD_STORE_CODE</th>
-                                        <th scope="col">OLD_LOT_QTY</th>
-
-
-
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach (var p in Model)
-                                    {
-                                        <tr>
-                                            <td>@p.TRAN_TIME</td>
-                                            <td>@p.HIST_SEQ</td>
-                                            <td>@p.TRAN_CODE</td>
-                                            <td>@p.LOT_DESC</td>
-                                            <td>@p.PRODUCT_CODE</td>
-                                            <td>@p.OPERATION_CODE</td>
-                                            <td>@p.STORE_CODE</td>
-                                            <td>@p.LOT_QTY</td>
-                                            <td>@p.CREATE_QTY</td>
-                                            <td>@p.OPER_IN_QTY</td>
-                                            <td>@p.START_FLAG</td>
-                                            <td>@p.START_QTY</td>
-                                            <td>@p.START_TIME</td>
-                                            <td>@p.START_EQUIPMENT_CODE</td>
-                                            <td>@p.END_FLAG</td>
-                                            <td>@p.END_TIME</td>
-                                            <td>@p.END_EQUIPMENT_CODE</td>
-                                            <td>@p.SHIP_FLAG</td>
-                                            <td>@p.SHIP_CODE</td>
-                                            <td>@p.SHIP_TIME</td>
-                                            <td>@p.PRODUCTION_TIME</td>
-                                            <td>@p.CREATE_TIME</td>
-                                            <td>@p.OPER_IN_TIME</td>
-                                            <td>@p.WORK_ORDER_ID</td>
-                                            <td>@p.LOT_DELETE_FLAG</td>
-                                            <td>@p.LOT_DELETE_CODE</td>
-                                            <td>@p.LOT_DELETE_TIME</td>
-                                            <td>@p.TRAN_USER_ID</td>
-                                            <td>@p.TRAN_COMMENT</td>
-                                            <td>@p.OLD_PRODUCT_CODE</td>
-                                            <td>@p.OLD_OPERATION_CODE</td>
-                                            <td>@p.OLD_STORE_CODE</td>
-                                            <td>@p.OLD_LOT_QTY</td>
-
-
-
-
-                                        </tr>
-                                    }
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <!-- /.card-body -->
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination justify-content-center">
-                            @Html.PageLinks((PagingInfo)ViewBag.PagingInfo, (x) => Url.Action("Index",
-                                new { page = x, LotID = ViewBag.LotID }))
-                        </ul>
-                    </nav>
-                </div>
+					<!-- /.card-body -->
+					<nav aria-label="Page navigation example">
+						<ul class="pagination justify-content-center">
+							@Html.PageLinks((PagingInfo)ViewBag.PagingInfo, (x) => Url.Action("Index",
+								new { page = x, LotID = ViewBag.LotID }))
+						</ul>
+					</nav>
+				</div>
 				<!-- /.card -->
 			</div>
 			<!-- /.col -->
 		</div>
-
-	
 	</div>
  </div>
 

@@ -312,11 +312,11 @@ namespace POPprogram
             bool bResult = serv.SetUseLOT(vo);
             if (bResult)
             {
-                MessageBox.Show("성공적으로 생산 LOT를 생성했습니다.");
+                MessageBox.Show("성공적으로 자재가 사용되었습니다.");
             }
             else
             {
-                MessageBox.Show("LOT 생성 중 오류가 발생했습니다.");
+                MessageBox.Show("자재 사용 중 문제가 발생했습니다.");
             }
             //LOTProperty mLOT = new LOTProperty()
             //{
