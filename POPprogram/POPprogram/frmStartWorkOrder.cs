@@ -157,8 +157,10 @@ namespace POPprogram
         //어찌하면 좋을까 
 		private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
 		{
-            if (cboLOTID.SelectedIndex < 1) return;
-            txtEQ_NAME.Text = listEQ[cboEQList.SelectedIndex].EQ_NAME;
+            if (cboEQList.SelectedIndex< 1) return;
+            serv = new StarWorkServ();
+            List<EndPropertyEQ> list = serv.GetEqList(cboEQList.SelectedValue.ToString());
+            txtEQ_NAME.Text = list[0].EQ_NAME;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
