@@ -96,6 +96,7 @@ namespace POPprogram
             // btnClose
             // 
             this.btnClose.Location = new System.Drawing.Point(527, 0);
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnExport
             // 

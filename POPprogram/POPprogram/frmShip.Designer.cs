@@ -97,6 +97,10 @@ namespace POPprogram
             // 
             this.label6.Text = "제품 주문서 정보";
             // 
+            // btnClose
+            // 
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // btnExport
             // 
             this.btnExport.Location = new System.Drawing.Point(143, 0);
@@ -117,7 +121,7 @@ namespace POPprogram
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnPrint.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 14.5F, System.Drawing.FontStyle.Bold);
+            this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.5F, System.Drawing.FontStyle.Bold);
             this.btnPrint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPrint.ImageIndex = 5;
