@@ -123,6 +123,27 @@
                                 <th scope="col">검사자</th>
                             </tr>
                         </thead>
+                        <tbody>
+                            @foreach (var p in Model)
+                            {
+                            <tr>
+                                <td>@p.TRAN_TIME</td>
+                                <td>@p.LOT_ID</td>
+                                <td>@p.PRODUCT_CODE</td>
+                                <td>@p.PRODUCT_NAME</td>
+                                <td>@p.OPERATION_NAME</td>
+                                <td>@p.INSPECT_ITEM_CODE</td>
+                                <td>@p.INSPECT_ITEM_NAME</td>
+                                <td>@p.VALUE_TYPE</td>
+                                <td>@p.SPEC_LSL</td>
+                                <td>@p.SPEC_TARGET</td>
+                                <td>@p.SPEC_USL</td>
+                                <td>@p.INSPECT_VALUE</td>
+                                <td>@p.TRAN_USER_ID</td>
+                            </tr>
+
+                            }
+                        </tbody>
 
                     </table>
                 </div>

@@ -43,48 +43,49 @@
         {
             <div class="row">
 
-                   
-                        <div class="col-3">
 
-                            <div class="form-group">
-                                <label>조회날짜:</label>
+                <div class="col-3">
 
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                            <i class="far fa-calendar-alt"></i>
-                                        </span>
-                                    </div>
+                    <div class="form-group">
+                        <label>조회날짜:</label>
 
-                                    <input type="text" class="form-control float-right" id="reservation">
-                                </div>
-                           
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="far fa-calendar-alt"></i>
+                                </span>
                             </div>
-                    
-                        </div>
-                        <div class="col-3">
-                            <div class="form-group">
-                                <label>작업지시:</label>
-                                @Html.DropDownList("workID",
-                                          (IEnumerable<SelectListItem>)ViewBag.orderList, null, new { @class = "form-control" })
 
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="form-group">
-                                <label>품번:</label>
-                                @Html.DropDownList("prdCode",
-                                          (IEnumerable<SelectListItem>)ViewBag.prodList, null, new { @class = "form-control" })
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="form-group">
-                                <label>&nbsp;  </label>
-                                <button type="submit" class="btn btn-block btn-secondary">조회</button>
-                            </div>
+                            <input type="text" class="form-control float-right" id="reservation">
+                            
                         </div>
 
-                
+                    </div>
+
+                </div>
+                <div class="col-3">
+                    <div class="form-group">
+                        <label>작업지시:</label>
+                        @Html.DropDownList("workID",
+                                  (IEnumerable<SelectListItem>)ViewBag.orderList, null, new { @class = "form-control" })
+
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="form-group">
+                        <label>품번:</label>
+                        @Html.DropDownList("prdCode",
+                                  (IEnumerable<SelectListItem>)ViewBag.prodList, null, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="form-group">
+                        <label>&nbsp;  </label>
+                        <button type="submit" id="saveBtn" class="btn btn-block btn-secondary">조회</button>
+                    </div>
+                </div>
+
+
             </div>
         }
         <div class="row">
@@ -96,7 +97,7 @@
                     <!-- /.card-header -->
                     <div class="card-body">
                         @*<table id="compareplan" class="table table-bordered table-striped">
-            </table>*@
+                            </table>*@
                         <table class="table table-striped table-bordered table-hover"
                                id="TableId"
                                cellspacing="0"
@@ -212,27 +213,39 @@
 @section Scripts
 {
 
-    <script>
+    <script type="text/javascript">
         jQuery.noConflict()
-        $(function () {
-            //Date range picker
-            $('#reservation').daterangepicker()
-            {
-                format: 'YYYY/MM/DD' //왜 이 FORMAT 안 먹히지
-            }
+        var startDate;
+        var endDate;
 
-        })
+        $(document).ready(function () {
+            $('#reservation').daterangepicker(
+                {
+                    showDropdowns: true,
+                    showWeekNumbers: true,
+                    timePicker: false,
+                    timePickerIncrement: 1,
+                    timePicker12Hour: true,
+                    opens: 'left',
+                    format: 'YYYY-MM-DD',
+                    separator: ' to ',
+                },
+                function (start, end) {
+                    console.log("Callback has been called!");
+                    $('#reservation span').html(start.format('YYYY-MM-DD') + ' - ' + end.format('YYYY-MM-DD'));
+                    startDate = start;
+                    endDate = end;
 
-        $.ajax({
-            url: '/ComparePlan/Index',
-            type: 'GET',
-            data: {
-                startDate: picker.startDate.format('YYYY-MM-DD HH:mm'),
-                endDate: picker.endDate.format('YYYY-MM-DD HH:mm'),
-            },
-            contentType: 'application/json; charset=utf-8'
+                }
+            );
+
+            $('#saveBtn').click(function () {
+                console.log(startDate.format('YYYY-MM-DD') + ' - ' + endDate.format('YYYY-MM-DD'));
+            });
+
         });
     </script>
+
 
     @*<script>
             $(document).ready(function () {
@@ -244,37 +257,37 @@
             });
         </script>*@
 
-    <script type="text/javascript">
-        $(document).ready(function () {
-            //debugger;
-            // alert($('#dataObjCol').val());
-            var dataObjCol = JSON.parse($('#dataObjCol').val());
-            var dataObjData = JSON.parse($('#dataObjData').val());
-            // Datatable settings.
-            $('#TableId').DataTable(
-                {
-                    "data": dataObjData,
-                    "columns": dataObjCol,
-                    "bPaginate": false,
-                    "bFilter": false,
-                    "bInfo": false,
-                    "autoWidth": false,
-                    "bSort": false,
-                    "columnDefs": [
-                        {
-                            "width": "28px",
-                            "targets": "0",
-                            "className": "text-right"
-                        },
-                        {
-                            "width": "2px",
-                            "targets": "1",
-                            "className": "text-right"
-                        }
-                    ]
-                });
-        });
-    </script>
+    @*<script type="text/javascript">
+            $(document).ready(function () {
+                //debugger;
+                // alert($('#dataObjCol').val());
+                var dataObjCol = JSON.parse($('#dataObjCol').val());
+                var dataObjData = JSON.parse($('#dataObjData').val());
+                // Datatable settings.
+                $('#TableId').DataTable(
+                    {
+                        "data": dataObjData,
+                        "columns": dataObjCol,
+                        "bPaginate": false,
+                        "bFilter": false,
+                        "bInfo": false,
+                        "autoWidth": false,
+                        "bSort": false,
+                        "columnDefs": [
+                            {
+                                "width": "28px",
+                                "targets": "0",
+                                "className": "text-right"
+                            },
+                            {
+                                "width": "2px",
+                                "targets": "1",
+                                "className": "text-right"
+                            }
+                        ]
+                    });
+            });
+        </script>*@
 
     <script>
                 var a = parseInt(@qualityRate);
