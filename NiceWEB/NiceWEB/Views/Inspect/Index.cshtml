@@ -80,7 +80,7 @@
                         </div>
                         <div class="col-2">
                             <div class="form-group">
-                                <label>  </label>
+                                <label>&nbsp;  </label>
                                 <button type="submit" class="btn btn-block btn-secondary">조회</button>
                             </div>
                         </div>
@@ -127,14 +127,14 @@
                     </table>
                 </div>
                 <!-- /.card-body -->
-               @* <div class="row">*@
+
                     <nav aria-label="Page navigation example">
                         <ul class="pagination justify-content-center">
                             @Html.PageLinks((PagingInfo)ViewBag.PagingInfo, (x) => Url.Action("Index",
                                 new { page = x, LotID = ViewBag.LotID }))
                         </ul>
                     </nav>
-                @*  *@</div>
+        
             </div>
             <!-- /.card -->
     
