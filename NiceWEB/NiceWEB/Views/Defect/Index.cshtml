@@ -2,144 +2,160 @@
 @using NiceWEB.Html
 @using NiceWEB.Models
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/_Layout.cshtml";
+	ViewBag.Title = "Index";
+	Layout = "~/Views/_Layout.cshtml";
 }
 
 
 
 <div style="display:none;" class="row">
-    <div class="form-group">
+	<div class="form-group">
 
-    </div>
+	</div>
 </div>
 
 <!-- Content Header (Page header) -->
 <div class="content-header">
-    <div class="container-fluid">
-        <div class="row mb-2">
-            <div class="col-sm-6">
-                <h1 class="m-0">불량 이력 조회 </h1>
-            </div><!-- /.col -->
-            <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#"></a></li>
-                    <li class="breadcrumb-item active"></li>
-                </ol>
-            </div><!-- /.col -->
-        </div><!-- /.row -->
-    </div><!-- /.container-fluid -->
+	<div class="container-fluid">
+		<div class="row mb-2">
+			<div class="col-sm-6">
+				<h1 class="m-0">불량 이력 조회 </h1>
+			</div><!-- /.col -->
+			<div class="col-sm-6">
+				<ol class="breadcrumb float-sm-right">
+					<li class="breadcrumb-item"><a href="#"></a></li>
+					<li class="breadcrumb-item active"></li>
+				</ol>
+			</div><!-- /.col -->
+		</div><!-- /.row -->
+	</div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+
+<div style="display:none;" class="row">
+	<div class="form-group">
+
+	</div>
+</div>
+
+<!-- Content Header (Page header) -->
+<div class="content-header">
+	<div class="container-fluid">
+		<div class="row mb-2">
+			<div class="col-sm-6">
+				<h1 class="m-0">불량이력조회 </h1>
+			</div><!-- /.col -->
+			<div class="col-sm-6">
+				<ol class="breadcrumb float-sm-right">
+					<li class="breadcrumb-item"><a href="#"></a></li>
+					<li class="breadcrumb-item active"></li>
+				</ol>
+			</div><!-- /.col -->
+		</div><!-- /.row -->
+	</div><!-- /.container-fluid -->
 </div>
 <!-- /.content-header -->
 
 <div class="content">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="row">
-                    <div class="col-3">
-
-                        <div class="form-group">
-                            <label>조회날짜:</label>
 	<div class="container-fluid">
+
 		@using (Html.BeginForm("Index", "Defect", FormMethod.Get, null))
 		{
 			<div class="row">
 				<div class="col-md-12">
 					<div class="row">
 						<div class="col-4">
+
 							<div class="form-group">
 								<label>조회날짜:</label>
 
-							<div class="input-group">
-								<div class="input-group-prepend">
-									<span class="input-group-text">
-										<i class="far fa-calendar-alt"></i>
-									</span>
-
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<span class="input-group-text">
+											<i class="far fa-calendar-alt"></i>
+										</span>
+									</div>
+									<input type="text" class="form-control float-right" id="reservation">
 								</div>
-								
+								<!-- /.input group -->
 							</div>
-							<!-- /.input group -->
+							<!-- /.form group -->
 						</div>
-						<!-- /.form group -->
-					</div>
-					<div class="col-2">
-						<div class="form-group">
-							<label>품번:</label>
-
-								@*@Html.DropDownList("productid", new SelectList(ViewBag.product, "Data", "Data"))*@
-								@*@Html.DropDownList("productid", (IEnumerable<SelectListItem>)ViewBag.product, null, new { @class = "form-control" })*@
-							
+						<div class="col-2">
+							<div class="form-group">
+								<label>품번:</label>
+								@Html.DropDownList("productCode",
+			 (IEnumerable<SelectListItem>)ViewBag.Categories, null, new { @class = "form-control" })
+							</div>
 						</div>
-					</div>
-					<div class="col-2">
-                        <div class="form-group">
-                            <label>공정:</label>
-                            @*@Html.DropDownList("productid", (IEnumerable<SelectListItem>)ViewBag.product, null, new { @class = "form-control" })*@
+						<div class="col-2">
+							<div class="form-group">
+								<label>공정:</label>
+								@Html.DropDownList("op_code",
+			 (IEnumerable<SelectListItem>)ViewBag.Categories2, null, new { @class = "form-control" })
+							</div>
+						</div>
+						<div class="col-2">
+							<div class="form-group">
+								<label>&nbsp;  </label>
 
-                        </div>
-					</div>
-					<div class="col-">
-                        <div class="form-group">
-                            <label>&nbsp;  </label>
-                            <a class="btn btn-primary" href="@Url.Action("index","Material")">조회</a>
-                            <button type="button" class="btn btn-block btn-secondary">조회</button>
-                        </div>
+								<button type="submit" class="btn btn-block btn-secondary">조회</button>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		}
 		<div class="row">
 			<div class="col-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">불량 이력 조회</h3>
-                    </div>
-                    <!-- /.card-header -->
-                    <div class="card-body">
-                        @*<table id="compareplan" class="table table-bordered table-striped">
-            </table>*@
-                        <table class="table table-striped table-bordered table-hover"
-                               id="TableId"
-                               cellspacing="0"
-                               align="center"
-                               width="100%" border="1">
+				<div class="card">
+					<div class="card-header">
+						<h3 class="card-title">불량 이력 조회</h3>
+					</div>
+					<!-- /.card-header -->
+					<div class="card-body">
+						@*<table id="compareplan" class="table table-bordered table-striped">
+						</table>*@
+						<table class="table table-striped table-bordered table-hover"
+							   id="TableId"
+							   cellspacing="0"
+							   align="center"
+							   width="100%" border="1">
 
-								<thead>
+							<thead>
+								<tr>
+									<th scope="col">작업일자</th>
+									<th scope="col">품번</th>
+									<th scope="col">공정</th>
+									<th scope="col">불량 코드</th>
+									<th scope="col">불량 수량</th>
+								</tr>
+							</thead>
+							<tbody>
+								@foreach (var p in Model)
+								{
 									<tr>
-										<th scope="col">작업일자</th>
-										<th scope="col">품번</th>
-										<th scope="col">공정</th>
-										<th scope="col">불량 코드</th>
-										<th scope="col">불량 수량</th>
-									</tr>
-								</thead>
-								<tbody>
-									@foreach (var p in Model)
-									{
-										<tr>
-											<td>@p.TRAN_DATE</td>
-											<td>@p.PRODUCT_CODE</td>
-											<td>@p.OPERATION_CODE</td>
-											<td>@p.DEFECT_CODE</td>
-											<td>@p.DEFECT_QTY</td>
+										<td>@p.TRAN_DATE</td>
+										<td>@p.PRODUCT_CODE</td>
+										<td>@p.OPERATION_CODE</td>
+										<td>@p.DEFECT_CODE</td>
+										<td>@p.DEFECT_QTY</td>
 
-                                    </tr>
-                                }
-                            </tbody>
-                        </table>
-                    </div>
-                    <!-- /.card-body -->
-                    <div class="row">
-                        @*<nav aria-label="Page navigation example">
-                            <ul class="pagination justify-content-center">
-                                @Html.PageLinks((PagingInfo)ViewBag.PagingInfo, (x) => Url.Action("Index",
-                                    new { page = x, storeCode = ViewBag.storeCode, ProductCode = ViewBag.ProductCode }))
-                            </ul>
-                        </nav>*@
-                    </div>
-                </div>
+									</tr>
+								}
+							</tbody>
+						</table>
+					</div>
+					<!-- /.card-body -->
+					
+						<nav aria-label="Page navigation example">
+							<ul class="pagination justify-content-center">
+								@Html.PageLinks((PagingInfo)ViewBag.PagingInfo, (x) => Url.Action("Index",
+									new { page = x, productCode = ViewBag.productCode, op_code = ViewBag.op_code }))
+							</ul>
+						</nav>
+					
+				</div>
 				<!-- /.card -->
 			</div>
 			<!-- /.col -->
@@ -148,25 +164,64 @@
 </div>
 
 
+@section Scripts
+{
 
-<script>
-        jQuery.noConflict()
-        $(function () {
-            //Date range picker
-            $('#reservation').daterangepicker()
-            {
-                format: 'YYYY/MM/DD' //왜 이 FORMAT 안 먹히지
-            }
+	<script>
+		jQuery.noConflict()
+		$(function () {
+			//Date range picker
+			$('#reservation').daterangepicker()
 
-        })
+		})
+	</script>
 
-        $.ajax({
-            url: '/ComparePlan/Index',
-            type: 'GET',
-            data: {
-                startDate: picker.startDate.format('YYYY-MM-DD HH:mm'),
-                endDate: picker.endDate.format('YYYY-MM-DD HH:mm'),
-            },
-            contentType: 'application/json; charset=utf-8'
-        });
-</script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			//debugger;
+			//alert($('#dataObjCol').val());
+			var dataObjCol = JSON.parse($('#dataObjCol').val());
+			var dataObjData = JSON.parse($('#dataObjData').val());
+
+
+
+			// Datatable settings.
+			$('#TableId').DataTable(
+				{
+
+					"data": dataObjData,
+					"columns": dataObjCol,
+					//    { "data": "ORDER_DATE" },
+					//    { "data": "WORK_ORDER_ID" },
+					//    { "data": "PRODUCT_CODE" },
+					//    { "data": "PRODUCT_NAME" },
+					//    { "data": "ORDER_QTY" },
+					//    { "data": "PRODUCT_QTY" },
+					//    { "data": "DEFECT_QTY" },
+					//    { "data": "QUALITY_RATE" },
+					//    { "data": "DEFECT_RATE" },
+					//    { "data": "WORK_CLOSE_TIME" } //데이터가 이렇게 넘어오게 하면 되는 거잖아? 근데 지금은 타이틀도 같이 넘어오는 상태고..그 타이틀은 보여주는 컬럼인가?
+
+					//],
+					"bPaginate": false,
+					"bFilter": false,
+					"bInfo": false,
+					"autoWidth": false,
+					"bSort": false,
+					"columnDefs": [
+						{
+							"width": "28px",
+							"targets": "0",
+							"className": "text-right"
+						},
+						{
+							"width": "2px",
+							"targets": "1",
+							"className": "text-right"
+						}
+					]
+				});
+		});
+	</script>
+
+}
