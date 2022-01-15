@@ -17,13 +17,7 @@ namespace POPprogram
 			dac.Dispose();
 			return List;
 		}
-		public DataTable GetCode()
-		{
-			StartWorkDAC dac = new StartWorkDAC();
-			DataTable dt = dac.GetCode();
-			dac.Dispose();
-			return dt;
-		}
+		
 
 		public List<string> GetLotCode()
 		{

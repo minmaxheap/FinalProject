@@ -26,16 +26,20 @@ namespace DAC
 			conn.Close();
 		}
 
-		public DataTable GetCode()
+		public List<string> GetCode()
 		{
 			string sql = "select LOT_ID from LOT_STS";
-
-			using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
+			SqlCommand cmd = new SqlCommand(sql, conn);
+			List<string> List = new List<string>();
+			using (SqlDataReader da = cmd.ExecuteReader())
 			{
-				DataTable dt = new DataTable();
-				da.Fill(dt);
-				return dt;
+				while (da.Read())
+				{
+					List.Add(da["LOT_ID"].ToString());
+
+				}
 			}
+			return List;
 		}
 
 		public List<string> GetLotCode()

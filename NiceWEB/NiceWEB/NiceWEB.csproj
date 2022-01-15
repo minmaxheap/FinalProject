@@ -1798,6 +1798,7 @@
     <Compile Include="Controllers\InspectController.cs" />
     <Compile Include="Controllers\LOTHController.cs" />
     <Compile Include="Controllers\MaterialController.cs" />
+    <Compile Include="Controllers\StockController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1815,12 +1816,14 @@
     <Compile Include="Models\DAC\Helper.cs" />
     <Compile Include="Models\DAC\InspectDAC.cs" />
     <Compile Include="Models\DAC\LOT_HISDAC.cs" />
+    <Compile Include="Models\DAC\StockDAC.cs" />
     <Compile Include="Models\DAC\StoreDAC.cs" />
     <Compile Include="Models\DefectProperty.cs" />
     <Compile Include="Models\Efficiency.cs" />
     <Compile Include="Models\Inspect.cs" />
     <Compile Include="Models\LOT_HIS.cs" />
     <Compile Include="Models\PagingInfo.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Models\StoreProperty.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -1923,6 +1926,7 @@
     <Content Include="Views\Defect\Index.cshtml" />
     <Content Include="Views\Store\Index.cshtml" />
     <Content Include="Views\LOTH\Index.cshtml" />
+    <Content Include="Views\Stock\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

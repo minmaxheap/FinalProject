@@ -17,12 +17,12 @@ namespace POPprogram
 			return dt;
 				 
 		}
-		public DataTable GetCode()
+		public List<string> GetCode()
 		{
 			LOTInspecDAC dac = new LOTInspecDAC();
-			DataTable dt = dac.GetCode();
+			List<string> List = dac.GetCode();
 			dac.Dispose();
-			return dt;
+			return List;
 		}
 
 		public bool insert(string LAST_TRAN_USER_ID, string LAST_TRAN_COMMENT, string LOT_ID, DataTable dt)
