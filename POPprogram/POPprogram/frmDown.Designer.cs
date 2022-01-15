@@ -486,6 +486,7 @@ namespace POPprogram
             this.btnExecute.Text = "실행  ";
             this.btnExecute.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExecute.UseVisualStyleBackColor = false;
+            this.btnExecute.Click += new System.EventHandler(this.btnExecute_Click);
             // 
             // btnClose
             // 
