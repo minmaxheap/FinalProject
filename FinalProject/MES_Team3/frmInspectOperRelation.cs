@@ -428,5 +428,10 @@ namespace MES_Team3
 		{
 
 		}
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+			this.Close();
+		}
     }
 }

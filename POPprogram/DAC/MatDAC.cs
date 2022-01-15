@@ -175,7 +175,7 @@ UPDATE[dbo].[LOT_STS]
 ,LAST_TRAN_USER_ID=@LAST_TRAN_USER_ID
 ,LAST_TRAN_COMMENT='자재 사용'
 ,LAST_HIST_SEQ = LAST_HIST_SEQ+1
-,LOT_QTY=@BOM_LOT_QTY_1
+,LOT_QTY=@HB_QTY
 WHERE LOT_ID=(SELECT lot.LOT_ID
 FROM LOT_STS lot, SALES_ORDER_MST sales
 WHERE
@@ -342,8 +342,8 @@ INSERT [dbo].[LOT_MATERIAL_HIS]
       ,[TRAN_USER_ID]
       ,[TRAN_COMMENT])
      SELECT
-	   new.PRODUCT_CODE
-      ,new.LAST_HIST_SEQ
+	   s.PRODUCT_CODE
+      ,s.LAST_HIST_SEQ
       ,s.LOT_ID
       ,s.LAST_HIST_SEQ
       ,s.LOT_QTY
@@ -355,13 +355,9 @@ INSERT [dbo].[LOT_MATERIAL_HIS]
       ,s.END_EQUIPMENT_CODE
       ,s.LAST_TRAN_USER_ID
       ,s.LAST_TRAN_COMMENT
-	  FROM LOT_STS s, (SELECT
-	   lot.PRODUCT_CODE
-      ,lot.LAST_HIST_SEQ
-	  FROM LOT_STS lot
-	  left join BOM_MST bom on bom.PRODUCT_CODE = lot.PRODUCT_CODE
-	  WHERE lot.LOT_ID=@BOM_LOT_ID_1) new
-	  WHERE s.LOT_ID=@LOT_ID
+	  FROM LOT_STS s
+	  WHERE s.LOT_ID=@BOM_LOT_ID_1
+
 
 	COMMIT TRANSACTION;  
 END TRY  
@@ -559,8 +555,8 @@ INSERT [dbo].[LOT_MATERIAL_HIS]
       ,[TRAN_USER_ID]
       ,[TRAN_COMMENT])
      SELECT
-	   new.PRODUCT_CODE
-      ,new.LAST_HIST_SEQ
+	   s.PRODUCT_CODE
+      ,s.LAST_HIST_SEQ
       ,s.LOT_ID
       ,s.LAST_HIST_SEQ
       ,s.LOT_QTY
@@ -572,13 +568,8 @@ INSERT [dbo].[LOT_MATERIAL_HIS]
       ,s.END_EQUIPMENT_CODE
       ,s.LAST_TRAN_USER_ID
       ,s.LAST_TRAN_COMMENT
-	  FROM LOT_STS s, (SELECT
-	   lot.PRODUCT_CODE
-      ,lot.LAST_HIST_SEQ
-	  FROM LOT_STS lot
-	  left join BOM_MST bom on bom.PRODUCT_CODE = lot.PRODUCT_CODE
-	  WHERE lot.LOT_ID=@BOM_LOT_ID_1) new
-	  WHERE s.LOT_ID=@LOT_ID
+	  FROM LOT_STS s
+	  WHERE s.LOT_ID=@BOM_LOT_ID_1
 
 	COMMIT TRANSACTION;  
 END TRY  
@@ -860,8 +851,8 @@ INSERT [dbo].[LOT_MATERIAL_HIS]
       ,[TRAN_USER_ID]
       ,[TRAN_COMMENT])
      SELECT
-	   new.PRODUCT_CODE
-      ,new.LAST_HIST_SEQ
+	   s.PRODUCT_CODE
+      ,s.LAST_HIST_SEQ
       ,s.LOT_ID
       ,s.LAST_HIST_SEQ
       ,s.LOT_QTY
@@ -873,13 +864,8 @@ INSERT [dbo].[LOT_MATERIAL_HIS]
       ,s.END_EQUIPMENT_CODE
       ,s.LAST_TRAN_USER_ID
       ,s.LAST_TRAN_COMMENT
-	  FROM LOT_STS s, (SELECT
-	   lot.PRODUCT_CODE
-      ,lot.LAST_HIST_SEQ
-	  FROM LOT_STS lot
-	  left join BOM_MST bom on bom.PRODUCT_CODE = lot.PRODUCT_CODE
-	  WHERE lot.LOT_ID=@BOM_LOT_ID_1) new
-	  WHERE s.LOT_ID=@LOT_ID
+	  FROM LOT_STS s
+	  WHERE s.LOT_ID=@BOM_LOT_ID_1
 
 INSERT [dbo].[LOT_MATERIAL_HIS]
            ([MATERIAL_LOT_ID]
@@ -896,8 +882,8 @@ INSERT [dbo].[LOT_MATERIAL_HIS]
       ,[TRAN_USER_ID]
       ,[TRAN_COMMENT])
      SELECT
-	   new.PRODUCT_CODE
-      ,new.LAST_HIST_SEQ
+	   s.PRODUCT_CODE
+      ,s.LAST_HIST_SEQ
       ,s.LOT_ID
       ,s.LAST_HIST_SEQ
       ,s.LOT_QTY
@@ -909,13 +895,8 @@ INSERT [dbo].[LOT_MATERIAL_HIS]
       ,s.END_EQUIPMENT_CODE
       ,s.LAST_TRAN_USER_ID
       ,s.LAST_TRAN_COMMENT
-	  FROM LOT_STS s, (SELECT
-	   lot.PRODUCT_CODE
-      ,lot.LAST_HIST_SEQ
-	  FROM LOT_STS lot
-	  left join BOM_MST bom on bom.PRODUCT_CODE = lot.PRODUCT_CODE
-	  WHERE lot.LOT_ID=@BOM_LOT_ID_2) new
-	  WHERE s.LOT_ID=@LOT_ID
+	  FROM LOT_STS s
+	  WHERE s.LOT_ID=@BOM_LOT_ID_2
 
 	COMMIT TRANSACTION;  
 END TRY  
@@ -958,9 +939,9 @@ END CATCH;
                     cmd.Parameters.AddWithValue("@BOM_LOT_QTY_1", updateVO.BOM_LOT_QTY_1);
                     cmd.Parameters.AddWithValue("@BOM_CHILD_ID_1", updateVO.BOM_CHILD_ID_1);
 
-
+                    cmd.Parameters.AddWithValue("@HB_QTY", updateVO.HB_QTY);
                     cmd.Parameters.AddWithValue("@BOM_LOT_QTY_2", updateVO.BOM_LOT_QTY_2);
-
+                    
                     if (!string.IsNullOrWhiteSpace(updateVO.BOM_CHILD_ID_2))  cmd.Parameters.AddWithValue("@BOM_CHILD_ID_2", updateVO.BOM_CHILD_ID_2);
                     else cmd.Parameters.AddWithValue("@BOM_CHILD_ID_2", DBNull.Value);
 

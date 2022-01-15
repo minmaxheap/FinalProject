@@ -275,6 +275,7 @@ namespace POPprogram
                     vo.BOM_CHILD_ID_1 = export[rw.Index].BOM_CHILD_ID;
                     vo.BOM_LOT_ID_1 = export[rw.Index].BOM_LOT_ID;
                     vo.BOM_LOT_QTY_1 = export[rw.Index].BOM_LOT_QTY;
+                    vo.HB_QTY= export[rw.Index].BOM_LOT_QTY;
                     vo.BOM_SUM_QTY_1 = export[rw.Index].BOM_SUM_QTY;
                 }
                 if (rw.Index == 1)
@@ -306,7 +307,7 @@ namespace POPprogram
             vo.LOT_QTY = Convert.ToDecimal(txtQty.Text);
             vo.OPERATION_CODE = txtOperCode.Text;
             vo.PRODUCT_NAME = txtProdName.Text;
-            vo.HB_QTY = vo.BOM_LOT_QTY_1;
+
 
             vo.BOM_LOT_QTY_1 = vo.BOM_LOT_QTY_1 - vo.BOM_LOT_QTY_1;
             vo.BOM_LOT_QTY_2 = vo.BOM_LOT_QTY_2 - vo.BOM_LOT_QTY_2;
