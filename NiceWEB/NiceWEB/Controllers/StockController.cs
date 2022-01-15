@@ -7,39 +7,26 @@ using Newtonsoft.Json;
 using NiceWEB.Models;
 using System.Web.Script.Serialization;
 using System.Web.Configuration;
+using NiceWEB.Models.DAC;
 
 namespace NiceWEB.Controllers
 {
     public class StockController : Controller
     {
-        // GET: Store
-        //public ActionResult Index(string storeCode, string ProductCode)
-        //{
-        //    StoreDAC dac = new StoreDAC();
-        //    List<StoreProperty> list = dac.GetSearch(storeCode, ProductCode);
-        //    List<ComboItem> categories = dac.GetCode();
-        //    List<ComboItem> categories2 = dac.GetProductCode();
-
-        //    dac.Dispose();
-        //    categories.Insert(0, new ComboItem {Code = ""});
-        //    categories2.Insert(0, new ComboItem {Code = "" });
-
-        //    ViewBag.Categories = new SelectList(categories,"Code","Code");
-        //    ViewBag.Categories2 = new SelectList(categories2, "Code", "Code");
-
-
-
-        //    return View(list);
-        //}
-
-        public ActionResult Index(string storeCode, string ProductCode, int page = 1)
+        public ActionResult Index(string opCode, string productCode,int page =1)
         {
+            
             int pagesize = Convert.ToInt32(WebConfigurationManager.AppSettings["pagesize"]);
-            StoreDAC dac = new StoreDAC();
-            List<StoreProperty> list = dac.GetPageList(storeCode, ProductCode, page, pagesize);
-            List<ComboItem> categories = dac.GetCode();
-            List<ComboItem> categories2 = dac.GetProductCode();
-            int totalCount = dac.GetProductTotalCount(storeCode, ProductCode);
+
+            StockDAC dac = new StockDAC();
+            List<Product> list = dac.GetData(opCode, productCode, page, pagesize);
+
+            //콤보박스 구현 2개 
+            List<ComboItem> categories = dac.GetProduct();
+            List<ComboItem> categories2 = dac.GetOperation();
+
+            //페이징 갯수를 정하는거 => 전체데이터의 갯수 가져오기 
+            int totalCount = dac.GetProductTotalCount(opCode, productCode);
 
             dac.Dispose();
 
@@ -49,14 +36,16 @@ namespace NiceWEB.Controllers
                 ItemsPerPage = pagesize,
                 CurrentPage = page
             };
-            //categories.Insert();
+
+            //콤보박스 view에 보여주기
+            categories.Insert(0, new ComboItem { Code = "" });
             categories2.Insert(0, new ComboItem { Code = "" });
 
             ViewBag.Categories = new SelectList(categories, "Code", "Code");
             ViewBag.Categories2 = new SelectList(categories2, "Code", "Code");
 
-            ViewBag.storeCode = storeCode;
-            ViewBag.productCode = ProductCode;
+            ViewBag.opCode = opCode;
+            ViewBag.productCode = productCode;
             ViewBag.PagingInfo = pageInfo;
 
             return View(list);
