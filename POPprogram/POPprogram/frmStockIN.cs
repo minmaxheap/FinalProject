@@ -212,7 +212,7 @@ namespace POPprogram
                 bool bResult = serv.SaveStockLot(lotList, comboBox1.SelectedValue.ToString(), msUserID);
                 if (bResult)
                 {
-                    MessageBox.Show("정상적으로 입고가 완료되었습니다.1");
+                    MessageBox.Show("정상적으로 입고가 완료되었습니다.");
                     serv = new StockServ();
                     DataTable dt = serv.Purchase_warehousing(txtCode1.Text, txtSearch.Text);
                     csDataGridView1.DataSource = null;
@@ -230,7 +230,7 @@ namespace POPprogram
                 bool bResult = serv.SaveStockLot(lotList, comboBox1.SelectedValue.ToString(), msUserID);
                 if (bResult)
                 {
-                    MessageBox.Show("정상적으로 입고가 완료되었습니다.2");
+                    MessageBox.Show("정상적으로 입고가 완료되었습니다.");
                     serv = new StockServ();
                     DataTable dt = serv.Purchase_warehousing(txtCode1.Text, txtSearch.Text);
                     csDataGridView1.DataSource = null;
