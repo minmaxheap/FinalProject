@@ -35,6 +35,7 @@ namespace DAC
 	public class MatPropertyPrdCode
 	{
 		public string PRODUCT_CODE { get; set; }
+		public string LOT_ID { get; set; }
 	}
     public class MatPropertyUpdate
     {
@@ -91,6 +92,7 @@ namespace DAC
 		public string BOM_CHILD_ID_2 { get; set; }
 		public decimal BOM_SUM_QTY_1 { get; set; }
 		public decimal BOM_SUM_QTY_2 { get; set; }
+		public decimal HB_QTY { get; set; }
 	}
 	public class MatPropertyExport
 	{

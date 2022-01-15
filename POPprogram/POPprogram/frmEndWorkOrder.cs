@@ -197,11 +197,11 @@ namespace POPprogram
             bool bResult = serv.EndLOT_Update(updateVO);
             if (bResult)
             {
-                MessageBox.Show("성공적으로 제품을 출하했습니다.");
+                MessageBox.Show("성공적으로 공정 작업을 완료했습니다.");
             }
             else
             {
-                MessageBox.Show("제품 출하 중 오류가 발생했습니다.");
+                MessageBox.Show("공정 작업 완료 중 문제가 발생했습니다.");
             }
         }
 

@@ -76,6 +76,7 @@ namespace POPprogram
 
             MatPropertyPrdCode usevo = new MatPropertyPrdCode();
             usevo.PRODUCT_CODE = txtProdCode.Text;
+            usevo.LOT_ID = cboLOTID.Text;
             List<MatPropertyUse> uselist = serv.GetBomChildList(usevo);
             DataTable dt= ConvertToDataTable(uselist);
 
@@ -305,6 +306,7 @@ namespace POPprogram
             vo.LOT_QTY = Convert.ToDecimal(txtQty.Text);
             vo.OPERATION_CODE = txtOperCode.Text;
             vo.PRODUCT_NAME = txtProdName.Text;
+            vo.HB_QTY = vo.BOM_LOT_QTY_1;
 
             vo.BOM_LOT_QTY_1 = vo.BOM_LOT_QTY_1 - vo.BOM_LOT_QTY_1;
             vo.BOM_LOT_QTY_2 = vo.BOM_LOT_QTY_2 - vo.BOM_LOT_QTY_2;
