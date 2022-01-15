@@ -28,7 +28,8 @@ namespace NiceWEB.Controllers
             int pagesize = Convert.ToInt32(WebConfigurationManager.AppSettings["pagesize"]);
             EfficiencyDAC dac = new EfficiencyDAC();
             int totalCount = dac.GetTotalCount(workID, prdCode);
-            List<Efficiency> list = dac.GetData(startDate, endDate, "", "");
+            List<Efficiency> list = dac.GetData(startDate, endDate, workID,prdCode);
+            DataTable dt = dac.GetChartData(startDate, endDate, workID, prdCode);
             //차트
             dac.Dispose();
 
@@ -41,10 +42,17 @@ namespace NiceWEB.Controllers
             };
             ViewBag.PagingInfo = pageInfo;
 
+            //ViewBag.OrderQty = 
+            //ViewBag.ProductQty = 
+            //ViewBag.DefectQty = 
+            //ViewBag.WorkRate = 
+            //ViewBag.DownRate = 
+            //ViewBag.Labels = startDate to endDate
 
 
 
-      
+
+
 
             return View(list);
         }

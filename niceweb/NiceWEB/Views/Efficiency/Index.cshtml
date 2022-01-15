@@ -1,0 +1,352 @@
+﻿@model IEnumerable<NiceWEB.Models.Efficiency>
+@using NiceWEB.Html
+@using NiceWEB.Models
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+
+
+
+<div style="display:none;" class="row">
+    <div class="form-group">
+        @*@Html.HiddenFor(m => m.Columns, new { @id = "dataObjCol", placeholder = Html.DisplayNameFor(m => m.Columns), @class = "form-control" })
+        @Html.HiddenFor(m => m.Data, new { @id = "dataObjData", placeholder = Html.DisplayNameFor(m => m.Data), @class = "form-control" })*@
+    </div>
+</div>
+
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">제조 종합 효율 조회</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                </ol>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+
+<div class="content">
+    <div class="container-fluid">
+        @using (Html.BeginForm("Index", "Efficiency", FormMethod.Post, new { @id = "form3" }))
+        {
+
+
+                    <div class="row">
+                        <div class="col-3">
+
+                            <div class="form-group">
+                                <label>조회날짜:</label>
+
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="far fa-calendar-alt"></i>
+                                        </span>
+                                    </div>
+                                    <input type="text" class="form-control float-right" id="reservation">
+                                    <input type="hidden" name="startDate" id="startDate" />
+                                    <input type="hidden" name="endDate" id="endDate" />
+
+                                </div>
+                                <!-- /.input group -->
+                            </div>
+                            <!-- /.form group -->
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label for="Order" class="col-form-label">작업지시:</label>
+                                @Html.DropDownList("Order",
+                           (IEnumerable<SelectListItem>)ViewBag.Order, null, new { @class = "form-control" })
+
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label>품번:</label>
+                      
+                                @Html.DropDownList("Product",(IEnumerable<SelectListItem>)ViewBag.Product, null, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label>&nbsp;  </label>
+                                <button type="button" id="saveBtn" class="btn btn-block btn-secondary">조회</button>
+                            </div>
+                        </div>
+
+                    </div>
+                
+       
+
+        }
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">제조 종합 효율 조회</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        @*<table id="compareplan" class="table table-bordered table-striped">
+            </table>*@
+                        <table class="table table-striped table-bordered table-hover"
+                               id="TableId"
+                               cellspacing="0"
+                               align="center"
+                               width="100%" border="1">
+
+                            <thead>
+                                <tr>
+                                    <th scope="col">작업일자</th>
+                                    <th scope="col">지시수량</th>
+                                    <th scope="col">양품수량</th>
+                                    <th scope="col">불량수량</th>
+                                    <th scope="col">양품률(%)</th>
+                                    <th scope="col">불량률(%)</th>
+                                    <th scope="col">작업시작</th>
+                                    <th scope="col">작업종료</th>
+                                    <th scope="col">작업시간</th>
+                                    <th scope="col">비가동시간</th>
+                                    <th scope="col">가동률(%)</th>
+                                    <th scope="col">비가동률(%)</th>
+                                    <th scope="col">시간당 생산수</th>
+                                </tr>
+                            </thead>
+
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center">
+                            @Html.PageLinks((PagingInfo)ViewBag.PagingInfo, (x) => Url.Action("Index",
+                                new { page = x, LotID = ViewBag.LotID }))
+                        </ul>
+                    </nav>
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+
+        <div class="card card-primary">
+            <div class="card-header">
+                <h3 class="card-title">제조 종합 효율 차트</h3>
+
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="chart">
+                    @*<div id="areaChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></div>*@
+                    <canvas id="chart" "></canvas>
+                </div>
+            </div>
+            <!-- /.card-body -->
+        </div>
+    </div>
+</div>
+
+@{
+    string labels = ViewBag.Labels; //x축
+    string orderQty = ViewBag.OrderQty;
+    string prodcutQty = ViewBag.ProductQty;
+    string defectQty = ViewBag.DefectQty;
+    string workRate = ViewBag.WorkRate;
+    string DownRate = ViewBag.DownRate;
+}
+
+@section Scripts
+{
+
+    <script type="text/javascript">
+        jQuery.noConflict()
+        var startDate;
+        var endDate;
+
+        $(document).ready(function () {
+            $('#reservation').daterangepicker(
+                {
+                    showDropdowns: true,
+                    showWeekNumbers: true,
+                    timePicker: false,
+                    timePickerIncrement: 1,
+                    timePicker12Hour: true,
+                    opens: 'left',
+                    format: 'YYYY-MM-DD',
+                    separator: ' to ',
+                },
+                function (start, end) {
+                    console.log("Callback has been called!");
+                    $('#reservation span').html(start.format('YYYY-MM-DD') + ' - ' + end.format('YYYY-MM-DD'));
+                    startDate = start;
+                    endDate = end;
+
+                }
+            );
+
+            $('#saveBtn').click(function () {
+                console.log(startDate.format('YYYY-MM-DD') + ' - ' + endDate.format('YYYY-MM-DD'));
+                $('#startDate').val(startDate.format('YYYY-MM-DD'));
+                $('#endDate').val(endDate.format('YYYY-MM-DD'));
+                $('#form3')[0].submit();
+            });
+
+
+
+
+
+        });
+    </script>
+
+
+    <script>
+        $(document).ready(function () {
+
+            $.each(data, function (index, row) {
+                $("#data").append("<option value='" + row.data + "'>" + row.data + "</option>")
+            });
+
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //debugger;
+            //alert($('#dataObjCol').val());
+            var dataObjCol = JSON.parse($('#dataObjCol').val());
+            var dataObjData = JSON.parse($('#dataObjData').val());
+
+
+
+            // Datatable settings.
+            $('#TableId').DataTable(
+                {
+
+                    "data": dataObjData,
+                    "columns": dataObjCol,
+                    "bPaginate": false,
+                    "bFilter": false,
+                    "bInfo": false,
+                    "autoWidth": false,
+                    "bSort": false,
+                    "columnDefs": [
+                        {
+                            "width": "28px",
+                            "targets": "0",
+                            "className": "text-right"
+                        },
+                        {
+                            "width": "2px",
+                            "targets": "1",
+                            "className": "text-right"
+                        }
+                    ]
+                });
+        });
+    </script>
+
+
+    <script th:inline="javascript">
+
+
+        $(function () {
+            var ctx = document.getElementById('chart').getContext('2d');
+            var temp = "@labels";
+            var arrTemp = temp.split(',');
+            var chart = new Chart(ctx, {
+
+              
+
+
+                data: {
+                    labels: arrTemp, //조회 조건 날짜별로 받아와야한다.흠 근데 사용자가 조회 조건을 1년을 받아오면 x축을 365개로 해야하는 건가? 일정 개수가 넘어가면 일별, 주별, 월별로 하고 싶은데..그건 넘 어렵겠다.
+                    datasets:
+                        [
+                            {
+                                label: '지시수량',
+                                type: 'bar', // 'bar' type, 전체 타입과 같다면 생략가능
+                                backgroundColor: 'rgb(0, 204, 102)',
+                                borderColor: 'rgb(255, 204, 102)',
+                                data: @orderQty
+                            },
+                            {
+                                label: '양품수',
+                                type: 'bar', // 'bar' type, 전체 타입과 같다면 생략가능
+                                backgroundColor: 'rgb(255, 0, 102)',
+                                borderColor: 'rgb(255, 204, 102)',
+                                data: @prodcutQty
+                            },
+
+                            {
+                                label: '불량수',
+                                type: 'bar', // 'bar' type, 전체 타입과 같다면 생략가능
+                                backgroundColor: 'rgb(255, 204, 0)',
+                                borderColor: 'rgb(255, 204, 102)',
+                                data: @defectQty
+                            },
+
+                            {
+                                label: '가동률',
+                                type: 'line',         // 'line' type
+                                fill: false,         // 채우기 없음
+                                lineTension: 0.2,  // 0이면 꺾은선 그래프, 숫자가 높을수록 둥글해짐
+                                pointRadius: 0.1,    // 각 지점에 포인트 주지 않음
+                                backgroundColor: 'rgb(255, 153, 0)',
+                                borderColor: 'rgb(255, 153, 0)',
+                                data: @workRate
+                            },
+                            {
+                                label: '비가동률',
+                                type: 'line',
+                                fill: false,
+                                lineTension: 0.2,
+                                pointRadius: 0,
+                                backgroundColor: 'rgb(255, 204, 0)',
+                                borderColor: 'rgb(255, 204, 0)',
+                                data: @DownRate
+                            }
+
+
+                        ]
+                },
+
+                // Configuration options
+                options: {
+                    legend: {
+                        labels: {
+                            fontColor: 'black' // label color
+                        }
+                    },
+                    scales: {
+                        // y축
+                        yAxes: [{
+                            stacked: false,
+                            ticks: {
+                                fontColor: 'black' // y축 폰트 color
+                            }
+                        }],
+                        // x축
+                        xAxes: [{
+                            stacked: false,
+                            ticks: {
+                                fontColor: 'black'// x축 폰트 color
+                            }
+                        }]
+                    }
+                }
+            });
+        });
+    </script>
+
+}
