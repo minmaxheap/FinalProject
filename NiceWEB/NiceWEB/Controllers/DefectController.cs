@@ -11,13 +11,13 @@ namespace NiceWEB.Controllers
         // GET: Deffect
         public ActionResult Index(string startDate, string endDate, string productCode, string op_code, int page=1)
         {
-            DateTime from = Convert.ToDateTime("2021-10-10");
-            DateTime to = Convert.ToDateTime("2022-10-10");
+            //DateTime from = Convert.ToDateTime("2021-10-10");
+            //DateTime to = Convert.ToDateTime("2022-10-10");
 
             int pagesize = Convert.ToInt32(WebConfigurationManager.AppSettings["pagesize"]);
             DefectDAC dac = new DefectDAC();
-            List<DefectProperty> list = dac.GetData(from,to,productCode,op_code,page,pagesize);
-            int totalCount = dac.GetProductTotalCount(from, to, productCode, op_code);
+            List<DefectProperty> list = dac.GetData(startDate, endDate, productCode,op_code,page,pagesize);
+            int totalCount = dac.GetProductTotalCount(startDate, endDate, productCode, op_code);
             List<ComboItem> categories = dac.GetProduct();
             List<ComboItem> categories2 = dac.GetOperation();
 

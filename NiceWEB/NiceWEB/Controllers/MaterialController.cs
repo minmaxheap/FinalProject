@@ -15,13 +15,13 @@ namespace NiceWEB.Controllers
         // GET: Material
         public ActionResult Index(string startDate, string endDate, string productCode,string op_code,string childCode,int page=1)
         {
-            DateTime from = Convert.ToDateTime("2021-10-10");
-            DateTime to = Convert.ToDateTime("2022-10-10");
+            //DateTime from = Convert.ToDateTime("2021-10-10");
+            //DateTime to = Convert.ToDateTime("2022-10-10");
 
             int pagesize = Convert.ToInt32(WebConfigurationManager.AppSettings["pagesize"]);
             Adding_materialDAC dac = new Adding_materialDAC();
-            List<Adding_materialProperty> list = dac.GetData(from, to, productCode, op_code, childCode, page, pagesize);
-            int totalCount = dac.GetProductTotalCount(from, to, productCode,  op_code, childCode);
+            List<Adding_materialProperty> list = dac.GetData(startDate, endDate, productCode, op_code, childCode, page, pagesize);
+            int totalCount = dac.GetProductTotalCount(startDate, endDate, productCode,  op_code, childCode);
             List<ComboItem> categories = dac.GetProduct();
             List<ComboItem> categories2 = dac.GetOperation();
             List<ComboItem> categories3 = dac.GetChildCode();
