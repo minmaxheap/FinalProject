@@ -29,7 +29,7 @@ namespace NiceWEB.Models
 
 
        
-        public List<ComparePlan> GetPageList(string workID, string prdCode, int page, int pagesize)
+        public List<ComparePlan> GetPageList(string startDate, string endDate, string workID, string prdCode, int page, int pagesize)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -56,6 +56,11 @@ namespace NiceWEB.Models
                 cmd.Parameters.AddWithValue("@WORK_ORDER_ID", $"%{workID}%");
 
                 cmd.Parameters.AddWithValue("@ProductCode", $"%{prdCode}%");
+
+
+                    cmd.Parameters.AddWithValue("@startDate", startDate);
+
+                    cmd.Parameters.AddWithValue("@endDate", endDate);
 
                 cmd.Parameters.AddWithValue("@PAGE_NO", page);
                 cmd.Parameters.AddWithValue("@PAGE_SIZE", pagesize);

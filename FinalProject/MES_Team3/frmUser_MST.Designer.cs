@@ -97,6 +97,10 @@ namespace MES_Team3
             // 
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click_1);
             // 
+            // btnClose
+            // 
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // btnReadBottom
             // 
             this.btnReadBottom.Click += new System.EventHandler(this.btnRead_Click);

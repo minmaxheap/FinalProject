@@ -172,20 +172,20 @@ namespace POPprogram
 
             if (dt.Rows.Count < 1)
             {
-                MessageBox.Show("입력값을 제대로 입력해주세요");
+                MessageBox.Show("입력값을 다시 입력해주세요");
                 return;
             }
             deserv = new deffectServ();
             bool result = deserv.insert(lot_qty, txtComment.Text, frmLogin.userID, cboLOTID.SelectedValue.ToString(), dt);
             if (result)
             {
-                MessageBox.Show("성공");
+                MessageBox.Show("불량 처리가 정상적으로 완료되었습니다.");
                 LoadData();
                 return;
             }
             else
             {
-                MessageBox.Show("실패");
+                MessageBox.Show("불량 처리 중 문제가 발생했습니다.");
                 return;
             }
             //string msuerID = 

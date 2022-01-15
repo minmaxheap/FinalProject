@@ -34,7 +34,7 @@ namespace POPprogram
             cboLOTID.DisplayMember = "LOT_ID";
             cboLOTID.DataSource = list;
             cboLOTID.Text = null;
-
+  
             //EndDAC serv = new EndDAC();
             DataTable dt = serv.GetEQList();
 
@@ -42,6 +42,7 @@ namespace POPprogram
             cboEQList.DisplayMember = "EQ_CODE";
             cboEQList.DataSource = listEQ;
             cboEQList.Text = null;
+            txtEQ_NAME.Text = null;
         }
 
         private void cboLOTID_SelectedIndexChanged(object sender, EventArgs e)
@@ -196,11 +197,11 @@ namespace POPprogram
             bool bResult = serv.EndLOT_Update(updateVO);
             if (bResult)
             {
-                MessageBox.Show("성공적으로 제품을 출하했습니다.");
+                MessageBox.Show("성공적으로 공정 작업을 완료했습니다.");
             }
             else
             {
-                MessageBox.Show("제품 출하 중 오류가 발생했습니다.");
+                MessageBox.Show("공정 작업 완료 중 문제가 발생했습니다.");
             }
         }
 
@@ -363,7 +364,7 @@ namespace POPprogram
                 searchflag = false;
                 return;
             }
-            txtEQ_NAME.Text = listEQ[cboEQList.SelectedIndex].EQ_NAME;
+            if (cboEQList.Text!="") txtEQ_NAME.Text = listEQ[cboEQList.SelectedIndex].EQ_NAME;
         }
     }
 }

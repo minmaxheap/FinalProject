@@ -321,6 +321,11 @@ namespace MES_Team3
                 return null;
             }
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
 

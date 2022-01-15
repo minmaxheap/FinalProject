@@ -42,7 +42,7 @@ namespace NiceWEB.Controllers
             };
             ViewBag.PagingInfo = pageInfo;
 
-            List<ComparePlan> list = dac.GetPageList( workID, prdCode, page, pagesize);
+            List<ComparePlan> list = dac.GetPageList( startDate,endDate, workID, prdCode, page, pagesize);
             // GAUGE CHART 데이터 받고 보내기
             List <ComparePlan> gauge = dac.GetChartData("3", "3",workID,prdCode);
             dac.Dispose();

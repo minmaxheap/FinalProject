@@ -180,111 +180,216 @@ WHERE O.SALES_ORDER_ID = SA.SALES_ORDER_ID AND V.CODE_TABLE_NAME ='CM_CUSTOMER' 
             return List;
         }
 
-        public bool InsertLOTStatus(string CREATE_USER_ID, List<LOTProperty> list, string SALES_ORDER_ID)
+        //public bool InsertLOTStatus(string CREATE_USER_ID, List<LOTProperty> list, string SALES_ORDER_ID)
+        //{
+        //    SqlTransaction trans = conn.BeginTransaction();
+        //    try
+        //    {
+        //        foreach (LOTProperty pr in list)
+        //        {
+        //            using (SqlCommand cmd = new SqlCommand())
+        //            {
+        //                cmd.Connection = conn;
+        //                cmd.CommandText = @"UPDATE PURCHASE_ORDER_MST SET STOCK_IN_LOT_QTY =@STOCK_IN_LOT_QTY  WHERE STOCK_IN_LOT_ID = @STOCK_IN_LOT_ID";
+
+        //                cmd.Parameters.AddWithValue("@STOCK_IN_LOT_QTY", pr.LOT_QTY);
+        //                cmd.Parameters.AddWithValue("@STOCK_IN_LOT_ID", pr.LOT_ID);
+
+
+        //                cmd.Transaction = trans;
+
+        //                int row = cmd.ExecuteNonQuery();
+
+        //            }
+        //        }
+
+        //        using (SqlCommand cmd = new SqlCommand())
+        //        {
+
+        //            cmd.CommandText = @"DECLARE
+
+        //@COUNT INT,
+        //@STOCK_IN_LOT_ID VARCHAR(1000),
+        //@MATERIAL_CODE VARCHAR(1000),
+        //@STOCK_IN_LOT_QTY NUMERIC(10,0)
+
+
+        //SET 
+        //@COUNT = 1
+
+
+        //DECLARE @NewLot  TABLE 
+        //				(
+        //					ID INT identity(1,1),
+        //							STOCK_IN_LOT_ID VARCHAR(1000),
+        //						MATERIAL_CODE VARCHAR(1000),
+        //                        STOCK_IN_LOT_QTY NUMERIC(10,0)
+
+        //				)
+
+        //				INSERT INTO @NewLot
+        //				SELECT STOCK_IN_LOT_ID, MATERIAL_CODE, STOCK_IN_LOT_QTY FROM PURCHASE_ORDER_MST
+        //				WHERE SALES_ORDER_ID = @SALES_ORDER_ID;
+
+        //				WHILE @COUNT <7
+        //				BEGIN
+        //					select @STOCK_IN_LOT_ID = STOCK_IN_LOT_ID, @MATERIAL_CODE =MATERIAL_CODE, @STOCK_IN_LOT_QTY=STOCK_IN_LOT_QTY
+        //                        FROM @NewLot WHERE ID=@COUNT;
+
+        //						INSERT[dbo].[LOT_STS]
+        //						(LOT_ID, LOT_DESC, PRODUCT_CODE, STORE_CODE, 
+        //						LOT_QTY, CREATE_QTY, OPER_IN_QTY, PRODUCTION_TIME, 
+        //						CREATE_TIME, OPER_IN_TIME, LAST_TRAN_CODE, LAST_TRAN_TIME,
+        //						LAST_TRAN_USER_ID, LAST_TRAN_COMMENT, LAST_HIST_SEQ)
+        //						VALUES(@STOCK_IN_LOT_ID, '자재 LOT', @MATERIAL_CODE, 'RS_STOCK', 
+        //						@STOCK_IN_LOT_QTY, @STOCK_IN_LOT_QTY, @STOCK_IN_LOT_QTY, GETDATE(), 
+        //						GETDATE(), GETDATE(), 'CREATE', GETDATE(),
+        //						@LAST_TRAN_USER_ID, '자재 LOT 생성', 1);
+
+        //                        INSERT [dbo].[LOT_HIS]
+        //                        (LOT_ID, LOT_DESC, PRODUCT_CODE, STORE_CODE, 
+        //                        LOT_QTY, CREATE_QTY, OPER_IN_QTY, PRODUCTION_TIME, 
+        //                        CREATE_TIME, OPER_IN_TIME, TRAN_CODE, TRAN_TIME,
+        //                        TRAN_USER_ID,TRAN_COMMENT, HIST_SEQ)
+        //                        SELECT LOT_ID, LOT_DESC, PRODUCT_CODE, STORE_CODE, 
+        //                        LOT_QTY, CREATE_QTY, OPER_IN_QTY, PRODUCTION_TIME, 
+        //                        CREATE_TIME, OPER_IN_TIME, LAST_TRAN_CODE, LAST_TRAN_TIME,
+        //                        LAST_TRAN_USER_ID, LAST_TRAN_COMMENT, LAST_HIST_SEQ
+        //                        FROM LOT_STS
+        //                        WHERE LOT_ID = @STOCK_IN_LOT_ID AND PRODUCT_CODE = @MATERIAL_CODE;
+
+        //						SET @COUNT = @COUNT +1
+
+        //				END";
+
+        //            cmd.Connection = conn;
+        //            if (CREATE_USER_ID == null)
+        //                cmd.Parameters.AddWithValue("@LAST_TRAN_USER_ID", DBNull.Value);
+        //            else
+        //                cmd.Parameters.AddWithValue("@LAST_TRAN_USER_ID", CREATE_USER_ID);
+        //            cmd.Parameters.AddWithValue("@SALES_ORDER_ID", SALES_ORDER_ID);
+
+        //            cmd.Transaction = trans;
+
+        //            int row = cmd.ExecuteNonQuery();
+
+        //            return row > 0;
+
+        //        }
+        //        trans.Commit();
+        //        return true;
+        //    }
+        //    catch (Exception err)
+        //    {
+        //        Debug.WriteLine(err.Message); //log에 찍게 해야하나?
+        //        return false;
+        //    }
+        //}
+
+
+        public bool InsertLOTStatus(string CREATE_USER_ID, List<StockProperty> list, string SALES_ORDER_ID)
         {
-            //SqlTransaction trans = conn.BeginTransaction();
+            SqlTransaction trans = conn.BeginTransaction();
             try
             {
-                foreach (LOTProperty pr in list)
+                foreach (StockProperty pr in list)
                 {
                     using (SqlCommand cmd = new SqlCommand())
                     {
                         cmd.Connection = conn;
                         cmd.CommandText = @"UPDATE PURCHASE_ORDER_MST SET STOCK_IN_LOT_QTY =@STOCK_IN_LOT_QTY  WHERE STOCK_IN_LOT_ID = @STOCK_IN_LOT_ID";
 
-                        cmd.Parameters.AddWithValue("@STOCK_IN_LOT_QTY", pr.LOT_QTY);
-                        cmd.Parameters.AddWithValue("@STOCK_IN_LOT_ID", pr.LOT_ID);
-     
+                        cmd.Parameters.AddWithValue("@STOCK_IN_LOT_QTY", pr.STOCK_IN_LOT_QTY);
+                        cmd.Parameters.AddWithValue("@STOCK_IN_LOT_ID", pr.STOCK_IN_LOT_ID);
 
-                       // cmd.Transaction = trans;
 
-                        int row =cmd.ExecuteNonQuery();
+                        cmd.Transaction = trans;
+
+                        int row = cmd.ExecuteNonQuery();
+
+                    }
+
+
+                    using (SqlCommand cmd = new SqlCommand())
+                    {
+
+                        cmd.CommandText = @"
+        						INSERT [dbo].[LOT_STS]
+        						(LOT_ID, LOT_DESC, PRODUCT_CODE, STORE_CODE, 
+        						LOT_QTY, CREATE_QTY, OPER_IN_QTY, PRODUCTION_TIME, 
+        						CREATE_TIME, OPER_IN_TIME, LAST_TRAN_CODE, LAST_TRAN_TIME,
+        						LAST_TRAN_USER_ID, LAST_TRAN_COMMENT, LAST_HIST_SEQ)
+        						VALUES(@STOCK_IN_LOT_ID, '자재 LOT', @MATERIAL_CODE, 'RS_STOCK', 
+        						@LOT_QTY, @STOCK_IN_LOT_QTY, @STOCK_IN_LOT_QTY, GETDATE(), 
+        						GETDATE(), GETDATE(), 'CREATE', GETDATE(),
+        						@LAST_TRAN_USER_ID, '자재 LOT 생성', 1);";
+
+                        cmd.Connection = conn;
+                        if (CREATE_USER_ID == null)
+                            cmd.Parameters.AddWithValue("@LAST_TRAN_USER_ID", DBNull.Value);
+                        else
+                            cmd.Parameters.AddWithValue("@LAST_TRAN_USER_ID", CREATE_USER_ID);
+                        cmd.Parameters.AddWithValue("@SALES_ORDER_ID", SALES_ORDER_ID);
+
+                        cmd.Parameters.AddWithValue("@LOT_QTY", pr.LOT_QTY);
+                        cmd.Parameters.AddWithValue("@STOCK_IN_LOT_QTY", pr.STOCK_IN_LOT_QTY);
+                        cmd.Parameters.AddWithValue("@STOCK_IN_LOT_ID", pr.STOCK_IN_LOT_ID);
+                        cmd.Parameters.AddWithValue("@MATERIAL_CODE", pr.MATERIAL_CODE);
+
+                        cmd.Transaction = trans;
+
+                        int row = cmd.ExecuteNonQuery();
+
+
+                    }
+
+                    using (SqlCommand cmd = new SqlCommand())
+                    {
+
+                        cmd.CommandText = @"
+
+                                INSERT [dbo].[LOT_HIS]
+                                (LOT_ID, LOT_DESC, PRODUCT_CODE, STORE_CODE, 
+                                LOT_QTY, CREATE_QTY, OPER_IN_QTY, PRODUCTION_TIME, 
+                                CREATE_TIME, OPER_IN_TIME, TRAN_CODE, TRAN_TIME,
+                                TRAN_USER_ID,TRAN_COMMENT, HIST_SEQ)
+                                SELECT LOT_ID, LOT_DESC, PRODUCT_CODE, STORE_CODE, 
+                                LOT_QTY, CREATE_QTY, OPER_IN_QTY, PRODUCTION_TIME, 
+                                CREATE_TIME, OPER_IN_TIME, LAST_TRAN_CODE, LAST_TRAN_TIME,
+                                LAST_TRAN_USER_ID, LAST_TRAN_COMMENT, LAST_HIST_SEQ
+                                FROM LOT_STS
+                                WHERE LOT_ID = @STOCK_IN_LOT_ID AND PRODUCT_CODE = @MATERIAL_CODE;";
+
+                        cmd.Connection = conn;
+                        if (CREATE_USER_ID == null)
+                            cmd.Parameters.AddWithValue("@LAST_TRAN_USER_ID", DBNull.Value);
+                        else
+                            cmd.Parameters.AddWithValue("@LAST_TRAN_USER_ID", CREATE_USER_ID);
+                        cmd.Parameters.AddWithValue("@SALES_ORDER_ID", SALES_ORDER_ID);
+
+                        cmd.Parameters.AddWithValue("@STOCK_IN_LOT_QTY", pr.STOCK_IN_LOT_QTY);
+                        cmd.Parameters.AddWithValue("@STOCK_IN_LOT_ID", pr.STOCK_IN_LOT_ID);
+                        cmd.Parameters.AddWithValue("@MATERIAL_CODE", pr.MATERIAL_CODE);
+
+                        cmd.Transaction = trans;
+
+                        int row = cmd.ExecuteNonQuery();
+
 
                     }
                 }
 
-                    using (SqlCommand cmd = new SqlCommand())
-                {
+                trans.Commit();
+                return true;
 
-                    cmd.CommandText = @"DECLARE
-
-@COUNT INT,
-@STOCK_IN_LOT_ID VARCHAR(1000),
-@MATERIAL_CODE VARCHAR(1000),
-@STOCK_IN_LOT_QTY NUMERIC(10,0)
-
-
-SET 
-@COUNT = 1
-
-
-DECLARE @NewLot  TABLE 
-				(
-					ID INT identity(1,1),
-							STOCK_IN_LOT_ID VARCHAR(1000),
-						MATERIAL_CODE VARCHAR(1000),
-                        STOCK_IN_LOT_QTY NUMERIC(10,0)
-
-				)
- 
-				INSERT INTO @NewLot
-				SELECT STOCK_IN_LOT_ID, MATERIAL_CODE, STOCK_IN_LOT_QTY FROM PURCHASE_ORDER_MST
-				WHERE SALES_ORDER_ID = @SALES_ORDER_ID;
-
-				WHILE @COUNT <6
-				BEGIN
-					select @STOCK_IN_LOT_ID = STOCK_IN_LOT_ID, @MATERIAL_CODE =MATERIAL_CODE, @STOCK_IN_LOT_QTY=STOCK_IN_LOT_QTY
-                        FROM @NewLot WHERE ID=@COUNT;
-
-						INSERT[dbo].[LOT_STS]
-						(LOT_ID, LOT_DESC, PRODUCT_CODE, STORE_CODE, 
-						LOT_QTY, CREATE_QTY, OPER_IN_QTY, PRODUCTION_TIME, 
-						CREATE_TIME, OPER_IN_TIME, LAST_TRAN_CODE, LAST_TRAN_TIME,
-						LAST_TRAN_USER_ID, LAST_TRAN_COMMENT, LAST_HIST_SEQ)
-						VALUES(@STOCK_IN_LOT_ID, '자재 LOT', @MATERIAL_CODE, 'RS_STOCK', 
-						@STOCK_IN_LOT_QTY, @STOCK_IN_LOT_QTY, @STOCK_IN_LOT_QTY, GETDATE(), 
-						GETDATE(), GETDATE(), 'CREATE', GETDATE(),
-						@LAST_TRAN_USER_ID, '자재 LOT 생성', 1);
-
-                        INSERT [dbo].[LOT_HIS]
-                        (LOT_ID, LOT_DESC, PRODUCT_CODE, STORE_CODE, 
-                        LOT_QTY, CREATE_QTY, OPER_IN_QTY, PRODUCTION_TIME, 
-                        CREATE_TIME, OPER_IN_TIME, TRAN_CODE, TRAN_TIME,
-                        TRAN_USER_ID,TRAN_COMMENT, HIST_SEQ)
-                        SELECT LOT_ID, LOT_DESC, PRODUCT_CODE, STORE_CODE, 
-                        LOT_QTY, CREATE_QTY, OPER_IN_QTY, PRODUCTION_TIME, 
-                        CREATE_TIME, OPER_IN_TIME, LAST_TRAN_CODE, LAST_TRAN_TIME,
-                        LAST_TRAN_USER_ID, LAST_TRAN_COMMENT, LAST_HIST_SEQ
-                        FROM LOT_STS
-                        WHERE LOT_ID = @STOCK_IN_LOT_ID AND PRODUCT_CODE = @MATERIAL_CODE;
-
-						SET @COUNT = @COUNT +1
-
-				END";
-
-                    cmd.Connection = conn;
-                    if (CREATE_USER_ID == null)
-                        cmd.Parameters.AddWithValue("@LAST_TRAN_USER_ID", DBNull.Value);
-                    else
-                        cmd.Parameters.AddWithValue("@LAST_TRAN_USER_ID", CREATE_USER_ID);
-                    cmd.Parameters.AddWithValue("@SALES_ORDER_ID", SALES_ORDER_ID);
-
-                    //cmd.Transaction = trans;
-
-                    int row = cmd.ExecuteNonQuery();
-
-                    return row > 0;
-
-                }
             }
             catch (Exception err)
             {
                 Debug.WriteLine(err.Message); //log에 찍게 해야하나?
+                trans.Rollback();
                 return false;
             }
         }
-
-
 
         public bool SaveStockLot(List<string> lotlist, string storeID, string msUserID)
         {
@@ -356,6 +461,29 @@ where s.LOT_ID =@LOT_ID and h.HIST_SEQ = s.LAST_HIST_SEQ-1";
             {
                 trans.Rollback();
                 return false;
+            }
+        }
+
+        public List<StockProperty> GetMixedInfo(string salesID)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"SELECT * FROM  PURCHASE_ORDER_MST WHERE SALES_ORDER_ID=@salesID AND SUBSTRING(MATERIAL_CODE,0,2) ='H'";
+
+                    cmd.Parameters.AddWithValue("@salesID", salesID);
+           
+
+                    List<StockProperty> list = Helper.DataReaderMapToList<StockProperty>(cmd.ExecuteReader());
+                    return list;
+                }
+            }
+            catch(Exception err)
+            {
+                Debug.WriteLine(err.Message);
+                return null;
             }
         }
 

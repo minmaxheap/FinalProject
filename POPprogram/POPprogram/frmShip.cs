@@ -13,9 +13,14 @@ namespace POPprogram
     public partial class frmShip : POPprogram.Base2
     {
         string userID;
-        int cnt=0;
-        int qty = 0;
+        decimal cnt=0;
+        decimal qty = 0;
+        decimal qty1 = 0;
+        decimal qty2 = 0;
+        decimal temp1=0;
         object dummy;
+        bool overflag = false;
+
         DataTable lotTable;
         List<ShipPropertySch> shipvolist;
         public frmShip()
@@ -51,23 +56,7 @@ namespace POPprogram
             txtName2.Text = frmShipSearch.vo.CUSTOMER_NAME;
         }
 
-        public DataTable ConvertToDataTable<T>(IList<T> data)
-        {
-            PropertyDescriptorCollection properties =
-               TypeDescriptor.GetProperties(typeof(T));
-            DataTable table = new DataTable();
-            foreach (PropertyDescriptor prop in properties)
-                table.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
-            foreach (T item in data)
-            {
-                DataRow row = table.NewRow();
-                foreach (PropertyDescriptor prop in properties)
-                    row[prop.Name] = prop.GetValue(item) ?? DBNull.Value;
-                table.Rows.Add(row);
-            }
-            return table;
-
-        }
+        
 
         private void btnReadTop_Click(object sender, EventArgs e)
         {
@@ -107,49 +96,80 @@ namespace POPprogram
             if (Convert.ToBoolean(csDataGridView1.CurrentRow.Cells[""].Value) == true)
             {
                 cnt += 1;
-                dummy=csDataGridView1.CurrentRow.Cells["LOT_QTY"].Value;
-                int convertedInt = Convert.ToInt32(dummy);
-                qty = qty + convertedInt;
-                textBox1.Text = Convert.ToString(cnt);
-                textBox2.Text = Convert.ToString(qty);
+                if (textBox2.Text == "") textBox2.Text = "0";
+                if (Convert.ToDecimal(textBox2.Text) == Convert.ToDecimal(txtCode3.Text)) overflag = true;
+                if (!overflag)
+                {
+                    dummy = csDataGridView1.CurrentRow.Cells["LOT_QTY"].Value;
+                    decimal convDecimal = Convert.ToDecimal(dummy);
+                    qty = qty + convDecimal;
 
-                DataGridViewRow dr = csDataGridView1.Rows[e.RowIndex];
-                //DataTable dt2 = GetDataGridViewAsDataTable(csDataGridView1);
+                    if (qty > Convert.ToInt32(txtCode3.Text))
+                    {
+                        qty = qty - convDecimal;
+                        qty1 = qty;
+                        temp1 = Convert.ToDecimal(txtCode3.Text) - qty;
+                        qty2 = temp1;
+                        qty = temp1 + qty;
+                    }
+                    textBox1.Text = Convert.ToString(cnt);
+                    textBox2.Text = Convert.ToString(qty);
 
-                ShipPropertySch shipvo = new ShipPropertySch();
 
-                if (dr.Cells["LOT_ID"].Value != null && dr.Cells["LOT_ID"].Value != DBNull.Value)
-                    shipvo.LOT_ID = dr.Cells["LOT_ID"].Value.ToString();
-                if (dr.Cells["LOT_QTY"].Value != null && dr.Cells["LOT_QTY"].Value != DBNull.Value)
-                    shipvo.LOT_QTY = Convert.ToInt32(dr.Cells["LOT_QTY"].Value);
-                if (dr.Cells["OPER_IN_TIME"].Value != null && dr.Cells["OPER_IN_TIME"].Value != DBNull.Value)
-                    shipvo.OPER_IN_TIME = Convert.ToDateTime(dr.Cells["OPER_IN_TIME"].Value);
+                    DataGridViewRow dr = csDataGridView1.Rows[e.RowIndex];
+                    //DataTable dt2 = GetDataGridViewAsDataTable(csDataGridView1);
 
-                shipvolist.Add(shipvo);
+                    ShipPropertySch shipvo = new ShipPropertySch();
+
+                    if (dr.Cells["LOT_ID"].Value != null && dr.Cells["LOT_ID"].Value != DBNull.Value)
+                        shipvo.LOT_ID = dr.Cells["LOT_ID"].Value.ToString();
+                    if (dr.Cells["LOT_QTY"].Value != null && dr.Cells["LOT_QTY"].Value != DBNull.Value)
+                        shipvo.LOT_QTY = Convert.ToInt32(dr.Cells["LOT_QTY"].Value);
+                    if (dr.Cells["OPER_IN_TIME"].Value != null && dr.Cells["OPER_IN_TIME"].Value != DBNull.Value)
+                        shipvo.OPER_IN_TIME = Convert.ToDateTime(dr.Cells["OPER_IN_TIME"].Value);
+
+                    shipvolist.Add(shipvo);
+                }
             }
             else
             {
                 cnt -= 1;
-                dummy = csDataGridView1.CurrentRow.Cells["LOT_QTY"].Value;
-                int convertedInt = Convert.ToInt32(dummy);
-                qty = qty - convertedInt;
-                textBox1.Text = Convert.ToString(cnt);
-                textBox2.Text = Convert.ToString(qty);
+                //if (Convert.ToDecimal(textBox2.Text) == Convert.ToDecimal(txtCode3.Text))
+                //{ return; }
+                if (!overflag)
+                {
 
-                DataGridViewRow dr = csDataGridView1.Rows[e.RowIndex];
-                //DataTable dt2 = GetDataGridViewAsDataTable(csDataGridView1);
+                    dummy = csDataGridView1.CurrentRow.Cells["LOT_QTY"].Value;
+                    decimal convertedInt = Convert.ToDecimal(dummy);
 
-                ShipPropertySch shipvo = new ShipPropertySch();
+                    if (temp1 > 0)
+                    {
+                        qty = qty - temp1;
+                        temp1 = 0;
+                    }
+                    else
+                        qty = qty - convertedInt;
+                    textBox1.Text = Convert.ToString(cnt);
+                    textBox2.Text = Convert.ToString(qty);
 
-                if (dr.Cells["LOT_ID"].Value != null && dr.Cells["LOT_ID"].Value != DBNull.Value)
-                    shipvo.LOT_ID = dr.Cells["LOT_ID"].Value.ToString();
-                if (dr.Cells["LOT_QTY"].Value != null && dr.Cells["LOT_QTY"].Value != DBNull.Value)
-                    shipvo.LOT_QTY = Convert.ToInt32(dr.Cells["LOT_QTY"].Value);
-                if (dr.Cells["OPER_IN_TIME"].Value != null && dr.Cells["OPER_IN_TIME"].Value != DBNull.Value)
-                    shipvo.OPER_IN_TIME = Convert.ToDateTime(dr.Cells["OPER_IN_TIME"].Value);
 
-                int result = FindIntListVOIndex(shipvolist, shipvo);
-                shipvolist.RemoveAt(result);
+                    DataGridViewRow dr = csDataGridView1.Rows[e.RowIndex];
+                    //DataTable dt2 = GetDataGridViewAsDataTable(csDataGridView1);
+
+                    ShipPropertySch shipvo = new ShipPropertySch();
+
+                    if (dr.Cells["LOT_ID"].Value != null && dr.Cells["LOT_ID"].Value != DBNull.Value)
+                        shipvo.LOT_ID = dr.Cells["LOT_ID"].Value.ToString();
+                    if (dr.Cells["LOT_QTY"].Value != null && dr.Cells["LOT_QTY"].Value != DBNull.Value)
+                        shipvo.LOT_QTY = Convert.ToInt32(dr.Cells["LOT_QTY"].Value);
+                    if (dr.Cells["OPER_IN_TIME"].Value != null && dr.Cells["OPER_IN_TIME"].Value != DBNull.Value)
+                        shipvo.OPER_IN_TIME = Convert.ToDateTime(dr.Cells["OPER_IN_TIME"].Value);
+
+                    int result = FindIntListVOIndex(shipvolist, shipvo);
+                    shipvolist.RemoveAt(result);
+                }
+                if (cnt == 1)
+                    overflag = false;
             }
         }
         static int FindIntListVOIndex(List<ShipPropertySch> list, ShipPropertySch val)
@@ -262,11 +282,13 @@ namespace POPprogram
                 updateVO.OLD_PRODUCT_CODE = updateVO.PRODUCT_CODE;
                 updateVO.OLD_OPERATION_CODE = updateVO.OPERATION_CODE;
                 updateVO.OLD_STORE_CODE = updateVO.STORE_CODE;
-                updateVO.OLD_LOT_QTY = updateVO.LOT_QTY;
+            updateVO.LOT_QTY = qty1;
+            updateVO.OLD_LOT_QTY = updateVO.LOT_QTY;
 
                 updateVO.SALES_ORDER_ID = txtSearch.Text;
                 updateVO.PRODUCT_NAME = txtName1.Text;
 
+            updateVO.OVER_LOT_QTY = qty2;
                 int temp = Convert.ToInt32(updateVO.LAST_HIST_SEQ);
                 temp = temp + 1;
                 updateVO.LAST_HIST_SEQ = Convert.ToString(temp);
@@ -293,7 +315,23 @@ namespace POPprogram
                 return;
             }
         }
+        public DataTable ConvertToDataTable<T>(IList<T> data)
+        {
+            PropertyDescriptorCollection properties =
+               TypeDescriptor.GetProperties(typeof(T));
+            DataTable table = new DataTable();
+            foreach (PropertyDescriptor prop in properties)
+                table.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
+            foreach (T item in data)
+            {
+                DataRow row = table.NewRow();
+                foreach (PropertyDescriptor prop in properties)
+                    row[prop.Name] = prop.GetValue(item) ?? DBNull.Value;
+                table.Rows.Add(row);
+            }
+            return table;
 
+        }
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();

@@ -426,5 +426,10 @@ namespace MES_Team3
 			pnlProperty.Visible = true;
 			pnlSearch.Visible = false;
 		}
-	}
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+			this.Close();
+		}
+    }
 }

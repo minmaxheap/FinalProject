@@ -35,10 +35,10 @@
 
 <div class="content">
     <div class="container-fluid">
-        @using (Html.BeginForm("Index", "Efficiency", FormMethod.Get, null))
+        @using (Html.BeginForm("Index", "Efficiency", FormMethod.Post, new { @id = "form3" }))
         {
-            
-            
+
+
                     <div class="row">
                         <div class="col-3">
 
@@ -52,6 +52,9 @@
                                         </span>
                                     </div>
                                     <input type="text" class="form-control float-right" id="reservation">
+                                    <input type="hidden" name="startDate" id="startDate" />
+                                    <input type="hidden" name="endDate" id="endDate" />
+
                                 </div>
                                 <!-- /.input group -->
                             </div>
@@ -75,7 +78,7 @@
                         <div class="col-3">
                             <div class="form-group">
                                 <label>&nbsp;  </label>
-                                <button type="submit" class="btn btn-block btn-secondary">조회</button>
+                                <button type="button" id="saveBtn" class="btn btn-block btn-secondary">조회</button>
                             </div>
                         </div>
 
@@ -176,13 +179,44 @@
 @section Scripts
 {
 
-    <script>
+    <script type="text/javascript">
         jQuery.noConflict()
-        $(function () {
-            //Date range picker
-            $('#reservation').daterangepicker()
+        var startDate;
+        var endDate;
 
-        })
+        $(document).ready(function () {
+            $('#reservation').daterangepicker(
+                {
+                    showDropdowns: true,
+                    showWeekNumbers: true,
+                    timePicker: false,
+                    timePickerIncrement: 1,
+                    timePicker12Hour: true,
+                    opens: 'left',
+                    format: 'YYYY-MM-DD',
+                    separator: ' to ',
+                },
+                function (start, end) {
+                    console.log("Callback has been called!");
+                    $('#reservation span').html(start.format('YYYY-MM-DD') + ' - ' + end.format('YYYY-MM-DD'));
+                    startDate = start;
+                    endDate = end;
+
+                }
+            );
+
+            $('#saveBtn').click(function () {
+                console.log(startDate.format('YYYY-MM-DD') + ' - ' + endDate.format('YYYY-MM-DD'));
+                $('#startDate').val(startDate.format('YYYY-MM-DD'));
+                $('#endDate').val(endDate.format('YYYY-MM-DD'));
+                $('#form3')[0].submit();
+            });
+
+
+
+
+
+        });
     </script>
 
 

@@ -63,6 +63,7 @@
     <Compile Include="StarWorkProperty.cs" />
     <Compile Include="ShipDAC.cs" />
     <Compile Include="StockDAC.cs" />
+    <Compile Include="StockProperty.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -115,6 +115,7 @@ namespace MES_Team3
             // btnClose
             // 
             this.btnClose.Size = new System.Drawing.Size(63, 48);
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnReadBottom
             // 
@@ -191,7 +192,7 @@ namespace MES_Team3
             this.csDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.csDataGridView1.RowHeadersWidth = 30;
             this.csDataGridView1.RowTemplate.Height = 23;
-            this.csDataGridView1.Size = new System.Drawing.Size(794, 597);
+            this.csDataGridView1.Size = new System.Drawing.Size(794, 593);
             this.csDataGridView1.TabIndex = 0;
             this.csDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellClick);
             // 

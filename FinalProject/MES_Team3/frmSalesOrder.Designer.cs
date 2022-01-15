@@ -103,6 +103,7 @@ namespace MES_Team3
             // btnClose
             // 
             this.btnClose.Size = new System.Drawing.Size(63, 48);
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnReadBottom
             // 

@@ -12,7 +12,7 @@ namespace NiceWEB.Controllers
     public class EfficiencyController : Controller
     {
         // GET: Efficiency
-        public ActionResult Index(string workID, string prdCode, int page = 1)
+        public ActionResult Index(string startDate, string endDate, string workID, string prdCode, int page = 1)
         {
             CommonDAC comDAC = new CommonDAC();
             //select box에 전달할 데이터
@@ -28,7 +28,7 @@ namespace NiceWEB.Controllers
             int pagesize = Convert.ToInt32(WebConfigurationManager.AppSettings["pagesize"]);
             EfficiencyDAC dac = new EfficiencyDAC();
             int totalCount = dac.GetTotalCount(workID, prdCode);
-            List<Efficiency> list = dac.GetData("2020-01-01", "2010-02-02", "", "");
+            List<Efficiency> list = dac.GetData(startDate, endDate, "", "");
             //차트
             dac.Dispose();
 
