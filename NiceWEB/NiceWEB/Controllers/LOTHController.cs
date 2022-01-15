@@ -16,6 +16,7 @@ namespace NiceWEB.Controllers
         {
             if (string.IsNullOrWhiteSpace(LotID))
             {
+
                 List<LOT_HIS> list = null;
                 ViewBag.LotID = LotID;
 

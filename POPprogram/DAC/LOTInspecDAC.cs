@@ -42,17 +42,23 @@ namespace DAC
 
 			}
 		}
-		public DataTable GetCode()
+		public List<string> GetCode()
 		{
 			string sql = @"SELECT KEY_1 EQ_CODE, DATA_1 EQ_NAME
 FROM CODE_DATA_MST
 WHERE CODE_TABLE_NAME='CM_MACHINE' ";
-			DataTable dt = new DataTable();
-			using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
+			SqlCommand cmd = new SqlCommand(sql, conn);
+			List<string> List = new List<string>();
+			using (SqlDataReader da = cmd.ExecuteReader())
 			{
-				da.Fill(dt);
-				return dt;
+				while (da.Read())
+				{
+					List.Add(da["EQ_CODE"].ToString());
+
+				}
+				return List;
 			}
+			;
 		}
 
 		public bool insert(string LAST_TRAN_USER_ID,string LAST_TRAN_COMMENT, string LOT_ID, DataTable dt)

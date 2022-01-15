@@ -119,23 +119,50 @@ namespace POPprogram
 			{
 
 				int row = csDataGridView1.CurrentRow.Index;
-				
-				int LSL = Convert.ToInt32(csDataGridView1.Rows[row].Cells["SPEC_LSL"].Value.ToString());
-				int USL = Convert.ToInt32(csDataGridView1.Rows[row].Cells["SPEC_USL"].Value.ToString());
-				int a = Convert.ToInt32(csDataGridView1.Rows[row].Cells["InspectValue"].Value.ToString());
 
-				if (LSL < a && a < USL)
+				if (csDataGridView1.Rows[row].Cells["VALUE_TYPE"].Value.ToString() == "N")
 				{
-					//MessageBox.Show("성공");
-					csDataGridView1.Rows[row].Cells["InspectResult"].Value = "OK";
-					csDataGridView1.Rows[row].Cells["InspectResult"].Style.ForeColor = Color.Green;
+					
+					int LSL = Convert.ToInt32(csDataGridView1.Rows[row].Cells["SPEC_LSL"].Value.ToString());
+					int USL = Convert.ToInt32(csDataGridView1.Rows[row].Cells["SPEC_USL"].Value.ToString());
+
+					//if (!int.TryParse(e.ChangedItem.Value.ToString(), out k))
+					//{
+					//	MessageBox.Show("문자 입력할 수 없습니다");
+					//}
+					int a = Convert.ToInt32(csDataGridView1.Rows[row].Cells["InspectValue"].Value.ToString());
+
+					if (LSL < a && a < USL)
+					{
+						//MessageBox.Show("성공");
+						csDataGridView1.Rows[row].Cells["InspectResult"].Value = "OK";
+						csDataGridView1.Rows[row].Cells["InspectResult"].Style.ForeColor = Color.Green;
+					}
+					else
+					{
+						csDataGridView1.Rows[row].Cells["InspectResult"].Value = "NG";
+						csDataGridView1.Rows[row].Cells["InspectResult"].Style.ForeColor = Color.Red;
+						//csDataGridView1.Columns["유효값"].DefaultCellStyle
+						// return;
+					}
 				}
-				else
+				if (csDataGridView1.Rows[row].Cells["VALUE_TYPE"].Value.ToString() == "C")
 				{
-					csDataGridView1.Rows[row].Cells["InspectResult"].Value = "NG";
-					csDataGridView1.Rows[row].Cells["InspectResult"].Style.ForeColor = Color.Red;
-					//csDataGridView1.Columns["유효값"].DefaultCellStyle
-					// return;
+					if (csDataGridView1.Rows[row].Cells["InspectValue"].Value.ToString() == "Y")
+					{
+						csDataGridView1.Rows[row].Cells["InspectResult"].Value = "OK";
+						csDataGridView1.Rows[row].Cells["InspectResult"].Style.ForeColor = Color.Green;
+					}
+					else if (csDataGridView1.Rows[row].Cells["InspectValue"].Value.ToString() == "N")
+					{
+						csDataGridView1.Rows[row].Cells["InspectResult"].Value = "NG";
+						csDataGridView1.Rows[row].Cells["InspectResult"].Style.ForeColor = Color.Red;
+					}
+					else
+					{
+						MessageBox.Show("Y,N중에 입력을 하세요");
+
+					}
 				}
 				//엔터치면 됨 tab은 안됨 왜일까?
 
