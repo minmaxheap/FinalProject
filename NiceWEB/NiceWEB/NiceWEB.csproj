@@ -1798,6 +1798,7 @@
     <Compile Include="Controllers\InspectController.cs" />
     <Compile Include="Controllers\LOTHController.cs" />
     <Compile Include="Controllers\MaterialController.cs" />
+    <Compile Include="Controllers\StockController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
