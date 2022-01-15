@@ -28,19 +28,18 @@ namespace POPprogram
             serv = new StarWorkServ();
             list  = serv.GetLotCode();
             list.Insert(0, "");
-            //cboLOTID.Items.Insert(0, " ");
+            
             //cboLOTID.ValueMember = "LOT_ID";
             cboLOTID.DisplayMember = "LOT_ID";
             cboLOTID.DataSource = list;
 
-            EndServ serv2 = new EndServ();
-            DataTable dt = serv2.GetEQList();
-
-            listEQ = Helper.DataTableMapToList<EndPropertyEQ>(dt);
+        
+            lotserv = new LOTinspectServ();
+            CodeList  = lotserv.GetCode();
+            CodeList.Insert(0, "");
+            cboEQList.ValueMember = "EQ_CODE";
             cboEQList.DisplayMember = "EQ_CODE";
-            cboEQList.DataSource = listEQ;
-            cboEQList.Text = null;
-            txtEQ_NAME.Text = null;
+            cboEQList.DataSource = CodeList;
         }
 
 		private void cboLOTID_SelectedIndexChanged(object sender, EventArgs e)
@@ -153,12 +152,15 @@ namespace POPprogram
         //어찌하면 좋을까 
 		private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
 		{
-            if (cboEQList.SelectedIndex < 0 || cboEQList.Text == "" || searchflag)
+            if (cboEQList.SelectedIndex < 1)
             {
-                searchflag = false;
+                txtEQ_NAME.Text = "";
                 return;
+
             }
-            if (cboEQList.Text != "") txtEQ_NAME.Text = listEQ[cboEQList.SelectedIndex].EQ_NAME;
+            serv = new StarWorkServ();
+            List<EndPropertyEQ> list = serv.GetEqList(cboEQList.SelectedValue.ToString());
+            txtEQ_NAME.Text = list[0].EQ_NAME;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
