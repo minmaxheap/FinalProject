@@ -159,21 +159,11 @@
 
 @{
     string labels = ViewBag.Labels; //x축
-
-    string label1 = ViewBag.Label1;
-    string data1 = ViewBag.data1;
-
-    string label2 = ViewBag.Label2;
-    string data2 = ViewBag.data2;
-
-    string label3 = ViewBag.Label3;
-    string data3 = ViewBag.data3;
-
-    string label4 = ViewBag.Label4;
-    string data4 = ViewBag.data4;
-
-    string label5 = ViewBag.Label5;
-    string data5 = ViewBag.data5;
+    string orderQty = ViewBag.OrderQty;
+    string prodcutQty = ViewBag.ProductQty;
+    string defectQty = ViewBag.DefectQty;
+    string workRate = ViewBag.WorkRate;
+    string DownRate = ViewBag.DownRate;
 }
 
 @section Scripts
@@ -272,14 +262,15 @@
 
         $(function () {
             var ctx = document.getElementById('chart').getContext('2d');
+            var temp = "@labels";
+            var arrTemp = temp.split(',');
             var chart = new Chart(ctx, {
 
-                // The type of chart we want to create
-                //  type: 'bar',
+              
 
-                // The data for our dataset
+
                 data: {
-                    labels: ['1월', '2월', '3월', '4월', '5월', '6월'], //조회 조건 날짜별로 받아와야한다.흠 근데 사용자가 조회 조건을 1년을 받아오면 x축을 365개로 해야하는 건가? 일정 개수가 넘어가면 일별, 주별, 월별로 하고 싶은데..그건 넘 어렵겠다.
+                    labels: arrTemp, //조회 조건 날짜별로 받아와야한다.흠 근데 사용자가 조회 조건을 1년을 받아오면 x축을 365개로 해야하는 건가? 일정 개수가 넘어가면 일별, 주별, 월별로 하고 싶은데..그건 넘 어렵겠다.
                     datasets:
                         [
                             {
@@ -287,14 +278,14 @@
                                 type: 'bar', // 'bar' type, 전체 타입과 같다면 생략가능
                                 backgroundColor: 'rgb(0, 204, 102)',
                                 borderColor: 'rgb(255, 204, 102)',
-                                data: [10, 23, 30, 34, 50, 63]
+                                data: @orderQty
                             },
                             {
                                 label: '양품수',
                                 type: 'bar', // 'bar' type, 전체 타입과 같다면 생략가능
                                 backgroundColor: 'rgb(255, 0, 102)',
                                 borderColor: 'rgb(255, 204, 102)',
-                                data: [2, 24, 45, 40, 23, 67]
+                                data: @prodcutQty
                             },
 
                             {
@@ -302,7 +293,7 @@
                                 type: 'bar', // 'bar' type, 전체 타입과 같다면 생략가능
                                 backgroundColor: 'rgb(255, 204, 0)',
                                 borderColor: 'rgb(255, 204, 102)',
-                                data: [5, 3, 23, 30, 65, 6]
+                                data: @defectQty
                             },
 
                             {
@@ -313,7 +304,7 @@
                                 pointRadius: 0.1,    // 각 지점에 포인트 주지 않음
                                 backgroundColor: 'rgb(255, 153, 0)',
                                 borderColor: 'rgb(255, 153, 0)',
-                                data: [40, 23, 6, 7, 2, 45]
+                                data: @workRate
                             },
                             {
                                 label: '비가동률',
@@ -323,7 +314,7 @@
                                 pointRadius: 0,
                                 backgroundColor: 'rgb(255, 204, 0)',
                                 borderColor: 'rgb(255, 204, 0)',
-                                data: [100, 120, 150, 100, 180, 200]
+                                data: @DownRate
                             }
 
 
