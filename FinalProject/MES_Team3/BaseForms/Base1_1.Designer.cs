@@ -31,7 +31,9 @@ namespace MES_Team3
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Base1_1));
             this.pnlTop = new System.Windows.Forms.Panel();
+            this.btnReadTop = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnTxtSearch = new System.Windows.Forms.Button();
             this.btnSearchPnl = new System.Windows.Forms.Button();
             this.spcBase = new System.Windows.Forms.SplitContainer();
             this.pnlDgv = new System.Windows.Forms.Panel();
@@ -48,8 +50,6 @@ namespace MES_Team3
             this.btnClose = new System.Windows.Forms.Button();
             this.btnReadBottom = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnReadTop = new System.Windows.Forms.Button();
-            this.btnTxtSearch = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcBase)).BeginInit();
             this.spcBase.Panel1.SuspendLayout();
@@ -70,6 +70,21 @@ namespace MES_Team3
             this.pnlTop.Size = new System.Drawing.Size(1168, 30);
             this.pnlTop.TabIndex = 39;
             // 
+            // btnReadTop
+            // 
+            this.btnReadTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            this.btnReadTop.BackgroundImage = global::MES_Team3.Properties.Resources.Data_Find123;
+            this.btnReadTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnReadTop.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnReadTop.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnReadTop.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnReadTop.ImageIndex = 15;
+            this.btnReadTop.Location = new System.Drawing.Point(4, 2);
+            this.btnReadTop.Name = "btnReadTop";
+            this.btnReadTop.Size = new System.Drawing.Size(26, 26);
+            this.btnReadTop.TabIndex = 83;
+            this.btnReadTop.UseVisualStyleBackColor = false;
+            // 
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -78,6 +93,21 @@ namespace MES_Team3
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(244, 26);
             this.txtSearch.TabIndex = 50;
+            // 
+            // btnTxtSearch
+            // 
+            this.btnTxtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
+            this.btnTxtSearch.BackgroundImage = global::MES_Team3.Properties.Resources.Search_Find123;
+            this.btnTxtSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnTxtSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnTxtSearch.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnTxtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnTxtSearch.ImageIndex = 15;
+            this.btnTxtSearch.Location = new System.Drawing.Point(284, 2);
+            this.btnTxtSearch.Name = "btnTxtSearch";
+            this.btnTxtSearch.Size = new System.Drawing.Size(26, 26);
+            this.btnTxtSearch.TabIndex = 82;
+            this.btnTxtSearch.UseVisualStyleBackColor = false;
             // 
             // btnSearchPnl
             // 
@@ -133,7 +163,7 @@ namespace MES_Team3
             this.lblTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
             this.lblTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblTitle.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblTitle.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblTitle.Location = new System.Drawing.Point(0, 0);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(794, 40);
@@ -202,7 +232,7 @@ namespace MES_Team3
             this.lblPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(152)))), ((int)(((byte)(216)))));
             this.lblPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblPanel.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblPanel.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblPanel.Location = new System.Drawing.Point(0, 0);
             this.lblPanel.Margin = new System.Windows.Forms.Padding(0);
             this.lblPanel.Name = "lblPanel";
@@ -339,36 +369,6 @@ namespace MES_Team3
             this.btnUpdate.Text = "변경";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnUpdate.UseVisualStyleBackColor = false;
-            // 
-            // btnReadTop
-            // 
-            this.btnReadTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            this.btnReadTop.BackgroundImage = global::MES_Team3.Properties.Resources.Data_Find123;
-            this.btnReadTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnReadTop.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnReadTop.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnReadTop.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnReadTop.ImageIndex = 15;
-            this.btnReadTop.Location = new System.Drawing.Point(4, 2);
-            this.btnReadTop.Name = "btnReadTop";
-            this.btnReadTop.Size = new System.Drawing.Size(26, 26);
-            this.btnReadTop.TabIndex = 83;
-            this.btnReadTop.UseVisualStyleBackColor = false;
-            // 
-            // btnTxtSearch
-            // 
-            this.btnTxtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            this.btnTxtSearch.BackgroundImage = global::MES_Team3.Properties.Resources.Search_Find123;
-            this.btnTxtSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnTxtSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnTxtSearch.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnTxtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnTxtSearch.ImageIndex = 15;
-            this.btnTxtSearch.Location = new System.Drawing.Point(284, 2);
-            this.btnTxtSearch.Name = "btnTxtSearch";
-            this.btnTxtSearch.Size = new System.Drawing.Size(26, 26);
-            this.btnTxtSearch.TabIndex = 82;
-            this.btnTxtSearch.UseVisualStyleBackColor = false;
             // 
             // Base1_1
             // 

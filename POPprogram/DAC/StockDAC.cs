@@ -165,7 +165,7 @@ WHERE O.SALES_ORDER_ID = SA.SALES_ORDER_ID AND V.CODE_TABLE_NAME ='CM_CUSTOMER' 
 
         public List<string> GetStore_Code()
         {
-            string sql = "select STORE_CODE FROM [dbo].STORE_MST";
+            string sql = "select STORE_CODE FROM [dbo].STORE_MST where STORE_CODE!='FS_STORE' AND STORE_CODE!='HS_MEAT' AND STORE_CODE!='RS_STOCK' ";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
             List<string> List = new List<string>();

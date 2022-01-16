@@ -32,6 +32,7 @@ namespace DAC
         public DateTime ORDER_DATE { get { return order_date; } set { order_date = value; } }
 
         [DisplayName("주문서코드")]
+        [TypeConverter(typeof(SalesCodeConverter))]
         public string SALES_ORDER_ID { get { return sales_order_id; } set { sales_order_id = value; } }
 
         [DisplayName("고객사")]

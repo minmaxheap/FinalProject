@@ -57,7 +57,28 @@ namespace DAC
             return new StandardValuesCollection(new CustomerCode().GetCustomerCode());
         }
     }
+    public class SalesCode
+    {
+        public List<string> GetSalesMaxNum()
+        {
+            WorkOrderDAC dac = new WorkOrderDAC();
+            List<string> customerCode = dac.GetSalesMaxNum();
+            return customerCode;
+        }
+    }
+    public class SalesCodeConverter : StringConverter
+    {
+        public override bool GetStandardValuesSupported(ITypeDescriptorContext context)
+        {
+            return true;
+        }
 
+        public override TypeConverter.StandardValuesCollection GetStandardValues(ITypeDescriptorContext context)
+        {
+            //ProductVO refMyObject = context.Instance as ProductVO;
+            return new StandardValuesCollection(new SalesCode().GetSalesMaxNum());
+        }
+    }
     public class VendorCode
     {
         public List<string> GetVendorCode()
@@ -168,7 +189,7 @@ namespace DAC
             //dac에서 list 받아오기 //앗 근데 DAC을 참조할 수가 없구나(순환 종속성 때문에) => 그래서 여기로 vo를 옮겼다.
 
             WorkOrderDAC dac = new WorkOrderDAC();
-            List<string> productCodeList = dac.GetProductCodeList();
+            List<string> productCodeList = dac.GetProductCodeListPD();
             return productCodeList; //한번에 다 가져올까 말까 
         }
     }
@@ -427,5 +448,8 @@ namespace DAC
             // ProductVO refMyObject = context.Instance as ProductVO;
             return new StandardValuesCollection(new RM_CODE().GetSourceList());
         }
+
+
+
     }
 }
