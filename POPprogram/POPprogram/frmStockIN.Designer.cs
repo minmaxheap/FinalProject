@@ -95,7 +95,7 @@ namespace POPprogram
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(527, 0);
+           // this.btnClose.Location = new System.Drawing.Point(527, 0);
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnExport
@@ -103,7 +103,7 @@ namespace POPprogram
             this.btnExport.Image = global::POPprogram.Properties.Resources.Data_Import;
             this.btnExport.ImageIndex = -1;
             this.btnExport.ImageList = null;
-            this.btnExport.Location = new System.Drawing.Point(334, 0);
+           // this.btnExport.Location = new System.Drawing.Point(334, 0);
             this.btnExport.Text = "입고  ";
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 

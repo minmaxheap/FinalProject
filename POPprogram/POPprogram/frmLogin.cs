@@ -44,7 +44,7 @@ namespace POPprogram
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            txtID.Text = "NiceMes001";
+            txtID.Text = "NiceMes002";
             txtPwd.Text = "1234";
             sID_Test = txtID.Text;
         }
