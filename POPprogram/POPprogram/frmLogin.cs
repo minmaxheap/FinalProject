@@ -22,30 +22,36 @@ namespace POPprogram
 
         private void button7_Click(object sender, EventArgs e)
         {
-            LoginProperty vo = new LoginProperty();
-            LoginServ serv = new LoginServ();
-            vo.USER_ID = txtID.Text.ToUpper();
-            vo.USER_PASSWORD = txtPwd.Text;
+            //LoginProperty vo = new LoginProperty();
+            //LoginServ serv = new LoginServ();
+            //vo.USER_ID = txtID.Text.ToUpper();
+            //vo.USER_PASSWORD = txtPwd.Text;
 
-            bool result = serv.CheckLogin(vo);
-            if (result)
-            {
-                sID_Test = txtID.Text;
-                frmMain frm = new frmMain(txtID.Text);
-                frm.Show();
-                this.Hide();
-            }
-            else
-            { 
-                MessageBox.Show("입력된 ID 또는 비밀번호를 다시 입력해 주세요.");
-                return;
-            }
+            //bool result = serv.CheckLogin(vo);
+            //if (result)
+            //{
+            //    sID_Test = txtID.Text;
+            //    frmMain frm = new frmMain(txtID.Text);
+            //    frm.Show();
+            //    this.Hide();
+            //}
+            //else
+            //{ 
+            //    MessageBox.Show("입력된 ID 또는 비밀번호를 다시 입력해 주세요.");
+            //    return;
+            //}
+
+            frmMain frm = new frmMain(txtID.Text);
+            frm.Show();
+            this.Hide();
         }
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            txtID.Text = "NiceMes001";
-            txtPwd.Text = "1234";
+            txtID.Text = "1234";
+            sID_Test = txtID.Text;
+            //txtID.Text = "NiceMes001";
+            //txtPwd.Text = "1234";
             sID_Test = txtID.Text;
         }
 
