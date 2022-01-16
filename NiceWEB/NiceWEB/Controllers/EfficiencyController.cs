@@ -42,6 +42,8 @@ namespace NiceWEB.Controllers
             };
             ViewBag.PagingInfo = pageInfo;
 
+
+            
             //ViewBag.OrderQty = 
             //ViewBag.ProductQty = 
             //ViewBag.DefectQty = 

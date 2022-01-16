@@ -17,7 +17,7 @@ namespace NiceWEB.Controllers
         public ActionResult Index(string startDate, string endDate, string workID, string prdCode, int page = 1)
         {
             //select box에 전달할 데이터
-            CommonDAC comDAC = new CommonDAC();
+             CommonDAC comDAC = new CommonDAC();
            
               List<ComboItem> orderList = comDAC.GetWorkOrder();
               List<ComboItem> prodList = comDAC.GetProductCode();
@@ -56,7 +56,13 @@ namespace NiceWEB.Controllers
             ViewBag.qualityRate = Math.Round( (gauge[0].PRODUCT_QTY / (gauge[0].PRODUCT_QTY + gauge[0].DEFECT_QTY)) * Convert.ToDecimal(100),2);
             ViewBag.defectRate = Math.Round((gauge[0].DEFECT_QTY / (gauge[0].PRODUCT_QTY + gauge[0].DEFECT_QTY))* Convert.ToDecimal(100),2);
 
-           // RedirectToAction("Index", "ComparePlan");
+            // RedirectToAction("Index", "ComparePlan");
+            //if (startDate == null) startDate = DateTime.Now.ToString("YYYY-MM-DD");
+            if (startDate == null) ViewBag.startDate = DateTime.Now.AddDays(-6).ToString();
+            else { ViewBag.startDate = startDate; }
+            //if (endDate == null) endDate = DateTime.Now.ToString("YYYY-MM-DD");
+            if (endDate == null) ViewBag.endDate = "2022-01-01";
+            else { ViewBag.endDate = endDate; }
    
             return View(list);
         }

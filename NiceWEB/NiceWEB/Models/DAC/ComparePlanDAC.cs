@@ -48,7 +48,7 @@ namespace NiceWEB.Models
 	WHERE W.PRODUCT_CODE = P.PRODUCT_CODE 	
 	and w.PRODUCT_CODE  like @ProductCode
 	and WORK_ORDER_ID like @WORK_ORDER_ID
-
+	and ORDER_DATE between isnull(@startDate,Convert(varchar,ORDER_DATE,23)) and isnull(@endDate,Convert(varchar,ORDER_DATE,23))
 	)A
 		where RowNum between ((@PAGE_NO - 1) * @PAGE_SIZE) + 1 and (@PAGE_NO * @PAGE_SIZE)";
                // cmd.CommandType = CommandType.StoredProcedure;
@@ -57,10 +57,18 @@ namespace NiceWEB.Models
 
                 cmd.Parameters.AddWithValue("@ProductCode", $"%{prdCode}%");
 
+                if(string.IsNullOrWhiteSpace(startDate))
 
-                    cmd.Parameters.AddWithValue("@startDate", startDate);
+                cmd.Parameters.AddWithValue("@startDate", DBNull.Value);
+                else
+                   cmd.Parameters.AddWithValue("@startDate", startDate);
 
-                    cmd.Parameters.AddWithValue("@endDate", endDate);
+
+                if (string.IsNullOrWhiteSpace(endDate))
+
+                    cmd.Parameters.AddWithValue("@endDate", DBNull.Value);
+                else
+                cmd.Parameters.AddWithValue("@endDate", endDate);
 
                 cmd.Parameters.AddWithValue("@PAGE_NO", page);
                 cmd.Parameters.AddWithValue("@PAGE_SIZE", pagesize);

@@ -56,7 +56,7 @@
                                 </span>
                             </div>
 
-                            <input type="text" class="form-control float-right" id="reservation">
+                            <input type="text" class="form-control float-right" id="reservation" />
                             <input type="hidden" name="startDate" id="startDate" />
                             <input type="hidden" name="endDate" id="endDate" />
 
@@ -121,8 +121,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach (var p in Model)
-                                {
+                                @if(Model!=null)
+                                { foreach (var p in Model)
+                                    {
                                     <tr>
                                         <td>@p.ORDER_DATE</td>
                                         <td>@p.WORK_ORDER_ID</td>
@@ -136,6 +137,7 @@
                                         <td>@p.WORK_CLOSE_TIME</td>
                                     </tr>
 
+                                }
                                 }
                             </tbody>
 
@@ -210,19 +212,32 @@
     decimal defQty = ViewBag.defQty;
     decimal qualityRate = ViewBag.qualityRate;
     decimal defectRate = ViewBag.defectRate;
+    string start = ViewBag.startDate;
+    string end = ViewBag.endDate;
+
 }
 
 @section Scripts
 {
 
     <script type="text/javascript">
-        jQuery.noConflict()
+        jQuery.noConflict();
         var startDate;
         var endDate;
-
         $(document).ready(function () {
             $('#reservation').daterangepicker(
                 {
+                     locale: {
+                        format: 'YYYY-MM-DD'
+                    },
+                    @*setStartDate:@ViewBag.startDate,
+                    setEndDate:@ViewBag.endDaendDate,*@
+                    //startDate: moment().subtract('days', 29),
+                    //endDate: moment(),
+                    //startDate: a,
+                    //endDate: b,
+                    startDate: '@start',
+                    endDate:'@end',
                     showDropdowns: true,
                     showWeekNumbers: true,
                     timePicker: false,
@@ -245,14 +260,14 @@
 
             $('#saveBtn').click(function () {
                 console.log(startDate.format('YYYY-MM-DD') + ' - ' + endDate.format('YYYY-MM-DD'));
-                $('#startDate').val(startDate.format('YYYY-MM-dd'));
-                $('#endDate').val(endDate.format('YYYY-MM-dd HH:mm:ss'));
+                $('#startDate').val(startDate.format('YYYY-MM-DD'));
+                $('#endDate').val(endDate.format('YYYY-MM-DD'));
                 $('#form1')[0].submit();
             });
 
-      
-               
-    
+
+
+
 
         });
     </script>
