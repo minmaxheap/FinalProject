@@ -185,7 +185,7 @@ namespace POPprogram
             EndPropertyUpdate updateVO = new EndPropertyUpdate();
             
             decimal operConvert = Convert.ToDecimal(txtOperCode.Text);
-            if (operConvert < 1600) operConvert = operConvert + 100;
+            if (operConvert < 1700) operConvert = operConvert + 100;
 
             updateVO.OPERATION_CODE = Convert.ToString(operConvert);
             updateVO.LOT_ID = cboLOTID.Text;

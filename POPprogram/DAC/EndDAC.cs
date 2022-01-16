@@ -163,7 +163,7 @@ left join PRODUCT_MST prod on prod.PRODUCT_CODE=lot.PRODUCT_CODE
             try
             {
                 string sql = null;
-                string sql_under1600 = @"SET XACT_ABORT ON;  
+                string sql_under1700 = @"SET XACT_ABORT ON;  
 
 BEGIN TRY  
     BEGIN TRANSACTION;  
@@ -535,6 +535,8 @@ INSERT INTO [dbo].[LOT_END_HIS]
       ,s.[START_QTY]
       ,s.[LOT_QTY]
 	  ,s.[LAST_TRAN_TIME]
+      ,s.[START_TIME]
+      ,s.[LAST_HIST_SEQ]
 	  ,s.[WORK_ORDER_ID]
 from [dbo].[LOT_STS] s
 where s.LOT_ID = @LOT_ID
@@ -553,7 +555,7 @@ END CATCH;
 
 ";
 
-                if (Convert.ToInt32(updateVO.OPERATION_CODE) < 1600) sql = sql_under1600;
+                if (Convert.ToInt32(updateVO.OPERATION_CODE) < 1700) sql = sql_under1700;
                 else sql = sql_end;
 
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
