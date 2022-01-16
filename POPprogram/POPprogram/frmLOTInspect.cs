@@ -174,11 +174,10 @@ namespace POPprogram
 
 					}
 				}
-				//엔터치면 됨 tab은 안됨 왜일까?
-
-				csDataGridView1.ClearSelection();
-				btnExecute.Focus();
+				//엔터치면 됨 tab은 안됨 왜일까
 			}
+			csDataGridView1.ClearSelection();
+			btnExecute.Focus();
 		}
 
 		private void btnExecute_Click(object sender, EventArgs e)
