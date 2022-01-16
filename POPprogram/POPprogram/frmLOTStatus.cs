@@ -260,8 +260,8 @@ namespace POPprogram
             LOTServ serv = new LOTServ();
             if (csDataGridView1["OPERATION_CODE", e.RowIndex].Value != null)
             {
-
-                if (!string.IsNullOrWhiteSpace(csDataGridView1["OPERATION_CODE", e.RowIndex].Value.ToString()))
+               
+                if (lotID.Split('-')[1] == "PD")
                 {
                     DataTable dtHis = serv.GetLOTHistory(lotID);
                     List<LOTProperty> list = serv.GetLOTStatus(lotID);

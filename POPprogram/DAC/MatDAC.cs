@@ -80,7 +80,7 @@ left join PRODUCT_MST prod on prod.PRODUCT_CODE=lot.PRODUCT_CODE
 FROM LOT_STS lot, SALES_ORDER_MST sales
 where	SUBSTRING(LOT_ID,0,7)= SUBSTRING(@LOT_ID,0,7) AND
 right(sales.SALES_ORDER_ID,3)=right(@LOT_ID,3) AND
-SUBSTRING(LOT_ID,8,1)='H'))
+SUBSTRING(LOT_ID,8,1)='H' AND right(lot.LOT_ID,3)=right(sales.SALES_ORDER_ID,3)))
 	Group BY CHILD_PRODUCT_CODE,prod.PRODUCT_NAME, REQUIRE_QTY
 ");
             // AND lot.SHIP_FLAG is null

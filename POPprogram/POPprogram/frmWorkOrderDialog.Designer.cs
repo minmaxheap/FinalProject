@@ -49,10 +49,6 @@ namespace POPprogram
             // 
             this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
             // 
-            // lblPanel
-            // 
-            //this.lblPanel.Font = new System.Drawing.Font("나눔고딕", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            // 
             // btnTxtSearch
             // 
             this.btnTxtSearch.Click += new System.EventHandler(this.btnTxtSearch_Click);
@@ -61,6 +57,7 @@ namespace POPprogram
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.dgvWorkOrder.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvWorkOrder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvWorkOrder.BackgroundColor = System.Drawing.Color.White;
             this.dgvWorkOrder.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -92,12 +89,12 @@ namespace POPprogram
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvWorkOrder.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvWorkOrder.RowHeadersWidth = 30;
-            this.dgvWorkOrder.Size = new System.Drawing.Size(1024, 308);
+            this.dgvWorkOrder.Size = new System.Drawing.Size(1178, 337);
             this.dgvWorkOrder.TabIndex = 97;
             // 
             // frmWorkOrderDialog
             // 
-            this.ClientSize = new System.Drawing.Size(1024, 513);
+            this.ClientSize = new System.Drawing.Size(1178, 534);
             this.Controls.Add(this.dgvWorkOrder);
             this.Name = "frmWorkOrderDialog";
             this.Text = "작업지시 선택";

@@ -218,6 +218,7 @@
     </Compile>
     <Compile Include="Services\deffectServ.cs" />
     <Compile Include="Services\DownServ.cs" />
+    <Compile Include="Services\LoginServ.cs" />
     <Compile Include="Services\FunctionServ.cs" />
     <Compile Include="Services\LOTinspectServ.cs" />
     <Compile Include="Services\LOTServ.cs" />

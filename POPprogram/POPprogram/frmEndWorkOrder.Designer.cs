@@ -323,7 +323,6 @@ namespace POPprogram
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1194, 911);
             this.Name = "frmEndWorkOrder";
-            this.Activated += new System.EventHandler(this.frmEndWorkOrder_Activated);
             this.Load += new System.EventHandler(this.frmEndWorkOrder_Load);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
