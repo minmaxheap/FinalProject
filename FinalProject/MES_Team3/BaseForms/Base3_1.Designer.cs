@@ -152,7 +152,7 @@ namespace MES_Team3
             this.lblTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
             this.lblTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblTitle.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblTitle.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblTitle.Location = new System.Drawing.Point(0, 0);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(724, 36);
@@ -165,7 +165,7 @@ namespace MES_Team3
             this.lblPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
             this.lblPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblPanel.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblPanel.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblPanel.Location = new System.Drawing.Point(0, 0);
             this.lblPanel.Margin = new System.Windows.Forms.Padding(0);
             this.lblPanel.Name = "lblPanel";
@@ -185,7 +185,7 @@ namespace MES_Team3
             this.pnlSearch.Location = new System.Drawing.Point(0, 36);
             this.pnlSearch.Margin = new System.Windows.Forms.Padding(0);
             this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(408, 231);
+            this.pnlSearch.Size = new System.Drawing.Size(406, 231);
             this.pnlSearch.TabIndex = 31;
             // 
             // panel1
@@ -240,7 +240,7 @@ namespace MES_Team3
             this.lblAddList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(152)))), ((int)(((byte)(216)))));
             this.lblAddList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblAddList.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblAddList.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblAddList.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblAddList.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lblAddList.Location = new System.Drawing.Point(0, 0);
             this.lblAddList.Margin = new System.Windows.Forms.Padding(0);
@@ -268,7 +268,7 @@ namespace MES_Team3
             this.lblAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
             this.lblAll.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblAll.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblAll.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblAll.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblAll.Location = new System.Drawing.Point(0, 0);
             this.lblAll.Margin = new System.Windows.Forms.Padding(0);
             this.lblAll.Name = "lblAll";
@@ -343,7 +343,7 @@ namespace MES_Team3
             this.lblAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
             this.lblAdd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblAdd.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblAdd.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblAdd.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblAdd.Location = new System.Drawing.Point(0, 0);
             this.lblAdd.Margin = new System.Windows.Forms.Padding(0);
             this.lblAdd.Name = "lblAdd";
