@@ -28,8 +28,8 @@ namespace NiceWEB.Controllers
 
             int pagesize = Convert.ToInt32(WebConfigurationManager.AppSettings["pagesize"]);
             EfficiencyDAC dac = new EfficiencyDAC();
-            int totalCount = dac.GetTotalCount(workID, prdCode);
-            List<Efficiency> list = dac.GetData(startDate, endDate, workID,prdCode);
+            int totalCount = dac.GetTotalCount(startDate, endDate, workID, prdCode);
+            List<Efficiency> list = dac.GetData(startDate, endDate, workID,prdCode,page,pagesize);
             DataTable dt = dac.GetChartData(startDate, endDate, workID, prdCode);
             //차트
             dac.Dispose();
@@ -70,7 +70,7 @@ namespace NiceWEB.Controllers
           
 
 
-            if (startDate == null) ViewBag.startDate = DateTime.Now.AddDays(-6).ToString();
+            if (startDate == null) ViewBag.startDate = DateTime.Now.ToString();
             else { ViewBag.startDate = startDate; }
 
             if (endDate == null) ViewBag.endDate = DateTime.Now.ToString();

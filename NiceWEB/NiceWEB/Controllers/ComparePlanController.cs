@@ -33,18 +33,21 @@ namespace NiceWEB.Controllers
             ComparePlanDAC dac = new ComparePlanDAC();
     
             int pagesize = Convert.ToInt32(WebConfigurationManager.AppSettings["pagesize"]);
-            int totalCount = dac.GetTotalCount(workID, prdCode);
+            int totalCount = dac.GetTotalCount(startDate, endDate, workID, prdCode);
             PagingInfo pageInfo = new PagingInfo
             {
                 TotalItems = totalCount,
                 ItemsPerPage = pagesize,
                 CurrentPage = page
             };
+
             ViewBag.PagingInfo = pageInfo;
+            ViewBag.workID = workID;
+            ViewBag.prdCode = prdCode;
 
             List<ComparePlan> list = dac.GetPageList( startDate,endDate, workID, prdCode, page, pagesize);
             // GAUGE CHART 데이터 받고 보내기
-            List <ComparePlan> gauge = dac.GetChartData("3", "3",workID,prdCode);
+            List <ComparePlan> gauge = dac.GetChartData(startDate, endDate, workID,prdCode);
             dac.Dispose();
             ViewBag.chart = gauge;
             ViewBag.work = gauge[0].WORK_ORDER_ID;
@@ -52,11 +55,15 @@ namespace NiceWEB.Controllers
             ViewBag.prdQty = gauge[0].PRODUCT_QTY;
             ViewBag.defQty = gauge[0].DEFECT_QTY;
 
-             //산술 오버플로우가 일어나서 DECIMAL 반올림함
-            ViewBag.qualityRate = Math.Round( (gauge[0].PRODUCT_QTY / (gauge[0].PRODUCT_QTY + gauge[0].DEFECT_QTY)) * Convert.ToDecimal(100),2);
-            ViewBag.defectRate = Math.Round((gauge[0].DEFECT_QTY / (gauge[0].PRODUCT_QTY + gauge[0].DEFECT_QTY))* Convert.ToDecimal(100),2);
+            //산술 오버플로우가 일어나서 DECIMAL 반올림함
+            if (gauge[0].PRODUCT_QTY == 0 && gauge[0].DEFECT_QTY == 0) { ViewBag.qualityRate = Convert.ToDecimal( 0); ViewBag.defectRate = Convert.ToDecimal(0); }
+            else
+            {
+                ViewBag.qualityRate = Math.Round((gauge[0].PRODUCT_QTY / (gauge[0].PRODUCT_QTY + gauge[0].DEFECT_QTY)) * Convert.ToDecimal(100), 2);
+                ViewBag.defectRate = Math.Round((gauge[0].DEFECT_QTY / (gauge[0].PRODUCT_QTY + gauge[0].DEFECT_QTY)) * Convert.ToDecimal(100), 2);
+            }
 
-            if (startDate == null) ViewBag.startDate = DateTime.Now.AddDays(-6).ToString();
+            if (startDate == null) ViewBag.startDate = DateTime.Now.ToString();
             else { ViewBag.startDate = startDate; }
 
             if (endDate == null) ViewBag.endDate = DateTime.Now.ToString();

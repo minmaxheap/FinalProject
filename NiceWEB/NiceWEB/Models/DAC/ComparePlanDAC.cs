@@ -81,16 +81,34 @@ namespace NiceWEB.Models
 
             }
         }
-        public List<ComparePlan> GetChartData(string from, string to, string workID, string prdCode)
+        public List<ComparePlan> GetChartData(string startDate, string endDate, string workID, string prdCode)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(ConfigurationManager.ConnectionStrings["project"].ConnectionString);
                 cmd.CommandText = @"SELECT CONVERT(varchar, count(WORK_ORDER_ID)) WORK_ORDER_ID, sum(ORDER_QTY) ORDER_QTY,  sum(PRODUCT_QTY) PRODUCT_QTY , sum(DEFECT_QTY) DEFECT_QTY
-FROM [dbo].[WORK_ORDER_MST] W";
-                cmd.Parameters.AddWithValue("@from", from);
-                cmd.Parameters.AddWithValue("@to", to);
+FROM [dbo].[WORK_ORDER_MST] W 
+WHERE w.PRODUCT_CODE  like @ProductCode 
+and WORK_ORDER_ID like @WORK_ORDER_ID 
+and ORDER_DATE between isnull(@startDate,Convert(varchar,ORDER_DATE,23)) and isnull(@endDate,Convert(varchar,ORDER_DATE,23))
 
+";
+                if (string.IsNullOrWhiteSpace(startDate))
+
+                    cmd.Parameters.AddWithValue("@startDate", DBNull.Value);
+                else
+                    cmd.Parameters.AddWithValue("@startDate", startDate);
+
+
+                if (string.IsNullOrWhiteSpace(endDate))
+
+                    cmd.Parameters.AddWithValue("@endDate", DBNull.Value);
+                else
+                    cmd.Parameters.AddWithValue("@endDate", endDate);
+
+                cmd.Parameters.AddWithValue("@WORK_ORDER_ID", $"%{workID}%");
+
+                cmd.Parameters.AddWithValue("@ProductCode", $"%{prdCode}%");
 
                 cmd.Connection.Open();
                 List<ComparePlan> list = Helper.DataReaderMapToList<ComparePlan>(cmd.ExecuteReader());
@@ -103,7 +121,7 @@ FROM [dbo].[WORK_ORDER_MST] W";
 
         }
 
-        public int GetTotalCount(string workID, string prdCode )
+        public int GetTotalCount(string startDate, string endDate, string workID, string prdCode )
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -113,10 +131,25 @@ FROM [dbo].[WORK_ORDER_MST] W";
 	FROM [dbo].[WORK_ORDER_MST] W, PRODUCT_MST P
 	WHERE W.PRODUCT_CODE = P.PRODUCT_CODE 	
 	and w.PRODUCT_CODE  like @ProductCode
-	and WORK_ORDER_ID like @WORK_ORDER_ID";
+	and WORK_ORDER_ID like @WORK_ORDER_ID
+and ORDER_DATE between isnull(@startDate,Convert(varchar,ORDER_DATE,23)) and isnull(@endDate,Convert(varchar,ORDER_DATE,23))
+";
                 cmd.Parameters.AddWithValue("@WORK_ORDER_ID", $"%{workID}%");
 
                 cmd.Parameters.AddWithValue("@ProductCode", $"%{prdCode}%");
+
+                if (string.IsNullOrWhiteSpace(startDate))
+
+                    cmd.Parameters.AddWithValue("@startDate", DBNull.Value);
+                else
+                    cmd.Parameters.AddWithValue("@startDate", startDate);
+
+
+                if (string.IsNullOrWhiteSpace(endDate))
+
+                    cmd.Parameters.AddWithValue("@endDate", DBNull.Value);
+                else
+                    cmd.Parameters.AddWithValue("@endDate", endDate);
 
                 return Convert.ToInt32(cmd.ExecuteScalar());
             }

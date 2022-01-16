@@ -38,7 +38,6 @@
         @using (Html.BeginForm("Index", "Efficiency", FormMethod.Post, new { @id = "form3" }))
         {
 
-
                     <div class="row">
                         <div class="col-3">
 
@@ -62,7 +61,7 @@
                         </div>
                         <div class="col-3">
                             <div class="form-group">
-                                <label for="Order" class="col-form-label">작업지시:</label>
+                                <label>작업지시:</label>
                                 @Html.DropDownList("Order",
                            (IEnumerable<SelectListItem>)ViewBag.Order, null, new { @class = "form-control" })
 
@@ -120,7 +119,31 @@
                                     <th scope="col">시간당 생산수</th>
                                 </tr>
                             </thead>
+                            <tbody>
+                                @if (Model != null)
+                                {
+                                    foreach (var p in Model)
+                                    {
+                                        <tr>
+                                            <td>@p.ORDER_DATE</td>
+                                            <td>@p.ORDER_QTY</td>
+                                            <td>@p.PRODUCT_QTY</td>
+                                            <td>@p.DEFECT_QTY</td>
+                                            <td>@p.QUALITY_RATE</td>
+                                            <td>@p.DEFECT_RATE</td>
+                                            <td>@p.WORK_START_TIME</td>
+                                            <td>@p.WORK_END_TIME</td>
+                                            <td>@p.WORK_TIME</td>
+                                            <td>@p.TOTAL_DOWN</td>
+                                            <td>@p.WORK_RATE</td>
+                                            <td>@p.DOWN_RATE</td>
+                                            <td>@p.PER_TIME</td>
 
+                                        </tr>
+
+                                    }
+                                }
+                            </tbody>
                         </table>
                     </div>
                     <!-- /.card-body -->
@@ -224,7 +247,7 @@
     </script>
 
 
-    <script>
+    @*<script>
         $(document).ready(function () {
 
             $.each(data, function (index, row) {
@@ -232,7 +255,7 @@
             });
 
         });
-    </script>
+    </script>*@
 
     <script type="text/javascript">
         $(document).ready(function () {

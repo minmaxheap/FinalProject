@@ -15,7 +15,7 @@ namespace NiceWEB.Models
         public decimal QUALITY_RATE { get; set; }
         public decimal DEFECT_RATE { get; set; }
         public string WORK_START_TIME { get; set; }
-        public string WORK_CLOSE_TIME { get; set; }
+        public string WORK_END_TIME { get; set; }
 
         public int WORK_TIME { get; set; }
         public decimal TOTAL_DOWN { get; set; }
