@@ -173,6 +173,26 @@ namespace MES_Team3.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap Data_Find123 {
+            get {
+                object obj = ResourceManager.GetObject("Data-Find123", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap Data_Find2 {
+            get {
+                object obj = ResourceManager.GetObject("Data-Find2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap Data_Find4 {
             get {
                 object obj = ResourceManager.GetObject("Data-Find4", resourceCulture);
@@ -333,9 +353,9 @@ namespace MES_Team3.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap Search_Find1 {
+        internal static System.Drawing.Bitmap Search_Find123 {
             get {
-                object obj = ResourceManager.GetObject("Search_Find1", resourceCulture);
+                object obj = ResourceManager.GetObject("Search-Find123", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
