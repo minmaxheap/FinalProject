@@ -292,14 +292,16 @@
                                 type: 'bar', // 'bar' type, 전체 타입과 같다면 생략가능
                                 backgroundColor: 'rgb(0, 204, 102)',
                                 borderColor: 'rgb(255, 204, 102)',
-                                data: @orderQty
+                                data: @orderQty,
+                                yAxisID: 'y-left'
                             },
                             {
                                 label: '양품수',
                                 type: 'bar', // 'bar' type, 전체 타입과 같다면 생략가능
                                 backgroundColor: 'rgb(255, 0, 102)',
                                 borderColor: 'rgb(255, 204, 102)',
-                                data: @prodcutQty
+                                data: @prodcutQty,
+                                yAxisID: 'y-left'
                             },
 
                             {
@@ -307,7 +309,8 @@
                                 type: 'bar', // 'bar' type, 전체 타입과 같다면 생략가능
                                 backgroundColor: 'rgb(255, 204, 0)',
                                 borderColor: 'rgb(255, 204, 102)',
-                                data: @defectQty
+                                data: @defectQty,
+                                yAxisID: 'y-left'
                             },
 
                             {
@@ -318,7 +321,8 @@
                                 pointRadius: 0.1,    // 각 지점에 포인트 주지 않음
                                 backgroundColor: 'rgb(255, 153, 0)',
                                 borderColor: 'rgb(255, 153, 0)',
-                                data: @workRate
+                                data: @workRate,
+                                yAxisID: 'y-right'
                             },
                             {
                                 label: '비가동률',
@@ -328,7 +332,8 @@
                                 pointRadius: 0,
                                 backgroundColor: 'rgb(255, 204, 0)',
                                 borderColor: 'rgb(255, 204, 0)',
-                                data: @DownRate
+                                data: @DownRate,
+                                yAxisID: 'y-right'
                             }
 
 
@@ -344,12 +349,23 @@
                     },
                     scales: {
                         // y축
-                        yAxes: [{
+                        yAxes: [
+                            {
+                            id: 'y-left',
+             
+                            position:'left',
+
                             stacked: false,
-                            ticks: {
+                                ticks: {
+                                    min: 0, max: 5000,
                                 fontColor: 'black' // y축 폰트 color
                             }
-                        }],
+                            
+                        },
+                            { id: 'y-right', position: 'right', ticks: { min: 0, max: 100,  fontColor: 'black' } }
+
+
+                        ],
                         // x축
                         xAxes: [{
                             stacked: false,
