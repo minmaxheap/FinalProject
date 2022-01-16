@@ -61,6 +61,7 @@ namespace POPprogram
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.dgvPurchase.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvPurchase.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPurchase.BackgroundColor = System.Drawing.Color.White;
             this.dgvPurchase.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -92,12 +93,12 @@ namespace POPprogram
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvPurchase.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPurchase.RowHeadersWidth = 30;
-            this.dgvPurchase.Size = new System.Drawing.Size(1024, 308);
+            this.dgvPurchase.Size = new System.Drawing.Size(1178, 337);
             this.dgvPurchase.TabIndex = 97;
             // 
             // frmPrurchaseDialog
             // 
-            this.ClientSize = new System.Drawing.Size(1024, 513);
+            this.ClientSize = new System.Drawing.Size(1178, 534);
             this.Controls.Add(this.dgvPurchase);
             this.Name = "frmPrurchaseDialog";
             this.Text = "납품서 선택";

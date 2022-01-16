@@ -38,54 +38,6 @@ namespace MES_Team3
 
         }
 
-        //private void DrawMenuPanel()
-        //{
-        //    DataView dv1 = new DataView(mdtFunc);
-        //    dv1.RowFilter = "FUNCTION_LEVEL = 1";
-        //    for (int i = 0; i < dv1.Count; i++)
-        //    {
-        //        Button btnP_Menu = new Button();
-        //        btnP_Menu.Name = $"p_btn{dv1[i]["FUNCTION_CODE"].ToString()}";
-        //        btnP_Menu.Text = dv1[i]["FUNCTION_NAME"].ToString();
-        //        btnP_Menu.TextAlign = ContentAlignment.MiddleCenter;
-        //        btnP_Menu.Dock = DockStyle.Top;
-        //        btnP_Menu.Location = new Point(0);
-        //        btnP_Menu.Margin = new Padding(3,4,3,4);
-        //        btnP_Menu.Size = new Size(155, 41);
-        //        btnP_Menu.Tag = i.ToString();
-        //       // p_menu.Font = new Font("나눔스퀘어OTF Bold", 11F, FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-        //        btnP_Menu.BackColor = Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-        //        btnP_Menu.FlatStyle = FlatStyle.Flat;
-        //        btnP_Menu.UseVisualStyleBackColor = false;
-        //        btnP_Menu.Click += btnMenu_Click;
-
-
-        //        flpMenu.Controls.Add(btnP_Menu);
-
-        //        if (i == 0)
-        //        {
-        //            Button btn = btnP_Menu;
-        //        }
-        //    }
-
-        //    mPnlMenu = new Panel();
-        //    mPnlMenu.Dock = DockStyle.Bottom;
-        //    mPnlMenu.Location = new Point(3, (dv1.Count * 40));
-        //    mPnlMenu.Margin = new Padding(3, 4, 3, 4);
-        //    mPnlMenu.Name = "panel1";
-        //    mPnlMenu.Size = new Size(155, 300);
-        //    flpMenu.Controls.Add(this.mPnlMenu);
-
-        //    mTrvMenu = new TreeView();
-        //    mTrvMenu.Dock = DockStyle.Fill;
-        //    mTrvMenu.Location = new Point(0, 0);
-        //    mTrvMenu.Name = "treeView1";
-        //    mTrvMenu.Size = new Size(120, 300);
-        //    mTrvMenu.AfterSelect += TreeView1_AfterSelect;
-        //    mPnlMenu.Controls.Add(this.mTrvMenu);
-
-        //}
-
         private void DrawMenuPanel()
         {
             DataView dv1 = new DataView(mdtFunc);
