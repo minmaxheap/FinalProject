@@ -362,6 +362,45 @@ WHERE [CODE_TABLE_NAME] ='CM_CUSTOMER'";
 
             return productCodeList;
         }
+        public List<string> GetProductCodeListPD()
+        {
+            string sql = @"SELECT [PRODUCT_CODE] FROM [PRODUCT_MST] WHERE Left(PRODUCT_CODE,2)='PD' ";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            List<string> productCodeList = new List<string>();
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+
+                while (reader.Read())
+                {
+                    productCodeList.Add(reader["PRODUCT_CODE"].ToString());
+
+                }
+            }
+
+            return productCodeList;
+        }
+        public List<string> GetSalesMaxNum()
+        {
+            string sql = @"SELECT 
+CASE
+    	WHEN Convert(int, Max(RIGHT(SALES_ORDER_ID,3)))<99 THEN concat('SALES_0',Max(RIGHT(SALES_ORDER_ID,3))+1)
+    	WHEN Convert(int, Max(RIGHT(SALES_ORDER_ID,3)))>=99 THEN concat('SALES_',Max(RIGHT(SALES_ORDER_ID,3))+1)
+	END AS NUM
+  FROM SALES_ORDER_MST";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            List<string> productCodeList = new List<string>();
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+
+                while (reader.Read())
+                {
+                    productCodeList.Add(reader["NUM"].ToString());
+
+                }
+            }
+
+            return productCodeList;
+        }
         public bool WorkEnd(WorkOrderProperty vo)
         {
             try
