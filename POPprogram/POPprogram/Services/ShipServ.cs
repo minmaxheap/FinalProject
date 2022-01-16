@@ -33,7 +33,7 @@ namespace POPprogram
             return dt;
         }
 
-        public bool ShipLOT_Update(ShipPropertyUpdate updateVO)
+        public bool ShipLOT_Update(List<ShipPropertyUpdate> updateVO)
         {
             ShipDAC dac = new ShipDAC();
             bool bResult = dac.ShipLOT_Update(updateVO);

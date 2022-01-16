@@ -259,6 +259,44 @@ select s.[LOT_ID]
 from [dbo].[LOT_STS] s
 where s.LOT_ID = @LOT_ID
 
+INSERT INTO [dbo].[LOT_END_HIS]
+           ([LOT_ID]
+           ,[HIST_SEQ]
+           ,[TRAN_TIME]
+           ,[TRAN_CODE]
+           ,[PRODUCT_CODE]
+           ,[OPERATION_CODE]
+           ,[EQUIPMENT_CODE]
+           ,[TRAN_USER_ID]
+           ,[TRAN_COMMENT]
+           ,[TO_OPERATION_CODE]
+           ,[OPER_IN_QTY]
+           ,[START_QTY]
+           ,[END_QTY]
+           ,[OPER_IN_TIME]
+           ,[START_TIME]
+           ,[PROC_TIME]
+           ,[WORK_ORDER_ID])
+     select s.[LOT_ID]		
+	  ,s.[LAST_HIST_SEQ]
+      ,s.[LAST_TRAN_TIME]
+      ,s.[LAST_TRAN_CODE]
+      ,s.[PRODUCT_CODE]
+      ,@OLD_OPERATION_CODE
+      ,s.[END_EQUIPMENT_CODE]
+      ,s.[LAST_TRAN_USER_ID]
+      ,s.[LAST_TRAN_COMMENT]
+      ,s.[OPERATION_CODE]
+      ,s.[OPER_IN_QTY]
+      ,s.[START_QTY]
+      ,s.[LOT_QTY]
+	  ,s.[LAST_TRAN_TIME]
+      ,s.[START_TIME]
+      ,s.[LAST_HIST_SEQ]
+	  ,s.[WORK_ORDER_ID]
+from [dbo].[LOT_STS] s
+where s.LOT_ID = @LOT_ID
+
 	COMMIT TRANSACTION;  
 END TRY  
 BEGIN CATCH  
@@ -464,6 +502,43 @@ ORDER_STATUS='CLOSE'
 WHERE WORK_ORDER_ID=(SELECT WORK_ORDER_ID
 FROM LOT_STS
 WHERE LOT_ID=@LOT_ID)
+
+INSERT INTO [dbo].[LOT_END_HIS]
+           ([LOT_ID]
+           ,[HIST_SEQ]
+           ,[TRAN_TIME]
+           ,[TRAN_CODE]
+           ,[PRODUCT_CODE]
+           ,[OPERATION_CODE]
+           ,[EQUIPMENT_CODE]
+           ,[TRAN_USER_ID]
+           ,[TRAN_COMMENT]
+           ,[TO_OPERATION_CODE]
+           ,[OPER_IN_QTY]
+           ,[START_QTY]
+           ,[END_QTY]
+           ,[OPER_IN_TIME]
+           ,[START_TIME]
+           ,[PROC_TIME]
+           ,[WORK_ORDER_ID])
+     select s.[LOT_ID]		
+	  ,s.[LAST_HIST_SEQ]
+      ,s.[LAST_TRAN_TIME]
+      ,s.[LAST_TRAN_CODE]
+      ,s.[PRODUCT_CODE]
+      ,@OLD_OPERATION_CODE
+      ,s.[END_EQUIPMENT_CODE]
+      ,s.[LAST_TRAN_USER_ID]
+      ,s.[LAST_TRAN_COMMENT]
+      ,s.[OPERATION_CODE]
+      ,s.[OPER_IN_QTY]
+      ,s.[START_QTY]
+      ,s.[LOT_QTY]
+	  ,s.[LAST_TRAN_TIME]
+	  ,s.[WORK_ORDER_ID]
+from [dbo].[LOT_STS] s
+where s.LOT_ID = @LOT_ID
+
 
 	COMMIT TRANSACTION;  
 END TRY  

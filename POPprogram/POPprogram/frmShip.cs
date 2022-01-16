@@ -13,13 +13,9 @@ namespace POPprogram
     public partial class frmShip : POPprogram.Base2
     {
         string userID;
-        decimal cnt=0;
-        decimal qty = 0;
-        decimal qty1 = 0;
-        decimal qty2 = 0;
-        decimal temp1=0;
-        object dummy;
-        bool overflag = false;
+
+        decimal listSum = 0;
+        decimal listSumElse = 0;
 
         DataTable lotTable;
         List<ShipPropertySch> shipvolist;
@@ -32,13 +28,13 @@ namespace POPprogram
         {
             DataGridViewUtil.SetInitGridView(csDataGridView1);
             DataGridViewCheckBoxColumn checkbox1 = new DataGridViewCheckBoxColumn();
-            checkbox1.Name = "";
+            checkbox1.Name = "체크";
             csDataGridView1.Columns.Add(checkbox1);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "순번", "RowNum", DataGridViewContentAlignment.MiddleCenter, 100);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "LOT_ID", "LOT_ID", DataGridViewContentAlignment.MiddleCenter, 150);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "수량", "LOT_QTY", DataGridViewContentAlignment.MiddleCenter, 100);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "창고 입고시간", "OPER_IN_TIME",DataGridViewContentAlignment.MiddleCenter, 150);
-
+            txtCode3.Text = "0";
         }
 
         private void btnTxtSearch_Click(object sender, EventArgs e)
@@ -93,32 +89,9 @@ namespace POPprogram
 
         private void csDataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            if (Convert.ToBoolean(csDataGridView1.CurrentRow.Cells[""].Value) == true)
+            if (Convert.ToBoolean(csDataGridView1.CurrentRow.Cells["체크"].Value) == true)
             {
-                cnt += 1;
-                if (textBox2.Text == "") textBox2.Text = "0";
-                if (Convert.ToDecimal(textBox2.Text) == Convert.ToDecimal(txtCode3.Text)) overflag = true;
-                if (!overflag)
-                {
-                    dummy = csDataGridView1.CurrentRow.Cells["LOT_QTY"].Value;
-                    decimal convDecimal = Convert.ToDecimal(dummy);
-                    qty = qty + convDecimal;
-
-                    if (qty > Convert.ToInt32(txtCode3.Text))
-                    {
-                        qty = qty - convDecimal;
-                        qty1 = qty;
-                        temp1 = Convert.ToDecimal(txtCode3.Text) - qty;
-                        qty2 = temp1;
-                        qty = temp1 + qty;
-                    }
-                    textBox1.Text = Convert.ToString(cnt);
-                    textBox2.Text = Convert.ToString(qty);
-
-
                     DataGridViewRow dr = csDataGridView1.Rows[e.RowIndex];
-                    //DataTable dt2 = GetDataGridViewAsDataTable(csDataGridView1);
-
                     ShipPropertySch shipvo = new ShipPropertySch();
 
                     if (dr.Cells["LOT_ID"].Value != null && dr.Cells["LOT_ID"].Value != DBNull.Value)
@@ -129,33 +102,22 @@ namespace POPprogram
                         shipvo.OPER_IN_TIME = Convert.ToDateTime(dr.Cells["OPER_IN_TIME"].Value);
 
                     shipvolist.Add(shipvo);
+                textBox1.Text = Convert.ToString(shipvolist.Count);
+                listSum = shipvolist.Select(i => i.LOT_QTY).Sum();
+
+                if (listSum > Convert.ToDecimal(txtCode3.Text))
+                {
+                    textBox2.Text = Convert.ToString(txtCode3.Text);
                 }
+                else
+                {
+                    textBox2.Text = Convert.ToString(listSum);
+                }
+
             }
             else
             {
-                cnt -= 1;
-                //if (Convert.ToDecimal(textBox2.Text) == Convert.ToDecimal(txtCode3.Text))
-                //{ return; }
-                if (!overflag)
-                {
-
-                    dummy = csDataGridView1.CurrentRow.Cells["LOT_QTY"].Value;
-                    decimal convertedInt = Convert.ToDecimal(dummy);
-
-                    if (temp1 > 0)
-                    {
-                        qty = qty - temp1;
-                        temp1 = 0;
-                    }
-                    else
-                        qty = qty - convertedInt;
-                    textBox1.Text = Convert.ToString(cnt);
-                    textBox2.Text = Convert.ToString(qty);
-
-
                     DataGridViewRow dr = csDataGridView1.Rows[e.RowIndex];
-                    //DataTable dt2 = GetDataGridViewAsDataTable(csDataGridView1);
-
                     ShipPropertySch shipvo = new ShipPropertySch();
 
                     if (dr.Cells["LOT_ID"].Value != null && dr.Cells["LOT_ID"].Value != DBNull.Value)
@@ -166,10 +128,18 @@ namespace POPprogram
                         shipvo.OPER_IN_TIME = Convert.ToDateTime(dr.Cells["OPER_IN_TIME"].Value);
 
                     int result = FindIntListVOIndex(shipvolist, shipvo);
-                    shipvolist.RemoveAt(result);
+                shipvolist.RemoveAt(result);
+
+                textBox1.Text = Convert.ToString(shipvolist.Count);
+                listSum = shipvolist.Select(i => i.LOT_QTY).Sum();
+                if (listSum > Convert.ToDecimal(txtCode3.Text))
+                {
+                    textBox2.Text = Convert.ToString(txtCode3.Text);
                 }
-                if (cnt == 1)
-                    overflag = false;
+                else 
+                { 
+                    textBox2.Text = Convert.ToString(listSum);
+                }
             }
         }
         static int FindIntListVOIndex(List<ShipPropertySch> list, ShipPropertySch val)
@@ -257,53 +227,28 @@ namespace POPprogram
 
         private void btnExport_Click(object sender, EventArgs e)
         {
+            DataTable resultDT = new DataTable();
+            resultDT = GetDataGridViewAsDataTable(csDataGridView1);
+            List<ShipPropertyUpdate> updateVO = Helper.DataTableMapToList<ShipPropertyUpdate>(resultDT);
 
-                List<ShipPropertyUpdate> lotList = Helper.DataTableMapToList<ShipPropertyUpdate>(lotTable);
-                int result = FindIntListIndex(lotList, shipvolist);
-                ShipPropertyUpdate updateVO = new ShipPropertyUpdate();
-                ShipServ serv = new ShipServ();
+            //ShipPropertyUpdate updateVO = new ShipPropertyUpdate();
+            ShipServ serv = new ShipServ();
+
+            updateVO[1].LOT_QTY = Convert.ToDecimal(txtCode3.Text) - updateVO[0].LOT_QTY;
+            updateVO[0].LAST_TRAN_USER_ID = userID;
+            updateVO[0].SALES_ORDER_ID = txtSearch.Text;
+            updateVO[0].PRODUCT_NAME = txtName1.Text;
 
 
-                updateVO = lotList[result];
-                updateVO.LAST_TRAN_USER_ID = userID;
-                updateVO.SHIP_FLAG = "Y";
-                updateVO.SHIP_CODE = "TO_CUSTOMER";
-                updateVO.LOT_DELETE_FLAG = "Y";
-                updateVO.LOT_DELETE_CODE = "SHIP";
-                updateVO.LAST_TRAN_CODE = "SHIP";
-                updateVO.LAST_TRAN_USER_ID = userID;
-                updateVO.LAST_TRAN_COMMENT = "최종 출하";
-
-                updateVO.HIST_SEQ = updateVO.LAST_HIST_SEQ;
-                updateVO.TRAN_TIME = updateVO.LAST_TRAN_TIME;
-                updateVO.TRAN_CODE = updateVO.LAST_TRAN_CODE;
-                updateVO.TRAN_USER_ID = updateVO.LAST_TRAN_USER_ID;
-                updateVO.TRAN_COMMENT = updateVO.LAST_TRAN_COMMENT;
-                updateVO.OLD_PRODUCT_CODE = updateVO.PRODUCT_CODE;
-                updateVO.OLD_OPERATION_CODE = updateVO.OPERATION_CODE;
-                updateVO.OLD_STORE_CODE = updateVO.STORE_CODE;
-            updateVO.LOT_QTY = qty1;
-            updateVO.OLD_LOT_QTY = updateVO.LOT_QTY;
-
-                updateVO.SALES_ORDER_ID = txtSearch.Text;
-                updateVO.PRODUCT_NAME = txtName1.Text;
-
-            updateVO.OVER_LOT_QTY = qty2;
-                int temp = Convert.ToInt32(updateVO.LAST_HIST_SEQ);
-                temp = temp + 1;
-                updateVO.LAST_HIST_SEQ = Convert.ToString(temp);
-
-                //updateVO.PRODUCT_NAME = 
-
-                bool bResult = serv.ShipLOT_Update(updateVO);
-                if (bResult)
-                {
-                    MessageBox.Show("성공적으로 제품을 출하했습니다.");
-                }
-                else
-                {
-                    MessageBox.Show("제품 출하 중 오류가 발생했습니다.");
-                }
+            bool bResult = serv.ShipLOT_Update(updateVO);
+            if (bResult)
+            {
+                MessageBox.Show("성공적으로 제품을 출하했습니다.");
+            }
+            else
+            {
+                MessageBox.Show("제품 출하 중 오류가 발생했습니다.");
+            }
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
@@ -332,6 +277,7 @@ namespace POPprogram
             return table;
 
         }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
