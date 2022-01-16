@@ -163,7 +163,7 @@ left join PRODUCT_MST prod on prod.PRODUCT_CODE=lot.PRODUCT_CODE
             try
             {
                 string sql = null;
-                string sql_under1600 = @"SET XACT_ABORT ON;  
+                string sql_under1700 = @"SET XACT_ABORT ON;  
 
 BEGIN TRY  
     BEGIN TRANSACTION;  
@@ -256,6 +256,44 @@ select s.[LOT_ID]
       ,s.[OPERATION_CODE]
       ,s.[STORE_CODE]
       ,s.[LOT_QTY]
+from [dbo].[LOT_STS] s
+where s.LOT_ID = @LOT_ID
+
+INSERT INTO [dbo].[LOT_END_HIS]
+           ([LOT_ID]
+           ,[HIST_SEQ]
+           ,[TRAN_TIME]
+           ,[TRAN_CODE]
+           ,[PRODUCT_CODE]
+           ,[OPERATION_CODE]
+           ,[EQUIPMENT_CODE]
+           ,[TRAN_USER_ID]
+           ,[TRAN_COMMENT]
+           ,[TO_OPERATION_CODE]
+           ,[OPER_IN_QTY]
+           ,[START_QTY]
+           ,[END_QTY]
+           ,[OPER_IN_TIME]
+           ,[START_TIME]
+           ,[PROC_TIME]
+           ,[WORK_ORDER_ID])
+     select s.[LOT_ID]		
+	  ,s.[LAST_HIST_SEQ]
+      ,s.[LAST_TRAN_TIME]
+      ,s.[LAST_TRAN_CODE]
+      ,s.[PRODUCT_CODE]
+      ,@OLD_OPERATION_CODE
+      ,s.[END_EQUIPMENT_CODE]
+      ,s.[LAST_TRAN_USER_ID]
+      ,s.[LAST_TRAN_COMMENT]
+      ,s.[OPERATION_CODE]
+      ,s.[OPER_IN_QTY]
+      ,s.[START_QTY]
+      ,s.[LOT_QTY]
+	  ,s.[LAST_TRAN_TIME]
+      ,s.[START_TIME]
+      ,s.[LAST_HIST_SEQ]
+	  ,s.[WORK_ORDER_ID]
 from [dbo].[LOT_STS] s
 where s.LOT_ID = @LOT_ID
 
@@ -465,6 +503,45 @@ WHERE WORK_ORDER_ID=(SELECT WORK_ORDER_ID
 FROM LOT_STS
 WHERE LOT_ID=@LOT_ID)
 
+INSERT INTO [dbo].[LOT_END_HIS]
+           ([LOT_ID]
+           ,[HIST_SEQ]
+           ,[TRAN_TIME]
+           ,[TRAN_CODE]
+           ,[PRODUCT_CODE]
+           ,[OPERATION_CODE]
+           ,[EQUIPMENT_CODE]
+           ,[TRAN_USER_ID]
+           ,[TRAN_COMMENT]
+           ,[TO_OPERATION_CODE]
+           ,[OPER_IN_QTY]
+           ,[START_QTY]
+           ,[END_QTY]
+           ,[OPER_IN_TIME]
+           ,[START_TIME]
+           ,[PROC_TIME]
+           ,[WORK_ORDER_ID])
+     select s.[LOT_ID]		
+	  ,s.[LAST_HIST_SEQ]
+      ,s.[LAST_TRAN_TIME]
+      ,s.[LAST_TRAN_CODE]
+      ,s.[PRODUCT_CODE]
+      ,@OLD_OPERATION_CODE
+      ,s.[END_EQUIPMENT_CODE]
+      ,s.[LAST_TRAN_USER_ID]
+      ,s.[LAST_TRAN_COMMENT]
+      ,s.[OPERATION_CODE]
+      ,s.[OPER_IN_QTY]
+      ,s.[START_QTY]
+      ,s.[LOT_QTY]
+	  ,s.[LAST_TRAN_TIME]
+      ,s.[START_TIME]
+      ,s.[LAST_HIST_SEQ]
+	  ,s.[WORK_ORDER_ID]
+from [dbo].[LOT_STS] s
+where s.LOT_ID = @LOT_ID
+
+
 	COMMIT TRANSACTION;  
 END TRY  
 BEGIN CATCH  
@@ -478,7 +555,7 @@ END CATCH;
 
 ";
 
-                if (Convert.ToInt32(updateVO.OPERATION_CODE) < 1600) sql = sql_under1600;
+                if (Convert.ToInt32(updateVO.OPERATION_CODE) < 1700) sql = sql_under1700;
                 else sql = sql_end;
 
                 using (SqlCommand cmd = new SqlCommand(sql, conn))

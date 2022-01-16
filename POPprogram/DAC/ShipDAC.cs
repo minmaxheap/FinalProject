@@ -112,7 +112,7 @@ namespace DAC
 
         }
 
-        public bool ShipLOT_Update(ShipPropertyUpdate updateVO)
+        public bool ShipLOT_Update(List<ShipPropertyUpdate> updateVO)
         {
             try
             {
@@ -122,23 +122,39 @@ BEGIN TRY
     BEGIN TRANSACTION;  
 
 UPDATE[dbo].[LOT_STS]
-         SET SHIP_FLAG = @SHIP_FLAG
-              , SHIP_CODE = @SHIP_CODE
+         SET SHIP_FLAG = 'Y'
+              , SHIP_CODE = 'TO_CUSTOMER'
               , SHIP_TIME = getdate()
-              , PRODUCTION_TIME = @PRODUCTION_TIME
-              , OPER_IN_TIME = @OPER_IN_TIME
-              , LOT_DELETE_FLAG = @LOT_DELETE_FLAG
-              , LOT_DELETE_CODE = @LOT_DELETE_CODE
+              , PRODUCTION_TIME = PRODUCTION_TIME
+              , OPER_IN_TIME = OPER_IN_TIME
+              , LOT_DELETE_FLAG = 'Y'
+              , LOT_DELETE_CODE = 'SHIP'
               , LOT_DELETE_TIME = getdate()
-              , LAST_TRAN_CODE = @LAST_TRAN_CODE
+              , LAST_TRAN_CODE =  'SHIP'    
               , LAST_TRAN_TIME = getdate()
               , LAST_TRAN_USER_ID = @LAST_TRAN_USER_ID
-              , LAST_TRAN_COMMENT = @LAST_TRAN_COMMENT
-              , LAST_HIST_SEQ = @LAST_HIST_SEQ
+              , LAST_TRAN_COMMENT = '제품 출하'
+              , LAST_HIST_SEQ = LAST_HIST_SEQ+1
          WHERE LOT_ID = @LOT_ID
 
+UPDATE[dbo].[LOT_STS]
+         SET LOT_QTY = LOT_QTY - @LOT_QTY2
+              , SHIP_CODE = 'TO_CUSTOMER'
+              , SHIP_TIME = getdate()
+              , PRODUCTION_TIME = PRODUCTION_TIME
+              , OPER_IN_TIME = OPER_IN_TIME
+              , LOT_DELETE_FLAG = 'Y'
+              , LOT_DELETE_CODE = 'SHIP'
+              , LOT_DELETE_TIME = getdate()
+              , LAST_TRAN_CODE =  'SHIP'    
+              , LAST_TRAN_TIME = getdate()
+              , LAST_TRAN_USER_ID = @LAST_TRAN_USER_ID
+              , LAST_TRAN_COMMENT = '제품 출하'
+              , LAST_HIST_SEQ = LAST_HIST_SEQ+1
+         WHERE LOT_ID = @LOT_ID2
+
 UPDATE [dbo].[SALES_ORDER_MST]
-   SET [SHIP_FLAG] = @SHIP_FLAG
+   SET [SHIP_FLAG] ='Y'
       ,[UPDATE_TIME] = getdate()
       ,[UPDATE_USER_ID] = @LAST_TRAN_USER_ID
  WHERE [SALES_ORDER_ID] = @SALES_ORDER_ID
@@ -152,11 +168,30 @@ INSERT [dbo].[SHIP_LOT_HIS]
            ,[SHIP_USER_ID])
      SELECT
            @SALES_ORDER_ID
-           ,@LOT_ID
-           ,getdate()
-           ,@PRODUCT_CODE
-           ,@LOT_QTY
+           ,s.LOT_ID
+           ,s.SHIP_TIME
+           ,s.PRODUCT_CODE
+           ,s.LOT_QTY
            ,@LAST_TRAN_USER_ID
+from [dbo].[LOT_STS] s
+where s.LOT_ID = @LOT_ID
+
+INSERT [dbo].[SHIP_LOT_HIS]
+           ([SALES_ORDER_ID]
+           ,[LOT_ID]
+           ,[SHIP_TIME]
+           ,[PRODUCT_CODE]
+           ,[SHIP_QTY]
+           ,[SHIP_USER_ID])
+     SELECT
+           @SALES_ORDER_ID
+           ,s.LOT_ID
+           ,s.SHIP_TIME
+           ,s.PRODUCT_CODE
+           ,@LOT_QTY2
+           ,@LAST_TRAN_USER_ID
+from [dbo].[LOT_STS] s
+where s.LOT_ID = @LOT_ID2
 
 INSERT [dbo].[LOT_HIS]
            ([LOT_ID]
@@ -230,10 +265,82 @@ select s.[LOT_ID]
 from [dbo].[LOT_STS] s
 where s.LOT_ID = @LOT_ID
 
+INSERT [dbo].[LOT_HIS]
+           ([LOT_ID]
+           ,[HIST_SEQ]
+           ,[TRAN_TIME]
+           ,[TRAN_CODE]
+           ,[LOT_DESC]
+           ,[PRODUCT_CODE]
+           ,[OPERATION_CODE]
+           ,[STORE_CODE]
+           ,[LOT_QTY]
+           ,[CREATE_QTY]
+           ,[OPER_IN_QTY]
+           ,[START_FLAG]
+           ,[START_QTY]
+           ,[START_TIME]
+           ,[START_EQUIPMENT_CODE]
+           ,[END_FLAG]
+           ,[END_TIME]
+           ,[END_EQUIPMENT_CODE]
+           ,[SHIP_FLAG]
+           ,[SHIP_CODE]
+           ,[SHIP_TIME]
+           ,[PRODUCTION_TIME]
+           ,[CREATE_TIME]
+           ,[OPER_IN_TIME]
+           ,[WORK_ORDER_ID]
+           ,[LOT_DELETE_FLAG]
+           ,[LOT_DELETE_CODE]
+           ,[LOT_DELETE_TIME]
+           ,[TRAN_USER_ID]
+           ,[TRAN_COMMENT]
+           ,[OLD_PRODUCT_CODE]
+           ,[OLD_OPERATION_CODE]
+           ,[OLD_STORE_CODE]
+           ,[OLD_LOT_QTY])
+select s.[LOT_ID]		
+	  ,s.[LAST_HIST_SEQ]
+      ,s.[LAST_TRAN_TIME]
+      ,s.[LAST_TRAN_CODE]
+      ,s.[LOT_DESC]
+      ,s.[PRODUCT_CODE]
+      ,s.[OPERATION_CODE]
+      ,s.[STORE_CODE]
+      ,@LOT_QTY2
+      ,s.[CREATE_QTY]
+      ,s.[OPER_IN_QTY]
+      ,s.[START_FLAG]
+      ,s.[START_QTY]
+      ,s.[START_TIME]
+      ,s.[START_EQUIPMENT_CODE]
+      ,s.[END_FLAG]
+      ,s.[END_TIME]
+      ,s.[END_EQUIPMENT_CODE]
+      ,s.[SHIP_FLAG]
+      ,s.[SHIP_CODE]
+      ,s.[SHIP_TIME]
+      ,s.[PRODUCTION_TIME]
+      ,s.[CREATE_TIME]
+      ,s.[OPER_IN_TIME]
+      ,s.[WORK_ORDER_ID]
+      ,s.[LOT_DELETE_FLAG]
+      ,s.[LOT_DELETE_CODE]
+      ,s.[LOT_DELETE_TIME]
+      ,s.[LAST_TRAN_USER_ID]
+      ,s.[LAST_TRAN_COMMENT]
+	  ,s.[PRODUCT_CODE]
+      ,s.[OPERATION_CODE]
+      ,s.[STORE_CODE]
+      ,s.[LOT_QTY]
+from [dbo].[LOT_STS] s
+where s.LOT_ID = @LOT_ID2
+
 insert [BARCODE]
 (Barcode_ID, PRODUCT_CODE, PRODUCT_NAME, PRODUCT_TIME, LOT_QTY)
 select 
-@SALES_ORDER_ID,@PRODUCT_CODE,@PRODUCT_NAME,SHIP_TIME,@LOT_QTY
+@SALES_ORDER_ID,PRODUCT_CODE,@PRODUCT_NAME,SHIP_TIME,LOT_QTY
 From LOT_STS
 where LOT_ID = @LOT_ID
 
@@ -251,34 +358,13 @@ END CATCH;
 ";
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
-                    cmd.Parameters.AddWithValue("@LOT_ID", updateVO.LOT_ID);
-                    cmd.Parameters.AddWithValue("@SHIP_FLAG", updateVO.SHIP_FLAG);
-                    cmd.Parameters.AddWithValue("@SHIP_CODE", updateVO.SHIP_CODE);
-                    //cmd.Parameters.AddWithValue("@SHIP_TIME", updateVO.SHIP_TIME); getdate()
-                    //cmd.Parameters.AddWithValue("@PRODUCTION_TIME", updateVO.PRODUCTION_TIME);
-                    //cmd.Parameters.AddWithValue("@OPER_IN_TIME", updateVO.OPER_IN_TIME);
-                    cmd.Parameters.AddWithValue("@LOT_DELETE_FLAG", updateVO.LOT_DELETE_FLAG);
-                    cmd.Parameters.AddWithValue("@LOT_DELETE_CODE", updateVO.LOT_DELETE_CODE);
-                    //cmd.Parameters.AddWithValue("@LOT_DELETE_TIME", updateVO.LAST_TRAN_USER_ID); getdate()
-                    cmd.Parameters.AddWithValue("@LAST_TRAN_CODE", updateVO.LAST_TRAN_CODE);
-                    //cmd.Parameters.AddWithValue("@LAST_TRAN_TIME", updateVO.LAST_TRAN_TIME); getdate()
-                    cmd.Parameters.AddWithValue("@LAST_TRAN_USER_ID", updateVO.LAST_TRAN_USER_ID);
-                    cmd.Parameters.AddWithValue("@LAST_TRAN_COMMENT", updateVO.LAST_TRAN_COMMENT);
-                    cmd.Parameters.AddWithValue("@LAST_HIST_SEQ", updateVO.LAST_HIST_SEQ);
-                    cmd.Parameters.AddWithValue("@SALES_ORDER_ID", updateVO.SALES_ORDER_ID);
-                    cmd.Parameters.AddWithValue("@LOT_QTY", updateVO.LOT_QTY);
-                    cmd.Parameters.AddWithValue("@PRODUCT_CODE", updateVO.PRODUCT_CODE);
-                    cmd.Parameters.AddWithValue("@PRODUCT_NAME", updateVO.PRODUCT_NAME);
-
-                    if ((updateVO.PRODUCTION_TIME == default(DateTime)))
-                        cmd.Parameters.AddWithValue("@PRODUCTION_TIME", DBNull.Value);
-                    else
-                        cmd.Parameters.AddWithValue("@PRODUCTION_TIME", updateVO.PRODUCTION_TIME);
-                    if ((updateVO.OPER_IN_TIME == default(DateTime)))
-                        cmd.Parameters.AddWithValue("@OPER_IN_TIME", DBNull.Value);
-                    else
-                        cmd.Parameters.AddWithValue("@OPER_IN_TIME", updateVO.OPER_IN_TIME);
-
+                    cmd.Parameters.AddWithValue("@LOT_ID", updateVO[0].LOT_ID);
+                    cmd.Parameters.AddWithValue("@LOT_ID2", updateVO[1].LOT_ID);
+                    cmd.Parameters.AddWithValue("@LAST_TRAN_USER_ID", updateVO[0].LAST_TRAN_USER_ID);
+                    cmd.Parameters.AddWithValue("@SALES_ORDER_ID", updateVO[0].SALES_ORDER_ID);
+                    cmd.Parameters.AddWithValue("@LOT_QTY", updateVO[0].LOT_QTY);
+                    cmd.Parameters.AddWithValue("@LOT_QTY2", updateVO[1].LOT_QTY);
+                    cmd.Parameters.AddWithValue("@PRODUCT_NAME", updateVO[0].PRODUCT_NAME);
 
                     int row = cmd.ExecuteNonQuery();
                     return row > 0;
