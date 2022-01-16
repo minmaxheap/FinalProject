@@ -26,7 +26,7 @@ namespace POPprogram
                 pnlProperty.Visible = true;
                 pnlSearch.Visible = false;
                 lblPanel.Text = "▶ LOT 상태";
-                lblPanel.BackColor = Color.FromArgb(125, 125, 125);
+                lblPanel.BackColor = Color.FromArgb(125, 125, 125); 
                 btnPanel.BackColor = lblPanel.BackColor;
             }
         }
@@ -159,7 +159,7 @@ namespace POPprogram
                 pnlProperty.Visible = false;
                 pnlSearch.Visible = true;
                 lblPanel.Text = "▶ 검색 조건";
-                lblPanel.BackColor = Color.FromArgb(187, 187, 187);
+                lblPanel.BackColor = Color.FromArgb(230, 244, 241); //230, 244, 241 //187, 187, 187
                 btnPanel.BackColor = lblPanel.BackColor;
 
             }
@@ -168,7 +168,7 @@ namespace POPprogram
                 pnlProperty.Visible = true;
                 pnlSearch.Visible = false;
                 lblPanel.Text = "▶ LOT 상태";
-                lblPanel.BackColor = Color.FromArgb(125, 125, 125);
+                lblPanel.BackColor = Color.FromArgb(225, 241, 255); //125, 125, 125
                 btnPanel.BackColor = lblPanel.BackColor;
 
             }
