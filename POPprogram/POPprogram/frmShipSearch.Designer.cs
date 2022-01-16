@@ -61,6 +61,7 @@ namespace POPprogram
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.csDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.csDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.csDataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.csDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -92,14 +93,14 @@ namespace POPprogram
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.csDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.csDataGridView1.RowHeadersWidth = 30;
-            this.csDataGridView1.Size = new System.Drawing.Size(1024, 308);
+            this.csDataGridView1.Size = new System.Drawing.Size(1178, 337);
             this.csDataGridView1.TabIndex = 97;
             this.csDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellClick);
             this.csDataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellDoubleClick);
             // 
             // frmShipSearch
             // 
-            this.ClientSize = new System.Drawing.Size(1024, 513);
+            this.ClientSize = new System.Drawing.Size(1178, 534);
             this.Controls.Add(this.csDataGridView1);
             this.Name = "frmShipSearch";
             this.Text = "주문서 선택";

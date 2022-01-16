@@ -64,12 +64,12 @@ namespace POPprogram
             // 
             // panel6
             // 
-            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.Controls.Add(this.btnClose);
             this.panel6.Controls.Add(this.btnExport);
-            this.panel6.Location = new System.Drawing.Point(500, 557);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel6.Location = new System.Drawing.Point(0, 589);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(668, 45);
+            this.panel6.Size = new System.Drawing.Size(1194, 45);
             this.panel6.TabIndex = 39;
             // 
             // btnClose
@@ -82,7 +82,7 @@ namespace POPprogram
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.ImageIndex = 9;
             this.btnClose.ImageList = this.imageList1;
-            this.btnClose.Location = new System.Drawing.Point(528, 0);
+            this.btnClose.Location = new System.Drawing.Point(1042, 0);
             this.btnClose.Name = "btnClose";
             this.btnClose.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnClose.Size = new System.Drawing.Size(140, 45);
@@ -124,7 +124,7 @@ namespace POPprogram
             this.btnExport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExport.ImageIndex = 4;
             this.btnExport.ImageList = this.imageList1;
-            this.btnExport.Location = new System.Drawing.Point(282, 0);
+            this.btnExport.Location = new System.Drawing.Point(796, 0);
             this.btnExport.Name = "btnExport";
             this.btnExport.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnExport.Size = new System.Drawing.Size(140, 45);
@@ -135,9 +135,6 @@ namespace POPprogram
             // 
             // panel4
             // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.label4);
@@ -145,9 +142,10 @@ namespace POPprogram
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.textBox1);
             this.panel4.Controls.Add(this.label1);
-            this.panel4.Location = new System.Drawing.Point(31, 344);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 392);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1136, 198);
+            this.panel4.Size = new System.Drawing.Size(1194, 242);
             this.panel4.TabIndex = 54;
             // 
             // label4
@@ -156,7 +154,7 @@ namespace POPprogram
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.label4.Location = new System.Drawing.Point(882, 130);
+            this.label4.Location = new System.Drawing.Point(940, 130);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 19);
             this.label4.TabIndex = 57;
@@ -168,7 +166,7 @@ namespace POPprogram
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox2.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 11.25F, System.Drawing.FontStyle.Bold);
             this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.textBox2.Location = new System.Drawing.Point(974, 126);
+            this.textBox2.Location = new System.Drawing.Point(1032, 126);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(129, 25);
             this.textBox2.TabIndex = 56;
@@ -179,7 +177,7 @@ namespace POPprogram
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.label3.Location = new System.Drawing.Point(869, 80);
+            this.label3.Location = new System.Drawing.Point(927, 80);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 19);
             this.label3.TabIndex = 55;
@@ -191,39 +189,39 @@ namespace POPprogram
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 11.25F, System.Drawing.FontStyle.Bold);
             this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.textBox1.Location = new System.Drawing.Point(974, 76);
+            this.textBox1.Location = new System.Drawing.Point(1032, 76);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(129, 25);
             this.textBox1.TabIndex = 50;
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(162)))), ((int)(((byte)(184)))));
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(179)))), ((int)(((byte)(224)))));
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("나눔고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
+            this.label1.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1134, 45);
+            this.label1.Size = new System.Drawing.Size(1192, 45);
             this.label1.TabIndex = 39;
             this.label1.Text = "작업 완료 정보";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel7
             // 
-            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel7.BackColor = System.Drawing.Color.White;
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel7.Controls.Add(this.btnReadTop);
             this.panel7.Controls.Add(this.btnTxtSearch);
             this.panel7.Controls.Add(this.txtSearch);
             this.panel7.Controls.Add(this.label9);
-            this.panel7.Location = new System.Drawing.Point(31, 23);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Margin = new System.Windows.Forms.Padding(0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1136, 47);
+            this.panel7.Padding = new System.Windows.Forms.Padding(10);
+            this.panel7.Size = new System.Drawing.Size(1194, 69);
             this.panel7.TabIndex = 53;
             // 
             // btnReadTop
@@ -235,7 +233,7 @@ namespace POPprogram
             this.btnReadTop.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnReadTop.ForeColor = System.Drawing.Color.Black;
             this.btnReadTop.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReadTop.Location = new System.Drawing.Point(577, 7);
+            this.btnReadTop.Location = new System.Drawing.Point(587, 18);
             this.btnReadTop.Margin = new System.Windows.Forms.Padding(0);
             this.btnReadTop.Name = "btnReadTop";
             this.btnReadTop.Size = new System.Drawing.Size(110, 30);
@@ -252,7 +250,7 @@ namespace POPprogram
             this.btnTxtSearch.ForeColor = System.Drawing.Color.Black;
             this.btnTxtSearch.ImageIndex = 15;
             this.btnTxtSearch.ImageList = this.imageList1;
-            this.btnTxtSearch.Location = new System.Drawing.Point(523, 7);
+            this.btnTxtSearch.Location = new System.Drawing.Point(523, 18);
             this.btnTxtSearch.Margin = new System.Windows.Forms.Padding(0);
             this.btnTxtSearch.Name = "btnTxtSearch";
             this.btnTxtSearch.Size = new System.Drawing.Size(32, 30);
@@ -263,7 +261,7 @@ namespace POPprogram
             // 
             this.txtSearch.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.txtSearch.Location = new System.Drawing.Point(166, 8);
+            this.txtSearch.Location = new System.Drawing.Point(166, 19);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(335, 29);
             this.txtSearch.TabIndex = 56;
@@ -274,7 +272,7 @@ namespace POPprogram
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.label9.Location = new System.Drawing.Point(39, 12);
+            this.label9.Location = new System.Drawing.Point(49, 23);
             this.label9.Margin = new System.Windows.Forms.Padding(0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(109, 21);
@@ -284,8 +282,6 @@ namespace POPprogram
             // 
             // panel8
             // 
-            this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel8.BackColor = System.Drawing.Color.White;
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel8.Controls.Add(this.txtCode3);
@@ -297,11 +293,12 @@ namespace POPprogram
             this.panel8.Controls.Add(this.txtCode1);
             this.panel8.Controls.Add(this.label22);
             this.panel8.Controls.Add(this.label6);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.panel8.Location = new System.Drawing.Point(31, 102);
+            this.panel8.Location = new System.Drawing.Point(0, 69);
             this.panel8.Margin = new System.Windows.Forms.Padding(0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1136, 209);
+            this.panel8.Size = new System.Drawing.Size(1194, 323);
             this.panel8.TabIndex = 52;
             // 
             // txtCode3
@@ -333,7 +330,7 @@ namespace POPprogram
             this.txtName2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.txtName2.Location = new System.Drawing.Point(522, 118);
             this.txtName2.Name = "txtName2";
-            this.txtName2.Size = new System.Drawing.Size(581, 26);
+            this.txtName2.Size = new System.Drawing.Size(639, 26);
             this.txtName2.TabIndex = 66;
             // 
             // txtCode2
@@ -365,7 +362,7 @@ namespace POPprogram
             this.txtName1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.txtName1.Location = new System.Drawing.Point(522, 73);
             this.txtName1.Name = "txtName1";
-            this.txtName1.Size = new System.Drawing.Size(581, 26);
+            this.txtName1.Size = new System.Drawing.Size(639, 26);
             this.txtName1.TabIndex = 55;
             // 
             // txtCode1
@@ -391,14 +388,14 @@ namespace POPprogram
             // 
             // label6
             // 
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(183)))), ((int)(((byte)(241)))));
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label6.Font = new System.Drawing.Font("나눔고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
+            this.label6.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(0, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(1134, 45);
+            this.label6.Size = new System.Drawing.Size(1192, 45);
             this.label6.TabIndex = 17;
             this.label6.Text = "생산 LOT 정보";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -408,10 +405,10 @@ namespace POPprogram
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(1194, 634);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel7);
-            this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel6);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel8);
+            this.Controls.Add(this.panel7);
             this.Font = new System.Drawing.Font("나눔고딕", 9F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Base2";

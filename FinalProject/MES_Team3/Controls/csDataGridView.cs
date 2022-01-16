@@ -27,6 +27,7 @@ namespace MES_Team3
            this.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(214, 220, 229);
             this.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.Black;
             this.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+           // this.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             this.DefaultCellStyle.BackColor = Color.White;
             this.DefaultCellStyle.ForeColor = Color.FromArgb(52, 52, 52);

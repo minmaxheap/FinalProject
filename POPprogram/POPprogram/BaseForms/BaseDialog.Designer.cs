@@ -49,7 +49,7 @@ namespace POPprogram
             this.btnSelect.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSelect.ImageIndex = 8;
             this.btnSelect.ImageList = this.imageList1;
-            this.btnSelect.Location = new System.Drawing.Point(12, 456);
+            this.btnSelect.Location = new System.Drawing.Point(12, 467);
             this.btnSelect.Margin = new System.Windows.Forms.Padding(0);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -91,7 +91,7 @@ namespace POPprogram
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.ImageIndex = 9;
             this.btnClose.ImageList = this.imageList1;
-            this.btnClose.Location = new System.Drawing.Point(875, 456);
+            this.btnClose.Location = new System.Drawing.Point(1029, 467);
             this.btnClose.Margin = new System.Windows.Forms.Padding(0);
             this.btnClose.Name = "btnClose";
             this.btnClose.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -111,14 +111,14 @@ namespace POPprogram
             // 
             // lblPanel
             // 
-            this.lblPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            this.lblPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(183)))), ((int)(((byte)(241)))));
             this.lblPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblPanel.Font = new System.Drawing.Font("나눔고딕", 15.75F);
-            this.lblPanel.ForeColor = System.Drawing.Color.White;
+            this.lblPanel.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblPanel.ForeColor = System.Drawing.Color.Black;
             this.lblPanel.Location = new System.Drawing.Point(0, 0);
             this.lblPanel.Name = "lblPanel";
-            this.lblPanel.Size = new System.Drawing.Size(1024, 43);
+            this.lblPanel.Size = new System.Drawing.Size(1178, 43);
             this.lblPanel.TabIndex = 90;
             this.lblPanel.Text = "작업지시 선택";
             this.lblPanel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -141,7 +141,7 @@ namespace POPprogram
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(1024, 513);
+            this.ClientSize = new System.Drawing.Size(1178, 534);
             this.Controls.Add(this.btnTxtSearch);
             this.Controls.Add(this.btnSelect);
             this.Controls.Add(this.btnClose);

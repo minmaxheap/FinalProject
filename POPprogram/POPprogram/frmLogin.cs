@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DAC;
 
 namespace POPprogram
 {
@@ -21,10 +22,25 @@ namespace POPprogram
 
         private void button7_Click(object sender, EventArgs e)
         {
-            //ID와 Pwd 유효성 체크
+            //LoginProperty vo = new LoginProperty();
+            //LoginServ serv = new LoginServ();
+            //vo.USER_ID = txtID.Text.ToUpper();
+            //vo.USER_PASSWORD = txtPwd.Text;
 
-            //main 창 띄우기
-            
+            //bool result = serv.CheckLogin(vo);
+            //if (result)
+            //{
+            //    sID_Test = txtID.Text;
+            //    frmMain frm = new frmMain(txtID.Text);
+            //    frm.Show();
+            //    this.Hide();
+            //}
+            //else
+            //{ 
+            //    MessageBox.Show("입력된 ID 또는 비밀번호를 다시 입력해 주세요.");
+            //    return;
+            //}
+
             frmMain frm = new frmMain(txtID.Text);
             frm.Show();
             this.Hide();
@@ -32,15 +48,16 @@ namespace POPprogram
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            txtID.Text = "1234";
+            txtID.Text = "NiceMes002";
+            txtPwd.Text = "1234";
             sID_Test = txtID.Text;
         }
 
         private void frmLogin_Shown(object sender, EventArgs e)
         {
-            frmMain frm = new frmMain(txtID.Text);
-            frm.Show();
-            this.Hide();
+            //frmMain frm = new frmMain(txtID.Text);
+            //frm.Show();
+            //this.Hide();
         }
     }
 }

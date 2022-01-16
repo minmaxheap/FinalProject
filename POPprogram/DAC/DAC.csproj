@@ -47,6 +47,8 @@
     <Compile Include="DefectDAC.cs" />
     <Compile Include="DownDAC.cs" />
     <Compile Include="DownProperty.cs" />
+    <Compile Include="LoginProperty.cs" />
+    <Compile Include="LoginDAC.cs" />
     <Compile Include="FunctionDAC.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="LOTInspecDAC.cs" />

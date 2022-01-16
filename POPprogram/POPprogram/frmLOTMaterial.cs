@@ -291,7 +291,7 @@ namespace POPprogram
                 MessageBox.Show("0이 아닌 숫자를 입력하세요.");
                 return;
             }
-            if ((vo.BOM_LOT_ID_1 != null &&vo.BOM_LOT_QTY_1 > vo.BOM_SUM_QTY_1) || (vo.BOM_LOT_ID_2 != null && vo.BOM_LOT_QTY_2 == vo.BOM_SUM_QTY_2))
+            if ((vo.BOM_LOT_ID_1 != null &&vo.BOM_LOT_QTY_1 > vo.BOM_SUM_QTY_1) || (vo.BOM_LOT_ID_2 != null && vo.BOM_LOT_QTY_2 > vo.BOM_SUM_QTY_2))
             {
                 MessageBox.Show("재고보다 낮은 숫자를 입력하세요.");
                 return;
