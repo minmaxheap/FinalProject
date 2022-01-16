@@ -28,7 +28,7 @@ namespace POPprogram
             this.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.Black;
             this.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("나눔고딕", 10F);
             this.BackgroundColor = Color.FromArgb(237, 243, 251);
-            //this.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             this.DefaultCellStyle.BackColor = Color.White;
             this.DefaultCellStyle.ForeColor = Color.FromArgb(52, 52, 52);
