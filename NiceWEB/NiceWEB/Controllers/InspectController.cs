@@ -45,6 +45,11 @@ namespace NiceWEB.Controllers
             ViewBag.PagingInfo = pageInfo;
 
 
+            if (startDate == null) ViewBag.startDate = DateTime.Now.AddDays(-6).ToString();
+            else { ViewBag.startDate = startDate; }
+
+            if (endDate == null) ViewBag.endDate = DateTime.Now.ToString();
+            else { ViewBag.endDate = endDate; }
 
 
             return View(list);

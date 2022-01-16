@@ -89,6 +89,9 @@ namespace NiceWEB.Models
 	WHERE H.TRAN_TIME = W.ORDER_DATE AND E.DT_DATE = W.ORDER_DATE AND E.DT_DATE = H.TRAN_TIME");
 
                 cmd.CommandText = sb.ToString();
+                cmd.Parameters.AddWithValue("@WORK_ORDER_ID", $"%{workID}%");
+
+                cmd.Parameters.AddWithValue("@ProductCode", $"%{prdCode}%");
                 cmd.Connection.Open();
 
                 List<Efficiency> list = Helper.DataReaderMapToList<Efficiency>(cmd.ExecuteReader());
@@ -117,6 +120,9 @@ where LOT_DELETE_FLAG <> 'Y' OR LOT_DELETE_FLAG IS NULL  and STORE_CODE is not  
                     sb.Append(" and PRODUCT_CODE = @PRODUCT_CODE ");
                     cmd.Parameters.AddWithValue("@PRODUCT_CODE", prdCode);
                 }
+                cmd.Parameters.AddWithValue("@WORK_ORDER_ID", $"%{workID}%");
+
+                cmd.Parameters.AddWithValue("@ProductCode", $"%{prdCode}%");
                 //sb.Append(" order by STORE_CODE,OPER_IN_TIME,LOT_ID ");
                 cmd.CommandText = sb.ToString();
 
@@ -133,16 +139,14 @@ where LOT_DELETE_FLAG <> 'Y' OR LOT_DELETE_FLAG IS NULL  and STORE_CODE is not  
             {
                 cmd.Connection = new SqlConnection(ConfigurationManager.ConnectionStrings["project"].ConnectionString);
 
-                cmd.CommandText = @"WITH DATE_LIST AS
-   (
-      SELECT CONVERT(VARCHAR,@startDate,23) AS DT
-
-       UNION ALL SELECT DT+1
-
-      from  DATE_LIST
-
-       WHERE DT+1 <= CONVERT(VARCHAR,@endDate,23)
-   ),
+                cmd.CommandText = @"WITH DATE_LIST 
+	AS (
+		select Convert(varchar(10),@startDate,23) as DT
+		union all
+		select Convert(varchar(10), DateAdd(day, 1, DT), 23) DT
+		from DATE_LIST
+		where DT < @endDate	
+	),
    DATA AS
    (
 
@@ -180,9 +184,21 @@ LEFT OUTER JOIN DATA A ON CONVERT(VARCHAR,D.DT,23) = CONVERT(VARCHAR,A.ORDER_DAT
 
                 DataTable dt = new DataTable();
 
-                cmd.Parameters.AddWithValue("@startDate", startDate);
+                if (string.IsNullOrWhiteSpace(startDate))
 
-                cmd.Parameters.AddWithValue("@endDate", endDate);
+                    cmd.Parameters.AddWithValue("@startDate", DBNull.Value);
+                else
+                    cmd.Parameters.AddWithValue("@startDate", startDate);
+
+
+                if (string.IsNullOrWhiteSpace(endDate))
+
+                    cmd.Parameters.AddWithValue("@endDate", DBNull.Value);
+                else
+                    cmd.Parameters.AddWithValue("@endDate", endDate);
+                cmd.Parameters.AddWithValue("@WORK_ORDER_ID", $"%{workID}%");
+
+                cmd.Parameters.AddWithValue("@ProductCode", $"%{prdCode}%");
                 cmd.Connection.Open();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dt);

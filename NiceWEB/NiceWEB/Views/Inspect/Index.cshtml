@@ -171,6 +171,13 @@
 
 </div>
 
+@{
+    
+
+    string start = ViewBag.startDate;
+    string end = ViewBag.endDate;
+}
+
 
 @section Scripts
 {
@@ -183,6 +190,17 @@
         $(document).ready(function () {
             $('#reservation').daterangepicker(
                 {
+                      locale: {
+                        format: 'YYYY-MM-DD'
+                    },
+                    @*setStartDate:@ViewBag.startDate,
+                    setEndDate:@ViewBag.endDaendDate,*@
+                    //startDate: moment().subtract('days', 29),
+                    //endDate: moment(),
+                    //startDate: a,
+                    //endDate: b,
+                    startDate: '@start',
+                    endDate:'@end',
                     showDropdowns: true,
                     showWeekNumbers: true,
                     timePicker: false,

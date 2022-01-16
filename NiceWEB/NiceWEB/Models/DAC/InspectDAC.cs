@@ -39,8 +39,7 @@ namespace NiceWEB.Models
  WHERE H.PRODUCT_CODE = P.PRODUCT_CODE AND H.OPERATION_CODE = O.OPERATION_CODE
  AND H.PRODUCT_CODE like @PRODUCT_CODE
  AND H.OPERATION_CODE like @OPERATION_CODE
- AND LOT_ID like @LOT_ID
- AND TRAN_TIME 
+ AND LOT_ID like @LOT_ID 
  )A
 where RowNum between ((@PAGE_NO - 1) * @PAGE_SIZE) + 1 and (@PAGE_NO * @PAGE_SIZE)";
 
@@ -49,9 +48,9 @@ where RowNum between ((@PAGE_NO - 1) * @PAGE_SIZE) + 1 and (@PAGE_NO * @PAGE_SIZ
                 cmd.Parameters.AddWithValue("@OPERATION_CODE", $"%{operCode}%");
                 cmd.Parameters.AddWithValue("@LOT_ID", $"%{lotID}%");
 
-                cmd.Parameters.AddWithValue("@startDate", startDate);
+                //cmd.Parameters.AddWithValue("@startDate", startDate);
 
-                cmd.Parameters.AddWithValue("@endDate", endDate);
+                //cmd.Parameters.AddWithValue("@endDate", endDate);
 
                 cmd.Parameters.AddWithValue("@PAGE_NO", page);
                 cmd.Parameters.AddWithValue("@PAGE_SIZE", pagesize);
