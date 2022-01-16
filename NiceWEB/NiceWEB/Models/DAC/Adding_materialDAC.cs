@@ -22,7 +22,7 @@ namespace NiceWEB.Models
 			conn.Dispose();
 		}
 
-		public List<Adding_materialProperty> GetData(DateTime from, DateTime to, string productCode, string op_code,string childCode,int page, int pagesize)
+		public List<Adding_materialProperty> GetData(string from, string to, string productCode, string op_code,string childCode,int page, int pagesize)
 		{
 			using (SqlCommand cmd = new SqlCommand())
 			{
@@ -31,16 +31,17 @@ namespace NiceWEB.Models
 				cmd.CommandText = @"select  CONVERT(varchar,TRAN_TIME ,120) TRAN_TIME,PRODUCT_CODE,OPERATION_CODE,CHILD_PRODUCT_CODE,SUM(isnull(cast(INPUT_QTY as int),0)) AS INPUT_QTY
 from
 (
-select CONVERT(varchar,TRAN_TIME ,120) TRAN_TIME,PRODUCT_CODE,OPERATION_CODE,CHILD_PRODUCT_CODE,SUM(isnull(cast(INPUT_QTY as int),0)) AS INPUT_QTY,
+select CONVERT(varchar(10),TRAN_TIME ,120) TRAN_TIME,PRODUCT_CODE,OPERATION_CODE,CHILD_PRODUCT_CODE,SUM(isnull(cast(INPUT_QTY as int),0)) AS INPUT_QTY,
 row_number() over(order by CONVERT(varchar,TRAN_TIME ,120)) as RowNum
 from LOT_MATERIAL_HIS
-where CONVERT(varchar,TRAN_TIME ,120) between @from and @to and PRODUCT_CODE=ISNULL(@PRODUCT_CODE,PRODUCT_CODE) and OPERATION_CODE =  isnull(@OPERATION_CODE,OPERATION_CODE) 
+where CONVERT(varchar(10),TRAN_TIME ,120) between isnull(@from,CONVERT(varchar(10),TRAN_TIME ,120)) and isnull(@to,CONVERT(varchar(10),TRAN_TIME ,120))
+and PRODUCT_CODE=ISNULL(@PRODUCT_CODE,PRODUCT_CODE) and OPERATION_CODE =  isnull(@OPERATION_CODE,OPERATION_CODE) 
  and CHILD_PRODUCT_CODE = isnull(@CHILD_PRODUCT_CODE,CHILD_PRODUCT_CODE)
 group by CONVERT(varchar,TRAN_TIME ,120),PRODUCT_CODE,OPERATION_CODE,CHILD_PRODUCT_CODE
 )A
 where RowNum between ((@PAGE_NO - 1) * @PAGE_SIZE) + 1 and (@PAGE_NO * @PAGE_SIZE)
-group by CONVERT(varchar,TRAN_TIME ,120),PRODUCT_CODE,OPERATION_CODE,CHILD_PRODUCT_CODE
-order by CONVERT(varchar,TRAN_TIME ,120) desc ,PRODUCT_CODE,OPERATION_CODE,CHILD_PRODUCT_CODE";
+group by CONVERT(varchar(10),TRAN_TIME ,120),PRODUCT_CODE,OPERATION_CODE,CHILD_PRODUCT_CODE
+order by CONVERT(varchar(10),TRAN_TIME ,120) desc ,PRODUCT_CODE,OPERATION_CODE,CHILD_PRODUCT_CODE";
 
 				if (!string.IsNullOrWhiteSpace(productCode))
 				{
@@ -60,9 +61,14 @@ order by CONVERT(varchar,TRAN_TIME ,120) desc ,PRODUCT_CODE,OPERATION_CODE,CHILD
 				else
 					cmd.Parameters.AddWithValue("@CHILD_PRODUCT_CODE", DBNull.Value);
 
-
-				cmd.Parameters.AddWithValue("@from", from);
-				cmd.Parameters.AddWithValue("@to", to);
+				if (!string.IsNullOrWhiteSpace(from))
+					cmd.Parameters.AddWithValue("@from", from);
+				else
+					cmd.Parameters.AddWithValue("from", DBNull.Value);
+				if (!string.IsNullOrWhiteSpace(to))
+					cmd.Parameters.AddWithValue("@to", to);
+				else
+					cmd.Parameters.AddWithValue("to", DBNull.Value);
 
 				cmd.Parameters.AddWithValue("@PAGE_NO", page);
 				cmd.Parameters.AddWithValue("@PAGE_SIZE", pagesize);
@@ -76,7 +82,7 @@ order by CONVERT(varchar,TRAN_TIME ,120) desc ,PRODUCT_CODE,OPERATION_CODE,CHILD
 			}
 		}
 
-		public int GetProductTotalCount(DateTime from, DateTime to, string productCode, string op_code,string childCode)
+		public int GetProductTotalCount(string from, string to, string productCode, string op_code,string childCode)
 		{
 			using (SqlCommand cmd = new SqlCommand())
 			{
@@ -106,6 +112,7 @@ order by CONVERT(varchar,TRAN_TIME ,120) desc ,PRODUCT_CODE,OPERATION_CODE,CHILD
 					cmd.Parameters.AddWithValue("@from", from);
 					cmd.Parameters.AddWithValue("@to", to);
 				}
+				
 				cmd.CommandText = sb.ToString();
 
 				return Convert.ToInt32(cmd.ExecuteScalar());

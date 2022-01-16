@@ -122,32 +122,42 @@ namespace POPprogram
 
 				if (csDataGridView1.Rows[row].Cells["VALUE_TYPE"].Value.ToString() == "N")
 				{
+					int k;
 					
 					int LSL = Convert.ToInt32(csDataGridView1.Rows[row].Cells["SPEC_LSL"].Value.ToString());
 					int USL = Convert.ToInt32(csDataGridView1.Rows[row].Cells["SPEC_USL"].Value.ToString());
 
-					//if (!int.TryParse(e.ChangedItem.Value.ToString(), out k))
-					//{
-					//	MessageBox.Show("문자 입력할 수 없습니다");
-					//}
-					int a = Convert.ToInt32(csDataGridView1.Rows[row].Cells["InspectValue"].Value.ToString());
-
-					if (LSL < a && a < USL)
+					if (!int.TryParse(csDataGridView1.Rows[row].Cells["InspectValue"].Value.ToString(), out k))
 					{
-						//MessageBox.Show("성공");
-						csDataGridView1.Rows[row].Cells["InspectResult"].Value = "OK";
-						csDataGridView1.Rows[row].Cells["InspectResult"].Style.ForeColor = Color.Green;
+						MessageBox.Show("숫자를 입력하세요");
+
 					}
 					else
 					{
-						csDataGridView1.Rows[row].Cells["InspectResult"].Value = "NG";
-						csDataGridView1.Rows[row].Cells["InspectResult"].Style.ForeColor = Color.Red;
-						//csDataGridView1.Columns["유효값"].DefaultCellStyle
-						// return;
+						int a = Convert.ToInt32(csDataGridView1.Rows[row].Cells["InspectValue"].Value.ToString());
+
+						if (LSL < a && a < USL)
+						{
+							csDataGridView1.Rows[row].Cells["InspectResult"].Value = "OK";
+							csDataGridView1.Rows[row].Cells["InspectResult"].Style.ForeColor = Color.Green;
+						}
+						else
+						{
+							csDataGridView1.Rows[row].Cells["InspectResult"].Value = "NG";
+							csDataGridView1.Rows[row].Cells["InspectResult"].Style.ForeColor = Color.Red;
+							//csDataGridView1.Columns["유효값"].DefaultCellStyle
+							// return;
+						}
 					}
 				}
 				if (csDataGridView1.Rows[row].Cells["VALUE_TYPE"].Value.ToString() == "C")
 				{
+					int k;
+					if (int.TryParse(csDataGridView1.Rows[row].Cells["InspectValue"].Value.ToString(), out k))
+					{
+						MessageBox.Show("문자를입력하세요");
+						return;
+					}
 					if (csDataGridView1.Rows[row].Cells["InspectValue"].Value.ToString() == "Y")
 					{
 						csDataGridView1.Rows[row].Cells["InspectResult"].Value = "OK";

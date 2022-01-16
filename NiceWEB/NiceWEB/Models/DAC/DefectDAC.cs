@@ -23,7 +23,7 @@ namespace NiceWEB.Models.DAC
 			conn.Dispose();
 		}
 
-		public List<DefectProperty> GetData(DateTime from,DateTime to,string productCode,string op_code, int page, int pagesize)
+		public List<DefectProperty> GetData(string from, string to,string productCode,string op_code, int page, int pagesize)
 		{
 			using (SqlCommand cmd = new SqlCommand())
 			{
@@ -44,8 +44,17 @@ namespace NiceWEB.Models.DAC
 				else
 				cmd.Parameters.AddWithValue("@OPERATION_CODE", DBNull.Value);
 
-				cmd.Parameters.AddWithValue("@from", from);
-				cmd.Parameters.AddWithValue("@to", to);
+				if (!string.IsNullOrWhiteSpace(from))
+					cmd.Parameters.AddWithValue("@from", from);
+				else
+					cmd.Parameters.AddWithValue("@from", DBNull.Value);
+
+				if(!string.IsNullOrWhiteSpace(to))
+					cmd.Parameters.AddWithValue("@to", to);
+				else
+					cmd.Parameters.AddWithValue("@to", DBNull.Value);
+
+
 				cmd.Parameters.AddWithValue("@PAGE_NO", page);
 				cmd.Parameters.AddWithValue("@PAGE_SIZE", pagesize);
 
@@ -58,7 +67,7 @@ namespace NiceWEB.Models.DAC
 		}
 
 
-		public int GetProductTotalCount(DateTime from, DateTime to, string productCode, string op_code)
+		public int GetProductTotalCount(string from, string to, string productCode, string op_code)
 		{
 			using (SqlCommand cmd = new SqlCommand())
 			{
@@ -83,6 +92,7 @@ namespace NiceWEB.Models.DAC
 					cmd.Parameters.AddWithValue("@from", from);
 					cmd.Parameters.AddWithValue("@to", to);
 				}
+				
 				cmd.CommandText = sb.ToString();
 
 				return Convert.ToInt32(cmd.ExecuteScalar());
