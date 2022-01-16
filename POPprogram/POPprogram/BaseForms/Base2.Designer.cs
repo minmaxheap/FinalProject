@@ -223,7 +223,7 @@ namespace POPprogram
             this.panel7.Location = new System.Drawing.Point(31, 23);
             this.panel7.Margin = new System.Windows.Forms.Padding(0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1136, 47);
+            this.panel7.Size = new System.Drawing.Size(1136, 69);
             this.panel7.TabIndex = 53;
             // 
             // btnReadTop
@@ -235,7 +235,7 @@ namespace POPprogram
             this.btnReadTop.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnReadTop.ForeColor = System.Drawing.Color.Black;
             this.btnReadTop.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReadTop.Location = new System.Drawing.Point(577, 7);
+            this.btnReadTop.Location = new System.Drawing.Point(577, 18);
             this.btnReadTop.Margin = new System.Windows.Forms.Padding(0);
             this.btnReadTop.Name = "btnReadTop";
             this.btnReadTop.Size = new System.Drawing.Size(110, 30);
@@ -252,7 +252,7 @@ namespace POPprogram
             this.btnTxtSearch.ForeColor = System.Drawing.Color.Black;
             this.btnTxtSearch.ImageIndex = 15;
             this.btnTxtSearch.ImageList = this.imageList1;
-            this.btnTxtSearch.Location = new System.Drawing.Point(523, 7);
+            this.btnTxtSearch.Location = new System.Drawing.Point(523, 18);
             this.btnTxtSearch.Margin = new System.Windows.Forms.Padding(0);
             this.btnTxtSearch.Name = "btnTxtSearch";
             this.btnTxtSearch.Size = new System.Drawing.Size(32, 30);
@@ -263,7 +263,7 @@ namespace POPprogram
             // 
             this.txtSearch.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.txtSearch.Location = new System.Drawing.Point(166, 8);
+            this.txtSearch.Location = new System.Drawing.Point(166, 19);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(335, 29);
             this.txtSearch.TabIndex = 56;
@@ -274,7 +274,7 @@ namespace POPprogram
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.label9.Location = new System.Drawing.Point(39, 12);
+            this.label9.Location = new System.Drawing.Point(39, 23);
             this.label9.Margin = new System.Windows.Forms.Padding(0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(109, 21);
