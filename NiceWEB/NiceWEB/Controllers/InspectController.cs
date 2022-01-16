@@ -31,8 +31,8 @@ namespace NiceWEB.Controllers
 
             int pagesize = Convert.ToInt32(WebConfigurationManager.AppSettings["pagesize"]);
             InspectDAC dac = new InspectDAC();
-            int totalCount = dac.GetTotalCount(prdCode, operCode,lotID);
-            List<Inspect> list = dac.GetPageList(startDate, endDate, prdCode, operCode, lotID, page, page);
+            int totalCount = dac.GetTotalCount(startDate, endDate, prdCode, operCode,lotID);
+            List<Inspect> list = dac.GetPageList(startDate, endDate, prdCode, operCode, lotID, page, pagesize);
             dac.Dispose();
 
             PagingInfo pageInfo = new PagingInfo
@@ -45,6 +45,11 @@ namespace NiceWEB.Controllers
             ViewBag.PagingInfo = pageInfo;
 
 
+            if (startDate == null) ViewBag.startDate = DateTime.Now.ToString();
+            else { ViewBag.startDate = startDate; }
+
+            if (endDate == null) ViewBag.endDate = DateTime.Now.ToString();
+            else { ViewBag.endDate = endDate; }
 
 
             return View(list);

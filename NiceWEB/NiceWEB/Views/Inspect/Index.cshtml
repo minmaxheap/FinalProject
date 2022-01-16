@@ -155,7 +155,7 @@
                     <nav aria-label="Page navigation example">
                         <ul class="pagination justify-content-center">
                             @Html.PageLinks((PagingInfo)ViewBag.PagingInfo, (x) => Url.Action("Index",
-                                new { page = x, LotID = ViewBag.LotID }))
+                                new { page = x, LotID = ViewBag.LotID, startDate = ViewBag.startDate, endDate = ViewBag.endDate, workID = ViewBag.workID, prdCode = ViewBag.prdCode }))
                         </ul>
                     </nav>
 
@@ -171,6 +171,13 @@
 
 </div>
 
+@{
+    
+
+    string start = ViewBag.startDate;
+    string end = ViewBag.endDate;
+}
+
 
 @section Scripts
 {
@@ -183,6 +190,17 @@
         $(document).ready(function () {
             $('#reservation').daterangepicker(
                 {
+                      locale: {
+                        format: 'YYYY-MM-DD'
+                    },
+                    @*setStartDate:@ViewBag.startDate,
+                    setEndDate:@ViewBag.endDaendDate,*@
+                    //startDate: moment().subtract('days', 29),
+                    //endDate: moment(),
+                    //startDate: a,
+                    //endDate: b,
+                    startDate: '@start',
+                    endDate:'@end',
                     showDropdowns: true,
                     showWeekNumbers: true,
                     timePicker: false,

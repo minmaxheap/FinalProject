@@ -38,7 +38,6 @@
         @using (Html.BeginForm("Index", "Efficiency", FormMethod.Post, new { @id = "form3" }))
         {
 
-
                     <div class="row">
                         <div class="col-3">
 
@@ -62,7 +61,7 @@
                         </div>
                         <div class="col-3">
                             <div class="form-group">
-                                <label for="Order" class="col-form-label">작업지시:</label>
+                                <label>작업지시:</label>
                                 @Html.DropDownList("Order",
                            (IEnumerable<SelectListItem>)ViewBag.Order, null, new { @class = "form-control" })
 
@@ -120,7 +119,31 @@
                                     <th scope="col">시간당 생산수</th>
                                 </tr>
                             </thead>
+                            <tbody>
+                                @if (Model != null)
+                                {
+                                    foreach (var p in Model)
+                                    {
+                                        <tr>
+                                            <td>@p.ORDER_DATE</td>
+                                            <td>@p.ORDER_QTY</td>
+                                            <td>@p.PRODUCT_QTY</td>
+                                            <td>@p.DEFECT_QTY</td>
+                                            <td>@p.QUALITY_RATE</td>
+                                            <td>@p.DEFECT_RATE</td>
+                                            <td>@p.WORK_START_TIME</td>
+                                            <td>@p.WORK_END_TIME</td>
+                                            <td>@p.WORK_TIME</td>
+                                            <td>@p.TOTAL_DOWN</td>
+                                            <td>@p.WORK_RATE</td>
+                                            <td>@p.DOWN_RATE</td>
+                                            <td>@p.PER_TIME</td>
 
+                                        </tr>
+
+                                    }
+                                }
+                            </tbody>
                         </table>
                     </div>
                     <!-- /.card-body -->
@@ -164,6 +187,9 @@
     string defectQty = ViewBag.DefectQty;
     string workRate = ViewBag.WorkRate;
     string DownRate = ViewBag.DownRate;
+
+    string start = ViewBag.startDate;
+    string end = ViewBag.endDate;
 }
 
 @section Scripts
@@ -177,6 +203,17 @@
         $(document).ready(function () {
             $('#reservation').daterangepicker(
                 {
+                      locale: {
+                        format: 'YYYY-MM-DD'
+                    },
+                    @*setStartDate:@ViewBag.startDate,
+                    setEndDate:@ViewBag.endDaendDate,*@
+                    //startDate: moment().subtract('days', 29),
+                    //endDate: moment(),
+                    //startDate: a,
+                    //endDate: b,
+                    startDate: '@start',
+                    endDate:'@end',
                     showDropdowns: true,
                     showWeekNumbers: true,
                     timePicker: false,
@@ -210,7 +247,7 @@
     </script>
 
 
-    <script>
+    @*<script>
         $(document).ready(function () {
 
             $.each(data, function (index, row) {
@@ -218,7 +255,7 @@
             });
 
         });
-    </script>
+    </script>*@
 
     <script type="text/javascript">
         $(document).ready(function () {
@@ -278,14 +315,16 @@
                                 type: 'bar', // 'bar' type, 전체 타입과 같다면 생략가능
                                 backgroundColor: 'rgb(0, 204, 102)',
                                 borderColor: 'rgb(255, 204, 102)',
-                                data: @orderQty
+                                data: @orderQty,
+                                yAxisID: 'y-left'
                             },
                             {
                                 label: '양품수',
                                 type: 'bar', // 'bar' type, 전체 타입과 같다면 생략가능
                                 backgroundColor: 'rgb(255, 0, 102)',
                                 borderColor: 'rgb(255, 204, 102)',
-                                data: @prodcutQty
+                                data: @prodcutQty,
+                                yAxisID: 'y-left'
                             },
 
                             {
@@ -293,7 +332,8 @@
                                 type: 'bar', // 'bar' type, 전체 타입과 같다면 생략가능
                                 backgroundColor: 'rgb(255, 204, 0)',
                                 borderColor: 'rgb(255, 204, 102)',
-                                data: @defectQty
+                                data: @defectQty,
+                                yAxisID: 'y-left'
                             },
 
                             {
@@ -304,7 +344,8 @@
                                 pointRadius: 0.1,    // 각 지점에 포인트 주지 않음
                                 backgroundColor: 'rgb(255, 153, 0)',
                                 borderColor: 'rgb(255, 153, 0)',
-                                data: @workRate
+                                data: @workRate,
+                                yAxisID: 'y-right'
                             },
                             {
                                 label: '비가동률',
@@ -314,7 +355,8 @@
                                 pointRadius: 0,
                                 backgroundColor: 'rgb(255, 204, 0)',
                                 borderColor: 'rgb(255, 204, 0)',
-                                data: @DownRate
+                                data: @DownRate,
+                                yAxisID: 'y-right'
                             }
 
 
@@ -330,12 +372,23 @@
                     },
                     scales: {
                         // y축
-                        yAxes: [{
+                        yAxes: [
+                            {
+                            id: 'y-left',
+             
+                            position:'left',
+
                             stacked: false,
-                            ticks: {
+                                ticks: {
+                                    min: 0, max: 5000,
                                 fontColor: 'black' // y축 폰트 color
                             }
-                        }],
+                            
+                        },
+                            { id: 'y-right', position: 'right', ticks: { min: 0, max: 100,  fontColor: 'black' } }
+
+
+                        ],
                         // x축
                         xAxes: [{
                             stacked: false,
