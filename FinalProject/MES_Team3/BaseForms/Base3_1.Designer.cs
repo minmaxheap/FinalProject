@@ -155,7 +155,7 @@ namespace MES_Team3
             this.lblTitle.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblTitle.Location = new System.Drawing.Point(0, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(724, 36);
+            this.lblTitle.Size = new System.Drawing.Size(724, 45);
             this.lblTitle.TabIndex = 17;
             this.lblTitle.Text = "title";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -169,7 +169,7 @@ namespace MES_Team3
             this.lblPanel.Location = new System.Drawing.Point(0, 0);
             this.lblPanel.Margin = new System.Windows.Forms.Padding(0);
             this.lblPanel.Name = "lblPanel";
-            this.lblPanel.Size = new System.Drawing.Size(418, 36);
+            this.lblPanel.Size = new System.Drawing.Size(418, 45);
             this.lblPanel.TabIndex = 32;
             this.lblPanel.Text = "▶ 검색 조건";
             this.lblPanel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -185,7 +185,7 @@ namespace MES_Team3
             this.pnlSearch.Location = new System.Drawing.Point(0, 36);
             this.pnlSearch.Margin = new System.Windows.Forms.Padding(0);
             this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(406, 231);
+            this.pnlSearch.Size = new System.Drawing.Size(404, 231);
             this.pnlSearch.TabIndex = 31;
             // 
             // panel1
@@ -245,7 +245,7 @@ namespace MES_Team3
             this.lblAddList.Location = new System.Drawing.Point(0, 0);
             this.lblAddList.Margin = new System.Windows.Forms.Padding(0);
             this.lblAddList.Name = "lblAddList";
-            this.lblAddList.Size = new System.Drawing.Size(1152, 31);
+            this.lblAddList.Size = new System.Drawing.Size(1152, 40);
             this.lblAddList.TabIndex = 45;
             this.lblAddList.Text = "할당 공정 목록";
             this.lblAddList.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -257,7 +257,7 @@ namespace MES_Team3
             this.pnlAll.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlAll.Controls.Add(this.lblAll);
             this.pnlAll.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.pnlAll.Location = new System.Drawing.Point(649, 30);
+            this.pnlAll.Location = new System.Drawing.Point(649, 40);
             this.pnlAll.Margin = new System.Windows.Forms.Padding(0);
             this.pnlAll.Name = "pnlAll";
             this.pnlAll.Size = new System.Drawing.Size(503, 317);
@@ -272,7 +272,7 @@ namespace MES_Team3
             this.lblAll.Location = new System.Drawing.Point(0, 0);
             this.lblAll.Margin = new System.Windows.Forms.Padding(0);
             this.lblAll.Name = "lblAll";
-            this.lblAll.Size = new System.Drawing.Size(501, 31);
+            this.lblAll.Size = new System.Drawing.Size(501, 40);
             this.lblAll.TabIndex = 17;
             this.lblAll.Text = "전체 공정 목록";
             this.lblAll.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -332,7 +332,7 @@ namespace MES_Team3
             this.pnlAdd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlAdd.Controls.Add(this.lblAdd);
             this.pnlAdd.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.pnlAdd.Location = new System.Drawing.Point(0, 30);
+            this.pnlAdd.Location = new System.Drawing.Point(1, 40);
             this.pnlAdd.Margin = new System.Windows.Forms.Padding(0);
             this.pnlAdd.Name = "pnlAdd";
             this.pnlAdd.Size = new System.Drawing.Size(516, 317);
@@ -347,7 +347,7 @@ namespace MES_Team3
             this.lblAdd.Location = new System.Drawing.Point(0, 0);
             this.lblAdd.Margin = new System.Windows.Forms.Padding(0);
             this.lblAdd.Name = "lblAdd";
-            this.lblAdd.Size = new System.Drawing.Size(514, 31);
+            this.lblAdd.Size = new System.Drawing.Size(514, 40);
             this.lblAdd.TabIndex = 17;
             this.lblAdd.Text = "할당 공정 목록";
             this.lblAdd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
