@@ -50,7 +50,7 @@ namespace MES_Team3
             this.flpMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.flpMenu.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold);
             this.flpMenu.Location = new System.Drawing.Point(0, 45);
-            this.flpMenu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flpMenu.Margin = new System.Windows.Forms.Padding(0);
             this.flpMenu.Name = "flpMenu";
             this.flpMenu.Size = new System.Drawing.Size(200, 694);
             this.flpMenu.TabIndex = 2;
