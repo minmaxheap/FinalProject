@@ -45,21 +45,6 @@ namespace MES_Team3
             for (int i = 0; i < dv1.Count; i++)
             {
                 Button btnMenu = new Button();
-                //Label lblMenu = new Label();
-                //lblMenu.Name = $"p_btn{dv1[i]["FUNCTION_CODE"].ToString()}";
-                //lblMenu.Text = dv1[i]["FUNCTION_NAME"].ToString();
-                //lblMenu.TextAlign = ContentAlignment.MiddleCenter;
-                //lblMenu.ForeColor = Color.FromArgb(176, 182, 190);
-                //lblMenu.AutoSize = false;
-                //lblMenu.Dock = DockStyle.Top;
-                //lblMenu.Location = new Point(0);
-                ////lblMenu.Margin = new Padding(3,4,3,4);
-                //lblMenu.Size = new Size(155, 41);
-                //lblMenu.Tag = i.ToString();
-                //lblMenu.FlatStyle = FlatStyle.Flat;
-                //lblMenu.Image = global::MES_Team3.Properties.Resources.Blank_13;
-                //lblMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-                //lblMenu.Click += btnMenu_Click;
 
                 DefaultButton(btnMenu, dv1, i);
 
@@ -72,6 +57,7 @@ namespace MES_Team3
             }
 
             mPnlMenu = new Panel();
+            mPnlMenu.BackColor = Color.White;
             mPnlMenu.Dock = DockStyle.Bottom;
             mPnlMenu.Location = new Point(3, (dv1.Count * 40));
             mPnlMenu.Margin = new Padding(3, 4, 3, 4);
@@ -201,21 +187,17 @@ namespace MES_Team3
            // Label btnMenu = (Label)sender;
             flpMenu.Controls.SetChildIndex(mPnlMenu, Convert.ToInt32(btnMenu.Tag) + 1);
             flpMenu.Invalidate();
-
-            mTrvMenu.Nodes.Clear();
+            mPnlMenu.Controls.Clear();
+            
+            //mTrvMenu.Nodes.Clear();
 
             DataView dv2 = new DataView(mdtFunc);
             dv2.RowFilter = $"FUNCTION_LEVEL=2 and PNT_FUNCTION_CODE = '{btnMenu.Name.Replace("p_btn", "")}'";
             for (int k = 0; k < dv2.Count; k++)
             {
                 Button btnChild = new Button();
-                //TreeNode c_node = new TreeNode(dv2[k]["FUNCTION_NAME"].ToString());
-                //c_node.Tag = dv2[k]["PROGRAM_NAME"].ToString();
-                //mTrvMenu.Nodes.Add(btnChild);
-                
-
-                DefaultButton(btnChild, dv2, k);
-                flpMenu.Controls.Add(btnMenu);
+                DefaultChildButton(btnChild, dv2, k);
+                mPnlMenu.Controls.Add(btnChild);
 
 
                 if (k == 0)
@@ -294,46 +276,36 @@ namespace MES_Team3
             btn.ForeColor = System.Drawing.Color.White;
             btn.ImageList = this.selmenuImageList;
         }
-        private void DefaultChildButton(Button btn, DataView dv1, int i)
+        private void DefaultChildButton(Button btn, DataView dv2, int k)
         {
             btn.BackColor = Color.FromArgb(250, 250, 250);
             btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btn.Font = new System.Drawing.Font("나눔고딕", 10.5F, System.Drawing.FontStyle.Bold);
             btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            btn.Tag = dv1[i]["PROGRAM_NAME"].ToString();
+            btn.Tag = dv2[k]["PROGRAM_NAME"].ToString();
             btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            btn.ImageIndex = i;
+            btn.ImageIndex = k;
             btn.ImageList = this.menuImageList;
             btn.Margin = new System.Windows.Forms.Padding(0);
-            btn.Name = $"{dv1[i]["FUNCTION_CODE"].ToString()}";
+            btn.Name = dv2[k]["FUNCTION_CODE"].ToString();
             btn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             btn.Size = new System.Drawing.Size(200, 40);
             btn.TabIndex = 0;
-            btn.Text = dv1[i]["FUNCTION_NAME"].ToString();
+            btn.Text = dv2[k]["FUNCTION_NAME"].ToString();
             btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             btn.UseVisualStyleBackColor = true;
-            btn.Click += Btn_Click;
+            btn.Click += ChildBtn_Click;
+            //TreeNode c_node = new TreeNode(dv2[k]["FUNCTION_NAME"].ToString());
+            //c_node.Tag = dv2[k]["PROGRAM_NAME"].ToString();
+            //mTrvMenu.Nodes.Add(btnChild);
 
-            //Label lblMenu = new Label();
-            //lblMenu.Name = $"p_btn{dv1[i]["FUNCTION_CODE"].ToString()}";
-            //lblMenu.Text = dv1[i]["FUNCTION_NAME"].ToString();
-            //lblMenu.TextAlign = ContentAlignment.MiddleCenter;
-            //lblMenu.ForeColor = Color.FromArgb(176, 182, 190);
-            //lblMenu.AutoSize = false;
-            //lblMenu.Dock = DockStyle.Top;
-            //lblMenu.Location = new Point(0);
-            ////lblMenu.Margin = new Padding(3,4,3,4);
-            //lblMenu.Size = new Size(155, 41);
-            //lblMenu.Tag = i.ToString();
-            //lblMenu.FlatStyle = FlatStyle.Flat;
-            //lblMenu.Image = global::MES_Team3.Properties.Resources.Blank_13;
-            //lblMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            //lblMenu.Click += btnMenu_Click;
         }
 
-        private void Btn_Click(object sender, EventArgs e)
+        private void ChildBtn_Click(object sender, EventArgs e)
         {
-            //OpenCreateForm(e.Tag.ToString(), e.Text);
+            Button menu = (Button)sender;
+            SelectedButton(menu);
+            OpenCreateForm(menu.Tag.ToString(), menu.Text);
         }
     }
 }

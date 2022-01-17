@@ -32,7 +32,8 @@ namespace MES_Team3
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            txtID.Text = "0324234";
+            txtID.Text = "NiceMes001";
+            txtPwd.Text = "1234";
             sID_Test = txtID.Text;
         }
 
