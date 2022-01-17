@@ -37,12 +37,12 @@ namespace MES_Team3
             DataGridViewUtil.SetInitGridView(csDataGridView1);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "창고", "STORE_CODE");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "창고명", "STORE_NAME");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "창고 유형", "STORE_TYPE");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "선입선출 여부", "FIFO_FLAG", width: 120);
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "창고 유형", "STORE_TYPE", DataGridViewContentAlignment.MiddleCenter);
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "선입선출 여부", "FIFO_FLAG", DataGridViewContentAlignment.MiddleCenter, width: 120);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성 시간", "CREATE_TIME", DataGridViewContentAlignment.MiddleLeft, 140);
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성 사용자", "CREATE_USER_ID");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성 사용자", "CREATE_USER_ID", DataGridViewContentAlignment.MiddleCenter);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 시간", "UPDATE_TIME", DataGridViewContentAlignment.MiddleLeft, 140);
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 사용자", "UPDATE_USER_ID");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 사용자", "UPDATE_USER_ID", DataGridViewContentAlignment.MiddleCenter);
             csDataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             csDataGridView1.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             List<StoreVO> list = new List<StoreVO>();
@@ -338,6 +338,11 @@ namespace MES_Team3
             {
                 return null;
             }
+        }
+
+        private void frmStore_Shown(object sender, EventArgs e)
+        {
+            csDataGridView1.CurrentCell = null;
         }
     }
 }
