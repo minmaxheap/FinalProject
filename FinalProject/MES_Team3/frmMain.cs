@@ -15,7 +15,7 @@ namespace MES_Team3
     {
         string msUserID;
         DataTable mdtFunc;
-        Panel mPnlMenu;
+        FlowLayoutPanel mPnlMenu;
         TreeView mTrvMenu;
         FunctionServ mServ;
 
@@ -56,7 +56,7 @@ namespace MES_Team3
                 }
             }
 
-            mPnlMenu = new Panel();
+            mPnlMenu = new FlowLayoutPanel();
             mPnlMenu.BackColor = Color.White;
             mPnlMenu.Dock = DockStyle.Bottom;
             mPnlMenu.Location = new Point(3, (dv1.Count * 40));
