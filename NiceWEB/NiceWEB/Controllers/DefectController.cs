@@ -11,6 +11,12 @@ namespace NiceWEB.Controllers
         // GET: Deffect
         public ActionResult Index(string startDate, string endDate, string productCode, string op_code, int page=1)
         {
+
+            if (Session["UserID"] == null || Session["UserID"].ToString().Length < 1)
+            {
+                return RedirectToAction("Login", "Home");
+            }
+
             //DateTime from = Convert.ToDateTime("2021-10-10");
             //DateTime to = Convert.ToDateTime("2022-10-10");
 
