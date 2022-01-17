@@ -38,11 +38,12 @@ namespace MES_Team3
 			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "사용자 그룹", "USER_GROUP_CODE");
 			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "사용자 그룹명", "USER_GROUP_NAME", width: 120);
 			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "사용자 그룹 유형", "USER_GROUP_TYPE", width: 120);
-			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성시간", "CREATE_TIME");
+			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성시간", "CREATE_TIME", DataGridViewContentAlignment.MiddleLeft, 140);
 			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성 사용지", "CREATE_USER_ID");
-			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경시간", "UPDATE_TIME");
+			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경시간", "UPDATE_TIME", DataGridViewContentAlignment.MiddleLeft, 140);
 			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 사용자", "UPDATE_USER_ID");
-
+			csDataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+			csDataGridView1.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
 			iSearchedList = new List<int>();
 			iSelectedRow = new List<int>();
 
