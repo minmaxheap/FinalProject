@@ -42,6 +42,8 @@ namespace MES_Team3
             DataGridViewUtil.AddGridTextColumn(dgvProduct, "생성 사용자", "CREATE_USER_ID");
             DataGridViewUtil.AddGridTextColumn(dgvProduct, "변경 시간", "UPDATE_TIME", width: 150);
             DataGridViewUtil.AddGridTextColumn(dgvProduct, "변경 사용자", "UPDATE_USER_ID");
+            dgvProduct.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvProduct.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             //iSearchedList = new List<int>();
             //iSelectedRow = new List<int>();
 
@@ -55,7 +57,8 @@ namespace MES_Team3
             DataGridViewUtil.AddGridTextColumn(dgvBOM, "생성 사용자", "CREATE_USER_ID");
             DataGridViewUtil.AddGridTextColumn(dgvBOM, "변경 시간", "UPDATE_TIME", width: 150);
             DataGridViewUtil.AddGridTextColumn(dgvBOM, "변경 사용자", "UPDATE_USER_ID");
-
+            dgvProduct.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvProduct.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             LoadData();
 
             ProductProperty vo = new ProductProperty();

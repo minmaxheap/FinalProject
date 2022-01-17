@@ -47,15 +47,16 @@ namespace MES_Team3
             DataGridViewUtil.SetInitGridView(csDataGridView1);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "검사항목", "INSPECT_ITEM_CODE");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "검사항목명", "INSPECT_ITEM_NAME");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "값 유형", "VALUE_TYPE");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "LSL", "SPEC_LSL");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "Target", "SPEC_TARGET");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "USL", "SPEC_USL");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성시간", "CREATE_TIME");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "값 유형", "VALUE_TYPE", width: 80);
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "LSL", "SPEC_LSL", width: 80);
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "Target", "SPEC_TARGET", width: 80);
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "USL", "SPEC_USL", width: 80);
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성시간", "CREATE_TIME", DataGridViewContentAlignment.MiddleLeft, 140);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성 사용자", "CREATE_USER_ID");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경시간", "UPDATE_TIME");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경시간", "UPDATE_TIME", DataGridViewContentAlignment.MiddleLeft, 140);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 사용자", "UPDATE_USER_ID");
-
+            csDataGridView1.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            csDataGridView1.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             iSearchedList = new List<int>();
             iSelectedRow = new List<int>();
 
