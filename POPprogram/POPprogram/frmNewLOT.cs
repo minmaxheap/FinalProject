@@ -33,8 +33,10 @@ namespace POPprogram
             frmWorkOrderDialog dlg = new frmWorkOrderDialog();
             if (dlg.ShowDialog() == DialogResult.OK)
             {
+               
                 DataGridViewRow dr = dlg.SelectedRow;
-                txtWorkOrderID.Text = dr.Cells["WORK_ORDER_ID"].Value.ToString();
+                if(dr!=null)
+                { txtWorkOrderID.Text = dr.Cells["WORK_ORDER_ID"].Value.ToString();
                 txtCustID.Text = dr.Cells["CUSTOMER_CODE"].Value.ToString();
                 txtCustName.Text = dr.Cells["CUSTOMER_NAME"].Value.ToString();
                 txtProdCode.Text = dr.Cells["PRODUCT_CODE"].Value.ToString();
@@ -46,7 +48,7 @@ namespace POPprogram
                 txtOperCode.Text = dr.Cells["OPERATION_CODE"].Value.ToString();
                 txtOperName.Text = dr.Cells["OPERATION_NAME"].Value.ToString();
 
-                
+                }
             }
         }
 
