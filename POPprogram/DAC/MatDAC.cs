@@ -342,23 +342,22 @@ INSERT [dbo].[LOT_MATERIAL_HIS]
       ,[EQUIPMENT_CODE]
       ,[TRAN_USER_ID]
       ,[TRAN_COMMENT])
-     SELECT
-	   s.PRODUCT_CODE
-      ,s.LAST_HIST_SEQ
+          SELECT
+	   p.LOT_ID
+      ,p.LAST_HIST_SEQ
       ,s.LOT_ID
       ,s.LAST_HIST_SEQ
-      ,s.LOT_QTY
+      ,@BOM_LOT_QTY_1
       ,s.STORE_CODE
       ,s.LAST_TRAN_TIME
       ,s.LAST_TRAN_CODE
       ,s.PRODUCT_CODE
-      ,s.OPERATION_CODE
+      ,@OPERATION_CODE
       ,s.END_EQUIPMENT_CODE
       ,s.LAST_TRAN_USER_ID
       ,s.LAST_TRAN_COMMENT
-	  FROM LOT_STS s
-	  WHERE s.LOT_ID=@BOM_LOT_ID_1
-
+	  FROM LOT_STS s, (SELECT LOT_ID, LAST_HIST_SEQ FROM LOT_STS WHERE LOT_ID=@BOM_LOT_ID_1) p
+	  WHERE s.LOT_ID=@LOT_ID
 
 	COMMIT TRANSACTION;  
 END TRY  
@@ -556,21 +555,21 @@ INSERT [dbo].[LOT_MATERIAL_HIS]
       ,[TRAN_USER_ID]
       ,[TRAN_COMMENT])
      SELECT
-	   s.PRODUCT_CODE
-      ,s.LAST_HIST_SEQ
+	   	   p.LOT_ID
+      ,p.LAST_HIST_SEQ
       ,s.LOT_ID
       ,s.LAST_HIST_SEQ
-      ,s.LOT_QTY
+      ,@BOM_LOT_QTY_1
       ,s.STORE_CODE
       ,s.LAST_TRAN_TIME
       ,s.LAST_TRAN_CODE
       ,s.PRODUCT_CODE
-      ,s.OPERATION_CODE
+      ,@OPERATION_CODE
       ,s.END_EQUIPMENT_CODE
       ,s.LAST_TRAN_USER_ID
       ,s.LAST_TRAN_COMMENT
-	  FROM LOT_STS s
-	  WHERE s.LOT_ID=@BOM_LOT_ID_1
+	  FROM LOT_STS s, (SELECT LOT_ID, LAST_HIST_SEQ FROM LOT_STS WHERE LOT_ID=@BOM_LOT_ID_1) p
+	  WHERE s.LOT_ID=@LOT_ID
 
 	COMMIT TRANSACTION;  
 END TRY  
@@ -851,22 +850,22 @@ INSERT [dbo].[LOT_MATERIAL_HIS]
       ,[EQUIPMENT_CODE]
       ,[TRAN_USER_ID]
       ,[TRAN_COMMENT])
-     SELECT
-	   s.PRODUCT_CODE
-      ,s.LAST_HIST_SEQ
+      SELECT
+	   	   p.LOT_ID
+      ,p.LAST_HIST_SEQ
       ,s.LOT_ID
       ,s.LAST_HIST_SEQ
-      ,s.LOT_QTY
+      ,@BOM_LOT_QTY_1
       ,s.STORE_CODE
       ,s.LAST_TRAN_TIME
       ,s.LAST_TRAN_CODE
       ,s.PRODUCT_CODE
-      ,s.OPERATION_CODE
+      ,@OPERATION_CODE
       ,s.END_EQUIPMENT_CODE
       ,s.LAST_TRAN_USER_ID
       ,s.LAST_TRAN_COMMENT
-	  FROM LOT_STS s
-	  WHERE s.LOT_ID=@BOM_LOT_ID_1
+	  FROM LOT_STS s, (SELECT LOT_ID, LAST_HIST_SEQ FROM LOT_STS WHERE LOT_ID=@BOM_LOT_ID_1) p
+	  WHERE s.LOT_ID=@LOT_ID
 
 INSERT [dbo].[LOT_MATERIAL_HIS]
            ([MATERIAL_LOT_ID]
@@ -883,21 +882,21 @@ INSERT [dbo].[LOT_MATERIAL_HIS]
       ,[TRAN_USER_ID]
       ,[TRAN_COMMENT])
      SELECT
-	   s.PRODUCT_CODE
-      ,s.LAST_HIST_SEQ
+	  	   p.LOT_ID
+      ,p.LAST_HIST_SEQ
       ,s.LOT_ID
       ,s.LAST_HIST_SEQ
-      ,s.LOT_QTY
+      ,@BOM_LOT_QTY_2
       ,s.STORE_CODE
       ,s.LAST_TRAN_TIME
       ,s.LAST_TRAN_CODE
       ,s.PRODUCT_CODE
-      ,s.OPERATION_CODE
+      ,@OPERATION_CODE
       ,s.END_EQUIPMENT_CODE
       ,s.LAST_TRAN_USER_ID
       ,s.LAST_TRAN_COMMENT
-	  FROM LOT_STS s
-	  WHERE s.LOT_ID=@BOM_LOT_ID_2
+	  FROM LOT_STS s, (SELECT LOT_ID, LAST_HIST_SEQ FROM LOT_STS WHERE LOT_ID=@BOM_LOT_ID_2) p
+	  WHERE s.LOT_ID=@LOT_ID
 
 	COMMIT TRANSACTION;  
 END TRY  
@@ -931,7 +930,7 @@ END CATCH;
                     cmd.Parameters.AddWithValue("@LAST_TRAN_USER_ID", updateVO.LAST_TRAN_USER_ID);//
 
                     cmd.Parameters.AddWithValue("@LAST_TRAN_COMMENT", updateVO.LAST_TRAN_COMMENT);
-
+                    cmd.Parameters.AddWithValue("@OPERATION_CODE", updateVO.OPERATION_CODE);
                     cmd.Parameters.AddWithValue("@LOT_QTY", updateVO.LOT_QTY);
                     cmd.Parameters.AddWithValue("@PRODUCT_CODE", updateVO.PRODUCT_CODE);
                     cmd.Parameters.AddWithValue("@PRODUCT_NAME", updateVO.PRODUCT_NAME);

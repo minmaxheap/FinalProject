@@ -22,8 +22,8 @@ namespace NiceWEB.Controllers
             List<Product> list = dac.GetData(opCode, productCode, page, pagesize);
 
             //콤보박스 구현 2개 
-            List<ComboItem> categories = dac.GetProduct();
-            List<ComboItem> categories2 = dac.GetOperation();
+            List<ComboItem> categories = dac.GetOperation();
+            List<ComboItem> categories2 = dac.GetProduct();
 
             //페이징 갯수를 정하는거 => 전체데이터의 갯수 가져오기 
             int totalCount = dac.GetProductTotalCount(opCode, productCode);
