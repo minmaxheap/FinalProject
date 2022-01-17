@@ -71,107 +71,85 @@
 		}
 		<div class="row">
 			<div class="col-12">
-				<div class="card">
-					<div class="card-header">
-						<h3 class="card-title">제품 재고 조회</h3>
-					</div>
-					<!-- /.card-header -->
-					<div class="card-body">
-						@*<table id="compareplan" class="table table-bordered table-striped">
-							</table>*@
-						<table class="table table-striped table-bordered table-hover"
-							   id="TableId"
-							   cellspacing="0"
-							   align="center"
-							   width="100%" border="1">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">제품 재고 조회</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                           <table class="table table-bordered table-hover">
+                               <thead>
+                                   <tr>
+                                       <th>LOT명</th>
+                                       <th>LOT 설명</th>
+                                       <th>품번</th>
+                                       <th>공정 코드</th>
+                                       <th>창고 코드</th>
+                                       <th>LOT 수량</th>
+                                       <th>LOT 생성 시 수량</th>
+                                       <th>LOT 공정 투입 수량</th>
+                                       <th>LOT 작업 시작 수량</th>
+                                       <th>작업 시작 수량</th>
+                                   </tr>
+                               </thead>
+                               <tbody>
+                                   @if (Model != null)
+                                   {
+                                       foreach (var p in Model)
+                                       {
 
-							<thead>
-                                <tr>
-                                    <th scope="col">LOT명</th>
-                                    <th scope="col">LOT 설명</th>
-                                    <th scope="col">품번</th>
-                                    <th scope="col">공정 코드</th>
-                                    <th scope="col">창고 코드</th>
-                                    <th scope="col">LOT 수량</th>
-                                    <th scope="col">LOT 생성 시 수량</th>
-                                    <th scope="col">LOT 공정 투입 수량</th>
-                                    <th scope="col">LOT 작업 시작 수량</th>
-                                    <th scope="col">작업 시작 수량</th>
-                                    <th scope="col">작업 시작 시간</th>
-                                    <th scope="col">작업 시작 설비</th>
-                                    <th scope="col">LOT 공정 완료 여부</th>
-                                    <th scope="col">작업 완료 시간</th>
-                                    <th scope="col">작업 완료 설비</th>
-                                    <th scope="col">출하 여부</th>
-                                    <th scope="col">출하 코드</th>
-                                    <th scope="col">출하 시간</th>
-                                    <th scope="col">LOT 생성 일자</th>
-                                    <th scope="col">LOT 생성 시간</th>
-                                    <th scope="col">LOT 공정 투입 시간</th>
-                                    <th scope="col">작업 지시</th>
-                                    <th scope="col">LOT 삭제 여부</th>
-                                    <th scope="col">LOT 삭제 코드</th>
-                                    <th scope="col">LOT 삭제 시간</th>
-                                    <th scope="col">마지막 처리 코드</th>
-                                    <th scope="col">마지막 처리 시간</th>
-                                    <th scope="col">마지막 처리 사용자</th>
-                                    <th scope="col">마지막 처리 주석</th>
-                                    <th scope="col">마지막 처리 순번</th>
-                                </tr>
-							</thead>
-							<tbody>
-								@if (Model != null)
-								{
-									foreach (var p in Model)
-									{
+                                   <tr data-widget="expandable-table" aria-expanded="false">
+                                       <td>@p.LOT_ID</td>
+                                       <td>@p.LOT_DESC</td>
+                                       <td>@p.PRODUCT_CODE</td>
+                                       <td>@p.OPERATION_CODE</td>
+                                       <td>@p.STORE_CODE</td>
+                                       <td>@p.LOT_QTY</td>
+                                       <td>@p.CREATE_QTY</td>
+                                       <td>@p.OPER_IN_QTY</td>
+                                       <td>@p.START_FLAG</td>
+                                       <td>@p.START_QTY</td>
+                                   </tr>
+                                           <tr class="expandable-body">
+                                               <td colspan="10">
+                                                   <p>
+                                                       @p.START_TIME
+                                                       @p.START_EQUIPMENT_CODE
+                                                       @p.END_FLAG
+                                                       @p.END_TIME
+                                                       @p.END_EQUIPMENT_CODE
+                                                       @p.SHIP_FLAG
+                                                       @p.SHIP_CODE
+                                                       @p.SHIP_TIME
+                                                       @p.PRODUCTION_TIME
+                                                       @p.CREATE_TIME
+                                                       @p.OPER_IN_TIME
+                                                       @p.WORK_ORDER_ID
+                                                       @p.LOT_DELETE_FLAG
+                                                       @p.LOT_DELETE_TIME
+                                                       @p.LAST_TRAN_CODE
+                                                       @p.LAST_TRAN_TIME
+                                                       @p.LAST_TRAN_USER_ID
+                                                       @p.LAST_TRAN_COMMENT
+                                                       @p.LAST_HIST_SEQ
+                                                   </p>
+                                               </td>
+                                           </tr>
+                                   }
+                               }
+                               </tbody>
+                           </table>
+                            </div>
+                    <!-- /.card-body -->
 
-                                <tr>
-                                    <td>@p.LOT_ID</td>
-                                    <td>@p.LOT_DESC</td>
-                                    <td>@p.PRODUCT_CODE</td>
-                                    <td>@p.OPERATION_CODE</td>
-                                    <td>@p.STORE_CODE</td>
-                                    <td>@p.LOT_QTY</td>
-                                    <td>@p.CREATE_QTY</td>
-                                    <td>@p.OPER_IN_QTY</td>
-                                    <td>@p.START_FLAG</td>
-                                    <td>@p.START_QTY</td>
-                                    <td>@p.START_TIME</td>
-                                    <td>@p.START_EQUIPMENT_CODE</td>
-                                    <td>@p.END_FLAG</td>
-                                    <td>@p.END_TIME</td>
-                                    <td>@p.END_EQUIPMENT_CODE</td>
-                                    <td>@p.SHIP_FLAG</td>
-                                    <td>@p.SHIP_CODE</td>
-                                    <td>@p.SHIP_TIME</td>
-                                    <td>@p.PRODUCTION_TIME</td>
-                                    <td>@p.CREATE_TIME</td>
-                                    <td>@p.OPER_IN_TIME</td>
-                                    <td>@p.WORK_ORDER_ID</td>
-                                    <td>@p.LOT_DELETE_FLAG</td>
-                                    <td>@p.LOT_DELETE_TIME</td>
-                                    <td>@p.LAST_TRAN_CODE</td>
-                                    <td>@p.LAST_TRAN_TIME</td>
-                                    <td>@p.LAST_TRAN_USER_ID</td>
-                                    <td>@p.LAST_TRAN_COMMENT</td>
-                                    <td>@p.LAST_HIST_SEQ</td>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center">
+                            @Html.PageLinks((PagingInfo)ViewBag.PagingInfo, (x) => Url.Action("Index",
+                                new { page = x, opCode = ViewBag.opCode, productCode = ViewBag.productCode }))
+                        </ul>
+                    </nav>
 
-                                </tr>
-									}
-								}
-								</tbody>
-						</table>
-					</div>
-					<!-- /.card-body -->
-
-					<nav aria-label="Page navigation example">
-						<ul class="pagination justify-content-center">
-							@Html.PageLinks((PagingInfo)ViewBag.PagingInfo, (x) => Url.Action("Index",
-								new { page = x, opCode = ViewBag.opCode, productCode = ViewBag.productCode }))
-						</ul>
-					</nav>
-
-				</div>
+                </div>
 				<!-- /.card -->
 			</div>
 			<!-- /.col -->
