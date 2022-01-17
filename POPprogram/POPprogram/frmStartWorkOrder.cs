@@ -117,17 +117,13 @@ namespace POPprogram
                 LOT_QTY = Convert.ToDecimal(txtQty.Text),
                 LAST_TRAN_COMMENT = txtComment.Text,
                 LAST_TRAN_USER_ID = frmLogin.userID,
-                CREATE_QTY = Convert.ToDecimal(txtQty.Text),
+                CREATE_QTY = Convert.ToDecimal(txtQty.Text)+ Convert.ToDecimal(lblDefectQty.Text),
                 OPER_IN_QTY = Convert.ToDecimal(txtQty.Text),
                 START_QTY = Convert.ToDecimal(txtQty.Text),
                 START_EQUIPMENT_CODE = cboEQList.Text
             };
 
-            if (mLOT == null)
-            {
-                MessageBox.Show("해당되는 값이 없습니다.");
-                return;
-            }
+           
 
            
             bool result = serv.Insert(mLOT);

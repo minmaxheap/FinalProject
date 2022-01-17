@@ -15,6 +15,11 @@ namespace NiceWEB.Controllers
         // GET: Efficiency
         public ActionResult Index(string startDate, string endDate, string workID, string prdCode, int page = 1)
         {
+            if (Session["UserID"] == null || Session["UserID"].ToString().Length < 1)
+            {
+                return RedirectToAction("Login", "Home");
+            }
+
             CommonDAC comDAC = new CommonDAC();
             //select box에 전달할 데이터
             List<ComboItem> orderList = comDAC.GetWorkOrder();

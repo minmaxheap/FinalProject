@@ -134,16 +134,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
-                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="image">
-                        <img src="~/dist/img/User-Profile.png" class="img-circle elevation-2" alt="User Image">
-                        @*<i class="fas fa-user-circle" style="color:white; font-size:25px;"></i>*@
+				<div class="user-panel mt-3 pb-3 mb-3 d-flex">
+					@if (Session["UserID"] != null)
+					{
+						<div class="image">
+							<img src="~/dist/img/User-Profile.png" class="img-circle elevation-2" alt="User Image">
+							@*<i class="fas fa-user-circle" style="color:white; font-size:25px;"></i>*@
 
-                    </div>
-                    <div class="info">
-                        <a href="#" class="d-block">임영미</a>
-                    </div>
-                </div>
+						</div>
+						<div class="info col-7">
+							<a href="#" class="d-block">@Session["UserID"].ToString()</a>
+						</div>
+						<div class="info">
+							<a href="~/Home/Logout"><span class="right badge badge-danger">Logout</span></a>
+						</div>
+					}
+				</div>
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
