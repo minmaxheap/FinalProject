@@ -149,7 +149,7 @@ ORDER BY LAST_TRAN_TIME DESC
         public DataTable GetLOTHistory(string lotID)
         {
             string sql = @"SELECT  HIST_SEQ, TRAN_TIME, TRAN_CODE, L.OPERATION_CODE,O.OPERATION_NAME OPERATION_NAME,LOT_QTY, START_FLAG
-from [dbo].[LOT_HIS] L inner join [dbo].[OPERATION_MST] O ON L.OPERATION_CODE = O.OPERATION_CODE
+from [dbo].[LOT_HIS] L  LEFT join [dbo].[OPERATION_MST] O ON L.OPERATION_CODE = O.OPERATION_CODE
 where LOT_ID=@LOT_ID
 order by HIST_SEQ desc";
             DataTable dt = new DataTable();
