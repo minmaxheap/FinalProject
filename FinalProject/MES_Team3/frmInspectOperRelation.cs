@@ -264,8 +264,7 @@ namespace MES_Team3
 		{
 			if (comboBox1.SelectedIndex < 1) return;
 			string Value = comboBox1.SelectedValue.ToString();
-			MessageBox.Show(Value);
-
+			
 			
 			Value = (comboBox1.SelectedValue == null) ? "" : comboBox1.SelectedValue.ToString();
 

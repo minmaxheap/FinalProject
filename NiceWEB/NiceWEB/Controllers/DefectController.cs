@@ -38,6 +38,12 @@ namespace NiceWEB.Controllers
             ViewBag.productCode = productCode;
             ViewBag.op_code = op_code;
 
+            if (startDate == null) ViewBag.startDate = DateTime.Now.ToString();
+            else { ViewBag.startDate = startDate; }
+
+            if (endDate == null) ViewBag.endDate = DateTime.Now.ToString();
+            else { ViewBag.endDate = endDate; }
+
             ViewBag.PagingInfo = pageInfo;
             return View(list);
         }

@@ -49,6 +49,13 @@ namespace NiceWEB.Controllers
             ViewBag.op_code = op_code;
             ViewBag.childCode = childCode;
 
+            if (startDate == null) ViewBag.startDate = DateTime.Now.ToString();
+            else { ViewBag.startDate = startDate; }
+
+            if (endDate == null) ViewBag.endDate = DateTime.Now.ToString();
+            else { ViewBag.endDate = endDate; }
+
+
             ViewBag.PagingInfo = pageInfo;
             return View(list);
         }
