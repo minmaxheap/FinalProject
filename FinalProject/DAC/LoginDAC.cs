@@ -24,7 +24,7 @@ namespace DAC
             string sql = @"
 SELECT count(USER_ID) COUNT
   FROM [USER_MST]
-  WHERE [USER_GROUP_CODE]='POP_GROUP' AND USER_ID=@USER_ID AND USER_PASSWORD=@USER_PASSWORD
+  WHERE [USER_GROUP_CODE]='ADMIN_GROUP' AND USER_ID=@USER_ID AND USER_PASSWORD=@USER_PASSWORD
 ";
 
             using (SqlCommand cmd = new SqlCommand(sql, conn))

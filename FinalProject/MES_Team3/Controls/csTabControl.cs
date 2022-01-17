@@ -48,7 +48,7 @@ namespace MES_Team3
                 else
                     img = Properties.Resources.close_white;
 
-                Point imgLocation = new Point(18, 2);
+                Point imgLocation = new Point(20, 6);
 
                 e.Graphics.DrawImage(img, new Point(r.X + this.GetTabRect(e.Index).Width - imgLocation.X, imgLocation.Y));
 

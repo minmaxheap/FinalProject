@@ -188,6 +188,7 @@
     </Compile>
     <Compile Include="Services\InspecServ.cs" />
     <Compile Include="Services\INSPECT_OPServ.cs" />
+    <Compile Include="Services\LoginServ.cs" />
     <Compile Include="Services\SalesOrderServ.cs" />
     <Compile Include="Services\WorkOrderServ.cs" />
     <Compile Include="Services\OperationServ.cs" />

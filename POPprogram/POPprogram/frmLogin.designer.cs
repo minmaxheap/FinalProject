@@ -52,7 +52,7 @@ namespace POPprogram
             // 
             // label5
             // 
-            this.label5.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.label5.Location = new System.Drawing.Point(32, 103);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 20);
@@ -62,7 +62,7 @@ namespace POPprogram
             // 
             // label7
             // 
-            this.label7.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.label7.Location = new System.Drawing.Point(32, 54);
             this.label7.Name = "label7";
@@ -73,20 +73,20 @@ namespace POPprogram
             // 
             // txtPwd
             // 
-            this.txtPwd.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.txtPwd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.txtPwd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.txtPwd.Location = new System.Drawing.Point(95, 101);
             this.txtPwd.Name = "txtPwd";
-            this.txtPwd.Size = new System.Drawing.Size(138, 25);
+            this.txtPwd.Size = new System.Drawing.Size(138, 24);
             this.txtPwd.TabIndex = 30;
             // 
             // txtID
             // 
-            this.txtID.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.txtID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.txtID.Location = new System.Drawing.Point(95, 53);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(138, 25);
+            this.txtID.Size = new System.Drawing.Size(138, 24);
             this.txtID.TabIndex = 29;
             // 
             // frmLogin
@@ -102,6 +102,7 @@ namespace POPprogram
             this.Controls.Add(this.button7);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "로그인";
             this.Load += new System.EventHandler(this.frmLogin_Load);
             this.Shown += new System.EventHandler(this.frmLogin_Shown);

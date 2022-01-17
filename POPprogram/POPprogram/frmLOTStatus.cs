@@ -26,7 +26,7 @@ namespace POPprogram
                 pnlProperty.Visible = true;
                 pnlSearch.Visible = false;
                 lblPanel.Text = "▶ LOT 상태";
-                lblPanel.BackColor = Color.FromArgb(125, 125, 125); 
+                lblPanel.BackColor = Color.FromArgb(225, 241, 255); 
                 btnPanel.BackColor = lblPanel.BackColor;
             }
         }
