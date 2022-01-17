@@ -289,7 +289,7 @@ namespace MES_Team3
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.csDataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.csDataGridView2.RowHeadersWidth = 30;
-            this.csDataGridView2.Size = new System.Drawing.Size(514, 265);
+            this.csDataGridView2.Size = new System.Drawing.Size(526, 263);
             this.csDataGridView2.TabIndex = 20;
             this.csDataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView2_CellClick);
             this.csDataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView2_CellContentClick);
