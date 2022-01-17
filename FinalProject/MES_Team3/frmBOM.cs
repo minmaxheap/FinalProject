@@ -16,6 +16,8 @@ namespace MES_Team3
         DataTable mdtAll;
         string prodCode;
         DataTable mdtAdd;
+        string titleName;
+        public string TitleName { get { return titleName; } set { } }
         string msUserID = frmLogin.userID;
         string prod_code;
         List<int> iSearchedList;
@@ -31,7 +33,8 @@ namespace MES_Team3
 
         private void frmBOM_Load(object sender, EventArgs e)
         {
-
+            titleName = frmMain.TitleName;
+            lblUpTitle.Text = "   " + titleName;
             DataGridViewUtil.SetInitGridView(dgvProduct);
             DataGridViewUtil.AddGridTextColumn(dgvProduct, "품번", "PRODUCT_CODE");
             DataGridViewUtil.AddGridTextColumn(dgvProduct, "품명", "PRODUCT_NAME");

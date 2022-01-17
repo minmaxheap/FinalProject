@@ -21,7 +21,26 @@ namespace DAC
             
         }
 
-     
+        public DataTable GetUserList(string userID)
+        {
+
+            string sql = @"SELECT [USER_ID]
+      ,[USER_NAME]
+      ,[USER_GROUP_CODE]
+      ,[USER_PASSWORD]
+      ,[USER_DEPARTMENT]
+  FROM [team3].[dbo].[USER_MST]
+  WHERE USER_ID=@USER_ID";
+
+            DataTable dt = new DataTable();
+            using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
+            {
+
+                da.SelectCommand.Parameters.AddWithValue("@USER_ID", userID);
+                da.Fill(dt);
+                return dt;
+            }
+        }
         public DataTable GetUserFunctionList(string userID)
         {
 

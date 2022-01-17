@@ -19,6 +19,8 @@ namespace MES_Team3
         string msUserID = frmLogin.userID;
         List<int> iSearchedList;
         List<int> iSelectedRow;
+        string titleName;
+        public string TitleName { get { return titleName; } set { } }
         public frmStore()
         {
             InitializeComponent();
@@ -34,6 +36,8 @@ namespace MES_Team3
 
         private void frmStore_Load(object sender, EventArgs e)
         {
+            titleName = frmMain.TitleName;
+            lblUpTitle.Text = "   " + titleName;
             DataGridViewUtil.SetInitGridView(csDataGridView1);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "창고", "STORE_CODE");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "창고명", "STORE_NAME");

@@ -17,7 +17,8 @@ namespace MES_Team3
 		UserGroupServ serv;
 		string Code = string.Empty;
 		string ID = frmLogin.userID;
-
+		string titleName;
+		public string TitleName { get { return titleName; } set { } }
 		DataTable dt;
 		List<int> iSearchedList;
 		List<int> iSelectedRow;
@@ -33,6 +34,8 @@ namespace MES_Team3
 		}
 		private void frmUserGroup_Load(object sender, EventArgs e)
 		{
+			titleName = frmMain.TitleName;
+			lblUpTitle.Text = "   " + titleName;
 			//USER_GROUP_CODE, USER_GROUP_NAME, USER_GROUP_TYPE, CREATE_TIME, CREATE_USER_ID, UPDATE_TIME, UPDATE_USER_ID from USER_GROUP_MST
 			DataGridViewUtil.SetInitGridView(csDataGridView1);
 			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "사용자 그룹", "USER_GROUP_CODE",DataGridViewContentAlignment.MiddleCenter);

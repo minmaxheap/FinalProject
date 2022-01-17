@@ -15,7 +15,8 @@ namespace MES_Team3
     {
         INSPECT_OPServ serv = null;
 		InspecServ inserv = null;
-
+		string titleName;
+		public string TitleName { get { return titleName; } set { } }
 		string inspec_op_Code = string.Empty; // 공정코드
 		string assigment_Code = string.Empty; // 할당코드 (선택햇을때)
 		string inspect_Code = string.Empty; // 검사 항목 코드
@@ -46,6 +47,8 @@ namespace MES_Team3
 
 		private void frmInspectOperRelation_Load(object sender, EventArgs e)
         {
+			titleName = frmMain.TitleName;
+			lblUpTitle.Text = "   " + titleName;
 			//OPERATION_CODE, OPERATION_NAME, CHECK_DEFECT_FLAG, CHECK_INSPECT_FLAG, CHECK_MATERIAL_FLAG, CREATE_TIME, CREATE_USER_ID, UPDATE_TIME, UPDATE_USER_ID
 			DataGridViewUtil.SetInitGridView(csDataGridView1);
 			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "순번", "RowNum", DataGridViewContentAlignment.MiddleCenter,75);
