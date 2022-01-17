@@ -26,7 +26,7 @@ namespace POPprogram
                 pnlProperty.Visible = true;
                 pnlSearch.Visible = false;
                 lblPanel.Text = "▶ LOT 상태";
-                lblPanel.BackColor = Color.FromArgb(125, 125, 125); 
+                lblPanel.BackColor = Color.FromArgb(225, 241, 255); 
                 btnPanel.BackColor = lblPanel.BackColor;
             }
         }
@@ -46,6 +46,8 @@ namespace POPprogram
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "품명", "PRODUCT_NAME", width: 150);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "수량", "LOT_QTY");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "공정", "OPERATION_CODE");
+
+            csDataGridView1.Columns["LOT_QTY"].DefaultCellStyle.Format = "#,###,##0.##";
 
             iSearchedList = new List<int>();
             iSelectedRow = new List<int>();
@@ -73,7 +75,7 @@ namespace POPprogram
             DataGridViewUtil.AddGridTextColumn(csDataGridView2, "공정명", "OPERATION_NAME");
             DataGridViewUtil.AddGridTextColumn(csDataGridView2, "수량", "LOT_QTY");
             DataGridViewUtil.AddGridTextColumn(csDataGridView2, "작업 시작 여부", "START_FLAG",width:120);
-
+            csDataGridView2.Columns["LOT_QTY"].DefaultCellStyle.Format = "#,###,##0.##";
 
         }
 

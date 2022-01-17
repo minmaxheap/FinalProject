@@ -62,7 +62,7 @@ namespace MES_Team3
             mPnlMenu.Location = new Point(3, (dv1.Count * 40));
             mPnlMenu.Margin = new Padding(0,0,0,0);
             mPnlMenu.Name = "panel1";
-            mPnlMenu.Size = new Size(190, 300);
+            mPnlMenu.Size = new Size(200, 300);
             flpMenu.Controls.Add(this.mPnlMenu);
 
             //mTrvMenu = new TreeView();
