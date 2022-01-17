@@ -343,10 +343,10 @@ INSERT [dbo].[LOT_MATERIAL_HIS]
       ,[TRAN_USER_ID]
       ,[TRAN_COMMENT])
           SELECT
-	   s.PRODUCT_CODE
-      ,s.LAST_HIST_SEQ
-      ,p.LOT_ID
+	   p.LOT_ID
       ,p.LAST_HIST_SEQ
+      ,s.LOT_ID
+      ,s.LAST_HIST_SEQ
       ,@BOM_LOT_QTY_1
       ,s.STORE_CODE
       ,s.LAST_TRAN_TIME
@@ -555,10 +555,10 @@ INSERT [dbo].[LOT_MATERIAL_HIS]
       ,[TRAN_USER_ID]
       ,[TRAN_COMMENT])
      SELECT
-	   s.PRODUCT_CODE
-      ,s.LAST_HIST_SEQ
-      ,p.LOT_ID
+	   	   p.LOT_ID
       ,p.LAST_HIST_SEQ
+      ,s.LOT_ID
+      ,s.LAST_HIST_SEQ
       ,@BOM_LOT_QTY_1
       ,s.STORE_CODE
       ,s.LAST_TRAN_TIME
@@ -851,10 +851,10 @@ INSERT [dbo].[LOT_MATERIAL_HIS]
       ,[TRAN_USER_ID]
       ,[TRAN_COMMENT])
       SELECT
-	   s.PRODUCT_CODE
-      ,s.LAST_HIST_SEQ
-      ,p.LOT_ID
+	   	   p.LOT_ID
       ,p.LAST_HIST_SEQ
+      ,s.LOT_ID
+      ,s.LAST_HIST_SEQ
       ,@BOM_LOT_QTY_1
       ,s.STORE_CODE
       ,s.LAST_TRAN_TIME
@@ -882,10 +882,10 @@ INSERT [dbo].[LOT_MATERIAL_HIS]
       ,[TRAN_USER_ID]
       ,[TRAN_COMMENT])
      SELECT
-	   s.PRODUCT_CODE
-      ,s.LAST_HIST_SEQ
-      ,p.LOT_ID
+	  	   p.LOT_ID
       ,p.LAST_HIST_SEQ
+      ,s.LOT_ID
+      ,s.LAST_HIST_SEQ
       ,@BOM_LOT_QTY_2
       ,s.STORE_CODE
       ,s.LAST_TRAN_TIME
