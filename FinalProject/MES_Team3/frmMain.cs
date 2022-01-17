@@ -68,7 +68,7 @@ namespace MES_Team3
             mPnlMenu.Location = new Point(3, (dv1.Count * 40));
             mPnlMenu.Margin = new Padding(0,0,0,0);
             mPnlMenu.Name = "panel1";
-            mPnlMenu.Size = new Size(200, 300);
+            mPnlMenu.Size = new Size(200, 0);
             flpMenu.Controls.Add(this.mPnlMenu);
 
             //mTrvMenu = new TreeView();
@@ -198,10 +198,12 @@ namespace MES_Team3
 
             DataView dv2 = new DataView(mdtFunc);
             dv2.RowFilter = $"FUNCTION_LEVEL=2 and PNT_FUNCTION_CODE = '{btnMenu.Name.Replace("p_btn", "")}'";
+            mPnlMenu.Height = 0;
             for (int k = 0; k < dv2.Count; k++)
             {
                 Button btnChild = new Button();
                 DefaultChildButton(btnChild, dv2, k);
+                mPnlMenu.Height += btnChild.Height;
                 mPnlMenu.Controls.Add(btnChild);
 
 
@@ -283,7 +285,7 @@ namespace MES_Team3
         }
         private void DefaultChildButton(Button btn, DataView dv2, int k)
         {
-            btn.BackColor = Color.FromArgb(250, 250, 250);
+            btn.BackColor = Color.Beige;
             btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btn.Font = new System.Drawing.Font("나눔고딕", 10.5F, System.Drawing.FontStyle.Bold);
             btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));

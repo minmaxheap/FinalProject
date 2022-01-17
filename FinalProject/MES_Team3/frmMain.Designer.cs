@@ -46,7 +46,7 @@ namespace MES_Team3
             // 
             // flpMenu
             // 
-            this.flpMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(174)))), ((int)(((byte)(206)))));
+            this.flpMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(42)))), ((int)(((byte)(83)))));
             this.flpMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.flpMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.flpMenu.Location = new System.Drawing.Point(0, 45);
@@ -58,7 +58,7 @@ namespace MES_Team3
             // mnuMenu
             // 
             this.mnuMenu.AutoSize = false;
-            this.mnuMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(174)))), ((int)(((byte)(206)))));
+            this.mnuMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(42)))), ((int)(((byte)(83)))));
             this.mnuMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mnuMenu.Location = new System.Drawing.Point(0, 0);
             this.mnuMenu.Name = "mnuMenu";
@@ -71,9 +71,9 @@ namespace MES_Team3
             // 
             this.lblID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblID.AutoSize = true;
-            this.lblID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(174)))), ((int)(((byte)(206)))));
+            this.lblID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(42)))), ((int)(((byte)(83)))));
             this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblID.ForeColor = System.Drawing.Color.Black;
+            this.lblID.ForeColor = System.Drawing.Color.White;
             this.lblID.Location = new System.Drawing.Point(1165, 9);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(34, 25);
@@ -105,8 +105,8 @@ namespace MES_Team3
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(42)))), ((int)(((byte)(83)))));
+            this.pictureBox2.BackgroundImage = global::MES_Team3.Properties.Resources.logoblue;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox2.Location = new System.Drawing.Point(0, 1);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(0);

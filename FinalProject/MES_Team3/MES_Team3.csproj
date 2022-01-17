@@ -294,6 +294,7 @@
     <Content Include="Resources\facebook_cover_photo_3.png" />
     <Content Include="Resources\logo.png" />
     <None Include="Resources\logo1.PNG" />
+    <None Include="Resources\logoblue.png" />
     <Content Include="Resources\logo_transparent.png" />
     <None Include="Resources\Search-Find2.png" />
     <None Include="Resources\Search-Find123.png" />
