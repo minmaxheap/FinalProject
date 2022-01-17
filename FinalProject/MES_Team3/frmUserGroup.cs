@@ -35,15 +35,18 @@ namespace MES_Team3
 		{
 			//USER_GROUP_CODE, USER_GROUP_NAME, USER_GROUP_TYPE, CREATE_TIME, CREATE_USER_ID, UPDATE_TIME, UPDATE_USER_ID from USER_GROUP_MST
 			DataGridViewUtil.SetInitGridView(csDataGridView1);
-			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "사용자 그룹", "USER_GROUP_CODE");
-			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "사용자 그룹명", "USER_GROUP_NAME", width: 120);
-			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "사용자 그룹 유형", "USER_GROUP_TYPE", width: 120);
+			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "사용자 그룹", "USER_GROUP_CODE",DataGridViewContentAlignment.MiddleCenter);
+			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "사용자 그룹명", "USER_GROUP_NAME", DataGridViewContentAlignment.MiddleCenter);
+			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "사용자 그룹 유형", "USER_GROUP_TYPE", DataGridViewContentAlignment.MiddleCenter);
 			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성시간", "CREATE_TIME", DataGridViewContentAlignment.MiddleLeft, 140);
-			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성 사용지", "CREATE_USER_ID");
+			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성 사용자", "CREATE_USER_ID", DataGridViewContentAlignment.MiddleCenter);
 			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경시간", "UPDATE_TIME", DataGridViewContentAlignment.MiddleLeft, 140);
-			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 사용자", "UPDATE_USER_ID");
-			csDataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-			csDataGridView1.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 사용자", "UPDATE_USER_ID", DataGridViewContentAlignment.MiddleCenter);
+			//csDataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+			//csDataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+			//csDataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+			//csDataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+			//csDataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
 			iSearchedList = new List<int>();
 			iSelectedRow = new List<int>();
 
@@ -377,5 +380,10 @@ namespace MES_Team3
         {
 			this.Close();
 		}
+
+        private void frmUserGroup_Shown(object sender, EventArgs e)
+        {
+			csDataGridView1.CurrentCell = null;
+        }
     }
 }

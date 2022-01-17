@@ -450,6 +450,11 @@ namespace MES_Team3
         {
             this.Close();
         }
+
+        private void frmWorkOrder_Shown(object sender, EventArgs e)
+        {
+            csDataGridView1.CurrentCell = null;
+        }
     }
 }
 

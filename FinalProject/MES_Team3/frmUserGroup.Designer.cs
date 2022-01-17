@@ -50,15 +50,22 @@
             // 
             // lblTitle
             // 
+            this.lblTitle.Size = new System.Drawing.Size(885, 55);
             this.lblTitle.Text = "사용자 그룹 목록";
             // 
             // pnlProperty
             // 
             this.pnlProperty.Controls.Add(this.pgProperty);
+            this.pnlProperty.Size = new System.Drawing.Size(273, 578);
+            // 
+            // lblPanel
+            // 
+            this.lblPanel.Size = new System.Drawing.Size(273, 55);
             // 
             // pnlSearch
             // 
             this.pnlSearch.Controls.Add(this.pgSearch);
+            this.pnlSearch.Size = new System.Drawing.Size(273, 578);
             // 
             // btnPanel
             // 
@@ -67,18 +74,25 @@
             this.btnPanel.FlatAppearance.BorderSize = 0;
             this.btnPanel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
             this.btnPanel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
+            this.btnPanel.Location = new System.Drawing.Point(219, 10);
             this.btnPanel.Click += new System.EventHandler(this.btnPanel_Click);
             // 
             // spcBase
             // 
+            this.spcBase.SplitterDistance = 887;
             // 
             // pnlDgv
             // 
             this.pnlDgv.Controls.Add(this.csDataGridView1);
+            this.pnlDgv.Size = new System.Drawing.Size(885, 578);
             // 
             // btnSearchPnl
             // 
             this.btnSearchPnl.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // pnlTopLbl
+            // 
+            this.pnlTopLbl.Size = new System.Drawing.Size(273, 55);
             // 
             // txtSearch
             // 
@@ -122,20 +136,22 @@
             // pgProperty
             // 
             this.pgProperty.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pgProperty.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.pgProperty.HelpVisible = false;
             this.pgProperty.Location = new System.Drawing.Point(0, 0);
             this.pgProperty.Name = "pgProperty";
-            this.pgProperty.Size = new System.Drawing.Size(362, 576);
+            this.pgProperty.Size = new System.Drawing.Size(271, 576);
             this.pgProperty.TabIndex = 24;
             this.pgProperty.ToolbarVisible = false;
             // 
             // pgSearch
             // 
             this.pgSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pgSearch.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.pgSearch.HelpVisible = false;
             this.pgSearch.Location = new System.Drawing.Point(0, 0);
             this.pgSearch.Name = "pgSearch";
-            this.pgSearch.Size = new System.Drawing.Size(362, 576);
+            this.pgSearch.Size = new System.Drawing.Size(271, 576);
             this.pgSearch.TabIndex = 25;
             this.pgSearch.ToolbarVisible = false;
             // 
@@ -148,16 +164,16 @@
             this.csDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔고딕", 10F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.csDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.csDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.csDataGridView1.ColumnHeadersHeight = 45;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("나눔고딕", 10F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(195)))), ((int)(((byte)(230)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -176,8 +192,7 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.csDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.csDataGridView1.RowHeadersWidth = 30;
-            this.csDataGridView1.RowTemplate.Height = 23;
-            this.csDataGridView1.Size = new System.Drawing.Size(794, 578);
+            this.csDataGridView1.Size = new System.Drawing.Size(885, 578);
             this.csDataGridView1.TabIndex = 0;
             this.csDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellClick);
             this.csDataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellContentClick);
@@ -190,6 +205,7 @@
             this.ClientSize = new System.Drawing.Size(1168, 778);
             this.Name = "frmUserGroup";
             this.Load += new System.EventHandler(this.frmUserGroup_Load);
+            this.Shown += new System.EventHandler(this.frmUserGroup_Shown);
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
             this.pnlProperty.ResumeLayout(false);

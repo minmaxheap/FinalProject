@@ -27,14 +27,14 @@ namespace MES_Team3
             this.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
            this.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(214, 220, 229);
             this.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.Black;
-            this.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("나눔고딕", 8F);
+            this.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("나눔고딕", 10F);
             // this.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             this.DefaultCellStyle.BackColor = Color.White;
             this.DefaultCellStyle.ForeColor = Color.FromArgb(52, 52, 52);
             this.DefaultCellStyle.SelectionBackColor = Color.FromArgb(157, 195, 230);
             this.DefaultCellStyle.SelectionForeColor = SystemColors.HighlightText;
-            this.DefaultCellStyle.Font = new System.Drawing.Font("나눔고딕", 8F);
+            this.DefaultCellStyle.Font = new System.Drawing.Font("나눔고딕", 10F);
             this.RowTemplate.Height = 40;
 
 
