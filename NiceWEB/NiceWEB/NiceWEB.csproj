@@ -1795,6 +1795,7 @@
     <Compile Include="Controllers\ComparePlanController.cs" />
     <Compile Include="Controllers\DefectController.cs" />
     <Compile Include="Controllers\EfficiencyController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InspectController.cs" />
     <Compile Include="Controllers\LOTHController.cs" />
     <Compile Include="Controllers\MaterialController.cs" />
@@ -1927,6 +1928,8 @@
     <Content Include="Views\Store\Index.cshtml" />
     <Content Include="Views\LOTH\Index.cshtml" />
     <Content Include="Views\Stock\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

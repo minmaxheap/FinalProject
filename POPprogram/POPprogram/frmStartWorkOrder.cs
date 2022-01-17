@@ -100,6 +100,13 @@ namespace POPprogram
 		{
            //LOTProperty pr = new LOTProperty();
             serv = new StarWorkServ();
+
+            // 유효값 처리 어떻게 하면 좋을까 
+            if (string.IsNullOrWhiteSpace(cboLOTID.SelectedValue.ToString()))
+            {
+                MessageBox.Show("LOT아이디가 존재하지않습니다.");
+                return;
+            }
             LOTProperty mLOT = new LOTProperty()
             {
                 LOT_ID = cboLOTID.SelectedValue.ToString(),
@@ -116,18 +123,9 @@ namespace POPprogram
                 START_EQUIPMENT_CODE = cboEQList.Text
             };
 
-            if (mLOT == null)
-            {
-                MessageBox.Show("해당되는 값이 없습니다.");
-                return;
-            }
+           
 
-            //if (lblStatus.Text == "PROC")
-            //{
-            //    MessageBox.Show("proc상태여서 실행을 할수없습니다.");
-            //    return;
-            //}
-
+           
             bool result = serv.Insert(mLOT);
             if (result)
             {

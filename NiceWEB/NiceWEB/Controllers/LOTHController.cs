@@ -14,6 +14,12 @@ namespace NiceWEB.Controllers
         // GET: LOTH
         public ActionResult Index(string LotID, int page = 1)
         {
+
+            if (Session["UserID"] == null || Session["UserID"].ToString().Length < 1)
+            {
+                return RedirectToAction("Login", "Home");
+            }
+
             if (string.IsNullOrWhiteSpace(LotID))
             {
 
