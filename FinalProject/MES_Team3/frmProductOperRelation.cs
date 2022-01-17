@@ -26,7 +26,7 @@ namespace MES_Team3
         private void frmProductOperRelation_Load(object sender, EventArgs e)
         {
             DataGridViewUtil.SetInitGridView(dgvProducts);
-            DataGridViewUtil.AddGridTextColumn(dgvProducts, "품번", "PRODUCT_CODE");
+            DataGridViewUtil.AddGridTextColumn(dgvProducts, "품번", "PRODUCT_CODE", DataGridViewContentAlignment.MiddleLeft, 140);
             DataGridViewUtil.AddGridTextColumn(dgvProducts, "품명", "PRODUCT_NAME");
             DataGridViewUtil.AddGridTextColumn(dgvProducts, "품번 유형", "PRODUCT_TYPE");
             DataGridViewUtil.AddGridTextColumn(dgvProducts, "고객 코드", "CUSTOMER_CODE");
@@ -35,6 +35,8 @@ namespace MES_Team3
             DataGridViewUtil.AddGridTextColumn(dgvProducts, "생성 사용자", "CREATE_USER_ID");
             DataGridViewUtil.AddGridTextColumn(dgvProducts, "변경 시간", "UPDATE_TIME", width: 150);
             DataGridViewUtil.AddGridTextColumn(dgvProducts, "변경 사용자", "UPDATE_USER_ID");
+            dgvProducts.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvProducts.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
 
             DataGridViewUtil.SetInitGridView(dgvAdd);
             DataGridViewUtil.AddGridTextColumn(dgvAdd, "순번", "FLOW_SEQ", width: 80);
