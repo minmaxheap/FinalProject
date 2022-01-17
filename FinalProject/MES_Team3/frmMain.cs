@@ -44,47 +44,34 @@ namespace MES_Team3
             dv1.RowFilter = "FUNCTION_LEVEL = 1";
             for (int i = 0; i < dv1.Count; i++)
             {
-                Label lblMenu = new Label();
-                lblMenu.Name = $"p_btn{dv1[i]["FUNCTION_CODE"].ToString()}";
-                lblMenu.Text = dv1[i]["FUNCTION_NAME"].ToString();
-                lblMenu.TextAlign = ContentAlignment.MiddleCenter;
-                lblMenu.ForeColor = Color.FromArgb(176, 182, 190);
-                lblMenu.AutoSize = false;
-                lblMenu.Dock = DockStyle.Top;
-                lblMenu.Location = new Point(0);
-                //lblMenu.Margin = new Padding(3,4,3,4);
-                lblMenu.Size = new Size(155, 41);
-                lblMenu.Tag = i.ToString();
-                lblMenu.FlatStyle = FlatStyle.Flat;
-                lblMenu.Image = global::MES_Team3.Properties.Resources.Blank_13;
-                lblMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-                lblMenu.Click += btnMenu_Click;
+                Button btnMenu = new Button();
 
+                DefaultButton(btnMenu, dv1, i);
 
-
-                flpMenu.Controls.Add(lblMenu);
+                flpMenu.Controls.Add(btnMenu);
 
                 if (i == 0)
                 {
-                    Label lbl = lblMenu;
+                    Button btn = btnMenu;
                 }
             }
 
             mPnlMenu = new Panel();
+            mPnlMenu.BackColor = Color.White;
             mPnlMenu.Dock = DockStyle.Bottom;
             mPnlMenu.Location = new Point(3, (dv1.Count * 40));
             mPnlMenu.Margin = new Padding(3, 4, 3, 4);
             mPnlMenu.Name = "panel1";
-            mPnlMenu.Size = new Size(155, 300);
+            mPnlMenu.Size = new Size(190, 300);
             flpMenu.Controls.Add(this.mPnlMenu);
 
-            mTrvMenu = new TreeView();
-            mTrvMenu.Dock = DockStyle.Fill;
-            mTrvMenu.Location = new Point(0, 0);
-            mTrvMenu.Name = "treeView1";
-            mTrvMenu.Size = new Size(120, 300);
-            mTrvMenu.AfterSelect += TreeView1_AfterSelect;
-            mPnlMenu.Controls.Add(this.mTrvMenu);
+            //mTrvMenu = new TreeView();
+            //mTrvMenu.Dock = DockStyle.Fill;
+            //mTrvMenu.Location = new Point(0, 0);
+            //mTrvMenu.Name = "treeView1";
+            //mTrvMenu.Size = new Size(180, 300);
+            //mTrvMenu.AfterSelect += TreeView1_AfterSelect;
+            //mPnlMenu.Controls.Add(this.mTrvMenu);
 
         }
 
@@ -196,20 +183,30 @@ namespace MES_Team3
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
-            // Button btnMenu = (Button)sender;
-            Label btnMenu = (Label)sender;
+             Button btnMenu = (Button)sender;
+           // Label btnMenu = (Label)sender;
             flpMenu.Controls.SetChildIndex(mPnlMenu, Convert.ToInt32(btnMenu.Tag) + 1);
             flpMenu.Invalidate();
-
-            mTrvMenu.Nodes.Clear();
+            mPnlMenu.Controls.Clear();
+            
+            //mTrvMenu.Nodes.Clear();
 
             DataView dv2 = new DataView(mdtFunc);
             dv2.RowFilter = $"FUNCTION_LEVEL=2 and PNT_FUNCTION_CODE = '{btnMenu.Name.Replace("p_btn", "")}'";
             for (int k = 0; k < dv2.Count; k++)
             {
-                TreeNode c_node = new TreeNode(dv2[k]["FUNCTION_NAME"].ToString());
-                c_node.Tag = dv2[k]["PROGRAM_NAME"].ToString();
-                mTrvMenu.Nodes.Add(c_node);
+                Button btnChild = new Button();
+                DefaultChildButton(btnChild, dv2, k);
+                mPnlMenu.Controls.Add(btnChild);
+
+
+                if (k == 0)
+                {
+                    Button btn = btnChild;
+                }
+
+               
+
             }
         }
 
@@ -229,6 +226,86 @@ namespace MES_Team3
             }
         }
 
-     
+        private void DefaultButton(Button btn, DataView dv1, int i)
+        {
+            btn.BackColor = Color.FromArgb(250, 250, 250);
+            btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btn.Font = new System.Drawing.Font("나눔고딕", 10.5F, System.Drawing.FontStyle.Bold);
+            btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            btn.Tag = i.ToString();
+            btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btn.ImageIndex = i;
+            btn.ImageList = this.menuImageList;
+            btn.Margin = new System.Windows.Forms.Padding(0);
+            btn.Name = $"p_btn{dv1[i]["FUNCTION_CODE"].ToString()}";
+            btn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            btn.Size = new System.Drawing.Size(200, 40);
+            btn.TabIndex = 0;
+            btn.Text = dv1[i]["FUNCTION_NAME"].ToString();
+            btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            btn.UseVisualStyleBackColor = true;
+            btn.Click += btnMenu_Click;
+
+            //Label lblMenu = new Label();
+            //lblMenu.Name = $"p_btn{dv1[i]["FUNCTION_CODE"].ToString()}";
+            //lblMenu.Text = dv1[i]["FUNCTION_NAME"].ToString();
+            //lblMenu.TextAlign = ContentAlignment.MiddleCenter;
+            //lblMenu.ForeColor = Color.FromArgb(176, 182, 190);
+            //lblMenu.AutoSize = false;
+            //lblMenu.Dock = DockStyle.Top;
+            //lblMenu.Location = new Point(0);
+            ////lblMenu.Margin = new Padding(3,4,3,4);
+            //lblMenu.Size = new Size(155, 41);
+            //lblMenu.Tag = i.ToString();
+            //lblMenu.FlatStyle = FlatStyle.Flat;
+            //lblMenu.Image = global::MES_Team3.Properties.Resources.Blank_13;
+            //lblMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            //lblMenu.Click += btnMenu_Click;
+        }
+
+        private void DefaultButton(Button btn, int i)
+        {
+            btn.BackColor = Color.FromArgb(250, 250, 250);
+            btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            btn.ImageList = this.menuImageList;
+            btn.UseVisualStyleBackColor = true;
+        }
+        private void SelectedButton(Button btn)
+        {
+            btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            btn.ForeColor = System.Drawing.Color.White;
+            btn.ImageList = this.selmenuImageList;
+        }
+        private void DefaultChildButton(Button btn, DataView dv2, int k)
+        {
+            btn.BackColor = Color.FromArgb(250, 250, 250);
+            btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btn.Font = new System.Drawing.Font("나눔고딕", 10.5F, System.Drawing.FontStyle.Bold);
+            btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            btn.Tag = dv2[k]["PROGRAM_NAME"].ToString();
+            btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btn.ImageIndex = k;
+            btn.ImageList = this.menuImageList;
+            btn.Margin = new System.Windows.Forms.Padding(0);
+            btn.Name = dv2[k]["FUNCTION_CODE"].ToString();
+            btn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            btn.Size = new System.Drawing.Size(200, 40);
+            btn.TabIndex = 0;
+            btn.Text = dv2[k]["FUNCTION_NAME"].ToString();
+            btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            btn.UseVisualStyleBackColor = true;
+            btn.Click += ChildBtn_Click;
+            //TreeNode c_node = new TreeNode(dv2[k]["FUNCTION_NAME"].ToString());
+            //c_node.Tag = dv2[k]["PROGRAM_NAME"].ToString();
+            //mTrvMenu.Nodes.Add(btnChild);
+
+        }
+
+        private void ChildBtn_Click(object sender, EventArgs e)
+        {
+            Button menu = (Button)sender;
+            SelectedButton(menu);
+            OpenCreateForm(menu.Tag.ToString(), menu.Text);
+        }
     }
 }
