@@ -133,7 +133,7 @@ and ORDER_DATE between isnull(@startDate,Convert(varchar,ORDER_DATE,23)) and isn
 	FROM [dbo].[WORK_ORDER_MST] W, PRODUCT_MST P, LOT_STS L
 	WHERE W.PRODUCT_CODE = P.PRODUCT_CODE AND L.WORK_ORDER_ID = W.WORK_ORDER_ID AND L.PRODUCT_CODE = P.PRODUCT_CODE AND L.SHIP_FLAG = 'Y'	
 	and w.PRODUCT_CODE  like @ProductCode
-	and WORK_ORDER_ID like @WORK_ORDER_ID
+	and w.WORK_ORDER_ID like @WORK_ORDER_ID
 and ORDER_DATE between isnull(@startDate,Convert(varchar,ORDER_DATE,23)) and isnull(@endDate,Convert(varchar,ORDER_DATE,23))
 ";
                 cmd.Parameters.AddWithValue("@WORK_ORDER_ID", $"%{workID}%");

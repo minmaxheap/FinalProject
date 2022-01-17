@@ -29,38 +29,41 @@ namespace MES_Team3
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.flpMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.mnuMenu = new System.Windows.Forms.MenuStrip();
             this.lblID = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabMenu = new MES_Team3.csTabControl();
             this.tabControl1 = new MES_Team3.csTabControl();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.menuImageList = new System.Windows.Forms.ImageList(this.components);
+            this.selmenuImageList = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // flpMenu
             // 
-            this.flpMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.flpMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(115)))), ((int)(((byte)(187)))));
             this.flpMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.flpMenu.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold);
-            this.flpMenu.Location = new System.Drawing.Point(0, 46);
+            this.flpMenu.Location = new System.Drawing.Point(0, 45);
             this.flpMenu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flpMenu.Name = "flpMenu";
-            this.flpMenu.Size = new System.Drawing.Size(162, 693);
+            this.flpMenu.Size = new System.Drawing.Size(200, 694);
             this.flpMenu.TabIndex = 2;
             // 
             // mnuMenu
             // 
             this.mnuMenu.AutoSize = false;
-            this.mnuMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.mnuMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(115)))), ((int)(((byte)(187)))));
             this.mnuMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mnuMenu.Location = new System.Drawing.Point(0, 0);
             this.mnuMenu.Name = "mnuMenu";
             this.mnuMenu.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.mnuMenu.Size = new System.Drawing.Size(1299, 46);
+            this.mnuMenu.Size = new System.Drawing.Size(1299, 45);
             this.mnuMenu.TabIndex = 3;
             this.mnuMenu.Text = "menuStrip1";
             // 
@@ -70,7 +73,7 @@ namespace MES_Team3
             this.lblID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
             this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(182)))), ((int)(((byte)(190)))));
-            this.lblID.Location = new System.Drawing.Point(168, 16);
+            this.lblID.Location = new System.Drawing.Point(1264, 9);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(23, 16);
             this.lblID.TabIndex = 18;
@@ -99,26 +102,15 @@ namespace MES_Team3
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::MES_Team3.Properties.Resources.logo;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(162, 46);
-            this.pictureBox2.TabIndex = 26;
-            this.pictureBox2.TabStop = false;
-            // 
             // tabMenu
             // 
             this.tabMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabMenu.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.tabMenu.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tabMenu.Location = new System.Drawing.Point(162, 46);
+            this.tabMenu.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold);
+            this.tabMenu.Location = new System.Drawing.Point(200, 45);
             this.tabMenu.Name = "tabMenu";
             this.tabMenu.SelectedIndex = 0;
-            this.tabMenu.Size = new System.Drawing.Size(1137, 22);
+            this.tabMenu.Size = new System.Drawing.Size(1099, 30);
             this.tabMenu.TabIndex = 6;
             this.tabMenu.Visible = false;
             this.tabMenu.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
@@ -136,6 +128,48 @@ namespace MES_Team3
             this.tabControl1.TabIndex = 6;
             this.tabControl1.Visible = false;
             this.tabControl1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabControl1_MouseDown);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 1);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(133, 45);
+            this.pictureBox2.TabIndex = 28;
+            this.pictureBox2.TabStop = false;
+            // 
+            // menuImageList
+            // 
+            this.menuImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("menuImageList.ImageStream")));
+            this.menuImageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.menuImageList.Images.SetKeyName(0, "Data-Export.png");
+            this.menuImageList.Images.SetKeyName(1, "Calendar -01 .png");
+            this.menuImageList.Images.SetKeyName(2, "Chart-Type.png");
+            this.menuImageList.Images.SetKeyName(3, "Computer-Desktop.png");
+            this.menuImageList.Images.SetKeyName(4, "Cube.png");
+            this.menuImageList.Images.SetKeyName(5, "Cupboard - 04.png");
+            this.menuImageList.Images.SetKeyName(6, "Despeckle.png");
+            this.menuImageList.Images.SetKeyName(7, "Drop box.png");
+            this.menuImageList.Images.SetKeyName(8, "Equalizer.png");
+            this.menuImageList.Images.SetKeyName(9, "Flow-Cart.png");
+            // 
+            // selmenuImageList
+            // 
+            this.selmenuImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("selmenuImageList.ImageStream")));
+            this.selmenuImageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.selmenuImageList.Images.SetKeyName(0, "Data-Export.png");
+            this.selmenuImageList.Images.SetKeyName(1, "Calendar_01.png");
+            this.selmenuImageList.Images.SetKeyName(2, "Chart-Type.png");
+            this.selmenuImageList.Images.SetKeyName(3, "Computer-Desktop.png");
+            this.selmenuImageList.Images.SetKeyName(4, "Cube.png");
+            this.selmenuImageList.Images.SetKeyName(5, "Cupboard - 04.png");
+            this.selmenuImageList.Images.SetKeyName(6, "Despeckle.png");
+            this.selmenuImageList.Images.SetKeyName(7, "Drop box.png");
+            this.selmenuImageList.Images.SetKeyName(8, "Equalizer.png");
+            this.selmenuImageList.Images.SetKeyName(9, "Flow-Cart.png");
             // 
             // frmMain
             // 
@@ -172,6 +206,8 @@ namespace MES_Team3
         private csTabControl tabControl1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.ImageList menuImageList;
+        private System.Windows.Forms.ImageList selmenuImageList;
     }
 }
 
