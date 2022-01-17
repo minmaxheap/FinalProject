@@ -47,6 +47,7 @@ namespace MES_Team3
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 사용자", "UPDATE_USER_ID");
             csDataGridView1.Columns[9].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             csDataGridView1.Columns[11].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            
             LoadData();
 
             SalesOrderProperty vo = new SalesOrderProperty();
