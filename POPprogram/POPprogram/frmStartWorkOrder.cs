@@ -110,7 +110,7 @@ namespace POPprogram
                 LOT_QTY = Convert.ToDecimal(txtQty.Text),
                 LAST_TRAN_COMMENT = txtComment.Text,
                 LAST_TRAN_USER_ID = frmLogin.userID,
-                CREATE_QTY = Convert.ToDecimal(txtQty.Text),
+                CREATE_QTY = Convert.ToDecimal(txtQty.Text)+ Convert.ToDecimal(lblDefectQty.Text),
                 OPER_IN_QTY = Convert.ToDecimal(txtQty.Text),
                 START_QTY = Convert.ToDecimal(txtQty.Text),
                 START_EQUIPMENT_CODE = cboEQList.Text
