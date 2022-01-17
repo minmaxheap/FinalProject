@@ -69,6 +69,7 @@ namespace MES_Team3
             // 
             // lblID
             // 
+            this.lblID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblID.AutoSize = true;
             this.lblID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
             this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -148,7 +149,7 @@ namespace MES_Team3
             // 
             this.tabMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabMenu.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.tabMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.tabMenu.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold);
             this.tabMenu.Location = new System.Drawing.Point(200, 45);
             this.tabMenu.Name = "tabMenu";
             this.tabMenu.SelectedIndex = 0;

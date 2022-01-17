@@ -45,16 +45,16 @@ namespace MES_Team3
 
 
 			DataGridViewUtil.SetInitGridView(csDataGridView1);
-			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "사용자 아이디", "USER_ID",width:120);
-			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "사용자 이름", "USER_NAME");
+			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "사용자 아이디", "USER_ID", DataGridViewContentAlignment.MiddleCenter, width:120);
+			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "사용자 이름", "USER_NAME", DataGridViewContentAlignment.MiddleCenter);
 			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "사용자 그룹", "USER_GROUP_CODE", DataGridViewContentAlignment.MiddleLeft, 140);
 
-			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "비밀번호", "USER_PASSWORD");
-			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "부서", "USER_DEPARTMENT");
+			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "비밀번호", "USER_PASSWORD", DataGridViewContentAlignment.MiddleCenter);
+			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "부서", "USER_DEPARTMENT", DataGridViewContentAlignment.MiddleCenter);
 			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성시간", "CREATE_TIME", DataGridViewContentAlignment.MiddleLeft, 140);
-			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성 사용자", "CREATE_USER_ID");
+			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성 사용자", "CREATE_USER_ID", DataGridViewContentAlignment.MiddleCenter);
 			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경시간", "UPDATE_TIME", DataGridViewContentAlignment.MiddleLeft, 140);
-			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 사용자", "UPDATE_USER_ID");
+			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 사용자", "UPDATE_USER_ID", DataGridViewContentAlignment.MiddleCenter);
 			csDataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
 			csDataGridView1.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
 			iSearchedList = new List<int>();
@@ -432,5 +432,10 @@ namespace MES_Team3
         {
 			this.Close();
 		}
+
+        private void frmUser_MST_Shown(object sender, EventArgs e)
+        {
+			csDataGridView1.CurrentCell = null;
+        }
     }
 }

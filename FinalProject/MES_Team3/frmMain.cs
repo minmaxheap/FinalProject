@@ -100,12 +100,11 @@ namespace MES_Team3
             {
                 Form frm = (Form)Activator.CreateInstance(frmType);
                 frm.MdiParent = this;
-             
                 frm.ControlBox = false;
+                //frm.WindowState = FormWindowState.Maximized;
                 frm.FormBorderStyle = FormBorderStyle.FixedSingle;
                 frm.Dock = DockStyle.Fill;
-                //frm.WindowState = FormWindowState.Maximized;
-              
+
                 frm.Text = formText;
                 frm.Show();
             }
@@ -125,7 +124,7 @@ namespace MES_Team3
             }
             else
             {
-                //this.ActiveMdiChild.WindowState = FormWindowState.Maximized;
+                this.ActiveMdiChild.WindowState = FormWindowState.Maximized;
 
                 if (this.ActiveMdiChild.Tag == null)
                 {

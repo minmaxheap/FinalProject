@@ -28,24 +28,24 @@ namespace MES_Team3
             DataGridViewUtil.SetInitGridView(dgvProducts);
             DataGridViewUtil.AddGridTextColumn(dgvProducts, "품번", "PRODUCT_CODE", DataGridViewContentAlignment.MiddleLeft, 140);
             DataGridViewUtil.AddGridTextColumn(dgvProducts, "품명", "PRODUCT_NAME");
-            DataGridViewUtil.AddGridTextColumn(dgvProducts, "품번 유형", "PRODUCT_TYPE");
-            DataGridViewUtil.AddGridTextColumn(dgvProducts, "고객 코드", "CUSTOMER_CODE");
-            DataGridViewUtil.AddGridTextColumn(dgvProducts, "업체 코드", "VENDOR_CODE");
+            DataGridViewUtil.AddGridTextColumn(dgvProducts, "품번 유형", "PRODUCT_TYPE", DataGridViewContentAlignment.MiddleCenter);
+            DataGridViewUtil.AddGridTextColumn(dgvProducts, "고객 코드", "CUSTOMER_CODE", DataGridViewContentAlignment.MiddleCenter);
+            DataGridViewUtil.AddGridTextColumn(dgvProducts, "업체 코드", "VENDOR_CODE", DataGridViewContentAlignment.MiddleCenter);
             DataGridViewUtil.AddGridTextColumn(dgvProducts, "생성 시간", "CREATE_TIME", width: 150);
-            DataGridViewUtil.AddGridTextColumn(dgvProducts, "생성 사용자", "CREATE_USER_ID");
+            DataGridViewUtil.AddGridTextColumn(dgvProducts, "생성 사용자", "CREATE_USER_ID", DataGridViewContentAlignment.MiddleCenter);
             DataGridViewUtil.AddGridTextColumn(dgvProducts, "변경 시간", "UPDATE_TIME", width: 150);
-            DataGridViewUtil.AddGridTextColumn(dgvProducts, "변경 사용자", "UPDATE_USER_ID");
+            DataGridViewUtil.AddGridTextColumn(dgvProducts, "변경 사용자", "UPDATE_USER_ID", DataGridViewContentAlignment.MiddleCenter);
             dgvProducts.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dgvProducts.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
 
             DataGridViewUtil.SetInitGridView(dgvAdd);
-            DataGridViewUtil.AddGridTextColumn(dgvAdd, "순번", "FLOW_SEQ", width: 80);
-            DataGridViewUtil.AddGridTextColumn(dgvAdd, "공정", "OPERATION_CODE");
-            DataGridViewUtil.AddGridTextColumn(dgvAdd, "공정명", "OPERATION_NAME", width: 300);
+            DataGridViewUtil.AddGridTextColumn(dgvAdd, "순번", "FLOW_SEQ", DataGridViewContentAlignment.MiddleCenter, width: 80);
+            DataGridViewUtil.AddGridTextColumn(dgvAdd, "공정", "OPERATION_CODE", DataGridViewContentAlignment.MiddleCenter);
+            DataGridViewUtil.AddGridTextColumn(dgvAdd, "공정명", "OPERATION_NAME", DataGridViewContentAlignment.MiddleCenter, width: 300);
 
             DataGridViewUtil.SetInitGridView(dgvAll);
-            DataGridViewUtil.AddGridTextColumn(dgvAll, "공정",  "OPERATION_CODE");
-            DataGridViewUtil.AddGridTextColumn(dgvAll, "공정명","OPERATION_NAME",width: 300);
+            DataGridViewUtil.AddGridTextColumn(dgvAll, "공정",  "OPERATION_CODE", DataGridViewContentAlignment.MiddleCenter);
+            DataGridViewUtil.AddGridTextColumn(dgvAll, "공정명","OPERATION_NAME", DataGridViewContentAlignment.MiddleCenter, width: 300);
 
 
             iSearchedList = new List<int>();

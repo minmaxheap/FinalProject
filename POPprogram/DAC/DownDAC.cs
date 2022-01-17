@@ -36,7 +36,7 @@ from [dbo].[EQUIP_DOWN_HIS]";
 			SqlCommand cmd = new SqlCommand(sql, conn);
 			return Helper.DataReaderMapToList<DownProperty>(cmd.ExecuteReader());
 		}
-
+	
 		public List<string> GetDown_Code()
 		{
 			string sql = "select KEY_1 FROM [dbo].CODE_DATA_MST WHERE CODE_TABLE_NAME = 'CM_DOWN'";
