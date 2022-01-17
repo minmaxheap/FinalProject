@@ -15,7 +15,7 @@ namespace MES_Team3
     {
         string msUserID;
         DataTable mdtFunc;
-        Panel mPnlMenu;
+        FlowLayoutPanel mPnlMenu;
         TreeView mTrvMenu;
         FunctionServ mServ;
 
@@ -56,11 +56,11 @@ namespace MES_Team3
                 }
             }
 
-            mPnlMenu = new Panel();
+            mPnlMenu = new FlowLayoutPanel();
             mPnlMenu.BackColor = Color.White;
             mPnlMenu.Dock = DockStyle.Bottom;
             mPnlMenu.Location = new Point(3, (dv1.Count * 40));
-            mPnlMenu.Margin = new Padding(3, 4, 3, 4);
+            mPnlMenu.Margin = new Padding(0,0,0,0);
             mPnlMenu.Name = "panel1";
             mPnlMenu.Size = new Size(190, 300);
             flpMenu.Controls.Add(this.mPnlMenu);
@@ -75,10 +75,10 @@ namespace MES_Team3
 
         }
 
-        private void TreeView1_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-            OpenCreateForm(e.Node.Tag.ToString(), e.Node.Text);
-        }
+        //private void TreeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        //{
+        //    OpenCreateForm(e.Node.Tag.ToString(), e.Node.Text);
+        //}
 
         private void OpenCreateForm(string pgmName, string formText)
         {
@@ -303,6 +303,11 @@ namespace MES_Team3
 
         private void ChildBtn_Click(object sender, EventArgs e)
         {
+            for (int i = 0; i < mPnlMenu.Controls.Count; i++)
+            {
+                DefaultButton((Button)mPnlMenu.Controls[i], i);
+            }
+
             Button menu = (Button)sender;
             SelectedButton(menu);
             OpenCreateForm(menu.Tag.ToString(), menu.Text);
