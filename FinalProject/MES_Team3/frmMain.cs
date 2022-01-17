@@ -124,7 +124,7 @@ namespace MES_Team3
             }
             else
             {
-                //this.ActiveMdiChild.WindowState = FormWindowState.Maximized;
+                this.ActiveMdiChild.WindowState = FormWindowState.Maximized;
 
                 if (this.ActiveMdiChild.Tag == null)
                 {
