@@ -63,23 +63,11 @@
     <Compile Include="BaseForms\Base3_1.Designer.cs">
       <DependentUpon>Base3_1.cs</DependentUpon>
     </Compile>
-    <Compile Include="BaseForms\Base2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BaseForms\Base2.Designer.cs">
-      <DependentUpon>Base2.cs</DependentUpon>
-    </Compile>
     <Compile Include="BaseForms\Base4_1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BaseForms\Base4_1.Designer.cs">
       <DependentUpon>Base4_1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BaseForms\Base5.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BaseForms\Base5.Designer.cs">
-      <DependentUpon>Base5.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\csDataGridView.cs">
       <SubType>Component</SubType>
@@ -201,17 +189,11 @@
     <EmbeddedResource Include="BaseForms\Base1_1.resx">
       <DependentUpon>Base1_1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BaseForms\Base2.resx">
-      <DependentUpon>Base2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="BaseForms\Base3_1.resx">
       <DependentUpon>Base3_1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaseForms\Base4_1.resx">
       <DependentUpon>Base4_1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BaseForms\Base5.resx">
-      <DependentUpon>Base5.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBOM.resx">
       <DependentUpon>frmBOM.cs</DependentUpon>

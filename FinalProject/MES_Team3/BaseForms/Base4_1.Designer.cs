@@ -70,9 +70,8 @@ namespace MES_Team3
             // lblAddList
             // 
             this.lblAddList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(152)))), ((int)(((byte)(216)))));
-            this.lblAddList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblAddList.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblAddList.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddList.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold);
             this.lblAddList.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lblAddList.Location = new System.Drawing.Point(0, 0);
             this.lblAddList.Margin = new System.Windows.Forms.Padding(0);
@@ -114,8 +113,8 @@ namespace MES_Team3
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.lblPnlBottom);
             this.splitContainer1.Panel2.Controls.Add(this.pnlProperty);
+            this.splitContainer1.Panel2.Controls.Add(this.lblPnlBottom);
             this.splitContainer1.Size = new System.Drawing.Size(1152, 293);
             this.splitContainer1.SplitterDistance = 726;
             this.splitContainer1.SplitterWidth = 6;
@@ -135,9 +134,8 @@ namespace MES_Team3
             // lblTitle2
             // 
             this.lblTitle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            this.lblTitle2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTitle2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblTitle2.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle2.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold);
             this.lblTitle2.Location = new System.Drawing.Point(0, 0);
             this.lblTitle2.Name = "lblTitle2";
             this.lblTitle2.Size = new System.Drawing.Size(724, 36);
@@ -149,27 +147,25 @@ namespace MES_Team3
             // 
             this.lblPnlBottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
             this.lblPnlBottom.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblPnlBottom.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPnlBottom.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold);
             this.lblPnlBottom.Location = new System.Drawing.Point(0, 0);
             this.lblPnlBottom.Margin = new System.Windows.Forms.Padding(0);
             this.lblPnlBottom.Name = "lblPnlBottom";
             this.lblPnlBottom.Size = new System.Drawing.Size(418, 36);
             this.lblPnlBottom.TabIndex = 32;
-            this.lblPnlBottom.Text = "속성";
+            this.lblPnlBottom.Text = "▶속성";
             this.lblPnlBottom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pnlProperty
             // 
-            this.pnlProperty.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlProperty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
             this.pnlProperty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlProperty.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlProperty.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.pnlProperty.Location = new System.Drawing.Point(0, 37);
+            this.pnlProperty.Location = new System.Drawing.Point(0, 36);
             this.pnlProperty.Margin = new System.Windows.Forms.Padding(0);
             this.pnlProperty.Name = "pnlProperty";
-            this.pnlProperty.Size = new System.Drawing.Size(405, 254);
+            this.pnlProperty.Size = new System.Drawing.Size(418, 255);
             this.pnlProperty.TabIndex = 31;
             // 
             // pnlCrud
@@ -299,38 +295,35 @@ namespace MES_Team3
             // 
             this.lblPnlTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
             this.lblPnlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblPnlTop.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPnlTop.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblPnlTop.Location = new System.Drawing.Point(0, 0);
             this.lblPnlTop.Margin = new System.Windows.Forms.Padding(0);
             this.lblPnlTop.Name = "lblPnlTop";
-            this.lblPnlTop.Size = new System.Drawing.Size(418, 36);
+            this.lblPnlTop.Size = new System.Drawing.Size(418, 55);
             this.lblPnlTop.TabIndex = 32;
             this.lblPnlTop.Text = "▶ 검색 조건";
             this.lblPnlTop.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pnlSearch
             // 
-            this.pnlSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
             this.pnlSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.pnlSearch.Location = new System.Drawing.Point(0, 37);
+            this.pnlSearch.Location = new System.Drawing.Point(0, 55);
             this.pnlSearch.Margin = new System.Windows.Forms.Padding(0);
             this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(412, 220);
+            this.pnlSearch.Size = new System.Drawing.Size(418, 202);
             this.pnlSearch.TabIndex = 31;
             // 
             // lblTitle
             // 
             this.lblTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            this.lblTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblTitle.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblTitle.Location = new System.Drawing.Point(0, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(724, 36);
+            this.lblTitle.Size = new System.Drawing.Size(724, 55);
             this.lblTitle.TabIndex = 17;
             this.lblTitle.Text = "title";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -363,8 +356,8 @@ namespace MES_Team3
             // 
             // spcBase.Panel2
             // 
-            this.spcBase.Panel2.Controls.Add(this.lblPnlTop);
             this.spcBase.Panel2.Controls.Add(this.pnlSearch);
+            this.spcBase.Panel2.Controls.Add(this.lblPnlTop);
             this.spcBase.Size = new System.Drawing.Size(1152, 259);
             this.spcBase.SplitterDistance = 726;
             this.spcBase.SplitterWidth = 6;

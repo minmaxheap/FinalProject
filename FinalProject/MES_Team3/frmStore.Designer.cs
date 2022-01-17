@@ -129,13 +129,11 @@ namespace MES_Team3
             // 
             // pgProperty
             // 
-            this.pgProperty.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pgProperty.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pgProperty.HelpVisible = false;
-            this.pgProperty.Location = new System.Drawing.Point(1, -1);
+            this.pgProperty.Location = new System.Drawing.Point(0, 0);
             this.pgProperty.Name = "pgProperty";
-            this.pgProperty.Size = new System.Drawing.Size(358, 563);
+            this.pgProperty.Size = new System.Drawing.Size(362, 576);
             this.pgProperty.TabIndex = 5;
             this.pgProperty.ToolbarVisible = false;
             // 

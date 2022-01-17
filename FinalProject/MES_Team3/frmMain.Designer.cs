@@ -148,7 +148,7 @@ namespace MES_Team3
             // 
             this.tabMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabMenu.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.tabMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.tabMenu.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold);
             this.tabMenu.Location = new System.Drawing.Point(200, 45);
             this.tabMenu.Name = "tabMenu";
             this.tabMenu.SelectedIndex = 0;

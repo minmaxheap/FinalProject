@@ -129,8 +129,8 @@ namespace MES_Team3
             // 
             // spcBase.Panel2
             // 
-            this.spcBase.Panel2.Controls.Add(this.lblPanel);
             this.spcBase.Panel2.Controls.Add(this.pnlSearch);
+            this.spcBase.Panel2.Controls.Add(this.lblPanel);
             this.spcBase.Size = new System.Drawing.Size(1152, 269);
             this.spcBase.SplitterDistance = 726;
             this.spcBase.SplitterWidth = 6;
@@ -150,12 +150,11 @@ namespace MES_Team3
             // lblTitle
             // 
             this.lblTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            this.lblTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblTitle.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblTitle.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblTitle.Location = new System.Drawing.Point(0, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(724, 45);
+            this.lblTitle.Size = new System.Drawing.Size(724, 55);
             this.lblTitle.TabIndex = 17;
             this.lblTitle.Text = "title";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -163,29 +162,26 @@ namespace MES_Team3
             // lblPanel
             // 
             this.lblPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            this.lblPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblPanel.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblPanel.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblPanel.Location = new System.Drawing.Point(0, 0);
             this.lblPanel.Margin = new System.Windows.Forms.Padding(0);
             this.lblPanel.Name = "lblPanel";
-            this.lblPanel.Size = new System.Drawing.Size(418, 45);
+            this.lblPanel.Size = new System.Drawing.Size(418, 55);
             this.lblPanel.TabIndex = 32;
             this.lblPanel.Text = "▶ 검색 조건";
             this.lblPanel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pnlSearch
             // 
-            this.pnlSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
             this.pnlSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlSearch.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.pnlSearch.Location = new System.Drawing.Point(0, 36);
+            this.pnlSearch.Location = new System.Drawing.Point(0, 55);
             this.pnlSearch.Margin = new System.Windows.Forms.Padding(0);
             this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(404, 231);
+            this.pnlSearch.Size = new System.Drawing.Size(418, 212);
             this.pnlSearch.TabIndex = 31;
             // 
             // panel1
@@ -238,14 +234,13 @@ namespace MES_Team3
             // lblAddList
             // 
             this.lblAddList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(152)))), ((int)(((byte)(216)))));
-            this.lblAddList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblAddList.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblAddList.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblAddList.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblAddList.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lblAddList.Location = new System.Drawing.Point(0, 0);
             this.lblAddList.Margin = new System.Windows.Forms.Padding(0);
             this.lblAddList.Name = "lblAddList";
-            this.lblAddList.Size = new System.Drawing.Size(1152, 40);
+            this.lblAddList.Size = new System.Drawing.Size(1152, 45);
             this.lblAddList.TabIndex = 45;
             this.lblAddList.Text = "할당 공정 목록";
             this.lblAddList.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -266,13 +261,12 @@ namespace MES_Team3
             // lblAll
             // 
             this.lblAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            this.lblAll.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblAll.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblAll.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblAll.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold);
             this.lblAll.Location = new System.Drawing.Point(0, 0);
             this.lblAll.Margin = new System.Windows.Forms.Padding(0);
             this.lblAll.Name = "lblAll";
-            this.lblAll.Size = new System.Drawing.Size(501, 40);
+            this.lblAll.Size = new System.Drawing.Size(501, 50);
             this.lblAll.TabIndex = 17;
             this.lblAll.Text = "전체 공정 목록";
             this.lblAll.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -341,13 +335,12 @@ namespace MES_Team3
             // lblAdd
             // 
             this.lblAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
-            this.lblAdd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblAdd.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblAdd.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblAdd.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold);
             this.lblAdd.Location = new System.Drawing.Point(0, 0);
             this.lblAdd.Margin = new System.Windows.Forms.Padding(0);
             this.lblAdd.Name = "lblAdd";
-            this.lblAdd.Size = new System.Drawing.Size(514, 40);
+            this.lblAdd.Size = new System.Drawing.Size(514, 50);
             this.lblAdd.TabIndex = 17;
             this.lblAdd.Text = "할당 공정 목록";
             this.lblAdd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
