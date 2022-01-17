@@ -49,7 +49,9 @@
     <Compile Include="Helper.cs" />
     <Compile Include="InspectDAC.cs" />
     <Compile Include="INSPECT_OPERATIONDAC.cs" />
+    <Compile Include="LoginDAC.cs" />
     <Compile Include="Property\BomVO.cs" />
+    <Compile Include="Property\LoginProperty.cs" />
     <Compile Include="Property\SalesOrderProperty.cs" />
     <Compile Include="SalesOrderDAC.cs" />
     <Compile Include="WorkOrderDAC.cs" />
