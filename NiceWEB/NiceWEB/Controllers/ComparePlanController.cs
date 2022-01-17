@@ -63,6 +63,7 @@ namespace NiceWEB.Controllers
                 ViewBag.defectRate = Math.Round((gauge[0].DEFECT_QTY / (gauge[0].PRODUCT_QTY + gauge[0].DEFECT_QTY)) * Convert.ToDecimal(100), 2);
             }
 
+            
             if (startDate == null) ViewBag.startDate = DateTime.Now.ToString();
             else { ViewBag.startDate = startDate; }
 
