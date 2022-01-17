@@ -48,17 +48,19 @@ namespace MES_Team3
         {
 			//OPERATION_CODE, OPERATION_NAME, CHECK_DEFECT_FLAG, CHECK_INSPECT_FLAG, CHECK_MATERIAL_FLAG, CREATE_TIME, CREATE_USER_ID, UPDATE_TIME, UPDATE_USER_ID
 			DataGridViewUtil.SetInitGridView(csDataGridView1);
-			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "순번", "RowNum", DataGridViewContentAlignment.MiddleCenter, width: 70);
-			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "공정", "OPERATION_CODE", DataGridViewContentAlignment.MiddleCenter, width: 120);
-			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "공정명", "OPERATION_NAME");
-			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "불량입력", "CHECK_DEFECT_FLAG", DataGridViewContentAlignment.MiddleCenter, width: 70);
+			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "순번", "RowNum", DataGridViewContentAlignment.MiddleCenter,75);
+			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "공정", "OPERATION_CODE", DataGridViewContentAlignment.MiddleCenter,120);
+			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "공정명", "OPERATION_NAME", width: 120);
+			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "불량입력", "CHECK_DEFECT_FLAG", DataGridViewContentAlignment.MiddleCenter);
 			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "검사 데이터 입력", "CHECK_INSPECT_FLAG", DataGridViewContentAlignment.MiddleCenter, width: 140);
-			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "자재 사용", "CHECK_MATERIAL_FLAG", DataGridViewContentAlignment.MiddleCenter, width: 70);
+			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "자재 사용", "CHECK_MATERIAL_FLAG", DataGridViewContentAlignment.MiddleCenter);
 			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성시간", "CREATE_TIME", DataGridViewContentAlignment.MiddleLeft, 140);
-			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성 사용자", "CREATE_USER_ID", DataGridViewContentAlignment.MiddleCenter, 100);
+			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성 사용자", "CREATE_USER_ID", DataGridViewContentAlignment.MiddleCenter,120);
 			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경시간", "UPDATE_TIME", DataGridViewContentAlignment.MiddleLeft, 140);
-			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 사용자", "UPDATE_USER_ID", DataGridViewContentAlignment.MiddleCenter,100);
+			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 사용자", "UPDATE_USER_ID", DataGridViewContentAlignment.MiddleCenter,120);
 
+			csDataGridView1.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+			csDataGridView1.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
 			OP_Grid();
 			INSPECT_Grid();
 
@@ -112,7 +114,7 @@ namespace MES_Team3
 
 			csDataGridView1.DataSource = null;
 			csDataGridView1.DataSource = dt;
-
+			csDataGridView1.CurrentCell = null;
 
 
 			ResetCount();
@@ -143,7 +145,7 @@ namespace MES_Team3
 
 			csDataGridView1.DataSource = null;
 			csDataGridView1.DataSource = dt;
-
+			csDataGridView1.CurrentCell = null;
 			ResetCount();
 
 		}
@@ -227,6 +229,7 @@ namespace MES_Team3
 			mOp_dt = serv.GetOp_Table(inspec_op_Code);
 			csDataGridView2.DataSource = null;
 			csDataGridView2.DataSource = mOp_dt;
+			csDataGridView2.CurrentCell = null;
 		}
 
 		private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
@@ -243,20 +246,22 @@ namespace MES_Team3
 			//RowNum,[INSPECT_ITEM_CODE],[INSPECT_ITEM_NAME]
 			DataGridViewUtil.SetInitGridView(csDataGridView3);
 
-			DataGridViewUtil.AddGridTextColumn(csDataGridView3, "순번", "RowNum");
-			DataGridViewUtil.AddGridTextColumn(csDataGridView3, "검사항목", "INSPECT_ITEM_CODE");
-			DataGridViewUtil.AddGridTextColumn(csDataGridView3, "검사항목명", "INSPECT_ITEM_NAME");
+			DataGridViewUtil.AddGridTextColumn(csDataGridView3, "순번", "RowNum",DataGridViewContentAlignment.MiddleCenter);
+			DataGridViewUtil.AddGridTextColumn(csDataGridView3, "검사항목", "INSPECT_ITEM_CODE", DataGridViewContentAlignment.MiddleCenter);
+			DataGridViewUtil.AddGridTextColumn(csDataGridView3, "검사항목명", "INSPECT_ITEM_NAME", DataGridViewContentAlignment.MiddleCenter);
+
 		}
 
 		private void OP_Grid()
 		{
 			//OPERATION_CODE, i.INSPECT_ITEM_CODE , i.INSPECT_ITEM_NAME,
 			DataGridViewUtil.SetInitGridView(csDataGridView2);
-			DataGridViewUtil.AddGridTextColumn(csDataGridView2, "순번", "RowNum");
+			DataGridViewUtil.AddGridTextColumn(csDataGridView2, "순번", "RowNum", DataGridViewContentAlignment.MiddleCenter);
 			DataGridViewUtil.AddGridTextColumn(csDataGridView2, "공정", "OPERATION_CODE", visibility: false);
-			DataGridViewUtil.AddGridTextColumn(csDataGridView2, "검사항목", "INSPECT_ITEM_CODE");
-			DataGridViewUtil.AddGridTextColumn(csDataGridView2, "검사항목명", "INSPECT_ITEM_NAME");
+			DataGridViewUtil.AddGridTextColumn(csDataGridView2, "검사항목", "INSPECT_ITEM_CODE", DataGridViewContentAlignment.MiddleCenter);
+			DataGridViewUtil.AddGridTextColumn(csDataGridView2, "검사항목명", "INSPECT_ITEM_NAME", DataGridViewContentAlignment.MiddleCenter);
 			//DataGridViewUtil.AddGridTextColumn(csDataGridView1, "순번", "RowNum");
+
 
 
 		}
@@ -273,7 +278,7 @@ namespace MES_Team3
 			DataTable dt = serv.GetAll(Value);
 			csDataGridView3.DataSource = null;
 			csDataGridView3.DataSource = dt;
-
+			csDataGridView3.CurrentCell = null;
 
 
 		}
@@ -434,5 +439,9 @@ namespace MES_Team3
 			this.Close();
 		}
 
+        private void frmInspectOperRelation_Shown(object sender, EventArgs e)
+        {
+			csDataGridView1.CurrentCell = null;
+		}
     }
 }

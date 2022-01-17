@@ -28,17 +28,17 @@ namespace MES_Team3
         private void frmProduct1_Load(object sender, EventArgs e)
         {
             DataGridViewUtil.SetInitGridView(csDataGridView1);
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "공정", "OPERATION_CODE");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "공정", "OPERATION_CODE", DataGridViewContentAlignment.MiddleCenter);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "공정명", "OPERATION_NAME");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "불량 입력", "CHECK_DEFECT_FLAG");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "검사 데이터 입력", "CHECK_INSPECT_FLAG", width: 120);
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "자재 사용", "CHECK_MATERIAL_FLAG");
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "불량 입력", "CHECK_DEFECT_FLAG", DataGridViewContentAlignment.MiddleCenter);
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "검사 데이터 입력", "CHECK_INSPECT_FLAG", DataGridViewContentAlignment.MiddleCenter, width: 120);
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "자재 사용", "CHECK_MATERIAL_FLAG", DataGridViewContentAlignment.MiddleCenter);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성 시간", "CREATE_TIME",DataGridViewContentAlignment.MiddleLeft, 140);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성 사용자", "CREATE_USER_ID");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 시간", "UPDATE_TIME", DataGridViewContentAlignment.MiddleLeft, 140);
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 사용자", "UPDATE_USER_ID");
-            csDataGridView1.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            csDataGridView1.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 사용자", "UPDATE_USER_ID", DataGridViewContentAlignment.MiddleCenter);
+            csDataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            csDataGridView1.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             LoadData();
 
             OperationProperty vo = new OperationProperty();
@@ -326,6 +326,11 @@ namespace MES_Team3
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmOperation_Shown(object sender, EventArgs e)
+        {
+            csDataGridView1.CurrentCell = null;
         }
     }
 }
