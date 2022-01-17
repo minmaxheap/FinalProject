@@ -64,22 +64,30 @@ namespace MES_Team3
             // 
             this.lblAddList.Text = "BOM 자재 설정";
             // 
+            // lblPnlTop
+            // 
+            this.lblPnlTop.Size = new System.Drawing.Size(268, 36);
+            // 
             // pnlSearch
             // 
             this.pnlSearch.Controls.Add(this.pgSearch);
+            this.pnlSearch.Size = new System.Drawing.Size(260, 220);
             // 
             // lblTitle
             // 
+            this.lblTitle.Size = new System.Drawing.Size(874, 36);
             this.lblTitle.Text = "품번 목록";
             // 
             // pnlDgv
             // 
             this.pnlDgv.Controls.Add(this.dgvProduct);
+            this.pnlDgv.Size = new System.Drawing.Size(874, 257);
             this.pnlDgv.Controls.SetChildIndex(this.lblTitle, 0);
             this.pnlDgv.Controls.SetChildIndex(this.dgvProduct, 0);
             // 
             // spcBase
             // 
+            this.spcBase.SplitterDistance = 876;
             // 
             // txtSearch
             // 
@@ -145,7 +153,7 @@ namespace MES_Team3
             this.pgSearch.HelpVisible = false;
             this.pgSearch.Location = new System.Drawing.Point(0, 0);
             this.pgSearch.Name = "pgSearch";
-            this.pgSearch.Size = new System.Drawing.Size(408, 218);
+            this.pgSearch.Size = new System.Drawing.Size(258, 218);
             this.pgSearch.TabIndex = 3;
             this.pgSearch.ToolbarVisible = false;
             // 
@@ -198,7 +206,7 @@ namespace MES_Team3
             this.dgvProduct.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvProduct.RowHeadersWidth = 30;
             this.dgvProduct.RowTemplate.Height = 23;
-            this.dgvProduct.Size = new System.Drawing.Size(724, 221);
+            this.dgvProduct.Size = new System.Drawing.Size(874, 221);
             this.dgvProduct.TabIndex = 4;
             this.dgvProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellClick);
             // 
