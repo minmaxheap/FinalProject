@@ -123,11 +123,7 @@ namespace POPprogram
                 START_EQUIPMENT_CODE = cboEQList.Text
             };
 
-            if (mLOT == null)
-            {
-                MessageBox.Show("해당되는 값이 없습니다.");
-                return;
-            }
+           
 
            
             bool result = serv.Insert(mLOT);
