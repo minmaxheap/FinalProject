@@ -30,7 +30,7 @@ namespace POPprogram
             DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
             col.HeaderText = headerText;
             col.Name = propertyName;
-            
+            //dgv.Columns[propertyName].DefaultCellStyle.Format = "#,###";
             col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             col.DataPropertyName = propertyName;
             col.DefaultCellStyle.Alignment = align;
