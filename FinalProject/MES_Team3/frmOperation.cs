@@ -15,7 +15,8 @@ namespace MES_Team3
     {
         //public List<Bar> barlist;
         string sUserID;
-
+        string titleName;
+        public string TitleName { get { return titleName; } set { } }
         List<int> iSearchedList = new List<int>();
         List<int> iSelectedRow = new List<int>();
         DataTable dt;
@@ -27,6 +28,8 @@ namespace MES_Team3
 
         private void frmProduct1_Load(object sender, EventArgs e)
         {
+            titleName = frmMain.TitleName;
+            lblUpTitle.Text = "   " + titleName;
             DataGridViewUtil.SetInitGridView(csDataGridView1);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "공정", "OPERATION_CODE", DataGridViewContentAlignment.MiddleCenter);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "공정명", "OPERATION_NAME");

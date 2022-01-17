@@ -14,18 +14,24 @@ namespace MES_Team3
     public partial class frmMain : Form
     {
         string msUserID;
+        static string titleName;
         DataTable mdtFunc;
         FlowLayoutPanel mPnlMenu;
         TreeView mTrvMenu;
         FunctionServ mServ;
 
         public string SUserID { get { return msUserID; } set { } }
+        public static string TitleName { get { return titleName; } }
         public frmMain(string ID)
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
             msUserID = ID;
-            lblID.Text = msUserID + " 님";
+
+            mServ = new FunctionServ();
+            mdtFunc = mServ.GetUserList(this.msUserID);
+            lblID.Text = mdtFunc.Rows[0]["USER_NAME"].ToString() + "님";
+
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -104,8 +110,8 @@ namespace MES_Team3
                 //frm.WindowState = FormWindowState.Maximized;
                 frm.FormBorderStyle = FormBorderStyle.FixedSingle;
                 frm.Dock = DockStyle.Fill;
-
                 frm.Text = formText;
+                titleName = frm.Text;
                 frm.Show();
             }
             catch

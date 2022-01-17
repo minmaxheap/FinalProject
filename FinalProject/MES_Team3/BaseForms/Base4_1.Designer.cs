@@ -34,8 +34,8 @@ namespace MES_Team3
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.pnlDgv2 = new System.Windows.Forms.Panel();
             this.lblTitle2 = new System.Windows.Forms.Label();
-            this.lblPnlBottom = new System.Windows.Forms.Label();
             this.pnlProperty = new System.Windows.Forms.Panel();
+            this.lblPnlBottom = new System.Windows.Forms.Label();
             this.pnlCrud = new System.Windows.Forms.Panel();
             this.btnInsert = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -52,6 +52,7 @@ namespace MES_Team3
             this.pnlTop = new System.Windows.Forms.Panel();
             this.btnReadTop = new System.Windows.Forms.Button();
             this.btnTxtSearch = new System.Windows.Forms.Button();
+            this.lblUpTitle = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -90,10 +91,10 @@ namespace MES_Team3
             this.panel1.Controls.Add(this.pnlCrud);
             this.panel1.Controls.Add(this.lblAddList);
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.panel1.Location = new System.Drawing.Point(0, 331);
+            this.panel1.Location = new System.Drawing.Point(0, 376);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1152, 409);
+            this.panel1.Size = new System.Drawing.Size(1152, 364);
             this.panel1.TabIndex = 46;
             // 
             // splitContainer1
@@ -115,7 +116,7 @@ namespace MES_Team3
             // 
             this.splitContainer1.Panel2.Controls.Add(this.pnlProperty);
             this.splitContainer1.Panel2.Controls.Add(this.lblPnlBottom);
-            this.splitContainer1.Size = new System.Drawing.Size(1152, 293);
+            this.splitContainer1.Size = new System.Drawing.Size(1152, 248);
             this.splitContainer1.SplitterDistance = 726;
             this.splitContainer1.SplitterWidth = 6;
             this.splitContainer1.TabIndex = 84;
@@ -128,7 +129,7 @@ namespace MES_Team3
             this.pnlDgv2.Location = new System.Drawing.Point(0, 0);
             this.pnlDgv2.Margin = new System.Windows.Forms.Padding(0);
             this.pnlDgv2.Name = "pnlDgv2";
-            this.pnlDgv2.Size = new System.Drawing.Size(724, 291);
+            this.pnlDgv2.Size = new System.Drawing.Size(724, 246);
             this.pnlDgv2.TabIndex = 18;
             // 
             // lblTitle2
@@ -143,6 +144,18 @@ namespace MES_Team3
             this.lblTitle2.Text = "title";
             this.lblTitle2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pnlProperty
+            // 
+            this.pnlProperty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
+            this.pnlProperty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlProperty.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlProperty.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.pnlProperty.Location = new System.Drawing.Point(0, 36);
+            this.pnlProperty.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlProperty.Name = "pnlProperty";
+            this.pnlProperty.Size = new System.Drawing.Size(418, 210);
+            this.pnlProperty.TabIndex = 31;
+            // 
             // lblPnlBottom
             // 
             this.lblPnlBottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(194)))), ((int)(((byte)(229)))));
@@ -156,18 +169,6 @@ namespace MES_Team3
             this.lblPnlBottom.Text = "▶속성";
             this.lblPnlBottom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pnlProperty
-            // 
-            this.pnlProperty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
-            this.pnlProperty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlProperty.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlProperty.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.pnlProperty.Location = new System.Drawing.Point(0, 36);
-            this.pnlProperty.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlProperty.Name = "pnlProperty";
-            this.pnlProperty.Size = new System.Drawing.Size(418, 255);
-            this.pnlProperty.TabIndex = 31;
-            // 
             // pnlCrud
             // 
             this.pnlCrud.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -177,7 +178,7 @@ namespace MES_Team3
             this.pnlCrud.Controls.Add(this.btnClose);
             this.pnlCrud.Controls.Add(this.btnReadBottom);
             this.pnlCrud.Controls.Add(this.btnUpdate);
-            this.pnlCrud.Location = new System.Drawing.Point(608, 343);
+            this.pnlCrud.Location = new System.Drawing.Point(608, 298);
             this.pnlCrud.Margin = new System.Windows.Forms.Padding(0);
             this.pnlCrud.Name = "pnlCrud";
             this.pnlCrud.Size = new System.Drawing.Size(543, 66);
@@ -313,7 +314,7 @@ namespace MES_Team3
             this.pnlSearch.Location = new System.Drawing.Point(0, 55);
             this.pnlSearch.Margin = new System.Windows.Forms.Padding(0);
             this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(418, 202);
+            this.pnlSearch.Size = new System.Drawing.Size(418, 220);
             this.pnlSearch.TabIndex = 31;
             // 
             // lblTitle
@@ -336,7 +337,7 @@ namespace MES_Team3
             this.pnlDgv.Location = new System.Drawing.Point(0, 0);
             this.pnlDgv.Margin = new System.Windows.Forms.Padding(0);
             this.pnlDgv.Name = "pnlDgv";
-            this.pnlDgv.Size = new System.Drawing.Size(724, 257);
+            this.pnlDgv.Size = new System.Drawing.Size(724, 275);
             this.pnlDgv.TabIndex = 18;
             // 
             // spcBase
@@ -346,7 +347,7 @@ namespace MES_Team3
             | System.Windows.Forms.AnchorStyles.Right)));
             this.spcBase.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.spcBase.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.spcBase.Location = new System.Drawing.Point(0, 72);
+            this.spcBase.Location = new System.Drawing.Point(0, 100);
             this.spcBase.Margin = new System.Windows.Forms.Padding(0);
             this.spcBase.Name = "spcBase";
             // 
@@ -358,7 +359,7 @@ namespace MES_Team3
             // 
             this.spcBase.Panel2.Controls.Add(this.pnlSearch);
             this.spcBase.Panel2.Controls.Add(this.lblPnlTop);
-            this.spcBase.Size = new System.Drawing.Size(1152, 259);
+            this.spcBase.Size = new System.Drawing.Size(1152, 277);
             this.spcBase.SplitterDistance = 726;
             this.spcBase.SplitterWidth = 6;
             this.spcBase.TabIndex = 45;
@@ -378,7 +379,7 @@ namespace MES_Team3
             this.pnlTop.Controls.Add(this.btnTxtSearch);
             this.pnlTop.Controls.Add(this.txtSearch);
             this.pnlTop.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.pnlTop.Location = new System.Drawing.Point(0, 25);
+            this.pnlTop.Location = new System.Drawing.Point(0, 70);
             this.pnlTop.Margin = new System.Windows.Forms.Padding(0);
             this.pnlTop.Name = "pnlTop";
             this.pnlTop.Size = new System.Drawing.Size(1152, 30);
@@ -414,12 +415,23 @@ namespace MES_Team3
             this.btnTxtSearch.TabIndex = 82;
             this.btnTxtSearch.UseVisualStyleBackColor = false;
             // 
+            // lblUpTitle
+            // 
+            this.lblUpTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblUpTitle.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblUpTitle.Location = new System.Drawing.Point(0, 0);
+            this.lblUpTitle.Name = "lblUpTitle";
+            this.lblUpTitle.Size = new System.Drawing.Size(1152, 67);
+            this.lblUpTitle.TabIndex = 47;
+            this.lblUpTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // Base4_1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
             this.ClientSize = new System.Drawing.Size(1152, 739);
+            this.Controls.Add(this.lblUpTitle);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.spcBase);
             this.Controls.Add(this.pnlTop);
@@ -468,5 +480,6 @@ namespace MES_Team3
         public System.Windows.Forms.Panel pnlProperty;
         public System.Windows.Forms.Button btnReadTop;
         public System.Windows.Forms.Button btnTxtSearch;
+        public System.Windows.Forms.Label lblUpTitle;
     }
 }

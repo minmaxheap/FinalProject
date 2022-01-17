@@ -15,7 +15,8 @@ namespace MES_Team3
 		User_MSTServ serv;
 		string Code = string.Empty;
 		string ID = frmLogin.userID;
-
+		string titleName;
+		public string TitleName { get { return titleName; } set { } }
 		DataTable dt;
 		List<int> iSearchedList;
 		List<int> iSelectedRow;
@@ -33,6 +34,8 @@ namespace MES_Team3
 
 		private void frmUser_MST_Load(object sender, EventArgs e)
 		{
+			titleName = frmMain.TitleName;
+			lblUpTitle.Text = "   " + titleName;
 			//			USER_ID
 			//USER_NAME
 			//USER_GROUP_CODE

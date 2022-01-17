@@ -17,6 +17,8 @@ namespace MES_Team3
         string msprodCode;
         string msUserID;
         DataTable mdtAdd;
+        string titleName;
+        public string TitleName { get { return titleName; } set { } }
         public frmProductOperRelation()
         {
             InitializeComponent();
@@ -25,8 +27,10 @@ namespace MES_Team3
 
         private void frmProductOperRelation_Load(object sender, EventArgs e)
         {
+            titleName = frmMain.TitleName;
+            lblUpTitle.Text = "   " + titleName;
             DataGridViewUtil.SetInitGridView(dgvProducts);
-            DataGridViewUtil.AddGridTextColumn(dgvProducts, "품번", "PRODUCT_CODE", DataGridViewContentAlignment.MiddleLeft, 140);
+            DataGridViewUtil.AddGridTextColumn(dgvProducts, "품번", "PRODUCT_CODE", DataGridViewContentAlignment.MiddleLeft, 150);
             DataGridViewUtil.AddGridTextColumn(dgvProducts, "품명", "PRODUCT_NAME");
             DataGridViewUtil.AddGridTextColumn(dgvProducts, "품번 유형", "PRODUCT_TYPE", DataGridViewContentAlignment.MiddleCenter);
             DataGridViewUtil.AddGridTextColumn(dgvProducts, "고객 코드", "CUSTOMER_CODE", DataGridViewContentAlignment.MiddleCenter);
@@ -35,6 +39,7 @@ namespace MES_Team3
             DataGridViewUtil.AddGridTextColumn(dgvProducts, "생성 사용자", "CREATE_USER_ID", DataGridViewContentAlignment.MiddleCenter);
             DataGridViewUtil.AddGridTextColumn(dgvProducts, "변경 시간", "UPDATE_TIME", width: 150);
             DataGridViewUtil.AddGridTextColumn(dgvProducts, "변경 사용자", "UPDATE_USER_ID", DataGridViewContentAlignment.MiddleCenter);
+            dgvProducts.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dgvProducts.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dgvProducts.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
 

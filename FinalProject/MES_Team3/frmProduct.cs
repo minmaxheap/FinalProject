@@ -17,6 +17,8 @@ namespace MES_Team3
         string msUserID;
         List<int> iSearchedList;
         List<int> iSelectedRow;
+        string titleName;
+        public string TitleName { get { return titleName; } set { } }
         public frmProduct()
         {
            
@@ -26,8 +28,9 @@ namespace MES_Team3
 
         private void frmProduct1_Load(object sender, EventArgs e)
         {
-            
-           
+            titleName = frmMain.TitleName;
+            lblUpTitle.Text = "   " + titleName;
+
             DataGridViewUtil.SetInitGridView(csDataGridView1);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "품번", "PRODUCT_CODE", DataGridViewContentAlignment.MiddleLeft, 140);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "품명", "PRODUCT_NAME");

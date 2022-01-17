@@ -10,8 +10,15 @@ namespace MES_Team3
 {
     public class FunctionServ
     {
-       
 
+        public DataTable GetUserList(string userID)
+        {
+            
+            FunctionDAC dac = new FunctionDAC();
+            DataTable dt = dac.GetUserList(userID);
+            dac.Dispose();
+            return dt;
+        }
         public DataTable GetUserFunctionList(string userID)
         {
 

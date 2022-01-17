@@ -18,7 +18,8 @@ namespace MES_Team3
         DataTable dt;
         List<int> iSearchedList;
         List<int> iSelectedRow;
-
+        string titleName;
+        public string TitleName { get { return titleName; } set { } }
         InspecServ serv = null;
         string Inspect_id = string.Empty;
         int rowIndex;
@@ -32,7 +33,8 @@ namespace MES_Team3
 
         private void frmINSPECT_MST_Load(object sender, EventArgs e)
         {
-
+            titleName = frmMain.TitleName;
+            lblUpTitle.Text = "   " + titleName;
             //INSPECT_ITEM_CODE
             //,[INSPECT_ITEM_NAME]
             //    ,[VALUE_TYPE]
