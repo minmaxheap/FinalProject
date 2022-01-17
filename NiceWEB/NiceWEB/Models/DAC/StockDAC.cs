@@ -39,7 +39,7 @@ select LOT_ID, LOT_DESC, PRODUCT_CODE, OPERATION_CODE, STORE_CODE, LOT_QTY, CREA
 row_number() over(order by CONVERT(varchar,LOT_ID ,120)) as RowNum
 from LOT_STS
 where LOT_DELETE_FLAG is null and (OPERATION_CODE is not null or PRODUCT_CODE is not null) 
-and  OPERATION_CODE =  isnull(@OPERATION_CODE,OPERATION_CODE) and PRODUCT_CODE = ISNULL(@PRODUCT_CODE,PRODUCT_CODE)
+and (@OPERATION_CODE is null or OPERATION_CODE = @OPERATION_CODE) and(@PRODUCT_CODE is null  or PRODUCT_CODE  = @PRODUCT_CODE)
 )A
 where RowNum between ((@PAGE_NO - 1) * @PAGE_SIZE) + 1 and (@PAGE_NO * @PAGE_SIZE)
 order by OPERATION_CODE, START_FLAG DESC, LOT_ID";
@@ -78,17 +78,19 @@ order by OPERATION_CODE, START_FLAG DESC, LOT_ID";
 
 				cmd.Connection = conn;
 				StringBuilder sb = new StringBuilder();
-				sb.Append(@"SELECT COUNT(*) FROM LOT_STS where 1=1 ");
+				sb.Append(@"SELECT COUNT(*) FROM LOT_STS where LOT_DELETE_FLAG is null and (OPERATION_CODE is not null or PRODUCT_CODE is not null) ");
+
+				if (!string.IsNullOrWhiteSpace(op_code))
+				{
+					sb.Append(" and OPERATION_CODE = @OPERATION_CODE");
+					cmd.Parameters.AddWithValue("@OPERATION_CODE", op_code);
+				}
 				if (!string.IsNullOrWhiteSpace(productCode))
 				{
 					sb.Append(" and PRODUCT_CODE = @PRODUCT_CODE ");
 					cmd.Parameters.AddWithValue("@PRODUCT_CODE", productCode);
 				}
-				if (!string.IsNullOrWhiteSpace(productCode))
-				{
-					sb.Append(" and OPERATION_CODE = @OPERATION_CODE");
-					cmd.Parameters.AddWithValue("@OPERATION_CODE", op_code);
-				}
+				
 				//datetime을 어떻게 두면좋을까?
 
 				cmd.CommandText = sb.ToString();
