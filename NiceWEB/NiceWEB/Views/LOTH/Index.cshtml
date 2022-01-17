@@ -68,7 +68,7 @@
 									<th>LOT_QTY</th>
 									<th>CREATE_QTY</th>
 									<th>OPER_IN_QTY</th>
-									<th>START_Flag</th>
+									@*<th>START_Flag</th>
 									<th>START_QTY</th>
 									<th>시작시간</th>
 									<th>설비</th>
@@ -77,7 +77,7 @@
 									<th>설비끝</th>
 									<th>쉽플래그</th>
 									<th>쉽코드</th>
-									<th>쉽타임</th>
+									<th>쉽타임</th>*@
 									@*<th>프로덕션타임</th>
 		<th>생성시간</th>
 		<th>공정시간</th>
@@ -94,48 +94,58 @@
 								</tr>
 							</thead>
 							<tbody>
+
 								@if (Model != null)
 								{
-								foreach (var p in Model)
-								{
-								<tr>
-									<td>@p.TRAN_TIME</td>
-									<td>@p.HIST_SEQ</td>
-									<td>@p.TRAN_CODE</td>
-									<td>@p.LOT_DESC</td>
-									<td>@p.PRODUCT_CODE</td>
-									<td>@p.OPERATION_CODE</td>
-									<td>@p.STORE_CODE</td>
-									<td>@p.LOT_QTY</td>
-									<td>@p.CREATE_QTY</td>
-									<td>@p.OPER_IN_QTY</td>
-									<td>@p.START_FLAG</td>
-									<td>@p.START_QTY</td>
-									<td>@p.START_TIME</td>
-									<td>@p.START_EQUIPMENT_CODE</td>
-									<td>@p.END_FLAG</td>
-									<td>@p.END_TIME</td>
-									<td>@p.END_EQUIPMENT_CODE</td>
-									<td>@p.SHIP_FLAG</td>
-									<td>@p.SHIP_CODE</td>
-									<td>@p.SHIP_TIME</td>
-									@*<td>@p.PRODUCTION_TIME</td>
-		<td>@p.CREATE_TIME</td>
-		<td>@p.OPER_IN_TIME</td>
-		<td>@p.WORK_ORDER_ID</td>
-		<td>@p.LOT_DELETE_FLAG</td>
-		<td>@p.LOT_DELETE_CODE</td>
-		<td>@p.LOT_DELETE_TIME</td>
-		<td>@p.TRAN_USER_ID</td>
-		<td>@p.TRAN_COMMENT</td>
-		<td>@p.OLD_PRODUCT_CODE</td>
-		<td>@p.OLD_OPERATION_CODE</td>
-		<td>@p.OLD_STORE_CODE</td>
-		<td>@p.OLD_LOT_QTY</td>*@
-								</tr>
-								}
-								}
-							</tbody>
+									foreach (var p in Model)
+									{
+										<tr data-widget="expandable-table" aria-expanded="false">
+											<td>@p.TRAN_TIME</td>
+											<td>@p.HIST_SEQ</td>
+											<td>@p.TRAN_CODE</td>
+											<td>@p.LOT_DESC</td>
+											<td>@p.PRODUCT_CODE</td>
+											<td>@p.OPERATION_CODE</td>
+											<td>@p.STORE_CODE</td>
+											<td>@p.LOT_QTY</td>
+											<td>@p.CREATE_QTY</td>
+											<td>@p.OPER_IN_QTY</td>
+										</tr>
+
+										<tr class="expandable-body">
+											<td colspan="10">
+												<p>
+											@p.START_FLAG
+											@p.START_QTY
+											@p.START_TIME
+											@p.START_EQUIPMENT_CODE
+											@p.END_FLAG
+											@p.END_TIME
+											@p.END_EQUIPMENT_CODE
+											@p.SHIP_FLAG
+											@p.SHIP_CODE
+											@p.SHIP_TIME
+											@p.PRODUCTION_TIME
+											@p.CREATE_TIME      
+											@p.OPER_IN_TIME     
+											@p.WORK_ORDER_ID    
+											@p.LOT_DELETE_FLAG  
+											@p.LOT_DELETE_CODE  
+											@p.LOT_DELETE_TIME  
+											@p.TRAN_USER_ID     
+											@p.TRAN_COMMENT     
+											@p.OLD_PRODUCT_CODE 
+											@p.OLD_OPERATION_CODE
+											@p.OLD_STORE_CODE   
+											@p.OLD_LOT_QTY      				
+												
+												</p>
+											</td>
+										</tr>
+
+											}
+										}
+								</tbody>
 						</table>
 					</div>
 
