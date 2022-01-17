@@ -36,19 +36,19 @@ namespace MES_Team3
             this.lblID = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.tabMenu = new MES_Team3.csTabControl();
-            this.tabControl1 = new MES_Team3.csTabControl();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.menuImageList = new System.Windows.Forms.ImageList(this.components);
             this.selmenuImageList = new System.Windows.Forms.ImageList(this.components);
+            this.tabMenu = new MES_Team3.csTabControl();
+            this.tabControl1 = new MES_Team3.csTabControl();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // flpMenu
             // 
-            this.flpMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(115)))), ((int)(((byte)(187)))));
+            this.flpMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(174)))), ((int)(((byte)(206)))));
             this.flpMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.flpMenu.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold);
+            this.flpMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.flpMenu.Location = new System.Drawing.Point(0, 45);
             this.flpMenu.Margin = new System.Windows.Forms.Padding(0);
             this.flpMenu.Name = "flpMenu";
@@ -58,7 +58,7 @@ namespace MES_Team3
             // mnuMenu
             // 
             this.mnuMenu.AutoSize = false;
-            this.mnuMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(115)))), ((int)(((byte)(187)))));
+            this.mnuMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(174)))), ((int)(((byte)(206)))));
             this.mnuMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mnuMenu.Location = new System.Drawing.Point(0, 0);
             this.mnuMenu.Name = "mnuMenu";
@@ -102,33 +102,6 @@ namespace MES_Team3
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // tabMenu
-            // 
-            this.tabMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tabMenu.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.tabMenu.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold);
-            this.tabMenu.Location = new System.Drawing.Point(200, 45);
-            this.tabMenu.Name = "tabMenu";
-            this.tabMenu.SelectedIndex = 0;
-            this.tabMenu.Size = new System.Drawing.Size(1099, 30);
-            this.tabMenu.TabIndex = 6;
-            this.tabMenu.Visible = false;
-            this.tabMenu.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
-            this.tabMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabControl1_MouseDown);
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.tabControl1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tabControl1.Location = new System.Drawing.Point(162, 24);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1137, 22);
-            this.tabControl1.TabIndex = 6;
-            this.tabControl1.Visible = false;
-            this.tabControl1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabControl1_MouseDown);
-            // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -170,6 +143,33 @@ namespace MES_Team3
             this.selmenuImageList.Images.SetKeyName(7, "Drop box.png");
             this.selmenuImageList.Images.SetKeyName(8, "Equalizer.png");
             this.selmenuImageList.Images.SetKeyName(9, "Flow-Cart.png");
+            // 
+            // tabMenu
+            // 
+            this.tabMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tabMenu.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
+            this.tabMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.tabMenu.Location = new System.Drawing.Point(200, 45);
+            this.tabMenu.Name = "tabMenu";
+            this.tabMenu.SelectedIndex = 0;
+            this.tabMenu.Size = new System.Drawing.Size(1099, 30);
+            this.tabMenu.TabIndex = 6;
+            this.tabMenu.Visible = false;
+            this.tabMenu.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
+            this.tabMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabControl1_MouseDown);
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
+            this.tabControl1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tabControl1.Location = new System.Drawing.Point(162, 24);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1137, 22);
+            this.tabControl1.TabIndex = 6;
+            this.tabControl1.Visible = false;
+            this.tabControl1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabControl1_MouseDown);
             // 
             // frmMain
             // 
