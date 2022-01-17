@@ -14,6 +14,12 @@ namespace NiceWEB.Controllers
         // GET: Inspect
         public ActionResult Index(string startDate, string endDate, string prdCode, string operCode, string lotID, int page = 1)
         {
+
+            if (Session["UserID"] == null || Session["UserID"].ToString().Length < 1)
+            {
+                return RedirectToAction("Login", "Home");
+            }
+
             //select box에 전달할 데이터
             CommonDAC comDAC = new CommonDAC();
 

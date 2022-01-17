@@ -16,8 +16,14 @@ namespace NiceWEB.Controllers
         // GET: ComparePlan
         public ActionResult Index(string startDate, string endDate, string workID, string prdCode, int page = 1)
         {
+
+            if (Session["UserID"] == null || Session["UserID"].ToString().Length < 1)
+            {
+                return RedirectToAction("Login", "Home");
+            }
+
             //select box에 전달할 데이터
-             CommonDAC comDAC = new CommonDAC();
+            CommonDAC comDAC = new CommonDAC();
            
               List<ComboItem> orderList = comDAC.GetWorkOrder();
               List<ComboItem> prodList = comDAC.GetProductCode();
