@@ -118,13 +118,13 @@ namespace MES_Team3
             // 
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // btnTxtSearch
-            // 
-            this.btnTxtSearch.Click += new System.EventHandler(this.btnTxtSearch_Click);
-            // 
             // btnReadTop
             // 
             this.btnReadTop.Click += new System.EventHandler(this.btnReadTop_Click);
+            // 
+            // btnTxtSearch
+            // 
+            this.btnTxtSearch.Click += new System.EventHandler(this.btnTxtSearch_Click);
             // 
             // pgGrid
             // 
@@ -132,7 +132,7 @@ namespace MES_Team3
             this.pgGrid.HelpVisible = false;
             this.pgGrid.Location = new System.Drawing.Point(0, 0);
             this.pgGrid.Name = "pgGrid";
-            this.pgGrid.Size = new System.Drawing.Size(362, 591);
+            this.pgGrid.Size = new System.Drawing.Size(362, 576);
             this.pgGrid.TabIndex = 22;
             this.pgGrid.ToolbarVisible = false;
             this.pgGrid.PropertyValueChanged += new System.Windows.Forms.PropertyValueChangedEventHandler(this.pgGrid_PropertyValueChanged);
@@ -143,7 +143,7 @@ namespace MES_Team3
             this.pgSearch.HelpVisible = false;
             this.pgSearch.Location = new System.Drawing.Point(0, 0);
             this.pgSearch.Name = "pgSearch";
-            this.pgSearch.Size = new System.Drawing.Size(362, 591);
+            this.pgSearch.Size = new System.Drawing.Size(362, 576);
             this.pgSearch.TabIndex = 23;
             this.pgSearch.ToolbarVisible = false;
             this.pgSearch.Click += new System.EventHandler(this.Search_Grid_Click);
@@ -152,6 +152,7 @@ namespace MES_Team3
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.csDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.csDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.csDataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
             this.csDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -185,7 +186,7 @@ namespace MES_Team3
             this.csDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.csDataGridView1.RowHeadersWidth = 30;
             this.csDataGridView1.RowTemplate.Height = 23;
-            this.csDataGridView1.Size = new System.Drawing.Size(794, 593);
+            this.csDataGridView1.Size = new System.Drawing.Size(794, 578);
             this.csDataGridView1.TabIndex = 0;
             this.csDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellClick);
             this.csDataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellContentClick);

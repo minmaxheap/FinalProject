@@ -108,27 +108,28 @@ namespace MES_Team3
             // 
             this.lblAddList.Text = "품번 - 공정 관계";
             // 
-            // btnTxtSearch
-            // 
-            this.btnTxtSearch.Click += new System.EventHandler(this.btnTxtSearch_Click);
-            // 
             // btnReadTop
             // 
             this.btnReadTop.Click += new System.EventHandler(this.btnReadTop_Click);
             // 
-            // btnSubtract
+            // btnTxtSearch
             // 
-            this.btnSubtract.Click += new System.EventHandler(this.btnSubtract_Click);
+            this.btnTxtSearch.Click += new System.EventHandler(this.btnTxtSearch_Click);
             // 
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(560, 133);
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // btnSubtract
+            // 
+            this.btnSubtract.Click += new System.EventHandler(this.btnSubtract_Click);
+            // 
             // dgvProducts
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.dgvProducts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProducts.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
             this.dgvProducts.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -150,7 +151,7 @@ namespace MES_Team3
             this.dgvProducts.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvProducts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProducts.EnableHeadersVisualStyles = false;
-            this.dgvProducts.Location = new System.Drawing.Point(0, 36);
+            this.dgvProducts.Location = new System.Drawing.Point(0, 45);
             this.dgvProducts.Name = "dgvProducts";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
@@ -161,7 +162,7 @@ namespace MES_Team3
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvProducts.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvProducts.RowHeadersWidth = 30;
-            this.dgvProducts.Size = new System.Drawing.Size(724, 231);
+            this.dgvProducts.Size = new System.Drawing.Size(724, 222);
             this.dgvProducts.TabIndex = 18;
             this.dgvProducts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducts_CellClick);
             // 
@@ -169,6 +170,7 @@ namespace MES_Team3
             // 
             dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.dgvAdd.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvAdd.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAdd.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
             this.dgvAdd.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -190,7 +192,7 @@ namespace MES_Team3
             this.dgvAdd.DefaultCellStyle = dataGridViewCellStyle11;
             this.dgvAdd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvAdd.EnableHeadersVisualStyles = false;
-            this.dgvAdd.Location = new System.Drawing.Point(0, 31);
+            this.dgvAdd.Location = new System.Drawing.Point(0, 40);
             this.dgvAdd.MultiSelect = false;
             this.dgvAdd.Name = "dgvAdd";
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -203,13 +205,14 @@ namespace MES_Team3
             this.dgvAdd.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvAdd.RowHeadersWidth = 30;
             this.dgvAdd.RowTemplate.Height = 23;
-            this.dgvAdd.Size = new System.Drawing.Size(514, 284);
+            this.dgvAdd.Size = new System.Drawing.Size(514, 275);
             this.dgvAdd.TabIndex = 18;
             // 
             // dgvAll
             // 
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.dgvAll.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvAll.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAll.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
             this.dgvAll.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -231,7 +234,7 @@ namespace MES_Team3
             this.dgvAll.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgvAll.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvAll.EnableHeadersVisualStyles = false;
-            this.dgvAll.Location = new System.Drawing.Point(0, 31);
+            this.dgvAll.Location = new System.Drawing.Point(0, 40);
             this.dgvAll.Name = "dgvAll";
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
@@ -243,7 +246,7 @@ namespace MES_Team3
             this.dgvAll.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvAll.RowHeadersWidth = 30;
             this.dgvAll.RowTemplate.Height = 23;
-            this.dgvAll.Size = new System.Drawing.Size(501, 284);
+            this.dgvAll.Size = new System.Drawing.Size(501, 275);
             this.dgvAll.TabIndex = 18;
             // 
             // pgdSearch
