@@ -377,6 +377,11 @@ namespace POPprogram
 
         private void frmLOTMaterial_Activated(object sender, EventArgs e)
         {
+            lblOrderQty.Text = null;
+            lblDefectQty.Text = null;
+            lblProdQty.Text = null;
+            lblStatus.Text = null;
+            ////////////////////////////////////////////////////////////////////////////
             foreach (Control ctl1 in this.Controls)
             {
                 foreach (Control ctl2 in this.Controls[this.Controls.IndexOf(ctl1)].Controls)
@@ -402,6 +407,20 @@ namespace POPprogram
                         }
                     }
             }
+            ////////////////////////////////////////////////////////////////////////////
+            searchflag = true;
+            MatServ serv = new MatServ();
+            list = serv.GetLotList();
+            titleName = frmMain.TitleName;
+            lblUpTitle.Text = "   " + titleName;
+            cboLOTID.DisplayMember = "LOT_ID";
+            cboLOTID.DataSource = list;
+            cboLOTID.Text = null;
+        }
+
+        private void csDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
     }

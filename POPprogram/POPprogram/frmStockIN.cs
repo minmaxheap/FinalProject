@@ -220,6 +220,7 @@ namespace POPprogram
                     csDataGridView1.DataSource = null;
                     csDataGridView1.DataSource = dt;
                     bFlag = false;
+                    textBox7.BackColor = Color.White;
                 }
                 else
                 {
@@ -252,6 +253,7 @@ namespace POPprogram
         private void csDataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             textBox7.Text = csDataGridView1[7, csDataGridView1.CurrentRow.Index].Value.ToString();
+            textBox7.BackColor = Color.Beige;
         }
 
         private void textBox7_KeyDown(object sender, KeyEventArgs e)
@@ -285,6 +287,7 @@ namespace POPprogram
                         if (iCntSearch > -1)
                         {
                             csDataGridView1[0, iCntSearch].Value = true;
+                            textBox7.BackColor = Color.ForestGreen;
                             break;
                         }
 
@@ -340,12 +343,14 @@ namespace POPprogram
 
         private void frmStockIN_Activated(object sender, EventArgs e)
         {
+            ////////////////////////////////////////////////////////////////////////////
             foreach (Control ctl1 in this.Controls)
             {
                 foreach (Control ctl2 in this.Controls[this.Controls.IndexOf(ctl1)].Controls)
                     if (typeof(TextBox) == ctl2.GetType())
                     {
                         ctl2.Text = null;
+                        ctl2.BackColor = Color.White;
                     }
                     else if (typeof(ComboBox) == ctl2.GetType())
                     {
@@ -365,6 +370,13 @@ namespace POPprogram
                         }
                     }
             }
+            ////////////////////////////////////////////////////////////////////////////
+            titleName = frmMain.TitleName;
+            lblUpTitle.Text = "   " + titleName;
+
+            LoadData();
+
+            bFlag = true;
         }
 
 

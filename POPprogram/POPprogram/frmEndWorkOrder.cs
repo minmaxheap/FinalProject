@@ -83,6 +83,14 @@ namespace POPprogram
             lblInspect.Text = list[0].CHECK_INSPECT_FLAG;
             lblMaterial.Text = list[0].CHECK_MATERIAL_FLAG;
 
+            if (txtOperCode.Text == "1000") cboEQList.SelectedIndex = 0;
+            if (txtOperCode.Text == "1100") cboEQList.SelectedIndex = 1;
+            if (txtOperCode.Text == "1200") cboEQList.SelectedIndex = 2;
+            if (txtOperCode.Text == "1300") cboEQList.SelectedIndex = 3;
+            if (txtOperCode.Text == "1400") cboEQList.SelectedIndex = 4;
+            if (txtOperCode.Text == "1500") cboEQList.SelectedIndex = 5;
+            if (txtOperCode.Text == "1600") cboEQList.SelectedIndex = 6;
+
             EndPropertyLOTHis vo2 = new EndPropertyLOTHis();
             vo2.LOT_ID = cboLOTID.Text;
             vo2.OPERATION_CODE = txtOperCode.Text;
@@ -245,6 +253,21 @@ namespace POPprogram
 
         private void frmEndWorkOrder_Activated(object sender, EventArgs e)
         {
+            lblOrderQty.Text = null;
+            lblDefectQty.Text = null;
+            lblProdQty.Text = null;
+            lblStatus.Text = null;
+
+            lblDefectColor.BackColor = Color.White;
+            lblInspectColor.BackColor = Color.White;
+            lblMaterialColor.BackColor = Color.White;
+            lblDefectColor.Text = null;
+            lblInspectColor.Text = null;
+            lblMaterialColor.Text = null;
+            lblDefect.Text = null;
+            lblInspect.Text = null;
+            lblMaterial.Text = null;
+            ////////////////////////////////////////////////////////////////////////////
             foreach (Control ctl1 in this.Controls)
             {
                 foreach (Control ctl2 in this.Controls[this.Controls.IndexOf(ctl1)].Controls)
@@ -270,6 +293,24 @@ namespace POPprogram
                         }
                     }
             }
+            ////////////////////////////////////////////////////////////////////////////
+            searchflag = true;
+            EndDAC serv = new EndDAC();
+            list = serv.GetLotList();
+
+            cboLOTID.DisplayMember = "LOT_ID";
+            cboLOTID.DataSource = list;
+            cboLOTID.Text = null;
+
+            //EndDAC serv = new EndDAC();
+            DataTable dt = serv.GetEQList();
+
+            listEQ = Helper.DataTableMapToList<EndPropertyEQ>(dt);
+            cboEQList.DisplayMember = "EQ_CODE";
+            cboEQList.DataSource = listEQ;
+            cboEQList.Text = null;
+            txtEQ_NAME.Text = null;
+
         }
     }
 }

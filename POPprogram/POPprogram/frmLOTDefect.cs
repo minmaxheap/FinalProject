@@ -237,6 +237,11 @@ namespace POPprogram
 
         private void frmLOTDefect_Activated(object sender, EventArgs e)
         {
+            lblOrderQty.Text = null;
+            lblDefectQty.Text = null;
+            lblProdQty.Text = null;
+            lblStatus.Text = null;
+            ////////////////////////////////////////////////////////////////////////////
             foreach (Control ctl1 in this.Controls)
             {
                 foreach (Control ctl2 in this.Controls[this.Controls.IndexOf(ctl1)].Controls)
@@ -266,6 +271,29 @@ namespace POPprogram
                         }
                     }
             }
+            ////////////////////////////////////////////////////////////////////////////
+            serv = new StarWorkServ();
+            list = serv.GetDeffectCode();
+            list.Insert(0, "");
+            //cboLOTID.Items.Insert(0, " ");
+            //cboLOTID.ValueMember = "LOT_ID";
+            cboLOTID.DisplayMember = "LOT_ID";
+            cboLOTID.DataSource = list;
+
+            ser = new StarWorkServ();
+            list1 = serv.GetDefect_Code();
+            list1.Insert(0, "");
+            list2 = serv.GetDefect_Code();
+            list2.Insert(0, "");
+            list3 = serv.GetDefect_Code();
+            list3.Insert(0, "");
+
+            comboBox1.DisplayMember = "KEY_1";
+            comboBox1.DataSource = list1;
+            comboBox2.DisplayMember = "KEY_1";
+            comboBox2.DataSource = list2;
+            comboBox3.DisplayMember = "KEY_1";
+            comboBox3.DataSource = list3;
         }
     }
 }
