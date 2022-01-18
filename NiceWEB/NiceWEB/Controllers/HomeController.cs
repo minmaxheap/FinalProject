@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using NiceWEB.Models.DAC;
 namespace NiceWEB.Controllers
 {
     public class HomeController : Controller
@@ -30,17 +30,19 @@ namespace NiceWEB.Controllers
         [HttpPost]
         public ActionResult Login(string email, string password)
         {
-            if (email.Equals("admin@gd.com") && password.Equals("1234"))
-            {
-                Session["UserID"] = "admin";
-                if (ViewBag.ReturlUrl != null)
-                    return Redirect(ViewBag.ReturlUrl.ToString());
-                else
-                    return RedirectToAction("Index", "Home");
-            }
+            LoginDAC dac = new LoginDAC();
+            bool result = dac.CheckLogin(email, password);
+			if(result)
+			{
+				Session["UserID"] = "장건희";
+				if (ViewBag.ReturlUrl != null)
+					return Redirect(ViewBag.ReturlUrl.ToString());
+				else
+					return RedirectToAction("Index", "Home");
+			}
 
-            else
-            {
+			else
+			{
                 return View();
             }
         }

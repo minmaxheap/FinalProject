@@ -1632,6 +1632,7 @@
     <Compile Include="Models\DAC\EfficiencyDAC.cs" />
     <Compile Include="Models\DAC\Helper.cs" />
     <Compile Include="Models\DAC\InspectDAC.cs" />
+    <Compile Include="Models\DAC\LoginDAC.cs" />
     <Compile Include="Models\DAC\LOT_HISDAC.cs" />
     <Compile Include="Models\DAC\StockDAC.cs" />
     <Compile Include="Models\DAC\StoreDAC.cs" />
