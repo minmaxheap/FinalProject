@@ -33,7 +33,7 @@
 <hr />
 <div class="content">
     <div class="container-fluid">
-        <d
+        
         @using (Html.BeginForm("Index", "Inspect", FormMethod.Post, new { @id = "form4" }))
         {
             <div class="row">
@@ -136,9 +136,9 @@
                                         <td>@p.INSPECT_ITEM_CODE</td>
                                         <td>@p.INSPECT_ITEM_NAME</td>
                                         <td>@p.VALUE_TYPE</td>
-                                        <td>@p.SPEC_LSL</td>
-                                        <td>@p.SPEC_TARGET</td>
-                                        <td>@p.SPEC_USL</td>
+                                        <td>@String.Format("{0:#,###}", p.SPEC_LSL)</td>
+                                        <td>@String.Format("{0:#,###}", p.SPEC_TARGET)</td>
+                                        <td>@String.Format("{0:#,###}", p.SPEC_USL)</td>
                                         <td>@p.INSPECT_VALUE</td>
                                         <td>@p.TRAN_USER_ID</td>
                                     </tr>
@@ -173,24 +173,24 @@
     
 
     string start = ViewBag.startDate;
-    string end = ViewBag.endDate;
-}
+                                            string end = ViewBag.endDate;
+                                        }
 
 
-@section Scripts
-{
+                                        @section Scripts
+                                        {
 
     <script type="text/javascript">
         jQuery.noConflict()
         var startDate;
-        var endDate;
+                                            var endDate;
 
         $(document).ready(function () {
             $('#reservation').daterangepicker(
                 {
-                      locale: {
-                        format: 'YYYY-MM-DD'
-                    },
+                                                locale: {
+                                                    format: 'YYYY-MM-DD'
+                                              },
                     @*setStartDate:@ViewBag.startDate,
                     setEndDate:@ViewBag.endDaendDate,*@
                     //startDate: moment().subtract('days', 29),

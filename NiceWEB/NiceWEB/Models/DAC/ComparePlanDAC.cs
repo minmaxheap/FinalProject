@@ -35,9 +35,8 @@ namespace NiceWEB.Models
             {
                 cmd.Connection = conn;
                 cmd.CommandText = @"
-
-	 SELECT  ORDER_DATE,WORK_ORDER_ID,  A.PRODUCT_CODE, A.PRODUCT_NAME, 
-	ORDER_QTY,  PRODUCT_QTY, DEFECT_QTY,
+	 SELECT  CONVERT(VARCHAR,ORDER_DATE,23)ORDER_DATE ,WORK_ORDER_ID,  A.PRODUCT_CODE, A.PRODUCT_NAME, 
+	FLOOR(ORDER_QTY)ORDER_QTY,  FLOOR(PRODUCT_QTY)PRODUCT_QTY, FLOOR(DEFECT_QTY)DEFECT_QTY,
 	cast((PRODUCT_QTY/(PRODUCT_QTY+DEFECT_QTY))*100.0 as decimal(4,0)) as QUALITY_RATE,cast( (DEFECT_QTY/(PRODUCT_QTY+DEFECT_QTY))*100 as decimal(4,0)) AS DEFECT_RATE, 
 	 WORK_CLOSE_TIME
 	FROM (
@@ -47,11 +46,12 @@ namespace NiceWEB.Models
 	WORK_CLOSE_TIME,   row_number() over(order by W.WORK_ORDER_ID) as RowNum
 	FROM [dbo].[WORK_ORDER_MST] W, PRODUCT_MST P,LOT_STS L
 	WHERE W.PRODUCT_CODE = P.PRODUCT_CODE AND L.WORK_ORDER_ID = W.WORK_ORDER_ID AND L.PRODUCT_CODE = P.PRODUCT_CODE AND L.SHIP_FLAG = 'Y'
-	and w.PRODUCT_CODE  like @ProductCode
-	and w.WORK_ORDER_ID like @WORK_ORDER_ID
-	and ORDER_DATE between isnull(@startDate,Convert(varchar,ORDER_DATE,23)) and isnull(@endDate,Convert(varchar,ORDER_DATE,23))
+	 and w.PRODUCT_CODE  like @ProductCode
+	 and w.WORK_ORDER_ID like @WORK_ORDER_ID
+	 and ORDER_DATE between isnull(@startDate,Convert(varchar,ORDER_DATE,23)) and isnull(@endDate,Convert(varchar,ORDER_DATE,23))
 	)A
-		where RowNum between ((@PAGE_NO - 1) * @PAGE_SIZE) + 1 and (@PAGE_NO * @PAGE_SIZE)";
+		 where RowNum between ((@PAGE_NO - 1) * @PAGE_SIZE) + 1 and (@PAGE_NO * @PAGE_SIZE)
+";
                // cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@WORK_ORDER_ID", $"%{workID}%");
