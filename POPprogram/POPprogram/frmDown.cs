@@ -18,7 +18,8 @@ namespace POPprogram
         DownServ downSer;
         List<string> list;
         StarWorkServ ser;
-
+        string titleName;
+        public string TitleName { get { return titleName; } set { } }
 
 
         public frmDown()
@@ -29,6 +30,8 @@ namespace POPprogram
 
         public void LoadData()
         {
+            titleName = frmMain.TitleName;
+            lblUpTitle.Text = "   " + titleName;
             downSer = new DownServ();
             allList = downSer.GetDownList();
             csDataGridView1.DataSource = null;

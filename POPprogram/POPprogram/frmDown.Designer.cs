@@ -69,16 +69,11 @@ namespace POPprogram
             this.pnlCrud = new System.Windows.Forms.Panel();
             this.btnExecute = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblUpTitle = new System.Windows.Forms.Label();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.csDataGridView1)).BeginInit();
             this.panel4.SuspendLayout();
             this.pnlCrud.SuspendLayout();
-            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel8
@@ -90,10 +85,10 @@ namespace POPprogram
             this.panel8.Controls.Add(this.csDataGridView1);
             this.panel8.Controls.Add(this.label6);
             this.panel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.panel8.Location = new System.Drawing.Point(31, 62);
+            this.panel8.Location = new System.Drawing.Point(32, 91);
             this.panel8.Margin = new System.Windows.Forms.Padding(0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1136, 228);
+            this.panel8.Size = new System.Drawing.Size(1136, 248);
             this.panel8.TabIndex = 53;
             // 
             // csDataGridView1
@@ -133,7 +128,7 @@ namespace POPprogram
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.csDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.csDataGridView1.RowHeadersWidth = 30;
-            this.csDataGridView1.Size = new System.Drawing.Size(1134, 183);
+            this.csDataGridView1.Size = new System.Drawing.Size(1134, 203);
             this.csDataGridView1.TabIndex = 20;
             // 
             // label6
@@ -141,7 +136,7 @@ namespace POPprogram
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(183)))), ((int)(((byte)(241)))));
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label6.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(0, 0);
             this.label6.Name = "label6";
@@ -222,9 +217,9 @@ namespace POPprogram
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.label13);
             this.panel4.Controls.Add(this.textBox13);
-            this.panel4.Location = new System.Drawing.Point(31, 295);
+            this.panel4.Location = new System.Drawing.Point(31, 359);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1136, 254);
+            this.panel4.Size = new System.Drawing.Size(1136, 240);
             this.panel4.TabIndex = 55;
             // 
             // comboBox2
@@ -232,7 +227,7 @@ namespace POPprogram
             this.comboBox2.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.comboBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(165, 94);
+            this.comboBox2.Location = new System.Drawing.Point(165, 92);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(335, 27);
             this.comboBox2.TabIndex = 85;
@@ -242,7 +237,7 @@ namespace POPprogram
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.label7.Location = new System.Drawing.Point(38, 98);
+            this.label7.Location = new System.Drawing.Point(41, 95);
             this.label7.Margin = new System.Windows.Forms.Padding(0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(88, 19);
@@ -255,7 +250,7 @@ namespace POPprogram
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.label5.Location = new System.Drawing.Point(908, 55);
+            this.label5.Location = new System.Drawing.Point(908, 58);
             this.label5.Margin = new System.Windows.Forms.Padding(0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(24, 19);
@@ -267,7 +262,7 @@ namespace POPprogram
             // 
             this.textBox4.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.textBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.textBox4.Location = new System.Drawing.Point(817, 51);
+            this.textBox4.Location = new System.Drawing.Point(817, 53);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(88, 26);
             this.textBox4.TabIndex = 82;
@@ -282,7 +277,7 @@ namespace POPprogram
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button2.ImageList = this.imageList1;
-            this.button2.Location = new System.Drawing.Point(774, 51);
+            this.button2.Location = new System.Drawing.Point(774, 52);
             this.button2.Margin = new System.Windows.Forms.Padding(0);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(29, 29);
@@ -323,7 +318,7 @@ namespace POPprogram
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button1.ImageList = this.imageList1;
-            this.button1.Location = new System.Drawing.Point(735, 51);
+            this.button1.Location = new System.Drawing.Point(735, 52);
             this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(29, 29);
@@ -336,7 +331,7 @@ namespace POPprogram
             // 
             this.textBox3.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.textBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.textBox3.Location = new System.Drawing.Point(634, 51);
+            this.textBox3.Location = new System.Drawing.Point(634, 53);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(88, 26);
             this.textBox3.TabIndex = 66;
@@ -346,7 +341,7 @@ namespace POPprogram
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.label4.Location = new System.Drawing.Point(381, 55);
+            this.label4.Location = new System.Drawing.Point(388, 57);
             this.label4.Margin = new System.Windows.Forms.Padding(0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(19, 19);
@@ -360,7 +355,7 @@ namespace POPprogram
             this.dateTimePicker2.CustomFormat = "yyyy-MM-dd HH시 mm분 ";
             this.dateTimePicker2.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(419, 51);
+            this.dateTimePicker2.Location = new System.Drawing.Point(419, 53);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(209, 26);
             this.dateTimePicker2.TabIndex = 64;
@@ -372,7 +367,7 @@ namespace POPprogram
             this.dateTimePicker1.CustomFormat = "yyyy-MM-dd HH시 mm분 ";
             this.dateTimePicker1.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(165, 51);
+            this.dateTimePicker1.Location = new System.Drawing.Point(165, 53);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(213, 26);
             this.dateTimePicker1.TabIndex = 63;
@@ -383,7 +378,7 @@ namespace POPprogram
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.label3.Location = new System.Drawing.Point(38, 55);
+            this.label3.Location = new System.Drawing.Point(41, 57);
             this.label3.Margin = new System.Windows.Forms.Padding(0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 19);
@@ -397,7 +392,7 @@ namespace POPprogram
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.label2.Location = new System.Drawing.Point(38, 143);
+            this.label2.Location = new System.Drawing.Point(41, 136);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 19);
             this.label2.TabIndex = 41;
@@ -410,10 +405,10 @@ namespace POPprogram
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox2.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.textBox2.Location = new System.Drawing.Point(165, 143);
+            this.textBox2.Location = new System.Drawing.Point(165, 133);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(937, 46);
+            this.textBox2.Size = new System.Drawing.Size(937, 28);
             this.textBox2.TabIndex = 40;
             // 
             // label1
@@ -421,7 +416,7 @@ namespace POPprogram
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(179)))), ((int)(((byte)(224)))));
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
@@ -436,7 +431,7 @@ namespace POPprogram
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.label13.Location = new System.Drawing.Point(56, 195);
+            this.label13.Location = new System.Drawing.Point(56, 177);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(73, 19);
             this.label13.TabIndex = 38;
@@ -449,10 +444,10 @@ namespace POPprogram
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox13.Font = new System.Drawing.Font("나눔고딕", 12F);
             this.textBox13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.textBox13.Location = new System.Drawing.Point(165, 195);
+            this.textBox13.Location = new System.Drawing.Point(165, 174);
             this.textBox13.Multiline = true;
             this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(937, 46);
+            this.textBox13.Size = new System.Drawing.Size(937, 54);
             this.textBox13.TabIndex = 37;
             // 
             // pnlCrud
@@ -460,10 +455,10 @@ namespace POPprogram
             this.pnlCrud.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlCrud.Controls.Add(this.btnExecute);
             this.pnlCrud.Controls.Add(this.btnClose);
-            this.pnlCrud.Location = new System.Drawing.Point(500, 555);
+            this.pnlCrud.Location = new System.Drawing.Point(500, 620);
             this.pnlCrud.Margin = new System.Windows.Forms.Padding(0);
             this.pnlCrud.Name = "pnlCrud";
-            this.pnlCrud.Size = new System.Drawing.Size(668, 70);
+            this.pnlCrud.Size = new System.Drawing.Size(668, 57);
             this.pnlCrud.TabIndex = 56;
             // 
             // btnExecute
@@ -478,7 +473,7 @@ namespace POPprogram
             this.btnExecute.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExecute.ImageKey = "Touch-Screen.png";
             this.btnExecute.ImageList = this.imageList1;
-            this.btnExecute.Location = new System.Drawing.Point(367, 14);
+            this.btnExecute.Location = new System.Drawing.Point(367, 7);
             this.btnExecute.Margin = new System.Windows.Forms.Padding(0);
             this.btnExecute.Name = "btnExecute";
             this.btnExecute.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -499,7 +494,7 @@ namespace POPprogram
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.ImageKey = "Close.png";
             this.btnClose.ImageList = this.imageList1;
-            this.btnClose.Location = new System.Drawing.Point(527, 14);
+            this.btnClose.Location = new System.Drawing.Point(527, 7);
             this.btnClose.Margin = new System.Windows.Forms.Padding(0);
             this.btnClose.Name = "btnClose";
             this.btnClose.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -510,71 +505,25 @@ namespace POPprogram
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // panel7
+            // lblUpTitle
             // 
-            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel7.Controls.Add(this.label8);
-            this.panel7.Controls.Add(this.dateTimePicker4);
-            this.panel7.Controls.Add(this.dateTimePicker3);
-            this.panel7.Controls.Add(this.label9);
-            this.panel7.Location = new System.Drawing.Point(31, 26);
-            this.panel7.Margin = new System.Windows.Forms.Padding(0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1136, 30);
-            this.panel7.TabIndex = 54;
-            this.panel7.Visible = false;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.label8.Location = new System.Drawing.Point(241, 5);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(19, 19);
-            this.label8.TabIndex = 29;
-            this.label8.Text = "~";
-            // 
-            // dateTimePicker4
-            // 
-            this.dateTimePicker4.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker4.Location = new System.Drawing.Point(274, 1);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(127, 26);
-            this.dateTimePicker4.TabIndex = 28;
-            // 
-            // dateTimePicker3
-            // 
-            this.dateTimePicker3.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(118, 1);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(117, 26);
-            this.dateTimePicker3.TabIndex = 27;
-            // 
-            // label9
-            // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("나눔고딕", 12F);
-            this.label9.Location = new System.Drawing.Point(39, 5);
-            this.label9.Margin = new System.Windows.Forms.Padding(0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(73, 19);
-            this.label9.TabIndex = 26;
-            this.label9.Text = "조회 일자";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblUpTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblUpTitle.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblUpTitle.Location = new System.Drawing.Point(0, 0);
+            this.lblUpTitle.Name = "lblUpTitle";
+            this.lblUpTitle.Size = new System.Drawing.Size(1194, 67);
+            this.lblUpTitle.TabIndex = 57;
+            this.lblUpTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // frmDown
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(1194, 634);
+            this.ClientSize = new System.Drawing.Size(1194, 741);
+            this.Controls.Add(this.lblUpTitle);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.pnlCrud);
-            this.Controls.Add(this.panel7);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmDown";
             this.Text = "frmDown";
@@ -585,8 +534,6 @@ namespace POPprogram
             this.panel4.PerformLayout();
             this.pnlCrud.ResumeLayout(false);
             this.pnlCrud.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -599,8 +546,6 @@ namespace POPprogram
         public System.Windows.Forms.Label label13;
         public System.Windows.Forms.TextBox textBox13;
         public System.Windows.Forms.Panel pnlCrud;
-        public System.Windows.Forms.Panel panel7;
-        public System.Windows.Forms.Label label9;
         private csDataGridView csDataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -626,10 +571,8 @@ namespace POPprogram
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DateTimePicker dateTimePicker4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
         public System.Windows.Forms.Button btnExecute;
         public System.Windows.Forms.Button btnClose;
+        public System.Windows.Forms.Label lblUpTitle;
     }
 }

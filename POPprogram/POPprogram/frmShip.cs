@@ -13,7 +13,8 @@ namespace POPprogram
     public partial class frmShip : POPprogram.Base2
     {
         string userID;
-
+        string titleName;
+        public string TitleName { get { return titleName; } set { } }
         decimal listSum = 0;
         decimal listSumElse = 0;
 
@@ -26,6 +27,8 @@ namespace POPprogram
         }
         private void frmShip_Load(object sender, EventArgs e)
         {
+            titleName = frmMain.TitleName;
+            lblUpTitle.Text = "   " + titleName;
             DataGridViewUtil.SetInitGridView(csDataGridView1);
             DataGridViewCheckBoxColumn checkbox1 = new DataGridViewCheckBoxColumn();
             checkbox1.Name = "체크";

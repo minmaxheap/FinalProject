@@ -18,7 +18,8 @@ namespace POPprogram
         DataGridViewCheckBoxColumn dgvChk = null;
         List<int> iSearchedList = new List<int>();
         List<int> iSelectedRow = new List<int>();
-
+        string titleName;
+        public string TitleName { get { return titleName; } set { } }
         List<string> MstList = null;
 
         string msUserID;
@@ -56,7 +57,8 @@ namespace POPprogram
 
         private void frmStockIN_Load(object sender, EventArgs e)
         {
-
+            titleName = frmMain.TitleName;
+            lblUpTitle.Text = "   " + titleName;
             DataGridViewUtil.SetInitGridView(csDataGridView1);
             DgvChk(csDataGridView1);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "순번", "RowNum");

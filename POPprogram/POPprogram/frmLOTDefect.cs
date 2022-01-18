@@ -20,7 +20,8 @@ namespace POPprogram
         List<string> CodeList;
         LOTinspectServ lotserv;
         deffectServ deserv;
-
+        string titleName;
+        public string TitleName { get { return titleName; } set { } }
 
         decimal lot_qty = 0;
         public frmLOTDefect()
@@ -63,6 +64,8 @@ namespace POPprogram
 
         private void frmLOTDefect_Load(object sender, EventArgs e)
         {
+            titleName = frmMain.TitleName;
+            lblUpTitle.Text = "   " + titleName;
             serv = new StarWorkServ();
             list = serv.GetDeffectCode();
             list.Insert(0, "");
