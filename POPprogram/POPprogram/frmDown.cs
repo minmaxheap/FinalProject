@@ -146,6 +146,7 @@ namespace POPprogram
 
         private void frmDown_Activated(object sender, EventArgs e)
         {
+            ////////////////////////////////////////////////////////////////////////////
             foreach (Control ctl1 in this.Controls)
             {
                 foreach (Control ctl2 in this.Controls[this.Controls.IndexOf(ctl1)].Controls)
@@ -163,6 +164,9 @@ namespace POPprogram
                         }
                     }
             }
+            ////////////////////////////////////////////////////////////////////////////
+            textBox3.Text = "10";
+            LoadData();
         }
     }
 }

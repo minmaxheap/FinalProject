@@ -265,6 +265,11 @@ namespace POPprogram
 
         private void frmLOTInspect_Activated(object sender, EventArgs e)
         {
+			lblOrderQty.Text = null;
+			lblDefectQty.Text = null;
+			lblProdQty.Text = null;
+			lblStatus.Text = null;
+			////////////////////////////////////////////////////////////////////////////
 			foreach (Control ctl1 in this.Controls)
 			{
 				foreach (Control ctl2 in this.Controls[this.Controls.IndexOf(ctl1)].Controls)
@@ -290,8 +295,16 @@ namespace POPprogram
 						}
 					}
 			}
+			////////////////////////////////////////////////////////////////////////////
+			serv = new StarWorkServ();
+			list = serv.GetLotOpCode();
+			list.Insert(0, "");
+			//cboLOTID.Items.Insert(0, " ");
+			//cboLOTID.ValueMember = "LOT_ID";
+			cboLOTID.DisplayMember = "LOT_ID";
+			cboLOTID.DataSource = list;
 		}
-    }
+	}
 }
 	
 

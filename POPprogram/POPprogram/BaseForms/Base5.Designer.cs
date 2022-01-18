@@ -327,7 +327,6 @@ namespace POPprogram
             this.lblDefectQty.Name = "lblDefectQty";
             this.lblDefectQty.Size = new System.Drawing.Size(233, 54);
             this.lblDefectQty.TabIndex = 52;
-            this.lblDefectQty.Text = "1000";
             this.lblDefectQty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblProdQty
@@ -339,7 +338,6 @@ namespace POPprogram
             this.lblProdQty.Name = "lblProdQty";
             this.lblProdQty.Size = new System.Drawing.Size(231, 54);
             this.lblProdQty.TabIndex = 51;
-            this.lblProdQty.Text = "1000";
             this.lblProdQty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblOrderQty
@@ -351,7 +349,6 @@ namespace POPprogram
             this.lblOrderQty.Name = "lblOrderQty";
             this.lblOrderQty.Size = new System.Drawing.Size(231, 54);
             this.lblOrderQty.TabIndex = 50;
-            this.lblOrderQty.Text = "1000";
             this.lblOrderQty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label21
@@ -405,7 +402,6 @@ namespace POPprogram
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(231, 54);
             this.lblStatus.TabIndex = 18;
-            this.lblStatus.Text = "Closed";
             this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnTxtSearch
