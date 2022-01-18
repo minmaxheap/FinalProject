@@ -16,13 +16,15 @@ namespace NiceWEB.Models
 		public string LOT_DESC { get; set; }
 		public string PRODUCT_CODE { get; set; }
 		public string OPERATION_CODE { get; set; }
+
+		public string OPERATION_NAME { get; set; }
 		public string STORE_CODE { get; set; }
 		public decimal LOT_QTY { get; set; }
 		public decimal CREATE_QTY { get; set; }
 		public decimal OPER_IN_QTY { get; set; }
 		public string START_FLAG { get; set; }
 		public decimal START_QTY { get; set; }
-		public DateTime START_TIME { get; set; }
+		public string START_TIME { get; set; }
 		public string START_EQUIPMENT_CODE { get; set; }
 		public string END_FLAG { get; set; }
 		public DateTime END_TIME{ get; set; }

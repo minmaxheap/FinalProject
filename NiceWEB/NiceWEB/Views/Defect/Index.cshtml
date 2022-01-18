@@ -122,7 +122,7 @@
                                             <td>@p.PRODUCT_CODE</td>
                                             <td>@p.OPERATION_CODE</td>
                                             <td>@p.DEFECT_CODE</td>
-                                            <td>@p.DEFECT_QTY</td>
+											<td>@String.Format("{0:#,###}",Math.Round(p.DEFECT_QTY))</td>
 
                                         </tr>
                                     }
@@ -164,8 +164,8 @@
 				{
 					locale: {
 						format: 'YYYY-MM-DD'
-					},
-					 startDate: '@start',
+                    },
+                    startDate: '@DateTime.Now.AddDays(-15).ToString()',
                     endDate:'@end',
 					showDropdowns: true,
 					showWeekNumbers: true,

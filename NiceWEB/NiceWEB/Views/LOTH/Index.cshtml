@@ -54,7 +54,7 @@
 					<div class="card-header">
 						<h3 class="card-title">LOT 이력 조회</h3>
 					</div>
-					<div class="card-body table-responsive p-0" style="height: 500px;">
+					<div class="card-body table-responsive p-0" style="height: 600px;">
 						<table class="table table-striped table-bordered table-hover table-head-fixed">
 							<thead>
 								<tr>
@@ -63,22 +63,22 @@
 									<th>트랜코드</th>
 									<th>설명란</th>
 									<th>품번</th>
-									<th>공정</th>
+									<th>공정명</th>
 									<th>창고</th>
-									<th>LOT_QTY</th>
-									<th>CREATE_QTY</th>
-									<th>OPER_IN_QTY</th>
-									@*<th>START_Flag</th>
-									<th>START_QTY</th>
+									<th>lot수량</th>
+									<th>생산수량</th>
+									<th>공정투입수량</th>
+									<th>시작수량</th>
 									<th>시작시간</th>
 									<th>설비</th>
-									<th>END_FLAG</th>
+
+									@*<th>END_FLAG</th>
 									<th>END_TIME</th>
 									<th>설비끝</th>
 									<th>쉽플래그</th>
 									<th>쉽코드</th>
-									<th>쉽타임</th>*@
-									@*<th>프로덕션타임</th>
+									<th>쉽타임</th>
+									<th>프로덕션타임</th>
 		<th>생성시간</th>
 		<th>공정시간</th>
 		<th>WORK_ORDER_ID</th>
@@ -99,53 +99,26 @@
 								{
 									foreach (var p in Model)
 									{
-										<tr data-widget="expandable-table" aria-expanded="false">
-											<td>@p.TRAN_TIME</td>
-											<td>@p.HIST_SEQ</td>
-											<td>@p.TRAN_CODE</td>
-											<td>@p.LOT_DESC</td>
-											<td>@p.PRODUCT_CODE</td>
-											<td>@p.OPERATION_CODE</td>
-											<td>@p.STORE_CODE</td>
-											<td>@p.LOT_QTY</td>
-											<td>@p.CREATE_QTY</td>
-											<td>@p.OPER_IN_QTY</td>
-										</tr>
+								<tr>
+									<td>@p.TRAN_TIME</td>
+									<td>@p.HIST_SEQ</td>
+									<td>@p.TRAN_CODE</td>
+									<td>@p.LOT_DESC</td>
+									<td>@p.PRODUCT_CODE</td>
+									<td>@p.OPERATION_NAME</td>
+									<td>@p.STORE_CODE</td>
+									<td>@String.Format("{0:#,###}", Math.Round(p.LOT_QTY))</td>
+									<td>@String.Format("{0:#,###}", Math.Round(p.CREATE_QTY))</td>
+									<td>@String.Format("{0:#,###}", Math.Round(p.OPER_IN_QTY))</td>
 
-										<tr class="expandable-body">
-											<td colspan="10">
-												<p>
-											@p.START_FLAG
-											@p.START_QTY
-											@p.START_TIME
-											@p.START_EQUIPMENT_CODE
-											@p.END_FLAG
-											@p.END_TIME
-											@p.END_EQUIPMENT_CODE
-											@p.SHIP_FLAG
-											@p.SHIP_CODE
-											@p.SHIP_TIME
-											@p.PRODUCTION_TIME
-											@p.CREATE_TIME      
-											@p.OPER_IN_TIME     
-											@p.WORK_ORDER_ID    
-											@p.LOT_DELETE_FLAG  
-											@p.LOT_DELETE_CODE  
-											@p.LOT_DELETE_TIME  
-											@p.TRAN_USER_ID     
-											@p.TRAN_COMMENT     
-											@p.OLD_PRODUCT_CODE 
-											@p.OLD_OPERATION_CODE
-											@p.OLD_STORE_CODE   
-											@p.OLD_LOT_QTY      				
-												
-												</p>
-											</td>
-										</tr>
+									<td>@p.START_QTY</td>
+									<td>@p.START_TIME</td>
+									<td>@p.START_EQUIPMENT_CODE</td>
 
-											}
-										}
-								</tbody>
+								</tr>
+									}
+								}
+							</tbody>
 						</table>
 					</div>
 
