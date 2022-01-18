@@ -15,6 +15,7 @@ namespace POPprogram
         List<string> list;
         bool searchflag = false;
         List<EndPropertyEQ> listEQ;
+
         bool defectCompleate = false;
         bool inspectCompleate = false;
         bool inputCompleate = false;
@@ -196,7 +197,7 @@ namespace POPprogram
             updateVO.LAST_TRAN_USER_ID = userID;
             updateVO.END_EQUIPMENT_CODE = cboEQList.Text;
             updateVO.OLD_OPERATION_CODE = Convert.ToString(operConvert-100);
-
+            updateVO.WORK_ORDER_ID = txtWorkOrder.Text;
             bool bResult = serv.EndLOT_Update(updateVO);
             if (bResult)
             {
