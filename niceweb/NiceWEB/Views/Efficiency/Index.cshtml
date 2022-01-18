@@ -126,9 +126,9 @@
                                     {
                                         <tr>
                                             <td>@p.ORDER_DATE</td>
-                                            <td>@p.ORDER_QTY</td>
-                                            <td>@p.PRODUCT_QTY</td>
-                                            <td>@p.DEFECT_QTY</td>
+                                            <td>@String.Format("{0:#,###}", Math.Round(p.ORDER_QTY))</td>
+                                            <td>@String.Format("{0:#,###}", Math.Round(p.PRODUCT_QTY))</td>
+                                            <td>@String.Format("{0:#,###}", Math.Round(p.DEFECT_QTY))</td>
                                             <td>@p.QUALITY_RATE</td>
                                             <td>@p.DEFECT_RATE</td>
                                             <td>@p.WORK_START_TIME</td>
@@ -137,12 +137,12 @@
                                             <td>@p.TOTAL_DOWN</td>
                                             <td>@p.WORK_RATE</td>
                                             <td>@p.DOWN_RATE</td>
-                                            <td>@p.PER_TIME</td>
+                                            <td>@Math.Round(p.PER_TIME,2)</td>
 
                                         </tr>
 
                                     }
-                                }
+                                                    }
                             </tbody>
                         </table>
                     </div>
