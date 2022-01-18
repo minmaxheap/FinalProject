@@ -95,7 +95,6 @@ namespace POPprogram
             // 
             // btnClose
             // 
-           // this.btnClose.Location = new System.Drawing.Point(527, 0);
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnExport
@@ -103,7 +102,6 @@ namespace POPprogram
             this.btnExport.Image = global::POPprogram.Properties.Resources.Data_Import;
             this.btnExport.ImageIndex = -1;
             this.btnExport.ImageList = null;
-           // this.btnExport.Location = new System.Drawing.Point(334, 0);
             this.btnExport.Text = "입고  ";
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
@@ -187,6 +185,7 @@ namespace POPprogram
             this.csDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.csDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.csDataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.csDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -227,6 +226,7 @@ namespace POPprogram
             // 
             this.ClientSize = new System.Drawing.Size(1194, 634);
             this.Name = "frmStockIN";
+            this.Activated += new System.EventHandler(this.frmStockIN_Activated);
             this.Load += new System.EventHandler(this.frmStockIN_Load);
             this.panel6.ResumeLayout(false);
             this.panel4.ResumeLayout(false);

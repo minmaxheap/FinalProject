@@ -527,6 +527,7 @@ namespace POPprogram
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmDown";
             this.Text = "frmDown";
+            this.Activated += new System.EventHandler(this.frmDown_Activated);
             this.Load += new System.EventHandler(this.frmDown_Load);
             this.panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.csDataGridView1)).EndInit();

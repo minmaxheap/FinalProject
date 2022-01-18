@@ -127,5 +127,45 @@ namespace POPprogram
             txtLOTID.Text = strb.ToString();
             txtLOTDescription.Text =txtCustName.Text +' '+txtProdName.Text;
         }
+
+        private void frmNewLOT_Activated(object sender, EventArgs e)
+        {
+            lblOrderQty.Text = null;
+            lblDefectQty.Text = null;
+            lblProdQty.Text = null;
+            lblStatus.Text = null;
+            ////////////////////////////////////////////////////////////////////////////
+            foreach (Control ctl1 in this.Controls)
+            {
+                foreach (Control ctl2 in this.Controls[this.Controls.IndexOf(ctl1)].Controls)
+                    if (typeof(TextBox) == ctl2.GetType())
+                    {
+                        ctl2.Text = null;
+                    }
+                    else if (typeof(NumTextBox) == ctl2.GetType())
+                    {
+                        ctl2.Text = null;
+                    }
+                    else if (typeof(ComboBox) == ctl2.GetType())
+                    {
+                        ComboBox dd = (ComboBox)ctl2;
+                        if (dd != null)
+                        {
+                            dd.Text = string.Empty;
+                            dd.SelectedIndex = -1;
+                        }
+                    }
+                    else if (typeof(csDataGridView) == ctl2.GetType())
+                    {
+                        csDataGridView dd = (csDataGridView)ctl2;
+                        if (dd != null)
+                        {
+                            dd.DataSource = null;
+                        }
+                    }
+            }
+            ////////////////////////////////////////////////////////////////////////////
+            
+        }
     }
 }
