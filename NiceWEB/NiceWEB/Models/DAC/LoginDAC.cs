@@ -39,12 +39,33 @@ namespace NiceWEB.Models.DAC
 				if (reader.Read())
 				{
 					string s = reader["COUNT"].ToString();
+					reader.Close();
 					return s == "1";
 				}
+
 				else
+					reader.Close();
 					return false;
 			}
-			public 
+		}
+		public List<ComboItem> getName(string email)
+		{
+			using (SqlCommand cmd = new SqlCommand())
+			{
+				cmd.Connection = conn;
+				cmd.CommandText = @"SELECT 
+      [USER_NAME] as Code
+  FROM [team3].[dbo].[USER_MST]
+  WHERE USER_ID=@USER_ID";
+
+				cmd.Parameters.AddWithValue("@USER_ID", email);
+				SqlDataReader reader = cmd.ExecuteReader();
+				List<ComboItem> list = Helper.DataReaderMapToList<ComboItem>(reader);
+				reader.Close();
+
+				return list;
+
+			}
 		}
 	}
 }

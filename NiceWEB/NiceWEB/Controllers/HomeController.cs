@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using NiceWEB.Models.DAC;
+using System.Data;
+using NiceWEB.Models;
 namespace NiceWEB.Controllers
 {
     public class HomeController : Controller
@@ -11,6 +13,7 @@ namespace NiceWEB.Controllers
         // GET: Home
         public ActionResult Index()
         {
+           
             if (Session["UserID"] == null || Session["UserID"].ToString().Length < 1)
             {
                 return RedirectToAction("Login");
@@ -30,12 +33,16 @@ namespace NiceWEB.Controllers
         [HttpPost]
         public ActionResult Login(string email, string password)
         {
+            DataTable dt;
             LoginDAC dac = new LoginDAC();
             bool result = dac.CheckLogin(email, password);
+            List<ComboItem> list = dac.getName(email);
+            dac.Dispose();
 			if(result)
 			{
-				Session["UserID"] = "장건희";
-				if (ViewBag.ReturlUrl != null)
+                
+				Session["UserID"] = list[0].Code.ToString() + "님";
+                if (ViewBag.ReturlUrl != null)
 					return Redirect(ViewBag.ReturlUrl.ToString());
 				else
 					return RedirectToAction("Index", "Home");
