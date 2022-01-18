@@ -80,7 +80,7 @@ namespace NiceWEB.Models
 
 				cmd.Connection = conn;
 				StringBuilder sb = new StringBuilder();
-				sb.Append(@"SELECT COUNT(*) FROM LOT_MATERIAL_HIS where 1=1 ");
+				sb.Append(@"SELECT COUNT(*) FROM LOT_MATERIAL_HIS where CHILD_PRODUCT_CODE is not null and CHILD_PRODUCT_CODE <> '' ");
 
 				if (!string.IsNullOrWhiteSpace(productCode))
 				{

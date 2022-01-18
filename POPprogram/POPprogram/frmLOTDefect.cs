@@ -212,12 +212,16 @@ namespace POPprogram
                 decimal a4 = a1 + a2 + a3;
                 numTextBox4.Text = a4.ToString();
 
-                decimal a5 = Convert.ToDecimal(txtQty.Text) - a4;
 
-                numTextBox5.Text = a5.ToString();
-
+                if (Convert.ToDecimal(txtQty.Text) < a4)
+                {
+                    MessageBox.Show("lot수량보다 불량수량이 더 많습니다.");
+                    return;
+                }
+              
+                   decimal a5 = Convert.ToDecimal(txtQty.Text) - a4;
+                   numTextBox5.Text = a5.ToString();
                 
-
             }
         }
 
