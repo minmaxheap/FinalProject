@@ -313,7 +313,7 @@
                             {
                                 label: '지시수량',
                                 type: 'bar', // 'bar' type, 전체 타입과 같다면 생략가능
-                                backgroundColor: 'rgb(0, 204, 102)',
+                                backgroundColor: '#0D94B6',
                                 borderColor: 'rgb(255, 204, 102)',
                                 data: @orderQty,
                                 yAxisID: 'y-left'
@@ -321,7 +321,7 @@
                             {
                                 label: '양품수',
                                 type: 'bar', // 'bar' type, 전체 타입과 같다면 생략가능
-                                backgroundColor: 'rgb(255, 0, 102)',
+                                backgroundColor: '#00C7B2',
                                 borderColor: 'rgb(255, 204, 102)',
                                 data: @prodcutQty,
                                 yAxisID: 'y-left'
@@ -330,8 +330,8 @@
                             {
                                 label: '불량수',
                                 type: 'bar', // 'bar' type, 전체 타입과 같다면 생략가능
-                                backgroundColor: 'rgb(255, 204, 0)',
-                                borderColor: 'rgb(255, 204, 102)',
+                                backgroundColor: '#FF0000',
+                                borderColor: '#FF0000',
                                 data: @defectQty,
                                 yAxisID: 'y-left'
                             },
@@ -342,8 +342,8 @@
                                 fill: false,         // 채우기 없음
                                 lineTension: 0.2,  // 0이면 꺾은선 그래프, 숫자가 높을수록 둥글해짐
                                 pointRadius: 0.1,    // 각 지점에 포인트 주지 않음
-                                backgroundColor: 'rgb(255, 153, 0)',
-                                borderColor: 'rgb(255, 153, 0)',
+                                backgroundColor: '#587ABD',
+                                borderColor: '#587ABD',
                                 data: @workRate,
                                 yAxisID: 'y-right'
                             },
@@ -353,8 +353,8 @@
                                 fill: false,
                                 lineTension: 0.2,
                                 pointRadius: 0,
-                                backgroundColor: 'rgb(255, 204, 0)',
-                                borderColor: 'rgb(255, 204, 0)',
+                                backgroundColor: '#CB516C',
+                                borderColor: '#CB516C',
                                 data: @DownRate,
                                 yAxisID: 'y-right'
                             }
@@ -385,7 +385,7 @@
                             }
                             
                         },
-                            { id: 'y-right', position: 'right', ticks: { min: 0, max: 100,  fontColor: 'black' } }
+                            { id: 'y-right', position: 'right', ticks: { min: 0, max: 120,  fontColor: 'black' } }
 
 
                         ],
