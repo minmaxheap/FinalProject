@@ -496,6 +496,7 @@ namespace POPprogram
             this.Name = "frmLOTStatus";
             this.Text = "frmLOTStatus";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Activated += new System.EventHandler(this.frmLOTStatus_Activated);
             this.Load += new System.EventHandler(this.frmLOTStatus_Load);
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();

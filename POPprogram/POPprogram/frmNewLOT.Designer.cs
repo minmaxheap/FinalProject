@@ -98,6 +98,7 @@ namespace POPprogram
             // 
             this.ClientSize = new System.Drawing.Size(1194, 823);
             this.Name = "frmNewLOT";
+            this.Activated += new System.EventHandler(this.frmNewLOT_Activated);
             this.Load += new System.EventHandler(this.frmNewLOT_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();

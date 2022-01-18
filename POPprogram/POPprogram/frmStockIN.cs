@@ -337,15 +337,38 @@ namespace POPprogram
         {
             this.Close();
         }
-        //private void DgvChk(DataGridView dgv)
-        //{
-        //    dgv.EndEdit();
-        //    dgvChk = new DataGridViewCheckBoxColumn();
-        //    dgvChk.HeaderText = " ";
-        //    dgvChk.Name = "chk";
-        //    dgvChk.Width = 40;
 
-        //    dgv.Columns.Add(dgvChk);
-        //}
+        private void frmStockIN_Activated(object sender, EventArgs e)
+        {
+            foreach (Control ctl1 in this.Controls)
+            {
+                foreach (Control ctl2 in this.Controls[this.Controls.IndexOf(ctl1)].Controls)
+                    if (typeof(TextBox) == ctl2.GetType())
+                    {
+                        ctl2.Text = null;
+                    }
+                    else if (typeof(ComboBox) == ctl2.GetType())
+                    {
+                        ComboBox dd = (ComboBox)ctl2;
+                        if (dd != null)
+                        {
+                            dd.Text = string.Empty;
+                            dd.SelectedIndex = -1;
+                        }
+                    }
+                    else if (typeof(csDataGridView) == ctl2.GetType())
+                    {
+                        csDataGridView dd = (csDataGridView)ctl2;
+                        if (dd != null)
+                        {
+                            dd.DataSource = null;
+                        }
+                    }
+            }
+        }
+
+
     }
 }
+
+

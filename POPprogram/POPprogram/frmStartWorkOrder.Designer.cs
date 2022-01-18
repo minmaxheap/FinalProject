@@ -122,6 +122,7 @@ namespace POPprogram
             // 
             this.ClientSize = new System.Drawing.Size(1194, 850);
             this.Name = "frmStartWorkOrder";
+            this.Activated += new System.EventHandler(this.frmStartWorkOrder_Activated);
             this.Load += new System.EventHandler(this.frmStartWorkOrder_Load);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
