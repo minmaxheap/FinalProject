@@ -20,7 +20,6 @@ namespace NiceWEB.Controllers
                 return RedirectToAction("Login", "Home");
             }
 
-
             int pagesize = Convert.ToInt32(WebConfigurationManager.AppSettings["pagesize"]);
             Adding_materialDAC dac = new Adding_materialDAC();
             List<Adding_materialProperty> list = dac.GetData(startDate, endDate, productCode, op_code, childCode, page, pagesize);

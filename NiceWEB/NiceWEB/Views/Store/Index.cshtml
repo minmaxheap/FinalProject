@@ -93,20 +93,23 @@
                                     <th scope="col">수량</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                @foreach (var p in Model)
-                                {
+							<tbody>
+								@if (Model != null)
+								{
+									foreach (var p in Model)
+									{
 
-                                    <tr>
-                                        <td>@p.OPER_IN_TIME</td>
-                                        <td>@p.LOT_ID</td>
-                                        <td>@p.PRODUCT_CODE</td>
-                                        <td>@p.STORE_CODE</td>
-                                        <td>@p.LOT_QTY</td>
+										<tr>
+											<td>@p.OPER_IN_TIME</td>
+											<td>@p.LOT_ID</td>
+											<td>@p.PRODUCT_CODE</td>
+											<td>@p.STORE_CODE</td>
+											<td>@p.LOT_QTY</td>
 
-                                    </tr>
-                                }
-                            </tbody>
+										</tr>
+									}
+								}
+								</tbody>
                         </table>
                     </div>
                     <!-- /.card-body -->

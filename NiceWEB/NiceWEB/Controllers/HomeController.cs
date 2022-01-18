@@ -38,6 +38,7 @@ namespace NiceWEB.Controllers
                 else
                     return RedirectToAction("Index", "Home");
             }
+
             else
             {
                 return View();
