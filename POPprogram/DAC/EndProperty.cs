@@ -67,6 +67,7 @@ namespace DAC
 		public string LOT_ID { get; set; }
 		public string OPERATION_CODE { get; set; }
 		public string OLD_OPERATION_CODE { get; set; }
+		public string WORK_ORDER_ID { get; set; }
 	}
 }
 

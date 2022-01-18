@@ -97,6 +97,13 @@ namespace POPprogram
             lblProdQty.Text = swlist[0].PRODUCT_QTY.ToString();
             txtCustName.Text = swlist[0].DATA_1;
             lblStatus.Text = swlist[0].ORDER_STATUS;
+            if (txtOperCode.Text == "1000") cboEQList.SelectedIndex = 1;
+            if (txtOperCode.Text == "1100") cboEQList.SelectedIndex = 2;
+            if (txtOperCode.Text == "1200") cboEQList.SelectedIndex = 3;
+            if (txtOperCode.Text == "1300") cboEQList.SelectedIndex = 4;
+            if (txtOperCode.Text == "1400") cboEQList.SelectedIndex = 5;
+            if (txtOperCode.Text == "1500") cboEQList.SelectedIndex = 6;
+            if (txtOperCode.Text == "1600") cboEQList.SelectedIndex = 7;
         }
 
 		private void btnExecute_Click(object sender, EventArgs e)
@@ -167,6 +174,42 @@ namespace POPprogram
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmStartWorkOrder_Activated(object sender, EventArgs e)
+        {
+            lblOrderQty.Text = null;
+            lblDefectQty.Text = null;
+            lblProdQty.Text = null;
+            lblStatus.Text = null;
+            ////////////////////////////////////////////////////////////////////////////
+            foreach (Control ctl1 in this.Controls)
+            {
+                foreach (Control ctl2 in this.Controls[this.Controls.IndexOf(ctl1)].Controls)
+                    if (typeof(TextBox) == ctl2.GetType())
+                    {
+                        ctl2.Text = null;
+                    }
+                    else if (typeof(ComboBox) == ctl2.GetType())
+                    {
+                        ComboBox dd = (ComboBox)ctl2;
+                        if (dd != null)
+                        {
+                            dd.Text = string.Empty;
+                            dd.SelectedIndex = -1;
+                        }
+                    }
+                    else if (typeof(csDataGridView) == ctl2.GetType())
+                    {
+                        csDataGridView dd = (csDataGridView)ctl2;
+                        if (dd != null)
+                        {
+                            dd.DataSource = null;
+                        }
+                    }
+            }
+            ////////////////////////////////////////////////////////////////////////////
+            frmStartWorkOrder_Load(null, null);        
         }
     }
 }

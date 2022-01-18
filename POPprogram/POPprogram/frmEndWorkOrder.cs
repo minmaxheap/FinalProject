@@ -15,6 +15,7 @@ namespace POPprogram
         List<string> list;
         bool searchflag = false;
         List<EndPropertyEQ> listEQ;
+
         bool defectCompleate = false;
         bool inspectCompleate = false;
         bool inputCompleate = false;
@@ -81,6 +82,14 @@ namespace POPprogram
             lblDefect.Text = list[0].CHECK_DEFECT_FLAG;
             lblInspect.Text = list[0].CHECK_INSPECT_FLAG;
             lblMaterial.Text = list[0].CHECK_MATERIAL_FLAG;
+
+            if (txtOperCode.Text == "1000") cboEQList.SelectedIndex = 0;
+            if (txtOperCode.Text == "1100") cboEQList.SelectedIndex = 1;
+            if (txtOperCode.Text == "1200") cboEQList.SelectedIndex = 2;
+            if (txtOperCode.Text == "1300") cboEQList.SelectedIndex = 3;
+            if (txtOperCode.Text == "1400") cboEQList.SelectedIndex = 4;
+            if (txtOperCode.Text == "1500") cboEQList.SelectedIndex = 5;
+            if (txtOperCode.Text == "1600") cboEQList.SelectedIndex = 6;
 
             EndPropertyLOTHis vo2 = new EndPropertyLOTHis();
             vo2.LOT_ID = cboLOTID.Text;
@@ -196,7 +205,7 @@ namespace POPprogram
             updateVO.LAST_TRAN_USER_ID = userID;
             updateVO.END_EQUIPMENT_CODE = cboEQList.Text;
             updateVO.OLD_OPERATION_CODE = Convert.ToString(operConvert-100);
-
+            updateVO.WORK_ORDER_ID = txtWorkOrder.Text;
             bool bResult = serv.EndLOT_Update(updateVO);
             if (bResult)
             {
@@ -240,6 +249,68 @@ namespace POPprogram
                 return;
             }
             if (cboEQList.Text!="") txtEQ_NAME.Text = listEQ[cboEQList.SelectedIndex].EQ_NAME;
+        }
+
+        private void frmEndWorkOrder_Activated(object sender, EventArgs e)
+        {
+            lblOrderQty.Text = null;
+            lblDefectQty.Text = null;
+            lblProdQty.Text = null;
+            lblStatus.Text = null;
+
+            lblDefectColor.BackColor = Color.White;
+            lblInspectColor.BackColor = Color.White;
+            lblMaterialColor.BackColor = Color.White;
+            lblDefectColor.Text = null;
+            lblInspectColor.Text = null;
+            lblMaterialColor.Text = null;
+            lblDefect.Text = null;
+            lblInspect.Text = null;
+            lblMaterial.Text = null;
+            ////////////////////////////////////////////////////////////////////////////
+            foreach (Control ctl1 in this.Controls)
+            {
+                foreach (Control ctl2 in this.Controls[this.Controls.IndexOf(ctl1)].Controls)
+                    if (typeof(TextBox) == ctl2.GetType())
+                    {
+                        ctl2.Text = null;
+                    }
+                    else if (typeof(ComboBox) == ctl2.GetType())
+                    {
+                        ComboBox dd = (ComboBox)ctl2;
+                        if (dd != null)
+                        {
+                            dd.Text = string.Empty;
+                            dd.SelectedIndex = -1;
+                        }
+                    }
+                    else if (typeof(csDataGridView) == ctl2.GetType())
+                    {
+                        csDataGridView dd = (csDataGridView)ctl2;
+                        if (dd != null)
+                        {
+                            dd.DataSource = null;
+                        }
+                    }
+            }
+            ////////////////////////////////////////////////////////////////////////////
+            searchflag = true;
+            EndDAC serv = new EndDAC();
+            list = serv.GetLotList();
+
+            cboLOTID.DisplayMember = "LOT_ID";
+            cboLOTID.DataSource = list;
+            cboLOTID.Text = null;
+
+            //EndDAC serv = new EndDAC();
+            DataTable dt = serv.GetEQList();
+
+            listEQ = Helper.DataTableMapToList<EndPropertyEQ>(dt);
+            cboEQList.DisplayMember = "EQ_CODE";
+            cboEQList.DataSource = listEQ;
+            cboEQList.Text = null;
+            txtEQ_NAME.Text = null;
+
         }
     }
 }

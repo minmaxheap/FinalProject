@@ -212,12 +212,16 @@ namespace POPprogram
                 decimal a4 = a1 + a2 + a3;
                 numTextBox4.Text = a4.ToString();
 
-                decimal a5 = Convert.ToDecimal(txtQty.Text) - a4;
 
-                numTextBox5.Text = a5.ToString();
-
+                if (Convert.ToDecimal(txtQty.Text) < a4)
+                {
+                    MessageBox.Show("lot수량보다 불량수량이 더 많습니다.");
+                    return;
+                }
+              
+                   decimal a5 = Convert.ToDecimal(txtQty.Text) - a4;
+                   numTextBox5.Text = a5.ToString();
                 
-
             }
         }
 
@@ -229,6 +233,67 @@ namespace POPprogram
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmLOTDefect_Activated(object sender, EventArgs e)
+        {
+            lblOrderQty.Text = null;
+            lblDefectQty.Text = null;
+            lblProdQty.Text = null;
+            lblStatus.Text = null;
+            ////////////////////////////////////////////////////////////////////////////
+            foreach (Control ctl1 in this.Controls)
+            {
+                foreach (Control ctl2 in this.Controls[this.Controls.IndexOf(ctl1)].Controls)
+                    if (typeof(TextBox) == ctl2.GetType())
+                    {
+                        ctl2.Text = null;
+                    }
+                    else if (typeof(NumTextBox) == ctl2.GetType())
+                    {
+                        ctl2.Text = null;
+                    }
+                    else if (typeof(ComboBox) == ctl2.GetType())
+                    {
+                        ComboBox dd = (ComboBox)ctl2;
+                        if (dd != null)
+                        {
+                            dd.Text = string.Empty;
+                            dd.SelectedIndex = -1;
+                        }
+                    }
+                    else if (typeof(csDataGridView) == ctl2.GetType())
+                    {
+                        csDataGridView dd = (csDataGridView)ctl2;
+                        if (dd != null)
+                        {
+                            dd.DataSource = null;
+                        }
+                    }
+            }
+            ////////////////////////////////////////////////////////////////////////////
+            serv = new StarWorkServ();
+            list = serv.GetDeffectCode();
+            list.Insert(0, "");
+            //cboLOTID.Items.Insert(0, " ");
+            //cboLOTID.ValueMember = "LOT_ID";
+            cboLOTID.DisplayMember = "LOT_ID";
+            cboLOTID.DataSource = list;
+
+            ser = new StarWorkServ();
+            list1 = serv.GetDefect_Code();
+            list1.Insert(0, "");
+            list2 = serv.GetDefect_Code();
+            list2.Insert(0, "");
+            list3 = serv.GetDefect_Code();
+            list3.Insert(0, "");
+
+            comboBox1.DisplayMember = "KEY_1";
+            comboBox1.DataSource = list1;
+            comboBox2.DisplayMember = "KEY_1";
+            comboBox2.DataSource = list2;
+            comboBox3.DisplayMember = "KEY_1";
+            comboBox3.DataSource = list3;
         }
     }
 }

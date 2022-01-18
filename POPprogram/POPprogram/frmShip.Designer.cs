@@ -161,6 +161,7 @@ namespace POPprogram
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.csDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.csDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.csDataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.csDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -202,6 +203,7 @@ namespace POPprogram
             // 
             this.ClientSize = new System.Drawing.Size(1194, 634);
             this.Name = "frmShip";
+            this.Activated += new System.EventHandler(this.frmShip_Activated);
             this.Load += new System.EventHandler(this.frmShip_Load);
             this.panel6.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
