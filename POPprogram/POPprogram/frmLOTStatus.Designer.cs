@@ -61,6 +61,7 @@ namespace POPprogram
             this.pnlCrud = new System.Windows.Forms.Panel();
             this.btnReadBottom = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.lblUpTitle = new System.Windows.Forms.Label();
             btnReadTop = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -85,7 +86,7 @@ namespace POPprogram
             btnReadTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             btnReadTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             btnReadTop.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            btnReadTop.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold);
+            btnReadTop.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             btnReadTop.ForeColor = System.Drawing.SystemColors.ControlText;
             btnReadTop.ImageIndex = 13;
             btnReadTop.ImageList = this.imageList1;
@@ -125,7 +126,7 @@ namespace POPprogram
             this.pnlTop.Controls.Add(this.txtSearch);
             this.pnlTop.Controls.Add(this.btnSearchPnl);
             this.pnlTop.Controls.Add(btnReadTop);
-            this.pnlTop.Location = new System.Drawing.Point(0, 26);
+            this.pnlTop.Location = new System.Drawing.Point(0, 80);
             this.pnlTop.Name = "pnlTop";
             this.pnlTop.Size = new System.Drawing.Size(1373, 35);
             this.pnlTop.TabIndex = 40;
@@ -135,7 +136,7 @@ namespace POPprogram
             this.btnTxtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.btnTxtSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnTxtSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnTxtSearch.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold);
+            this.btnTxtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.btnTxtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btnTxtSearch.ImageIndex = 16;
             this.btnTxtSearch.ImageList = this.imageList1;
@@ -148,11 +149,11 @@ namespace POPprogram
             // txtSearch
             // 
             this.txtSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtSearch.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold);
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.txtSearch.Location = new System.Drawing.Point(53, 0);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(0);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(244, 32);
+            this.txtSearch.Size = new System.Drawing.Size(244, 31);
             this.txtSearch.TabIndex = 50;
             this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
             // 
@@ -161,7 +162,7 @@ namespace POPprogram
             this.btnSearchPnl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSearchPnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.btnSearchPnl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSearchPnl.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold);
+            this.btnSearchPnl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.btnSearchPnl.Location = new System.Drawing.Point(343, 0);
             this.btnSearchPnl.Margin = new System.Windows.Forms.Padding(0);
             this.btnSearchPnl.Name = "btnSearchPnl";
@@ -177,7 +178,7 @@ namespace POPprogram
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.splitContainer1.Location = new System.Drawing.Point(12, 72);
+            this.splitContainer1.Location = new System.Drawing.Point(12, 122);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -189,7 +190,7 @@ namespace POPprogram
             this.splitContainer1.Panel2.Controls.Add(this.pnlSearch);
             this.splitContainer1.Panel2.Controls.Add(this.pnlProperty);
             this.splitContainer1.Panel2.Controls.Add(this.pnlTopLbl);
-            this.splitContainer1.Size = new System.Drawing.Size(1170, 471);
+            this.splitContainer1.Size = new System.Drawing.Size(1170, 421);
             this.splitContainer1.SplitterDistance = 832;
             this.splitContainer1.TabIndex = 41;
             // 
@@ -212,8 +213,8 @@ namespace POPprogram
             // 
             this.splitContainer2.Panel2.Controls.Add(this.csDataGridView2);
             this.splitContainer2.Panel2.Controls.Add(this.label1);
-            this.splitContainer2.Size = new System.Drawing.Size(832, 471);
-            this.splitContainer2.SplitterDistance = 269;
+            this.splitContainer2.Size = new System.Drawing.Size(832, 421);
+            this.splitContainer2.SplitterDistance = 222;
             this.splitContainer2.TabIndex = 0;
             // 
             // csDataGridView1
@@ -253,7 +254,7 @@ namespace POPprogram
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.csDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.csDataGridView1.RowHeadersWidth = 30;
-            this.csDataGridView1.Size = new System.Drawing.Size(830, 212);
+            this.csDataGridView1.Size = new System.Drawing.Size(830, 165);
             this.csDataGridView1.TabIndex = 19;
             this.csDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellClick);
             // 
@@ -262,7 +263,7 @@ namespace POPprogram
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(183)))), ((int)(((byte)(241)))));
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label6.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.label6.Location = new System.Drawing.Point(0, 0);
             this.label6.Name = "label6";
@@ -308,7 +309,7 @@ namespace POPprogram
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.csDataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.csDataGridView2.RowHeadersWidth = 30;
-            this.csDataGridView2.Size = new System.Drawing.Size(830, 141);
+            this.csDataGridView2.Size = new System.Drawing.Size(830, 138);
             this.csDataGridView2.TabIndex = 19;
             // 
             // label1
@@ -316,7 +317,7 @@ namespace POPprogram
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(160)))), ((int)(((byte)(223)))));
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
@@ -334,7 +335,7 @@ namespace POPprogram
             this.pnlSearch.Location = new System.Drawing.Point(0, 55);
             this.pnlSearch.Margin = new System.Windows.Forms.Padding(0);
             this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(332, 414);
+            this.pnlSearch.Size = new System.Drawing.Size(332, 364);
             this.pnlSearch.TabIndex = 32;
             // 
             // pgSearch
@@ -343,7 +344,7 @@ namespace POPprogram
             this.pgSearch.HelpVisible = false;
             this.pgSearch.Location = new System.Drawing.Point(0, 0);
             this.pgSearch.Name = "pgSearch";
-            this.pgSearch.Size = new System.Drawing.Size(330, 412);
+            this.pgSearch.Size = new System.Drawing.Size(330, 362);
             this.pgSearch.TabIndex = 31;
             this.pgSearch.ToolbarVisible = false;
             // 
@@ -356,7 +357,7 @@ namespace POPprogram
             this.pnlProperty.Location = new System.Drawing.Point(0, 55);
             this.pnlProperty.Margin = new System.Windows.Forms.Padding(0);
             this.pnlProperty.Name = "pnlProperty";
-            this.pnlProperty.Size = new System.Drawing.Size(332, 414);
+            this.pnlProperty.Size = new System.Drawing.Size(332, 364);
             this.pnlProperty.TabIndex = 30;
             // 
             // pgProperty
@@ -365,7 +366,7 @@ namespace POPprogram
             this.pgProperty.HelpVisible = false;
             this.pgProperty.Location = new System.Drawing.Point(0, 0);
             this.pgProperty.Name = "pgProperty";
-            this.pgProperty.Size = new System.Drawing.Size(330, 412);
+            this.pgProperty.Size = new System.Drawing.Size(330, 362);
             this.pgProperty.TabIndex = 4;
             this.pgProperty.ToolbarVisible = false;
             // 
@@ -406,7 +407,7 @@ namespace POPprogram
             this.lblPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(241)))), ((int)(((byte)(255)))));
             this.lblPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblPanel.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold);
+            this.lblPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.lblPanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.lblPanel.Location = new System.Drawing.Point(0, 0);
             this.lblPanel.Name = "lblPanel";
@@ -434,7 +435,7 @@ namespace POPprogram
             this.btnReadBottom.AutoSize = true;
             this.btnReadBottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.btnReadBottom.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnReadBottom.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold);
+            this.btnReadBottom.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.btnReadBottom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReadBottom.ImageIndex = 13;
             this.btnReadBottom.ImageList = this.imageList1;
@@ -457,7 +458,7 @@ namespace POPprogram
             this.btnClose.AutoSize = true;
             this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnClose.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold);
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.ImageIndex = 10;
             this.btnClose.ImageList = this.imageList1;
@@ -472,11 +473,22 @@ namespace POPprogram
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // lblUpTitle
+            // 
+            this.lblUpTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblUpTitle.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblUpTitle.Location = new System.Drawing.Point(0, 0);
+            this.lblUpTitle.Name = "lblUpTitle";
+            this.lblUpTitle.Size = new System.Drawing.Size(1194, 67);
+            this.lblUpTitle.TabIndex = 54;
+            this.lblUpTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // frmLOTStatus
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(1194, 634);
+            this.Controls.Add(this.lblUpTitle);
             this.Controls.Add(this.pnlCrud);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.pnlTop);
@@ -529,5 +541,6 @@ namespace POPprogram
         private System.Windows.Forms.PropertyGrid pgSearch;
         public System.Windows.Forms.Button btnTxtSearch;
         private System.Windows.Forms.ImageList imageList1;
+        public System.Windows.Forms.Label lblUpTitle;
     }
 }

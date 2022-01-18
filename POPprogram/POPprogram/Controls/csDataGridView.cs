@@ -34,7 +34,7 @@ namespace POPprogram
             this.DefaultCellStyle.ForeColor = Color.Black;
             this.DefaultCellStyle.SelectionBackColor = Color.FromArgb(244, 246, 249);
             this.DefaultCellStyle.SelectionForeColor = Color.Black;
-            this.DefaultCellStyle.Font =  new System.Drawing.Font("나눔고딕", 9F);
+            this.DefaultCellStyle.Font =  new System.Drawing.Font("나눔고딕", 10F);
             this.BackgroundColor = Color.White;
             this.RowTemplate.Height = 30;
 

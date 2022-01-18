@@ -16,5 +16,10 @@ namespace POPprogram
         {
             InitializeComponent();
         }
+
+        private void Base6_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

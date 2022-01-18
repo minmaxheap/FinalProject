@@ -12,6 +12,8 @@ namespace POPprogram
     public partial class frmNewLOT : POPprogram.Base5
     {
         string msUserID;
+        string titleName;
+        public string TitleName { get { return titleName; } set { } }
         public frmNewLOT()
         {
             InitializeComponent();
@@ -20,7 +22,8 @@ namespace POPprogram
 
         private void frmNewLOT_Load(object sender, EventArgs e)
         {
-           
+            titleName = frmMain.TitleName;
+            lblUpTitle.Text = "   " + titleName;
         }
 
         private void btnClose_Click(object sender, EventArgs e)

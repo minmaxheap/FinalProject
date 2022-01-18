@@ -18,7 +18,8 @@ namespace POPprogram
         bool defectCompleate = false;
         bool inspectCompleate = false;
         bool inputCompleate = false;
-
+        string titleName;
+        public string TitleName { get { return titleName; } set { } }
         public frmEndWorkOrder()
         {
             InitializeComponent();
@@ -27,6 +28,8 @@ namespace POPprogram
 
         private void frmEndWorkOrder_Load(object sender, EventArgs e)
         {
+            titleName = frmMain.TitleName;
+            lblUpTitle.Text = "   " + titleName;
             searchflag = true;
             EndDAC serv = new EndDAC();
             list = serv.GetLotList();

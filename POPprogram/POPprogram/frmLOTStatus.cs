@@ -17,6 +17,8 @@ namespace POPprogram
         DataTable mdtAll;
         List<int> iSearchedList;
         List<int> iSelectedRow;
+        string titleName;
+        public string TitleName { get { return titleName; } set { } }
         public bool BIsSearchPanel
         {
             get { return pnlSearch.Visible; }
@@ -38,7 +40,8 @@ namespace POPprogram
 
         private void frmLOTStatus_Load(object sender, EventArgs e)
         {
-
+            titleName = frmMain.TitleName;
+            lblUpTitle.Text = "   " + titleName;
             DataGridViewUtil.SetInitGridView(csDataGridView1);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "LOT ID", "LOT_ID",width:150);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "LOT 설명", "LOT_DESC", width: 150);

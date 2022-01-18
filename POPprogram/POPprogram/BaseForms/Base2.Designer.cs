@@ -56,6 +56,7 @@ namespace POPprogram
             this.txtCode1 = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.lblUpTitle = new System.Windows.Forms.Label();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -77,7 +78,7 @@ namespace POPprogram
             this.btnClose.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnClose.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold);
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.btnClose.ForeColor = System.Drawing.Color.Black;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.ImageIndex = 9;
@@ -119,7 +120,7 @@ namespace POPprogram
             this.btnExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229)))));
             this.btnExport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnExport.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 15.75F, System.Drawing.FontStyle.Bold);
+            this.btnExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.btnExport.ForeColor = System.Drawing.Color.Black;
             this.btnExport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExport.ImageIndex = 4;
@@ -145,7 +146,7 @@ namespace POPprogram
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.textBox1);
             this.panel4.Controls.Add(this.label1);
-            this.panel4.Location = new System.Drawing.Point(31, 344);
+            this.panel4.Location = new System.Drawing.Point(31, 352);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1136, 198);
             this.panel4.TabIndex = 54;
@@ -166,11 +167,11 @@ namespace POPprogram
             // textBox2
             // 
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.textBox2.Location = new System.Drawing.Point(974, 126);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(129, 25);
+            this.textBox2.Size = new System.Drawing.Size(129, 24);
             this.textBox2.TabIndex = 56;
             // 
             // label3
@@ -189,11 +190,11 @@ namespace POPprogram
             // textBox1
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.textBox1.Location = new System.Drawing.Point(974, 76);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(129, 25);
+            this.textBox1.Size = new System.Drawing.Size(129, 24);
             this.textBox1.TabIndex = 50;
             // 
             // label1
@@ -220,7 +221,7 @@ namespace POPprogram
             this.panel7.Controls.Add(this.btnTxtSearch);
             this.panel7.Controls.Add(this.txtSearch);
             this.panel7.Controls.Add(this.label9);
-            this.panel7.Location = new System.Drawing.Point(31, 23);
+            this.panel7.Location = new System.Drawing.Point(31, 77);
             this.panel7.Margin = new System.Windows.Forms.Padding(0);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1136, 47);
@@ -298,7 +299,7 @@ namespace POPprogram
             this.panel8.Controls.Add(this.label22);
             this.panel8.Controls.Add(this.label6);
             this.panel8.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.panel8.Location = new System.Drawing.Point(31, 102);
+            this.panel8.Location = new System.Drawing.Point(31, 131);
             this.panel8.Margin = new System.Windows.Forms.Padding(0);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1136, 209);
@@ -403,11 +404,22 @@ namespace POPprogram
             this.label6.Text = "생산 LOT 정보";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lblUpTitle
+            // 
+            this.lblUpTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblUpTitle.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblUpTitle.Location = new System.Drawing.Point(0, 0);
+            this.lblUpTitle.Name = "lblUpTitle";
+            this.lblUpTitle.Size = new System.Drawing.Size(1194, 67);
+            this.lblUpTitle.TabIndex = 55;
+            this.lblUpTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // Base2
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(1194, 634);
+            this.Controls.Add(this.lblUpTitle);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel8);
@@ -455,5 +467,6 @@ namespace POPprogram
         public System.Windows.Forms.Button btnReadTop;
         public System.Windows.Forms.Button btnTxtSearch;
         private System.Windows.Forms.ImageList imageList1;
+        public System.Windows.Forms.Label lblUpTitle;
     }
 }

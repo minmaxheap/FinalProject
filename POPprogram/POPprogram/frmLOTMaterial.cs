@@ -17,6 +17,8 @@ namespace POPprogram
         bool searchflag = false;
         AutoCompleteStringCollection auto;
         bool flag = false;
+        string titleName;
+        public string TitleName { get { return titleName; } set { } }
         public frmLOTMaterial()
         {
             InitializeComponent();
@@ -28,7 +30,8 @@ namespace POPprogram
             searchflag = true;
             MatServ serv = new MatServ();
             list = serv.GetLotList();
-
+            titleName = frmMain.TitleName;
+            lblUpTitle.Text = "   " + titleName;
             cboLOTID.DisplayMember = "LOT_ID";
             cboLOTID.DataSource = list;
             cboLOTID.Text = null;
