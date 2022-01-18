@@ -25,14 +25,14 @@ namespace NiceWEB.Controllers
 
             if (startDate == null)
             {
-                startDate = new DateTime(DateTime.Now.Year, 1, 1).ToShortDateString();
+                startDate = new DateTime(DateTime.Now.Year, 1, 15).ToShortDateString();
             }
             
             ViewBag.startDate = startDate;
 
             if (endDate == null)
             {
-                endDate = DateTime.Now.ToShortDateString();
+                endDate = new DateTime(DateTime.Now.Year, 1, 31).ToShortDateString();
             }
 
              ViewBag.endDate = endDate; 

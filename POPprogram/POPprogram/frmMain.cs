@@ -14,9 +14,10 @@ namespace POPprogram
     public partial class frmMain : Form
     {
         string msUserID;
+        static string titleName;
         DataTable mdtFunc;
         FunctionServ mServ;
-
+        public static string TitleName { get { return titleName; } }
         public frmMain(string ID)
         {
             InitializeComponent();
@@ -88,8 +89,8 @@ namespace POPprogram
                 //frm.WindowState = FormWindowState.Maximized;
                 frm.FormBorderStyle = FormBorderStyle.FixedSingle;
                 frm.Dock = DockStyle.Fill;
-
                 frm.Text = formText;
+                titleName = frm.Text;
                 frm.Show();
 
             }

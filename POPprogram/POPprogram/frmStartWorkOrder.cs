@@ -16,6 +16,8 @@ namespace POPprogram
         List<string> CodeList;
 
         bool searchflag = false;
+        string titleName;
+        public string TitleName { get { return titleName; } set { } }
         List<EndPropertyEQ> listEQ;
         LOTinspectServ lotserv;
         public frmStartWorkOrder()
@@ -28,7 +30,8 @@ namespace POPprogram
             serv = new StarWorkServ();
             list  = serv.GetLotCode();
             list.Insert(0, "");
-            
+            titleName = frmMain.TitleName;
+            lblUpTitle.Text = "   " + titleName;
             //cboLOTID.ValueMember = "LOT_ID";
             cboLOTID.DisplayMember = "LOT_ID";
             cboLOTID.DataSource = list;

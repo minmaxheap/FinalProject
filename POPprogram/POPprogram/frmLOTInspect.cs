@@ -14,7 +14,8 @@ namespace POPprogram
 		List<string> list;
 		List<StarWorkProperty> swlist;
 		LOTinspectServ lotserv;
-
+		string titleName;
+		public string TitleName { get { return titleName; } set { } }
 		public frmLOTInspect()
 		{
 			InitializeComponent();
@@ -29,7 +30,8 @@ namespace POPprogram
 			//cboLOTID.ValueMember = "LOT_ID";
 			cboLOTID.DisplayMember = "LOT_ID";
 			cboLOTID.DataSource = list;
-
+			titleName = frmMain.TitleName;
+			lblUpTitle.Text = "   " + titleName;
 
 
 
