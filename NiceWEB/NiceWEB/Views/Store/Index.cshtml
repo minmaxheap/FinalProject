@@ -86,7 +86,7 @@
 
                             <thead>
                                 <tr>
-                                    <th scope="col">oper_in_time</th>
+                                    <th scope="col">창고입고시간</th>
                                     <th scope="col">LotID</th>
                                     <th scope="col">품번</th>
                                     <th scope="col">창고</th>
@@ -104,7 +104,7 @@
 											<td>@p.LOT_ID</td>
 											<td>@p.PRODUCT_CODE</td>
 											<td>@p.STORE_CODE</td>
-											<td>@String.Format("{0:#,###}", Math.Round(p.LOT_QTY))</td>
+											<td align="right">@String.Format("{0:#,###}", Math.Round(p.LOT_QTY))</td>
 
 										</tr>
 									}

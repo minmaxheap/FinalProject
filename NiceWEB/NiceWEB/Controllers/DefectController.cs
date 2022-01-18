@@ -18,7 +18,20 @@ namespace NiceWEB.Controllers
             }
 
             //DateTime from = Convert.ToDateTime("2021-10-10");
-            //DateTime to = Convert.ToDateTime("2022-10-10");
+            //DateTime to = Convert.ToDateTime("2022-10-10")
+
+            if (startDate == null)
+            {
+                startDate = new DateTime(DateTime.Now.Year, 1, 15).ToShortDateString();
+            }
+
+            ViewBag.startDate = startDate;
+
+            if (endDate == null)
+            {
+                endDate = new DateTime(DateTime.Now.Year, 1, 31).ToShortDateString();
+            }
+
 
             int pagesize = Convert.ToInt32(WebConfigurationManager.AppSettings["pagesize"]);
             DefectDAC dac = new DefectDAC();

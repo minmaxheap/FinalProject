@@ -20,6 +20,21 @@ namespace NiceWEB.Controllers
                 return RedirectToAction("Login", "Home");
             }
 
+            if (startDate == null)
+            {
+                startDate = new DateTime(DateTime.Now.Year, 1, 15).ToShortDateString();
+            }
+
+            ViewBag.startDate = startDate;
+
+            if (endDate == null)
+            {
+                endDate = new DateTime(DateTime.Now.Year, 1, 31).ToShortDateString();
+            }
+
+            ViewBag.endDate = endDate;
+
+
             int pagesize = Convert.ToInt32(WebConfigurationManager.AppSettings["pagesize"]);
             Adding_materialDAC dac = new Adding_materialDAC();
             List<Adding_materialProperty> list = dac.GetData(startDate, endDate, productCode, op_code, childCode, page, pagesize);
@@ -50,12 +65,6 @@ namespace NiceWEB.Controllers
             ViewBag.productCode = productCode;
             ViewBag.op_code = op_code;
             ViewBag.childCode = childCode;
-
-            if (startDate == null) ViewBag.startDate = DateTime.Now.AddDays(-15).ToString();
-            else { ViewBag.startDate = startDate; }
-
-            if (endDate == null) ViewBag.endDate = DateTime.Now.ToString();
-            else { ViewBag.endDate = endDate; }
 
 
             ViewBag.PagingInfo = pageInfo;
