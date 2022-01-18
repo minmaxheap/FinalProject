@@ -101,7 +101,7 @@ namespace NiceWEB.Models
 				//datetime을 어떻게 두면좋을까?
 				if (from != null && to != null)
 				{
-					sb.Append(" and TRAN_TIME between @from and @to ");
+					sb.Append(" and convert(varchar(10),TRAN_TIME,120) between @from and @to ");
 					cmd.Parameters.AddWithValue("@from", from);
 					cmd.Parameters.AddWithValue("@to", to);
 				}
