@@ -20,6 +20,20 @@ namespace NiceWEB.Controllers
                 return RedirectToAction("Login", "Home");
             }
 
+            if (startDate == null)
+            {
+                startDate = new DateTime(DateTime.Now.Year, 1, 15).ToShortDateString();
+            }
+
+            ViewBag.startDate = startDate;
+
+            if (endDate == null)
+            {
+                endDate = new DateTime(DateTime.Now.Year, 1, 31).ToShortDateString();
+            }
+
+            ViewBag.endDate = endDate;
+
             CommonDAC comDAC = new CommonDAC();
             //select box에 전달할 데이터
             List<ComboItem> orderList = comDAC.GetWorkOrder();
@@ -72,15 +86,6 @@ namespace NiceWEB.Controllers
             ViewBag.DefectQty = "[" + defectQty.ToString().TrimEnd(',') + "]";
             ViewBag.WorkRate = "[" + workRate.ToString().TrimEnd(',') + "]";
             ViewBag.DownRate = "[" + downRate.ToString().TrimEnd(',') + "]";
-          
-
-
-            if (startDate == null) ViewBag.startDate = DateTime.Now.ToString();
-            else { ViewBag.startDate = startDate; }
-
-            if (endDate == null) ViewBag.endDate = DateTime.Now.ToString();
-            else { ViewBag.endDate = endDate; }
-
 
 
             return View(list);

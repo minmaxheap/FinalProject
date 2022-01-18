@@ -129,9 +129,9 @@
                                                 <td>@p.WORK_ORDER_ID</td>
                                                 <td>@p.PRODUCT_CODE</td>
                                                 <td>@p.PRODUCT_NAME</td>
-                                                <td>@String.Format("{0:#,###}", p.ORDER_QTY)</td>
-                                                <td>@String.Format("{0:#,###}", p.PRODUCT_QTY)</td>
-                                                <td>@String.Format("{0:#,###}", p.DEFECT_QTY)</td>
+                                                <td align="center">@String.Format("{0:#,###}", p.ORDER_QTY)</td>
+                                                <td align="center">@String.Format("{0:#,###}", p.PRODUCT_QTY)</td>
+                                                <td align="center">@String.Format("{0:#,###}", p.DEFECT_QTY)</td>
                                                 <td>@p.QUALITY_RATE</td>
                                                 <td>@p.DEFECT_RATE</td>
                                                 <td>@p.WORK_CLOSE_TIME</td>
@@ -244,7 +244,7 @@
                     //endDate: moment(),
                     //startDate: a,
                     //endDate: b,
-                    startDate: '@DateTime.Now.AddDays(-7).ToString()',
+                    startDate: '@start',
                     endDate:'@end',
                     showDropdowns: true,
                     showWeekNumbers: true,
