@@ -81,12 +81,10 @@
                                        <th>LOT 설명</th>
                                        <th>품번</th>
                                        <th>공정 코드</th>
-                                       <th>창고 코드</th>
                                        <th>LOT 수량</th>
-                                       <th>LOT 생성 시 수량</th>
-                                       <th>LOT 공정 투입 수량</th>
-                                       <th>LOT 작업 시작 수량</th>
-                                       <th>작업 시작 수량</th>
+                                       <th>LOT 공정 작업 시작 여부</th>
+                                       <th>작업 시작 시간</th>
+                                       <th>작업 시작 설비</th>
                                    </tr>
                                </thead>
                                <tbody>
@@ -95,77 +93,17 @@
                                        foreach (var p in Model)
                                        {
 
-                                   <tr data-widget="expandable-table" aria-expanded="false">
+                                   <tr>
                                        <td>@p.LOT_ID</td>
                                        <td>@p.LOT_DESC</td>
                                        <td>@p.PRODUCT_CODE</td>
                                        <td>@p.OPERATION_CODE</td>
-                                       <td>@p.STORE_CODE</td>
                                        <td>@p.LOT_QTY</td>
-                                       <td>@p.CREATE_QTY</td>
-                                       <td>@p.OPER_IN_QTY</td>
                                        <td>@p.START_FLAG</td>
-                                       <td>@p.START_QTY</td>
+                                       <td>@p.START_TIME</td>
+                                       <td>@p.START_EQUIPMENT_CODE</td>
                                    </tr>
-                                           <tr class="expandable-body">
-                                               <td colspan="10">
-                                                   <p>
-                                                       <table class="table table-bordered">
-                                                           <thead>
-                                                               <tr>
 
-                                                                   <th>시작 시간</th>
-                                                                   <th>시작 공정 코드</th>
-                                                                   <th>품번</th>
-                                                                   <th>공정 코드</th>
-                                                                   <th>창고 코드</th>
-                                                                   <th>LOT 수량</th>
-                                                                   <th>LOT 생성 시 수량</th>
-                                                                   <th>LOT 공정 투입 수량</th>
-                                                                   <th>LOT 작업 시작 수량</th>
-                                                                   <th>작업 시작 수량</th>
-
-                                                               </tr>
-                                                           </thead>
-                                                           <tbody>
-                                                               <tr>
-                                                                   <td>@p.START_TIME</td>
-                                                                   <td> @p.START_EQUIPMENT_CODE</td>
-                                                                   <td>@p.PRODUCT_CODE</td>
-                                                                   @*<td>@p.OPERATION_CODE</td>*@
-                                                                   <td>@p.STORE_CODE</td>
-                                                                   <td>@p.LOT_QTY</td>
-                                                                   <td>@p.CREATE_QTY</td>
-                                                                   <td>@p.OPER_IN_QTY</td>
-                                                                   <td>@p.START_FLAG</td>
-                                                                   <td>@p.START_QTY</td>
-                                                               </tr>
-                                                           </tbody>
-
-                                                           @*<tr>시작시간 : @p.START_TIME</tr>
-
-            @p.START_EQUIPMENT_CODE
-            @p.END_FLAG
-            @p.END_TIME
-            @p.END_EQUIPMENT_CODE
-            @p.SHIP_FLAG
-            @p.SHIP_CODE
-            @p.SHIP_TIME
-            @p.PRODUCTION_TIME
-            @p.CREATE_TIME
-            @p.OPER_IN_TIME
-            @p.WORK_ORDER_ID
-            @p.LOT_DELETE_FLAG
-            @p.LOT_DELETE_TIME
-            @p.LAST_TRAN_CODE
-            @p.LAST_TRAN_TIME
-            @p.LAST_TRAN_USER_ID
-            @p.LAST_TRAN_COMMENT
-            @p.LAST_HIST_SEQ*@
-                                                       </table>
-                                                   </p>
-                                               </td>
-                                           </tr>
                                    }
                                }
                                </tbody>

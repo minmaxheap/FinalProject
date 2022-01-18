@@ -20,6 +20,7 @@ namespace NiceWEB.Models
         public string SPEC_TARGET { get; set; }
         public string SPEC_USL { get; set; }
         public string INSPECT_VALUE { get; set; }
+        public string INSPECT_RESULT { get; set; }
         public string TRAN_CODE { get; set; }
         public string TRAN_USER_ID { get; set; }
 
