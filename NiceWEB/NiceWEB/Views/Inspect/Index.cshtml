@@ -141,7 +141,14 @@
                                     <td>@String.Format("{0:#,###}", p.SPEC_TARGET)</td>
                                     <td>@String.Format("{0:#,###}", p.SPEC_USL)</td>
                                     <td>@p.INSPECT_VALUE</td>
-                                    <td>@p.INSPECT_RESULT</td>
+                                    @if (@p.INSPECT_RESULT.Equals("NG"))
+                                    {
+                                        <td style="background-color:red">@p.INSPECT_RESULT</td>
+                                    }
+                                    else
+                                    {
+                                        <td style="background-color:white">@p.INSPECT_RESULT</td>
+                                    }
                                     <td>@p.TRAN_USER_ID</td>
                                 </tr>
 

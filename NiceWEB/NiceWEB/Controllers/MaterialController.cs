@@ -51,7 +51,7 @@ namespace NiceWEB.Controllers
             ViewBag.op_code = op_code;
             ViewBag.childCode = childCode;
 
-            if (startDate == null) ViewBag.startDate = DateTime.Now.ToString();
+            if (startDate == null) ViewBag.startDate = DateTime.Now.AddDays(-15).ToString();
             else { ViewBag.startDate = startDate; }
 
             if (endDate == null) ViewBag.endDate = DateTime.Now.ToString();

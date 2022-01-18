@@ -104,7 +104,7 @@
 											<td>@p.LOT_ID</td>
 											<td>@p.PRODUCT_CODE</td>
 											<td>@p.STORE_CODE</td>
-											<td>@p.LOT_QTY</td>
+											<td>@String.Format("{0:#,###}", Math.Round(p.LOT_QTY))</td>
 
 										</tr>
 									}
