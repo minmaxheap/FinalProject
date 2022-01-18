@@ -34,32 +34,64 @@ namespace NiceWEB.Controllers
 
         public ActionResult Index (string storeCode, string ProductCode, int page=1)
         {
-            int pagesize = Convert.ToInt32(WebConfigurationManager.AppSettings["pagesize"]);
-            StoreDAC dac = new StoreDAC();
-            List<StoreProperty> list = dac.GetPageList(storeCode, ProductCode,page,pagesize);
-            List<ComboItem> categories = dac.GetCode();
-            List<ComboItem> categories2 = dac.GetProductCode();
-            int totalCount = dac.GetProductTotalCount(storeCode,ProductCode);
+            if (Session["UserID"] == null || Session["UserID"].ToString().Length < 1)
+            {
+                return RedirectToAction("Login", "Home");
+            }
 
-            dac.Dispose();
+            if (string.IsNullOrWhiteSpace(ProductCode) && string.IsNullOrWhiteSpace(storeCode))
+            {
+                StoreDAC dac = new StoreDAC();
+                List<StoreProperty> list = null;
+                List<ComboItem> categories = dac.GetCode();
+                List<ComboItem> categories2 = dac.GetProductCode();
+                ViewBag.ProductCode = ProductCode;
+                ViewBag.storeCode = storeCode;
+                PagingInfo pageInfo = new PagingInfo
+                {
+                    TotalItems = 0,
+                    ItemsPerPage = 10,
+                    CurrentPage = page
+                };
+                ViewBag.PagingInfo = pageInfo;
 
-			PagingInfo pageInfo = new PagingInfo
-			{
-				TotalItems = totalCount,
-				ItemsPerPage = pagesize,
-				CurrentPage = page
-			};
-            //categories.Insert();
-            categories2.Insert(0, new ComboItem { Code = "" });
+                categories2.Insert(0, new ComboItem { Code = "" });
 
-            ViewBag.Categories = new SelectList(categories, "Code", "Code");
-            ViewBag.Categories2 = new SelectList(categories2, "Code", "Code");
+                ViewBag.Categories = new SelectList(categories, "Code", "Code");
+                ViewBag.Categories2 = new SelectList(categories2, "Code", "Code");
 
-			ViewBag.storeCode = storeCode;
-			ViewBag.productCode = ProductCode;
-			ViewBag.PagingInfo = pageInfo;
+                return View(list);
+            }
+            else
+            {
 
-			return View(list);
+                int pagesize = Convert.ToInt32(WebConfigurationManager.AppSettings["pagesize"]);
+                StoreDAC dac = new StoreDAC();
+                List<StoreProperty> list = dac.GetPageList(storeCode, ProductCode, page, pagesize);
+                List<ComboItem> categories = dac.GetCode();
+                List<ComboItem> categories2 = dac.GetProductCode();
+                int totalCount = dac.GetProductTotalCount(storeCode, ProductCode);
+
+                dac.Dispose();
+
+                PagingInfo pageInfo = new PagingInfo
+                {
+                    TotalItems = totalCount,
+                    ItemsPerPage = pagesize,
+                    CurrentPage = page
+                };
+                //categories.Insert();
+                categories2.Insert(0, new ComboItem { Code = "" });
+
+                ViewBag.Categories = new SelectList(categories, "Code", "Code");
+                ViewBag.Categories2 = new SelectList(categories2, "Code", "Code");
+
+                ViewBag.storeCode = storeCode;
+                ViewBag.productCode = ProductCode;
+                ViewBag.PagingInfo = pageInfo;
+
+                return View(list);
+            }
         }
     }
 }
