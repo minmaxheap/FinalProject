@@ -24,7 +24,7 @@
                 <h1 class="m-0">검사 데이터 조회</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
-                
+
             </div><!-- /.col -->
         </div><!-- /.row -->
     </div><!-- /.container-fluid -->
@@ -33,7 +33,7 @@
 <hr />
 <div class="content">
     <div class="container-fluid">
-        <d
+
         @using (Html.BeginForm("Index", "Inspect", FormMethod.Post, new { @id = "form4" }))
         {
             <div class="row">
@@ -121,27 +121,29 @@
                                     <th scope="col">Target</th>
                                     <th scope="col">USL</th>
                                     <th scope="col">검사 데이터</th>
+                                    <th scope="col">검사 결과</th>
                                     <th scope="col">검사자</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach (var p in Model)
                                 {
-                                    <tr>
-                                        <td>@p.TRAN_TIME</td>
-                                        <td>@p.LOT_ID</td>
-                                        <td>@p.PRODUCT_CODE</td>
-                                        <td>@p.PRODUCT_NAME</td>
-                                        <td>@p.OPERATION_NAME</td>
-                                        <td>@p.INSPECT_ITEM_CODE</td>
-                                        <td>@p.INSPECT_ITEM_NAME</td>
-                                        <td>@p.VALUE_TYPE</td>
-                                        <td>@p.SPEC_LSL</td>
-                                        <td>@p.SPEC_TARGET</td>
-                                        <td>@p.SPEC_USL</td>
-                                        <td>@p.INSPECT_VALUE</td>
-                                        <td>@p.TRAN_USER_ID</td>
-                                    </tr>
+                                <tr class="color-changer">
+                                    <td>@p.TRAN_TIME</td>
+                                    <td>@p.LOT_ID</td>
+                                    <td>@p.PRODUCT_CODE</td>
+                                    <td>@p.PRODUCT_NAME</td>
+                                    <td>@p.OPERATION_NAME</td>
+                                    <td>@p.INSPECT_ITEM_CODE</td>
+                                    <td>@p.INSPECT_ITEM_NAME</td>
+                                    <td>@p.VALUE_TYPE</td>
+                                    <td>@String.Format("{0:#,###}", p.SPEC_LSL)</td>
+                                    <td>@String.Format("{0:#,###}", p.SPEC_TARGET)</td>
+                                    <td>@String.Format("{0:#,###}", p.SPEC_USL)</td>
+                                    <td>@p.INSPECT_VALUE</td>
+                                    <td>@p.INSPECT_RESULT</td>
+                                    <td>@p.TRAN_USER_ID</td>
+                                </tr>
 
                                 }
                             </tbody>
@@ -170,7 +172,7 @@
 </div>
 
 @{
-    
+
 
     string start = ViewBag.startDate;
     string end = ViewBag.endDate;
@@ -178,7 +180,7 @@
 
 
 @section Scripts
-{
+                                        {
 
     <script type="text/javascript">
         jQuery.noConflict()
@@ -188,9 +190,9 @@
         $(document).ready(function () {
             $('#reservation').daterangepicker(
                 {
-                      locale: {
-                        format: 'YYYY-MM-DD'
-                    },
+                     locale: {
+                                format: 'YYYY-MM-DD'
+                                              },
                     @*setStartDate:@ViewBag.startDate,
                     setEndDate:@ViewBag.endDaendDate,*@
                     //startDate: moment().subtract('days', 29),
@@ -230,53 +232,68 @@
 
         });
     </script>
-
     <script type="text/javascript">
-        $(document).ready(function () {
-            //debugger;
-            //alert($('#dataObjCol').val());
-            var dataObjCol = JSON.parse($('#dataObjCol').val());
+
+        var allTableCells = document.getElementsByTagName("td");
+
+        for (var i = 0, max = allTableCells.length; i < max; i++) {
+            var node = allTableCells[i];
+
+            //get the text from the first child node - which should be a text node
+            var currentText = node.childNodes[0].nodeValue;
+
+            //check for 'one' and assign this table cell's background color accordingly 
+            if (currentText === "NG")
+                node.style.backgroundColor = "red";
+        }
+        </script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                //debugger;
+                //alert($('#dataObjCol').val());
+                var dataObjCol = JSON.parse($('#dataObjCol').val());
             var dataObjData = JSON.parse($('#dataObjData').val());
 
 
 
             // Datatable settings.
             $('#TableId').DataTable(
-                {
+            {
 
-                    "data": dataObjData,
-                    "columns": dataObjCol,
-                    //    { "data": "ORDER_DATE" },
-                    //    { "data": "WORK_ORDER_ID" },
-                    //    { "data": "PRODUCT_CODE" },
-                    //    { "data": "PRODUCT_NAME" },
-                    //    { "data": "ORDER_QTY" },
-                    //    { "data": "PRODUCT_QTY" },
-                    //    { "data": "DEFECT_QTY" },
-                    //    { "data": "QUALITY_RATE" },
-                    //    { "data": "DEFECT_RATE" },
-                    //    { "data": "WORK_CLOSE_TIME" } //데이터가 이렇게 넘어오게 하면 되는 거잖아? 근데 지금은 타이틀도 같이 넘어오는 상태고..그 타이틀은 보여주는 컬럼인가?
+                "data": dataObjData,
+            "columns": dataObjCol,
+                        //    {"data": "ORDER_DATE" },
+                        //    {"data": "WORK_ORDER_ID" },
+                        //    {"data": "PRODUCT_CODE" },
+                        //    {"data": "PRODUCT_NAME" },
+                        //    {"data": "ORDER_QTY" },
+                        //    {"data": "PRODUCT_QTY" },
+                        //    {"data": "DEFECT_QTY" },
+                        //    {"data": "QUALITY_RATE" },
+                        //    {"data": "DEFECT_RATE" },
+                        //    {"data": "WORK_CLOSE_TIME" } //데이터가 이렇게 넘어오게 하면 되는 거잖아? 근데 지금은 타이틀도 같이 넘어오는 상태고..그 타이틀은 보여주는 컬럼인가?
 
-                    //],
-                    "bPaginate": false,
-                    "bFilter": false,
-                    "bInfo": false,
-                    "autoWidth": false,
-                    "bSort": false,
-                    "columnDefs": [
-                        {
-                            "width": "28px",
-                            "targets": "0",
-                            "className": "text-right"
-                        },
-                        {
-                            "width": "2px",
-                            "targets": "1",
-                            "className": "text-right"
-                        }
-                    ]
-                });
-        });
+            //],
+            "bPaginate": false,
+            "bFilter": false,
+            "bInfo": false,
+            "autoWidth": false,
+            "bSort": false,
+            "columnDefs": [
+            {
+                "width": "28px",
+            "targets": "0",
+            "className": "text-right"
+                            },
+            {
+                "width": "2px",
+            "targets": "1",
+            "className": "text-right"
+                            }
+            ]
+                    });
+            });
     </script>
 
 }

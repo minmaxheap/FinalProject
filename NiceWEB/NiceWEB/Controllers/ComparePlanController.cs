@@ -21,7 +21,21 @@ namespace NiceWEB.Controllers
             {
                 return RedirectToAction("Login", "Home");
             }
+           ;
 
+            if (startDate == null)
+            {
+                startDate = new DateTime(DateTime.Now.Year, 1, 1).ToShortDateString();
+            }
+            
+            ViewBag.startDate = startDate;
+
+            if (endDate == null)
+            {
+                endDate = DateTime.Now.ToShortDateString();
+            }
+
+             ViewBag.endDate = endDate; 
             //select box에 전달할 데이터
             CommonDAC comDAC = new CommonDAC();
            
@@ -70,11 +84,7 @@ namespace NiceWEB.Controllers
             }
 
             
-            if (startDate == null) ViewBag.startDate = DateTime.Now.ToString();
-            else { ViewBag.startDate = startDate; }
-
-            if (endDate == null) ViewBag.endDate = DateTime.Now.ToString();
-            else { ViewBag.endDate = endDate; }
+  
    
             return View(list);
         }

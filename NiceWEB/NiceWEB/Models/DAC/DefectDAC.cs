@@ -85,13 +85,18 @@ namespace NiceWEB.Models.DAC
 					sb.Append(" and OPERATION_CODE = @OPERATION_CODE");
 					cmd.Parameters.AddWithValue("@OPERATION_CODE", op_code);
 				}
+				
+
+
 				//datetime을 어떻게 두면좋을까?
-				if (from != null && to != null)
-				{
-					sb.Append(" and TRAN_TIME between @from and @to ");
-					cmd.Parameters.AddWithValue("@from", from);
-					cmd.Parameters.AddWithValue("@to", to);
-				}
+				//if (from != null && to != null)
+				//{
+				//	sb.Append(" and TRAN_TIME between @from and @to ");
+				//	cmd.Parameters.AddWithValue("@from", from);
+				//	cmd.Parameters.AddWithValue("@to", to);
+				//}
+
+				//if(!string
 				
 				cmd.CommandText = sb.ToString();
 

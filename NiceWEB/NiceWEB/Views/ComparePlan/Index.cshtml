@@ -36,7 +36,7 @@
 <div class="content">
     <div class="container-fluid">
   
-            @using (Html.BeginForm("Index", "ComparePlan", FormMethod.Post, new { @id = "form1" }))
+            @using (Html.BeginForm("Index", "ComparePlan", FormMethod.Post, new { @id = "form1", @name="form1" }))
             {
                 <div class="row">
 
@@ -80,7 +80,7 @@
                     <div class="col-3">
                         <div class="form-group">
                             <label>&nbsp;  </label>
-                            <button type="button" id="saveBtn" class="btn btn-block btn-secondary">조회</button>
+                            <button type="button" id="saveBtn" class="btn btn-block btn-secondary" onclick="Search_Fn();" >조회</button>
                         </div>
                     </div>
 
@@ -129,16 +129,16 @@
                                                 <td>@p.WORK_ORDER_ID</td>
                                                 <td>@p.PRODUCT_CODE</td>
                                                 <td>@p.PRODUCT_NAME</td>
-                                                <td>@p.ORDER_QTY</td>
-                                                <td>@p.PRODUCT_QTY</td>
-                                                <td>@p.DEFECT_QTY</td>
+                                                <td>@String.Format("{0:#,###}", p.ORDER_QTY)</td>
+                                                <td>@String.Format("{0:#,###}", p.PRODUCT_QTY)</td>
+                                                <td>@String.Format("{0:#,###}", p.DEFECT_QTY)</td>
                                                 <td>@p.QUALITY_RATE</td>
                                                 <td>@p.DEFECT_RATE</td>
                                                 <td>@p.WORK_CLOSE_TIME</td>
                                             </tr>
 
                                         }
-                                    }
+                                                        }
                                 </tbody>
 
                             </table>
@@ -154,7 +154,7 @@
                                              endDate = ViewBag.endDate,
                                              workID = ViewBag.workID,
                                              prdCode = ViewBag.prdCode
-                                    }))
+                                                }))
                             </ul>
                         </nav>
                     </div>
@@ -181,9 +181,9 @@
                             <tr>
                                 @{
                                     <td>@ViewBag.work</td>
-                                    <td>@ViewBag.ordQty</td>
-                                    <td>@ViewBag.prdQty</td>
-                                    <td>@ViewBag.defQty</td>
+                                    <td>@String.Format("{0:#,###}", ViewBag.ordQty)</td>
+                                    <td>@String.Format("{0:#,###}", Math.Round(ViewBag.prdQty))</td>
+                                    <td>@String.Format("{0:#,###}", Math.Round(ViewBag.defQty))</td>
                                 }
 
                             </tr>
@@ -212,31 +212,30 @@
         </div>
     </div>
 @{
-    string work_order = ViewBag.work;
+  string work_order = ViewBag.work;
 
-    decimal ordQty = ViewBag.ordQty;
-    decimal prdQty = ViewBag.prdQty;
-    decimal defQty = ViewBag.defQty;
-    decimal qualityRate = ViewBag.qualityRate;
-    decimal defectRate = ViewBag.defectRate;
-    string start = ViewBag.startDate;
-    string end = ViewBag.endDate;
-
+  decimal ordQty = ViewBag.ordQty;
+  decimal prdQty = ViewBag.prdQty;
+  decimal defQty = ViewBag.defQty;
+  decimal qualityRate = ViewBag.qualityRate;
+  decimal defectRate = ViewBag.defectRate;
+  string start = ViewBag.startDate;
+  string end = ViewBag.endDate;
 }
 
-@section Scripts
-{
+                                    @section Scripts
+                                    {
 
     <script type="text/javascript">
         jQuery.noConflict();
-        var startDate;
-        var endDate;
+          var startDate;
+          var endDate;
         $(document).ready(function () {
             $('#reservation').daterangepicker(
                 {
-                     locale: {
-                        format: 'YYYY-MM-DD'
-                    },
+                                        locale: {
+                                            format: 'YYYY-MM-DD'
+                                                       },
 
 
                     @*setStartDate:@ViewBag.startDate,
@@ -245,7 +244,7 @@
                     //endDate: moment(),
                     //startDate: a,
                     //endDate: b,
-                    startDate: '@start',
+                    startDate: '@DateTime.Now.AddDays(-7).ToString()',
                     endDate:'@end',
                     showDropdowns: true,
                     showWeekNumbers: true,
@@ -267,18 +266,26 @@
                 }
             );
 
-            $('#saveBtn').click(function () {
-                console.log(startDate.format('YYYY-MM-DD') + ' - ' + endDate.format('YYYY-MM-DD'));
-                $('#startDate').val(startDate.format('YYYY-MM-DD'));
-                $('#endDate').val(endDate.format('YYYY-MM-DD'));
-                $('#form1')[0].submit();
-            });
+            //$('#saveBtn').click(function () {
+            //    console.log(startDate.format('YYYY-MM-DD') + ' - ' + endDate.format('YYYY-MM-DD'));
+            //    $('#startDate').val(startDate.format('YYYY-MM-DD'));
+            //    $('#endDate').val(endDate.format('YYYY-MM-DD'));
+            //    $('#form1')[0].submit();
+            //});
 
 
 
 
 
         });
+
+        function Search_Fn() {
+               // console.log(startDate.format('YYYY-MM-DD') + ' - ' + endDate.format('YYYY-MM-DD'));
+            //startDate = start;
+            //endDate = end;
+                document.form1.submit();
+            }
+
     </script>
 
 

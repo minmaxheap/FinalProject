@@ -277,6 +277,13 @@ namespace MES_Team3
             btn.ImageList = this.menuImageList;
             btn.UseVisualStyleBackColor = true;
         }
+        private void DefaultButtonBeige(Button btn, int i)
+        {
+            btn.BackColor = Color.Beige;
+            btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            btn.ImageList = this.menuImageList;
+            btn.UseVisualStyleBackColor = true;
+        }
         private void SelectedButton(Button btn)
         {
             btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
@@ -312,7 +319,10 @@ namespace MES_Team3
         {
             for (int i = 0; i < mPnlMenu.Controls.Count; i++)
             {
-                DefaultButton((Button)mPnlMenu.Controls[i], i);
+                if (mPnlMenu.Controls[i].Text == sender.ToString())
+                    DefaultButton((Button)mPnlMenu.Controls[i], i);
+                else
+                    DefaultButtonBeige((Button)mPnlMenu.Controls[i], i);
             }
 
             Button menu = (Button)sender;
