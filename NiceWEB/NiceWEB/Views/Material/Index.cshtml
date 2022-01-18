@@ -77,7 +77,7 @@
 							<div class="form-group">
 								<label>&nbsp;  </label>
 
-								<button type="submit" id="saveBtn" class="btn btn-block btn-secondary">조회</button>
+								<button type="button" id="saveBtn" class="btn btn-block btn-secondary">조회</button>
 							</div>
 						</div>
 
@@ -162,7 +162,7 @@ new { page = x, startDate =ViewBag.startDate, endDate = ViewBag.endDate, product
 					locale: {
 						format: 'YYYY-MM-DD'
 					},
-					startDate: '@DateTime.Now.AddDays(-15).ToString()',
+					startDate: '@start',
                     endDate:'@end',
 					showDropdowns: true,
 					showWeekNumbers: true,
