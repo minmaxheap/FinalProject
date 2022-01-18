@@ -107,12 +107,11 @@
 									<td>@p.PRODUCT_CODE</td>
 									<td>@p.OPERATION_NAME</td>
 									<td>@p.STORE_CODE</td>
-									<td>@String.Format("{0:#,###}", Math.Round(p.LOT_QTY))</td>
-									<td>@String.Format("{0:#,###}", Math.Round(p.CREATE_QTY))</td>
-									<td>@String.Format("{0:#,###}", Math.Round(p.OPER_IN_QTY))</td>
-
-									<td>@p.START_QTY</td>
-									<td>@p.START_TIME</td>
+									<td align="right">@String.Format("{0:#,###}", Math.Round(p.LOT_QTY))</td>
+									<td align="right" >@String.Format("{0:#,###}", Math.Round(p.CREATE_QTY))</td>
+									<td align="right" >@String.Format("{0:#,###}", Math.Round(p.OPER_IN_QTY))</td>
+									<td align="right">@String.Format("{0:#,###}", Math.Round(p.START_QTY))</td>
+									<td >@p.START_TIME</td>
 									<td>@p.START_EQUIPMENT_CODE</td>
 
 								</tr>
