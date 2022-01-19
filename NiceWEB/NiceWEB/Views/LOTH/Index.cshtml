@@ -50,85 +50,91 @@
 		</div>
 		<div class="row">
 			<div class="col-12">
-				<div class="card">
-					<div class="card-header">
-						<h3 class="card-title">LOT 이력</h3>
-					</div>
-					<div class="card-body table-responsive p-0" style="height: 600px;">
-						<table class="table table-striped table-bordered table-hover table-head-fixed">
-							<thead>
-								<tr>
-									<th style="text-align:center" >처리시간</th>
-									<th style="text-align:center" >순번</th>
-									<th style="text-align:center" >트랜코드</th>
-									<th style="text-align:center" >설명란</th>
-									<th style="text-align:center" >품번</th>
-									<th style="text-align:center" >공정명</th>
-									<th style="text-align:center" >창고</th>
-									<th style="text-align:center" >lot수량</th>
-									<th style="text-align:center" >생산수량</th>
-									<th style="text-align:center" >공정투입수량</th>
-									<th style="text-align:center" >시작수량</th>
-									<th style="text-align:center" >시작시간</th>
-									<th style="text-align:center" >설비</th>
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">LOT 이력</h3>
+                    </div>
+                    <div class="card-body">
+                        @*<table id="compareplan" class="table table-bordered table-striped">
+            </table>*@
+                        <table class="table table-striped table-bordered table-hover"
+                               id="TableId"
+                               cellspacing="0"
+                               align="center"
+                               width="100%" border="1">
+                            <thead>
+                                <tr>
+                                    <th style="text-align:center">처리시간</th>
+                                    <th style="text-align:center">순번</th>
+                                    <th style="text-align:center">트랜코드</th>
+                                    <th style="text-align:center">설명란</th>
+                                    <th style="text-align:center">품번</th>
+                                    <th style="text-align:center">공정명</th>
+                                    <th style="text-align:center">창고</th>
+                                    <th style="text-align:center">lot수량</th>
+                                    <th style="text-align:center">생산수량</th>
+                                    <th style="text-align:center">공정투입수량</th>
+                                    <th style="text-align:center">시작수량</th>
+                                    <th style="text-align:center">시작시간</th>
+                                    <th style="text-align:center">설비</th>
 
-									@*<th>END_FLAG</th>
-									<th>END_TIME</th>
-									<th>설비끝</th>
-									<th>쉽플래그</th>
-									<th>쉽코드</th>
-									<th>쉽타임</th>
-									<th>프로덕션타임</th>
-		<th>생성시간</th>
-		<th>공정시간</th>
-		<th>WORK_ORDER_ID</th>
-		<th>LOT_DELETE_FLAG</th>
-		<th>LOT_DELETE_TIME</th>
-		<th>TRAN_USER_ID</th>
-		<th>TRAN_COMMENT</th>
-		<th>OLD_PRODUCT_CODE</th>
-		<th>OLD_OPERATION_CODE</th>
-		<th>OLD_STORE_CODE</th>
-		<th>OLD_LOT_QTY</th>
-		<th>OLD_LOT_QTY</th>*@
-								</tr>
-							</thead>
-							<tbody>
+                                    @*<th>END_FLAG</th>
+                                                    <th>END_TIME</th>
+                                                    <th>설비끝</th>
+                                                    <th>쉽플래그</th>
+                                                    <th>쉽코드</th>
+                                                    <th>쉽타임</th>
+                                                    <th>프로덕션타임</th>
+                        <th>생성시간</th>
+                        <th>공정시간</th>
+                        <th>WORK_ORDER_ID</th>
+                        <th>LOT_DELETE_FLAG</th>
+                        <th>LOT_DELETE_TIME</th>
+                        <th>TRAN_USER_ID</th>
+                        <th>TRAN_COMMENT</th>
+                        <th>OLD_PRODUCT_CODE</th>
+                        <th>OLD_OPERATION_CODE</th>
+                        <th>OLD_STORE_CODE</th>
+                        <th>OLD_LOT_QTY</th>
+                        <th>OLD_LOT_QTY</th>*@
+                                </tr>
+                            </thead>
+                            <tbody>
 
-								@if (Model != null)
-								{
-									foreach (var p in Model)
-									{
-								<tr>
-									<td style="text-align:center" >@p.TRAN_TIME</td>
-									<td style="text-align:center" >@p.HIST_SEQ</td>
-									<td style="text-align:center" >@p.TRAN_CODE</td>
-									<td style="text-align:center" >@p.LOT_DESC</td>
-									<td style="text-align:center" >@p.PRODUCT_CODE</td>
-									<td style="text-align:center" >@p.OPERATION_NAME</td>
-									<td style="text-align:center" >@p.STORE_CODE</td>
-									<td align="right">@String.Format("{0:#,###}", Math.Round(p.LOT_QTY))</td>
-									<td align="right" >@String.Format("{0:#,###}", Math.Round(p.CREATE_QTY))</td>
-									<td align="right" >@String.Format("{0:#,###}", Math.Round(p.OPER_IN_QTY))</td>
-									<td align="right">@String.Format("{0:#,###}", Math.Round(p.START_QTY))</td>
-									<td style="text-align:center"  >@p.START_TIME</td>
-									<td style="text-align:center" >@p.START_EQUIPMENT_CODE</td>
+                                @if (Model != null)
+                                {
+                                    foreach (var p in Model)
+                                    {
+                                        <tr>
+                                            <td style="text-align:center">@p.TRAN_TIME</td>
+                                            <td style="text-align:center">@p.HIST_SEQ</td>
+                                            <td style="text-align:center">@p.TRAN_CODE</td>
+                                            <td style="text-align:center">@p.LOT_DESC</td>
+                                            <td style="text-align:center">@p.PRODUCT_CODE</td>
+                                            <td style="text-align:center">@p.OPERATION_NAME</td>
+                                            <td style="text-align:center">@p.STORE_CODE</td>
+                                            <td align="right">@String.Format("{0:#,###}", Math.Round(p.LOT_QTY))</td>
+                                            <td align="right">@String.Format("{0:#,###}", Math.Round(p.CREATE_QTY))</td>
+                                            <td align="right">@String.Format("{0:#,###}", Math.Round(p.OPER_IN_QTY))</td>
+                                            <td align="right">@String.Format("{0:#,###}", Math.Round(p.START_QTY))</td>
+                                            <td style="text-align:center">@p.START_TIME</td>
+                                            <td style="text-align:center">@p.START_EQUIPMENT_CODE</td>
 
-								</tr>
-									}
-								}
-							</tbody>
-						</table>
-					</div>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
 
-					<!-- /.card-body -->
-					<nav aria-label="Page navigation example">
-						<ul class="pagination justify-content-center">
-							@Html.PageLinks((PagingInfo)ViewBag.PagingInfo, (x) => Url.Action("Index",
-								new { page = x, LotID = ViewBag.LotID }))
-						</ul>
-					</nav>
-				</div>
+                    <!-- /.card-body -->
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center">
+                            @Html.PageLinks((PagingInfo)ViewBag.PagingInfo, (x) => Url.Action("Index",
+                                new { page = x, LotID = ViewBag.LotID }))
+                        </ul>
+                    </nav>
+                </div>
 				<!-- /.card -->
 			</div>
 			<!-- /.col -->
