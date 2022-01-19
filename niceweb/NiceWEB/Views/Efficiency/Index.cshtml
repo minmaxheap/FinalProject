@@ -104,19 +104,19 @@
 
                             <thead>
                                 <tr>
-                                    <th scope="col">작업일자</th>
-                                    <th scope="col">지시수량</th>
-                                    <th scope="col">양품수량</th>
-                                    <th scope="col">불량수량</th>
-                                    <th scope="col">양품률(%)</th>
-                                    <th scope="col">불량률(%)</th>
-                                    <th scope="col">작업시작</th>
-                                    <th scope="col">작업종료</th>
-                                    <th scope="col">작업시간</th>
-                                    <th scope="col">비가동시간</th>
-                                    <th scope="col">가동률(%)</th>
-                                    <th scope="col">비가동률(%)</th>
-                                    <th scope="col">시간당 생산수</th>
+                                    <th style="text-align:center" scope="col">작업일자</th>
+                                    <th style="text-align:center" scope="col">지시수량</th>
+                                    <th style="text-align:center" scope="col">양품수량</th>
+                                    <th style="text-align:center" scope="col">불량수량</th>
+                                    <th style="text-align:center" scope="col">양품률(%)</th>
+                                    <th style="text-align:center" scope="col">불량률(%)</th>
+                                    <th style="text-align:center" scope="col">작업시작</th>
+                                    <th style="text-align:center" scope="col">작업종료</th>
+                                    <th style="text-align:center" scope="col">작업시간</th>
+                                    <th style="text-align:center" scope="col">비가동시간</th>
+                                    <th style="text-align:center" scope="col">가동률(%)</th>
+                                    <th style="text-align:center" scope="col">비가동률(%)</th>
+                                    <th style="text-align:center" scope="col">시간당 생산수</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -125,19 +125,19 @@
                                     foreach (var p in Model)
                                     {
                                         <tr>
-                                            <td>@p.ORDER_DATE</td>
-                                            <td>@String.Format("{0:#,###}", Math.Round(p.ORDER_QTY))</td>
-                                            <td>@String.Format("{0:#,###}", Math.Round(p.PRODUCT_QTY))</td>
-                                            <td>@String.Format("{0:#,###}", Math.Round(p.DEFECT_QTY))</td>
-                                            <td>@p.QUALITY_RATE</td>
-                                            <td>@p.DEFECT_RATE</td>
-                                            <td>@p.WORK_START_TIME</td>
-                                            <td>@p.WORK_END_TIME</td>
-                                            <td>@p.WORK_TIME</td>
-                                            <td>@p.TOTAL_DOWN</td>
-                                            <td>@p.WORK_RATE</td>
-                                            <td>@p.DOWN_RATE</td>
-                                            <td>@Math.Round(p.PER_TIME, 2)</td>
+                                            <td style="text-align:center" >@p.ORDER_DATE</td>
+                                            <td style="text-align:center" >@String.Format("{0:#,###}", Math.Round(p.ORDER_QTY))</td>
+                                            <td style="text-align:center" >@String.Format("{0:#,###}", Math.Round(p.PRODUCT_QTY))</td>
+                                            <td style="text-align:center" >@String.Format("{0:#,###}", Math.Round(p.DEFECT_QTY))</td>
+                                            <td style="text-align:center" >@p.QUALITY_RATE</td>
+                                            <td style="text-align:center" >@p.DEFECT_RATE</td>
+                                            <td style="text-align:center" >@p.WORK_START_TIME</td>
+                                            <td style="text-align:center" >@p.WORK_END_TIME</td>
+                                            <td style="text-align:center" >@p.WORK_TIME</td>
+                                            <td style="text-align:center" >@p.TOTAL_DOWN</td>
+                                            <td style="text-align:center" >@p.WORK_RATE</td>
+                                            <td style="text-align:center" >@p.DOWN_RATE</td>
+                                            <td style="text-align:center" >@Math.Round(p.PER_TIME, 2)</td>
 
                                         </tr>
 
