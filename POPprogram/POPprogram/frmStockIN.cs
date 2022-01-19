@@ -13,6 +13,7 @@ namespace POPprogram
 {
     public partial class frmStockIN : POPprogram.Base2
     {
+        bool firstFlag=false;
         bool bFlag;
         StockServ serv;
         DataGridViewCheckBoxColumn dgvChk = null;
@@ -57,8 +58,12 @@ namespace POPprogram
 
         private void frmStockIN_Load(object sender, EventArgs e)
         {
-            titleName = frmMain.TitleName;
-            lblUpTitle.Text = "   " + titleName;
+            if (!firstFlag)
+            {
+                titleName = frmMain.TitleName;
+                lblUpTitle.Text = "   " + titleName;
+                firstFlag = true;
+            }
             DataGridViewUtil.SetInitGridView(csDataGridView1);
             DgvChk(csDataGridView1);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "순번", "RowNum");
@@ -371,12 +376,9 @@ namespace POPprogram
                     }
             }
             ////////////////////////////////////////////////////////////////////////////
-            titleName = frmMain.TitleName;
-            lblUpTitle.Text = "   " + titleName;
 
             LoadData();
 
-            bFlag = true;
         }
 
 

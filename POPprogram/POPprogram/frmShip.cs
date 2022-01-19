@@ -12,6 +12,7 @@ namespace POPprogram
 {
     public partial class frmShip : POPprogram.Base2
     {
+        bool firstFlag = false;
         string userID;
         string titleName;
         public string TitleName { get { return titleName; } set { } }
@@ -27,8 +28,12 @@ namespace POPprogram
         }
         private void frmShip_Load(object sender, EventArgs e)
         {
-            titleName = frmMain.TitleName;
-            lblUpTitle.Text = "   " + titleName;
+            if (!firstFlag)
+            {
+                titleName = frmMain.TitleName;
+                lblUpTitle.Text = "   " + titleName;
+                firstFlag = true;
+            }
             DataGridViewUtil.SetInitGridView(csDataGridView1);
             DataGridViewCheckBoxColumn checkbox1 = new DataGridViewCheckBoxColumn();
             checkbox1.Name = "체크";

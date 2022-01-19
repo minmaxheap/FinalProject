@@ -30,8 +30,7 @@ namespace POPprogram
 
         public void LoadData()
         {
-            titleName = frmMain.TitleName;
-            lblUpTitle.Text = "   " + titleName;
+
             downSer = new DownServ();
             allList = downSer.GetDownList();
             csDataGridView1.DataSource = null;
@@ -55,6 +54,8 @@ namespace POPprogram
 
         private void frmDown_Load(object sender, EventArgs e)
         {
+            titleName = frmMain.TitleName;
+            lblUpTitle.Text = "   " + titleName;
             DataGridViewUtil.SetInitGridView(csDataGridView1);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "비가동 일자", "DT_DATE",width:150);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "비가동 시작", "DT_START_TIME", width: 150);
