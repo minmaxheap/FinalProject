@@ -93,7 +93,7 @@ where LOT_DELETE_FLAG <> 'Y' OR LOT_DELETE_FLAG IS NULL  and STORE_CODE is not  
 			using (SqlCommand cmd = new SqlCommand())
 			{
 				cmd.Connection = new SqlConnection(ConfigurationManager.ConnectionStrings["project"].ConnectionString);
-				cmd.CommandText = @"select distinct PRODUCT_CODE as Code from PRODUCT_MST";
+				cmd.CommandText = @"select distinct PRODUCT_CODE as Code from PRODUCT_MST where PRODUCT_CODE <> 'HB_Mixed'";
 
 				cmd.Connection.Open();
 

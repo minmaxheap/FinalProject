@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using NiceWEB.Models.DAC;
 using NiceWEB.Models;
 using System.Web.Configuration;
+using NiceWEB.Models;
 
 namespace NiceWEB.Controllers
 {
@@ -22,16 +23,21 @@ namespace NiceWEB.Controllers
 
             if (string.IsNullOrWhiteSpace(LotID))
             {
-
+                LOT_HISDAC dac = new LOT_HISDAC();
                 List<LOT_HIS> list = null;
-                ViewBag.LotID = LotID;
-
+                
+                List<ComboItem> categories = dac.GetCode();
                 PagingInfo pageInfo = new PagingInfo
                 {
                     TotalItems = 0,
                     ItemsPerPage = 10,
                     CurrentPage = page
                 };
+
+                categories.Insert(0, new ComboItem { Code = "" });
+                ViewBag.Categories = new SelectList(categories, "Code", "Code");
+                ViewBag.LotID = LotID;
+
                 ViewBag.PagingInfo = pageInfo;
                 ViewBag.menu1 = "";
                 ViewBag.menu2 = "";
@@ -51,6 +57,7 @@ namespace NiceWEB.Controllers
 
                 LOT_HISDAC dac = new LOT_HISDAC();
                 List<LOT_HIS> List = dac.GetData(LotID, page, pagesize);
+                List<ComboItem> categories = dac.GetCode();
                 int totalCount = dac.GetProductTotalCount(LotID);
                 dac.Dispose();
 
@@ -60,6 +67,9 @@ namespace NiceWEB.Controllers
                     ItemsPerPage = pagesize,
                     CurrentPage = page
                 };
+
+                categories.Insert(0, new ComboItem { Code = "" });
+                ViewBag.Categories = new SelectList(categories, "Code", "Code");
 
                 ViewBag.LotID = LotID;
                 ViewBag.PagingInfo = pageInfo;

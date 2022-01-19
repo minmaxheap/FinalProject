@@ -108,7 +108,8 @@ where s.LOT_DELETE_FLAG is null and (m.OPERATION_CODE is not null or m.PRODUCT_C
 			using (SqlCommand cmd = new SqlCommand())
 			{
 				cmd.Connection = conn;
-				cmd.CommandText = @"select distinct PRODUCT_CODE as Code from PRODUCT_MST";
+				cmd.CommandText = @"select distinct PRODUCT_CODE as Code from PRODUCT_MST
+where PRODUCT_CODE<> 'HB_Mixed'";
 
 				SqlDataReader reader = cmd.ExecuteReader();
 				List<ComboItem> list = Helper.DataReaderMapToList<ComboItem>(reader);
