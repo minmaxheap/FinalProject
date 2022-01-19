@@ -58,19 +58,19 @@
 						<table class="table table-striped table-bordered table-hover table-head-fixed">
 							<thead>
 								<tr>
-									<th>처리시간</th>
-									<th>순번</th>
-									<th>트랜코드</th>
-									<th>설명란</th>
-									<th>품번</th>
-									<th>공정명</th>
-									<th>창고</th>
-									<th>lot수량</th>
-									<th>생산수량</th>
-									<th>공정투입수량</th>
-									<th>시작수량</th>
-									<th>시작시간</th>
-									<th>설비</th>
+									<th style="text-align:center" >처리시간</th>
+									<th style="text-align:center" >순번</th>
+									<th style="text-align:center" >트랜코드</th>
+									<th style="text-align:center" >설명란</th>
+									<th style="text-align:center" >품번</th>
+									<th style="text-align:center" >공정명</th>
+									<th style="text-align:center" >창고</th>
+									<th style="text-align:center" >lot수량</th>
+									<th style="text-align:center" >생산수량</th>
+									<th style="text-align:center" >공정투입수량</th>
+									<th style="text-align:center" >시작수량</th>
+									<th style="text-align:center" >시작시간</th>
+									<th style="text-align:center" >설비</th>
 
 									@*<th>END_FLAG</th>
 									<th>END_TIME</th>
@@ -100,19 +100,19 @@
 									foreach (var p in Model)
 									{
 								<tr>
-									<td>@p.TRAN_TIME</td>
-									<td>@p.HIST_SEQ</td>
-									<td>@p.TRAN_CODE</td>
-									<td>@p.LOT_DESC</td>
-									<td>@p.PRODUCT_CODE</td>
-									<td>@p.OPERATION_NAME</td>
-									<td>@p.STORE_CODE</td>
+									<td style="text-align:center" >@p.TRAN_TIME</td>
+									<td style="text-align:center" >@p.HIST_SEQ</td>
+									<td style="text-align:center" >@p.TRAN_CODE</td>
+									<td style="text-align:center" >@p.LOT_DESC</td>
+									<td style="text-align:center" >@p.PRODUCT_CODE</td>
+									<td style="text-align:center" >@p.OPERATION_NAME</td>
+									<td style="text-align:center" >@p.STORE_CODE</td>
 									<td align="right">@String.Format("{0:#,###}", Math.Round(p.LOT_QTY))</td>
 									<td align="right" >@String.Format("{0:#,###}", Math.Round(p.CREATE_QTY))</td>
 									<td align="right" >@String.Format("{0:#,###}", Math.Round(p.OPER_IN_QTY))</td>
 									<td align="right">@String.Format("{0:#,###}", Math.Round(p.START_QTY))</td>
-									<td >@p.START_TIME</td>
-									<td>@p.START_EQUIPMENT_CODE</td>
+									<td style="text-align:center"  >@p.START_TIME</td>
+									<td style="text-align:center" >@p.START_EQUIPMENT_CODE</td>
 
 								</tr>
 									}

@@ -29,7 +29,7 @@ namespace NiceWEB.Controllers
 
             if (endDate == null)
             {
-                endDate = new DateTime(DateTime.Now.Year, 1, 31).ToString("yyyy-MM-dd");
+                endDate = new DateTime(DateTime.Now.Year, 1, 10).ToString("yyyy-MM-dd");
             }
 
             ViewBag.endDate = endDate;

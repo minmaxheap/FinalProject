@@ -109,47 +109,47 @@
 
                             <thead>
                                 <tr>
-                                    <th scope="col">검사일시</th>
-                                    <th scope="col">LOT ID</th>
-                                    <th scope="col">품번</th>
-                                    <th scope="col">품명</th>
-                                    <th scope="col">공정명</th>
-                                    <th scope="col">검사항목</th>
-                                    <th scope="col">검사항목명</th>
-                                    <th scope="col">값 유형</th>
-                                    <th scope="col">LSL</th>
-                                    <th scope="col">Target</th>
-                                    <th scope="col">USL</th>
-                                    <th scope="col">검사 데이터</th>
-                                    <th scope="col">검사 결과</th>
-                                    <th scope="col">검사자</th>
+                                    <th style="text-align:center" scope="col">검사일시</th>
+                                    <th style="text-align:center" scope="col">LOT ID</th>
+                                    <th style="text-align:center" scope="col">품번</th>
+                                    <th style="text-align:center" scope="col">품명</th>
+                                    <th style="text-align:center" scope="col">공정명</th>
+                                    <th style="text-align:center" scope="col">검사항목</th>
+                                    <th style="text-align:center" scope="col">검사항목명</th>
+                                    <th style="text-align:center" scope="col">값 유형</th>
+                                    <th style="text-align:center" scope="col">LSL</th>
+                                    <th style="text-align:center" scope="col">Target</th>
+                                    <th style="text-align:center" scope="col">USL</th>
+                                    <th style="text-align:center" scope="col">검사 데이터</th>
+                                    <th style="text-align:center" scope="col">검사 결과</th>
+                                    <th style="text-align:center" scope="col">검사자</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach (var p in Model)
                                 {
                                     <tr class="color-changer">
-                                        <td>@p.TRAN_TIME.ToString("yyyy-MM-dd HH:mm:ss")</td>
-                                        <td>@p.LOT_ID</td>
-                                        <td>@p.PRODUCT_CODE</td>
-                                        <td>@p.PRODUCT_NAME</td>
-                                        <td>@p.OPERATION_NAME</td>
-                                        <td>@p.INSPECT_ITEM_CODE</td>
-                                        <td>@p.INSPECT_ITEM_NAME</td>
-                                        <td>@p.VALUE_TYPE</td>
-                                        <td>@String.Format("{0:#,###}", p.SPEC_LSL)</td>
-                                        <td>@String.Format("{0:#,###}", p.SPEC_TARGET)</td>
-                                        <td>@String.Format("{0:#,###}", p.SPEC_USL)</td>
-                                        <td>@p.INSPECT_VALUE</td>
+                                        <td style="text-align:center" >@p.TRAN_TIME.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                                        <td style="text-align:center" >@p.LOT_ID</td>
+                                        <td style="text-align:center" >@p.PRODUCT_CODE</td>
+                                        <td style="text-align:center" >@p.PRODUCT_NAME</td>
+                                        <td style="text-align:center" >@p.OPERATION_NAME</td>
+                                        <td style="text-align:center" >@p.INSPECT_ITEM_CODE</td>
+                                        <td style="text-align:center" >@p.INSPECT_ITEM_NAME</td>
+                                        <td style="text-align:center" >@p.VALUE_TYPE</td>
+                                        <td style="text-align:center" >@String.Format("{0:#,###}", p.SPEC_LSL)</td>
+                                        <td style="text-align:center" >@String.Format("{0:#,###}", p.SPEC_TARGET)</td>
+                                        <td style="text-align:center" >@String.Format("{0:#,###}", p.SPEC_USL)</td>
+                                        <td style="text-align:center" >@p.INSPECT_VALUE</td>
                                         @if (@p.INSPECT_RESULT.Equals("NG"))
                                         {
-                                            <td style="background-color: #D23535 ">@p.INSPECT_RESULT</td>
+                                            <td style="background-color: #D23535; text-align: center ">@p.INSPECT_RESULT</td>
                                         }
                                         else
                                         {
-                                            <td style="background-color:white">@p.INSPECT_RESULT</td>
+                                            <td style="background-color: white; text-align: center">@p.INSPECT_RESULT</td>
                                         }
-                                        <td>@p.TRAN_USER_ID</td>
+                                        <td style="text-align:center" >@p.TRAN_USER_ID</td>
                                     </tr>
 
                                 }

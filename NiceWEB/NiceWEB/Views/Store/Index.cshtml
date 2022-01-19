@@ -86,11 +86,11 @@
 
                             <thead>
                                 <tr>
-                                    <th scope="col">창고입고시간</th>
-                                    <th scope="col">LotID</th>
-                                    <th scope="col">품번</th>
-                                    <th scope="col">창고</th>
-                                    <th scope="col">수량</th>
+                                    <th style="text-align:center" scope="col">창고입고시간</th>
+                                    <th style="text-align:center" scope="col">LotID</th>
+                                    <th style="text-align:center" scope="col">품번</th>
+                                    <th style="text-align:center" scope="col">창고</th>
+                                    <th style="text-align:center" scope="col">수량</th>
                                 </tr>
                             </thead>
 							<tbody>
@@ -100,10 +100,10 @@
 									{
 
 										<tr>
-											<td>@p.OPER_IN_TIME</td>
-											<td>@p.LOT_ID</td>
-											<td>@p.PRODUCT_CODE</td>
-											<td>@p.STORE_CODE</td>
+											<td style="text-align:center" >@p.OPER_IN_TIME</td>
+											<td style="text-align:center" >@p.LOT_ID</td>
+											<td style="text-align:center" >@p.PRODUCT_CODE</td>
+											<td style="text-align:center" >@p.STORE_CODE</td>
 											<td align="right">@String.Format("{0:#,###}", Math.Round(p.LOT_QTY))</td>
 
 										</tr>

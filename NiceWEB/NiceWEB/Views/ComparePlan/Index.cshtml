@@ -107,16 +107,16 @@
 
                             <thead>
                                 <tr>
-                                    <th scope="col">작업일자</th>
-                                    <th scope="col">작업지시</th>
-                                    <th scope="col">품번</th>
-                                    <th scope="col">품명</th>
-                                    <th scope="col">계획수량</th>
-                                    <th scope="col">양품수량</th>
-                                    <th scope="col">불량수량</th>
-                                    <th scope="col">양품률(%)</th>
-                                    <th scope="col">불량률(%)</th>
-                                    <th scope="col">마감시간</th>
+                                    <th style="text-align:center"  scope="col">작업일자</th>
+                                    <th style="text-align:center"  scope="col">작업지시</th>
+                                    <th style="text-align:center"  scope="col">품번</th>
+                                    <th style="text-align:center"   scope="col">품명</th>
+                                    <th style="text-align:center"  scope="col">계획수량</th>
+                                    <th style="text-align:center"  scope="col">양품수량</th>
+                                    <th style="text-align:center"   scope="col">불량수량</th>
+                                    <th style="text-align:center"  scope="col">양품률(%)</th>
+                                    <th style="text-align:center"   scope="col">불량률(%)</th>
+                                    <th style="text-align:center"   scope="col">마감시간</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -125,10 +125,10 @@
                                     foreach (var p in Model)
                                     {
                                         <tr>
-                                            <td>@p.ORDER_DATE</td>
-                                            <td>@p.WORK_ORDER_ID</td>
-                                            <td>@p.PRODUCT_CODE</td>
-                                            <td>@p.PRODUCT_NAME</td>
+                                            <td style="text-align:center" >@p.ORDER_DATE</td>
+                                            <td style="text-align:center" >@p.WORK_ORDER_ID</td>
+                                            <td style="text-align:center" >@p.PRODUCT_CODE</td>
+                                            <td style="text-align:center" >@p.PRODUCT_NAME</td>
                                             <td align="right" style="font-weight: bold;">@String.Format("{0:#,###}", p.ORDER_QTY)</td>
                                             <td align="right" style="font-weight: bold;">@String.Format("{0:#,###}", p.PRODUCT_QTY)</td>
                                             <td align="right" style="font-weight: bold;">@String.Format("{0:#,###}", p.DEFECT_QTY)</td>
