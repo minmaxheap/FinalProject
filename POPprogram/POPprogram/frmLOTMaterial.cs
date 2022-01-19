@@ -411,8 +411,7 @@ namespace POPprogram
             searchflag = true;
             MatServ serv = new MatServ();
             list = serv.GetLotList();
-            titleName = frmMain.TitleName;
-            lblUpTitle.Text = "   " + titleName;
+
             cboLOTID.DisplayMember = "LOT_ID";
             cboLOTID.DataSource = list;
             cboLOTID.Text = null;
