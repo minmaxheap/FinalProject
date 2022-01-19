@@ -458,6 +458,18 @@ namespace MES_Team3
         {
             csDataGridView1.CurrentCell = null;
         }
+
+        private void csDataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            foreach (DataGridViewRow row in csDataGridView1.Rows)
+            {
+                if (row.Cells["ORDER_STATUS"].Value.ToString() == "CLOSE")
+                    //row.DefaultCellStyle.BackColor = Color.DarkGray;
+                    csDataGridView1.Rows[row.Index].DefaultCellStyle.BackColor = Color.LightGray;
+                else if (row.Cells["ORDER_STATUS"].Value.ToString() == "PROC")
+                    csDataGridView1.Rows[row.Index].DefaultCellStyle.BackColor = Color.LightGreen;
+            }
+        }
     }
 }
 

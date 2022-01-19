@@ -210,6 +210,71 @@ namespace POPprogram
             if (bResult)
             {
                 MessageBox.Show("성공적으로 공정 작업을 완료했습니다.");
+                lblOrderQty.Text = null;
+                lblDefectQty.Text = null;
+                lblProdQty.Text = null;
+                lblStatus.Text = null;
+
+                lblDefectColor.BackColor = Color.White;
+                lblInspectColor.BackColor = Color.White;
+                lblMaterialColor.BackColor = Color.White;
+                lblDefectColor.Text = null;
+                lblInspectColor.Text = null;
+                lblMaterialColor.Text = null;
+                lblDefect.Text = null;
+                lblInspect.Text = null;
+                lblMaterial.Text = null;
+                ////////////////////////////////////////////////////////////////////////////
+                foreach (Control ctl1 in this.Controls)
+                {
+                    foreach (Control ctl2 in this.Controls[this.Controls.IndexOf(ctl1)].Controls)
+                        if (typeof(TextBox) == ctl2.GetType())
+                        {
+                            ctl2.Text = null;
+                        }
+                        else if (typeof(ComboBox) == ctl2.GetType())
+                        {
+                            ComboBox dd = (ComboBox)ctl2;
+                            if (dd != null)
+                            {
+                                dd.Text = string.Empty;
+                                dd.SelectedIndex = -1;
+                            }
+                        }
+                        else if (typeof(NumTextBox) == ctl2.GetType())
+                        {
+                            NumTextBox dd = (NumTextBox)ctl2;
+                            if (dd != null)
+                            {
+                                dd.Text = null;
+                            }
+                        }
+                        else if (typeof(csDataGridView) == ctl2.GetType())
+                        {
+                            csDataGridView dd = (csDataGridView)ctl2;
+                            if (dd != null)
+                            {
+                                dd.DataSource = null;
+                            }
+                        }
+                }
+                ////////////////////////////////////////////////////////////////////////////
+                searchflag = true;
+                list = serv.GetLotList();
+
+                cboLOTID.DisplayMember = "LOT_ID";
+                cboLOTID.DataSource = list;
+                cboLOTID.Text = null;
+
+                //EndDAC serv = new EndDAC();
+                DataTable dt = serv.GetEQList();
+
+                listEQ = Helper.DataTableMapToList<EndPropertyEQ>(dt);
+                cboEQList.DisplayMember = "EQ_CODE";
+                cboEQList.DataSource = listEQ;
+                cboEQList.Text = null;
+                txtEQ_NAME.Text = null;
+
             }
             else
             {
@@ -282,6 +347,14 @@ namespace POPprogram
                         {
                             dd.Text = string.Empty;
                             dd.SelectedIndex = -1;
+                        }
+                    }
+                    else if (typeof(NumTextBox) == ctl2.GetType())
+                    {
+                        NumTextBox dd = (NumTextBox)ctl2;
+                        if (dd != null)
+                        {
+                            dd.Text = null;
                         }
                     }
                     else if (typeof(csDataGridView) == ctl2.GetType())
