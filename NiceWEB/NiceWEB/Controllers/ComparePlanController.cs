@@ -25,14 +25,14 @@ namespace NiceWEB.Controllers
 
             if (startDate == null)
             {
-                startDate = new DateTime(DateTime.Now.Year, 1, 15).ToShortDateString();
+                startDate = new DateTime(DateTime.Now.Year, 1, 1).ToString("yyyy-MM-dd");
             }
             
             ViewBag.startDate = startDate;
 
             if (endDate == null)
             {
-                endDate = new DateTime(DateTime.Now.Year, 1, 31).ToShortDateString();
+                endDate = new DateTime(DateTime.Now.Year, 1, 31).ToString("yyyy-MM-dd");
             }
 
              ViewBag.endDate = endDate; 
@@ -83,9 +83,16 @@ namespace NiceWEB.Controllers
                 ViewBag.defectRate = Math.Round((gauge[0].DEFECT_QTY / (gauge[0].PRODUCT_QTY + gauge[0].DEFECT_QTY)) * Convert.ToDecimal(100), 2);
             }
 
-            
-  
-   
+
+            ViewBag.menu1 = "active";
+            ViewBag.menu2 = "";
+            ViewBag.menu3 = "";
+            ViewBag.menu4 = "";
+            ViewBag.menu5 = "";
+            ViewBag.menu6 = "";
+            ViewBag.menu7 = "";
+            ViewBag.menu8 = "";
+
             return View(list);
         }
 

@@ -66,7 +66,7 @@
                     <div class="form-group">
                         <label>작업지시:</label>
                         @Html.DropDownList("workID",
-                                  (IEnumerable<SelectListItem>)ViewBag.orderList, null, new { @class = "form-control" })
+                                  (IEnumerable<SelectListItem>)ViewBag.orderList, null, new { @class = "form-control" ,@id="workID"})
 
                     </div>
                 </div>
@@ -74,13 +74,13 @@
                     <div class="form-group">
                         <label>품번:</label>
                         @Html.DropDownList("prdCode",
-                                  (IEnumerable<SelectListItem>)ViewBag.prodList, null, new { @class = "form-control" })
+                                  (IEnumerable<SelectListItem>)ViewBag.prodList, null, new { @class = "form-control" ,@id="prdCode"})
                     </div>
                 </div>
                 <div class="col-3">
                     <div class="form-group">
                         <label>&nbsp;  </label>
-                        <button type="button" id="saveBtn" class="btn btn-block btn-secondary">조회</button>
+                        <button type="button" id="saveBtn" class="btn btn-block btn-secondary" onclick="search_fn()">조회</button>
                     </div>
                 </div>
 
@@ -239,9 +239,9 @@
         $(document).ready(function () {
             $('#reservation').daterangepicker(
                 {
-                                        locale: {
-                                            format: 'YYYY-MM-DD'
-                                                       },
+                    locale: {
+                        format: 'YYYY-MM-DD'
+                    },
 
 
                     @*setStartDate:@ViewBag.startDate,
@@ -251,7 +251,7 @@
                     //startDate: a,
                     //endDate: b,
                     startDate: '@start',
-                    endDate:'@end',
+                    endDate: '@end',
                     showDropdowns: true,
                     showWeekNumbers: true,
                     timePicker: false,
@@ -262,29 +262,41 @@
                     separator: ' to ',
                     //timePicker: true,
                     //timePicker24Hour: true,
-                },
-                function (start, end) {
-                    console.log("Callback has been called!");
-                    $('#reservation span').html(start.format('YYYY-MM-DD') + ' - ' + end.format('YYYY-MM-DD'));
-                    startDate = start;
-                    endDate = end;
+                })
 
-                }
-            );
+                //function (start, end) {
+                //    console.log("Callback has been called!");
+                //    $('#reservation span').html(start.format('YYYY-MM-DD') + ' - ' + end.format('YYYY-MM-DD'));
+                //    startDate = start;
+                //    endDate = end;
 
-            $('#saveBtn').click(function () {
-                console.log(startDate.format('YYYY-MM-DD') + ' - ' + endDate.format('YYYY-MM-DD'));
-                $('#startDate').val(startDate.format('YYYY-MM-DD'));
-                $('#endDate').val(endDate.format('YYYY-MM-DD'));
-                $('#form1')[0].submit();
-            });
+                //}
+                $('#reservation').on('apply.daterangepicker', function (ev, picker) {
+                    //Model.startDate = picker.startDate.format('YYYY-MM-DD HH:mm');
+                    //   Model.endDate = picker.endDate.format('YYYY-MM-DD HH:mm');
+                    // PASS VALUE TO CONTROLLER HERE
+                    console.log(picker.startDate.format('YYYY-MM-DD HH:mm'));
+                    console.log(picker.endDate.format('YYYY-MM-DD HH:mm'));
+                    document.getElementById("startDate").value = picker.startDate.format('YYYY-MM-DD');
+                    document.getElementById("endDate").value = picker.endDate.format('YYYY-MM-DD');
+                })
+            }
+        );
+
+            //$('#saveBtn').click(function () {
+            //    console.log(startDate.format('YYYY-MM-DD') + ' - ' + endDate.format('YYYY-MM-DD'));
+            //    $('#startDate').val(startDate.format('YYYY-MM-DD'));
+            //    $('#endDate').val(endDate.format('YYYY-MM-DD'));
+            //    $('#form1')[0].submit();
+            //});
+
+       // });
 
 
 
-
-
-        });
-
+        function search_fn() {
+            window.location.href = 'Index?startDate=' + document.getElementById("startDate").value + '&endDate=' + document.getElementById("endDate").value + '&workID=' + document.getElementById("workID").value + '&prdCode=' + document.getElementById("prdCode").value;
+        }
         //function Search_Fn() {
         //       // console.log(startDate.format('YYYY-MM-DD') + ' - ' + endDate.format('YYYY-MM-DD'));
         //    //startDate = start;

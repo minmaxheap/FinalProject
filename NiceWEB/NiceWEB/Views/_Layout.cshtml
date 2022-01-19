@@ -167,50 +167,49 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="~/ComparePlan/Index" class="nav-link">
+                                    <a href="~/ComparePlan/Index" class="nav-link @ViewBag.menu1">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>계획대비 생산실적 조회</p>
-
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="~/Efficiency/Index" class="nav-link">
+                                    <a href="~/Efficiency/Index" class="nav-link @ViewBag.menu2">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>제조 종합 효율 조회</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="~/Inspect/Index" class="nav-link">
+                                    <a href="~/Inspect/Index" class="nav-link @ViewBag.menu3">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>검사 데이터 조회</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="~/LOTH/Index" class="nav-link">
+                                    <a href="~/LOTH/Index" class="nav-link @ViewBag.menu4">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>LOT 이력 조회</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="~/Stock/Index" class="nav-link">
+                                    <a href="~/Stock/Index" class="nav-link @ViewBag.menu5">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>제품 재공 조회</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="~/Store/Index" class="nav-link">
+                                    <a href="~/Store/Index" class="nav-link @ViewBag.menu6 ">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>창고 재고 조회</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="~/Material/index" class="nav-link">
+                                    <a href="~/Material/index" class="nav-link @ViewBag.menu7">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>자재 투입 이력 조회</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="~/Defect/Index" class="nav-link">
+                                    <a href="~/Defect/Index" class="nav-link  @ViewBag.menu8">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>불량 이력 조회</p>
                                     </a>
@@ -263,7 +262,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </body>
 </html>
 
-    <script>
+    @*<script>
         //$(function () {
         //    // actvie 활성화 
         //    $(".nav-item > .active").css("color", "red"); $('.nav-link').click(function ()
@@ -279,5 +278,5 @@ scratch. This page gets rid of all links and provides the needed markup only.
             $(this).toggleClass('active', $(this).attr('href') == url);
         }
         );
-    </script>
+    </script>*@
     

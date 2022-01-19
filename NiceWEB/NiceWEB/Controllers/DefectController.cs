@@ -19,18 +19,19 @@ namespace NiceWEB.Controllers
 
             //DateTime from = Convert.ToDateTime("2021-10-10");
             //DateTime to = Convert.ToDateTime("2022-10-10")
-
             if (startDate == null)
             {
-                startDate = new DateTime(DateTime.Now.Year, 1, 15).ToShortDateString();
+                startDate = new DateTime(DateTime.Now.Year, 1, 1).ToString("yyyy-MM-dd");
             }
 
             ViewBag.startDate = startDate;
 
             if (endDate == null)
             {
-                endDate = new DateTime(DateTime.Now.Year, 1, 31).ToShortDateString();
+                endDate = new DateTime(DateTime.Now.Year, 1, 31).ToString("yyyy-MM-dd");
             }
+
+            ViewBag.endDate = endDate;
 
 
             int pagesize = Convert.ToInt32(WebConfigurationManager.AppSettings["pagesize"]);
@@ -64,6 +65,17 @@ namespace NiceWEB.Controllers
             else { ViewBag.endDate = endDate; }
 
             ViewBag.PagingInfo = pageInfo;
+
+            ViewBag.menu1 = "";
+            ViewBag.menu2 = "";
+            ViewBag.menu3 = "";
+            ViewBag.menu4 = "";
+            ViewBag.menu5 = "";
+            ViewBag.menu6 = "";
+            ViewBag.menu7 = "";
+            ViewBag.menu8 = "active";
+
+
             return View(list);
         }
     }

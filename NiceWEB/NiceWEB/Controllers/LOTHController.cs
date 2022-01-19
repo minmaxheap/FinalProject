@@ -33,6 +33,14 @@ namespace NiceWEB.Controllers
                     CurrentPage = page
                 };
                 ViewBag.PagingInfo = pageInfo;
+                ViewBag.menu1 = "";
+                ViewBag.menu2 = "";
+                ViewBag.menu3 = "";
+                ViewBag.menu4 = "active";
+                ViewBag.menu5 = "";
+                ViewBag.menu6 = "";
+                ViewBag.menu7 = "";
+                ViewBag.menu8 = "";
 
                 return View(list);
             }
@@ -55,6 +63,16 @@ namespace NiceWEB.Controllers
 
                 ViewBag.LotID = LotID;
                 ViewBag.PagingInfo = pageInfo;
+
+
+                ViewBag.menu1 = "";
+                ViewBag.menu2 = "";
+                ViewBag.menu3 = "";
+                ViewBag.menu4 = "active";
+                ViewBag.menu5 = "";
+                ViewBag.menu6 = "";
+                ViewBag.menu7 = "";
+                ViewBag.menu8 = "";
 
                 return View(List);
             }

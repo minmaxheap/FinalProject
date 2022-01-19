@@ -48,6 +48,16 @@ namespace NiceWEB.Controllers
             ViewBag.productCode = productCode;
             ViewBag.PagingInfo = pageInfo;
 
+
+            ViewBag.menu1 = "";
+            ViewBag.menu2 = "";
+            ViewBag.menu3 = "";
+            ViewBag.menu4 = "";
+            ViewBag.menu5 = "active";
+            ViewBag.menu6 = "";
+            ViewBag.menu7 = "";
+            ViewBag.menu8 = "";
+
             return View(list);
         }
     }
