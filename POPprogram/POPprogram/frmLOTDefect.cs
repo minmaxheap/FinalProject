@@ -262,6 +262,14 @@ namespace POPprogram
                             dd.SelectedIndex = -1;
                         }
                     }
+                    else if (typeof(NumTextBox) == ctl2.GetType())
+                    {
+                        NumTextBox dd = (NumTextBox)ctl2;
+                        if (dd != null)
+                        {
+                            dd.Text = null;
+                        }
+                    }
                     else if (typeof(csDataGridView) == ctl2.GetType())
                     {
                         csDataGridView dd = (csDataGridView)ctl2;
