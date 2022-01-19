@@ -62,16 +62,16 @@
                 <div class="col-3">
                     <div class="form-group">
                         <label>작업지시:</label>
-                        @Html.DropDownList("Order",
-                   (IEnumerable<SelectListItem>)ViewBag.Order, null, new { @class = "form-control",@id="workID" })
-
+                        @Html.DropDownList("workID",
+                   (IEnumerable<SelectListItem>)ViewBag.Order, null, new { @class = "form-control", @id = "workID" })
+                  
                     </div>
                 </div>
                 <div class="col-3">
                     <div class="form-group">
                         <label>품번:</label>
 
-                        @Html.DropDownList("Product", (IEnumerable<SelectListItem>)ViewBag.Product, null, new { @class = "form-control",@id="prdCode" })
+                        @Html.DropDownList("prdCode", (IEnumerable<SelectListItem>)ViewBag.Product, null, new { @class = "form-control",@id="prdCode" })
                     </div>
                 </div>
                 <div class="col-3">
@@ -88,7 +88,7 @@
         }
         <div class="row">
             <div class="col-12">
-                <div class="card">
+                <div class="card card-primary">
                     <div class="card-header">
                         <h3 class="card-title">제조 종합 효율</h3>
                     </div>
