@@ -150,7 +150,14 @@
                     <nav aria-label="Page navigation example">
                         <ul class="pagination justify-content-center">
                             @Html.PageLinks((PagingInfo)ViewBag.PagingInfo, (x) => Url.Action("Index",
-                                new { page = x, LotID = ViewBag.LotID }))
+                                new
+                                {
+                                    page = x,
+                                    startDate = ViewBag.startDate,
+                                    endDate = ViewBag.endDate,
+                                    workID = ViewBag.workID,
+                                    prdCode = ViewBag.prdCode
+                                }))
                         </ul>
                     </nav>
                 </div>

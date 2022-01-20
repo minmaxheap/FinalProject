@@ -32,7 +32,7 @@ namespace NiceWEB.Models.DAC
 			{
 				StringBuilder sb = new StringBuilder();
 				cmd.Connection = conn;
-				cmd.CommandText = @"select  LOT_ID, LOT_DESC, PRODUCT_CODE, OPERATION_CODE, LOT_QTY, START_FLAG, START_TIME, START_EQUIPMENT_CODE
+				cmd.CommandText = @"select DISTINCT LOT_ID, LOT_DESC, PRODUCT_CODE, OPERATION_CODE, LOT_QTY, START_FLAG, START_TIME, START_EQUIPMENT_CODE
 from
 (
 select s.LOT_ID, LOT_DESC, s.PRODUCT_CODE, m.OPERATION_CODE, LOT_QTY, START_FLAG, START_TIME, START_EQUIPMENT_CODE,
