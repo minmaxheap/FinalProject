@@ -44,7 +44,7 @@ namespace DAC
       ,w.UPDATE_TIME
       ,w.UPDATE_USER_ID
   FROM WORK_ORDER_MST w, PRODUCT_MST pm, CODE_DATA_MST cd
-  WHERE w.PRODUCT_CODE=pm.PRODUCT_CODE AND w.CUSTOMER_CODE=cd.KEY_1 ORDER BY ORDER_DATE"; 
+  WHERE w.PRODUCT_CODE=pm.PRODUCT_CODE AND w.CUSTOMER_CODE=cd.KEY_1 ORDER BY ORDER_DATE DESC"; 
             DataTable dt = new DataTable();
             using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
             {

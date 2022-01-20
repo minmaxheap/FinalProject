@@ -45,7 +45,7 @@ namespace POPprogram
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(902, 419);
+            this.btnClose.Location = new System.Drawing.Point(871, 419);
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // txtSearch
@@ -68,6 +68,7 @@ namespace POPprogram
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.csDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.csDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.csDataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.csDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;

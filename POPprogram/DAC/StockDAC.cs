@@ -71,6 +71,7 @@ namespace DAC
             string sql = @" select distinct PURCHASE_ORDER_ID, SA.PRODUCT_CODE, p.PRODUCT_NAME, V.KEY_1 CUSTOMER_CODE, V.DATA_1 CUSTOMER_NAME, sa.ORDER_QTY
 from [dbo].[PURCHASE_ORDER_MST] O, SALES_ORDER_MST SA,PRODUCT_MST P, CODE_DATA_MST V, SALES_ORDER_MST S
 WHERE O.SALES_ORDER_ID = SA.SALES_ORDER_ID AND V.CODE_TABLE_NAME ='CM_CUSTOMER' AND V.KEY_1=sa.CUSTOMER_CODE and sa.PRODUCT_CODE = p.PRODUCT_CODE
+order by PURCHASE_ORDER_ID desc
 ";
             DataTable dt = new DataTable();
             using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))

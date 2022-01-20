@@ -468,6 +468,8 @@ namespace MES_Team3
                     csDataGridView1.Rows[row.Index].DefaultCellStyle.BackColor = Color.LightGray;
                 else if (row.Cells["ORDER_STATUS"].Value.ToString() == "PROC")
                     csDataGridView1.Rows[row.Index].DefaultCellStyle.BackColor = Color.LightGreen;
+                else if (row.Cells["ORDER_STATUS"].Value.ToString() == "OPEN")
+                    csDataGridView1.Rows[row.Index].DefaultCellStyle.BackColor = Color.White;
             }
         }
     }

@@ -51,7 +51,7 @@ namespace POPprogram
 			this.csDataGridView1.Columns.Add("InspectResult", "유효값");
 			this.csDataGridView1.Columns["InspectResult"].ReadOnly = true;
 
-			this.csDataGridView1.RowTemplate.Height = 20;
+			this.csDataGridView1.RowTemplate.Height = 50;
 			this.csDataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 			// this.csDataGridView1.Columns.Add(
 
