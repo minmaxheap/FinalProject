@@ -90,7 +90,7 @@ order by HIST_SEQ desc";
 				cmd.CommandText = @"
  select LOT_ID as Code,PRODUCT_CODE
  from LOT_STS
-WHERE LEFT(PRODUCT_CODE, 2) = 'pd'";
+WHERE LEFT(PRODUCT_CODE, 2) = 'pd' and RIGHT(LOT_ID,3) <>'000'";
 
 				SqlDataReader reader = cmd.ExecuteReader();
 
