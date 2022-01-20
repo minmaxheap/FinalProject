@@ -20,16 +20,17 @@ namespace NiceWEB.Controllers
                 return RedirectToAction("Login", "Home");
             }
 
+
             if (startDate == null)
             {
-                startDate = new DateTime(DateTime.Now.Year, 1, 15).ToShortDateString();
+                startDate = new DateTime(DateTime.Now.Year, 1, 1).ToString("yyyy-MM-dd");
             }
 
             ViewBag.startDate = startDate;
 
             if (endDate == null)
             {
-                endDate = new DateTime(DateTime.Now.Year, 1, 31).ToShortDateString();
+                endDate = new DateTime(DateTime.Now.Year, 1, 31).ToString("yyyy-MM-dd");
             }
 
             ViewBag.endDate = endDate;
@@ -68,6 +69,15 @@ namespace NiceWEB.Controllers
 
 
             ViewBag.PagingInfo = pageInfo;
+
+            ViewBag.menu1 = "";
+            ViewBag.menu2 = "";
+            ViewBag.menu3 = "";
+            ViewBag.menu4 = "";
+            ViewBag.menu5 = "";
+            ViewBag.menu6 = "";
+            ViewBag.menu7 = "active";
+            ViewBag.menu8 = "";
             return View(list);
         }
 

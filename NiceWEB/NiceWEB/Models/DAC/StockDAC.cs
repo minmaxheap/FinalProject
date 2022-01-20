@@ -32,7 +32,7 @@ namespace NiceWEB.Models.DAC
 			{
 				StringBuilder sb = new StringBuilder();
 				cmd.Connection = conn;
-				cmd.CommandText = @"select  LOT_ID, LOT_DESC, PRODUCT_CODE, OPERATION_CODE, LOT_QTY, START_FLAG, START_TIME, START_EQUIPMENT_CODE
+				cmd.CommandText = @"select DISTINCT LOT_ID, LOT_DESC, PRODUCT_CODE, OPERATION_CODE, LOT_QTY, START_FLAG, START_TIME, START_EQUIPMENT_CODE
 from
 (
 select s.LOT_ID, LOT_DESC, s.PRODUCT_CODE, m.OPERATION_CODE, LOT_QTY, START_FLAG, START_TIME, START_EQUIPMENT_CODE,
@@ -80,16 +80,18 @@ order by OPERATION_CODE, START_FLAG DESC, A.LOT_ID
 
 				cmd.Connection = conn;
 				StringBuilder sb = new StringBuilder();
-				sb.Append(@"SELECT COUNT(*) FROM LOT_STS where LOT_DELETE_FLAG is null and (OPERATION_CODE is not null or PRODUCT_CODE is not null) ");
+				sb.Append(@"SELECT COUNT(*) from LOT_STS S
+right join LOT_MATERIAL_HIS m on s.LOT_ID = m.LOT_ID
+where s.LOT_DELETE_FLAG is null and (m.OPERATION_CODE is not null or m.PRODUCT_CODE is not null) ");
 
 				if (!string.IsNullOrWhiteSpace(op_code))
 				{
-					sb.Append(" and OPERATION_CODE = @OPERATION_CODE");
+					sb.Append(" and m.OPERATION_CODE = @OPERATION_CODE");
 					cmd.Parameters.AddWithValue("@OPERATION_CODE", op_code);
 				}
 				if (!string.IsNullOrWhiteSpace(productCode))
 				{
-					sb.Append(" and PRODUCT_CODE = @PRODUCT_CODE ");
+					sb.Append(" and m.PRODUCT_CODE = @PRODUCT_CODE ");
 					cmd.Parameters.AddWithValue("@PRODUCT_CODE", productCode);
 				}
 				
@@ -106,7 +108,8 @@ order by OPERATION_CODE, START_FLAG DESC, A.LOT_ID
 			using (SqlCommand cmd = new SqlCommand())
 			{
 				cmd.Connection = conn;
-				cmd.CommandText = @"select distinct PRODUCT_CODE as Code from PRODUCT_MST";
+				cmd.CommandText = @"select distinct PRODUCT_CODE as Code from PRODUCT_MST
+where PRODUCT_CODE<> 'HB_Mixed'";
 
 				SqlDataReader reader = cmd.ExecuteReader();
 				List<ComboItem> list = Helper.DataReaderMapToList<ComboItem>(reader);

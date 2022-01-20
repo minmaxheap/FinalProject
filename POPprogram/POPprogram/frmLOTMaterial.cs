@@ -398,6 +398,14 @@ namespace POPprogram
                             dd.SelectedIndex = -1;
                         }
                     }
+                    else if (typeof(NumTextBox) == ctl2.GetType())
+                    {
+                        NumTextBox dd = (NumTextBox)ctl2;
+                        if (dd != null)
+                        {
+                            dd.Text = null;
+                        }
+                    }
                     else if (typeof(csDataGridView) == ctl2.GetType())
                     {
                         csDataGridView dd = (csDataGridView)ctl2;
@@ -411,8 +419,7 @@ namespace POPprogram
             searchflag = true;
             MatServ serv = new MatServ();
             list = serv.GetLotList();
-            titleName = frmMain.TitleName;
-            lblUpTitle.Text = "   " + titleName;
+
             cboLOTID.DisplayMember = "LOT_ID";
             cboLOTID.DataSource = list;
             cboLOTID.Text = null;

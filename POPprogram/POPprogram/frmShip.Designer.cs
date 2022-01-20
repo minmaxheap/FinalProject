@@ -106,6 +106,34 @@ namespace POPprogram
             this.btnExport.Location = new System.Drawing.Point(143, 0);
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.Font = new System.Drawing.Font("나눔고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Location = new System.Drawing.Point(849, 118);
+            this.label4.Size = new System.Drawing.Size(88, 28);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
+            this.textBox2.Location = new System.Drawing.Point(951, 114);
+            this.textBox2.Size = new System.Drawing.Size(129, 35);
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.Font = new System.Drawing.Font("나눔고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Location = new System.Drawing.Point(828, 56);
+            this.label3.Size = new System.Drawing.Size(109, 28);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
+            this.textBox1.Location = new System.Drawing.Point(951, 52);
+            this.textBox1.Size = new System.Drawing.Size(129, 35);
+            // 
             // btnReadTop
             // 
             this.btnReadTop.Click += new System.EventHandler(this.btnReadTop_Click);
@@ -194,6 +222,7 @@ namespace POPprogram
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.csDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.csDataGridView1.RowHeadersWidth = 30;
+            this.csDataGridView1.RowTemplate.Height = 40;
             this.csDataGridView1.Size = new System.Drawing.Size(830, 151);
             this.csDataGridView1.TabIndex = 58;
             this.csDataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellValueChanged);

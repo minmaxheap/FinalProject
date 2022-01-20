@@ -2,249 +2,279 @@
 @using NiceWEB.Html
 @using NiceWEB.Models
 @{
-	ViewBag.Title = "Index";
-	Layout = "~/Views/_Layout.cshtml";
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_Layout.cshtml";
 }
 
 
 
 <div style="display:none;" class="row">
-	<div class="form-group">
+    <div class="form-group">
 
-	</div>
+    </div>
 </div>
 
 <!-- Content Header (Page header) -->
 <div class="content-header">
-	<div class="container-fluid">
-		<div class="row mb-2">
-			<div class="col-sm-6">
-				<h1 class="m-0">불량 이력 조회 </h1>
-			</div><!-- /.col -->
-			<div class="col-sm-6">
-			
-			</div><!-- /.col -->
-		</div><!-- /.row -->
-	</div><!-- /.container-fluid -->
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">불량 이력 조회 </h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
 </div>
 <!-- /.content-header -->
 
 <div style="display:none;" class="row">
-	<div class="form-group">
+    <div class="form-group">
 
-	</div>
+    </div>
 </div>
 <hr />
 
 <div class="content">
     <div class="container-fluid">
-       
-            @using (Html.BeginForm("Index", "Defect", FormMethod.Post, new { @id = "form2" }))
-            {
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-3">
 
-                                <div class="form-group">
-                                    <label>조회날짜:</label>
-
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">
-                                                <i class="far fa-calendar-alt"></i>
-                                            </span>
-                                        </div>
-                                        <input type="text" class="form-control float-right" id="reservation">
-                                        <input type="hidden" name="startDate" id="startDate" />
-                                        <input type="hidden" name="endDate" id="endDate" />
-                                    </div>
-                                    <!-- /.input group -->
-                                </div>
-                                <!-- /.form group -->
-                            </div>
-                            <div class="col-3">
-                                <div class="form-group">
-                                    <label>품번:</label>
-                                    @Html.DropDownList("productCode",
-                 (IEnumerable<SelectListItem>)ViewBag.Categories, null, new { @class = "form-control" })
-                                </div>
-                            </div>
-                            <div class="col-3">
-                                <div class="form-group">
-                                    <label>공정:</label>
-                                    @Html.DropDownList("op_code",
-                 (IEnumerable<SelectListItem>)ViewBag.Categories2, null, new { @class = "form-control" })
-                                </div>
-                            </div>
-                            <div class="col-3">
-                                <div class="form-group">
-                                    <label>&nbsp;  </label>
-
-                                    <button type="button" id="saveBtn" class="btn btn-block btn-secondary">조회</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            }
-        
+        @using (Html.BeginForm("Index", "Defect", FormMethod.Post, new { @id = "form2",@name="form2" }))
+        {
             <div class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">불량 이력 조회</h3>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-3">
+
+                            <div class="form-group">
+                                <label>조회날짜:</label>
+
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="far fa-calendar-alt"></i>
+                                        </span>
+                                    </div>
+                                    <input type="text" class="form-control float-right" id="reservation">
+                                    <input type="hidden" name="startDate" id="startDate" />
+                                    <input type="hidden" name="endDate" id="endDate" />
+                                </div>
+                                <!-- /.input group -->
+                            </div>
+                            <!-- /.form group -->
                         </div>
-                        <!-- /.card-header -->
-                        <div class="card-body">
-                            @*<table id="compareplan" class="table table-bordered table-striped">
-                            </table>*@
-                            <table class="table table-striped table-bordered table-hover"
-                                   id="TableId"
-                                   cellspacing="0"
-                                   align="center"
-                                   width="100%" border="1">
-
-                                <thead>
-                                    <tr>
-                                        <th scope="col">작업일자</th>
-                                        <th scope="col">품번</th>
-                                        <th scope="col">공정</th>
-                                        <th scope="col">불량 코드</th>
-                                        <th scope="col">불량 수량</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach (var p in Model)
-                                    {
-                                        <tr>
-                                            <td>@p.TRAN_DATE</td>
-                                            <td>@p.PRODUCT_CODE</td>
-                                            <td>@p.OPERATION_CODE</td>
-                                            <td>@p.DEFECT_CODE</td>
-											<td align="right">@String.Format("{0:#,###}", Math.Round(p.DEFECT_QTY))</td>
-
-                                        </tr>
-                                    }
-                                </tbody>
-                            </table>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label>품번:</label>
+                                @Html.DropDownList("productCode",
+             (IEnumerable<SelectListItem>)ViewBag.Categories, null, new { @class = "form-control", @id = "productCode" })
+                            </div>
                         </div>
-                        <!-- /.card-body -->
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label>공정:</label>
+                                @Html.DropDownList("op_code",
+             (IEnumerable<SelectListItem>)ViewBag.Categories2, null, new { @class = "form-control",@id= "op_code" })
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label>&nbsp;  </label>
 
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination justify-content-center">
-                                @Html.PageLinks((PagingInfo)ViewBag.PagingInfo, (x) => Url.Action("Index",
-                                    new { page = x, startDate = ViewBag.startDate, endDate = ViewBag.endDate, productCode = ViewBag.productCode, op_code = ViewBag.op_code }))
-                            </ul>
-                        </nav>
-
+                                <button type="button" id="saveBtn" class="btn btn-block btn-secondary" onclick="search_fn()">조회</button>
+                            </div>
+                        </div>
                     </div>
-                    <!-- /.card -->
                 </div>
-                <!-- /.col -->
             </div>
+        }
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">불량 이력</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        @*<table id="compareplan" class="table table-bordered table-striped">
+                            </table>*@
+                        <table class="table table-striped table-bordered table-hover"
+                               id="TableId"
+                               cellspacing="0"
+                               align="center"
+                               width="100%" border="1">
+
+                            <thead>
+                                <tr>
+                                    <th style="text-align:center" scope="col">작업일자</th>
+                                    <th style="text-align:center" scope="col">품번</th>
+                                    <th style="text-align:center" scope="col">공정</th>
+                                    <th style="text-align:center" scope="col">불량 코드</th>
+                                    <th style="text-align:center" scope="col">불량 수량</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var p in Model)
+                                {
+                                    <tr>
+                                        <td style="text-align:center" >@p.TRAN_DATE</td>
+                                        <td style="text-align:center" >@p.PRODUCT_CODE</td>
+                                        <td style="text-align:center" >@p.OPERATION_CODE</td>
+                                        <td style="text-align:center" >@p.DEFECT_CODE</td>
+                                        <td align="right">@String.Format("{0:#,###}", Math.Round(p.DEFECT_QTY))</td>
+
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center">
+                            @Html.PageLinks((PagingInfo)ViewBag.PagingInfo, (x) => Url.Action("Index",
+                                new { page = x, startDate = ViewBag.startDate, endDate = ViewBag.endDate, productCode = ViewBag.productCode, op_code = ViewBag.op_code }))
+                        </ul>
+                    </nav>
+
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
         </div>
     </div>
+</div>
 
 @{
-	string start = ViewBag.startDate;
-	string end = ViewBag.endDate;
+    string start = ViewBag.startDate;
+    string end = ViewBag.endDate;
 }
 
 @section Scripts
 {
 
-	<script type="text/javascript">
-		jQuery.noConflict()
-		var startDate;
-		var endDate;
-
-		$(document).ready(function () {
-			$('#reservation').daterangepicker(
-				{
-					locale: {
-						format: 'YYYY-MM-DD'
+    <script type="text/javascript">
+        jQuery.noConflict();
+          var startDate;
+          var endDate;
+        $(document).ready(function () {
+            $('#reservation').daterangepicker(
+                {
+                    locale: {
+                        format: 'YYYY-MM-DD'
                     },
+
+
+                    @*setStartDate:@ViewBag.startDate,
+                    setEndDate:@ViewBag.endDaendDate,*@
+                    //startDate: moment().subtract('days', 29),
+                    //endDate: moment(),
+                    //startDate: a,
+                    //endDate: b,
                     startDate: '@start',
-                    endDate:'@end',
-					showDropdowns: true,
-					showWeekNumbers: true,
-					timePicker: false,
-					timePickerIncrement: 1,
-					timePicker12Hour: true,
-					opens: 'left',
-					format: 'YYYY-MM-DD',
-					separator: ' to ',
-				},
-				function (start, end) {
-					console.log("Callback has been called!");
-					$('#reservation span').html(start.format('YYYY-MM-DD') + ' - ' + end.format('YYYY-MM-DD'));
-					startDate = start;
-					endDate = end;
+                    endDate: '@end',
+                    showDropdowns: true,
+                    showWeekNumbers: true,
+                    timePicker: false,
+                    timePickerIncrement: 1,
+                    timePicker12Hour: true,
+                    opens: 'left',
+                    format: 'YYYY-MM-DD',
+                    separator: ' to ',
+                    //timePicker: true,
+                    //timePicker24Hour: true,
+                })
 
-				}
-			);
+                //function (start, end) {
+                //    console.log("Callback has been called!");
+                //    $('#reservation span').html(start.format('YYYY-MM-DD') + ' - ' + end.format('YYYY-MM-DD'));
+                //    startDate = start;
+                //    endDate = end;
 
-			$('#saveBtn').click(function () {
-				console.log(startDate.format('YYYY-MM-DD') + ' - ' + endDate.format('YYYY-MM-DD'));
-				$('#startDate').val(startDate.format('YYYY-MM-DD'));
-				$('#endDate').val(endDate.format('YYYY-MM-DD'));
-				$('#form2')[0].submit();
-			});
+                //}
+                $('#reservation').on('apply.daterangepicker', function (ev, picker) {
+                    //Model.startDate = picker.startDate.format('YYYY-MM-DD HH:mm');
+                    //   Model.endDate = picker.endDate.format('YYYY-MM-DD HH:mm');
+                    // PASS VALUE TO CONTROLLER HERE
+                    console.log(picker.startDate.format('YYYY-MM-DD HH:mm'));
+                    console.log(picker.endDate.format('YYYY-MM-DD HH:mm'));
+                    document.getElementById("startDate").value = picker.startDate.format('YYYY-MM-DD');
+                    document.getElementById("endDate").value = picker.endDate.format('YYYY-MM-DD');
+                })
+            }
+        );
+
+            //$('#saveBtn').click(function () {
+            //    console.log(startDate.format('YYYY-MM-DD') + ' - ' + endDate.format('YYYY-MM-DD'));
+            //    $('#startDate').val(startDate.format('YYYY-MM-DD'));
+            //    $('#endDate').val(endDate.format('YYYY-MM-DD'));
+            //    $('#form1')[0].submit();
+            //});
+
+       // });
 
 
 
+        function search_fn() {
+            window.location.href = 'Index?startDate=' + document.getElementById("startDate").value + '&endDate=' + document.getElementById("endDate").value + '&productCode=' + document.getElementById("productCode").value + '&op_code=' + document.getElementById("op_code").value;
+        }
+   
+        //function Search_Fn() {
+        //       // console.log(startDate.format('YYYY-MM-DD') + ' - ' + endDate.format('YYYY-MM-DD'));
+        //    //startDate = start;
+        //    //endDate = end;
+        //        document.form1.submit();
+        //    }
+
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //debugger;
+            //alert($('#dataObjCol').val());
+            var dataObjCol = JSON.parse($('#dataObjCol').val());
+            var dataObjData = JSON.parse($('#dataObjData').val());
 
 
-		});
-	</script>
 
-	<script type="text/javascript">
-		$(document).ready(function () {
-			//debugger;
-			//alert($('#dataObjCol').val());
-			var dataObjCol = JSON.parse($('#dataObjCol').val());
-			var dataObjData = JSON.parse($('#dataObjData').val());
+            // Datatable settings.
+            $('#TableId').DataTable(
+                {
 
+                    "data": dataObjData,
+                    "columns": dataObjCol,
+                    //    { "data": "ORDER_DATE" },
+                    //    { "data": "WORK_ORDER_ID" },
+                    //    { "data": "PRODUCT_CODE" },
+                    //    { "data": "PRODUCT_NAME" },
+                    //    { "data": "ORDER_QTY" },
+                    //    { "data": "PRODUCT_QTY" },
+                    //    { "data": "DEFECT_QTY" },
+                    //    { "data": "QUALITY_RATE" },
+                    //    { "data": "DEFECT_RATE" },
+                    //    { "data": "WORK_CLOSE_TIME" } //데이터가 이렇게 넘어오게 하면 되는 거잖아? 근데 지금은 타이틀도 같이 넘어오는 상태고..그 타이틀은 보여주는 컬럼인가?
 
-
-			// Datatable settings.
-			$('#TableId').DataTable(
-				{
-
-					"data": dataObjData,
-					"columns": dataObjCol,
-					//    { "data": "ORDER_DATE" },
-					//    { "data": "WORK_ORDER_ID" },
-					//    { "data": "PRODUCT_CODE" },
-					//    { "data": "PRODUCT_NAME" },
-					//    { "data": "ORDER_QTY" },
-					//    { "data": "PRODUCT_QTY" },
-					//    { "data": "DEFECT_QTY" },
-					//    { "data": "QUALITY_RATE" },
-					//    { "data": "DEFECT_RATE" },
-					//    { "data": "WORK_CLOSE_TIME" } //데이터가 이렇게 넘어오게 하면 되는 거잖아? 근데 지금은 타이틀도 같이 넘어오는 상태고..그 타이틀은 보여주는 컬럼인가?
-
-					//],
-					"bPaginate": false,
-					"bFilter": false,
-					"bInfo": false,
-					"autoWidth": false,
-					"bSort": false,
-					"columnDefs": [
-						{
-							"width": "28px",
-							"targets": "0",
-							"className": "text-right"
-						},
-						{
-							"width": "2px",
-							"targets": "1",
-							"className": "text-right"
-						}
-					]
-				});
-		});
-	</script>
+                    //],
+                    "bPaginate": false,
+                    "bFilter": false,
+                    "bInfo": false,
+                    "autoWidth": false,
+                    "bSort": false,
+                    "columnDefs": [
+                        {
+                            "width": "28px",
+                            "targets": "0",
+                            "className": "text-right"
+                        },
+                        {
+                            "width": "2px",
+                            "targets": "1",
+                            "className": "text-right"
+                        }
+                    ]
+                });
+        });
+    </script>
 
 }

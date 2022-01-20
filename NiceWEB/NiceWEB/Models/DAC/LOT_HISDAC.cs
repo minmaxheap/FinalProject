@@ -81,5 +81,25 @@ order by HIST_SEQ desc";
 				return Convert.ToInt32(cmd.ExecuteScalar());
 			}
 		}
+
+		public List<ComboItem> GetCode()
+		{
+			using (SqlCommand cmd = new SqlCommand())
+			{
+				cmd.Connection = conn;
+				cmd.CommandText = @"
+ select LOT_ID as Code,PRODUCT_CODE
+ from LOT_STS
+WHERE LEFT(PRODUCT_CODE, 2) = 'pd'";
+
+				SqlDataReader reader = cmd.ExecuteReader();
+
+				List<ComboItem> list = Helper.DataReaderMapToList<ComboItem>(reader);
+				reader.Close();
+				return list;
+
+
+			}
+		}
 	}
 }

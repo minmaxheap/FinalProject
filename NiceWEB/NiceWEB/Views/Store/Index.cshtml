@@ -20,7 +20,7 @@
 	<div class="container-fluid">
 		<div class="row mb-2">
 			<div class="col-sm-6">
-				<h1 class="m-0">창고 이력 조회 </h1>
+				<h1 class="m-0">창고 재고 조회 </h1>
 			</div><!-- /.col -->
 			<div class="col-sm-6">
 				
@@ -70,9 +70,9 @@
 		}
 		<div class="row">
 			<div class="col-12">
-                <div class="card">
+                <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">창고 재고 조회</h3>
+                        <h3 class="card-title">창고 재고</h3>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
@@ -86,11 +86,11 @@
 
                             <thead>
                                 <tr>
-                                    <th scope="col">창고입고시간</th>
-                                    <th scope="col">LotID</th>
-                                    <th scope="col">품번</th>
-                                    <th scope="col">창고</th>
-                                    <th scope="col">수량</th>
+                                    <th style="text-align:center" scope="col">창고입고시간</th>
+                                    <th style="text-align:center" scope="col">LotID</th>
+                                    <th style="text-align:center" scope="col">품번</th>
+                                    <th style="text-align:center" scope="col">창고</th>
+                                    <th style="text-align:center" scope="col">수량</th>
                                 </tr>
                             </thead>
 							<tbody>
@@ -100,10 +100,10 @@
 									{
 
 										<tr>
-											<td>@p.OPER_IN_TIME</td>
-											<td>@p.LOT_ID</td>
-											<td>@p.PRODUCT_CODE</td>
-											<td>@p.STORE_CODE</td>
+											<td style="text-align:center" >@p.OPER_IN_TIME</td>
+											<td style="text-align:center" >@p.LOT_ID</td>
+											<td style="text-align:center" >@p.PRODUCT_CODE</td>
+											<td style="text-align:center" >@p.STORE_CODE</td>
 											<td align="right">@String.Format("{0:#,###}", Math.Round(p.LOT_QTY))</td>
 
 										</tr>
