@@ -36,7 +36,7 @@ namespace MES_Team3
             titleName = frmMain.TitleName;
             lblUpTitle.Text = "   "+titleName;
             DataGridViewUtil.SetInitGridView(csDataGridView1);
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "주문일자", "ORDER_DATE", DataGridViewContentAlignment.MiddleLeft, 150);
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "주문일자", "ORDER_DATE", DataGridViewContentAlignment.MiddleLeft, 170);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "주문서코드", "SALES_ORDER_ID", DataGridViewContentAlignment.MiddleLeft, 140);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "고객사", "CUSTOMER_CODE", DataGridViewContentAlignment.MiddleLeft, 140);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "고객사명", "CUSTOMER_NAME", DataGridViewContentAlignment.MiddleLeft, 140);
