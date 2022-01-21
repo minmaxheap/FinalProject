@@ -69,28 +69,28 @@ namespace MES_Team3
             // 
             // spcBase
             // 
-            this.spcBase.SplitterDistance = 804;
+            this.spcBase.SplitterDistance = 827;
             // 
             // pnlDgv
             // 
             this.pnlDgv.Controls.Add(this.csDataGridView1);
-            this.pnlDgv.Size = new System.Drawing.Size(802, 267);
+            this.pnlDgv.Size = new System.Drawing.Size(825, 275);
             this.pnlDgv.Controls.SetChildIndex(this.lblTitle, 0);
             this.pnlDgv.Controls.SetChildIndex(this.csDataGridView1, 0);
             // 
             // lblTitle
             // 
-            this.lblTitle.Size = new System.Drawing.Size(802, 55);
+            this.lblTitle.Size = new System.Drawing.Size(825, 55);
             this.lblTitle.Text = "공정 목록";
             // 
             // pnlSearch
             // 
             this.pnlSearch.Controls.Add(this.pgSearch);
-            this.pnlSearch.Size = new System.Drawing.Size(340, 212);
+            this.pnlSearch.Size = new System.Drawing.Size(295, 220);
             // 
             // lblPanel
             // 
-            this.lblPanel.Size = new System.Drawing.Size(340, 55);
+            this.lblPanel.Size = new System.Drawing.Size(295, 55);
             // 
             // pnlAll
             // 
@@ -144,6 +144,7 @@ namespace MES_Team3
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
             this.csDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.csDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.csDataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
             this.csDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -176,7 +177,7 @@ namespace MES_Team3
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.csDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.csDataGridView1.RowHeadersWidth = 30;
-            this.csDataGridView1.Size = new System.Drawing.Size(802, 212);
+            this.csDataGridView1.Size = new System.Drawing.Size(825, 220);
             this.csDataGridView1.TabIndex = 19;
             this.csDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellClick);
             // 
@@ -247,7 +248,7 @@ namespace MES_Team3
             this.pgSearch.HelpVisible = false;
             this.pgSearch.Location = new System.Drawing.Point(0, 0);
             this.pgSearch.Name = "pgSearch";
-            this.pgSearch.Size = new System.Drawing.Size(338, 210);
+            this.pgSearch.Size = new System.Drawing.Size(293, 218);
             this.pgSearch.TabIndex = 27;
             this.pgSearch.ToolbarVisible = false;
             // 
@@ -288,7 +289,7 @@ namespace MES_Team3
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.csDataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.csDataGridView2.RowHeadersWidth = 30;
-            this.csDataGridView2.Size = new System.Drawing.Size(526, 263);
+            this.csDataGridView2.Size = new System.Drawing.Size(526, 215);
             this.csDataGridView2.TabIndex = 20;
             this.csDataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView2_CellClick);
             this.csDataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView2_CellContentClick);

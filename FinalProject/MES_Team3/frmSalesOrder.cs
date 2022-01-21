@@ -45,12 +45,11 @@ namespace MES_Team3
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "주문수량", "ORDER_QTY", DataGridViewContentAlignment.MiddleCenter);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "확정여부", "CONFIRM_FLAG", DataGridViewContentAlignment.MiddleCenter);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "출하여부", "SHIP_FLAG", DataGridViewContentAlignment.MiddleCenter);
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성 시간", "CREATE_TIME", DataGridViewContentAlignment.MiddleLeft, 140);
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성 시간", "CREATE_TIME", DataGridViewContentAlignment.MiddleLeft, 170);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성 사용자", "CREATE_USER_ID", DataGridViewContentAlignment.MiddleCenter,140);
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 시간", "UPDATE_TIME", DataGridViewContentAlignment.MiddleLeft, 140);
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 시간", "UPDATE_TIME", DataGridViewContentAlignment.MiddleLeft, 170);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 사용자", "UPDATE_USER_ID", DataGridViewContentAlignment.MiddleCenter,140);
-            csDataGridView1.Columns[9].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            csDataGridView1.Columns[11].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+
             
             LoadData();
 

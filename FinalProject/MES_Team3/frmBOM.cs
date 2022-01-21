@@ -45,8 +45,13 @@ namespace MES_Team3
             DataGridViewUtil.AddGridTextColumn(dgvProduct, "생성 사용자", "CREATE_USER_ID", DataGridViewContentAlignment.MiddleCenter);
             DataGridViewUtil.AddGridTextColumn(dgvProduct, "변경 시간", "UPDATE_TIME", width: 150);
             DataGridViewUtil.AddGridTextColumn(dgvProduct, "변경 사용자", "UPDATE_USER_ID", DataGridViewContentAlignment.MiddleCenter);
-            dgvProduct.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dgvProduct.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvProduct.Columns[0].FillWeight = 120;
+            dgvProduct.Columns[1].FillWeight = 90;
+            dgvProduct.Columns[2].FillWeight = 80;
+            dgvProduct.Columns[3].FillWeight = 120;
+            dgvProduct.Columns[4].FillWeight = 120;
+            dgvProduct.Columns[5].FillWeight = 140;
+            dgvProduct.Columns[7].FillWeight = 140;
             //iSearchedList = new List<int>();
             //iSelectedRow = new List<int>();
 
@@ -60,8 +65,13 @@ namespace MES_Team3
             DataGridViewUtil.AddGridTextColumn(dgvBOM, "생성 사용자", "CREATE_USER_ID", DataGridViewContentAlignment.MiddleCenter);
             DataGridViewUtil.AddGridTextColumn(dgvBOM, "변경 시간", "UPDATE_TIME", width: 150);
             DataGridViewUtil.AddGridTextColumn(dgvBOM, "변경 사용자", "UPDATE_USER_ID", DataGridViewContentAlignment.MiddleCenter);
-            dgvProduct.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dgvProduct.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+
+            dgvBOM.Columns[0].FillWeight = 120;
+            dgvBOM.Columns[1].FillWeight = 120;
+            dgvBOM.Columns[2].FillWeight = 80;
+            dgvBOM.Columns[3].FillWeight = 140;
+            dgvBOM.Columns[5].FillWeight = 140;
+
             LoadData();
 
             ProductProperty vo = new ProductProperty();

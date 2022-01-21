@@ -300,7 +300,7 @@ namespace MES_Team3
             this.lblPnlTop.Location = new System.Drawing.Point(0, 0);
             this.lblPnlTop.Margin = new System.Windows.Forms.Padding(0);
             this.lblPnlTop.Name = "lblPnlTop";
-            this.lblPnlTop.Size = new System.Drawing.Size(411, 55);
+            this.lblPnlTop.Size = new System.Drawing.Size(410, 55);
             this.lblPnlTop.TabIndex = 32;
             this.lblPnlTop.Text = "▶ 검색 조건";
             this.lblPnlTop.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -314,7 +314,7 @@ namespace MES_Team3
             this.pnlSearch.Location = new System.Drawing.Point(0, 55);
             this.pnlSearch.Margin = new System.Windows.Forms.Padding(0);
             this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(411, 220);
+            this.pnlSearch.Size = new System.Drawing.Size(410, 220);
             this.pnlSearch.TabIndex = 31;
             // 
             // lblTitle
@@ -324,7 +324,7 @@ namespace MES_Team3
             this.lblTitle.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblTitle.Location = new System.Drawing.Point(0, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(709, 55);
+            this.lblTitle.Size = new System.Drawing.Size(710, 55);
             this.lblTitle.TabIndex = 17;
             this.lblTitle.Text = "title";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -337,7 +337,7 @@ namespace MES_Team3
             this.pnlDgv.Location = new System.Drawing.Point(0, 0);
             this.pnlDgv.Margin = new System.Windows.Forms.Padding(0);
             this.pnlDgv.Name = "pnlDgv";
-            this.pnlDgv.Size = new System.Drawing.Size(709, 275);
+            this.pnlDgv.Size = new System.Drawing.Size(710, 275);
             this.pnlDgv.TabIndex = 18;
             // 
             // spcBase
@@ -360,7 +360,7 @@ namespace MES_Team3
             this.spcBase.Panel2.Controls.Add(this.pnlSearch);
             this.spcBase.Panel2.Controls.Add(this.lblPnlTop);
             this.spcBase.Size = new System.Drawing.Size(1130, 277);
-            this.spcBase.SplitterDistance = 711;
+            this.spcBase.SplitterDistance = 712;
             this.spcBase.SplitterWidth = 6;
             this.spcBase.TabIndex = 45;
             // 

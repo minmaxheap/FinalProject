@@ -57,8 +57,12 @@ namespace MES_Team3
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성 사용자", "CREATE_USER_ID", DataGridViewContentAlignment.MiddleCenter);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경시간", "UPDATE_TIME", DataGridViewContentAlignment.MiddleLeft, 140);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 사용자", "UPDATE_USER_ID", DataGridViewContentAlignment.MiddleCenter);
-            csDataGridView1.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            csDataGridView1.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            csDataGridView1.Columns[0].FillWeight = 120;
+            csDataGridView1.Columns[1].FillWeight = 120;
+            csDataGridView1.Columns[6].FillWeight = 160;
+            csDataGridView1.Columns[7].FillWeight = 110;
+            csDataGridView1.Columns[8].FillWeight = 160;
+            csDataGridView1.Columns[9].FillWeight = 110;
             iSearchedList = new List<int>();
             iSelectedRow = new List<int>();
 
