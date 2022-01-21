@@ -30,7 +30,7 @@ namespace DAC
 		{
 			string sql = @"select ir.OPERATION_CODE,ir.INSPECT_ITEM_CODE,i.INSPECT_ITEM_NAME,i.VALUE_TYPE,i.SPEC_LSL,i.SPEC_TARGET,i.SPEC_USL,'' as 검사데이터, ''as 유효값 from INSPECT_ITEM_OPERATION_REL ir
 	left join INSPECT_ITEM_MST i on ir.INSPECT_ITEM_CODE = i.INSPECT_ITEM_CODE
-	where ir.OPERATION_CODE = @OPERATION_CODE and RIGHT(ir.INSPECT_ITEM_CODE,3) =@txt";
+	where ir.OPERATION_CODE = @OPERATION_CODE and (RIGHT(ir.INSPECT_ITEM_CODE,3) =@txt or RIGHT(ir.INSPECT_ITEM_CODE,5)='x-ray')";
 
 			using (SqlCommand cmd = new SqlCommand(sql,conn))
 			{
