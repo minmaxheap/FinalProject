@@ -385,7 +385,7 @@ END CATCH;
       ,[PRODUCT_NAME]
       ,[PRODUCT_TIME]
       ,[LOT_QTY]
-  FROM [team3].[dbo].[BARCODE]";
+  FROM [team3].[dbo].[BARCODE] ORDER BY BARCODE_ID DESC";
             DataTable dt = new DataTable();
             using (SqlDataAdapter da = new SqlDataAdapter(sql, conn))
             {
