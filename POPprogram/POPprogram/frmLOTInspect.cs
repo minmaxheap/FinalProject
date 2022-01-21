@@ -160,12 +160,12 @@ namespace POPprogram
 						MessageBox.Show("문자를입력하세요");
 						return;
 					}
-					if (csDataGridView1.Rows[row].Cells["InspectValue"].Value.ToString() == "Y")
+					if (csDataGridView1.Rows[row].Cells["InspectValue"].Value.ToString().ToUpper() == "Y")
 					{
 						csDataGridView1.Rows[row].Cells["InspectResult"].Value = "OK";
 						csDataGridView1.Rows[row].Cells["InspectResult"].Style.ForeColor = Color.Green;
 					}
-					else if (csDataGridView1.Rows[row].Cells["InspectValue"].Value.ToString() == "N")
+					else if (csDataGridView1.Rows[row].Cells["InspectValue"].Value.ToString().ToUpper() == "N")
 					{
 						csDataGridView1.Rows[row].Cells["InspectResult"].Value = "NG";
 						csDataGridView1.Rows[row].Cells["InspectResult"].Style.ForeColor = Color.Red;

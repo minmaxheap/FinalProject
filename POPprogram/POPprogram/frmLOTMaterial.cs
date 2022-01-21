@@ -322,6 +322,34 @@ namespace POPprogram
             if (bResult)
             {
                 MessageBox.Show("성공적으로 자재가 사용되었습니다.");
+                ////////////////////////////////////////////////////////////////////////////
+                foreach (Control ctl1 in this.Controls)
+                {
+                    foreach (Control ctl2 in this.Controls[this.Controls.IndexOf(ctl1)].Controls)
+                        if (typeof(TextBox) == ctl2.GetType())
+                        {
+                            ctl2.Text = null;
+                        }
+                        else if (typeof(ComboBox) == ctl2.GetType())
+                        {
+                            ComboBox dd = (ComboBox)ctl2;
+                            if (dd != null)
+                            {
+                                dd.Text = string.Empty;
+                                dd.SelectedIndex = -1;
+                            }
+                        }
+                        else if (typeof(csDataGridView) == ctl2.GetType())
+                        {
+                            csDataGridView dd = (csDataGridView)ctl2;
+                            if (dd != null)
+                            {
+                                dd.DataSource = null;
+                            }
+                        }
+                }
+                ////////////////////////////////////////////////////////////////////////////
+
             }
             else
             {
