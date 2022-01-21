@@ -87,20 +87,20 @@ namespace POPprogram
 			lblProdQty.Text = swlist[0].PRODUCT_QTY.ToString();
 			txtCustName.Text = swlist[0].DATA_1;
 			lblStatus.Text = swlist[0].ORDER_STATUS;
-
+			
 			LoadData();
 		}
 		private void LoadData()
 		{
 			//공정아이디로 보여주기
 			string Code = txtOperCode.Text;
+			string str = txtProdCode.Text;
+			//lblDefectQty.Text.Substring(lblDefectQty.Text.Length, -3)
+			string txt =  str.Substring(str.Length - 4).TrimEnd('g');
 			lotserv = new LOTinspectServ();
-			DataTable dt = lotserv.GetInspec(Code);
+			DataTable dt = lotserv.GetInspec(Code,txt);
 			csDataGridView1.DataSource = null;
 			csDataGridView1.DataSource = dt;
-
-
-
 		}
 
 		private void csDataGridView1_KeyDown(object sender, KeyEventArgs e)

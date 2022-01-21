@@ -9,10 +9,10 @@ namespace POPprogram
 {
 	public class LOTinspectServ
 	{
-		public DataTable GetInspec(string Code)
+		public DataTable GetInspec(string Code,string txt)
 		{
 			LOTInspecDAC dac = new LOTInspecDAC();
-			DataTable dt = dac.GetInspec(Code);
+			DataTable dt = dac.GetInspec(Code, txt);
 			dac.Dispose();
 			return dt;
 				 

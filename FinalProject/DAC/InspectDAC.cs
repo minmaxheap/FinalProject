@@ -53,8 +53,8 @@ namespace DAC
 			{
 				if (vo.VALUE_TYPE == "N")
 				{
-					string sql = @"insert into [dbo].[INSPECT_ITEM_MST] (INSPECT_ITEM_CODE, INSPECT_ITEM_NAME, VALUE_TYPE, SPEC_LSL,SPEC_USL, CREATE_TIME, CREATE_USER_ID)
-values(@INSPECT_ITEM_CODE, @INSPECT_ITEM_NAME, @VALUE_TYPE, @SPEC_LSL, @SPEC_USL,getdate(), @CREATE_USER_ID)";
+					string sql = @"insert into [dbo].[INSPECT_ITEM_MST] (INSPECT_ITEM_CODE, INSPECT_ITEM_NAME, VALUE_TYPE, SPEC_LSL,SPEC_TARGET,SPEC_USL, CREATE_TIME, CREATE_USER_ID)
+values(@INSPECT_ITEM_CODE, @INSPECT_ITEM_NAME, @VALUE_TYPE,@SPEC_TARGET,@SPEC_LSL, @SPEC_USL,getdate(), @CREATE_USER_ID)";
 
 					using (SqlCommand cmd = new SqlCommand(sql, conn))
 					{

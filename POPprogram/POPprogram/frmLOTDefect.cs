@@ -202,6 +202,12 @@ namespace POPprogram
 		}
         private void numtxt_keydown(object sender, KeyEventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(cboLOTID.SelectedValue.ToString()))
+            {
+                return;
+            }
+                
+
             if (e.KeyCode == Keys.Enter)
             {
                 decimal a1 = string.IsNullOrWhiteSpace(numTextBox1.Text) ? 0 : Convert.ToDecimal(numTextBox1.Text);
