@@ -51,8 +51,8 @@ namespace POPprogram
 			this.csDataGridView1.Columns.Add("InspectResult", "유효값");
 			this.csDataGridView1.Columns["InspectResult"].ReadOnly = true;
 
-			this.csDataGridView1.RowTemplate.Height = 50;
-			this.csDataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+			csDataGridView1.RowTemplate.Height = 50;
+			csDataGridView1.DefaultCellStyle.Font = new Font("나눔고딕", 13);
 			// this.csDataGridView1.Columns.Add(
 
 
@@ -160,12 +160,12 @@ namespace POPprogram
 						MessageBox.Show("문자를입력하세요");
 						return;
 					}
-					if (csDataGridView1.Rows[row].Cells["InspectValue"].Value.ToString() == "Y")
+					if (csDataGridView1.Rows[row].Cells["InspectValue"].Value.ToString().ToUpper() == "Y")
 					{
 						csDataGridView1.Rows[row].Cells["InspectResult"].Value = "OK";
 						csDataGridView1.Rows[row].Cells["InspectResult"].Style.ForeColor = Color.Green;
 					}
-					else if (csDataGridView1.Rows[row].Cells["InspectValue"].Value.ToString() == "N")
+					else if (csDataGridView1.Rows[row].Cells["InspectValue"].Value.ToString().ToUpper() == "N")
 					{
 						csDataGridView1.Rows[row].Cells["InspectResult"].Value = "NG";
 						csDataGridView1.Rows[row].Cells["InspectResult"].Style.ForeColor = Color.Red;

@@ -39,9 +39,10 @@ namespace MES_Team3
             DataGridViewUtil.AddGridTextColumn(dgvProducts, "생성 사용자", "CREATE_USER_ID", DataGridViewContentAlignment.MiddleCenter);
             DataGridViewUtil.AddGridTextColumn(dgvProducts, "변경 시간", "UPDATE_TIME", width: 150);
             DataGridViewUtil.AddGridTextColumn(dgvProducts, "변경 사용자", "UPDATE_USER_ID", DataGridViewContentAlignment.MiddleCenter);
-            dgvProducts.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dgvProducts.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dgvProducts.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvProducts.Columns[0].FillWeight = 150;
+            dgvProducts.Columns[1].FillWeight = 110;
+            dgvProducts.Columns[5].FillWeight = 160;
+            dgvProducts.Columns[7].FillWeight = 160;
 
             DataGridViewUtil.SetInitGridView(dgvAdd);
             DataGridViewUtil.AddGridTextColumn(dgvAdd, "순번", "FLOW_SEQ", DataGridViewContentAlignment.MiddleCenter, width: 80);

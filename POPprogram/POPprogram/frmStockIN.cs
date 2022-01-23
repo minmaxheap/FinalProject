@@ -38,6 +38,7 @@ namespace POPprogram
             DataTable dt = serv.Purchase_warehousing(txtCode1.Text, txtSearch.Text);
             csDataGridView1.DataSource = null;
             csDataGridView1.DataSource = dt;
+            csDataGridView1.CurrentCell = null;
         }
 
         private void btnTxtSearch_Click(object sender, EventArgs e)
@@ -74,6 +75,15 @@ namespace POPprogram
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "입하 여부", "STOCK_IN_FLAG");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "자재LOT ID", "STOCK_IN_LOT_ID", width: 150);
 
+            csDataGridView1.Columns[0].FillWeight = 80;
+            csDataGridView1.Columns[1].FillWeight = 80;
+            csDataGridView1.Columns[2].FillWeight = 150;
+            csDataGridView1.Columns[3].FillWeight = 150;
+            csDataGridView1.Columns[5].FillWeight = 150;
+            csDataGridView1.Columns[6].FillWeight = 80;
+            csDataGridView1.Columns[7].FillWeight = 150;
+            csDataGridView1.RowTemplate.Height = 40;
+            csDataGridView1.DefaultCellStyle.Font = new Font("나눔고딕", 13);
 
             LoadData();
 
@@ -381,7 +391,10 @@ namespace POPprogram
 
         }
 
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
     }
 }
 

@@ -72,10 +72,10 @@ namespace MES_Team3
             this.pnlTop.Controls.Add(this.btnTxtSearch);
             this.pnlTop.Controls.Add(this.txtSearch);
             this.pnlTop.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.pnlTop.Location = new System.Drawing.Point(0, 71);
+            this.pnlTop.Location = new System.Drawing.Point(9, 71);
             this.pnlTop.Margin = new System.Windows.Forms.Padding(0);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(1152, 30);
+            this.pnlTop.Size = new System.Drawing.Size(1143, 30);
             this.pnlTop.TabIndex = 41;
             // 
             // btnReadTop
@@ -87,7 +87,7 @@ namespace MES_Team3
             this.btnReadTop.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnReadTop.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btnReadTop.ImageIndex = 15;
-            this.btnReadTop.Location = new System.Drawing.Point(3, 3);
+            this.btnReadTop.Location = new System.Drawing.Point(4, 1);
             this.btnReadTop.Name = "btnReadTop";
             this.btnReadTop.Size = new System.Drawing.Size(26, 26);
             this.btnReadTop.TabIndex = 81;
@@ -124,7 +124,7 @@ namespace MES_Team3
             | System.Windows.Forms.AnchorStyles.Right)));
             this.spcBase.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.spcBase.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.spcBase.Location = new System.Drawing.Point(0, 103);
+            this.spcBase.Location = new System.Drawing.Point(13, 103);
             this.spcBase.Margin = new System.Windows.Forms.Padding(0);
             this.spcBase.Name = "spcBase";
             // 
@@ -136,8 +136,8 @@ namespace MES_Team3
             // 
             this.spcBase.Panel2.Controls.Add(this.pnlSearch);
             this.spcBase.Panel2.Controls.Add(this.lblPanel);
-            this.spcBase.Size = new System.Drawing.Size(1152, 277);
-            this.spcBase.SplitterDistance = 726;
+            this.spcBase.Size = new System.Drawing.Size(1130, 277);
+            this.spcBase.SplitterDistance = 711;
             this.spcBase.SplitterWidth = 6;
             this.spcBase.TabIndex = 42;
             // 
@@ -149,7 +149,7 @@ namespace MES_Team3
             this.pnlDgv.Location = new System.Drawing.Point(0, 0);
             this.pnlDgv.Margin = new System.Windows.Forms.Padding(0);
             this.pnlDgv.Name = "pnlDgv";
-            this.pnlDgv.Size = new System.Drawing.Size(724, 275);
+            this.pnlDgv.Size = new System.Drawing.Size(709, 275);
             this.pnlDgv.TabIndex = 18;
             // 
             // lblTitle
@@ -159,7 +159,7 @@ namespace MES_Team3
             this.lblTitle.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblTitle.Location = new System.Drawing.Point(0, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(724, 55);
+            this.lblTitle.Size = new System.Drawing.Size(709, 55);
             this.lblTitle.TabIndex = 17;
             this.lblTitle.Text = "title";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -173,7 +173,7 @@ namespace MES_Team3
             this.pnlSearch.Location = new System.Drawing.Point(0, 55);
             this.pnlSearch.Margin = new System.Windows.Forms.Padding(0);
             this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(418, 220);
+            this.pnlSearch.Size = new System.Drawing.Size(411, 220);
             this.pnlSearch.TabIndex = 31;
             // 
             // lblPanel
@@ -184,7 +184,7 @@ namespace MES_Team3
             this.lblPanel.Location = new System.Drawing.Point(0, 0);
             this.lblPanel.Margin = new System.Windows.Forms.Padding(0);
             this.lblPanel.Name = "lblPanel";
-            this.lblPanel.Size = new System.Drawing.Size(418, 55);
+            this.lblPanel.Size = new System.Drawing.Size(411, 55);
             this.lblPanel.TabIndex = 32;
             this.lblPanel.Text = "▶ 검색 조건";
             this.lblPanel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -197,10 +197,10 @@ namespace MES_Team3
             this.panel1.Controls.Add(this.lblAddList);
             this.panel1.Controls.Add(this.pnlCrud);
             this.panel1.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.panel1.Location = new System.Drawing.Point(0, 380);
+            this.panel1.Location = new System.Drawing.Point(13, 380);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1152, 361);
+            this.panel1.Size = new System.Drawing.Size(1130, 361);
             this.panel1.TabIndex = 43;
             // 
             // panel2
@@ -211,7 +211,7 @@ namespace MES_Team3
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 45);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1152, 267);
+            this.panel2.Size = new System.Drawing.Size(1130, 267);
             this.panel2.TabIndex = 84;
             // 
             // panel3
@@ -221,7 +221,7 @@ namespace MES_Team3
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(528, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(96, 267);
+            this.panel3.Size = new System.Drawing.Size(74, 267);
             this.panel3.TabIndex = 84;
             // 
             // btnSubtract
@@ -233,7 +233,7 @@ namespace MES_Team3
             this.btnSubtract.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSubtract.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btnSubtract.ImageIndex = 15;
-            this.btnSubtract.Location = new System.Drawing.Point(13, 61);
+            this.btnSubtract.Location = new System.Drawing.Point(2, 61);
             this.btnSubtract.Name = "btnSubtract";
             this.btnSubtract.Size = new System.Drawing.Size(70, 35);
             this.btnSubtract.TabIndex = 82;
@@ -249,7 +249,7 @@ namespace MES_Team3
             this.btnAdd.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btnAdd.ImageIndex = 15;
-            this.btnAdd.Location = new System.Drawing.Point(13, 123);
+            this.btnAdd.Location = new System.Drawing.Point(2, 123);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(70, 35);
             this.btnAdd.TabIndex = 83;
@@ -287,7 +287,7 @@ namespace MES_Team3
             this.pnlAll.Controls.Add(this.lblAll);
             this.pnlAll.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlAll.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.pnlAll.Location = new System.Drawing.Point(624, 0);
+            this.pnlAll.Location = new System.Drawing.Point(602, 0);
             this.pnlAll.Margin = new System.Windows.Forms.Padding(0);
             this.pnlAll.Name = "pnlAll";
             this.pnlAll.Size = new System.Drawing.Size(528, 267);
@@ -315,7 +315,7 @@ namespace MES_Team3
             this.lblAddList.Location = new System.Drawing.Point(0, 0);
             this.lblAddList.Margin = new System.Windows.Forms.Padding(0);
             this.lblAddList.Name = "lblAddList";
-            this.lblAddList.Size = new System.Drawing.Size(1152, 45);
+            this.lblAddList.Size = new System.Drawing.Size(1130, 45);
             this.lblAddList.TabIndex = 45;
             this.lblAddList.Text = "할당 공정 목록";
             this.lblAddList.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -329,7 +329,7 @@ namespace MES_Team3
             this.pnlCrud.Location = new System.Drawing.Point(0, 312);
             this.pnlCrud.Margin = new System.Windows.Forms.Padding(0);
             this.pnlCrud.Name = "pnlCrud";
-            this.pnlCrud.Size = new System.Drawing.Size(1152, 49);
+            this.pnlCrud.Size = new System.Drawing.Size(1130, 49);
             this.pnlCrud.TabIndex = 40;
             // 
             // btnReadBottom
@@ -340,7 +340,7 @@ namespace MES_Team3
             this.btnReadBottom.Font = new System.Drawing.Font("나눔고딕", 9.75F);
             this.btnReadBottom.Image = global::MES_Team3.Properties.Resources.Data_Find12;
             this.btnReadBottom.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnReadBottom.Location = new System.Drawing.Point(937, 1);
+            this.btnReadBottom.Location = new System.Drawing.Point(953, 1);
             this.btnReadBottom.Margin = new System.Windows.Forms.Padding(0);
             this.btnReadBottom.Name = "btnReadBottom";
             this.btnReadBottom.Size = new System.Drawing.Size(84, 48);
@@ -357,7 +357,7 @@ namespace MES_Team3
             this.btnClose.Font = new System.Drawing.Font("나눔고딕", 9.75F);
             this.btnClose.Image = global::MES_Team3.Properties.Resources.Delete;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnClose.Location = new System.Drawing.Point(1068, 1);
+            this.btnClose.Location = new System.Drawing.Point(1046, 1);
             this.btnClose.Margin = new System.Windows.Forms.Padding(0);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(84, 48);

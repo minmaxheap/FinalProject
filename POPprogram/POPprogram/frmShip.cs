@@ -43,6 +43,9 @@ namespace POPprogram
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "수량", "LOT_QTY", DataGridViewContentAlignment.MiddleCenter, 100);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "창고 입고시간", "OPER_IN_TIME",DataGridViewContentAlignment.MiddleCenter, 150);
             txtCode3.Text = "0";
+
+            csDataGridView1.RowTemplate.Height = 50;
+            csDataGridView1.DefaultCellStyle.Font = new Font("나눔고딕", 13);
         }
 
         private void btnTxtSearch_Click(object sender, EventArgs e)
@@ -252,6 +255,34 @@ namespace POPprogram
             if (bResult)
             {
                 MessageBox.Show("성공적으로 제품을 출하했습니다.");
+                ////////////////////////////////////////////////////////////////////////////
+                foreach (Control ctl1 in this.Controls)
+                {
+                    foreach (Control ctl2 in this.Controls[this.Controls.IndexOf(ctl1)].Controls)
+                        if (typeof(TextBox) == ctl2.GetType())
+                        {
+                            ctl2.Text = null;
+                        }
+                        else if (typeof(ComboBox) == ctl2.GetType())
+                        {
+                            ComboBox dd = (ComboBox)ctl2;
+                            if (dd != null)
+                            {
+                                dd.Text = string.Empty;
+                                dd.SelectedIndex = -1;
+                            }
+                        }
+                        else if (typeof(csDataGridView) == ctl2.GetType())
+                        {
+                            csDataGridView dd = (csDataGridView)ctl2;
+                            if (dd != null)
+                            {
+                                dd.DataSource = null;
+                            }
+                        }
+                }
+                ////////////////////////////////////////////////////////////////////////////
+
             }
             else
             {

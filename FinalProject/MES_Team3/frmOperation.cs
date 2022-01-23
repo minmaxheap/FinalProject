@@ -31,17 +31,21 @@ namespace MES_Team3
             titleName = frmMain.TitleName;
             lblUpTitle.Text = "   " + titleName;
             DataGridViewUtil.SetInitGridView(csDataGridView1);
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "공정", "OPERATION_CODE", DataGridViewContentAlignment.MiddleCenter);
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "공정", "OPERATION_CODE");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "공정명", "OPERATION_NAME");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "불량 입력", "CHECK_DEFECT_FLAG", DataGridViewContentAlignment.MiddleCenter);
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "검사 데이터 입력", "CHECK_INSPECT_FLAG", DataGridViewContentAlignment.MiddleCenter, width: 120);
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "검사 데이터 입력", "CHECK_INSPECT_FLAG", DataGridViewContentAlignment.MiddleCenter);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "자재 사용", "CHECK_MATERIAL_FLAG", DataGridViewContentAlignment.MiddleCenter);
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성 시간", "CREATE_TIME",DataGridViewContentAlignment.MiddleLeft, 140);
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성 사용자", "CREATE_USER_ID");
-            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 시간", "UPDATE_TIME", DataGridViewContentAlignment.MiddleLeft, 140);
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성 시간", "CREATE_TIME",DataGridViewContentAlignment.MiddleCenter);
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성 사용자", "CREATE_USER_ID", DataGridViewContentAlignment.MiddleCenter);
+            DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 시간", "UPDATE_TIME", DataGridViewContentAlignment.MiddleCenter);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 사용자", "UPDATE_USER_ID", DataGridViewContentAlignment.MiddleCenter);
-            csDataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            csDataGridView1.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            csDataGridView1.Columns[0].FillWeight = 80;
+            csDataGridView1.Columns[3].FillWeight = 120;
+            csDataGridView1.Columns[5].FillWeight = 150;
+            csDataGridView1.Columns[7].FillWeight = 150;
+            //csDataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            //csDataGridView1.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             LoadData();
 
             OperationProperty vo = new OperationProperty();
