@@ -136,6 +136,7 @@ namespace POPprogram
                 DataTable dt = serv.GetLOTSearch(search);
                 csDataGridView1.DataSource = null;
                 csDataGridView1.DataSource = dt;
+                csDataGridView1.CurrentCell = null;
                 ResetCount();
             }
           
@@ -148,6 +149,7 @@ namespace POPprogram
             csDataGridView1.DataSource = null;
             csDataGridView1.DataSource = mdtAll;
             csDataGridView1.Focus();
+            csDataGridView1.CurrentCell = null;
             // BSearchPanel = false; 
             ResetCount();
         }
@@ -273,6 +275,7 @@ namespace POPprogram
 
                     csDataGridView2.DataSource = null;
                     csDataGridView2.DataSource = dtHis;
+                    csDataGridView2.CurrentCell = null;
                     if (list.Count > 0) pgProperty.SelectedObject = list[0];
                 }
                 else 
@@ -282,6 +285,7 @@ namespace POPprogram
 
                     csDataGridView2.DataSource = null;
                     csDataGridView2.DataSource = dtHis;
+                    csDataGridView2.CurrentCell = null;
                     if (list.Count > 0) pgProperty.SelectedObject = list[0];
                 }
             }

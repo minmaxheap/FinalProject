@@ -47,6 +47,7 @@ namespace POPprogram
             csDataGridView1.Columns["CHILD_LOT_ID"].ReadOnly = false;
             csDataGridView1.Columns["CHILD_LOT_QTY"].ReadOnly = false;
             csDataGridView1.RowTemplate.Height = 40;
+            csDataGridView1.DefaultCellStyle.Font = new Font("나눔고딕", 13);
             csDataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
         }
@@ -175,6 +176,7 @@ namespace POPprogram
             dt.Columns.Add("CHILD_LOT_QTY", typeof(decimal)).SetOrdinal(5);
 
             csDataGridView1.DataSource = dt;
+            csDataGridView1.CurrentCell = null;
         }
 
         public DataTable ConvertToDataTable<T>(IList<T> data)

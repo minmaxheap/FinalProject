@@ -45,6 +45,10 @@ namespace POPprogram
             ((System.ComponentModel.ISupportInitialize)(this.csDataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
+            // panel6
+            // 
+            this.panel6.Location = new System.Drawing.Point(500, 560);
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.csDataGridView1);
@@ -52,6 +56,8 @@ namespace POPprogram
             this.panel4.Controls.Add(this.textBox7);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.comboBox1);
+            this.panel4.Size = new System.Drawing.Size(1136, 201);
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             this.panel4.Controls.SetChildIndex(this.label1, 0);
             this.panel4.Controls.SetChildIndex(this.textBox1, 0);
             this.panel4.Controls.SetChildIndex(this.label3, 0);
@@ -107,19 +113,27 @@ namespace POPprogram
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(885, 249);
+            this.label4.Font = new System.Drawing.Font("나눔고딕", 15F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(885, 301);
+            this.label4.Size = new System.Drawing.Size(73, 23);
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(974, 245);
+            this.textBox2.Font = new System.Drawing.Font("나눔고딕", 16F, System.Drawing.FontStyle.Bold);
+            this.textBox2.Location = new System.Drawing.Point(974, 297);
+            this.textBox2.Size = new System.Drawing.Size(129, 32);
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(869, 207);
+            this.label3.Font = new System.Drawing.Font("나눔고딕", 15F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(869, 232);
+            this.label3.Size = new System.Drawing.Size(91, 23);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(974, 203);
+            this.textBox1.Font = new System.Drawing.Font("나눔고딕", 16F, System.Drawing.FontStyle.Bold);
+            this.textBox1.Location = new System.Drawing.Point(974, 228);
+            this.textBox1.Size = new System.Drawing.Size(129, 32);
             // 
             // btnReadTop
             // 
@@ -132,12 +146,12 @@ namespace POPprogram
             // comboBox1
             // 
             this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.comboBox1.Font = new System.Drawing.Font("나눔고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(863, 159);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(240, 28);
+            this.comboBox1.Size = new System.Drawing.Size(240, 32);
             this.comboBox1.TabIndex = 61;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -145,11 +159,11 @@ namespace POPprogram
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label5.Font = new System.Drawing.Font("나눔고딕", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.label5.Location = new System.Drawing.Point(863, 135);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 20);
+            this.label5.Size = new System.Drawing.Size(92, 23);
             this.label5.TabIndex = 64;
             this.label5.Text = "입고 창고";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -157,11 +171,11 @@ namespace POPprogram
             // textBox7
             // 
             this.textBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBox7.Font = new System.Drawing.Font("나눔고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.textBox7.Location = new System.Drawing.Point(863, 87);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(240, 26);
+            this.textBox7.Size = new System.Drawing.Size(240, 32);
             this.textBox7.TabIndex = 63;
             this.textBox7.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox7_KeyDown);
             // 
@@ -169,11 +183,11 @@ namespace POPprogram
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label7.Font = new System.Drawing.Font("나눔고딕", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.label7.Location = new System.Drawing.Point(863, 63);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(115, 20);
+            this.label7.Size = new System.Drawing.Size(151, 23);
             this.label7.TabIndex = 62;
             this.label7.Text = "자재 LOT SCAN";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -217,14 +231,14 @@ namespace POPprogram
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.csDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.csDataGridView1.RowHeadersWidth = 30;
-            this.csDataGridView1.Size = new System.Drawing.Size(830, 151);
+            this.csDataGridView1.Size = new System.Drawing.Size(830, 154);
             this.csDataGridView1.TabIndex = 65;
             this.csDataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.csDataGridView1_CellDoubleClick);
             this.csDataGridView1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.csDataGridView1_CellPainting);
             // 
             // frmStockIN
             // 
-            this.ClientSize = new System.Drawing.Size(1194, 634);
+            this.ClientSize = new System.Drawing.Size(1194, 637);
             this.Name = "frmStockIN";
             this.Activated += new System.EventHandler(this.frmStockIN_Activated);
             this.Load += new System.EventHandler(this.frmStockIN_Load);
