@@ -204,6 +204,7 @@ namespace POPprogram
         {
             if (string.IsNullOrWhiteSpace(cboLOTID.SelectedValue.ToString()))
             {
+                MessageBox.Show("LOTID를 입력을 받으세요");
                 return;
             }
                 
