@@ -15,7 +15,13 @@ namespace NiceWEB.Controllers
     {
         public ActionResult Index(string opCode, string productCode,int page =1)
         {
-            
+            if (Session["UserID"] == null || Session["UserID"].ToString().Length < 1)
+            {
+                Session["ReturlUrl"] = "Stock/Index";
+
+                return RedirectToAction("Login", "Home");
+            }
+
             int pagesize = Convert.ToInt32(WebConfigurationManager.AppSettings["pagesize"]);
 
             StockDAC dac = new StockDAC();

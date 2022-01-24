@@ -18,6 +18,8 @@ namespace NiceWEB.Controllers
 
             if (Session["UserID"] == null || Session["UserID"].ToString().Length < 1)
             {
+                Session["ReturlUrl"] = "LOTH/Index";
+
                 return RedirectToAction("Login", "Home");
             }
 

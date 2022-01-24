@@ -67,7 +67,7 @@ order by HIST_SEQ desc";
 
 				cmd.Connection = conn;
 				StringBuilder sb = new StringBuilder();
-				sb.Append(@"SELECT COUNT(*) FROM LOT_HIS where 1=1");
+				sb.Append(@"SELECT COUNT(*) FROM LOT_HIS where 1=1 ");
 				if (!string.IsNullOrWhiteSpace(LotID))
 				{
 					sb.Append(" and LOT_ID = @LOT_ID ");

@@ -42,10 +42,10 @@ namespace NiceWEB.Controllers
 			{
                 
 				Session["UserID"] = list[0].Code.ToString() + "님";
-                if (ViewBag.ReturlUrl != null)
-					return Redirect(ViewBag.ReturlUrl.ToString());
+                if (Session["ReturlUrl"] != null)
+					return Redirect(Session["ReturlUrl"].ToString());
 				else
-					return RedirectToAction("Index", "Home");
+					return RedirectToAction("Index", "ComparePlan");
 			}
 
 			else
