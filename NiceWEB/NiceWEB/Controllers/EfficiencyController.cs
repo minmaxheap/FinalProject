@@ -17,7 +17,7 @@ namespace NiceWEB.Controllers
         {
             if (Session["UserID"] == null || Session["UserID"].ToString().Length < 1)
             {
-                Session["ReturlUrl"] = "Efficiency/Index";
+                Session["ReturlUrl"] = "/Efficiency/Index";
 
                 return RedirectToAction("Login", "Home");
             }
