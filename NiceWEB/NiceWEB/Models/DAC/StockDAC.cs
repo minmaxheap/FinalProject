@@ -39,7 +39,7 @@ select s.LOT_ID, LOT_DESC, s.PRODUCT_CODE, m.OPERATION_CODE, LOT_QTY, START_FLAG
 row_number() over(order by START_FLAG DESC) as RowNum
 from LOT_STS S
 right join LOT_MATERIAL_HIS m on s.LOT_ID = m.LOT_ID
-where LOT_DELETE_FLAG is null and (M.OPERATION_CODE is not null or S.PRODUCT_CODE is not null)
+where LOT_DELETE_FLAG is null and LOT_DELETE_FLAG <> 'Y' and (M.OPERATION_CODE is not null or S.PRODUCT_CODE is not null)
 and m.OPERATION_CODE = isnull(@OPERATION_CODE,m.OPERATION_CODE) and m.PRODUCT_CODE = isnull(@PRODUCT_CODE, m.PRODUCT_CODE)
 )A
 where RowNum between ((@PAGE_NO - 1) * @PAGE_SIZE) + 1 and (@PAGE_NO * @PAGE_SIZE)
