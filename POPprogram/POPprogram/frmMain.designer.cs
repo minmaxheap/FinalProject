@@ -105,7 +105,7 @@ namespace POPprogram
             this.lblID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblID.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(182)))), ((int)(((byte)(190)))));
-            this.lblID.Location = new System.Drawing.Point(1402, 15);
+            this.lblID.Location = new System.Drawing.Point(1402, 14);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(25, 19);
             this.lblID.TabIndex = 21;
@@ -152,7 +152,7 @@ namespace POPprogram
             this.button1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button1.Image = global::POPprogram.Properties.Resources.Circle_Close;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(1486, 9);
+            this.button1.Location = new System.Drawing.Point(1490, 7);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 30);
             this.button1.TabIndex = 31;
