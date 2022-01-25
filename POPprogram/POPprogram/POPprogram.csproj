@@ -274,6 +274,9 @@
     <EmbeddedResource Include="frmNewLOT.resx">
       <DependentUpon>frmNewLOT.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmReportPreview.resx">
+      <DependentUpon>frmReportPreview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmShipBarcode.resx">
       <DependentUpon>frmShipBarcode.cs</DependentUpon>
     </EmbeddedResource>

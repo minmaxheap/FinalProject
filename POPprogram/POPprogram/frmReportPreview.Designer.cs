@@ -29,10 +29,17 @@ namespace POPprogram
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // frmReportPreview
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "frmReportPreview";
+            this.Name = "frmReportPreview";
+            this.Text = "미리보기";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
