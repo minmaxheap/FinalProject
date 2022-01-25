@@ -36,9 +36,10 @@ namespace POPprogram
             this.menuImageList = new System.Windows.Forms.ImageList(this.components);
             this.selmenuImageList = new System.Windows.Forms.ImageList(this.components);
             this.lblID = new System.Windows.Forms.Label();
-            this.tabMenu = new POPprogram.csTabControl();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.tabMenu = new POPprogram.csTabControl();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,31 +100,17 @@ namespace POPprogram
             // 
             // lblID
             // 
-            this.lblID.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblID.AutoSize = true;
             this.lblID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblID.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(182)))), ((int)(((byte)(190)))));
-            this.lblID.Location = new System.Drawing.Point(1508, 19);
+            this.lblID.Location = new System.Drawing.Point(1402, 15);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(25, 19);
             this.lblID.TabIndex = 21;
             this.lblID.Text = "ID";
             this.lblID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // tabMenu
-            // 
-            this.tabMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tabMenu.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.tabMenu.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tabMenu.Location = new System.Drawing.Point(200, 45);
-            this.tabMenu.Margin = new System.Windows.Forms.Padding(0);
-            this.tabMenu.Name = "tabMenu";
-            this.tabMenu.SelectedIndex = 0;
-            this.tabMenu.Size = new System.Drawing.Size(1395, 30);
-            this.tabMenu.TabIndex = 23;
-            this.tabMenu.SelectedIndexChanged += new System.EventHandler(this.tabMain_SelectedIndexChanged);
-            this.tabMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabMenu_MouseDown);
             // 
             // imageList1
             // 
@@ -143,11 +130,40 @@ namespace POPprogram
             this.pictureBox2.TabIndex = 25;
             this.pictureBox2.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button1.Location = new System.Drawing.Point(1486, 9);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(97, 30);
+            this.button1.TabIndex = 31;
+            this.button1.Text = "모두 닫기";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // tabMenu
+            // 
+            this.tabMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tabMenu.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
+            this.tabMenu.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tabMenu.Location = new System.Drawing.Point(200, 45);
+            this.tabMenu.Margin = new System.Windows.Forms.Padding(0);
+            this.tabMenu.Name = "tabMenu";
+            this.tabMenu.SelectedIndex = 0;
+            this.tabMenu.Size = new System.Drawing.Size(1395, 30);
+            this.tabMenu.TabIndex = 23;
+            this.tabMenu.SelectedIndexChanged += new System.EventHandler(this.tabMain_SelectedIndexChanged);
+            this.tabMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabMenu_MouseDown);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1595, 1030);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.tabMenu);
             this.Controls.Add(this.lblID);
@@ -178,5 +194,6 @@ namespace POPprogram
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ImageList menuImageList;
         private System.Windows.Forms.ImageList selmenuImageList;
+        private System.Windows.Forms.Button button1;
     }
 }
