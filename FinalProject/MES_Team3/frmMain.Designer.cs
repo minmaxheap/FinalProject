@@ -152,11 +152,15 @@ namespace MES_Team3
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.ImageIndex = 1;
+            this.button1.ImageList = this.menuImageList;
             this.button1.Location = new System.Drawing.Point(1195, 6);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 30);
             this.button1.TabIndex = 30;
             this.button1.Text = "모두 닫기";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 

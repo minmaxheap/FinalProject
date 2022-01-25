@@ -123,9 +123,19 @@ namespace POPprogram.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        public static System.Drawing.Bitmap Circle_Close {
+            get {
+                object obj = ResourceManager.GetObject("Circle_Close", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         public static System.Drawing.Bitmap Circle_Close___01 {
             get {
-                object obj = ResourceManager.GetObject("Circle_Close___01", resourceCulture);
+                object obj = ResourceManager.GetObject("Circle Close - 01", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
