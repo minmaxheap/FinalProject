@@ -24,14 +24,14 @@ namespace NiceWEB.Controllers
 
             if (startDate == null)
             {
-                startDate = new DateTime(DateTime.Now.Year, 1, 1).ToString("yyyy-MM-dd");
+                startDate = new DateTime(DateTime.Now.Year, 1, 13).ToString("yyyy-MM-dd");
             }
 
             ViewBag.startDate = startDate;
 
             if (endDate == null)
             {
-                endDate = new DateTime(DateTime.Now.Year, 1, 10).ToString("yyyy-MM-dd");
+                endDate = new DateTime(DateTime.Now.Year, 1, 23).ToString("yyyy-MM-dd");
             }
 
             ViewBag.endDate = endDate;
