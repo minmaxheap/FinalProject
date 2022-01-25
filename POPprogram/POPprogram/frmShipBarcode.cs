@@ -38,6 +38,8 @@ namespace POPprogram
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성 시간", "PRODUCT_TIME", DataGridViewContentAlignment.MiddleLeft, 140);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "주문수량", "LOT_QTY");
 
+            csDataGridView1.Columns["LOT_QTY"].DefaultCellStyle.Format = "#,###,##0.##";
+
             LoadData();
 
         }

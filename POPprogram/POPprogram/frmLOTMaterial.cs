@@ -78,6 +78,11 @@ namespace POPprogram
             txtCustName.Text = list[0].CUSTOMER_NAME;
             lblStatus.Text = list[0].ORDER_STATUS;
 
+            lblOrderQty.Text = string.Format("{0:0,0}", list[0].ORDER_QTY);
+            // lblDefectQty.Text = string.Format("{0:0,0}", swlist[0].DEFECT_QTY);
+            lblProdQty.Text = string.Format("{0:0,0}", list[0].PRODUCT_QTY);
+            txtQty.Text = string.Format("{0:0,0}", list[0].LOT_QTY);
+
             MatPropertyPrdCode usevo = new MatPropertyPrdCode();
             usevo.PRODUCT_CODE = txtProdCode.Text;
             usevo.LOT_ID = cboLOTID.Text;

@@ -87,7 +87,13 @@ namespace POPprogram
 			lblProdQty.Text = swlist[0].PRODUCT_QTY.ToString();
 			txtCustName.Text = swlist[0].DATA_1;
 			lblStatus.Text = swlist[0].ORDER_STATUS;
-			
+
+
+			lblOrderQty.Text = string.Format("{0:0,0}", swlist[0].ORDER_QTY);
+			// lblDefectQty.Text = string.Format("{0:0,0}", swlist[0].DEFECT_QTY);
+			lblProdQty.Text = string.Format("{0:0,0}", swlist[0].PRODUCT_QTY);
+			txtQty.Text = string.Format("{0:0,0}", swlist[0].LOT_QTY);
+
 			LoadData();
 		}
 		private void LoadData()

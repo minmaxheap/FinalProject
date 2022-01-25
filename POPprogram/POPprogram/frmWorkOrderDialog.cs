@@ -38,6 +38,10 @@ namespace POPprogram
             DataGridViewUtil.AddGridTextColumn(dgvWorkOrder, "마감 처리자", "WORK_CLOSE_USER_ID");
             DataGridViewUtil.AddGridTextColumn(dgvWorkOrder, "마감 시간", "WORK_CLOSE_TIME");
 
+            dgvWorkOrder.Columns["ORDER_QTY"].DefaultCellStyle.Format = "#,###,##0.##";
+            dgvWorkOrder.Columns["PRODUCT_QTY"].DefaultCellStyle.Format = "#,###,##0.##";
+            dgvWorkOrder.Columns["DEFECT_QTY"].DefaultCellStyle.Format = "#,###,##0.##";
+
             iSearchedList = new List<int>();
             iSelectedRow = new List<int>();
 

@@ -42,6 +42,8 @@ namespace POPprogram
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "LOT_ID", "LOT_ID", DataGridViewContentAlignment.MiddleCenter, 150);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "수량", "LOT_QTY", DataGridViewContentAlignment.MiddleCenter, 100);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "창고 입고시간", "OPER_IN_TIME",DataGridViewContentAlignment.MiddleCenter, 150);
+            csDataGridView1.Columns["LOT_QTY"].DefaultCellStyle.Format = "#,###,##0.##";
+
             txtCode3.Text = "0";
 
             csDataGridView1.Columns[2].FillWeight = 170;
@@ -66,6 +68,8 @@ namespace POPprogram
             txtCode3.Text = frmShipSearch.vo.ORDER_QTY.ToString();
             txtName1.Text = frmShipSearch.vo.PRODUCT_NAME;
             txtName2.Text = frmShipSearch.vo.CUSTOMER_NAME;
+            txtCode3.Text = string.Format("{0:#,#}", frmShipSearch.vo.ORDER_QTY);
+
         }
 
         
@@ -124,10 +128,12 @@ namespace POPprogram
                 if (listSum > Convert.ToDecimal(txtCode3.Text))
                 {
                     textBox2.Text = Convert.ToString(txtCode3.Text);
+                    textBox2.Text = string.Format("{0:#,#}", Convert.ToDecimal(txtCode3.Text));
                 }
                 else
                 {
                     textBox2.Text = Convert.ToString(listSum);
+                    textBox2.Text = string.Format("{0:#,#}", Convert.ToString(listSum));
                 }
 
             }
@@ -151,10 +157,12 @@ namespace POPprogram
                 if (listSum > Convert.ToDecimal(txtCode3.Text))
                 {
                     textBox2.Text = Convert.ToString(txtCode3.Text);
+                    textBox2.Text = string.Format("{0:#,#}", Convert.ToDecimal(txtCode3.Text));
                 }
                 else 
                 { 
                     textBox2.Text = Convert.ToString(listSum);
+                    textBox2.Text = string.Format("{0:#,#}", Convert.ToString(listSum));
                 }
             }
         }
@@ -249,7 +257,6 @@ namespace POPprogram
 
             //ShipPropertyUpdate updateVO = new ShipPropertyUpdate();
             ShipServ serv = new ShipServ();
-
             updateVO[1].LOT_QTY = Convert.ToDecimal(txtCode3.Text) - updateVO[0].LOT_QTY;
             updateVO[0].LAST_TRAN_USER_ID = userID;
             updateVO[0].SALES_ORDER_ID = txtSearch.Text;

@@ -40,6 +40,8 @@ namespace POPprogram
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 시간", "UPDATE_TIME", DataGridViewContentAlignment.MiddleLeft, 140);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 사용자", "UPDATE_USER_ID");
 
+            csDataGridView1.Columns["ORDER_QTY"].DefaultCellStyle.Format = "#,###,##0.##";
+
             LoadData();
 
         }

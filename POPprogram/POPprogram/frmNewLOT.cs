@@ -50,6 +50,8 @@ namespace POPprogram
                 lblDefectQty.Text = dr.Cells["DEFECT_QTY"].Value.ToString();
                 txtOperCode.Text = dr.Cells["OPERATION_CODE"].Value.ToString();
                 txtOperName.Text = dr.Cells["OPERATION_NAME"].Value.ToString();
+//
+                lblOrderQty.Text = string.Format("{0:0,0}", dr.Cells["ORDER_QTY"].Value);
 
                 }
             }

@@ -35,7 +35,8 @@ namespace POPprogram
             //DataGridViewUtil.AddGridTextColumn(dgvPurchase, "입하 여부", "STOCK_IN_FLAG");
             //DataGridViewUtil.AddGridTextColumn(dgvPurchase, "입하 창고 코드", "STOCK_IN_STORE_CODE");
             //DataGridViewUtil.AddGridTextColumn(dgvPurchase, "입하 자재 LOT ID", "STOCK_IN_LOT_ID");
-        
+            dgvPurchase.Columns["ORDER_QTY"].DefaultCellStyle.Format = "#,###,##0.##";
+
 
             iSearchedList = new List<int>();
             iSelectedRow = new List<int>();

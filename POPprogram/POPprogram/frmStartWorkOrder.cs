@@ -109,6 +109,11 @@ namespace POPprogram
             if (txtOperCode.Text == "1400") cboEQList.SelectedIndex = 5;
             if (txtOperCode.Text == "1500") cboEQList.SelectedIndex = 6;
             if (txtOperCode.Text == "1600") cboEQList.SelectedIndex = 7;
+
+            lblOrderQty.Text = string.Format("{0:0,0}", swlist[0].ORDER_QTY);
+           // lblDefectQty.Text = string.Format("{0:0,0}", swlist[0].DEFECT_QTY);
+            lblProdQty.Text = string.Format("{0:0,0}", swlist[0].PRODUCT_QTY);
+            txtQty.Text = string.Format("{0:0,0}", swlist[0].LOT_QTY);
         }
 
 		private void btnExecute_Click(object sender, EventArgs e)

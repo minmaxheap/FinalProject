@@ -189,6 +189,12 @@ namespace POPprogram
                 lblMaterialColor.Text = "예외 상황";
             }
 
+
+            lblOrderQty.Text = string.Format("{0:0,0}", list[0].ORDER_QTY);
+            // lblDefectQty.Text = string.Format("{0:0,0}", swlist[0].DEFECT_QTY);
+            lblProdQty.Text = string.Format("{0:0,0}", list[0].PRODUCT_QTY);
+            txtQty.Text = string.Format("{0:0,0}", list[0].LOT_QTY);
+
         }
 
         private void btnExecute_Click(object sender, EventArgs e)

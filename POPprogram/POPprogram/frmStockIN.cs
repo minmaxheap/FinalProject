@@ -53,6 +53,7 @@ namespace POPprogram
                 txtCode2.Text = dr.Cells["CUSTOMER_CODE"].Value.ToString();
                 txtName2.Text = dr.Cells["CUSTOMER_NAME"].Value.ToString();
                 txtCode3.Text = dr.Cells["ORDER_QTY"].Value.ToString();
+                txtCode3.Text = string.Format("{0:0,0}", dr.Cells["ORDER_QTY"].Value);
 
             }
         }
@@ -75,6 +76,8 @@ namespace POPprogram
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "입하 여부", "STOCK_IN_FLAG");
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "자재LOT ID", "STOCK_IN_LOT_ID", width: 150);
 
+            csDataGridView1.Columns["QTY"].DefaultCellStyle.Format = "#,###,##0.##";
+
             csDataGridView1.Columns[0].FillWeight = 80;
             csDataGridView1.Columns[1].FillWeight = 80;
             csDataGridView1.Columns[2].FillWeight = 150;
@@ -88,6 +91,8 @@ namespace POPprogram
             LoadData();
 
             bFlag = true;
+
+        
         }
 
         private void DgvChk(DataGridView dgv)
@@ -168,8 +173,8 @@ namespace POPprogram
                 }
             }
 
-            textBox1.Text = countLOT.ToString();
-            textBox2.Text = countQty.ToString();
+            textBox1.Text = string.Format("{0:#,#}", countLOT);
+            textBox2.Text = string.Format("{0:#,#}",countQty);
         }
 
         private void btnExport_Click(object sender, EventArgs e)
