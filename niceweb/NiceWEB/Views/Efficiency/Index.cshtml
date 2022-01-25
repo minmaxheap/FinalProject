@@ -364,7 +364,7 @@
                                 backgroundColor: '#FF0000',
                                 borderColor: '#FF0000',
                                 data: @defectQty,
-                                yAxisID: 'y-left'
+                                yAxisID: 'y-right2'
                             },
 
                             {
@@ -387,7 +387,7 @@
                                 backgroundColor: '#CB516C',
                                 borderColor: '#CB516C',
                                 data: @DownRate,
-                                yAxisID: 'y-right'
+                                yAxisID: 'y-left2'
                             }
 
 
@@ -411,12 +411,17 @@
 
                             stacked: false,
                                 ticks: {
-                                    min: 0, max: 1500,
+                                    min: 900, max: 1100,
                                 fontColor: 'black' // y축 폰트 color
                             }
 
-                        },
-                            { id: 'y-right', position: 'right', ticks: { min: 0, max: 120,  fontColor: 'black' } }
+                            },
+
+                            { id: 'y-left2', position: 'left', ticks: { min: 0, max: 15, fontColor: 'black' } },
+
+                            { id: 'y-right', position: 'right', ticks: { min: 85, max: 101, fontColor: 'black' } },
+
+                            { id: 'y-right2', position: 'right', ticks: { min: 0, max: 300, fontColor: 'black' } }
 
 
                         ],
