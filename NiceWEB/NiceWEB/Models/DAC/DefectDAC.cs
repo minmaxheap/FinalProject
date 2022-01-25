@@ -82,10 +82,17 @@ namespace NiceWEB.Models.DAC
 				}
 				if (!string.IsNullOrWhiteSpace(productCode))
 				{
-					sb.Append(" and OPERATION_CODE = @OPERATION_CODE");
+					sb.Append(" and OPERATION_CODE = @OPERATION_CODE ");
 					cmd.Parameters.AddWithValue("@OPERATION_CODE", op_code);
 				}
+				if (!string.IsNullOrWhiteSpace(from))
+				{
+					sb.Append(" and CONVERT(varchar,TRAN_TIME,120) between @from and @to ");
+					cmd.Parameters.AddWithValue("@from", from);
+					cmd.Parameters.Add("@to", to);
+				}
 				
+					
 
 
 				//datetime을 어떻게 두면좋을까?
@@ -97,7 +104,7 @@ namespace NiceWEB.Models.DAC
 				//}
 
 				//if(!string
-				
+
 				cmd.CommandText = sb.ToString();
 
 				return Convert.ToInt32(cmd.ExecuteScalar());
