@@ -44,8 +44,13 @@ namespace POPprogram
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "창고 입고시간", "OPER_IN_TIME",DataGridViewContentAlignment.MiddleCenter, 150);
             txtCode3.Text = "0";
 
+            csDataGridView1.Columns[2].FillWeight = 170;
+            csDataGridView1.Columns[4].FillWeight = 170;
+
             csDataGridView1.RowTemplate.Height = 50;
             csDataGridView1.DefaultCellStyle.Font = new Font("나눔고딕", 13);
+
+
         }
 
         private void btnTxtSearch_Click(object sender, EventArgs e)

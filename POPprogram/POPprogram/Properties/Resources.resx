@@ -124,14 +124,14 @@
   <data name="Data_Find4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Data-Find4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Add_New" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Add-New.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Arrowhead_Right_011" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Arrowhead-Right-011.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="close_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\close white .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Data_Find" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Data-Find.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_97a64971e2a6741339b09c64c93e448e" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\97a64971e2a6741339b09c64c93e448e.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,6 +163,9 @@
   <data name="_refresh_90271" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\-refresh_90271.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Arrowhead-Right-01" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Arrowhead-Right-012.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -193,8 +196,8 @@
   <data name="NanumSquareEB" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\nanumsquareeb.otf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="Delete_03" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Delete_03.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Add_New" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Add-New.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NanumSquareB" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\nanumsquareb.otf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -217,6 +220,12 @@
   <data name="facebook_cover_photo_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\facebook_cover_photo_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Circle_Close___02" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Circle Close - 02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Circle_Close___2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Circle Close - 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Folder_Find_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Folder-Find-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -238,8 +247,8 @@
   <data name="Data_Find12" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Data-Find12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Data_Find" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Data-Find.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Delete_03" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Delete_03.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Data_Find1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Data-Find1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -247,16 +256,10 @@
   <data name="Trash_Can_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Trash Can_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Circle Close - 01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Circle Close - 011.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Circle_Close___02" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Circle Close - 02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Circle_Close___2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Circle Close - 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Circle_Close___01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Circle Close - 01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Circle_Close" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Circle Close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

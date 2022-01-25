@@ -212,7 +212,7 @@ SET ARITHABORT OFF;
 		union all
 		select Convert(varchar(10), DateAdd(day, 1, DT), 23) DT
 		from DATE_LIST
-		where DT <= @endDate
+		where DT < @endDate
 	),
    DATA AS
    (

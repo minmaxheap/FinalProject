@@ -66,7 +66,7 @@ namespace MES_Team3
             mPnlMenu.BackColor = Color.White;
             mPnlMenu.Dock = DockStyle.Bottom;
             mPnlMenu.Location = new Point(3, (dv1.Count * 40));
-            mPnlMenu.Margin = new Padding(0,0,0,0);
+            mPnlMenu.Margin = new Padding(0, 0, 0, 0);
             mPnlMenu.Name = "panel1";
             mPnlMenu.Size = new Size(200, 0);
             flpMenu.Controls.Add(this.mPnlMenu);
@@ -151,7 +151,7 @@ namespace MES_Team3
                 if (!tabMenu.Visible)
                     tabMenu.Visible = true;
             }
-            
+
         }
 
         private void ActiveMdiChild_FormClosed(object sender, FormClosedEventArgs e)
@@ -188,12 +188,12 @@ namespace MES_Team3
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
-             Button btnMenu = (Button)sender;
-           // Label btnMenu = (Label)sender;
+            Button btnMenu = (Button)sender;
+            // Label btnMenu = (Label)sender;
             flpMenu.Controls.SetChildIndex(mPnlMenu, Convert.ToInt32(btnMenu.Tag) + 1);
             flpMenu.Invalidate();
             mPnlMenu.Controls.Clear();
-            
+
             //mTrvMenu.Nodes.Clear();
 
             DataView dv2 = new DataView(mdtFunc);
@@ -212,7 +212,7 @@ namespace MES_Team3
                     Button btn = btnChild;
                 }
 
-               
+
 
             }
         }
@@ -328,6 +328,19 @@ namespace MES_Team3
             Button menu = (Button)sender;
             SelectedButton(menu);
             OpenCreateForm(menu.Tag.ToString(), menu.Text);
+        }
+
+        private void AllBtnClose()
+        {
+            foreach(Form frm in this.MdiChildren)
+            {
+                    frm.Close();  
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AllBtnClose();
         }
     }
 }

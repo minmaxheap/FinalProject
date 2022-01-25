@@ -39,6 +39,7 @@ namespace MES_Team3
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.menuImageList = new System.Windows.Forms.ImageList(this.components);
             this.selmenuImageList = new System.Windows.Forms.ImageList(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.tabMenu = new MES_Team3.csTabControl();
             this.tabControl1 = new MES_Team3.csTabControl();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -72,11 +73,11 @@ namespace MES_Team3
             this.lblID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblID.AutoSize = true;
             this.lblID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(42)))), ((int)(((byte)(83)))));
-            this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblID.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblID.ForeColor = System.Drawing.Color.White;
-            this.lblID.Location = new System.Drawing.Point(1165, 9);
+            this.lblID.Location = new System.Drawing.Point(1113, 13);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(34, 25);
+            this.lblID.Size = new System.Drawing.Size(23, 17);
             this.lblID.TabIndex = 18;
             this.lblID.Text = "ID";
             this.lblID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -145,6 +146,23 @@ namespace MES_Team3
             this.selmenuImageList.Images.SetKeyName(8, "Equalizer.png");
             this.selmenuImageList.Images.SetKeyName(9, "Flow-Cart.png");
             // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button1.Image = global::MES_Team3.Properties.Resources.Circle_Close___01;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(1195, 7);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(97, 30);
+            this.button1.TabIndex = 30;
+            this.button1.Text = "모두 닫기";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // tabMenu
             // 
             this.tabMenu.Dock = System.Windows.Forms.DockStyle.Top;
@@ -176,6 +194,7 @@ namespace MES_Team3
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1299, 739);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.tabMenu);
             this.Controls.Add(this.lblID);
@@ -209,6 +228,7 @@ namespace MES_Team3
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ImageList menuImageList;
         private System.Windows.Forms.ImageList selmenuImageList;
+        private System.Windows.Forms.Button button1;
     }
 }
 

@@ -274,6 +274,9 @@
     <EmbeddedResource Include="frmNewLOT.resx">
       <DependentUpon>frmNewLOT.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmReportPreview.resx">
+      <DependentUpon>frmReportPreview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmShipBarcode.resx">
       <DependentUpon>frmShipBarcode.cs</DependentUpon>
     </EmbeddedResource>
@@ -369,6 +372,9 @@
     <None Include="Resources\Circle Close - 2.png" />
     <None Include="Resources\Circle Close - 02.png" />
     <None Include="Resources\Circle Close - 01.png" />
+    <None Include="Resources\Circle Close - 011.png" />
+    <None Include="Resources\Circle Close - 012.png" />
+    <None Include="Resources\Circle Close.png" />
     <Content Include="Resources\그림1.png" />
     <Content Include="Resources\그림5.png" />
   </ItemGroup>

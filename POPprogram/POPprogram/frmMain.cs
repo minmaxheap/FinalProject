@@ -238,8 +238,17 @@ namespace POPprogram
             btn.ImageList = this.selmenuImageList;
         }
 
-      
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AllBtnClose();
+        }
 
-
+        private void AllBtnClose()
+        {
+            foreach (Form frm in this.MdiChildren)
+            {
+                frm.Close();
+            }
+        }
     }
 }
