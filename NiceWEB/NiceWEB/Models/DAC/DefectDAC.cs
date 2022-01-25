@@ -109,7 +109,7 @@ namespace NiceWEB.Models.DAC
 			using (SqlCommand cmd = new SqlCommand())
 			{
 				cmd.Connection = conn;
-				cmd.CommandText = @"select distinct PRODUCT_CODE as Code from PRODUCT_MST where PRODUCT_CODE <> 'HB_Mixed'";
+				cmd.CommandText = @"select distinct PRODUCT_CODE as Code from PRODUCT_MST where PRODUCT_CODE <> 'HB_Mixed' and  PRODUCT_TYPE = 'FERT'";
 
 				SqlDataReader reader = cmd.ExecuteReader();
 				List<ComboItem> list = Helper.DataReaderMapToList<ComboItem>(reader);
