@@ -112,6 +112,7 @@ namespace POPprogram
             this.ClientSize = new System.Drawing.Size(1024, 478);
             this.Controls.Add(this.csDataGridView1);
             this.Name = "frmShipBarcode";
+            this.Text = "출하";
             this.Load += new System.EventHandler(this.frmPrurchaseDialog_Load);
             this.Controls.SetChildIndex(this.btnTxtSearch, 0);
             this.Controls.SetChildIndex(this.lblPanel, 0);
