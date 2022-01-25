@@ -50,7 +50,7 @@ namespace MES_Team3
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 시간", "UPDATE_TIME", DataGridViewContentAlignment.MiddleLeft, 170);
             DataGridViewUtil.AddGridTextColumn(csDataGridView1, "변경 사용자", "UPDATE_USER_ID", DataGridViewContentAlignment.MiddleCenter,140);
 
-            
+            csDataGridView1.Columns["ORDER_QTY"].DefaultCellStyle.Format = "#,###,##0.##";
             LoadData();
 
             SalesOrderProperty vo = new SalesOrderProperty();

@@ -55,7 +55,7 @@ namespace MES_Team3
 			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "공정", "OPERATION_CODE", DataGridViewContentAlignment.MiddleCenter,120);
 			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "공정명", "OPERATION_NAME", width: 120);
 			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "불량입력", "CHECK_DEFECT_FLAG", DataGridViewContentAlignment.MiddleCenter);
-			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "검사 데이터 입력", "CHECK_INSPECT_FLAG", DataGridViewContentAlignment.MiddleCenter, width: 140);
+			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "검사 데이터 입력", "CHECK_INSPECT_FLAG", DataGridViewContentAlignment.MiddleCenter, width: 160);
 			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "자재 사용", "CHECK_MATERIAL_FLAG", DataGridViewContentAlignment.MiddleCenter);
 			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성시간", "CREATE_TIME", DataGridViewContentAlignment.MiddleLeft, 140);
 			DataGridViewUtil.AddGridTextColumn(csDataGridView1, "생성 사용자", "CREATE_USER_ID", DataGridViewContentAlignment.MiddleCenter,120);
